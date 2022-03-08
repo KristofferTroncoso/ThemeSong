@@ -52,11 +52,11 @@ chrome.runtime.onInstalled.addListener((details) => {
       chrome.storage.sync.set(defaults);
       break;
 
-    // on update (extension update, chrome update, or extension refresh), do nothing for now. 
+    // on update (extension update, chrome update, or extension refresh)
     case "update":
-      // chrome.storage.sync.set({extensionVersion: defaults.extensionVersion});
-      chrome.storage.sync.clear();
-      chrome.storage.sync.set(defaults);
+      chrome.storage.sync.set({extensionVersion: defaults.extensionVersion});
+      // chrome.storage.sync.clear();
+      // chrome.storage.sync.set(defaults);
       break;
 
     default: 
