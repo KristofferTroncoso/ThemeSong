@@ -46,6 +46,10 @@ tp-yt-paper-listbox {
   background-color: var(--ts-mainbg-color);
 }
 
+ytmusic-tabs.stuck {
+  background-color: var(--ts-mainbg-color);
+}
+
 
 /* --- now-playing progress bar color ---- */
 #progress-bar.ytmusic-player-bar {
