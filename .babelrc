@@ -1,0 +1,19 @@
+{
+  "env": {
+    "development": {
+       "presets": [
+         // "@babel/preset-env",
+         "@babel/preset-react"
+         // "react-app"
+        ],
+       "plugins":["react-hot-loader/babel"]
+     },
+    "production": {
+      "presets": ["@babel/preset-react"],
+      "plugins": [
+        "transform-remove-console"
+      ],
+      "comments": false
+    }
+  }
+}
