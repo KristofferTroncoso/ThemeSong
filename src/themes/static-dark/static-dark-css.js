@@ -9,6 +9,7 @@ export const static_dark_css = /*css*/`
   --ts-mainbg-color: var(--ts-default-app-color);
   --ts-playpagebg-color: var(--ts-default-app-color);
   --ts-playbar-color: var(--ts-default-app-color);
+  --ts-playpageavtoggle-color: var(--ts-default-app-color);
 
   --ts-playprogress-color: white;
 
@@ -43,6 +44,13 @@ ytmusic-tabs.stuck {
   background-color: var(--ts-mainbg-color);
 }
 
+ytmusic-av-toggle[playback-mode=ATV_PREFERRED] .song-button.ytmusic-av-toggle {
+  background-color: var(--ts-playpageavtoggle-color);
+}
+
+ytmusic-av-toggle[playback-mode=OMV_PREFERRED] .video-button.ytmusic-av-toggle {
+  background-color: var(--ts-playpageavtoggle-color);
+}
 
 /* --- now playing progress bar color ---- */
 #progress-bar.ytmusic-player-bar {
