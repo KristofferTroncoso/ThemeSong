@@ -4,7 +4,7 @@
   "version": "0.1.3",
   "description": "Dynamic themes, customization, and visuals for YouTube Music™.",
   "background": { "service_worker": "background.bundle.js" },
-  "permissions": ["storage", "tabs"],
+  "permissions": ["storage", "tabs", "scripting"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": "icon-34.png"
@@ -13,6 +13,7 @@
     "34": "icon-34.png",
     "128": "icon-128.png"
   },
+  "host_permissions": ["https://music.youtube.com/*"],
   "content_scripts": [
     {
       "matches": [
