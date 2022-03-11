@@ -1,6 +1,6 @@
 
 const defaults = {
-  extensionVersion: "0.1.3",
+  extensionVersion: "0.1.4",
   activeTheme: "themeId:1",
   themes: [
     {
