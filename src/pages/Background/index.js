@@ -47,9 +47,17 @@ chrome.runtime.onInstalled.addListener((details) => {
   console.log(details);
   switch (details.reason) {
 
-    // on installation add default values to storage.
+    // on installation add default values to storage. execute content script onto existing open tabs
     case "install":
       chrome.storage.sync.set(defaults);
+      chrome.tabs.query({url: 'https://music.youtube.com/*'}, (tabs) => {
+        for (let tab of tabs) {
+          chrome.scripting.executeScript({
+            target: { tabId: tab.id },
+            files: ['contentScript.bundle.js'],
+          });
+        }
+      });
       break;
 
     // on update (extension update, chrome update, or extension refresh)
@@ -57,20 +65,19 @@ chrome.runtime.onInstalled.addListener((details) => {
       chrome.storage.sync.set({extensionVersion: defaults.extensionVersion});
       // chrome.storage.sync.clear();
       // chrome.storage.sync.set(defaults);
+      chrome.tabs.query({url: 'https://music.youtube.com/*'}, (tabs) => {
+        for (let tab of tabs) {
+          chrome.scripting.executeScript({
+            target: { tabId: tab.id },
+            files: ['contentScript.bundle.js'],
+          });
+        }
+      });
       break;
 
     default: 
       chrome.storage.sync.set(defaults);
   }
-
-  chrome.tabs.query({url: 'https://music.youtube.com/*'}, (tabs) => {
-    for (let tab of tabs) {
-      chrome.scripting.executeScript({
-        target: { tabId: tab.id },
-        files: ['contentScript.bundle.js'],
-      });
-    }
-  });
 });
 
 
