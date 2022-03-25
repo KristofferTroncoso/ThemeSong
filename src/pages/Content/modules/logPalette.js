@@ -1,9 +1,9 @@
 
 // console.log() Vibrant-Colors palette and UI colors
 
-export default function logColors(palette, uiColorsObj) {
+export default function logPalette(palette, uiColorsObj) {
   let {LightVibrant, Vibrant, DarkVibrant, LightMuted, Muted, DarkMuted} = palette;
-  let colorsObjectsArray = Object.entries(uiColorsObj);
+  // let colorsObjectsArray = Object.entries(uiColorsObj);
 
   console.log(`%c
     LightVibrant: hsl(${(LightVibrant.hsl[0] * 360).toFixed()}, ${(LightVibrant.hsl[1] * 100).toFixed()}%, ${(LightVibrant.hsl[2] * 100).toFixed()}%) ${LightVibrant.hex}%c
