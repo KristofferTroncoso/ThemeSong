@@ -1,14 +1,11 @@
-import { off, processOffTheme } from '../../themes/off/';
-import { glassCSS, processGlassThemeOnInitial, processGlassThemeOnSongChange} from '../../themes/frosted-glass/';
-import { dynamicdark, getVibrantHSL, processColors } from '../../themes/dynamic-dark/';
-import { processStaticDark, static_dark_css } from '../../themes/static-dark/';
+import * as Vibrant from "node-vibrant";
+import logPalette from './modules/logPalette';
+import themes from '../../themes';
 
-// const songImg = document.querySelector('#song-image img#img');
-const playerBarSongImg = document.querySelector(".middle-controls .thumbnail-image-wrapper img");
+const playerBarSongImgNode = document.querySelector(".middle-controls .thumbnail-image-wrapper img");
 
 let storageObj = {};
 let songChangeObserver;
-let bestImgAvailable;
 let vibrantHSL;
 
 console.log('content script loaded');
@@ -16,12 +13,11 @@ console.log('content script loaded');
 setTimeout(() => {
   chrome.storage.sync.get(null, (res) => {
     console.log('chrome.storage.sync.get()')
-    addSongChangeObserver(res.activeTheme);
+    addSongChangeObserver();
     addStylesheet(res.activeTheme);
-    turnOnSongChangeObserver();
+
     storageObj = res;
-    if (playerBarSongImg.src !== "https://music.youtube.com/") {
-      getSongImg();
+    if (playerBarSongImgNode.src !== "https://music.youtube.com/") {
       processThemeOnInitialLoad(res.activeTheme);
     } else {
       processThemeOnInitialLoad(res.activeTheme);
@@ -46,8 +42,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       console.log('case activeTheme')
       console.log(message[messageKey]);
       addStylesheet(message[messageKey]);
-      if (playerBarSongImg.src !== "https://music.youtube.com/") {
-        getSongImg();
+      if (playerBarSongImgNode.src !== "https://music.youtube.com/") {
         processThemeOnInitialLoad(message[messageKey]);
         // processThemeOnPrefsChange(message[messageKey].activeTheme);
       } else {
@@ -80,10 +75,12 @@ function addStylesheet(themeId) {
   console.log('addStylesheet');
   console.log(themeId)
   const stylesheetNameObj = {
-    "themeId:0": off,
-    "themeId:1": dynamicdark,
-    "themeId:2": static_dark_css,
-    "themeId:3": glassCSS
+    "themeId:0": themes.off.css,
+    "themeId:1": themes.dynamicdark.css,
+    "themeId:2": themes.staticdark.css,
+    "themeId:3": themes.glass.css,
+    "themeId:4": themes.dynamiclight.css,
+    "themeId:5": themes.staticlight.css
   };
 
   const tscustomstyle = document.getElementById("themesong-extension-active-theme-stylesheet");
@@ -102,21 +99,27 @@ function processThemeOnPrefsChange(activeThemeId) {
   switch (activeThemeId) {
     case "themeId:0":
       console.log('OFF. No theme active');
-      processOffTheme();
+      themes.off.process();
       break;
     case "themeId:1":
       console.log('Dynamic Dark theme is active');
-      // turnOnSongChangeObserver();
-      processColors(storageObj, vibrantHSL);
+      themes.dynamicdark.process(storageObj, vibrantHSL);
       break;
     case "themeId:2":
       console.log('Static dark theme is active');
-      processStaticDark(storageObj);
+      themes.staticdark.process(storageObj);
       break;
     case "themeId:3":
       console.log('glass');
-      // turnOnSongChangeObserver();
-      processGlassThemeOnInitial();
+      themes.glass.process();
+      break;
+    case "themeId:4":
+      console.log('dynamic light');
+      themes.dynamiclight.process(storageObj, vibrantHSL);
+      break;
+    case "themeId:5":
+      console.log('Static light theme is active');
+      themes.staticlight.process(storageObj);
       break;
     default:
       console.log('no active theme');
@@ -127,33 +130,49 @@ function processThemeOnInitialLoad(activeThemeId) {
   switch (activeThemeId) {
     case "themeId:0":
       console.log('OFF. No theme active');
-      processOffTheme();
+      themes.off.process();
       break;
     case "themeId:1":
       console.log('Dynamic Dark theme is active');
-      // processDynamicDark(storageObj, bestImgAvailable);
-      setTimeout(() => {
-        getVibrantHSL(bestImgAvailable)
-        .then((palette) => {
-          console.log('palette received')
-          console.log(palette);
-          vibrantHSL = palette.Vibrant.hsl;
-          processColors(storageObj, palette.Vibrant.hsl);
-        })
-        .catch((err) => {
-          console.log('vibrant error')
-          console.log(err)
-        });
-      }, 1)
+      getVibrantPalette()
+      .then((palette) => {
+        console.log('palette received');
+        console.log(palette);
+        vibrantHSL = palette.Vibrant.hsl;
+        themes.dynamicdark.process(storageObj, palette.Vibrant.hsl);
+        logPalette(palette);
+      })
+      .catch((err) => {
+        console.log('vibrant error');
+        console.log(err);
+      });
       break;
     case "themeId:2":
       console.log('Static dark theme is active');
-      processStaticDark(storageObj);
+      themes.staticdark.process(storageObj);
       break;
     case "themeId:3":
       console.log('glass');
-      // turnOnSongChangeObserver();
-      processGlassThemeOnInitial();
+      themes.glass.processInitial();
+      break;
+    case "themeId:4":
+      console.log('dynamic light');
+      getVibrantPalette()
+      .then((palette) => {
+        console.log('palette received');
+        console.log(palette);
+        vibrantHSL = palette.Vibrant.hsl;
+        themes.dynamiclight.process(storageObj, palette.Vibrant.hsl);
+        logPalette(palette);
+      })
+      .catch((err) => {
+        console.log('vibrant error');
+        console.log(err);
+      });
+      break;
+    case "themeId:5":
+      console.log('Static light theme is active');
+      themes.staticlight.process(storageObj);
       break;
     default:
       console.log('no active theme');
@@ -162,28 +181,40 @@ function processThemeOnInitialLoad(activeThemeId) {
 
 
 function processThemeOnSongChange(activeThemeId) {
-  // turnOnSongChangeObserver();
   switch (activeThemeId) {
     case "themeId:1":
       console.log('Dynamic Dark theme is active');
-      // processDynamicDark(storageObj, bestImgAvailable);
-      setTimeout(() => {
-        getVibrantHSL(bestImgAvailable)
-        .then((palette) => {
-          console.log('palette received');
-          console.log(palette);
-          vibrantHSL = palette.Vibrant.hsl;
-          processColors(storageObj, palette.Vibrant.hsl);
-        })
-        .catch((err) => {
-          console.log('vibrant error');
-          console.log(err);
-        });
-      }, 1);
+      getVibrantPalette()
+      .then((palette) => {
+        console.log('palette received');
+        console.log(palette);
+        vibrantHSL = palette.Vibrant.hsl;
+        themes.dynamicdark.process(storageObj, palette.Vibrant.hsl);
+        logPalette(palette);
+      })
+      .catch((err) => {
+        console.log('vibrant error');
+        console.log(err);
+      });
       break;
     case "themeId:3":
       console.log('glass');
-      processGlassThemeOnSongChange(bestImgAvailable);
+      themes.glass.processSongChange(playerBarSongImgNode.src);
+      break;
+    case "themeId:4":
+      console.log('dynamic light');
+      getVibrantPalette()
+      .then((palette) => {
+        console.log('palette received');
+        console.log(palette);
+        vibrantHSL = palette.Vibrant.hsl;
+        themes.dynamiclight.process(storageObj, palette.Vibrant.hsl);
+        logPalette(palette);
+      })
+      .catch((err) => {
+        console.log('vibrant error');
+        console.log(err);
+      });
       break;
     default:
       console.log('no processing required.')
@@ -191,48 +222,45 @@ function processThemeOnSongChange(activeThemeId) {
 };
 
 
-function getSongImg() {
-    // prioritizes large album artwork but if not available, (e.g. if it's a video) its best to go for playBar img.
-    // i disabled it since the smaller playerBarSongImg works just fine with my themes.
+function addSongChangeObserver() {
+  playerBarSongImgNode.crossOrigin = "anonymous";
 
-    // if (songImg.src.charAt(0) === "d") {
-    //   bestImgAvailable = playerBarSongImg.src;
-    // } else {
-    //   bestImgAvailable = songImg.src;
-    // }
-
-    bestImgAvailable = playerBarSongImg.src;
-    console.log(`best available img is ${bestImgAvailable}`);
-}
-
-
-function addSongChangeObserver(activeThemeId) {
-  // songImg.crossOrigin = "anonymous";
-  playerBarSongImg.crossOrigin = "anonymous";
+  function handleSongChange(mutationList) {
+    console.log('song changed');
+    try {
+      chrome.runtime.sendMessage('r u still there?');
+      setTimeout(() => {
+        if (playerBarSongImgNode.src !== "https://music.youtube.com/") {
+          if (mutationList[0].oldValue === playerBarSongImgNode.src) {
+            console.log('same song image')
+          } else {
+            console.log('song image changed');
+            processThemeOnSongChange(storageObj.activeTheme);
+          }
+        }
+      }, 1);
+    } catch {
+      songChangeObserver.disconnect();
+    }
+  }
   
   songChangeObserver = new MutationObserver(handleSongChange);
-};
 
-function turnOnSongChangeObserver() {
-  console.log(`turnOnSongChangeObserver`);
-
-  songChangeObserver.observe(playerBarSongImg, {
+  songChangeObserver.observe(playerBarSongImgNode, {
     attributeFilter: ["src"],
     attributeOldValue: true
   });
-}
+};
 
-function handleSongChange(mutationList) {
-  console.log('song changed');
-  setTimeout(() => {
-    if (playerBarSongImg.src !== "https://music.youtube.com/") {
-      if (mutationList[0].oldValue === playerBarSongImg.src) {
-        console.log('same song image')
-      } else {
-        console.log('song image changed');
-        getSongImg();
-        processThemeOnSongChange(storageObj.activeTheme);
-      }
-    }
-  }, 1);
+function getVibrantPalette() {
+  console.log('getting palette hsl');
+  return Vibrant.from(playerBarSongImgNode.src)
+  .quality(3)
+  .addFilter(yellowFilter)
+  .getPalette();
+
+  function yellowFilter(r, g, b, a) {
+    // taking out browns, yellows, and accidentally oranges... i want to allow some orange though.
+    return a >= 125 && !(r > 50 && g > 50 && b < 120)
+  }
 }
