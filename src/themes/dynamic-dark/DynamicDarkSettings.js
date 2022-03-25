@@ -62,32 +62,32 @@ export const DynamicDarkSettings = ({storageObj, handleNewObject, handleNewTheme
             <label htmlFor="lightnessSettingNavBar">TopBar:</label>
             <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
               <img src={TopBar} alt="svg" style={{height: '14px', width: '14px', marginRight: '8px'}} />
-              <input type="range" name="lightnessSettingNavBar" min="0" max="25" value={dynamicDarkUserPrefs.lightnessSettingNavBar} step="5" onChange={handleChange} style={{width: '180px'}} />
-              <input type="number" min="0" max="25" name="lightnessSettingNavBar" value={dynamicDarkUserPrefs.lightnessSettingNavBar} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+              <input type="range" name="lightnessSettingNavBar" min="0" max="30" value={dynamicDarkUserPrefs.lightnessSettingNavBar} step="5" onChange={handleChange} style={{width: '180px'}} />
+              <input type="number" min="0" max="30" name="lightnessSettingNavBar" value={dynamicDarkUserPrefs.lightnessSettingNavBar} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
             </div>
           </div>
           <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
             <label htmlFor="lightnessSettingPlayPage">PlayPage:</label>
             <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
               <img src={PlayPage} alt="svg" style={{height: '14px', width: '14px', marginRight: '8px'}} />
-              <input type="range" name="lightnessSettingPlayPage" min="0" max="25" value={dynamicDarkUserPrefs.lightnessSettingPlayPage} step="5" onChange={handleChange} style={{width: '180px'}} />
-              <input type="number" min="0" max="25" name="lightnessSettingPlayPage" value={dynamicDarkUserPrefs.lightnessSettingPlayPage} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+              <input type="range" name="lightnessSettingPlayPage" min="0" max="30" value={dynamicDarkUserPrefs.lightnessSettingPlayPage} step="5" onChange={handleChange} style={{width: '180px'}} />
+              <input type="number" min="0" max="30" name="lightnessSettingPlayPage" value={dynamicDarkUserPrefs.lightnessSettingPlayPage} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
             </div>
           </div>
           <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
             <label htmlFor="lightnessSettingPlayerBar">PlayBar:</label>
             <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
               <img src={PlayBar} alt="svg" style={{height: '14px', width: '14px', marginRight: '8px'}} />
-              <input type="range" name="lightnessSettingPlayerBar" min="0" max="25" value={dynamicDarkUserPrefs.lightnessSettingPlayerBar} step="5" onChange={handleChange} style={{width: '180px'}} />
-              <input type="number" min="0" max="25" name="lightnessSettingPlayerBar" value={dynamicDarkUserPrefs.lightnessSettingPlayerBar} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+              <input type="range" name="lightnessSettingPlayerBar" min="0" max="30" value={dynamicDarkUserPrefs.lightnessSettingPlayerBar} step="5" onChange={handleChange} style={{width: '180px'}} />
+              <input type="number" min="0" max="30" name="lightnessSettingPlayerBar" value={dynamicDarkUserPrefs.lightnessSettingPlayerBar} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
             </div>
           </div>
           <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
             <label htmlFor="lightnessSettingBody">Body:</label>
             <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
               <img src={Body} alt="svg" style={{height: '14px', width: '14px', marginRight: '8px'}} />
-              <input type="range" name="lightnessSettingBody" min="0" max="25" value={dynamicDarkUserPrefs.lightnessSettingBody} step="5" onChange={handleChange} style={{width: '180px'}} />
-              <input type="number" min="0" max="25" name="lightnessSettingBody" value={dynamicDarkUserPrefs.lightnessSettingBody} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+              <input type="range" name="lightnessSettingBody" min="0" max="30" value={dynamicDarkUserPrefs.lightnessSettingBody} step="5" onChange={handleChange} style={{width: '180px'}} />
+              <input type="number" min="0" max="30" name="lightnessSettingBody" value={dynamicDarkUserPrefs.lightnessSettingBody} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
             </div>
           </div>
           <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>

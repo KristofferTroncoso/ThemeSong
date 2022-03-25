@@ -11,7 +11,7 @@ export function processStaticDark(storageObj) {
   const bodyColor = `hsl(${hslColorHue}, ${saturation}%, ${bgLight}%)`;
   const playerBarColor = `hsl(${hslColorHue}, ${saturation}%, ${playBarLight}%)`;
   const playPageAvToggleColor = `hsl(${hslColorHue}, ${saturation}%, ${21 + (playPageLight / 25) * 14}%)`;
-
+  const accentColorLight14 = `hsl(${hslColorHue}, ${saturation}%, 14%)`;
 
   menubar.content = navBarColor;
   root.style.setProperty("--ts-topnav-color", navBarColor);
@@ -19,5 +19,6 @@ export function processStaticDark(storageObj) {
   root.style.setProperty("--ts-playpagebg-color", playPageColor);
   root.style.setProperty("--ts-playbar-color", playerBarColor);
   root.style.setProperty("--ts-playpageavtoggle-color", playPageAvToggleColor);
+  root.style.setProperty("--ts-accent-color-light-14", accentColorLight14);
 }
 

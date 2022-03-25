@@ -1,4 +1,4 @@
-export const dynamicdark = /*css*/`
+export const dynamicdark_css = /*css*/`
 /* ThemeSong */
 /* Dynamic Dark Theme */
 
@@ -16,7 +16,22 @@ export const dynamicdark = /*css*/`
   --ts-bgcolor-transition: background-color 1s ease-out;
 
   --ytmusic-general-background-c: var(--ts-mainbg-color) !important;
+  --ytmusic-search-background: var(--ts-playbar-color) !important;
 }
+
+/* logo */
+ytmusic-nav-bar picture:first-child {
+  display: none !important;
+}
+
+ytmusic-nav-bar picture[hidden] {
+  display: block !important;
+}
+
+ytmusic-nav-bar .left-content img {
+  filter: brightness(100%);
+}
+/* logo end */
 
 body {
   background: var(--ts-mainbg-color);
@@ -44,6 +59,10 @@ ytmusic-player-bar {
 }
 
 tp-yt-paper-listbox {
+  background-color: var(--ts-playbar-color);
+}
+
+ytmusic-item-section-renderer.stuck #header.ytmusic-item-section-renderer {
   background-color: var(--ts-mainbg-color);
 }
 
@@ -59,6 +78,14 @@ ytmusic-av-toggle[playback-mode=OMV_PREFERRED] .video-button.ytmusic-av-toggle {
   background-color: var(--ts-playpageavtoggle-color);
 }
 
+
+ytmusic-search-box[opened], ytmusic-search-box[has-query] {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+ytmusic-search-suggestions-section.ytmusic-search-box {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
 
 /* --- now-playing progress bar color ---- */
 #progress-bar.ytmusic-player-bar {
@@ -84,7 +111,9 @@ ytmusic-av-toggle[playback-mode=OMV_PREFERRED] .video-button.ytmusic-av-toggle {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(250, 250, 250, 0.5) !important;
-
 }
 
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
 `;

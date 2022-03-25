@@ -152,7 +152,7 @@ that's why it justt adopts the bg color for the track */
 
 /* woah when i disabled this.. the track just adopted the background color... i think from that custom property i changed? */
 ::-webkit-scrollbar-track {
-  background-color: rgb(0, 0, 0) !important;
+  background-color: transparent !important;
   border-left: 1px solid rgba(250, 250, 250, 0.05) !important;
 }
 

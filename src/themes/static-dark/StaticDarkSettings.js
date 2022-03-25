@@ -86,32 +86,32 @@ export const StaticDarkSettings = ({storageObj, handleNewObject, handleNewThemes
             <label htmlFor="navbarLight">TopBar:</label>
             <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
               <img src={TopBar} alt="svg" style={{height: '14px', width: '14px', marginRight: '8px'}} />
-              <input type="range" name="navbarLight" min="0" max="28" value={staticDarkUserPrefs.navbarLight} step="2" onChange={handleChange}  style={{width: '180px'}} />
-              <input type="number" min="0" max="28" name="navbarLight" value={staticDarkUserPrefs.navbarLight} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+              <input type="range" name="navbarLight" min="0" max="36" value={staticDarkUserPrefs.navbarLight} step="2" onChange={handleChange}  style={{width: '180px'}} />
+              <input type="number" min="0" max="36" name="navbarLight" value={staticDarkUserPrefs.navbarLight} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
             </div>
           </div>
           <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
             <label htmlFor="playPageLight">PlayPage:</label>
             <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
               <img src={PlayPage} alt="svg" style={{height: '14px', width: '14px', marginRight: '8px'}} />
-              <input type="range" name="playPageLight" min="0" max="28" value={staticDarkUserPrefs.playPageLight} step="2" onChange={handleChange}  style={{width: '180px'}} />
-              <input type="number" min="0" max="28" name="playPageLight" value={staticDarkUserPrefs.playPageLight} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+              <input type="range" name="playPageLight" min="0" max="36" value={staticDarkUserPrefs.playPageLight} step="2" onChange={handleChange}  style={{width: '180px'}} />
+              <input type="number" min="0" max="36" name="playPageLight" value={staticDarkUserPrefs.playPageLight} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
             </div>
           </div>
           <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
             <label htmlFor="playBarLight">PlayBar:</label>
             <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
               <img src={PlayBar} alt="svg" style={{height: '14px', width: '14px', marginRight: '8px'}} />
-              <input type="range" name="playBarLight" min="0" max="28" value={staticDarkUserPrefs.playBarLight} step="2" onChange={handleChange}  style={{width: '180px'}} />
-              <input type="number" min="0" max="28" name="playBarLight" value={staticDarkUserPrefs.playBarLight} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+              <input type="range" name="playBarLight" min="0" max="36" value={staticDarkUserPrefs.playBarLight} step="2" onChange={handleChange}  style={{width: '180px'}} />
+              <input type="number" min="0" max="36" name="playBarLight" value={staticDarkUserPrefs.playBarLight} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
             </div>
           </div>
           <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
             <label htmlFor="bgLight">Body:</label>
             <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
               <img src={Body} alt="svg" style={{height: '14px', width: '14px', marginRight: '8px'}} />
-              <input type="range" name="bgLight" min="0" max="28" value={staticDarkUserPrefs.bgLight} step="2" onChange={handleChange}  style={{width: '180px'}} />
-              <input type="number" min="0" max="28" name="bgLight" value={staticDarkUserPrefs.bgLight} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+              <input type="range" name="bgLight" min="0" max="36" value={staticDarkUserPrefs.bgLight} step="2" onChange={handleChange}  style={{width: '180px'}} />
+              <input type="number" min="0" max="36" name="bgLight" value={staticDarkUserPrefs.bgLight} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
             </div>
           </div>
           <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>

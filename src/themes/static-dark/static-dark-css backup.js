@@ -11,40 +11,52 @@ export const static_dark_css = /*css*/`
   --ts-playbar-color: var(--ts-default-app-color);
   --ts-playpageavtoggle-color: var(--ts-default-app-color);
 
+  --ts-accent-color-light-14: var(--ts-default-app-color);
+
   --ts-playprogress-color: white;
 
-  --ytmusic-brand-background-solid: var(--ts-mainbg-color) !important;
   --ytmusic-general-background-c: var(--ts-mainbg-color) !important;
   --ytmusic-search-background: var(--ts-playbar-color) !important;
 }
 
-/* start MAIN */
-/* This can be specific since we would like to individually adjust these portions. */
+/* logo */
+ytmusic-nav-bar picture:first-child {
+  display: none !important;
+}
+
+ytmusic-nav-bar picture[hidden] {
+  display: block !important;
+}
+
+ytmusic-nav-bar .left-content img {
+  filter: brightness(100%);
+}
+/* logo end */
+
 body {
   background-color: var(--ts-mainbg-color);
+}
+
+#player-page {
+  background-color: var(--ts-playpagebg-color) !important;
 }
 
 #nav-bar-background {
   background-color: var(--ts-topnav-color) !important;
 }
 
-ytmusic-player-page {
-  background-color: var(--ts-playpagebg-color);
-}
-
 #player-bar-background {
   background-color: var(--ts-playbar-color) !important;
 }
-ytmusic-player-bar {
-  --ytmusic-player-bar-background: var(--ts-playbar-color);
-}
-/* end main */
 
-/*
+
+ytmusic-player-bar {
+  --ytmusic-player-bar-background: var(--ts-playbar-color) !important;
+}
+
 tp-yt-paper-listbox {
   background-color: var(--ts-playbar-color);
 }
-*/
 
 ytmusic-item-section-renderer.stuck #header.ytmusic-item-section-renderer {
   background-color: var(--ts-mainbg-color);
@@ -99,20 +111,4 @@ ytmusic-search-suggestions-section.ytmusic-search-box {
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
-
-
-
-/* logo */
-ytmusic-nav-bar picture:first-child {
-  display: none !important;
-}
-
-ytmusic-nav-bar picture[hidden] {
-  display: block !important;
-}
-
-ytmusic-nav-bar .left-content img {
-  filter: brightness(100%);
-}
-/* logo end */
 `;
