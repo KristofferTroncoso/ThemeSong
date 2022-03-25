@@ -1,6 +1,8 @@
 import React from 'react';
 import { DynamicDarkSettings } from '../../themes/dynamic-dark/';
+import { DynamicLightSettings } from '../../themes/dynamic-light/';
 import { StaticDarkSettings } from '../../themes/static-dark/';
+import { StaticLightSettings } from '../../themes/static-light/';
 import { OffSettings } from '../../themes/off/';
 import ThemeButton from '../../components/ThemeButton';
 import TopBar from '../../components/TopBar';
@@ -101,6 +103,10 @@ const Popup = () => {
       return <DynamicDarkSettings storageObj={storageObj} handleNewObject={handleNewObject} handleNewThemes={handleNewThemes} />
     case "themeId:2":
       return <StaticDarkSettings storageObj={storageObj} handleNewObject={handleNewObject} handleNewThemes={handleNewThemes} />
+    case "themeId:4":
+      return <DynamicLightSettings storageObj={storageObj} handleNewObject={handleNewObject} handleNewThemes={handleNewThemes} />
+    case "themeId:5":
+      return <StaticLightSettings storageObj={storageObj} handleNewObject={handleNewObject} handleNewThemes={handleNewThemes} />
     default:
       break;
     }
@@ -137,19 +143,6 @@ const Popup = () => {
           {storageObj.themes.map(theme => (
             <ThemeButton key={theme.themeId} themeDetails={theme} handleActiveThemeChange={handleActiveThemeChange} isActive={storageObj.activeTheme === theme.themeId} />
           ))}
-          <button
-            style={{
-              borderRadius: '20px', 
-              border: '2px dashed #454545',
-              width: '100%', 
-              height: '100%', 
-              background: 'rgb(50, 50, 50)', 
-              color: 'white',
-            }} 
-            disabled
-          >
-            And more themes coming soon. Stay tuned!
-          </button>
         </div>
         {/* <div className="DevDiagBar" style={{backgroundColor: 'steelblue', height: '30px', width: '100%'}}>
           <button onClick={e => console.log(storageObj)}>storageObj</button>
