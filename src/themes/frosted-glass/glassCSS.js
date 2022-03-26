@@ -44,6 +44,22 @@ ytmusic-item-section-renderer.stuck #header.ytmusic-item-section-renderer {
   backdrop-filter: blur(50px);
 }
 
+/*img and video shadow and rounded corners */
+ytmusic-player {
+  box-shadow: 0 0 200px skyblue;
+  border-radius: 6px;
+}
+#song-image {
+  box-shadow: 0 0 40px #000000;
+  border-radius: 6px;
+}
+#song-image img{
+  border-radius: 6px;
+}
+#song-video .html5-video-player {
+  border-radius: 6px;
+}
+
 /* end glass tests */
 
 body {
@@ -68,6 +84,10 @@ body {
 
 ytmusic-player-bar {
   background-color: var(--ts-playbar-color) !important;
+  backdrop-filter: blur(5px);
+}
+
+ytmusic-player-bar[player-page-open]  {
   backdrop-filter: blur(20px);
 }
 

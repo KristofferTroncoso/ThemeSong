@@ -37,13 +37,31 @@ export const static_light_css = /*css*/`
 }
 
 ytmusic-player {
-  background-color: red !important;
-  color: black !important;
+  border-radius: 6px;
   --ytmusic-player-overlay-gradient: linear-gradient( rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 25%, rgba(0, 0, 0, 0) 100% ) !important;
+}
+#song-image {
+  box-shadow: 2px 6px 20px rgba(0,0,0,0.3);
+  border-radius: 6px;
+}
+#song-image img{
+  border-radius: 6px;
+}
+#song-video {
+  box-shadow: 2px 6px 20px rgba(0,0,0,0.3);
+  border-radius: 6px;
+}
+#song-video .html5-video-player {
+  border-radius: 6px;
+}
+
+/* artist image white filter */
+.image.ytmusic-immersive-header-renderer~.content-container-wrapper.ytmusic-immersive-header-renderer {
+  background-color: rgba(255,255,255,0.2) !important;
 }
 
 ytmusic-background-overlay-renderer {
-  --ytmusic-background-overlay-background: linear-gradient(rgba(255, 255, 255,1),rgba(255, 255, 255,0.4),rgba(255, 255, 255,0.3)) !important;
+  --ytmusic-background-overlay-background: linear-gradient(rgba(255, 255, 255,0.9),rgba(255, 255, 255,0.4),rgba(255, 255, 255,0.1)) !important;
 }
 
 
