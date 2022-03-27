@@ -23,6 +23,8 @@ export const glassCSS = /*css*/`
 
 
 /* more glass tests */
+/* for image */
+/*
 html.no-focus-outline {
   background-image: var(--ts-img-src-url);
   height: 500px; 
@@ -31,12 +33,19 @@ html.no-focus-outline {
   background-size: cover; 
   background-filter: blur(60px);
 }
+*/
+
+html.no-focus-outline {
+  background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+}
+
+
 
 /* omg this one below was the real deal. in fact i may have to restructure my other CSS stylesheets cuz of this */
 /* below color is main bg color */
 ytmusic-app-layout > #content {
-  background-color: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(40px);
+  background-color: rgba(0, 0, 0, 0.8);
+  /*backdrop-filter: blur(40px);*/
 }
 
 ytmusic-item-section-renderer.stuck #header.ytmusic-item-section-renderer {
@@ -46,7 +55,7 @@ ytmusic-item-section-renderer.stuck #header.ytmusic-item-section-renderer {
 
 /*img and video shadow and rounded corners */
 ytmusic-player {
-  box-shadow: 0 0 200px skyblue;
+  /*box-shadow: 0 0 200px skyblue;*/
   border-radius: 6px;
 }
 #song-image {

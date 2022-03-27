@@ -3,6 +3,7 @@ import { DynamicDarkSettings } from '../../themes/dynamic-dark/';
 import { DynamicLightSettings } from '../../themes/dynamic-light/';
 import { StaticDarkSettings } from '../../themes/static-dark/';
 import { StaticLightSettings } from '../../themes/static-light/';
+import { GlassSettings } from '../../themes/frosted-glass/';
 import { OffSettings } from '../../themes/off/';
 import ThemeButton from '../../components/ThemeButton';
 import TopBar from '../../components/TopBar';
@@ -103,6 +104,8 @@ const Popup = () => {
       return <DynamicDarkSettings storageObj={storageObj} handleNewObject={handleNewObject} handleNewThemes={handleNewThemes} />
     case "themeId:2":
       return <StaticDarkSettings storageObj={storageObj} handleNewObject={handleNewObject} handleNewThemes={handleNewThemes} />
+    case "themeId:3":
+      return <GlassSettings />
     case "themeId:4":
       return <DynamicLightSettings storageObj={storageObj} handleNewObject={handleNewObject} handleNewThemes={handleNewThemes} />
     case "themeId:5":

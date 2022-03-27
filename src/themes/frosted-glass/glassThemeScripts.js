@@ -1,7 +1,7 @@
 
 const menubar = document.querySelector('meta[name="theme-color"]');
 const root = document.querySelector(":root");
-const playerBarSongImg = document.querySelector(".middle-controls .thumbnail-image-wrapper img").src;
+// const playerBarSongImg = document.querySelector(".middle-controls .thumbnail-image-wrapper img").src;
 
 export function processGlassThemeOnInitial() {
   const navBarColor = 'rgba(50, 50, 50, .5)';
@@ -10,7 +10,7 @@ export function processGlassThemeOnInitial() {
   const bodyColor = 'rgba(0, 0, 0, 0)';
   const bgAccentsColor = 'rgba(0, 0, 0, 0)';
 
-  root.style.setProperty("--ts-img-src-url", `url(${playerBarSongImg})`, 'important');
+  root.style.setProperty("--ts-img-src-url", `url(${document.querySelector(".middle-controls .thumbnail-image-wrapper img").src})`, 'important');
 
   menubar.content = '#1c1c1c';
   root.style.setProperty("--ts-topnav-color", navBarColor);
