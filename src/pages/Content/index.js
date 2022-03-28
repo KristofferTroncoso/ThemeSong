@@ -7,6 +7,7 @@ const playerBarSongImgNode = document.querySelector(".middle-controls .thumbnail
 let storageObj = {};
 let songChangeObserver;
 let vibrantHSL;
+let palette;
 
 console.log('content script loaded');
 
@@ -184,18 +185,9 @@ function processThemeOnSongChange(activeThemeId) {
   switch (activeThemeId) {
     case "themeId:1":
       console.log('Dynamic Dark theme is active');
-      getVibrantPalette()
-      .then((palette) => {
-        console.log('palette received');
-        console.log(palette);
-        vibrantHSL = palette.Vibrant.hsl;
-        themes.dynamicdark.process(storageObj, palette.Vibrant.hsl);
-        logPalette(palette);
-      })
-      .catch((err) => {
-        console.log('vibrant error');
-        console.log(err);
-      });
+      vibrantHSL = palette.Vibrant.hsl;
+      themes.dynamicdark.process(storageObj, palette.Vibrant.hsl);
+      logPalette(palette);
       break;
     case "themeId:3":
       console.log('glass');
@@ -203,18 +195,9 @@ function processThemeOnSongChange(activeThemeId) {
       break;
     case "themeId:4":
       console.log('dynamic light');
-      getVibrantPalette()
-      .then((palette) => {
-        console.log('palette received');
-        console.log(palette);
-        vibrantHSL = palette.Vibrant.hsl;
-        themes.dynamiclight.process(storageObj, palette.Vibrant.hsl);
-        logPalette(palette);
-      })
-      .catch((err) => {
-        console.log('vibrant error');
-        console.log(err);
-      });
+      vibrantHSL = palette.Vibrant.hsl;
+      themes.dynamiclight.process(storageObj, palette.Vibrant.hsl);
+      logPalette(palette);
       break;
     default:
       console.log('no processing required.')
@@ -229,16 +212,27 @@ function addSongChangeObserver() {
     console.log('song changed');
     try {
       chrome.runtime.sendMessage('r u still there?');
-      setTimeout(() => {
-        if (playerBarSongImgNode.src !== "https://music.youtube.com/") {
-          if (mutationList[0].oldValue === playerBarSongImgNode.src) {
-            console.log('same song image')
-          } else {
-            console.log('song image changed');
-            processThemeOnSongChange(storageObj.activeTheme);
-          }
+
+      if (playerBarSongImgNode.src !== "https://music.youtube.com/") {
+        if (mutationList[0].oldValue === playerBarSongImgNode.src) {
+          console.log('same song image')
+        } else {
+          console.log('song image changed');
+          setTimeout(() => {
+            getVibrantPalette()
+            .then((vPalette) => {
+              console.log('palette received');
+              console.log(vPalette);
+              palette = vPalette;
+              processThemeOnSongChange(storageObj.activeTheme);
+            })
+            .catch((err) => {
+              console.log('vibrant error');
+              console.log(err);
+            });
+          }, 1);
         }
-      }, 1);
+      }
     } catch {
       songChangeObserver.disconnect();
     }

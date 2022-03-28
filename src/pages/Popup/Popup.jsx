@@ -7,6 +7,7 @@ import { GlassSettings } from '../../themes/frosted-glass/';
 import { OffSettings } from '../../themes/off/';
 import ThemeButton from '../../components/ThemeButton';
 import TopBar from '../../components/TopBar';
+import BottomBar from '../../components/BottomBar';
 
 console.log('Popup.jsx mounted')
 const Popup = () => {
@@ -96,6 +97,14 @@ const Popup = () => {
   //   });
   // }
 
+  function fetchSyncStorage() {
+    chrome.storage.sync.get(null, (res) => {
+      setStorageObj(res);
+      setActiveTheme(res.activeTheme);
+      setThemes(res.themes);
+    });
+  }
+
   let activeThemeSettings = () => {
     switch (storageObj.activeTheme) {
     case "themeId:0":
@@ -116,7 +125,12 @@ const Popup = () => {
   };
 
   if (!storageObj) {
-    return <h1>loading</h1>
+    return (
+      <div>
+        <h1>loading</h1>
+        <BottomBar fetchSyncStorage={fetchSyncStorage} />
+      </div>
+    )
   } else {
     return (
       <div className="Popup">
@@ -155,26 +169,7 @@ const Popup = () => {
           <button onClick={e => {chrome.storage.sync.clear()}}>clear</button>
           <button onClick={whatTabs}>whatTabs</button>
         </div> */}
-        <div 
-          className="BottomBar" 
-          style={{
-            backgroundColor: '#162875', 
-            height: '30px', 
-            position: 'fixed', 
-            bottom: 3, 
-            right: 3,
-            left: 3,
-            width: 'calc(100% - 16px)',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            alignContent: 'center',
-            padding: '0 5px',
-          }}
-        >
-          <h3>Have a nice day 💻🎧</h3>
-          <h2>⭐</h2>
-        </div>
+        <BottomBar fetchSyncStorage={fetchSyncStorage} />
       </div>
     );
   }

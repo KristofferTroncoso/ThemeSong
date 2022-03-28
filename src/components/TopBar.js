@@ -16,7 +16,19 @@ function TopBar({storageObj}) {
         padding: '0 10px'
       }}
     >
-      <h1 css={{fontSize: '16px'}}>ThemeSong - for YouTube Music™</h1>
+      <h1 css={{fontSize: '16px'}}>
+        <a 
+          href="https://chrome.google.com/webstore/detail/bgfiegdbajagebogifobkhambpljbfmk" 
+          target="_blank" 
+          rel="noreferrer"
+          css={{
+            color: 'white',
+            textDecoration: 'none'
+          }}
+        >
+          ThemeSong - for YouTube Music™
+        </a>
+      </h1>
       <p>v{storageObj.extensionVersion}</p>
     </div>
   )
