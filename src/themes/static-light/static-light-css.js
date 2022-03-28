@@ -26,6 +26,7 @@ export const static_light_css = /*css*/`
   --yt-spec-10-percent-layer: rgba(0, 0, 0, 0.2) !important;
 
   --ytmusic-search-background: var(--ts-playbar-color) !important;
+  --ytmusic-search-border: rgba(0,0,0,0.4) !important;
 
   --ytmusic-divider: rgba(0,0,0,0.3) !important;
   --ytmusic-menu-item-hover-background-color: rgba(0,0,0,0.2) !important;
@@ -52,6 +53,10 @@ ytmusic-player {
   border-radius: 6px;
 }
 #song-video .html5-video-player {
+  border-radius: 6px;
+  background-color: transparent;
+}
+ytmusic-player .song-media-controls {
   border-radius: 6px;
 }
 
@@ -265,6 +270,10 @@ yt-button-renderer.watch-button.ytmusic-menu-renderer {
   background-color: black !important;
 }
 
+ytmusic-shelf-renderer yt-button-renderer #button.yt-button-renderer {
+  color: black !important;
+}
+
 .play-button.ytmusic-immersive-header-renderer, .radio-button.ytmusic-immersive-header-renderer {
   color: black !important;
   --yt-button-background-color: black !important;
@@ -308,6 +317,16 @@ ytmusic-pivot-bar-item-renderer {
   --yt-endpoint-color: black !important;
   --yt-endpoint-hover-color: black !important;
   --yt-endpoint-visited-color: black !important;
+}
+
+ytmusic-unified-share-panel-renderer #title, #share-url {
+  color: white !important;
+  --yt-endpoint-color: white !important;
+  --yt-endpoint-hover-color: rgba(255, 255, 255, .8) !important;
+  --yt-endpoint-visited-color: white !important;
+  --ytmusic-text-primary: white !important;
+  --ytmusic-text-secondary: #737373 !important;
+  --ytmusic-text-disabled: #9b9b9b !important;
 }
 
 .duration.ytmusic-player-queue-item, .byline.ytmusic-player-queue-item {
