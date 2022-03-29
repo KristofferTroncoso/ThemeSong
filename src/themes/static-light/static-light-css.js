@@ -297,6 +297,10 @@ ytmusic-chip-cloud-chip-renderer:not([chip-style=STYLE_PRIMARY]):not([chip-style
   background: rgba(0,0,0,0.1) !important;
   color: black !important;
 }
+
+.more-button.ytmusic-shelf-renderer tp-yt-paper-button.ytmusic-shelf-renderer {
+  color: rgba(0,0,0,0.7);
+}
 /* end buttons */
 
 /* start TEXTS */
