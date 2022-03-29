@@ -22,6 +22,7 @@ function SettingsPopover({fetchSyncStorage}) {
     chrome.runtime.sendMessage('reset', response => {
       console.log(`Received response ${response}`);
       fetchSyncStorage();
+      handleClose();
     })
   }
 
