@@ -2,12 +2,13 @@ import * as Vibrant from "node-vibrant";
 import logPalette from './modules/logPalette';
 import themes from '../../themes';
 
+// const songImg = document.querySelector('#song-image img#img');
 const playerBarSongImgNode = document.querySelector(".middle-controls .thumbnail-image-wrapper img");
 
 let storageObj = {};
 let songChangeObserver;
-let vibrantHSL;
 let palette;
+let mostPopulatedColor;
 
 console.log('content script loaded');
 
@@ -104,7 +105,7 @@ function processThemeOnPrefsChange(activeThemeId) {
       break;
     case "themeId:1":
       console.log('Dynamic Dark theme is active');
-      themes.dynamicdark.process(storageObj, vibrantHSL);
+      themes.dynamicdark.process(storageObj, mostPopulatedColor.hsl);
       break;
     case "themeId:2":
       console.log('Static dark theme is active');
@@ -116,7 +117,7 @@ function processThemeOnPrefsChange(activeThemeId) {
       break;
     case "themeId:4":
       console.log('dynamic light');
-      themes.dynamiclight.process(storageObj, vibrantHSL);
+      themes.dynamiclight.process(storageObj, mostPopulatedColor.hsl);
       break;
     case "themeId:5":
       console.log('Static light theme is active');
@@ -139,8 +140,8 @@ function processThemeOnInitialLoad(activeThemeId) {
       .then((palette) => {
         console.log('palette received');
         console.log(palette);
-        vibrantHSL = palette.Vibrant.hsl;
-        themes.dynamicdark.process(storageObj, palette.Vibrant.hsl);
+        mostPopulatedColor = getMostPopulatedColor(palette);
+        themes.dynamicdark.process(storageObj, mostPopulatedColor.hsl);
         logPalette(palette);
       })
       .catch((err) => {
@@ -162,8 +163,8 @@ function processThemeOnInitialLoad(activeThemeId) {
       .then((palette) => {
         console.log('palette received');
         console.log(palette);
-        vibrantHSL = palette.Vibrant.hsl;
-        themes.dynamiclight.process(storageObj, palette.Vibrant.hsl);
+        mostPopulatedColor = getMostPopulatedColor(palette);
+        themes.dynamiclight.process(storageObj, mostPopulatedColor.hsl);
         logPalette(palette);
       })
       .catch((err) => {
@@ -185,8 +186,7 @@ function processThemeOnSongChange(activeThemeId) {
   switch (activeThemeId) {
     case "themeId:1":
       console.log('Dynamic Dark theme is active');
-      vibrantHSL = palette.Vibrant.hsl;
-      themes.dynamicdark.process(storageObj, palette.Vibrant.hsl);
+      themes.dynamicdark.process(storageObj, mostPopulatedColor.hsl);
       logPalette(palette);
       break;
     case "themeId:3":
@@ -195,8 +195,7 @@ function processThemeOnSongChange(activeThemeId) {
       break;
     case "themeId:4":
       console.log('dynamic light');
-      vibrantHSL = palette.Vibrant.hsl;
-      themes.dynamiclight.process(storageObj, palette.Vibrant.hsl);
+      themes.dynamiclight.process(storageObj, mostPopulatedColor.hsl);
       logPalette(palette);
       break;
     default:
@@ -224,6 +223,7 @@ function addSongChangeObserver() {
               console.log('palette received');
               console.log(vPalette);
               palette = vPalette;
+              mostPopulatedColor = getMostPopulatedColor(vPalette);
               processThemeOnSongChange(storageObj.activeTheme);
             })
             .catch((err) => {
@@ -248,13 +248,34 @@ function addSongChangeObserver() {
 
 function getVibrantPalette() {
   console.log('getting palette hsl');
+  console.log(playerBarSongImgNode.src);
   return Vibrant.from(playerBarSongImgNode.src)
-  .quality(3)
-  .addFilter(yellowFilter)
+  .quality(1)
+  .addFilter(brownFilter)
   .getPalette();
 
   function yellowFilter(r, g, b, a) {
     // taking out browns, yellows, and accidentally oranges... i want to allow some orange though.
     return a >= 125 && !(r > 50 && g > 50 && b < 120)
   }
+
+  function updatedYellowFilter(r, g, b, a) {
+    return a >= 180 && !(r > 150 && g > 150 && b < 100)
+  }
+
+  function brownFilter(r, g, b, a) {
+    // taking out some muted browns
+    return a >= 125 && !(r > 50 && r < 150 && g > 50 && g < 180 && b < 40)
+  }
+}
+
+function getMostPopulatedColor(palette) {
+	let mostPopulatedColor = {population: 0};
+	
+	for (const [key, value] of Object.entries(palette)) {
+		if (value.population >= mostPopulatedColor.population) {
+			mostPopulatedColor = value;
+		}
+	}
+	return mostPopulatedColor;
 }
