@@ -251,7 +251,7 @@ function getVibrantPalette() {
   console.log(playerBarSongImgNode.src);
   return Vibrant.from(playerBarSongImgNode.src)
   .quality(1)
-  .addFilter(brownFilter)
+  // .addFilter(brownFilter)
   .getPalette();
 
   function yellowFilter(r, g, b, a) {
