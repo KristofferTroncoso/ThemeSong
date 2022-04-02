@@ -6,6 +6,7 @@ export const dynamiclight_css = /*css*/`
   --ts-default-app-color: #ebebeb;
 
   --ts-picked-vibrant-static: var(--ts-default-app-color);
+  --ts-picked-vibrant-light50: var(--ts-default-app-color);
   --ts-topnav-color: var(--ts-default-app-color);
   --ts-mainbg-color: var(--ts-default-app-color);
   --ts-playpagebg-color: var(--ts-default-app-color);
@@ -38,29 +39,30 @@ export const dynamiclight_css = /*css*/`
 
 }
 
+/* start PlayPage song img styling */
 ytmusic-player {
-  box-shadow: 0 0 200px var(--ts-picked-vibrant-static) !important;
+  box-shadow: 0 0 200px var(--ts-picked-vibrant-light50) !important;
   border-radius: 6px;
   --ytmusic-player-overlay-gradient: linear-gradient( rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 25%, rgba(0, 0, 0, 0) 100% ) !important;
 }
 #song-image {
-  box-shadow: 2px 6px 10px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.6);
   border-radius: 6px;
 }
 #song-image img{
   border-radius: 6px;
 }
 #song-video {
-  box-shadow: 2px 6px 10px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.6);
   border-radius: 6px;
 }
 #song-video .html5-video-player {
   border-radius: 6px;
-  background-color: transparent;
 }
 ytmusic-player .song-media-controls {
   border-radius: 6px;
 }
+/* end PlayPage song img styling */
 
 /* artist image white filter */
 .image.ytmusic-immersive-header-renderer~.content-container-wrapper.ytmusic-immersive-header-renderer {
@@ -514,9 +516,13 @@ ytmusic-av-toggle[playback-mode=OMV_PREFERRED] .video-button.ytmusic-av-toggle {
 /* --- end now playing progress bar color ---- */
 
 /* scrollbar */
-::-webkit-scrollbar {
-  width: 1.2em !important;
-  height: 1.2em !important;
+body::-webkit-scrollbar {
+  background-color: rgba(0,0,0,0.1);
+  width: 12px !important;
+}
+
+body::-webkit-scrollbar-track {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 ::-webkit-scrollbar-thumb {

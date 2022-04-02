@@ -19,6 +19,29 @@ export const dynamicdark_css = /*css*/`
   --ytmusic-search-background: var(--ts-playbar-color) !important;
 }
 
+/* start PlayPage song img styling */
+ytmusic-player {
+  border-radius: 6px;
+}
+#song-image {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+  border-radius: 6px;
+}
+#song-image img{
+  border-radius: 6px;
+}
+#song-video {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+  border-radius: 6px;
+}
+#song-video .html5-video-player {
+  border-radius: 6px;
+}
+ytmusic-player .song-media-controls {
+  border-radius: 6px;
+}
+/* end PlayPage song img styling */
+
 /* logo */
 ytmusic-nav-bar picture:first-child {
   display: none !important;
@@ -99,9 +122,13 @@ ytmusic-search-suggestions-section.ytmusic-search-box {
 }
 
 /* scrollbar */
-::-webkit-scrollbar {
-  width: 1.2em !important;
-  height: 1.2em !important;
+body::-webkit-scrollbar {
+  background-color: rgba(255,255,255,0.1);
+  width: 12px !important;
+}
+
+body::-webkit-scrollbar-track {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 ::-webkit-scrollbar-thumb {

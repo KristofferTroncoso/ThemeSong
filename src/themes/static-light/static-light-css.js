@@ -37,6 +37,7 @@ export const static_light_css = /*css*/`
 
 }
 
+/* start PlayPage song img styling */
 ytmusic-player {
   border-radius: 6px;
   --ytmusic-player-overlay-gradient: linear-gradient( rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 25%, rgba(0, 0, 0, 0) 100% ) !important;
@@ -54,11 +55,11 @@ ytmusic-player {
 }
 #song-video .html5-video-player {
   border-radius: 6px;
-  background-color: transparent;
 }
 ytmusic-player .song-media-controls {
   border-radius: 6px;
 }
+/* end PlayPage song img styling */
 
 /* artist image white filter */
 .image.ytmusic-immersive-header-renderer~.content-container-wrapper.ytmusic-immersive-header-renderer {
@@ -512,9 +513,13 @@ ytmusic-av-toggle[playback-mode=OMV_PREFERRED] .video-button.ytmusic-av-toggle {
 /* --- end now playing progress bar color ---- */
 
 /* scrollbar */
-::-webkit-scrollbar {
-  width: 1.2em !important;
-  height: 1.2em !important;
+body::-webkit-scrollbar {
+  background-color: rgba(0,0,0,0.1);
+  width: 12px !important;
+}
+
+body::-webkit-scrollbar-track {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 ::-webkit-scrollbar-thumb {
