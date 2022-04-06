@@ -9,7 +9,7 @@ function BottomBar({fetchSyncStorage}) {
   return (
     <div 
       className="BottomBar" 
-      style={{
+      css={{
         backgroundColor: '#162875', 
         height: '30px', 
         position: 'fixed', 
@@ -26,7 +26,7 @@ function BottomBar({fetchSyncStorage}) {
     >
       <h3>Have a nice day 💻🎧</h3>
       <div 
-        style={{
+        css={{
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',

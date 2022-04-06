@@ -1,4 +1,6 @@
+/** @jsx jsx */
 import React from 'react';
+import { jsx } from '@emotion/react';
 import { DynamicDarkSettings } from '../../themes/dynamic-dark/';
 import { DynamicLightSettings } from '../../themes/dynamic-light/';
 import { StaticDarkSettings } from '../../themes/static-dark/';
@@ -88,15 +90,6 @@ const Popup = () => {
     setThemes(newThemes);
   }
 
-  // function whatTabs() {
-  //   console.log('whattabs')
-  //   chrome.tabs.query({url: "https://music.youtube.com/*"}, tabs => {
-  //     for (let tab of tabs) {
-  //       console.log(tab)
-  //     }
-  //   });
-  // }
-
   function fetchSyncStorage() {
     chrome.storage.sync.get(null, (res) => {
       setStorageObj(res);
@@ -137,7 +130,7 @@ const Popup = () => {
         <TopBar storageObj={storageObj} />
         <div 
           className="ActiveThemeSettingsContainer" 
-          style={{
+          css={{
             background: '#313131', 
             borderRadius: '5px', 
             margin: '5px', 
@@ -149,7 +142,7 @@ const Popup = () => {
         </div>
         <div 
           className="ThemesContainer" 
-          style={{
+          css={{
             display: 'grid',
             gridTemplateColumns: '1fr 1fr 1fr',
             gridAutoRows: '1fr',
@@ -161,14 +154,6 @@ const Popup = () => {
             <ThemeButton key={theme.themeId} themeDetails={theme} handleActiveThemeChange={handleActiveThemeChange} isActive={storageObj.activeTheme === theme.themeId} />
           ))}
         </div>
-        {/* <div className="DevDiagBar" style={{backgroundColor: 'steelblue', height: '30px', width: '100%'}}>
-          <button onClick={e => console.log(storageObj)}>storageObj</button>
-          <button onClick={e => console.log(activeTheme)}>activeTheme</button>
-          <button onClick={e => console.log(themes)}>themes</button>
-          <button onClick={e => { chrome.storage.sync.get(null, res => console.log(res))}}>cloud storage</button>
-          <button onClick={e => {chrome.storage.sync.clear()}}>clear</button>
-          <button onClick={whatTabs}>whatTabs</button>
-        </div> */}
         <BottomBar fetchSyncStorage={fetchSyncStorage} />
       </div>
     );
