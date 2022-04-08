@@ -12,21 +12,18 @@ let mostPopulatedColor;
 
 console.log('content script loaded');
 
-setTimeout(() => {
-  chrome.storage.sync.get(null, (res) => {
-    console.log('chrome.storage.sync.get()')
-    addSongChangeObserver();
-    addStylesheet(res.activeTheme);
+chrome.storage.sync.get(null, (res) => {
+  console.log('chrome.storage.sync.get()')
+  addSongChangeObserver();
+  addStylesheet(res.activeTheme);
 
-    storageObj = res;
-    if (playerBarSongImgNode.src !== "https://music.youtube.com/") {
-      processThemeOnInitialLoad(res.activeTheme);
-    } else {
-      processThemeOnInitialLoad(res.activeTheme);
-    }
-  });
-}, 1000);
-
+  storageObj = res;
+  if (playerBarSongImgNode.src !== "https://music.youtube.com/") {
+    processThemeOnInitialLoad(res.activeTheme);
+  } else {
+    processThemeOnInitialLoad(res.activeTheme);
+  }
+});
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   console.log(`content-script: message received`);
@@ -46,9 +43,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       addStylesheet(message[messageKey]);
       if (playerBarSongImgNode.src !== "https://music.youtube.com/") {
         processThemeOnInitialLoad(message[messageKey]);
-        // processThemeOnPrefsChange(message[messageKey].activeTheme);
       } else {
-        // processThemeOnPrefsChange(message[messageKey].activeTheme);
         processThemeOnInitialLoad(message[messageKey]);
       }
       break;
@@ -251,22 +246,7 @@ function getVibrantPalette() {
   console.log(playerBarSongImgNode.src);
   return Vibrant.from(playerBarSongImgNode.src)
   .quality(1)
-  // .addFilter(brownFilter)
   .getPalette();
-
-  function yellowFilter(r, g, b, a) {
-    // taking out browns, yellows, and accidentally oranges... i want to allow some orange though.
-    return a >= 125 && !(r > 50 && g > 50 && b < 120)
-  }
-
-  function updatedYellowFilter(r, g, b, a) {
-    return a >= 180 && !(r > 150 && g > 150 && b < 100)
-  }
-
-  function brownFilter(r, g, b, a) {
-    // taking out some muted browns
-    return a >= 125 && !(r > 50 && r < 150 && g > 50 && g < 180 && b < 40)
-  }
 }
 
 function getMostPopulatedColor(palette) {
