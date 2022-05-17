@@ -2,6 +2,8 @@
 const defaults = {
   extensionVersion: "0.1.6",
   activeTheme: "themeId:1",
+  activeVisualizer: "visualizerId:1",
+  activePage: 1,
   themes: [
     {
       themeId: "themeId:0",
@@ -75,6 +77,46 @@ const defaults = {
         saturation: 90
       }
     },
+  ],
+  visualizers: [
+    {
+      visualizerId: "visualizerId:0",
+      name: "Wavy"
+    },
+    {
+      visualizerId: "visualizerId:1",
+      name: "Bars",
+      activeVariant: "variantId:5",
+      variants: [
+        {
+          variantId: "variantId:1",
+          name: "White"
+        },
+        {
+          variantId: "variantId:2",
+          name: "RGB"
+        },
+        {
+          variantId: "variantId:3",
+          name: "Accent"
+        },
+        {
+          variantId: "variantId:4",
+          name: "Palette"
+        },
+        {
+          variantId: "variantId:5",
+          name: "Dancing Palette"
+        }
+      ]
+    }
+  ],
+  options: [
+    {
+      optionId: 'option1',
+      optionName: 'Grayscale User Icon',
+      value: true
+    }
   ]
 }
 
