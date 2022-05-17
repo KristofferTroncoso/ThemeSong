@@ -1,23 +1,93 @@
 import * as Vibrant from "node-vibrant";
 import logPalette from './modules/logPalette';
-import themes from '../../themes';
+import { addSongDetailsObserver } from "./modules/addSongDetailsObserver";
+import themes from '../themes';
+import { addVisualizerButton } from "../visualizers/";
 
 // const songImg = document.querySelector('#song-image img#img');
 const playerBarSongImgNode = document.querySelector(".middle-controls .thumbnail-image-wrapper img");
 
-let storageObj = {};
+export let storageObj = {};
 let songChangeObserver;
-let palette;
-let mostPopulatedColor;
+export let palette = {
+  Vibrant: {
+      hex: "#7f7f7f",
+      rgb: [127.5, 127.5, 127.5],
+      hsl: [0, 0, 0.5],
+      population: 100,
+      r: 127,
+      g: 127,
+      b: 127,
+      bodyTextColor: "#000",
+      titleTextColor: "#000"
+  },
+  LightVibrant: {
+      hex: "#7f7f7f",
+      rgb: [127.5, 127.5, 127.5],
+      hsl: [0, 0, 0.5],
+      population: 100,
+      r: 127,
+      g: 127,
+      b: 127,
+      bodyTextColor: "#000",
+      titleTextColor: "#000"
+  },
+  DarkVibrant: {
+      hex: "#7f7f7f",
+      rgb: [127.5, 127.5, 127.5],
+      hsl: [0, 0, 0.5],
+      population: 100,
+      r: 127,
+      g: 127,
+      b: 127,
+      bodyTextColor: "#000",
+      titleTextColor: "#000"
+  },
+  Muted: {
+      hex: "#7f7f7f",
+      rgb: [127.5, 127.5, 127.5],
+      hsl: [0, 0, 0.5],
+      population: 100,
+      r: 127,
+      g: 127,
+      b: 127,
+      bodyTextColor: "#000",
+      titleTextColor: "#000"
+  },
+  LightMuted: {
+      hex: "#7f7f7f",
+      rgb: [127.5, 127.5, 127.5],
+      hsl: [0, 0, 0.5],
+      population: 100,
+      r: 127,
+      g: 127,
+      b: 127,
+      bodyTextColor: "#000",
+      titleTextColor: "#000"
+  },
+  DarkMuted: {
+      hex: "#7f7f7f",
+      rgb: [127.5, 127.5, 127.5],
+      hsl: [0, 0, 0.5],
+      population: 100,
+      r: 127,
+      g: 127,
+      b: 127,
+      bodyTextColor: "#000",
+      titleTextColor: "#000"
+  },
+}
+export let mostPopulatedColor;
 
 console.log('content script loaded');
 
-chrome.storage.sync.get(null, (res) => {
+chrome.storage.sync.get(["activeTheme", "themes"], (res) => {
   console.log('chrome.storage.sync.get()')
   addSongChangeObserver();
+  addSongDetailsObserver();
   addStylesheet(res.activeTheme);
-
   storageObj = res;
+  addVisualizerButton();
   if (playerBarSongImgNode.src !== "https://music.youtube.com/") {
     processThemeOnInitialLoad(res.activeTheme);
   } else {
@@ -33,7 +103,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   switch (messageKey) {
     case "message":
       console.log(message[messageKey]);
-      storageObj && chrome.storage.sync.set(storageObj, res => console.log);
+      storageObj && chrome.storage.sync.set({activeTheme: storageObj.activeTheme, themes: storageObj.themes}, () => console.log(storageObj));
       sendResponse('yoyo')
       break;
 
@@ -61,7 +131,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
       sendResponse('received storageObj');
       break;
-      
+
     default:
       console.log('default')
   }
@@ -165,6 +235,7 @@ function processThemeOnInitialLoad(activeThemeId) {
       .catch((err) => {
         console.log('vibrant error');
         console.log(err);
+        console.log(palette);
       });
       break;
     case "themeId:5":
