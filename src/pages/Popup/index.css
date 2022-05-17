@@ -1,10 +1,11 @@
 * {
   margin: 0;
+  /* border: 1px solid tomato; */
 }
 
 body {
   box-sizing: border-box;
-  background-color: rgb(20, 20, 20);
+  background-color: rgb(40, 40, 40);
   color: white;
   height: 600px;
   width: 400px;
