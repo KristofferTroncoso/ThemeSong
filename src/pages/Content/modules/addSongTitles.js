@@ -14,7 +14,6 @@ export function addSongTitles() {
   songDivNode.id = "songDivNode";
   songDivNode.style.padding = "80px 0 80px 80px";
   songDivNode.style.height = "600px";
-  songDivNode.style.minWidth = "600px";
   songDivNode.style.maxWidth = "900px";
 
   let songTitleNode = document.createElement('h1');
