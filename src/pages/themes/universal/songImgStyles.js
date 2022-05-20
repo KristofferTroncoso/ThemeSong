@@ -42,6 +42,12 @@ ytmusic-player[player-ui-state_=FULLSCREEN] #thumbnail {
   height: 100%;
 }
 
+@media (max-width: 1200px) {
+  ytmusic-player[player-ui-state_=FULLSCREEN] #thumbnail {
+    flex-direction: column;
+  }
+}
+
 ytmusic-player[player-ui-state_=FULLSCREEN] #song-image #img {
   border-radius: 6px;
   box-shadow: 0 2px 80px black;
