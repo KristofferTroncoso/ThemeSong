@@ -1,3 +1,4 @@
+import {analyser, connectSource, connectAudio} from '../index';
 import { dancingPalette } from './variants/dancing-palette';
 import { white } from './variants/white';
 import { rgb } from './variants/rgb';
@@ -6,6 +7,7 @@ import { paletteVis } from './variants/paletteVis';
 import { visualizers } from '../';
 export let tsbarvisualizercanvas;
 export let isPlaying = false;
+
 
 function setUp() {
   // Get a canvas defined with ID "oscilloscope"
@@ -21,7 +23,7 @@ function setUp() {
   tsbarvisualizercanvas = document.getElementById("ts-barvisualizer-canvas");
 
   tsbarvisualizercanvas.style.position = "absolute";
-  tsbarvisualizercanvas.style.height = "40%";
+  tsbarvisualizercanvas.style.height = "30%";
   tsbarvisualizercanvas.style.width = "100%";
   tsbarvisualizercanvas.style.bottom = "0";
   tsbarvisualizercanvas.style.left = "0";
@@ -50,6 +52,8 @@ function animate() {
       paletteVis();
       break;
     case "variantId:5":
+      // analyser.fftSize = 128;
+      // connectSource();
       dancingPalette();
       break;
     default:

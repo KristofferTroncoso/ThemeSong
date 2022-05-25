@@ -1,116 +1,25 @@
 import { wavy } from './wavy/wavy';
 import { bars } from './bars/bars';
+import { addPlayPageVisibilityObserver, removePlayPageVisibilityObserver } from './modules/addPlayPageVisibilityObserver';
+import { addPlayPauseChangeObserver, removePlayPauseChangeObserver } from './modules/addPlayPauseChangeObserver'
 
-let source;
-let audioCtx;
+export let source;
+export let audioCtx;
 export let analyser;
 export let bufferLength;
 export let dataArray;
-let activeVisualizer;
+export let activeVisualizer;
 export let visualizers;
 let isVisualizerOn = false;
 let videoElementNode;
 
-let playPauseChangeObserver;
-let playState = "Pause";
-
-let playPageVisibilityObserver;
-let playPageUIstate = "PLAYER_PAGE_OPEN";
-
-function addPlayPauseChangeObserver() {
-  let playPauseButtonNode = document.getElementById("play-pause-button");
-
-  playPauseChangeObserver = new MutationObserver(handlePlayPauseChange);
-
-  playPauseChangeObserver.observe(playPauseButtonNode, {
-    attributeFilter: ["title"],
-    attributeOldValue: true
-  });
-  
-  function handlePlayPauseChange(mutationRecord) {
-    playState = mutationRecord[0].oldValue;
-    console.log(playState);
- 
-    if (playState === "Pause") {
-      wavy.stopAnimate();
-      bars.stopAnimate();
-    } else {
-      connectSource();
-      if (activeVisualizer === "visualizerId:0") {
-        wavy.animate();
-      } else {
-        bars.animate();
-      }
-    }
-  }
-}
-
-function removePlayPauseChangeObserver() {
-  playPauseChangeObserver.disconnect();
-}
-
-
-function addPlayPageVisibilityObserver() {
-  // this is necessary because requestAnimationFrame() doesn't account for play page visibility in regards to ytm.
-  // as in if the play page isnt showing, the cpu and gpu is still running.
-  // let ytmusicplayernode = document.querySelector("ytmusic-player");
-  let ytmusicplayernode = document.querySelector("ytmusic-player");
-
-  playPageVisibilityObserver = new MutationObserver(handlePlayPageVisibilityChange);
-
-  playPageVisibilityObserver.observe(ytmusicplayernode, {
-      attributeFilter: ["player-ui-state_"],
-      attributeOldValue: true
-    },
-  );
-  
-  function handlePlayPageVisibilityChange(mutationRecord) {
-    playPageUIstate = mutationRecord[0].target.attributes["4"].value;
-
-    // PLAYER_PAGE_OPEN
-    // MINIPLAYER
-    // FULLSCREEN
-    // PLAYER_BAR_ONLY
-
-    if (playPageUIstate === "PLAYER_BAR_ONLY") {
-      console.log('stopping');
-      if (activeVisualizer === "visualizerId:0") {
-        wavy.stopAnimate();
-      } else {
-        bars.stopAnimate();
-      }
-    }
-
-    if (mutationRecord[0].oldValue === "PLAYER_BAR_ONLY") {
-      console.log('starting');
-      if (activeVisualizer === "visualizerId:0") {
-        wavy.animate();
-      } else {
-        bars.animate();
-      }
-    }
-  }
-}
-
-
-function removePlayPageVisibilityObserver() {
-  playPageVisibilityObserver.disconnect();
-}
-
 chrome.storage.sync.get(["activeVisualizer", "visualizers"], (res) => {
+  console.log('visualizer start index')
+  console.log(audioCtx);
   console.log(res);
   activeVisualizer = res.activeVisualizer;
   visualizers = res.visualizers;
 });
-
-// chrome.storage.onChanged.addListener((changes, namespace) => {
-//   for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
-//     console.log(
-//       `Storage key "${key}" in namespace "${namespace}" changed.`,
-//       `Old value was "${oldValue}", new value is "${newValue}".`
-//     );
-//   }
-// });
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   console.log(`content-script: message received`);
@@ -190,7 +99,6 @@ export function addVisualizerButton() {
   } else {
     document.getElementById("ts-visualizer-toggle").remove();
     topRowButtons.prepend(button);
-    document.getElementById("ts-visualizer-toggle2").remove();
   }
 }
 
@@ -237,17 +145,15 @@ function handleVisualizerButtonClick() {
 }
 
 
-function connectAudio() {
+export function connectAudio() {
+  console.log('connectAudio()')
   if (audioCtx === undefined) {
+    console.log('audioCtx is undefined')
     audioCtx = new AudioContext();
     console.log(audioCtx);
     analyser = audioCtx.createAnalyser();
   } 
-  if (activeVisualizer === "visualizerId:0") {
-    analyser.fftSize = 2048;
-  } else {
-    analyser.fftSize = 128;
-  }
+  // analyser.fftSize = 2048;
   analyser.maxDecibels = -18;
   analyser.smoothingTimeConstant = 0.8;
   
@@ -261,13 +167,22 @@ function connectAudio() {
 }
 
 
-function connectSource() {
+export function connectSource() {
+  console.log('connectsource()')
+  console.log(source)
   videoElementNode = document.querySelector('video');
 
   try {
     source = audioCtx.createMediaElementSource(videoElementNode);
     source.connect(analyser);
   } catch {
-    console.log('hi')
+    // source = audioCtx.createMediaElementSource(document.querySelector('audio'));
+    // source.connect(analyser);
+    console.log('hi');
   }
+  // source = audioCtx.createMediaElementSource(document.querySelector('video'));
+  // source.connect(analyser);
+
+  // source = audioCtx.createMediaElementSource(videoElementNode);
+  // source.connect(analyser);
 }

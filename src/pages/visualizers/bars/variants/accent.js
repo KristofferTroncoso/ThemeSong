@@ -10,10 +10,10 @@ export function accent() {
 
   ctx.clearRect(0, 0, tsbarvisualizercanvas.width, tsbarvisualizercanvas.height);
 
-  let barWidth = (tsbarvisualizercanvas.width / bufferLength) * 1.4;
+  let barWidth = 15;
   let barHeight;
 
-  let x = tsbarvisualizercanvas.width - barWidth;
+  let x = 0;
 
   for(let i = 0; i < bufferLength; i++) {
     barHeight = dataArray[i] * 2;
@@ -22,18 +22,17 @@ export function accent() {
       ${(mostPopulatedColor.hsl[0] * 360).toFixed()}, 
       ${mostPopulatedColor.hsl[1] * 100}%, 
       ${barHeight/1000 * 100 + 30}%, 
-      0.9
+      0.95
     )`; //mostPopulatedColor accented color: barheight correlates to brightness
 
     ctx.strokeStyle = "black";
-    ctx.lineWidth = 3;
-
+    ctx.lineWidth = 2;
 
     ctx.fillRect(x, tsbarvisualizercanvas.height - barHeight + 6, barWidth, barHeight);
     ctx.strokeRect(x, tsbarvisualizercanvas.height - barHeight + 6, barWidth, barHeight);
     ctx.stroke();
-    // x += barWidth + 1;
-    x -= barWidth + 1;
+
+    x += barWidth + 1;
   }
 
   if (isPlaying) {

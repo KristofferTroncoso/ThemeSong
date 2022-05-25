@@ -9,9 +9,9 @@ export function white() {
 
   ctx.clearRect(0, 0, tsbarvisualizercanvas.width, tsbarvisualizercanvas.height);
 
-  let barWidth = (tsbarvisualizercanvas.width / bufferLength) * 1.4;
+  let barWidth = 15;
   let barHeight;
-  let x = tsbarvisualizercanvas.width - barWidth;
+  let x = 0;
 
   for(let i = 0; i < bufferLength; i++) {
     barHeight = dataArray[i] * 2;
@@ -23,7 +23,7 @@ export function white() {
     ctx.lineWidth = 3;
     ctx.strokeRect(x, tsbarvisualizercanvas.height - barHeight + 6, barWidth, barHeight);
     ctx.stroke();
-    x -= barWidth + 1;
+    x += barWidth + 1;
   }
 
   if (isPlaying) {
