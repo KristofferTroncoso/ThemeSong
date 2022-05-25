@@ -6,7 +6,6 @@ import { addVisualizerButton } from "../visualizers/";
 
 // const songImg = document.querySelector('#song-image img#img');
 const playerBarSongImgNode = document.querySelector(".middle-controls .thumbnail-image-wrapper img");
-
 export let storageObj = {};
 let songChangeObserver;
 export let palette = {
