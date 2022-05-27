@@ -13,6 +13,9 @@ export const dynamicdark_css = /*css*/`
 :root {
   --ts-default-app-color: #171717;
 
+  --ts-primary-text-color: #fff;
+  --ts-secondary-text-color: #c7c7c7;
+
   --ts-topnav-color: var(--ts-default-app-color);
   --ts-mainbg-color: var(--ts-default-app-color);
   --ts-playpagebg-color: var(--ts-default-app-color);
@@ -30,7 +33,7 @@ export const dynamicdark_css = /*css*/`
 ${main_BGs}
 ${scrollbars}
 ${playerbar_progressbar}
-${logoStyles}
+/* logoStyles */
 ${songImgStyles}
 
 ${universalstyles}

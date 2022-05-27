@@ -15,7 +15,7 @@ If it is set to CONTAIN, the bg is defaulted to grey. This makes it look better.
 */
 const coloredPlayerBg = /*css*/`
   ytmusic-player {
-    background-color: var(--ts-playpagebg-color)
+    background-color: var(--ts-playpagebg-color);
   }
 `;
 
@@ -63,7 +63,7 @@ export const universalstyles = /*css*/`
   /* ThemeSong */
   /* universal styles */
 
-  ${grayscaleIcon}
+  /* grayscaleIcon */
   ${coloredPlayerBg}
   ${noGreyBgOnUserIcon}
   ${fixWeirdMarginWhenFullScreenPlayer}

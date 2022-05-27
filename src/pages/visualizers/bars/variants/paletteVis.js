@@ -29,7 +29,7 @@ export function paletteVis() {
         // (paletteArray[arrLoopNum].hsl[2] - ((paletteArray[arrLoopNum].hsl[2] - 0.7)/2)) * 100 //kinda normalizes the light
         barHeight/1000 * 100 + 20 //basically has like a minimum brightness
       }%, 
-      0.9
+      0.95
     )`;
   
     arrLoopNum = (arrLoopNum + 1) % paletteArray.length;

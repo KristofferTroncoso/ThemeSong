@@ -3,6 +3,7 @@ import { playerbar_progressbar } from '../universal/playerbar-progressbar';
 import { main_BGs } from '../universal/main-BGs';
 import { logoStyles } from '../universal/logo';
 import { songImgStyles } from '../universal/songImgStyles';
+import { universalstyles } from '../universal/universalstyles';
 
 export const static_dark_css = /*css*/`
 /* ThemeSong */
@@ -10,6 +11,9 @@ export const static_dark_css = /*css*/`
 
 :root {
   --ts-default-app-color: #171717;
+
+  --ts-primary-text-color: #fff;
+  --ts-secondary-text-color: #c7c7c7;
 
   --ts-topnav-color: var(--ts-default-app-color);
   --ts-mainbg-color: var(--ts-default-app-color);
@@ -27,6 +31,8 @@ export const static_dark_css = /*css*/`
 ${main_BGs}
 ${scrollbars}
 ${playerbar_progressbar}
-${logoStyles}
+/* logoStyles */
 ${songImgStyles}
+
+${universalstyles}
 `;

@@ -1,9 +1,15 @@
+import { universalstyles } from '../universal/universalstyles';
+import { songImgStyles } from '../universal/songImgStyles';
+
 export const static_light_css = /*css*/`
 /* ThemeSong */
 /* Static Light Theme */
 
 :root {
   --ts-default-app-color: #ebebeb;
+
+  --ts-primary-text-color: #000;
+  --ts-secondary-text-color: #1c1c1c;
 
   --ts-topnav-color: var(--ts-default-app-color);
   --ts-mainbg-color: var(--ts-default-app-color);
@@ -12,6 +18,8 @@ export const static_light_css = /*css*/`
   --ts-playpageavtoggle-color: var(--ts-default-app-color);
 
   --ts-playprogress-color: black !important;
+
+  --ts-bgcolor-transition: background-color 1s ease-out;
 
   --ytmusic-brand-background-solid: var(--ts-playbar-color) !important;
   --ytmusic-general-background-a: var(--ts-mainbg-color) !important;
@@ -35,6 +43,19 @@ export const static_light_css = /*css*/`
 
   --yt-spec-text-primary-inverse: rgba(255,255,255,1) !important;
 
+}
+
+ytmusic-player {
+  color: var(--ytmusic-text-primary);
+}
+
+ytmusic-player tp-yt-paper-icon-button {
+  color: #000 !important;
+}
+
+ytmusic-player[player-ui-state_=MINIPLAYER] .song-media-controls.ytmusic-player {
+  background: linear-gradient(rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.6) 100%);
+  padding: 12px;
 }
 
 /* start PlayPage song img styling */
@@ -466,17 +487,21 @@ body {
 
 #nav-bar-background {
   background-color: var(--ts-topnav-color) !important;
+  transition: opacity 0.2s, var(--ts-bgcolor-transition) !important;
 }
 
 ytmusic-player-page {
   background-color: var(--ts-playpagebg-color);
+  transition: transform 300ms cubic-bezier(0.2,0,0.6,1), var(--ts-bgcolor-transition);
 }
 
 #player-bar-background {
   background-color: var(--ts-playbar-color) !important;
+  transition: var(--ts-bgcolor-transition) !important;
 }
 ytmusic-player-bar {
   --ytmusic-player-bar-background: var(--ts-playbar-color);
+  transition: var(--ts-bgcolor-transition) !important;
 }
 
 ytmusic-item-section-renderer.stuck #header.ytmusic-item-section-renderer {
@@ -535,4 +560,7 @@ body::-webkit-scrollbar-track {
   background-color: transparent;
 }
 /* end scrollbar */
+
+${songImgStyles}
+${universalstyles}
 `;

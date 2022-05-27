@@ -1,13 +1,15 @@
 import { universalstyles } from '../universal/universalstyles';
+import { songImgStyles } from '../universal/songImgStyles';
 
 export const dynamiclight_css = /*css*/`
 /* ThemeSong */
 /* Dynamic Light Theme */
 
-${universalstyles}
-
 :root {
   --ts-default-app-color: #ebebeb;
+
+  --ts-primary-text-color: #000;
+  --ts-secondary-text-color: #1c1c1c;
 
   --ts-picked-vibrant-static: var(--ts-default-app-color);
   --ts-picked-vibrant-light50: var(--ts-default-app-color);
@@ -18,6 +20,8 @@ ${universalstyles}
   --ts-playpageavtoggle-color: var(--ts-default-app-color);
 
   --ts-playprogress-color: black !important;
+
+  --ts-bgcolor-transition: background-color 1s ease-out;
 
   --ytmusic-brand-background-solid: var(--ts-playbar-color) !important;
   --ytmusic-general-background-a: var(--ts-mainbg-color) !important;
@@ -43,11 +47,24 @@ ${universalstyles}
 
 }
 
+ytmusic-player {
+  color: var(--ytmusic-text-primary);
+}
+
+ytmusic-player tp-yt-paper-icon-button {
+  color: #000 !important;
+}
+
+ytmusic-player[player-ui-state_=MINIPLAYER] .song-media-controls.ytmusic-player {
+  background: linear-gradient(rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.6) 100%);
+  padding: 12px;
+}
+
 /* start PlayPage song img styling */
 ytmusic-player {
   box-shadow: 0 0 200px var(--ts-picked-vibrant-light50) !important;
   border-radius: 6px;
-  --ytmusic-player-overlay-gradient: linear-gradient( rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 25%, rgba(0, 0, 0, 0) 100% ) !important;
+  --ytmusic-player-overlay-gradient: linear-gradient( rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 25%, rgba(0, 0, 0, 0) 40% ) !important;
 }
 #song-image {
   box-shadow: 0 2px 10px rgba(0,0,0,0.6);
@@ -473,17 +490,21 @@ body {
 
 #nav-bar-background {
   background-color: var(--ts-topnav-color) !important;
+  transition: opacity 0.2s, var(--ts-bgcolor-transition) !important;
 }
 
 ytmusic-player-page {
   background-color: var(--ts-playpagebg-color);
+  transition: transform 300ms cubic-bezier(0.2,0,0.6,1), var(--ts-bgcolor-transition);
 }
 
 #player-bar-background {
   background-color: var(--ts-playbar-color) !important;
+  transition: var(--ts-bgcolor-transition) !important;
 }
 ytmusic-player-bar {
   --ytmusic-player-bar-background: var(--ts-playbar-color);
+  transition: var(--ts-bgcolor-transition) !important;
 }
 
 ytmusic-item-section-renderer.stuck #header.ytmusic-item-section-renderer {
@@ -542,4 +563,7 @@ body::-webkit-scrollbar-track {
   background-color: transparent;
 }
 /* end scrollbar */
+
+${songImgStyles}
+${universalstyles}
 `;
