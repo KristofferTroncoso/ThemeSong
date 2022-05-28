@@ -17,7 +17,7 @@ export function rgb() {
   for(let i = 0; i < bufferLength; i++) {
     barHeight = dataArray[i] * 2;
 
-    ctx.fillStyle = `hsla(${barHeight/2 + 100}, 100%, 70%, 0.9)`; //rgb: bar height is correlated to hue
+    ctx.fillStyle = `hsla(${barHeight}, 100%, 70%, 0.9)`; //rgb: bar height is correlated to hue
 
     ctx.fillRect(x, tsbarvisualizercanvas.height - barHeight + 6, barWidth, barHeight);
     ctx.strokeStyle = "black";
