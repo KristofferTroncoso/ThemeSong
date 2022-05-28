@@ -10,9 +10,7 @@ const grayscaleIcon = /*css*/`
 `;
 
 
-/* when pressing fullscreen on the player page album art, the img goes to COVER. 
-If it is set to CONTAIN, the bg is defaulted to grey. This makes it look better.
-*/
+/* when pressing fullscreen on the player page album art, the img goes to COVER. */
 const coloredPlayerBg = /*css*/`
   ytmusic-player {
     background-color: var(--ts-playpagebg-color);
