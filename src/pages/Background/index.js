@@ -1,6 +1,6 @@
 
 const defaults = {
-  extensionVersion: "0.1.6",
+  extensionVersion: "0.2.0",
   activeTheme: "themeId:1",
   activeVisualizer: "visualizerId:1",
   activePage: 1,
@@ -57,8 +57,8 @@ const defaults = {
       userPrefs: {
         saturationSetting: 1,
         lightnessSettingNavBar: 85,
-        lightnessSettingPlayPage: 95,
-        lightnessSettingBody: 100,
+        lightnessSettingPlayPage: 80,
+        lightnessSettingBody: 95,
         lightnessSettingPlayerBar: 85
       }
     },
@@ -117,7 +117,8 @@ const defaults = {
       optionName: 'Grayscale User Icon',
       value: true
     }
-  ]
+  ],
+  experimentalAutoUseDeviceDarkLightMode: false
 }
 
 
