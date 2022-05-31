@@ -8,7 +8,7 @@ function VisualizerButton({id, children, handleClick, isActive, name, ...props})
         border-radius: 20px;
         border: 4px solid ${isActive ? '#135eeb' : '#454545'};
         width: 100%;
-        min-height: 110px;
+        min-height: 80px;
         height: 100%;
         background: #111;
         color: white;

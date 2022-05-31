@@ -5,10 +5,10 @@ function ThemeButton({themeDetails, handleActiveThemeChange, isActive}) {
   return (
     <button 
       css={css`
-        border-radius: 20px;
+        border-radius: 16px;
         border: 4px solid ${isActive ? '#135eeb' : '#454545'};
         width: 100%;
-        min-height: 110px;
+        min-height: 80px;
         height: 100%;
         background: #111;
         color: white;
