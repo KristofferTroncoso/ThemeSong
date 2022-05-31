@@ -19,15 +19,17 @@ const Popup = () => {
   const [storageObj, setStorageObj] = React.useState();
   const [activeTheme, setActiveTheme] = React.useState();
   const [activePage, setActivePage] = React.useState(1);
+  const [experimentalAutoUseDeviceDarkLightMode, setExperimentalAutoUseDeviceDarkLightMode] = React.useState();
   const [themes, setThemes] = React.useState();
 
   React.useEffect(() => {
     console.log('first useEffect to set initial storage only supposedly')
-    chrome.storage.sync.get(["activePage", "activeTheme", "activeVisualizer", "extensionVersion", "options", "themes"], (res) => {
+    chrome.storage.sync.get(["activePage", "activeTheme", "activeVisualizer", "extensionVersion", "options", "themes", "experimentalAutoUseDeviceDarkLightMode"], (res) => {
       console.log(res);
       setStorageObj(res);
       setActivePage(res.activePage);
       setActiveTheme(res.activeTheme);
+      setExperimentalAutoUseDeviceDarkLightMode(res.experimentalAutoUseDeviceDarkLightMode);
       setThemes(res.themes);
     });
 
@@ -156,6 +158,17 @@ const Popup = () => {
               {storageObj.themes.map(theme => (
                 <ThemeButton key={theme.themeId} themeDetails={theme} handleActiveThemeChange={handleActiveThemeChange} isActive={storageObj.activeTheme === theme.themeId} />
               ))}
+            </div>
+            <div id="ThemesExtraOptions" style={{border: '2px solid #135eeb', padding: '5px', margin: '15px 5px 5px'}}>
+              <span>experimentalAutoUseDeviceDarkLightMode: </span>
+              <input 
+                type="checkbox" 
+                checked={experimentalAutoUseDeviceDarkLightMode} 
+                onChange={e => {
+                  chrome.storage.sync.set({experimentalAutoUseDeviceDarkLightMode: !experimentalAutoUseDeviceDarkLightMode});
+                  setExperimentalAutoUseDeviceDarkLightMode(!experimentalAutoUseDeviceDarkLightMode);
+                }} 
+              />
             </div>
           </div>
         );

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx } from '@emotion/react';
+import { storageObj, setStorageObj } from '../../Content';
 import { DynamicDarkSettings } from '../../themes/dynamic-dark/';
 import { DynamicLightSettings } from '../../themes/dynamic-light/';
 import { StaticDarkSettings } from '../../themes/static-dark/';
