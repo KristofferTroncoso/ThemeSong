@@ -44,14 +44,14 @@ function Options() {
     return (
       <div>
         <h1 css={{marginBottom: '100px'}}>ThemeSong Options</h1>
-        <button onClick={e => console.log(options)}>click</button>
+        {/* <button onClick={e => console.log(options)}>click</button>
         <StyledDiv>
           <h2 css={{marginBottom: '15px'}}>Options:</h2>
           <p>
             {options[0].optionName}: 
             <input type="checkbox" checked={options[0].value} onChange={handleOption1Change} />
           </p>
-        </StyledDiv>
+        </StyledDiv> */}
         <StyledDiv>
           <h2 css={{marginBottom: '15px'}}>Contact:</h2>
           <p>
@@ -76,9 +76,9 @@ function Options() {
           <p>
             Repair/Reset to extension defaults: <button onClick={handleReset} css={{color: 'white', background: 'red', border: '1px solid black', borderRadius: '2px'}}>RESET</button>
           </p>
-          <p>
+          {/* <p>
               <button onClick={e => chrome.storage.sync.get(null, res => console.log(res))}>console.log() storage</button>
-          </p>
+          </p> */}
         </StyledDiv>
       </div>
     )
