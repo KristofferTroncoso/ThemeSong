@@ -3,6 +3,7 @@ import logPalette from './modules/logPalette';
 import { addSongDetailsObserver } from "./modules/addSongDetailsObserver";
 import themes from '../themes';
 import { addVisualizerButton } from "../visualizers/";
+import { addDarkLightSwitch } from "./modules/addDarkLightSwitch";
 
 // const songImg = document.querySelector('#song-image img#img');
 const playerBarSongImgNode = document.querySelector(".middle-controls .thumbnail-image-wrapper img");
@@ -77,6 +78,7 @@ export let palette = {
   },
 }
 export let mostPopulatedColor;
+export let activeTheme;
 
 console.log('content script loaded');
 
@@ -84,7 +86,9 @@ chrome.storage.sync.get(["activeTheme", "themes"], (res) => {
   console.log('chrome.storage.sync.get()')
   addSongChangeObserver();
   addSongDetailsObserver();
+  addDarkLightSwitch();
   addStylesheet(res.activeTheme);
+  activeTheme = res.activeTheme;
   storageObj = res;
   addVisualizerButton();
   if (playerBarSongImgNode.src !== "https://music.youtube.com/") {
@@ -108,6 +112,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     case "activeTheme":
       console.log('case activeTheme')
+      activeTheme = message[messageKey];
       console.log(message[messageKey]);
       addStylesheet(message[messageKey]);
       if (playerBarSongImgNode.src !== "https://music.youtube.com/") {
@@ -137,7 +142,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 });
 
 
-function addStylesheet(themeId) {
+export function addStylesheet(themeId) {
   console.log('addStylesheet');
   console.log(themeId)
   const stylesheetNameObj = {
@@ -161,7 +166,7 @@ function addStylesheet(themeId) {
   }
 }
 
-function processThemeOnPrefsChange(activeThemeId) {
+export function processThemeOnPrefsChange(activeThemeId) {
   switch (activeThemeId) {
     case "themeId:0":
       console.log('OFF. No theme active');
@@ -192,7 +197,7 @@ function processThemeOnPrefsChange(activeThemeId) {
   }
 }
 
-function processThemeOnInitialLoad(activeThemeId) {
+export function processThemeOnInitialLoad(activeThemeId) {
   switch (activeThemeId) {
     case "themeId:0":
       console.log('OFF. No theme active');
