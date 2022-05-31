@@ -14,6 +14,7 @@ const grayscaleIcon = /*css*/`
 const coloredPlayerBg = /*css*/`
   ytmusic-player {
     background-color: var(--ts-playpagebg-color);
+    transition: var(--ts-bgcolor-transition);
   }
 `;
 

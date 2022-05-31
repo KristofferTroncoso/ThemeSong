@@ -23,6 +23,8 @@ export const static_dark_css = /*css*/`
 
   --ts-playprogress-color: white;
 
+  --ts-bgcolor-transition: background-color 1s ease-out;
+
   --ytmusic-brand-background-solid: var(--ts-mainbg-color) !important;
   --ytmusic-general-background-c: var(--ts-mainbg-color) !important;
   --ytmusic-search-background: var(--ts-playbar-color) !important;

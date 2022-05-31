@@ -15,7 +15,10 @@ export function processColors(storageObj, vibrantHSL) {
 
   let hue = (accentColorArr[0] * 360).toFixed();
   let saturation = (accentColorArr[1] * 100 * saturationSetting).toFixed();
+  let light = (accentColorArr[2] * 100).toFixed();
 
+  let pickedVibrantColor = `hsl(${hue}, ${saturation}%, ${light}%)`;
+  let pickedVibrantColorLight50 = `hsl(${hue}, ${saturation}%, 50%)`;
   let navBarColor = `hsl(${hue}, ${saturation}%, ${lightnessSettingNavBar}%)`;
   let playPageColor = `hsl(${hue}, ${saturation}%, ${lightnessSettingPlayPage}%)`;
   let bodyColor = `hsl(${hue}, ${saturation}%, ${lightnessSettingBody}%)`;
@@ -23,6 +26,8 @@ export function processColors(storageObj, vibrantHSL) {
   let playPageAvToggleColor = `hsl(${hue}, ${saturation}%, ${21 + (lightnessSettingPlayPage / 25) * 14}%)`;
 
   menubar.content = navBarColor;
+  root.style.setProperty("--ts-picked-vibrant-static", pickedVibrantColor, "important");
+  root.style.setProperty("--ts-picked-vibrant-light50", pickedVibrantColorLight50, "important");
   root.style.setProperty("--ts-topnav-color", navBarColor);
   root.style.setProperty("--ts-mainbg-color", bodyColor);
   root.style.setProperty("--ts-playpagebg-color", playPageColor);

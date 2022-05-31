@@ -495,7 +495,7 @@ body {
 
 ytmusic-player-page {
   background-color: var(--ts-playpagebg-color);
-  transition: transform 300ms cubic-bezier(0.2,0,0.6,1), var(--ts-bgcolor-transition);
+  transition: transform 300ms cubic-bezier(0.2,0,0.6,1), var(--ts-bgcolor-transition) !important;
 }
 
 #player-bar-background {
