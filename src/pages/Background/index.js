@@ -77,6 +77,31 @@ const defaults = {
         saturation: 90
       }
     },
+    {
+      themeId: "themeId:6",
+      dateAdded: 20220602,
+      name: "Dynamic",
+      isDynamic: true,
+      lightDarkMode: true,
+      icon: 0,
+      userPrefs: {
+        darkLightSetting: 'dark', // 'dark', 'light', 'system'
+        darkPrefs: {
+          saturationSetting: 0.8, // percentage of chosen color's saturation.
+          lightnessSettingNavBar: 20,
+          lightnessSettingPlayPage: 15,
+          lightnessSettingBody: 10,
+          lightnessSettingPlayerBar: 25
+        },
+        lightPrefs: {
+          saturationSetting: 1,
+          lightnessSettingNavBar: 85,
+          lightnessSettingPlayPage: 80,
+          lightnessSettingBody: 95,
+          lightnessSettingPlayerBar: 85
+        }
+      }
+    },
   ],
   visualizers: [
     {
@@ -87,6 +112,9 @@ const defaults = {
       visualizerId: "visualizerId:1",
       name: "Bars",
       activeVariant: "variantId:5",
+      barWidth: 30,
+      lineWidth: 4,
+      gap: 4,
       variants: [
         {
           variantId: "variantId:1",
@@ -94,18 +122,22 @@ const defaults = {
         },
         {
           variantId: "variantId:2",
-          name: "RGB"
+          name: "Black"
         },
         {
           variantId: "variantId:3",
-          name: "Accent"
+          name: "RGB"
         },
         {
           variantId: "variantId:4",
-          name: "Palette"
+          name: "Accent"
         },
         {
           variantId: "variantId:5",
+          name: "Palette"
+        },
+        {
+          variantId: "variantId:6",
           name: "Dancing Palette"
         }
       ]

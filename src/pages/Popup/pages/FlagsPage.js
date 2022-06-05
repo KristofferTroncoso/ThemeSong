@@ -102,14 +102,14 @@ function VisualizersPage() {
   } else {
     return (
       <div>
-        <h2 css={css`font-size: 12px; font-weight: 400; padding: 4px 5px 0; color: rgb(255, 79, 97);`}>⚠ Warnings: Photosensitivity 😵 / Energy Usage 🔋</h2>
+        <h2 css={css`font-size: 12px; font-weight: 400; padding: 4px 5px 0; color: rgb(255, 79, 97);`}>Photosensitivity WARNING</h2>
         <h2 css={css`font-size: 12px; font-weight: 400; padding: 4px 5px 0;`}>Toggle on the visualizer by hovering the album art and clicking on the 🥽 visualizer icon.</h2>
         <div 
           className="ActiveVisualizerSettingsContainer" 
           css={{
             background: '#111111', 
             borderRadius: '5px', 
-            border: '2px solid #135eeb',
+            border: '1px solid #135eeb',
             margin: '10px 5px 5px 5px', 
             minHeight: '150px', 
             padding: '5px 10px 10px'

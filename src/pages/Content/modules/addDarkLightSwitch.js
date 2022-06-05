@@ -9,7 +9,9 @@ export function addDarkLightSwitch() {
         switch (newColorScheme) {
           case "dark":
             //activeTheme dark
-            if (activeTheme === "themeId:1" || activeTheme === "themeId:4") {
+            if (activeTheme === "themeId:0") {
+              
+            } else if (activeTheme === "themeId:1" || activeTheme === "themeId:4") {
               console.log("4 to 1")
               chrome.storage.sync.set({activeTheme: "themeId:1"});
               addStylesheet("themeId:1");
@@ -23,7 +25,9 @@ export function addDarkLightSwitch() {
             break;
           case "light":
             //activeTheme light
-            if (activeTheme === "themeId:4" || activeTheme === "themeId:1") {
+            if (activeTheme === "themeId:0") {
+              
+            } else if (activeTheme === "themeId:4" || activeTheme === "themeId:1") {
               console.log("1 to 4")
               chrome.storage.sync.set({activeTheme: "themeId:4"});
               addStylesheet("themeId:4");

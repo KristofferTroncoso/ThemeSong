@@ -7,6 +7,7 @@ import { StaticDarkSettings } from '../themes/static-dark/';
 import { StaticLightSettings } from '../themes/static-light/';
 import { GlassSettings } from '../themes/frosted-glass/';
 import { OffSettings } from '../themes/off/';
+import { DynamicSettings } from '../themes/dynamic/DynamicSettings';
 import ThemeButton from '../components/ThemeButton';
 import TabButton from '../components/TabButton';
 import TopBar from '../components/TopBar';
@@ -120,6 +121,8 @@ const Popup = () => {
         return <DynamicLightSettings storageObj={storageObj} handleNewObject={handleNewObject} handleNewThemes={handleNewThemes} />
       case "themeId:5":
         return <StaticLightSettings storageObj={storageObj} handleNewObject={handleNewObject} handleNewThemes={handleNewThemes} />
+      case "themeId:6":
+        return <DynamicSettings storageObj={storageObj} handleNewObject={handleNewObject} handleNewThemes={handleNewThemes} />
       default:
         break;
     }
@@ -159,7 +162,7 @@ const Popup = () => {
                 <ThemeButton key={theme.themeId} themeDetails={theme} handleActiveThemeChange={handleActiveThemeChange} isActive={storageObj.activeTheme === theme.themeId} />
               ))}
             </div>
-            <div id="ThemesExtraOptions" style={{border: '2px solid #135eeb', padding: '5px', margin: '15px 5px 5px'}}>
+            <div id="ThemesExtraOptions" style={{border: '1px solid #135eeb', padding: '5px', margin: '15px 5px 5px'}}>
               <span>experimentalAutoUseDeviceDarkLightMode: </span>
               <input 
                 type="checkbox" 

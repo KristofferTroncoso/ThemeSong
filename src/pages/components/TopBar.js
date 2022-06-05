@@ -8,14 +8,14 @@ function TopBar({storageObj}) {
       css={{
         backgroundColor: '#2e2e2e', 
         width: 'calc(100% - 20px)', 
-        height: '30px',
+        height: '26px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: '0 10px'
       }}
     >
-      <h1 css={{fontSize: '15px'}}>
+      <h1 css={{fontSize: '14px'}}>
         <a 
           href="https://chrome.google.com/webstore/detail/bgfiegdbajagebogifobkhambpljbfmk" 
           target="_blank" 

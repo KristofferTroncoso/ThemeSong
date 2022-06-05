@@ -151,7 +151,8 @@ export function addStylesheet(themeId) {
     "themeId:2": themes.staticdark.css,
     "themeId:3": themes.glass.css,
     "themeId:4": themes.dynamiclight.css,
-    "themeId:5": themes.staticlight.css
+    "themeId:5": themes.staticlight.css,
+    "themeId:6": themes.dynamicdark.css
   };
 
   const tscustomstyle = document.getElementById("themesong-extension-active-theme-stylesheet");
@@ -191,6 +192,10 @@ export function processThemeOnPrefsChange(activeThemeId) {
     case "themeId:5":
       console.log('Static light theme is active');
       themes.staticlight.process(storageObj);
+      break;
+    case "themeId:6":
+      console.log('Dynamic theme is active');
+      themes.dynamicdark.process(storageObj, mostPopulatedColor.hsl);
       break;
     default:
       console.log('no active theme');
@@ -246,6 +251,21 @@ export function processThemeOnInitialLoad(activeThemeId) {
       console.log('Static light theme is active');
       themes.staticlight.process(storageObj);
       break;
+    case "themeId:6":
+      console.log('Dynamic theme is active');
+      getVibrantPalette()
+      .then((palette) => {
+        console.log('palette received');
+        console.log(palette);
+        mostPopulatedColor = getMostPopulatedColor(palette);
+        themes.dynamicdark.process(storageObj, mostPopulatedColor.hsl);
+        logPalette(palette);
+      })
+      .catch((err) => {
+        console.log('vibrant error');
+        console.log(err);
+      });
+      break;
     default:
       console.log('no active theme');
   }
@@ -266,6 +286,11 @@ function processThemeOnSongChange(activeThemeId) {
     case "themeId:4":
       console.log('dynamic light');
       themes.dynamiclight.process(storageObj, mostPopulatedColor.hsl);
+      logPalette(palette);
+      break;
+    case "themeId:6":
+      console.log('Dynamic Dark theme is active');
+      themes.dynamicdark.process(storageObj, mostPopulatedColor.hsl);
       logPalette(palette);
       break;
     default:
