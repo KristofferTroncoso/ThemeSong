@@ -1,5 +1,5 @@
-import { universalstyles } from '../universal/universalstyles';
-import { songImgStyles } from '../universal/songImgStyles';
+import { universalstyles } from '../../universal/universalstyles';
+import { songImgStyles } from '../../universal/songImgStyles';
 
 export const dynamiclight_css = /*css*/`
 /* ThemeSong */
@@ -464,9 +464,6 @@ ytmusic-two-row-item-renderer[item-size=COLLECTION_STYLE_ITEM_SIZE_SMALL_STATIC]
   color: black !important;
 }
 
-iron-input.tp-yt-paper-input > input.tp-yt-paper-input {
-  color: black;
-}
 /* end TEXTS */
 
 
