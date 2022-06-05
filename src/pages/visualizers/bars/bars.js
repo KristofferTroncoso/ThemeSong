@@ -1,4 +1,4 @@
-import {analyser, connectSource, connectAudio} from '../index';
+// import {analyser, connectSource, connectAudio} from '../index';
 import { dancingPalette } from './variants/dancing-palette';
 import { white } from './variants/white';
 import { black } from './variants/black';

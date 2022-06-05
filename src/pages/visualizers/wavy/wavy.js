@@ -1,5 +1,5 @@
 import { analyser, dataArray, bufferLength } from '../';
-import { mostPopulatedColor } from '../../Content';
+// import { mostPopulatedColor } from '../../Content';
 
 let tsvisualizercanvas;
 let tsvisualizercontainer;
