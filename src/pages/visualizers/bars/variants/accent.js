@@ -1,7 +1,6 @@
 import { analyser, dataArray, bufferLength } from '../..';
+import { tsbarvisualizercanvas, isPlaying, barWidth, lineWidth, gap } from '../bars';
 import { mostPopulatedColor } from '../../../Content';
-
-import {tsbarvisualizercanvas, isPlaying} from '../bars';
 
 export function accent() {
   let ctx = tsbarvisualizercanvas.getContext("2d");
@@ -10,7 +9,6 @@ export function accent() {
 
   ctx.clearRect(0, 0, tsbarvisualizercanvas.width, tsbarvisualizercanvas.height);
 
-  let barWidth = 15;
   let barHeight;
 
   let x = 0;
@@ -26,13 +24,13 @@ export function accent() {
     )`; //mostPopulatedColor accented color: barheight correlates to brightness
 
     ctx.strokeStyle = "black";
-    ctx.lineWidth = 2;
+    ctx.lineWidth = lineWidth;
 
     ctx.fillRect(x, tsbarvisualizercanvas.height - barHeight + 6, barWidth, barHeight);
     ctx.strokeRect(x, tsbarvisualizercanvas.height - barHeight + 6, barWidth, barHeight);
     ctx.stroke();
 
-    x += barWidth + 1;
+    x += barWidth + gap;
   }
 
   if (isPlaying) {

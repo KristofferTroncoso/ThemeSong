@@ -19,23 +19,52 @@ function BarsSettings({visualizers, handleVisualizersChange}) {
     handleVisualizersChange(copy);
   }
 
+  const handleBarSettingsChange = (e, id) => {
+    let copy = {...barsStorageObject};
+    copy[e.target.name] = Number(e.target.value);
+    console.log(copy);
+    setBarsStorageObject(copy);
+    handleVisualizersChange(copy);
+  }
+
   if (!barsStorageObject) {
     return <h1>hi</h1>
   } else {
     return (
       <div>
-        <h2 style={{color: '#ff4f61'}}>Active Visualizer: Bars</h2>
-        <p style={{margin: '5px 0 0'}}>Bars for bars.</p>
-        <p style={{marginBottom: '10px'}}>Choose a variant for the Bars visualizer below.</p>
+        <h2 style={{color: '#ff4f61', marginBottom: '4px'}}>Active Visualizer: Bars</h2>
         <div>
+          <form onSubmit={e => e.preventDefault()}>
+            <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
+              <label htmlFor="barWidth">Bar Width:</label>
+              <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
+                <input type="range" name="barWidth" min="5" max="80" value={barsStorageObject.barWidth} step="5" onChange={handleBarSettingsChange} style={{width: '180px'}} />
+                <input type="number" min="5" max="80" name="barWidth" value={barsStorageObject.barWidth} onChange={handleBarSettingsChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+              </div>
+            </div>
+            <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
+              <label htmlFor="lineWidth">Line Width:</label>
+              <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
+                <input type="range" name="lineWidth" min="1" max="10" value={barsStorageObject.lineWidth} step="1" onChange={handleBarSettingsChange} style={{width: '180px'}} />
+                <input type="number" min="1" max="10" name="lineWidth" value={barsStorageObject.lineWidth} onChange={handleBarSettingsChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+              </div>
+            </div>
+            <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
+              <label htmlFor="gap">Gap:</label>
+              <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
+                <input type="range" name="gap" min="2" max="20" value={barsStorageObject.gap} step="2" onChange={handleBarSettingsChange} style={{width: '180px'}} />
+                <input type="number" min="2" max="20" name="gap" value={barsStorageObject.gap} onChange={handleBarSettingsChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+              </div>
+            </div>
+          </form>
+          <p style={{marginBottom: '6px'}}>Style Variant:</p>
           <div 
             className="VariantsContainer" 
             css={{
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
+              gridTemplateColumns: '1fr 1fr 1fr',
               gridAutoRows: '1fr',
-              gap: '6px',
-              padding: '2px'
+              gap: '6px'
             }}
           >
             {barsStorageObject.variants.map(variant => (

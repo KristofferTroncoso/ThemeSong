@@ -1,22 +1,25 @@
 import { analyser, dataArray, bufferLength } from '../..';
 import { tsbarvisualizercanvas, isPlaying, barWidth, lineWidth, gap } from '../bars';
 
-export function white() {
+export function black() {
   let ctx = tsbarvisualizercanvas.getContext("2d");
 
   analyser.getByteFrequencyData(dataArray);
 
   ctx.clearRect(0, 0, tsbarvisualizercanvas.width, tsbarvisualizercanvas.height);
 
+  // let barWidth ;
+  let barHeight;
   let x = 0;
 
   for(let i = 0; i < bufferLength; i++) {
-    let barHeight = dataArray[i] * 2;
+    barHeight = dataArray[i] * 2;
 
-    ctx.fillStyle = "#fff";
-    ctx.strokeStyle = "#000";
-    ctx.lineWidth = lineWidth;
+    ctx.fillStyle = "#000";
+   
     ctx.fillRect(x, tsbarvisualizercanvas.height - barHeight + 6, barWidth, barHeight);
+    ctx.strokeStyle = "#fff";
+    ctx.lineWidth = lineWidth;
     ctx.strokeRect(x, tsbarvisualizercanvas.height - barHeight + 6, barWidth, barHeight);
     ctx.stroke();
     x += barWidth + gap;
@@ -24,7 +27,7 @@ export function white() {
 
   if (isPlaying) {
     setTimeout(() => {
-      requestAnimationFrame(white);
-    }, 17);
+      requestAnimationFrame(black);
+    }, 16);
   }
 }

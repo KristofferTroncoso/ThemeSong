@@ -37,12 +37,16 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       console.log('received visualizers');
       console.log(message[messageKey]);
       visualizers = message[messageKey];
-      bars.stopAnimate();
-      bars.cleanUp();
+      // there are no wavy functions yet because wavy doesn't have any variants.
+      // these setTimeouts are needed to ensure that it is all cleaned up before animating
       setTimeout(() => {
-        bars.setUp();
-        bars.animate();
-      }, 100);
+        bars.stopAnimate();
+        bars.cleanUp();
+        setTimeout(() => {
+          bars.setUp();
+          bars.animate();
+        }, 40);
+      }, 40);
       sendResponse('received visualizers');
       break;
       
@@ -109,7 +113,7 @@ function handleVisualizerButtonClick() {
     document.getElementById("ts-visualizer-toggle").innerText = "🥽 ON";
     document.getElementById("ts-visualizer-toggle").title = "Turn OFF Visualizer";
     addPlayPauseChangeObserver();
-    addPlayPageVisibilityObserver();
+    // addPlayPageVisibilityObserver();
     if (activeVisualizer === "visualizerId:0") {
       wavy.setUp();
     } else {
@@ -131,7 +135,7 @@ function handleVisualizerButtonClick() {
     document.getElementById("ts-visualizer-toggle").innerText = "🥽 OFF";
     document.getElementById("ts-visualizer-toggle").title = "Turn ON Visualizer";
     removePlayPauseChangeObserver();
-    removePlayPageVisibilityObserver();
+    // removePlayPageVisibilityObserver();
     if (activeVisualizer === "visualizerId:0") {
       wavy.stopAnimate();
       wavy.cleanUp();
@@ -153,7 +157,7 @@ export function connectAudio() {
     console.log(audioCtx);
     analyser = audioCtx.createAnalyser();
   } 
-  // analyser.fftSize = 2048;
+  // analyser.fftSize = 128;
   analyser.maxDecibels = -18;
   analyser.smoothingTimeConstant = 0.8;
   

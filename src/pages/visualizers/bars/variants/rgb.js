@@ -1,6 +1,5 @@
 import { analyser, dataArray, bufferLength } from '../..';
-
-import {tsbarvisualizercanvas, isPlaying} from '../bars';
+import { tsbarvisualizercanvas, isPlaying, barWidth, lineWidth, gap } from '../bars';
 
 export function rgb() {
   let ctx = tsbarvisualizercanvas.getContext("2d");
@@ -9,22 +8,20 @@ export function rgb() {
 
   ctx.clearRect(0, 0, tsbarvisualizercanvas.width, tsbarvisualizercanvas.height);
 
-  let barWidth = 15;
   let barHeight;
   let x = 0;
-
 
   for(let i = 0; i < bufferLength; i++) {
     barHeight = dataArray[i] * 2;
 
-    ctx.fillStyle = `hsla(${barHeight}, 100%, 70%, 0.9)`; //rgb: bar height is correlated to hue
+    ctx.fillStyle = `hsla(${barHeight}, 100%, 70%, 0.95)`; //rgb: bar height is correlated to hue
 
     ctx.fillRect(x, tsbarvisualizercanvas.height - barHeight + 6, barWidth, barHeight);
     ctx.strokeStyle = "black";
-    ctx.lineWidth = 3;
+    ctx.lineWidth = lineWidth;
     ctx.strokeRect(x, tsbarvisualizercanvas.height - barHeight + 6, barWidth, barHeight);
     ctx.stroke();
-    x += barWidth + 1;
+    x += barWidth + gap;
   }
 
   if (isPlaying) {

@@ -1,6 +1,7 @@
 import {analyser, connectSource, connectAudio} from '../index';
 import { dancingPalette } from './variants/dancing-palette';
 import { white } from './variants/white';
+import { black } from './variants/black';
 import { rgb } from './variants/rgb';
 import { accent } from './variants/accent';
 import { paletteVis } from './variants/paletteVis';
@@ -8,6 +9,9 @@ import { visualizers } from '../';
 export let tsbarvisualizercanvas;
 export let isPlaying = false;
 
+export let barWidth = 30;
+export let lineWidth = 4;
+export let gap = 8;
 
 function setUp() {
   // Get a canvas defined with ID "oscilloscope"
@@ -30,7 +34,13 @@ function setUp() {
   // tsbarvisualizercanvas.style.border = "1px solid steelblue";
   tsbarvisualizercanvas.style.borderRadius = "6px";
   tsbarvisualizercanvas.height = '520';
-  tsbarvisualizercanvas.width = '1600';
+  tsbarvisualizercanvas.width = '2400';
+
+  let obj = visualizers.find(visualizer => (visualizer.visualizerId === "visualizerId:1"));
+  console.log(obj);
+  barWidth = obj.barWidth;
+  lineWidth = obj.lineWidth;
+  gap = obj.gap;
 }
 
 function animate() {
@@ -43,15 +53,18 @@ function animate() {
       white();
       break;
     case "variantId:2":
-      rgb();
+      black();
       break;
     case "variantId:3":
-      accent();
+      rgb();
       break;
     case "variantId:4":
-      paletteVis();
+      accent();
       break;
     case "variantId:5":
+      paletteVis();
+      break;
+    case "variantId:6":
       // analyser.fftSize = 128;
       // connectSource();
       dancingPalette();

@@ -1,7 +1,6 @@
 import { analyser, dataArray, bufferLength } from '../..';
+import { tsbarvisualizercanvas, isPlaying, barWidth, lineWidth, gap } from '../bars';
 import { palette } from '../../../Content';
-
-import {tsbarvisualizercanvas, isPlaying} from '../bars';
 
 export function dancingPalette() {
   // console.log(dataArray);
@@ -11,31 +10,30 @@ export function dancingPalette() {
 
   ctx.clearRect(0, 0, tsbarvisualizercanvas.width, tsbarvisualizercanvas.height);
 
-  let barWidth = 15;
   let barHeight;
 
   let x = 0;
 
   function yo(barHeight) {
-    if (barHeight > 420) {
+    if (barHeight > 185) {
       return palette.LightVibrant;
-    } else if (barHeight > 360) {
-      return palette.Vibrant;
-    } else if (barHeight > 320) {
+    } else if (barHeight > 165) {
       return palette.LightMuted;
-    } else if (barHeight > 260) {
+    } else if (barHeight > 130) {
+      return palette.Vibrant;
+    } else if (barHeight > 110) {
       return palette.Muted;
-    } else if (barHeight > 140) {
-      return palette.DarkMuted;
-    } else {
+    } else if (barHeight > 70) {
       return palette.DarkVibrant;
+    } else {
+      return palette.DarkMuted;
     }
   };
 
   for(let i = 0; i < bufferLength; i++) {
     barHeight = dataArray[i] * 2;
 
-    let pickedSwatch = yo(barHeight);
+    let pickedSwatch = yo(dataArray[i]);
     ctx.fillStyle = `hsla(
       ${pickedSwatch.hsl[0] * 360}, 
       ${pickedSwatch.hsl[1] * 100}%, 
@@ -48,12 +46,12 @@ export function dancingPalette() {
     )`;
 
     ctx.fillRect(x, tsbarvisualizercanvas.height - barHeight + 6, barWidth, barHeight);
-    ctx.strokeStyle = "black";
-    ctx.lineWidth = 2;
+    ctx.strokeStyle = "#000";
+    ctx.lineWidth = lineWidth;
     ctx.strokeRect(x, tsbarvisualizercanvas.height - barHeight + 6, barWidth, barHeight);
     ctx.stroke();
 
-    x += barWidth + 1;
+    x += barWidth + gap;
   }
 
   if (isPlaying) {
