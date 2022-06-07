@@ -45,15 +45,15 @@ function BarsSettings({visualizers, handleVisualizersChange}) {
             <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
               <label htmlFor="lineWidth">Line Width:</label>
               <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
-                <input type="range" name="lineWidth" min="1" max="10" value={barsStorageObject.lineWidth} step="1" onChange={handleBarSettingsChange} style={{width: '180px'}} />
-                <input type="number" min="1" max="10" name="lineWidth" value={barsStorageObject.lineWidth} onChange={handleBarSettingsChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+                <input type="range" name="lineWidth" min="0" max="10" value={barsStorageObject.lineWidth} step="1" onChange={handleBarSettingsChange} style={{width: '180px'}} />
+                <input type="number" min="0" max="10" name="lineWidth" value={barsStorageObject.lineWidth} onChange={handleBarSettingsChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
               </div>
             </div>
             <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
               <label htmlFor="gap">Gap:</label>
               <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
-                <input type="range" name="gap" min="2" max="20" value={barsStorageObject.gap} step="2" onChange={handleBarSettingsChange} style={{width: '180px'}} />
-                <input type="number" min="2" max="20" name="gap" value={barsStorageObject.gap} onChange={handleBarSettingsChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+                <input type="range" name="gap" min="0" max="20" value={barsStorageObject.gap} step="2" onChange={handleBarSettingsChange} style={{width: '180px'}} />
+                <input type="number" min="0" max="20" name="gap" value={barsStorageObject.gap} onChange={handleBarSettingsChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
               </div>
             </div>
           </form>

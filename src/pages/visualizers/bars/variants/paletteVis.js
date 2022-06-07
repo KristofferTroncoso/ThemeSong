@@ -35,7 +35,9 @@ export function paletteVis() {
     ctx.fillRect(x, tsbarvisualizercanvas.height - barHeight + 6, barWidth, barHeight);
     ctx.strokeStyle = "#000";
     ctx.lineWidth = lineWidth;
-    ctx.strokeRect(x, tsbarvisualizercanvas.height - barHeight + 6, barWidth, barHeight);
+    if (lineWidth !== 0) {
+      ctx.strokeRect(x, tsbarvisualizercanvas.height - barHeight + 6, barWidth, barHeight);
+    }
     ctx.stroke();
 
     x += barWidth + gap;
