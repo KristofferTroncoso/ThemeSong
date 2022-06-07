@@ -77,31 +77,31 @@ const defaults = {
         saturation: 90
       }
     },
-    {
-      themeId: "themeId:6",
-      dateAdded: 20220602,
-      name: "Dynamic",
-      isDynamic: true,
-      lightDarkMode: true,
-      icon: 0,
-      userPrefs: {
-        darkLightSetting: 'dark', // 'dark', 'light', 'system'
-        darkPrefs: {
-          saturationSetting: 0.8, // percentage of chosen color's saturation.
-          lightnessSettingNavBar: 20,
-          lightnessSettingPlayPage: 15,
-          lightnessSettingBody: 10,
-          lightnessSettingPlayerBar: 25
-        },
-        lightPrefs: {
-          saturationSetting: 1,
-          lightnessSettingNavBar: 85,
-          lightnessSettingPlayPage: 80,
-          lightnessSettingBody: 95,
-          lightnessSettingPlayerBar: 85
-        }
-      }
-    },
+    // {
+    //   themeId: "themeId:6",
+    //   dateAdded: 20220602,
+    //   name: "Dynamic",
+    //   isDynamic: true,
+    //   lightDarkMode: true,
+    //   icon: 0,
+    //   userPrefs: {
+    //     darkLightSetting: 'dark', // 'dark', 'light', 'system'
+    //     darkPrefs: {
+    //       saturationSetting: 0.8, // percentage of chosen color's saturation.
+    //       lightnessSettingNavBar: 20,
+    //       lightnessSettingPlayPage: 15,
+    //       lightnessSettingBody: 10,
+    //       lightnessSettingPlayerBar: 25
+    //     },
+    //     lightPrefs: {
+    //       saturationSetting: 1,
+    //       lightnessSettingNavBar: 85,
+    //       lightnessSettingPlayPage: 80,
+    //       lightnessSettingBody: 95,
+    //       lightnessSettingPlayerBar: 85
+    //     }
+    //   }
+    // },
   ],
   visualizers: [
     {
@@ -111,9 +111,9 @@ const defaults = {
     {
       visualizerId: "visualizerId:1",
       name: "Bars",
-      activeVariant: "variantId:5",
+      activeVariant: "variantId:4",
       barWidth: 30,
-      lineWidth: 4,
+      borderWidth: 4,
       gap: 4,
       variants: [
         {
@@ -143,16 +143,15 @@ const defaults = {
       ]
     }
   ],
-  options: [
-    {
-      optionId: 'option1',
-      optionName: 'Grayscale User Icon',
-      value: true
-    }
-  ],
+  // options: [
+  //   {
+  //     optionId: 'option1',
+  //     optionName: 'Grayscale User Icon',
+  //     value: true
+  //   }
+  // ],
   experimentalAutoUseDeviceDarkLightMode: false
-}
-
+};
 
 chrome.runtime.onInstalled.addListener((details) => {
   console.log(details);
@@ -184,7 +183,14 @@ chrome.runtime.onInstalled.addListener((details) => {
             return theme;
           }
         });
-        chrome.storage.sync.set({extensionVersion: defaults.extensionVersion, themes: updatedThemes});
+        chrome.storage.sync.set({
+          extensionVersion: defaults.extensionVersion, 
+          themes: updatedThemes, 
+          visualizers: defaults.visualizers,
+          activeVisualizer: defaults.activeVisualizer,
+          experimentalAutoUseDeviceDarkLightMode: defaults.experimentalAutoUseDeviceDarkLightMode,
+          activePage: defaults.activePage
+        });
       });
 
       // chrome.storage.sync.clear();
