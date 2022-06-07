@@ -550,6 +550,7 @@ body::-webkit-scrollbar-track {
 ::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.2) !important;
   border: 1px solid rgba(250, 250, 250, 0.342);
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
