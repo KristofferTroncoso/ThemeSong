@@ -19,13 +19,13 @@ function StyledDiv({children}) {
 
 
 function Options() {
-  const [options, setOptions] = React.useState();
+  // const [options, setOptions] = React.useState();
 
-  React.useEffect(() => {
-    chrome.storage.sync.get('options', (res) => {
-      setOptions(res.options);
-    });
-  }, []);
+  // React.useEffect(() => {
+  //   chrome.storage.sync.get('options', (res) => {
+  //     setOptions(res.options);
+  //   });
+  // }, []);
 
   function handleReset(e) {
     chrome.runtime.sendMessage('reset', response => {
@@ -38,9 +38,9 @@ function Options() {
     
   }
 
-  if (!options) {
-    return <div>loading...</div>
-  } else {
+  // if (!options) {
+  //   return <div>loading...</div>
+  // } else {
     return (
       <div>
         <h1 css={{marginBottom: '100px'}}>ThemeSong Options</h1>
@@ -82,7 +82,7 @@ function Options() {
         </StyledDiv>
       </div>
     )
-  }
+  // }
 }
 
 export default Options;
