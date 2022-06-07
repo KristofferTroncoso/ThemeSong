@@ -10,7 +10,7 @@ export let tsbarvisualizercanvas;
 export let isPlaying = false;
 
 export let barWidth = 30;
-export let lineWidth = 4;
+export let borderWidth = 4;
 export let gap = 8;
 
 function setUp() {
@@ -39,7 +39,7 @@ function setUp() {
   let obj = visualizers.find(visualizer => (visualizer.visualizerId === "visualizerId:1"));
   console.log(obj);
   barWidth = obj.barWidth;
-  lineWidth = obj.lineWidth;
+  borderWidth = obj.borderWidth;
   gap = obj.gap;
 }
 

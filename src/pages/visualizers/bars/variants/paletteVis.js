@@ -1,5 +1,5 @@
 import { analyser, dataArray, bufferLength } from '../..';
-import { tsbarvisualizercanvas, isPlaying, barWidth, lineWidth, gap } from '../bars';
+import { tsbarvisualizercanvas, isPlaying, barWidth, borderWidth, gap } from '../bars';
 import { palette } from '../../../Content';
 
 export function paletteVis() {
@@ -34,8 +34,8 @@ export function paletteVis() {
 
     ctx.fillRect(x, tsbarvisualizercanvas.height - barHeight + 6, barWidth, barHeight);
     ctx.strokeStyle = "#000";
-    ctx.lineWidth = lineWidth;
-    if (lineWidth !== 0) {
+    ctx.lineWidth = borderWidth;
+    if (borderWidth !== 0) {
       ctx.strokeRect(x, tsbarvisualizercanvas.height - barHeight + 6, barWidth, barHeight);
     }
     ctx.stroke();
