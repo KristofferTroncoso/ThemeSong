@@ -178,7 +178,12 @@ const Popup = () => {
       case 2:
         return <VisualizerPage />;
       default:
-        return <h1>mama mia</h1>
+        return (
+          <div>
+            <p>something has gone wrong...</p>
+            <p>Try resetting to extension defaults by clicking on ⚙ gear icon on lower right corner.</p>
+          </div>
+        )
     }
   }
 

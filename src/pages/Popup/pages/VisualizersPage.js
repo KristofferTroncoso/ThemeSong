@@ -98,7 +98,12 @@ function VisualizersPage() {
 
 
   if (!activeVisualizer) {
-    return <h1>hello</h1>
+    return (
+      <div>
+        <p>something has gone wrong...</p>
+        <p>Try resetting to extension defaults by clicking on ⚙ gear icon on lower right corner.</p>
+      </div> 
+    )
   } else {
     return (
       <div>
