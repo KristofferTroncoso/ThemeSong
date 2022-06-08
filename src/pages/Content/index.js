@@ -87,16 +87,16 @@ chrome.storage.sync.get(["activeTheme", "themes"], (res) => {
   addSongChangeObserver();
   addSongDetailsObserver();
   addDarkLightSwitch();
-  addStylesheet(res.activeTheme);
-  activeTheme = res.activeTheme;
-  storageObj = res;
   addVisualizerButton();
-  if (playerBarSongImgNode.src !== "https://music.youtube.com/") {
-    processThemeOnInitialLoad(res.activeTheme);
-  } else {
-    processThemeOnInitialLoad(res.activeTheme);
-  }
+  storageObj = res;
+  applyTheme(res.activeTheme);
 });
+
+export function applyTheme(themeId) {
+  addStylesheet(themeId);
+  activeTheme = themeId;
+  processThemeOnInitialLoad(themeId);
+}
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   console.log(`content-script: message received`);
@@ -112,14 +112,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     case "activeTheme":
       console.log('case activeTheme')
-      activeTheme = message[messageKey];
       console.log(message[messageKey]);
-      addStylesheet(message[messageKey]);
-      if (playerBarSongImgNode.src !== "https://music.youtube.com/") {
-        processThemeOnInitialLoad(message[messageKey]);
-      } else {
-        processThemeOnInitialLoad(message[messageKey]);
-      }
+      applyTheme(message[messageKey]);
       break;
 
     case "themes":
@@ -319,7 +313,7 @@ function addSongChangeObserver() {
               console.log(vPalette);
               palette = vPalette;
               mostPopulatedColor = getMostPopulatedColor(vPalette);
-              processThemeOnSongChange(storageObj.activeTheme);
+              processThemeOnSongChange(activeTheme);
             })
             .catch((err) => {
               console.log('vibrant error');
