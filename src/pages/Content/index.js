@@ -346,7 +346,7 @@ function getVibrantPalette() {
 function getMostPopulatedColor(palette) {
 	let mostPopulatedColor = {population: 0};
 	
-	for (const [key, value] of Object.entries(palette)) {
+	for (const [, value] of Object.entries(palette)) {
 		if (value.population >= mostPopulatedColor.population) {
 			mostPopulatedColor = value;
 		}
