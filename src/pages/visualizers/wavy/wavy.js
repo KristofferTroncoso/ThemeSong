@@ -1,5 +1,5 @@
 import { analyser, dataArray, bufferLength } from '../';
-// import { mostPopulatedColor } from '../../Content';
+import { mostPopulatedColor } from '../../Content';
 
 let tsvisualizercanvas;
 let tsvisualizercontainer;
@@ -50,11 +50,16 @@ export function drawOscilloscope() {
   analyser.getByteTimeDomainData(dataArray);
 
   ctx.clearRect(0, 0, tsvisualizercanvas.width, tsvisualizercanvas.height);
-  // ctx.shadowColor = mostPopulatedColor.hex;
-  // ctx.shadowOffsetY = 8;
+  ctx.shadowBlur = 4;
+  ctx.shadowColor = `hsl(
+    ${(mostPopulatedColor.hsl[0] * 360).toFixed()}, 
+    ${mostPopulatedColor.hsl[1] * 100 * 2}%, 
+    70%
+  )`;
+  ctx.shadowOffsetY = 8;
   ctx.beginPath();
 
-  let sliceWidth = tsvisualizercanvas.width * 1.1 / bufferLength;
+  let sliceWidth = tsvisualizercanvas.width / bufferLength;
   let x = 0;
 
   for (let i = 0; i < bufferLength; i++) {
@@ -66,11 +71,9 @@ export function drawOscilloscope() {
     } else {
       ctx.lineTo(x, y);
     }
-
     x += sliceWidth;
   }
 
-  ctx.lineTo(tsvisualizercanvas.width, tsvisualizercanvas.height / 2);
   ctx.stroke();
 
   if (isPlaying) {
