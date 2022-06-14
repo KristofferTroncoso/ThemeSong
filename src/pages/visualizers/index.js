@@ -1,5 +1,6 @@
 import { wavy } from './wavy/wavy';
 import { bars } from './bars/bars';
+import { circles } from './circles/circles';
 // import { addPlayPageVisibilityObserver, removePlayPageVisibilityObserver } from './modules/addPlayPageVisibilityObserver';
 import { addPlayPauseChangeObserver, removePlayPauseChangeObserver } from './modules/addPlayPauseChangeObserver'
 
@@ -68,6 +69,13 @@ function switchActiveVisualizer(activeVisualizer) {
       wavy.stopAnimate();
       bars.setUp();
       bars.animate();
+    } else if (activeVisualizer === "visualizerId:2") {
+      wavy.cleanUp();
+      wavy.stopAnimate();
+      bars.cleanUp();
+      bars.stopAnimate();
+      circles.setUp();
+      circles.animate();
     } else {
       wavy.cleanUp();
       wavy.stopAnimate();
@@ -116,8 +124,10 @@ function handleVisualizerButtonClick() {
     // addPlayPageVisibilityObserver();
     if (activeVisualizer === "visualizerId:0") {
       wavy.setUp();
-    } else {
+    } else if (activeVisualizer === "visualizerId:1") {
       bars.setUp();
+    } else {
+      circles.setUp();
     }
     connectAudio();
     console.log(analyser);
@@ -125,8 +135,10 @@ function handleVisualizerButtonClick() {
     console.log(bufferLength);
     if (activeVisualizer === "visualizerId:0") {
       wavy.animate();
-    } else {
+    } else if (activeVisualizer === "visualizerId:1") {
       bars.animate();
+    } else {
+      circles.animate();
     }
     console.log(audioCtx);
     console.log(analyser);
@@ -139,9 +151,12 @@ function handleVisualizerButtonClick() {
     if (activeVisualizer === "visualizerId:0") {
       wavy.stopAnimate();
       wavy.cleanUp();
-    } else {
+    } else if (activeVisualizer === "visualizerId:1") {
       bars.stopAnimate();
       bars.cleanUp();
+    } else {
+      circles.stopAnimate();
+      circles.cleanUp();
     }
     console.log(audioCtx);
     console.log(analyser);

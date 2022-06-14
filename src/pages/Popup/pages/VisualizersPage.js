@@ -4,6 +4,7 @@ import { jsx, css } from '@emotion/react';
 import VisualizerButton from '../../components/VisualizerButton';
 import WavySettings from '../../visualizers/wavy/WavySettings';
 import BarsSettings from '../../visualizers/bars/BarsSettings';
+import CirclesSettings from '../../visualizers/circles/CirclesSettings';
 
 function VisualizersPage() {
   const [activeVisualizer, setActiveVisualizer] = React.useState();
@@ -91,6 +92,8 @@ function VisualizersPage() {
         return <WavySettings />
       case "visualizerId:1":
         return <BarsSettings visualizers={visualizers} handleVisualizersChange={visualizerObject => handleVisualizersChange(visualizerObject)} />
+      case "visualizerId:2":
+        return <CirclesSettings visualizers={visualizers} handleVisualizersChange={visualizerObject => handleVisualizersChange(visualizerObject)} />
       default:
         break;
     }
