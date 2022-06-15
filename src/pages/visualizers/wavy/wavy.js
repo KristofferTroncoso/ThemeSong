@@ -1,10 +1,12 @@
-import { analyser, dataArray, bufferLength } from '../';
+import { analyser, dataArray, bufferLength, visualizers } from '../';
 import { mostPopulatedColor } from '../../Content';
 
 let tsvisualizercanvas;
 let tsvisualizercontainer;
 let ctx;
 let isPlaying = false;
+
+let lineWidth = 8;
 
 export function setUp() {
   isPlaying = true;
@@ -38,25 +40,29 @@ export function setUp() {
   tsvisualizercanvas.height = '512';
   tsvisualizercanvas.width = '1920';
 
+  // fetch settings
+  let obj = visualizers.find(visualizer => (visualizer.visualizerId === "visualizerId:0"));
+  console.log('wavy.setup');
+  console.log(obj);
+  lineWidth = obj.lineWidth;
 
   //set up data for visualizer
   ctx = tsvisualizercanvas.getContext("2d");
 
-  ctx.lineWidth = 8;
   ctx.strokeStyle = '#fff';
 }
 
 export function drawOscilloscope() {
   analyser.getByteTimeDomainData(dataArray);
-
   ctx.clearRect(0, 0, tsvisualizercanvas.width, tsvisualizercanvas.height);
+  ctx.lineWidth = lineWidth;
   ctx.shadowBlur = 4;
   ctx.shadowColor = `hsl(
     ${(mostPopulatedColor.hsl[0] * 360).toFixed()}, 
     ${mostPopulatedColor.hsl[1] * 100 * 2}%, 
     70%
   )`;
-  ctx.shadowOffsetY = 8;
+  ctx.shadowOffsetY = lineWidth;
   ctx.beginPath();
 
   let sliceWidth = tsvisualizercanvas.width / bufferLength;
@@ -80,39 +86,6 @@ export function drawOscilloscope() {
     setTimeout(() => {
       requestAnimationFrame(drawOscilloscope);
     }, 17);
-  }
-}
-
-export function drawCircleOscilloscope() {
-  analyser.getByteTimeDomainData(dataArray);
-
-  ctx.clearRect(0, 0, tsvisualizercanvas.width, tsvisualizercanvas.height);
-
-  ctx.beginPath();
-
-  let sliceWidth = tsvisualizercanvas.width * 1.0 / bufferLength;
-  let x = 0;
-
-  for (let i = 0; i < bufferLength; i++) {
-    let v = dataArray[i] / 128;
-    let y = v * tsvisualizercanvas.height / 2;
-    
-    if (i === 0) {
-      ctx.moveTo(x, y);
-    } else {
-      ctx.lineTo(x, y);
-    }
-
-    x += sliceWidth;
-  }
-
-  ctx.lineTo(tsvisualizercanvas.width, tsvisualizercanvas.height / 2);
-  ctx.stroke();
-
-  if (isPlaying) {
-    setTimeout(() => {
-      requestAnimationFrame(drawOscilloscope);
-    }, 16);
   }
 }
 

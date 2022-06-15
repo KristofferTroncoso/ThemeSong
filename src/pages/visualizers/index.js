@@ -37,14 +37,29 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       console.log('received visualizers');
       console.log(message[messageKey]);
       visualizers = message[messageKey];
-      // there are no wavy functions yet because wavy doesn't have any variants.
       // these setTimeouts are needed to ensure that it is all cleaned up before animating
       setTimeout(() => {
-        bars.stopAnimate();
-        bars.cleanUp();
+        if (activeVisualizer === "visualizerId:0") {
+          wavy.stopAnimate();
+          wavy.cleanUp();
+        } else if (activeVisualizer === "visualizerId:1") {
+          bars.stopAnimate();
+          bars.cleanUp();
+        } else {
+          bars.stopAnimate();
+          bars.cleanUp();
+        }
         setTimeout(() => {
-          bars.setUp();
-          bars.animate();
+          if (activeVisualizer === "visualizerId:0") {
+            wavy.setUp();
+            wavy.animate();
+          } else if (activeVisualizer === "visualizerId:1") {
+            bars.setUp();
+            bars.animate();
+          } else {
+            bars.setUp();
+            bars.animate();
+          }
         }, 40);
       }, 40);
       sendResponse('received visualizers');

@@ -10,31 +10,70 @@ function VisualizersPage() {
   const [visualizers, setVisualizers] = React.useState([
     {
       visualizerId: "visualizerId:0",
-      name: "Wavy"
+      name: "Wavy",
+      lineWidth: 8
     },
     {
       visualizerId: "visualizerId:1",
       name: "Bars",
-      activeVariant: "variantId:5",
+      activeVariant: "variantId:4",
+      barWidth: 30,
+      borderWidth: 4,
+      gap: 4,
       variants: [
         {
           variantId: "variantId:1",
-          name: "Static White"
+          name: "White"
         },
         {
           variantId: "variantId:2",
-          name: "RGB"
+          name: "Black"
         },
         {
           variantId: "variantId:3",
-          name: "Accent"
+          name: "RGB"
         },
         {
           variantId: "variantId:4",
-          name: "Palette"
+          name: "Accent"
         },
         {
           variantId: "variantId:5",
+          name: "Palette"
+        },
+        {
+          variantId: "variantId:6",
+          name: "Dancing Palette"
+        }
+      ]
+    },
+    {
+      visualizerId: "visualizerId:2",
+      name: "Circles",
+      activeVariant: "variantId:1",
+      variants: [
+        {
+          variantId: "variantId:1",
+          name: "White"
+        },
+        {
+          variantId: "variantId:2",
+          name: "Black"
+        },
+        {
+          variantId: "variantId:3",
+          name: "RGB"
+        },
+        {
+          variantId: "variantId:4",
+          name: "Accent"
+        },
+        {
+          variantId: "variantId:5",
+          name: "Palette"
+        },
+        {
+          variantId: "variantId:6",
           name: "Dancing Palette"
         }
       ]
@@ -88,7 +127,7 @@ function VisualizersPage() {
   let activeVisualizerSettings = () => {
     switch (activeVisualizer) {
       case "visualizerId:0":
-        return <WavySettings />
+        return <WavySettings visualizers={visualizers} handleVisualizersChange={visualizerObject => handleVisualizersChange(visualizerObject)} />
       case "visualizerId:1":
         return <BarsSettings visualizers={visualizers} handleVisualizersChange={visualizerObject => handleVisualizersChange(visualizerObject)} />
       default:
