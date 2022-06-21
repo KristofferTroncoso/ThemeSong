@@ -1,6 +1,7 @@
 import { activeVisualizer, connectSource } from '../';
 import { wavy } from '../wavy/wavy';
 import { bars } from '../bars/bars';
+import { circles } from '../circles/circles';
 import { audioCtx } from '../';
 
 let playPauseChangeObserver;
@@ -31,13 +32,20 @@ export function addPlayPauseChangeObserver() {
       console.log('playstate === "pause"')
       wavy.stopAnimate();
       bars.stopAnimate();
+      circles.stopAnimate();
     } else {
       console.log('playState something else')
       connectSource();
       if (activeVisualizer === "visualizerId:0") {
         wavy.animate();
-      } else {
+      } else if (activeVisualizer === "visualizerId:1") {
         bars.animate();
+      } else if (activeVisualizer === "visualizerId:2") {
+        circles.animate();
+      } else {
+        wavy.stopAnimate();
+        bars.stopAnimate();
+        circles.stopAnimate();
       }
     }
 

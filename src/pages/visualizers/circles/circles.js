@@ -1,20 +1,17 @@
 import { analyser, dataArray } from '../';
 import { visualizers } from '..';
+import { dancingPalette } from './variants/dancing-palette';
+import { white } from './variants/white';
+import { twice } from './variants/twice';
+import { rgb } from './variants/rgb';
+import { accent } from './variants/accent';
+import { paletteVis } from './variants/paletteVis';
 export let tsbarvisualizercanvas;
 export let isPlaying = false;
 
 export let barWidth = 30;
 export let borderWidth = 4;
 export let gap = 8;
-
-let ctx;
-let circleArr = [];
-
-const 
-    DEFAULT_RADIUS  = 50,
-    MAX_SPEED       = 0.2,
-    CIRCLE_COUNT    = 1;
-    Math.TAU = Math.PI * 2;
 
 function setUp() {
   // Get a canvas defined with ID "oscilloscope"
@@ -34,49 +31,41 @@ function setUp() {
   tsbarvisualizercanvas.style.width = "100%";
   tsbarvisualizercanvas.style.top = "0";
   tsbarvisualizercanvas.style.left = "0";
-  tsbarvisualizercanvas.style.border = "1px solid tomato";
+  // tsbarvisualizercanvas.style.border = "1px solid tomato";
   tsbarvisualizercanvas.style.borderRadius = "6px";
   tsbarvisualizercanvas.height = ytmusicplayer.clientHeight;
   tsbarvisualizercanvas.width = ytmusicplayer.clientWidth;
-
-  ctx = tsbarvisualizercanvas.getContext("2d");
-}
-
-export function drawCircles() {
-
-  let ytmusicplayer = document.querySelector("ytmusic-player");
-    
-    for (let i = 0; i < CIRCLE_COUNT; i++) {
-        circleArr.push() 
-    }
-
-    if (ctx.width !== ytmusicplayer.clientWidth || ctx.height !== ytmusicplayer.clientHeight) {
-        ctx.width = ytmusicplayer.clientWidth;
-        ctx.height = ytmusicplayer.clientHeight;
-    } else {
-        ctx.clearRect(0, 0, tsbarvisualizercanvas.width, tsbarvisualizercanvas.height);
-    }
-
-
-    // use for of loop (saves having to mess with index)
-    for (let circle of circleArr) {
-      circle.update();
-      circle.draw()
-    }
-
-  console.log(circleArr.length);
-  circleArr = [];
-  if (isPlaying) {
-    setTimeout(() => {
-      requestAnimationFrame(drawCircles);
-    }, 100);
-  }
 }
 
 function animate() {
   isPlaying = true;
+  let activeVariant = (visualizers.find(visualizer => visualizer.visualizerId === "visualizerId:2")).activeVariant;
   console.log('circles.js animate')
-  drawCircles();
+  console.log(activeVariant)
+  switch (activeVariant) {
+    case "variantId:1":
+      white();
+      break;
+    case "variantId:2":
+      twice();
+      break;
+    case "variantId:3":
+      rgb();
+      break;
+    case "variantId:4":
+      accent();
+      break;
+    case "variantId:5":
+      paletteVis();
+      break;
+    case "variantId:6":
+      // analyser.fftSize = 128;
+      // connectSource();
+      dancingPalette();
+      break;
+    default:
+      accent();
+  }
 }
 
 function stopAnimate() {

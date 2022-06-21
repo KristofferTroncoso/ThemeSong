@@ -1,6 +1,5 @@
 import { analyser, dataArray } from '../..';
 import { tsbarvisualizercanvas, isPlaying } from '../circles';
-import { palette } from '../../../Content';
 
 let a = 160;
 let b = 350;
@@ -74,7 +73,7 @@ function updateValues(x, y, dirX, dirY, staticRadius, speed) {
   return [x, y, dirX, dirY];
 }
 
-export function dancingPalette() {
+export function twice() {
   let ctx = tsbarvisualizercanvas.getContext("2d");
   let ytmusicplayer = document.querySelector("ytmusic-player");
   tsbarvisualizercanvas.height = ytmusicplayer.clientHeight;
@@ -91,7 +90,7 @@ export function dancingPalette() {
 
   ctx.beginPath();
   ctx.lineWidth = 6;
-  ctx.fillStyle = `${palette.Vibrant.hex}`;
+  ctx.fillStyle = `hsla(200, 100%, 50%, 0.9)`;
   radius = ((Math.max(dataArray[0]-200, 0) / 300) + 1) * (tsbarvisualizercanvas.height/5);
   staticRadius = 1 * (tsbarvisualizercanvas.height/5);
   speed = 0.4;
@@ -102,7 +101,7 @@ export function dancingPalette() {
 
   ctx.beginPath();
   ctx.lineWidth = 5;
-  ctx.fillStyle = `${palette.Muted.hex}`;
+  ctx.fillStyle = `hsla(120 , 90%, 50%, 0.9)`;
   radius = ((Math.max(dataArray[40]-20, 0) / 500) + 0.6) * (tsbarvisualizercanvas.height/5);
   staticRadius = 0.5 * (tsbarvisualizercanvas.height/5);
   speed = 0.6;
@@ -113,7 +112,7 @@ export function dancingPalette() {
 
   ctx.beginPath();
   ctx.lineWidth = 4;
-  ctx.fillStyle = `${palette.DarkVibrant.hex}`;
+  ctx.fillStyle = `hsla(330, 70%, 75%, 0.9)`;
   radius = ((Math.max(dataArray[100], 0) / 500) + 0.38) * (tsbarvisualizercanvas.height/5);
   staticRadius = 0.35 * (tsbarvisualizercanvas.height/5);
   speed = 1;
@@ -124,7 +123,7 @@ export function dancingPalette() {
 
   ctx.beginPath();
   ctx.lineWidth = 4;
-  ctx.fillStyle = `${palette.LightVibrant.hex}`;
+  ctx.fillStyle = `hsla(265, 80%, 70%, 0.9)`;
   radius = ((Math.max(dataArray[120], 0) / 500) + 0.37) * (tsbarvisualizercanvas.height/5);
   staticRadius = 0.35 * (tsbarvisualizercanvas.height/5);
   speed = 1.4;
@@ -135,7 +134,7 @@ export function dancingPalette() {
 
   ctx.beginPath();
   ctx.lineWidth = 4;
-  ctx.fillStyle = `${palette.DarkMuted.hex}`;
+  ctx.fillStyle = `hsla(35, 100%, 60%, 0.95)`;
   radius = ((Math.max(dataArray[160]-10, 0) / 400) + 0.36) * (tsbarvisualizercanvas.height/5);
   staticRadius = 0.33 * (tsbarvisualizercanvas.height/5);
   speed = 1.3;
@@ -146,7 +145,7 @@ export function dancingPalette() {
 
   ctx.beginPath();
   ctx.lineWidth = 5;
-  ctx.fillStyle = `${palette.Muted.hex}`;
+  ctx.fillStyle = `hsla(170, 100%, 40%, 0.9)`;
   radius = ((Math.max(dataArray[180]-10, 0) / 500) + 0.35) * (tsbarvisualizercanvas.height/5);
   staticRadius = 0.33 * (tsbarvisualizercanvas.height/5);
   speed = 1.5;
@@ -157,7 +156,7 @@ export function dancingPalette() {
 
   ctx.beginPath();
   ctx.lineWidth = 4;
-  ctx.fillStyle = `${palette.Vibrant.hex}`;
+  ctx.fillStyle = `hsla(0, 0%, 100%, 0.95)`;
   radius = ((Math.max(dataArray[190], 0) / 1000) + 0.34) * (tsbarvisualizercanvas.height/5);
   staticRadius = 0.32 * (tsbarvisualizercanvas.height/5);
   speed = 2;
@@ -168,7 +167,7 @@ export function dancingPalette() {
 
   ctx.beginPath();
   ctx.lineWidth = 3;
-  ctx.fillStyle = `${palette.DarkVibrant.hex}`;
+  ctx.fillStyle = `hsla(0, 100%, 50%, 0.9)`;
   radius = ((Math.max(dataArray[200], 0) / 1000) + 0.32) * (tsbarvisualizercanvas.height/5);
   staticRadius = 0.32 * (tsbarvisualizercanvas.height/5);
   speed = 1.505;
@@ -182,7 +181,7 @@ export function dancingPalette() {
   radius = ((Math.max(dataArray[210], 0) / 1000) + 0.3) * (tsbarvisualizercanvas.height/5);
   staticRadius = 0.3 * (tsbarvisualizercanvas.height/5);
   speed = 0.7;
-  ctx.fillStyle = `${palette.LightVibrant.hex}`;
+  ctx.fillStyle = `hsla(230, 100%, 50%, 0.9)`;
   [k, l, dirK, dirL] = updateValues(k, l, dirK, dirL, staticRadius, speed);
   ctx.arc(k, l, radius, 0, circumference);
   ctx.fill();
@@ -191,7 +190,7 @@ export function dancingPalette() {
 
   if (isPlaying) {
     setTimeout(() => {
-      requestAnimationFrame(dancingPalette);
+      requestAnimationFrame(twice);
     }, 16);
   }
 }
