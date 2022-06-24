@@ -46,6 +46,10 @@ ytmusic-player[player-ui-state_=FULLSCREEN] #thumbnail {
   ytmusic-player[player-ui-state_=FULLSCREEN] #thumbnail {
     flex-direction: column;
   }
+
+  #songDivNode {
+    text-align: center;
+  }
 }
 
 ytmusic-player[player-ui-state_=FULLSCREEN] #song-image #img {
