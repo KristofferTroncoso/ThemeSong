@@ -12,10 +12,10 @@ let circles = [
     speedY: 0.6,
     freq: 0,
     minByte: 190,
-    minRadius: 0.5,
-    growRate: 500,
-    color: 'hsla(10, 100%, 55%, 1)',
-    lineWidth: 5
+    minRadius: 0.8,
+    growRate: 200,
+    color: 'hsla(10, 100%, 55%, 0.7)',
+    lineWidth: 1
   },
   {
     x: 450,
@@ -26,10 +26,10 @@ let circles = [
     speedY: 0.5,
     freq: 1,
     minByte: 100,
-    minRadius: 0.3,
+    minRadius: 0.5,
     growRate: 500,
-    color: 'hsla(130 , 100%, 40%, 1)',
-    lineWidth: 5
+    color: 'hsla(130 , 100%, 40%, 0.7)',
+    lineWidth: 1
   },
   {
     x: 230,
@@ -40,10 +40,10 @@ let circles = [
     speedY: 1.2,
     freq: 40,
     minByte: 0,
-    minRadius: 0.3,
+    minRadius: 0.38,
     growRate: 600,
-    color: '#800000',
-    lineWidth: 4
+    color: 'hsla(0, 100%, 27%, 0.7)',
+    lineWidth: 1
   },
   {
     x: 310,
@@ -54,10 +54,10 @@ let circles = [
     speedY: 1,
     freq: 80,
     minByte: 0,
-    minRadius: 0.3,
+    minRadius: 0.37,
     growRate: 600,
-    color: 'hsla(265, 90%, 70%, 1)',
-    lineWidth: 4
+    color: 'hsla(265, 90%, 70%, 0.7)',
+    lineWidth: 1
   },
   {
     x: 160,
@@ -68,10 +68,10 @@ let circles = [
     speedY: 1.3,
     freq: 120,
     minByte: 10,
-    minRadius: 0.3,
+    minRadius: 0.36,
     growRate: 600,
-    color: 'hsla(35, 100%, 50%, 1)',
-    lineWidth: 4
+    color: 'hsla(35, 100%, 50%, 0.7)',
+    lineWidth: 1
   },
   {
     x: 400,
@@ -82,23 +82,23 @@ let circles = [
     speedY: 0.8,
     freq: 140,
     minByte: 10,
-    minRadius: 0.3,
+    minRadius: 0.35,
     growRate: 600,
-    color: 'hsla(170, 100%, 40%, 1)',
-    lineWidth: 5
+    color: 'hsla(170, 100%, 40%, 0.7)',
+    lineWidth: 1
   },
   {
     x: 150,
     y: 410,
     dirX: 1,
     dirY: -1,
-    speedX: 1,
-    speedY: 3,
+    speedX: 0.6,
+    speedY: 1,
     freq: 190,
     minByte: 0,
-    minRadius: 0.3,
+    minRadius: 0.32,
     growRate: 800,
-    color: 'hsla(0, 0%, 100%, 1)',
+    color: 'hsla(150, 100%, 40%, 0.7)',
     lineWidth: 3
   },
   {
@@ -110,9 +110,9 @@ let circles = [
     speedY: 1.8,
     freq: 190,
     minByte: 0,
-    minRadius: 0.3,
+    minRadius: 0.32,
     growRate: 800,
-    color: 'hsla(195, 100%, 55%, 1)',
+    color: 'hsla(195, 100%, 55%, 0.7)',
     lineWidth: 3
   },
   {
@@ -126,7 +126,7 @@ let circles = [
     minByte: 0,
     minRadius: 0.3,
     growRate: 800,
-    color: 'hsla(0, 100%, 50%, 1)',
+    color: 'hsla(0, 100%, 50%, 0.7)',
     lineWidth: 3
   },
   {
@@ -138,10 +138,10 @@ let circles = [
     speedY: 0.8,
     freq: 0,
     minByte: 150,
-    minRadius: 0.3,
-    growRate: 500,
-    color: 'hsla(230, 100%, 50%, 1)',
-    lineWidth: 5
+    minRadius: 0.5,
+    growRate: 300,
+    color: 'hsla(230, 100%, 50%, 0.7)',
+    lineWidth: 3
   },
   {
     x: 420,
@@ -152,10 +152,10 @@ let circles = [
     speedY: 0.5,
     freq: 0,
     minByte: 150,
-    minRadius: 0.3,
-    growRate: 500,
-    color: 'hsla(30 , 90%, 50%, 1)',
-    lineWidth: 5
+    minRadius: 0.5,
+    growRate: 300,
+    color: 'hsla(30 , 90%, 50%, 0.7)',
+    lineWidth: 3
   },
   {
     x: 230,
@@ -166,10 +166,10 @@ let circles = [
     speedY: 1.2,
     freq: 30,
     minByte: 0,
-    minRadius: 0.3,
+    minRadius: 0.38,
     growRate: 600,
-    color: 'hsla(60, 100%, 50%, 1)',
-    lineWidth: 4
+    color: 'hsla(60, 100%, 50%, 0.7)',
+    lineWidth: 3
   },
   {
     x: 310,
@@ -180,10 +180,10 @@ let circles = [
     speedY: 1,
     freq: 70,
     minByte: 0,
-    minRadius: 0.3,
+    minRadius: 0.37,
     growRate: 600,
-    color: 'hsla(300, 100%, 70%, 1)',
-    lineWidth: 4
+    color: 'hsla(300, 100%, 70%, 0.7)',
+    lineWidth: 3
   },
   {
     x: 160,
@@ -194,10 +194,10 @@ let circles = [
     speedY: 1.4,
     freq: 110,
     minByte: 10,
-    minRadius: 0.3,
+    minRadius: 0.36,
     growRate: 600,
-    color: 'hsla(180, 0%, 10%, 1)',
-    lineWidth: 4
+    color: 'hsla(200, 100%, 50%, 0.7)',
+    lineWidth: 3
   },
   {
     x: 400,
@@ -208,10 +208,10 @@ let circles = [
     speedY: 0.5,
     freq: 120,
     minByte: 10,
-    minRadius: 0.3,
+    minRadius: 0.35,
     growRate: 600,
-    color: 'hsla(210, 100%, 40%, 1)',
-    lineWidth: 5
+    color: 'hsla(210, 100%, 40%, 0.7)',
+    lineWidth: 3
   },
   {
     x: 150,
@@ -222,9 +222,9 @@ let circles = [
     speedY: 1,
     freq: 150,
     minByte: 0,
-    minRadius: 0.3,
+    minRadius: 0.32,
     growRate: 800,
-    color: 'hsla(280, 100%, 40%, 1)',
+    color: 'hsla(280, 100%, 40%, 0.7)',
     lineWidth: 3
   },
   {
@@ -236,9 +236,9 @@ let circles = [
     speedY: 1.2,
     freq: 170,
     minByte: 0,
-    minRadius: 0.3,
+    minRadius: 0.32,
     growRate: 800,
-    color: 'hsla(290, 100%, 50%, 1)',
+    color: 'hsla(290, 100%, 50%, 0.7)',
     lineWidth: 3
   },
   {
@@ -252,7 +252,7 @@ let circles = [
     minByte: 0,
     minRadius: 0.3,
     growRate: 800,
-    color: 'hsla(320, 100%, 50%, 1)',
+    color: 'hsla(320, 100%, 50%, 0.7)',
     lineWidth: 3
   }
 ]
@@ -291,7 +291,7 @@ function updateValues({x, y, dirX, dirY, radius, speedX, speedY, freq, minByte, 
   return {x, y, dirX, dirY, radius, speedX, speedY, freq, minByte, minRadius};
 }
 
-export function white() {
+export function party() {
   let ctx = tsbarvisualizercanvas.getContext("2d");
   let ytmusicplayer = document.querySelector("ytmusic-player");
   tsbarvisualizercanvas.height = ytmusicplayer.clientHeight;
@@ -301,7 +301,6 @@ export function white() {
   analyser.getByteFrequencyData(dataArray);
 
   ctx.clearRect(0, 0, tsbarvisualizercanvas.width, tsbarvisualizercanvas.height);
-  ctx.strokeStyle = '#000';
 
   //update values
   circles = circles.map(circle => {
@@ -312,16 +311,24 @@ export function white() {
   //draw values
   for (let circle of circles) {
     ctx.beginPath();
-    ctx.lineWidth = circle.lineWidth;
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = '#000';
     ctx.fillStyle = circle.color;
     ctx.arc(circle.x, circle.y, circle.radius, 0, circumference);
     ctx.fill();
     ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(circle.x - (circle.radius * 0.55), circle.y - (circle.radius * 0.5));
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+    ctx.ellipse(circle.x - (circle.radius * 0.55), circle.y - (circle.radius * 0.55), (circle.radius * 0.08), (circle.radius * 0.16), Math.PI / 4, 0, 2 * Math.PI);
+    ctx.fill();
   };
+
 
   if (isPlaying) {
     setTimeout(() => {
-      requestAnimationFrame(white);
+      requestAnimationFrame(party);
     }, 17);
   }
 }

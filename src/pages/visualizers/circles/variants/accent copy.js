@@ -1,11 +1,11 @@
-import { analyser, dataArray } from '../..';
+import { analyser, dataArray, bufferLength } from '../..';
 import { tsbarvisualizercanvas, isPlaying } from '../circles';
-import { palette } from '../../../Content';
+import { mostPopulatedColor } from '../../../Content';
 
 let a = 160;
 let b = 350;
 let dirA = 1;
-let dirB = -1;
+let dirB = 1;
 
 let c = 450;
 let d = 310;
@@ -15,37 +15,18 @@ let dirD = 1;
 let e = 230;
 let f = 460;
 let dirE = -1;
-let dirF = -1;
+let dirF = 1;
 
 let g = 310;
 let h = 450;
 let dirG = -1;
 let dirH = 1;
 
-let i = 160;
-let j = 310;
-let dirI = -1;
-let dirJ = 1;
-
 let k = 400;
 let l = 5;
-let dirK = 1;
+let dirK = -1;
 let dirL = -1;
 
-let m = 150;
-let n = 420;
-let dirM = 1;
-let dirN = -1;
-
-let o = 400;
-let p = 290;
-let dirO = 1;
-let dirP = 1;
-
-let q = 200;
-let r = 310;
-let dirQ = 1;
-let dirR = 1;
 
 
 let circumference = 2 * Math.PI;
@@ -74,7 +55,7 @@ function updateValues(x, y, dirX, dirY, staticRadius, speed) {
   return [x, y, dirX, dirY];
 }
 
-export function dancingPalette() {
+export function accent() {
   let ctx = tsbarvisualizercanvas.getContext("2d");
   let ytmusicplayer = document.querySelector("ytmusic-player");
   tsbarvisualizercanvas.height = ytmusicplayer.clientHeight;
@@ -91,7 +72,12 @@ export function dancingPalette() {
 
   ctx.beginPath();
   ctx.lineWidth = 6;
-  ctx.fillStyle = `${palette.Vibrant.hex}`;
+  ctx.fillStyle = `hsla(
+    ${(mostPopulatedColor.hsl[0] * 360).toFixed()}, 
+    ${mostPopulatedColor.hsl[1] * 100}%, 
+    50%, 
+    0.95
+  )`;
   radius = ((Math.max(dataArray[0]-200, 0) / 300) + 1) * (tsbarvisualizercanvas.height/5);
   staticRadius = 1 * (tsbarvisualizercanvas.height/5);
   speed = 0.4;
@@ -102,7 +88,12 @@ export function dancingPalette() {
 
   ctx.beginPath();
   ctx.lineWidth = 5;
-  ctx.fillStyle = `${palette.Muted.hex}`;
+  ctx.fillStyle = `hsla(
+    ${(mostPopulatedColor.hsl[0] * 360).toFixed()}, 
+    ${mostPopulatedColor.hsl[1] * 100}%, 
+    55%, 
+    0.95
+  )`;
   radius = ((Math.max(dataArray[40]-20, 0) / 500) + 0.6) * (tsbarvisualizercanvas.height/5);
   staticRadius = 0.5 * (tsbarvisualizercanvas.height/5);
   speed = 0.6;
@@ -113,7 +104,12 @@ export function dancingPalette() {
 
   ctx.beginPath();
   ctx.lineWidth = 4;
-  ctx.fillStyle = `${palette.DarkVibrant.hex}`;
+  ctx.fillStyle = `hsla(
+    ${(mostPopulatedColor.hsl[0] * 360).toFixed()}, 
+    ${mostPopulatedColor.hsl[1] * 100}%, 
+    60%, 
+    0.95
+  )`;
   radius = ((Math.max(dataArray[100], 0) / 500) + 0.38) * (tsbarvisualizercanvas.height/5);
   staticRadius = 0.35 * (tsbarvisualizercanvas.height/5);
   speed = 1;
@@ -124,18 +120,12 @@ export function dancingPalette() {
 
   ctx.beginPath();
   ctx.lineWidth = 4;
-  ctx.fillStyle = `${palette.LightVibrant.hex}`;
-  radius = ((Math.max(dataArray[120], 0) / 500) + 0.37) * (tsbarvisualizercanvas.height/5);
-  staticRadius = 0.35 * (tsbarvisualizercanvas.height/5);
-  speed = 1.4;
-  [m, n, dirM, dirN] = updateValues(m, n, dirM, dirN, staticRadius, speed)
-  ctx.arc(m, n, radius, 0, circumference);
-  ctx.fill();
-  ctx.stroke();
-
-  ctx.beginPath();
-  ctx.lineWidth = 4;
-  ctx.fillStyle = `${palette.DarkMuted.hex}`;
+  ctx.fillStyle = `hsla(
+    ${(mostPopulatedColor.hsl[0] * 360).toFixed()}, 
+    ${mostPopulatedColor.hsl[1] * 100}%, 
+    70%, 
+    0.95
+  )`;
   radius = ((Math.max(dataArray[160]-10, 0) / 400) + 0.36) * (tsbarvisualizercanvas.height/5);
   staticRadius = 0.33 * (tsbarvisualizercanvas.height/5);
   speed = 1.3;
@@ -145,44 +135,16 @@ export function dancingPalette() {
   ctx.stroke();
 
   ctx.beginPath();
-  ctx.lineWidth = 5;
-  ctx.fillStyle = `${palette.Muted.hex}`;
-  radius = ((Math.max(dataArray[180]-10, 0) / 500) + 0.35) * (tsbarvisualizercanvas.height/5);
-  staticRadius = 0.33 * (tsbarvisualizercanvas.height/5);
-  speed = 1.5;
-  [o, p, dirO, dirP] = updateValues(o, p, dirO, dirP, staticRadius, speed)
-  ctx.arc(o, p, radius, 0, circumference);
-  ctx.fill();
-  ctx.stroke();
-
-  ctx.beginPath();
-  ctx.lineWidth = 4;
-  ctx.fillStyle = `${palette.Vibrant.hex}`;
-  radius = ((Math.max(dataArray[190], 0) / 1000) + 0.34) * (tsbarvisualizercanvas.height/5);
-  staticRadius = 0.32 * (tsbarvisualizercanvas.height/5);
-  speed = 2;
-  [i, j, dirI, dirJ] = updateValues(i, j,  dirI, dirJ, staticRadius, speed)
-  ctx.arc(i, j, radius, 0, circumference);
-  ctx.fill();
-  ctx.stroke();
-
-  ctx.beginPath();
-  ctx.lineWidth = 3;
-  ctx.fillStyle = `${palette.DarkVibrant.hex}`;
-  radius = ((Math.max(dataArray[200], 0) / 1000) + 0.32) * (tsbarvisualizercanvas.height/5);
-  staticRadius = 0.32 * (tsbarvisualizercanvas.height/5);
-  speed = 1.505;
-  [q, r, dirQ, dirR] = updateValues(q, r,  dirQ, dirR, staticRadius, speed)
-  ctx.arc(q, r, radius, 0, circumference);
-  ctx.fill();
-  ctx.stroke();
-
-  ctx.beginPath();
   ctx.lineWidth = 3;
   radius = ((Math.max(dataArray[210], 0) / 1000) + 0.3) * (tsbarvisualizercanvas.height/5);
   staticRadius = 0.3 * (tsbarvisualizercanvas.height/5);
   speed = 0.7;
-  ctx.fillStyle = `${palette.LightVibrant.hex}`;
+  ctx.fillStyle = `hsla(
+    ${(mostPopulatedColor.hsl[0] * 360).toFixed()}, 
+    ${mostPopulatedColor.hsl[1] * 100}%, 
+    85%, 
+    0.95
+  )`;
   [k, l, dirK, dirL] = updateValues(k, l, dirK, dirL, staticRadius, speed);
   ctx.arc(k, l, radius, 0, circumference);
   ctx.fill();
@@ -191,7 +153,7 @@ export function dancingPalette() {
 
   if (isPlaying) {
     setTimeout(() => {
-      requestAnimationFrame(dancingPalette);
+      requestAnimationFrame(accent);
     }, 16);
   }
 }

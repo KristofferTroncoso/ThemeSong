@@ -24,7 +24,7 @@ function BarsSettings({visualizers, handleVisualizersChange}) {
   } else {
     return (
       <div>
-        <h2 style={{color: '#ff4f61', marginBottom: '4px'}}>Active Visualizer: Bars</h2>
+        <h2 style={{color: '#ff4f61', marginBottom: '4px'}}>Active Visualizer: Circles</h2>
         <div>
           <p style={{marginBottom: '6px'}}>Style Variant:</p>
           <div 

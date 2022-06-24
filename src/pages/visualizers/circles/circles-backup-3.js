@@ -1,6 +1,5 @@
 import { analyser, dataArray } from '../';
 import { visualizers } from '..';
-import { xyzToCIELab } from 'node-vibrant/lib/util';
 export let tsbarvisualizercanvas;
 export let isPlaying = false;
 

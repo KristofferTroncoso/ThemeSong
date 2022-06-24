@@ -38,8 +38,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       console.log('received visualizers');
       console.log(message[messageKey]);
       visualizers = message[messageKey];
-      // there are no wavy functions yet because wavy doesn't have any variants.
-      // these setTimeouts are needed to ensure that it is all cleaned up before animating
       if (activeVisualizer === "visualizerId:0") {
         wavy.stopAnimate();
         wavy.cleanUp();
@@ -77,32 +75,49 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
 function switchActiveVisualizer(activeVisualizer) {
   console.log(activeVisualizer);
+  try {
+    wavy.cleanUp();
+    wavy.stopAnimate();
+  } catch {}
+  try {
+    bars.cleanUp();
+    bars.stopAnimate();
+  } catch {}
+  try {
+    circles.cleanUp();
+    circles.stopAnimate();
+  } catch {}
   if (isVisualizerOn) {
-    if (activeVisualizer === "visualizerId:0") {
-      bars.cleanUp();
-      bars.stopAnimate();
-      wavy.setUp();
-      wavy.animate();
-    } else if (activeVisualizer === "visualizerId:1") {
-      wavy.cleanUp();
-      wavy.stopAnimate();
-      bars.setUp();
-      bars.animate();
-    } else if (activeVisualizer === "visualizerId:2") {
-      wavy.cleanUp();
-      wavy.stopAnimate();
-      bars.cleanUp();
-      bars.stopAnimate();
-      circles.setUp();
-      circles.animate();
-    } else {
-      wavy.cleanUp();
-      wavy.stopAnimate();
-      bars.cleanUp();
-      bars.stopAnimate();
-    }
+    setTimeout(() => {
+      if (activeVisualizer === "visualizerId:0") {
+        wavy.setUp();
+        wavy.animate();
+      } else if (activeVisualizer === "visualizerId:1") {
+        bars.setUp();
+        bars.animate();
+      } else if (activeVisualizer === "visualizerId:2") {
+        circles.setUp();
+        circles.animate();
+      } else {
+        console.log('switchActiveVisualizer active visualizerId not recognized. Stopping all visualizers.')
+        try {
+          wavy.cleanUp();
+          wavy.stopAnimate();
+        } catch {}
+        try {
+          bars.cleanUp();
+          bars.stopAnimate();
+        } catch {}
+        try {
+          circles.cleanUp();
+          circles.stopAnimate();
+        } catch {}
+      }
+    }, 40);
   }
-  connectAudio();
+  setTimeout(() => {
+    connectAudio();
+  }, 100);
 }
 
 export function addVisualizerButton() {
@@ -173,6 +188,9 @@ function handleVisualizerButtonClick() {
     } else if (activeVisualizer === "visualizerId:1") {
       bars.stopAnimate();
       bars.cleanUp();
+    } else if (activeVisualizer === "visualizerId:2") {
+      circles.stopAnimate();
+      circles.cleanUp();
     } else {
       circles.stopAnimate();
       circles.cleanUp();
@@ -191,7 +209,15 @@ export function connectAudio() {
     console.log(audioCtx);
     analyser = audioCtx.createAnalyser();
   } 
-  // analyser.fftSize = 128;
+  if (activeVisualizer === "visualizerId:0") {
+    analyser.fftSize = 2048;
+  } else if (activeVisualizer === "visualizerId:1") {
+    analyser.fftSize = 2048;
+  } else if (activeVisualizer === "visualizerId:2") {
+    analyser.fftSize = 512;
+  } else {
+    analyser.fftSize = 2048;
+  }
   analyser.maxDecibels = -18;
   analyser.smoothingTimeConstant = 0.8;
   

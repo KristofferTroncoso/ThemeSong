@@ -1,8 +1,8 @@
-import { analyser, dataArray } from '../';
+// import { analyser } from '../';
 import { visualizers } from '..';
-import { dancingPalette } from './variants/dancing-palette';
+import { party } from './variants/party';
 import { white } from './variants/white';
-import { twice } from './variants/twice';
+import { ot9 } from './variants/ot9';
 import { rgb } from './variants/rgb';
 import { accent } from './variants/accent';
 import { paletteVis } from './variants/paletteVis';
@@ -14,8 +14,7 @@ export let borderWidth = 4;
 export let gap = 8;
 
 function setUp() {
-  // Get a canvas defined with ID "oscilloscope"
-  console.log('bars setup')
+  console.log('circles setup')
   let ytmusicplayer = document.querySelector("ytmusic-player")
   tsbarvisualizercanvas = document.getElementById("ts-barvisualizer-canvas");
   console.log(tsbarvisualizercanvas);
@@ -31,10 +30,9 @@ function setUp() {
   tsbarvisualizercanvas.style.width = "100%";
   tsbarvisualizercanvas.style.top = "0";
   tsbarvisualizercanvas.style.left = "0";
-  // tsbarvisualizercanvas.style.border = "1px solid tomato";
   tsbarvisualizercanvas.style.borderRadius = "6px";
   tsbarvisualizercanvas.height = ytmusicplayer.clientHeight;
-  tsbarvisualizercanvas.width = ytmusicplayer.clientWidth;
+  tsbarvisualizercanvas.width = ytmusicplayer.clientWidth; 
 }
 
 function animate() {
@@ -47,7 +45,7 @@ function animate() {
       white();
       break;
     case "variantId:2":
-      twice();
+      ot9();
       break;
     case "variantId:3":
       rgb();
@@ -61,7 +59,7 @@ function animate() {
     case "variantId:6":
       // analyser.fftSize = 128;
       // connectSource();
-      dancingPalette();
+      party();
       break;
     default:
       accent();

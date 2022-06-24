@@ -35,18 +35,23 @@ export function addPlayPauseChangeObserver() {
       circles.stopAnimate();
     } else {
       console.log('playState something else')
+      wavy.stopAnimate();
+      bars.stopAnimate();
+      circles.stopAnimate();
       connectSource();
-      if (activeVisualizer === "visualizerId:0") {
-        wavy.animate();
-      } else if (activeVisualizer === "visualizerId:1") {
-        bars.animate();
-      } else if (activeVisualizer === "visualizerId:2") {
-        circles.animate();
-      } else {
-        wavy.stopAnimate();
-        bars.stopAnimate();
-        circles.stopAnimate();
-      }
+      setTimeout(() => {
+        if (activeVisualizer === "visualizerId:0") {
+          wavy.animate();
+        } else if (activeVisualizer === "visualizerId:1") {
+          bars.animate();
+        } else if (activeVisualizer === "visualizerId:2") {
+          circles.animate();
+        } else {
+          wavy.stopAnimate();
+          bars.stopAnimate();
+          circles.stopAnimate();
+        }
+      }, 40);
     }
 
     try {
