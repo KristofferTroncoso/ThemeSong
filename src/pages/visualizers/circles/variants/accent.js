@@ -16,7 +16,7 @@ setTimeout(() => {
       minByte: 200,
       minRadius: 1,
       growRate: 300,
-      color: mostPopulatedColor.hex,
+      color: 'blue',
       lineWidth: 5
     },
     {
@@ -29,7 +29,7 @@ setTimeout(() => {
       freq: 1,
       minByte: 20,
       minRadius: 0.6,
-      growRate: 500,
+      growRate: 700,
       color: 'hsla(130 , 90%, 50%, 1)',
       lineWidth: 5
     },
@@ -180,7 +180,12 @@ function updateAndDraw(ctx) {
   for (let circle of circles) {
     ctx.beginPath();
     ctx.lineWidth = circle.lineWidth;
-    ctx.fillStyle = circle.color;
+    ctx.fillStyle = `hsla(
+      ${(mostPopulatedColor.hsl[0] * 360).toFixed()}, 
+      ${mostPopulatedColor.hsl[1] * 100}%, 
+      ${circle.radius / 2}%, 
+      0.95
+    )`;
     ctx.arc(circle.x, circle.y, circle.radius, 0, circumference);
     ctx.fill();
     ctx.stroke();

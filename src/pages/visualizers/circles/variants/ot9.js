@@ -23,11 +23,11 @@ let circles = [
     dirY: 1,
     speedX: 0.8,
     speedY: 0.5,
-    freq: 1,
-    minByte: 20,
+    freq: 2,
+    minByte: 40,
     minRadius: 0.6,
     growRate: 600,
-    color: 'hsla(130 , 90%, 50%, 0.9)',
+    color: 'hsla(130 , 90%, 45%, 0.9)',
     lineWidth: 5
   },
   {
@@ -37,11 +37,11 @@ let circles = [
     dirY: -1,
     speedX: 0.8,
     speedY: 1.2,
-    freq: 40,
+    freq: 20,
     minByte: 0,
     minRadius: 0.38,
     growRate: 600,
-    color: 'hsla(330, 70%, 75%, 0.9)',
+    color: 'hsla(330, 80%, 70%, 0.9)',
     lineWidth: 4
   },
   {
@@ -51,11 +51,11 @@ let circles = [
     dirY: 1,
     speedX: 1.4,
     speedY: 1,
-    freq: 80,
+    freq: 40,
     minByte: 0,
     minRadius: 0.37,
     growRate: 600,
-    color: 'hsla(265, 80%, 70%, 0.9)',
+    color: 'hsla(265, 80%, 65%, 0.9)',
     lineWidth: 4
   },
   {
@@ -65,7 +65,7 @@ let circles = [
     dirY: 1,
     speedX: 1,
     speedY: 1.3,
-    freq: 120,
+    freq: 80,
     minByte: 10,
     minRadius: 0.36,
     growRate: 400,
@@ -79,11 +79,11 @@ let circles = [
     dirY: -1,
     speedX: 1.5,
     speedY: 0.8,
-    freq: 140,
+    freq: 120,
     minByte: 10,
     minRadius: 0.35,
     growRate: 600,
-    color: 'hsla(170, 100%, 40%, 0.9)',
+    color: 'hsla(170, 100%, 35%, 0.9)',
     lineWidth: 5
   },
   {
@@ -93,11 +93,11 @@ let circles = [
     dirY: -1,
     speedX: 1,
     speedY: 3,
-    freq: 190,
+    freq: 150,
     minByte: 0,
     minRadius: 0.33,
     growRate: 800,
-    color: 'hsla(0, 0%, 100%, 0.9)',
+    color: 'hsla(0, 0%, 100%, 0.8)',
     lineWidth: 3
   },
   {
@@ -107,7 +107,7 @@ let circles = [
     dirY: 1,
     speedX: 1.5,
     speedY: 1.2,
-    freq: 190,
+    freq: 170,
     minByte: 0,
     minRadius: 0.32,
     growRate: 900,
@@ -121,7 +121,7 @@ let circles = [
     dirY: 1,
     speedX: 0.9,
     speedY: 0.6,
-    freq: 200,
+    freq: 190,
     minByte: 0,
     minRadius: 0.3,
     growRate: 800,
@@ -181,8 +181,8 @@ function updateAndDraw(ctx) {
 
     ctx.beginPath();
     ctx.moveTo(circle.x - (circle.radius * 0.55), circle.y - (circle.radius * 0.5));
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
-    ctx.ellipse(circle.x - (circle.radius * 0.55), circle.y - (circle.radius * 0.55), (circle.radius * 0.08), (circle.radius * 0.16), Math.PI / 4, 0, 2 * Math.PI);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+    ctx.ellipse(circle.x - (circle.radius * 0.55), circle.y - (circle.radius * 0.55), (circle.radius * 0.08), (circle.radius * 0.18), Math.PI / 4, 0, 2 * Math.PI);
     ctx.fill();
   };
 }

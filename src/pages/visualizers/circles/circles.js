@@ -1,7 +1,7 @@
 // import { analyser } from '../';
 import { visualizers } from '..';
+import { bubbles } from './variants/bubbles';
 import { party } from './variants/party';
-import { white } from './variants/white';
 import { ot9 } from './variants/ot9';
 import { rgb } from './variants/rgb';
 import { accent } from './variants/accent';
@@ -42,24 +42,24 @@ function animate() {
   console.log(activeVariant)
   switch (activeVariant) {
     case "variantId:1":
-      white();
-      break;
-    case "variantId:2":
-      ot9();
-      break;
-    case "variantId:3":
       rgb();
       break;
-    case "variantId:4":
+    case "variantId:2":
       accent();
       break;
-    case "variantId:5":
+    case "variantId:3":
       paletteVis();
+      break;
+    case "variantId:4":
+      party();
+      break;
+    case "variantId:5":
+      bubbles();
       break;
     case "variantId:6":
       // analyser.fftSize = 128;
       // connectSource();
-      party();
+      ot9();
       break;
     default:
       accent();
