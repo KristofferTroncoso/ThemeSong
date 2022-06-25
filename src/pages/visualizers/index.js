@@ -1,5 +1,6 @@
 import { wavy } from './wavy/wavy';
 import { bars } from './bars/bars';
+import { circles } from './circles/circles';
 // import { addPlayPageVisibilityObserver, removePlayPageVisibilityObserver } from './modules/addPlayPageVisibilityObserver';
 import { addPlayPauseChangeObserver, removePlayPauseChangeObserver } from './modules/addPlayPauseChangeObserver'
 
@@ -37,31 +38,33 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       console.log('received visualizers');
       console.log(message[messageKey]);
       visualizers = message[messageKey];
-      // these setTimeouts are needed to ensure that it is all cleaned up before animating
-      setTimeout(() => {
-        if (activeVisualizer === "visualizerId:0") {
-          wavy.stopAnimate();
-          wavy.cleanUp();
-        } else if (activeVisualizer === "visualizerId:1") {
-          bars.stopAnimate();
-          bars.cleanUp();
-        } else {
-          bars.stopAnimate();
-          bars.cleanUp();
-        }
+      if (activeVisualizer === "visualizerId:0") {
+        wavy.stopAnimate();
+        wavy.cleanUp();
+      } else if (activeVisualizer === "visualizerId:1") {
         setTimeout(() => {
-          if (activeVisualizer === "visualizerId:0") {
-            wavy.setUp();
-            wavy.animate();
-          } else if (activeVisualizer === "visualizerId:1") {
+          bars.stopAnimate();
+          bars.cleanUp();
+          setTimeout(() => {
             bars.setUp();
             bars.animate();
-          } else {
-            bars.setUp();
-            bars.animate();
-          }
+          }, 40);
         }, 40);
-      }, 40);
+      } else if (activeVisualizer === "visualizerId:2") {
+        setTimeout(() => {
+          circles.stopAnimate();
+          circles.cleanUp();
+          setTimeout(() => {
+            circles.setUp();
+            circles.animate();
+          }, 40);
+        }, 40);
+      } else {
+        bars.stopAnimate();
+        bars.cleanUp();
+        circles.stopAnimate();
+        circles.cleanUp();
+      }
       sendResponse('received visualizers');
       break;
       
@@ -72,25 +75,49 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
 function switchActiveVisualizer(activeVisualizer) {
   console.log(activeVisualizer);
+  try {
+    wavy.cleanUp();
+    wavy.stopAnimate();
+  } catch {}
+  try {
+    bars.cleanUp();
+    bars.stopAnimate();
+  } catch {}
+  try {
+    circles.cleanUp();
+    circles.stopAnimate();
+  } catch {}
   if (isVisualizerOn) {
-    if (activeVisualizer === "visualizerId:0") {
-      bars.cleanUp();
-      bars.stopAnimate();
-      wavy.setUp();
-      wavy.animate();
-    } else if (activeVisualizer === "visualizerId:1") {
-      wavy.cleanUp();
-      wavy.stopAnimate();
-      bars.setUp();
-      bars.animate();
-    } else {
-      wavy.cleanUp();
-      wavy.stopAnimate();
-      bars.cleanUp();
-      bars.stopAnimate();
-    }
+    setTimeout(() => {
+      if (activeVisualizer === "visualizerId:0") {
+        wavy.setUp();
+        wavy.animate();
+      } else if (activeVisualizer === "visualizerId:1") {
+        bars.setUp();
+        bars.animate();
+      } else if (activeVisualizer === "visualizerId:2") {
+        circles.setUp();
+        circles.animate();
+      } else {
+        console.log('switchActiveVisualizer active visualizerId not recognized. Stopping all visualizers.')
+        try {
+          wavy.cleanUp();
+          wavy.stopAnimate();
+        } catch {}
+        try {
+          bars.cleanUp();
+          bars.stopAnimate();
+        } catch {}
+        try {
+          circles.cleanUp();
+          circles.stopAnimate();
+        } catch {}
+      }
+    }, 40);
   }
-  connectAudio();
+  setTimeout(() => {
+    connectAudio();
+  }, 100);
 }
 
 export function addVisualizerButton() {
@@ -131,8 +158,10 @@ function handleVisualizerButtonClick() {
     // addPlayPageVisibilityObserver();
     if (activeVisualizer === "visualizerId:0") {
       wavy.setUp();
-    } else {
+    } else if (activeVisualizer === "visualizerId:1") {
       bars.setUp();
+    } else {
+      circles.setUp();
     }
     connectAudio();
     console.log(analyser);
@@ -140,8 +169,10 @@ function handleVisualizerButtonClick() {
     console.log(bufferLength);
     if (activeVisualizer === "visualizerId:0") {
       wavy.animate();
-    } else {
+    } else if (activeVisualizer === "visualizerId:1") {
       bars.animate();
+    } else {
+      circles.animate();
     }
     console.log(audioCtx);
     console.log(analyser);
@@ -154,9 +185,15 @@ function handleVisualizerButtonClick() {
     if (activeVisualizer === "visualizerId:0") {
       wavy.stopAnimate();
       wavy.cleanUp();
-    } else {
+    } else if (activeVisualizer === "visualizerId:1") {
       bars.stopAnimate();
       bars.cleanUp();
+    } else if (activeVisualizer === "visualizerId:2") {
+      circles.stopAnimate();
+      circles.cleanUp();
+    } else {
+      circles.stopAnimate();
+      circles.cleanUp();
     }
     console.log(audioCtx);
     console.log(analyser);
@@ -172,7 +209,15 @@ export function connectAudio() {
     console.log(audioCtx);
     analyser = audioCtx.createAnalyser();
   } 
-  // analyser.fftSize = 128;
+  if (activeVisualizer === "visualizerId:0") {
+    analyser.fftSize = 2048;
+  } else if (activeVisualizer === "visualizerId:1") {
+    analyser.fftSize = 2048;
+  } else if (activeVisualizer === "visualizerId:2") {
+    analyser.fftSize = 512;
+  } else {
+    analyser.fftSize = 2048;
+  }
   analyser.maxDecibels = -18;
   analyser.smoothingTimeConstant = 0.8;
   
