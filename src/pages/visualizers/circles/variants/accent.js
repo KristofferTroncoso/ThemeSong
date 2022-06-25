@@ -209,6 +209,6 @@ export function accent() {
   if (isPlaying) {
     setTimeout(() => {
       requestAnimationFrame(accent);
-    }, 17);
+    }, 16);
   }
 }

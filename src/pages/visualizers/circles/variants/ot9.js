@@ -41,7 +41,7 @@ let circles = [
     minByte: 0,
     minRadius: 0.38,
     growRate: 600,
-    color: 'hsla(330, 80%, 70%, 0.9)',
+    color: 'hsla(330, 85%, 70%, 0.9)',
     lineWidth: 4
   },
   {
@@ -55,7 +55,7 @@ let circles = [
     minByte: 0,
     minRadius: 0.37,
     growRate: 600,
-    color: 'hsla(265, 80%, 65%, 0.9)',
+    color: 'hsla(275, 85%, 65%, 0.9)',
     lineWidth: 4
   },
   {
@@ -69,7 +69,7 @@ let circles = [
     minByte: 10,
     minRadius: 0.36,
     growRate: 400,
-    color: 'hsla(35, 100%, 60%, 0.9)',
+    color: 'hsla(35, 100%, 50%, 0.9)',
     lineWidth: 4
   },
   {
@@ -204,6 +204,6 @@ export function ot9() {
   if (isPlaying) {
     setTimeout(() => {
       requestAnimationFrame(ot9);
-    }, 17);
+    }, 16);
   }
 }

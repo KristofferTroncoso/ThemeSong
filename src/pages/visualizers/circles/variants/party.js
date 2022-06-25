@@ -322,6 +322,6 @@ export function party() {
   if (isPlaying) {
     setTimeout(() => {
       requestAnimationFrame(party);
-    }, 17);
+    }, 16);
   }
 }

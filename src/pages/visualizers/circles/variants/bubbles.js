@@ -329,6 +329,6 @@ export function bubbles() {
   if (isPlaying) {
     setTimeout(() => {
       requestAnimationFrame(bubbles);
-    }, 17);
+    }, 16);
   }
 }
