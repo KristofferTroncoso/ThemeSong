@@ -1,8 +1,8 @@
 
 const defaults = {
-  extensionVersion: "0.2.1",
+  extensionVersion: "0.2.2",
   activeTheme: "themeId:1",
-  activeVisualizer: "visualizerId:1",
+  activeVisualizer: "visualizerId:2",
   activePage: 1,
   themes: [
     {
@@ -106,7 +106,8 @@ const defaults = {
   visualizers: [
     {
       visualizerId: "visualizerId:0",
-      name: "Wavy"
+      name: "Wavy",
+      lineWidth: 8
     },
     {
       visualizerId: "visualizerId:1",
@@ -139,6 +140,37 @@ const defaults = {
         {
           variantId: "variantId:6",
           name: "Dancing Palette"
+        }
+      ]
+    },
+    {
+      visualizerId: "visualizerId:2",
+      name: "Circles",
+      activeVariant: "variantId:5",
+      variants: [
+        {
+          variantId: "variantId:1",
+          name: "RGB"
+        },
+        {
+          variantId: "variantId:2",
+          name: "Accent"
+        },
+        {
+          variantId: "variantId:3",
+          name: "Palette"
+        },
+        {
+          variantId: "variantId:4",
+          name: "Party"
+        },
+        {
+          variantId: "variantId:5",
+          name: "Bubbles"
+        },
+        {
+          variantId: "variantId:6",
+          name: "OT9"
         }
       ]
     }
@@ -188,8 +220,8 @@ chrome.runtime.onInstalled.addListener((details) => {
           themes: updatedThemes, 
           visualizers: defaults.visualizers,
           activeVisualizer: defaults.activeVisualizer,
-          experimentalAutoUseDeviceDarkLightMode: defaults.experimentalAutoUseDeviceDarkLightMode,
-          activePage: defaults.activePage
+          // experimentalAutoUseDeviceDarkLightMode: defaults.experimentalAutoUseDeviceDarkLightMode,
+          // activePage: defaults.activePage
         });
       });
 

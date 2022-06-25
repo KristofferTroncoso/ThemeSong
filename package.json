@@ -1,7 +1,7 @@
 {
   "name": "themesong",
-  "version": "0.2.1",
-  "description": "Chrome Extension for YouTube Music themes, visuals, and customization.",
+  "version": "0.2.2",
+  "description": "Chrome Extension for YouTube Music themes, visualizers, and customization.",
   "license": "MIT",
   "repository": {
     "type": "git",
