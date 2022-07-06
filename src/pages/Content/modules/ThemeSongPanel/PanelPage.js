@@ -1,4 +1,6 @@
-import React from 'react';
+/** @jsx jsx */
+// import React from 'react';
+import { jsx, css } from '@emotion/react';
 import { songName, songDetails } from '../addSongDetailsObserver'
 
 function PanelPage() {
@@ -46,35 +48,24 @@ function PanelPage() {
 
   return (
     <div
-      style={{
-        height: '400px',
-        width: '300px',
-        border: '1px solid rgba(255,255,255,0.1)',
-        // borderRadius: '10px',
-        backgroundColor: 'var(--ts-playbar-color)'
-      }}
+      css={css`
+        height: 400px;
+        width: 300px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: var(--ts-playbar-color);
+      `}
     >
-      <h1 style={{padding: '4px', color: '#ddd', fontSize: '12px'}}>ThemeSong Quick Access Panel</h1>
+      <h1 css={css`padding: 4px; color: #ddd; font-size: 12px;`}>ThemeSong Quick Access Panel</h1>
       <div>
-        <h2 style={{padding: '10px', color: '#ddd'}}>Open song in</h2>
-        <button onClick={handleYtSearch}>
-          YouTube
-        </button>
-        <button onClick={handleOpenInGoogle}>
-          Google
-        </button>
+        <h2 css={css`padding: 10px; color: #ddd;`}>Open song in</h2>
+        <button onClick={handleYtSearch}>YouTube</button>
+        <button onClick={handleOpenInGoogle}>Google</button>
       </div>
       <div>
-        <h2 style={{padding: '10px', color: '#ddd'}}>Search for lyrics</h2>
-        <button onClick={handleGeniusLyricsSearch}>
-          Genius
-        </button>
-        <button onClick={handleGoogleLyricsSearch}>
-          Google
-        </button>
-        <button onClick={handleMusixmatchSearch}>
-          Musixmatch
-        </button>
+        <h2 css={css`padding: 10px; color: #ddd;`}>Search for lyrics</h2>
+        <button onClick={handleGeniusLyricsSearch}>Genius</button>
+        <button onClick={handleGoogleLyricsSearch}>Google</button>
+        <button onClick={handleMusixmatchSearch}>Musixmatch</button>
       </div>
     </div>
   )

@@ -1,4 +1,6 @@
+/** @jsx jsx */
 import React from 'react';
+import { jsx, css } from '@emotion/react';
 import Popover from '@mui/material/Popover';
 import PanelPage from './PanelPage';
 
@@ -19,17 +21,21 @@ function Panel() {
   return (
     <div>
       <button
-        style={{
-          border: '0',
-          borderRadius: "3px",
-          height: "30px",
-          width: "30px",
-          backgroundColor: "transparent",
-          fontSize: "20px",
-          padding: "0",
-          cursor: "pointer",
-          title: "Open ThemeSong Panel"
-        }}
+        css={css`
+          border: 0;
+          border-radius: 50%;
+          height: 42px;
+          width: 42px;
+          background-color: transparent;
+          font-size: 20px;
+          padding: 0;
+          cursor: pointer;
+          title: 'Open ThemeSong Panel';
+          
+          :hover {
+            background: rgba(255, 255, 255, 0.1);
+          }
+        `}
         onClick={handleClick}
       >
         🎧
