@@ -27,11 +27,10 @@ function Panel() {
           height: 42px;
           width: 42px;
           background-color: transparent;
-          font-size: 20px;
+          font-size: 18px;
           padding: 0;
           cursor: pointer;
           title: 'Open ThemeSong Panel';
-          
           :hover {
             background: rgba(255, 255, 255, 0.1);
           }
