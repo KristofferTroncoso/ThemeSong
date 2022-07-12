@@ -42,16 +42,6 @@ ytmusic-player[player-ui-state_=FULLSCREEN] #thumbnail {
   height: 100%;
 }
 
-@media (max-width: 1200px) {
-  ytmusic-player[player-ui-state_=FULLSCREEN] #thumbnail {
-    flex-direction: column;
-  }
-
-  #songDivNode {
-    text-align: center;
-  }
-}
-
 ytmusic-player[player-ui-state_=FULLSCREEN] #song-image #img {
   background-color: var(--ts-picked-vibrant-static);
   border-radius: 6px;
@@ -62,8 +52,4 @@ ytmusic-player[player-ui-state_=FULLSCREEN] #song-image #img {
   margin: 0;
 }
 /* end PlayPage song img styling */
-
-ytmusic-player:not([player-ui-state_=FULLSCREEN]) #songDivNode {
-  display: none;
-}
 `;

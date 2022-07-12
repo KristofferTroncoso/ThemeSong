@@ -1,0 +1,14 @@
+ytmusic-player:not([player-ui-state_=FULLSCREEN]) #songDivNode {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  ytmusic-player[player-ui-state_=FULLSCREEN] #thumbnail {
+    flex-direction: column;
+  }
+
+  #songDivNode {
+    text-align: center;
+    padding: 80px 0 80px;
+  }
+}

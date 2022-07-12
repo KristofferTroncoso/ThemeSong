@@ -1,15 +1,27 @@
 /** @jsx jsx */
+// import React from 'react';
 import { jsx, css } from '@emotion/react';
 import { useSelector } from 'react-redux';
+import './SongInfoDisplay.css';
 
 function SongInfoDisplay() {
   const songName = useSelector(state => state.songDetails.songName);
   const songArtist = useSelector(state => state.songDetails.songArtist);
 
   return (
-    <div>
+    <div
+      id="songDivNode"
+      css={css`
+        padding: 80px 0 80px 80px;
+        height: 600px;
+        max-width: 900px;
+      `}
+    >
       <h1 
-        css={css`font-size: 40px; color: var(--ts-primary-text-color);`}
+        css={css`
+          font-size: 40px; 
+          color: var(--ts-primary-text-color);
+        `}
       >
         {songName}
       </h1>
@@ -27,3 +39,7 @@ function SongInfoDisplay() {
 }
 
 export default SongInfoDisplay;
+
+// songDivContainer.style.padding = "80px 0 80px 80px";
+// songDivContainer.style.height = "600px";
+// songDivContainer.style.maxWidth = "900px";
