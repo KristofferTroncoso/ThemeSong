@@ -1,9 +1,10 @@
 /** @jsx jsx */
-// import React from 'react';
 import { jsx, css } from '@emotion/react';
-import { songName, songDetails } from '../addSongDetailsObserver'
+import { useSelector } from 'react-redux';
 
 function PanelPage() {
+  const songName = useSelector(state => state.songDetails.songName);
+  const songArtist = useSelector(state => state.songDetails.songArtist);
 
   function handleYtSearch(e) {
     let currentUrl = window.location.href;
@@ -14,7 +15,7 @@ function PanelPage() {
 
   function handleOpenInGoogle(e) {
     let modSongName = songName.replace(' ', '+');
-    let artistName = songDetails.substring(0, songDetails.indexOf('•')).trimEnd();
+    let artistName = songArtist.substring(0, songArtist.indexOf('•')).trimEnd();
     let modArtistName = artistName.replace(' ', '+'); 
     let googleUrlSearch = `https://google.com/search?q=${modSongName}+${modArtistName}`
     window.open(googleUrlSearch, '_blank').focus();
@@ -24,7 +25,7 @@ function PanelPage() {
     // this is currently using state from another module: "addSongDetailsObserver"
     // i should probably not be doing that
     let modSongName = songName.replace(' ', '%20');
-    let artistName = songDetails.substring(0, songDetails.indexOf('•')).trimEnd();
+    let artistName = songArtist.substring(0, songArtist.indexOf('•')).trimEnd();
     let modArtistName = artistName.replace(' ', '%20'); 
     let geniusUrlSearch = `https://genius.com/search?q=${modSongName}%20${modArtistName}`
     window.open(geniusUrlSearch, '_blank').focus();
@@ -32,7 +33,7 @@ function PanelPage() {
 
   function handleGoogleLyricsSearch(e) {
     let modSongName = songName.replace(' ', '+');
-    let artistName = songDetails.substring(0, songDetails.indexOf('•')).trimEnd();
+    let artistName = songArtist.substring(0, songArtist.indexOf('•')).trimEnd();
     let modArtistName = artistName.replace(' ', '+'); 
     let googleUrlSearch = `https://google.com/search?q=${modSongName}+${modArtistName}+lyrics`
     window.open(googleUrlSearch, '_blank').focus();
@@ -40,7 +41,7 @@ function PanelPage() {
 
   function handleMusixmatchSearch(e) {
     let modSongName = songName.replace(' ', '%20');
-    let artistName = songDetails.substring(0, songDetails.indexOf('•')).trimEnd();
+    let artistName = songArtist.substring(0, songArtist.indexOf('•')).trimEnd();
     let modArtistName = artistName.replace(' ', '%20'); 
     let geniusUrlSearch = `https://www.musixmatch.com/search/${modSongName}%20${modArtistName}`
     window.open(geniusUrlSearch, '_blank').focus();

@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Panel from './Panel';
+import { store } from '../../app/store';
+import { Provider  } from 'react-redux';
+
 const middleControlButtonsDiv = document.querySelector(".middle-controls-buttons");
 
 let panelContainer;
@@ -19,5 +22,5 @@ function addPanelContainer() {
 
 addPanelContainer();
 
-ReactDOM.render(<Panel />, panelContainer);
+ReactDOM.render(<Provider store={store}><Panel /></Provider>, panelContainer);
 
