@@ -1,9 +1,12 @@
 import * as Vibrant from "node-vibrant";
 import logPalette from './modules/logPalette';
-import { addSongDetailsObserver } from "./modules/addSongDetailsObserver";
+// import { addSongDetailsObserver } from "./modules/addSongDetailsObserver";
+import { addSongDetailsObserver } from "./app/songDetails/addSongDetailsObserver";
 import themes from '../themes';
 import { addVisualizerButton } from "../visualizers/";
 import { addDarkLightSwitch } from "./modules/addDarkLightSwitch";
+import './modules/SongInfoDisplay';
+import "./modules/ThemeSongPanel";
 
 // const songImg = document.querySelector('#song-image img#img');
 const playerBarSongImgNode = document.querySelector(".middle-controls .thumbnail-image-wrapper img");

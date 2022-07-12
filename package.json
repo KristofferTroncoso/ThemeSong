@@ -18,11 +18,13 @@
     "@hot-loader/react-dom": "^17.0.2",
     "@mui/icons-material": "^5.4.1",
     "@mui/material": "^5.4.1",
+    "@reduxjs/toolkit": "^1.8.3",
     "node-vibrant": "^3.1.6",
     "react": "^17.0.2",
     "react-color": "^2.19.3",
     "react-dom": "^17.0.2",
     "react-hot-loader": "^4.13.0",
+    "react-redux": "^8.0.2",
     "use-debounce": "^7.0.1"
   },
   "devDependencies": {
