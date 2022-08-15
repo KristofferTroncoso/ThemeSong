@@ -3,6 +3,7 @@ import React from 'react';
 import { jsx, css } from '@emotion/react';
 import Popover from '@mui/material/Popover';
 import PanelPage from './PanelPage';
+import Popup from '../../../Popup/Popup';
 
 function Panel() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -27,17 +28,17 @@ function Panel() {
           height: 42px;
           width: 42px;
           background-color: transparent;
-          font-size: 18px;
+          font-size: 24px;
           padding: 0;
           cursor: pointer;
-          title: 'Open ThemeSong Panel';
           :hover {
             background: rgba(255, 255, 255, 0.1);
           }
         `}
+        title="Open ThemeSong Panel"
         onClick={handleClick}
       >
-        🎧
+        🐶
       </button>
       <Popover
         id={id}
@@ -53,7 +54,8 @@ function Panel() {
           horizontal: 'left',
         }}
       >
-        <PanelPage />
+        {/* <PanelPage /> */}
+        <Popup />
       </Popover>
     </div>
   )

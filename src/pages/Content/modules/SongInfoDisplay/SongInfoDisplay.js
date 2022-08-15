@@ -39,7 +39,3 @@ function SongInfoDisplay() {
 }
 
 export default SongInfoDisplay;
-
-// songDivContainer.style.padding = "80px 0 80px 80px";
-// songDivContainer.style.height = "600px";
-// songDivContainer.style.maxWidth = "900px";

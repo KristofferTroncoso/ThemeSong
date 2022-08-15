@@ -1,6 +1,4 @@
-const songImg = document.querySelector('#song-image img#img');
-const playerBarSongImg = document.querySelector(".middle-controls .thumbnail-image-wrapper img");
-
+import { songImg, playerBarSongImg } from "../../../themes/selectors";
 
 export default function getSongImg() {
   let bestImgAvailable;

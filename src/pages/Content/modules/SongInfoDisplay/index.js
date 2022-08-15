@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SongInfoDisplay from './SongInfoDisplay';
-import { store } from '../../app/store';
+import { store } from '../../../../redux/store';
 import { Provider  } from 'react-redux';
 
-let songDivContainer;
-
-function addSongDivContainer() {
+export function addSongDivContainer() {
   const thumbnail = document.querySelector("ytmusic-player #thumbnail");
+  let songDivContainer;
 
   if (document.getElementById("songDivContainer")) {
     document.getElementById("songDivContainer").remove();
@@ -17,8 +16,9 @@ function addSongDivContainer() {
   songDivContainer.id = "songDivContainer";
 
   thumbnail.append(songDivContainer);
+
+  ReactDOM.render(<Provider store={store}><SongInfoDisplay /></Provider>, songDivContainer);
 }
 
-addSongDivContainer();
+export default addSongDivContainer;
 
-ReactDOM.render(<Provider store={store}><SongInfoDisplay /></Provider>, songDivContainer);

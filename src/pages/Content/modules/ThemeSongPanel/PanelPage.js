@@ -1,10 +1,12 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
 import { useSelector } from 'react-redux';
+import TestToggle from './TestToggle';
 
 function PanelPage() {
   const songName = useSelector(state => state.songDetails.songName);
   const songArtist = useSelector(state => state.songDetails.songArtist);
+  const reduxStore = useSelector(state => state);
 
   function handleYtSearch(e) {
     let currentUrl = window.location.href;
@@ -67,6 +69,10 @@ function PanelPage() {
         <button onClick={handleGeniusLyricsSearch}>Genius</button>
         <button onClick={handleGoogleLyricsSearch}>Google</button>
         <button onClick={handleMusixmatchSearch}>Musixmatch</button>
+      </div>
+      <div css={{margin: '10px'}}>
+        <button onClick={e => console.log(reduxStore)}>log reduxStore</button>
+        <TestToggle />
       </div>
     </div>
   )
