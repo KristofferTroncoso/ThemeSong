@@ -75,14 +75,12 @@ export const themes = createSlice({
       console.log(action.payload);
       state.activeTheme = action.payload;
       chrome.storage.local.set({activeTheme: state.activeTheme}, () => console.log('chrome.storage.local.set({activeTheme: state.activeTheme}'));
-      //when active theme is changed, apply theme (css; process theme)
     },
     changeThemes: (state, action) => {
       console.log('themesSlice: changeThemes')
       console.log(action.payload);
       state.themes = action.payload;
       chrome.storage.local.set({themes: state.themes}, () => console.log('chrome.storage.local.set({themes: state.themes}'));
-      //when themes are changed, process theme
     },
     changeExperimentalAutoUseDeviceDarkLightMode: (state) => {
       console.log('themesSlice: changeExperimentalAutoUseDeviceDarkLightMode')
