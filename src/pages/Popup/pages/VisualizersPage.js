@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx, css } from '@emotion/react';
-import VisualizerButton from '../../../components/VisualizerButton';
-import WavySettings from '../../../visualizers/wavy/WavySettings';
-import BarsSettings from '../../../visualizers/bars/BarsSettings';
-import CirclesSettings from '../../../visualizers/circles/CirclesSettings';
+import VisualizerButton from '../../../redux/visualizers/visualizers/components/VisualizerButton';
+import WavySettings from '../../../redux/visualizers/visualizers/wavy/WavySettings';
+import BarsSettings from '../../../redux/visualizers/visualizers/bars/BarsSettings';
+import CirclesSettings from '../../../redux/visualizers/visualizers/circles/CirclesSettings';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { changeActiveVisualizer, changeVisualizers } from '../../../redux/visualizers/visualizersSlice';
@@ -17,6 +17,7 @@ function VisualizersPage() {
 
   const handleVisualizerClick = (e, id) => {
     dispatch(changeActiveVisualizer(id));
+    chrome.storage.local.set({activeVisualizer: id}, () => console.log('chrome.storage.local.set({activeVisualizer}'))
   }
 
   const handleVisualizersChange = visualizerObject => {
@@ -30,6 +31,7 @@ function VisualizersPage() {
       }
     });
     dispatch(changeVisualizers(newCopy));
+    chrome.storage.local.set({visualizers: newCopy}, () => console.log('chrome.storage.local.set({visualizers}'))
   }
 
   let activeVisualizerSettings = () => {

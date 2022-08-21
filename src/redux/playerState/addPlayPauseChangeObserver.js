@@ -19,7 +19,7 @@ export function addPlayPauseChangeObserver() {
     playPauseState = mutationRecord[0].oldValue;
     console.log(playPauseState);
     store.dispatch(changePlayPauseState(playPauseState));
-
+    chrome.storage.local.set({playPauseState: playPauseState})
     try {
       chrome.runtime.sendMessage('r u still there?');
     } catch {

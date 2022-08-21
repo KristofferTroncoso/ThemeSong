@@ -12,6 +12,7 @@ function TestToggle() {
         switch (key) {
           case "activeTheme":
             dispatch(changeActiveTheme(newValue))
+            chrome.storage.local.set({activeTheme: newValue}, () => console.log('chrome.storage.local.set({activeTheme}'));
             break;
           default:
             console.log('Test Toggle. default case')

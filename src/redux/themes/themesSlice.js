@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   activeTheme: "themeId:6",
-  experimentalAutoUseDeviceDarkLightMode: false,
+  isDark: true,
   themes: [
     {
       themeId: "themeId:0",
@@ -74,22 +74,20 @@ export const themes = createSlice({
       console.log('themesSlice: changeActiveTheme')
       console.log(action.payload);
       state.activeTheme = action.payload;
-      chrome.storage.local.set({activeTheme: state.activeTheme}, () => console.log('chrome.storage.local.set({activeTheme: state.activeTheme}'));
     },
     changeThemes: (state, action) => {
       console.log('themesSlice: changeThemes')
       console.log(action.payload);
       state.themes = action.payload;
-      chrome.storage.local.set({themes: state.themes}, () => console.log('chrome.storage.local.set({themes: state.themes}'));
     },
-    changeExperimentalAutoUseDeviceDarkLightMode: (state) => {
-      console.log('themesSlice: changeExperimentalAutoUseDeviceDarkLightMode')
-      state.experimentalAutoUseDeviceDarkLightMode = !state.experimentalAutoUseDeviceDarkLightMode;
-      chrome.storage.local.set({experimentalAutoUseDeviceDarkLightMode: state.experimentalAutoUseDeviceDarkLightMode}, () => console.log('chrome.storage.local.set({experimentalAutoUseDeviceDarkLightMode: state.experimentalAutoUseDeviceDarkLightMode}'))
-    }
+    changeIsDark: (state, action) => {
+      console.log('themesSlice: changeIsDark')
+      console.log(action.payload);
+      state.isDark = action.payload;
+    },
   }
 });
 
-export const { changeActiveTheme, changeThemes, changeExperimentalAutoUseDeviceDarkLightMode } = themes.actions;
+export const { changeActiveTheme, changeThemes, changeIsDark } = themes.actions;
 
 export default themes.reducer;

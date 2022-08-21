@@ -85,13 +85,11 @@ export const visualizers = createSlice({
       console.log('visualizersSlice: changeActiveVisualizer')
       console.log(action.payload);
       state.activeVisualizer = action.payload;
-      chrome.storage.local.set({activeVisualizer: state.activeVisualizer})
     },
     changeVisualizers: (state, action) => {
       console.log('visualizersSlice: changeVisualizers')
       console.log(action.payload);
       state.visualizers = action.payload;
-      chrome.storage.local.set({visualizers: state.visualizers})
     },
     toggleIsVisualizerOn: (state) => {
       console.log('visualizersSlice: toggleIsVisualizerOn')

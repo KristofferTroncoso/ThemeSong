@@ -21,6 +21,7 @@ function WavySettings() {
       : visualizer
     ));
     dispatch(changeVisualizers(newVisualizersArr));
+    chrome.storage.local.set({visualizers: newVisualizersArr}, () => console.log('chrome.storage.local.set({visualizers}'))
   }
 
   return (

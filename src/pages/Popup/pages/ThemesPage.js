@@ -3,10 +3,10 @@
 import { jsx } from '@emotion/react';
 
 import { useSelector } from 'react-redux';
-import { GlassSettings } from '../../../themes/frosted-glass/';
-import { OffSettings } from '../../../themes/off/';
-import { DynamicSettings } from '../../../themes/dynamic/DynamicSettings'; 
-import { StaticSettings } from '../../../themes/static/StaticSettings';
+// import { GlassSettings } from '../../../themes/frosted-glass/';
+import OffSettings  from '../../../redux/themes/themes/Off/OffSettings';
+import DynamicSettings from '../../../redux/themes/themes/Dynamic/DynamicSettings'; 
+import StaticSettings from '../../../redux/themes/themes/Static/StaticSettings';
 
 import ThemeButton from '../components/ThemeButton';
 
@@ -18,8 +18,8 @@ function ThemesPage() {
     switch (activeTheme) {
       case "themeId:0":
         return <OffSettings />
-      case "themeId:3":
-        return <GlassSettings />
+      // case "themeId:3":
+      //   return <GlassSettings />
       case "themeId:6":
         return <DynamicSettings />
       case "themeId:7":

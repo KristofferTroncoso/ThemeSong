@@ -1,22 +1,28 @@
+import { addThemesContainer } from '../../redux/themes/themes';
+
+import { addCloudSyncStorageSyncer } from '../../redux/cloudStorageSyncer';
+
 import { addPaletteFeature } from '../../redux/palette/paletteFeature';
 import { addSongDetailsObserver } from '../../redux/songDetails/addSongDetailsObserver';
 import { addPlayPauseChangeObserver } from '../../redux/playerState/addPlayPauseChangeObserver';
 
 import addPanelContainer from './modules/ThemeSongPanel';
 import addSongInfoDisplay from './modules/SongInfoDisplay';
-import addVisualizerFeature from '../../visualizers';
-import addThemes from '../../themes'
-import { addCloudSyncStorageSyncer } from '../../redux/cloudStorageSyncer';
+import addLogoContainer from './Logo';
+import addVisualizerFeature from '../../redux/visualizers/visualizers';
 
 console.log('Content Script loaded');
+
+addCloudSyncStorageSyncer();
 
 addPaletteFeature();
 addSongDetailsObserver();
 addPlayPauseChangeObserver();
 
-addCloudSyncStorageSyncer();
-
+addThemesContainer();
 addVisualizerFeature();
 addPanelContainer();
 addSongInfoDisplay();
-addThemes();
+addLogoContainer();
+
+

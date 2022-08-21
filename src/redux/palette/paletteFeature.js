@@ -1,7 +1,7 @@
 import { store } from '../store';
 import { changePalette, changeMostPopulatedColor } from './paletteSlice';
 import * as Vibrant from "node-vibrant";
-import { playerBarSongImgNode } from '../../themes/selectors';
+import { playerBarSongImgNode } from '../themes/themes/selectors';
 
 let imgChangeObserver;
 

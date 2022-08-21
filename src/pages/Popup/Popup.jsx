@@ -27,8 +27,8 @@ function Popup() {
       <div css={css`height: 100%;`}>
         <TabBar />
         <ActivePage />
-        <button onClick={e => console.log(store)}>log store</button>
-        <button onClick={e => {chrome.storage.local.get(null, res => console.log(res))}}>log storage.local</button>
+        <button css={css`color: white; background-color: black; margin: 5px; border: 0; padding: 5px;`} onClick={e => console.log(store)}>log store</button>
+        <button css={css`color: white; background-color: black; margin: 5px; border: 0; padding: 5px;`} onClick={e => {chrome.storage.local.get(null, res => console.log(res))}}>log storage.local</button>
       </div>
       <BottomBar /> 
     </div> 

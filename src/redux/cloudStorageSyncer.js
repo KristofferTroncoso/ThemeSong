@@ -1,15 +1,23 @@
 import { store } from './store';
-import { changeActiveTheme, changeThemes } from './themes/themesSlice';
+import { changeActiveTheme, changeThemes, changeIsDark } from './themes/themesSlice';
 import { changeActiveVisualizer, changeVisualizers } from './visualizers/visualizersSlice';
 import { changeActivePopupTab } from './extensionState/extensionStateSlice';
 import { changePlayPauseState } from './playerState/playerStateSlice';
 
 export function addCloudSyncStorageSyncer() {
-  //initial get
-  chrome.storage.local.get(null, (res) => {
-    console.log('res')
-    console.log(res)
-    for (let [key, value] of Object.entries(res)) {
+  console.log('addCloudSyncStorageSyncer');
+
+  //initial get from chrome local storage
+  chrome.storage.local.get(null, syncStorageToStore);
+
+  //chrome storage listener
+  chrome.storage.onChanged.addListener(syncToStore);
+  
+
+  function syncStorageToStore(chromeStorageObj) {
+    console.log('chromeStorageObj')
+    console.log(chromeStorageObj)
+    for (let [key, value] of Object.entries(chromeStorageObj)) {
       console.log(key, value);
       switch (key) {
         case "activeTheme":
@@ -31,7 +39,7 @@ export function addCloudSyncStorageSyncer() {
           console.log('addCloudSyncStorageSyncer: default case')
       }
     }
-  })
+  }
 
   function syncToStore(changes) {
     for (let [key, { newValue }] of Object.entries(changes)) {
@@ -52,6 +60,9 @@ export function addCloudSyncStorageSyncer() {
         case "activePopupTab":
           store.dispatch(changeActivePopupTab(newValue))
           break;
+        case "isDark":
+          store.dispatch(changeIsDark(newValue))
+          break;
         case "playPauseState":
           store.dispatch(changePlayPauseState(newValue))
           break;
@@ -61,8 +72,7 @@ export function addCloudSyncStorageSyncer() {
     }
   };
   
-  //listener
-  chrome.storage.onChanged.addListener(syncToStore)
+
 }
 
 export default addCloudSyncStorageSyncer;

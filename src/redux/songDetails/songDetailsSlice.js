@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   songName: "Song Name",
-  songArtist: "Artist"
+  songArtist: "Artist",
+  songAlbum: "Album"
 };
 
 export const songDetails = createSlice({

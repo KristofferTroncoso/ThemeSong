@@ -1,85 +1,52 @@
-import { store } from '../../redux/store';
-// import { analyser } from '../';
-import { bubbles } from './variants/bubbles';
-import { party } from './variants/party';
-import { ot9 } from './variants/ot9';
-import { rgb } from './variants/rgb';
-import { accent } from './variants/accent';
-import { paletteVis } from './variants/paletteVis';
+/** @jsx jsx */
+import { jsx, css } from '@emotion/react';
+import { useSelector } from 'react-redux';
 
-let visualizers = store.getState().visualizers.visualizers;
+import RGB from './variants/RGB';
 
-export let tsbarvisualizercanvas;
-export let isPlaying = false;
+function Circles({analyser, dataArray, bufferLength}) {
+  const circlesActiveVariant = useSelector(state => (
+    state.visualizers.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")).activeVariant
+  ));
 
-export let barWidth = 30;
-export let borderWidth = 4;
-export let gap = 8;
-
-function setUp() {
-  console.log('circles setup')
-  let ytmusicplayer = document.querySelector("ytmusic-player")
-  tsbarvisualizercanvas = document.getElementById("ts-barvisualizer-canvas");
-  console.log(tsbarvisualizercanvas);
-
-  if (!tsbarvisualizercanvas) {
-    ytmusicplayer.appendChild(document.createElement('canvas')).id = 'ts-barvisualizer-canvas';
+  function returnActiveVariant() {
+    switch (circlesActiveVariant) {
+      case "variantId:1":
+        return <RGB analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
+      case "variantId:2":
+        return <RGB analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
+      case "variantId:3":
+        return <RGB analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
+      case "variantId:4":
+        return <RGB analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
+      case "variantId:5":
+        return <RGB analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
+      case "variantId:6":
+        return <RGB analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
+      default:
+        return <h1>Unknown Variant</h1>
+    }
   }
 
-  tsbarvisualizercanvas = document.getElementById("ts-barvisualizer-canvas");
-
-  tsbarvisualizercanvas.style.position = "absolute";
-  tsbarvisualizercanvas.style.height = "100%";
-  tsbarvisualizercanvas.style.width = "100%";
-  tsbarvisualizercanvas.style.top = "0";
-  tsbarvisualizercanvas.style.left = "0";
-  tsbarvisualizercanvas.style.borderRadius = "6px";
-  tsbarvisualizercanvas.height = ytmusicplayer.clientHeight;
-  tsbarvisualizercanvas.width = ytmusicplayer.clientWidth; 
+  return (
+    <div
+      id="ts-Circles-container"
+      css={css`
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: inherit;
+      `}
+    >
+      {returnActiveVariant()}
+    </div>
+  )
 }
 
-function animate() {
-  isPlaying = true;
-  let activeVariant = (visualizers.find(visualizer => visualizer.visualizerId === "visualizerId:2")).activeVariant;
-  console.log('circles.js animate')
-  console.log(activeVariant)
-  switch (activeVariant) {
-    case "variantId:1":
-      rgb();
-      break;
-    case "variantId:2":
-      accent();
-      break;
-    case "variantId:3":
-      paletteVis();
-      break;
-    case "variantId:4":
-      party();
-      break;
-    case "variantId:5":
-      bubbles();
-      break;
-    case "variantId:6":
-      // analyser.fftSize = 128;
-      // connectSource();
-      ot9();
-      break;
-    default:
-      accent();
-  }
-}
+export default Circles;
 
-function stopAnimate() {
-  isPlaying = false;
-}
 
-function cleanUp() {
-  tsbarvisualizercanvas.remove();
-}
 
-export const circles = {
-  setUp,
-  animate,
-  stopAnimate,
-  cleanUp
-};
+

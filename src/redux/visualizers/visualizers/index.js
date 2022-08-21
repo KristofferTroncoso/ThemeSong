@@ -5,7 +5,7 @@ import { store } from '../../store';
 import { Provider } from 'react-redux';
 
 import VisualizerToggleButton from './components/VisualizerToggleButton';
-import VisualizerContainer from './VisualizerContainer';
+import Visualizer from './Visualizer';
 
 function addVisualizerContainer() {
   let ytmusicplayer = document.querySelector("ytmusic-player")
@@ -26,13 +26,13 @@ function addVisualizerContainer() {
 
   ReactDOM.render(
     <Provider store={store}>
-      <VisualizerContainer />
+      <Visualizer />
     </Provider>, 
     tsvisualizercontainer
   );
 }
 
-export function addVisualizerButton() {
+function addVisualizerButton() {
   const topRowButtons = document.querySelector('.top-row-buttons');
   let visualizerDivContainer;
 

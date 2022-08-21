@@ -11,7 +11,6 @@ export const playerState = createSlice({
     changePlayPauseState: (state, action) => {
       console.log('playerStateSlice: changePlayPauseState')
       state.playPauseState = action.payload;
-      chrome.storage.local.set({playPauseState: action.payload})
     }, 
   }
 });

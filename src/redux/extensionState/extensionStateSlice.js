@@ -12,7 +12,6 @@ export const extensionState = createSlice({
     changeActivePopupTab: (state, action) => {
       console.log('extensionStateSlice: changeActivePopupTab')
       state.activePopupTab = action.payload;
-      chrome.storage.local.set({activePopupTab: action.payload})
     }, 
   }
 });
