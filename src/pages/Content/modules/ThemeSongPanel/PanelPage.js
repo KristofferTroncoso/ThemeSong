@@ -1,7 +1,20 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
 import { useSelector } from 'react-redux';
-import TestToggle from './TestToggle';
+
+import VisualizerPanel from './components/VisualizerPanel';
+import DarkModePanel from './components/DarkModePanel';
+
+import VisualizerToggleButton from '../../../../redux/visualizers/visualizers/components/VisualizerToggleButton';
+import PanelButton from './components/PanelButton';
+import CakeIcon from '@mui/icons-material/Cake';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import GoogleIcon from '@mui/icons-material/Google';
+import { SiGenius } from 'react-icons/si';
+import { IoMdBowtie } from 'react-icons/io'
+import DataObjectIcon from '@mui/icons-material/DataObject';
+
+
 
 function PanelPage() {
   const songName = useSelector(state => state.songDetails.songName);
@@ -52,27 +65,32 @@ function PanelPage() {
   return (
     <div
       css={css`
-        height: 400px;
+        * {
+          /* border:  1px solid tomato; */
+        }
+        height: 450px;
         width: 300px;
         border: 1px solid rgba(255, 255, 255, 0.1);
         background-color: var(--ts-playbar-color);
       `}
     >
-      <h1 css={css`padding: 4px; color: #ddd; font-size: 12px;`}>ThemeSong Quick Access Panel</h1>
-      <div>
-        <h2 css={css`padding: 10px; color: #ddd;`}>Open song in</h2>
-        <button onClick={handleYtSearch}>YouTube</button>
-        <button onClick={handleOpenInGoogle}>Google</button>
+      {/* <h1 css={css`padding: 4px; color: var(--ts-primary-text-color); font-size: 12px;`}>ThemeSong Quick Access Panel</h1> */}
+      <div css={{marginBottom: '6px'}}>
+        <h2 css={css`padding: 2px 5px; color: var(--ts-primary-text-color);`}>Open song in</h2>
+        <PanelButton title="YouTube" onClick={handleYtSearch}><YouTubeIcon title="YouTube" fontSize='large' /></PanelButton>
+        <PanelButton title="Google" onClick={handleOpenInGoogle}><GoogleIcon title="Google" fontSize='large' /></PanelButton>
       </div>
-      <div>
-        <h2 css={css`padding: 10px; color: #ddd;`}>Search for lyrics</h2>
-        <button onClick={handleGeniusLyricsSearch}>Genius</button>
-        <button onClick={handleGoogleLyricsSearch}>Google</button>
-        <button onClick={handleMusixmatchSearch}>Musixmatch</button>
+      <div css={{marginBottom: '6px'}}>
+        <h2 css={css`padding: 2px 5px; color: var(--ts-primary-text-color);`}>Search for lyrics</h2>
+        <PanelButton title="Genius" onClick={handleGeniusLyricsSearch}><SiGenius title="Genius" style={{fontSize: '20px'}} /></PanelButton>
+        <PanelButton title="Google" onClick={handleGoogleLyricsSearch}><GoogleIcon title="Google" fontSize='large' /></PanelButton>
+        <PanelButton title="Musixmatch" onClick={handleMusixmatchSearch}><IoMdBowtie title="Musixmatch" style={{fontSize: '22px'}} /></PanelButton>
       </div>
-      <div css={{margin: '10px'}}>
-        <button onClick={e => console.log(reduxStore)}>log reduxStore</button>
-        <TestToggle />
+      <VisualizerPanel />
+      <DarkModePanel />
+      <div css={{marginBottom: '10px'}}>
+        <h2 css={css`padding: 2px 5px; color: var(--ts-primary-text-color);`}>Dev Tools</h2>
+        <PanelButton onClick={e => console.log(reduxStore)}><DataObjectIcon fontSize='large' /></PanelButton>
       </div>
     </div>
   )

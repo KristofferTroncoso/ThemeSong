@@ -9,7 +9,7 @@ function BottomBar() {
     <div 
       className="BottomBar" 
       css={{
-        backgroundColor: '#162875', 
+        backgroundColor: '#4d4d4d', 
         height: '30px', 
         width: '97%',
         display: 'flex',

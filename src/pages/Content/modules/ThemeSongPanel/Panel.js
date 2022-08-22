@@ -54,8 +54,8 @@ function Panel() {
           horizontal: 'left',
         }}
       >
-        {/* <PanelPage /> */}
-        <Popup />
+        <PanelPage />
+        {/* <Popup /> */}
       </Popover>
     </div>
   )
