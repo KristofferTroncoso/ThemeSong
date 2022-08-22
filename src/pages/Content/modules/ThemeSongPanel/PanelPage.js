@@ -70,18 +70,19 @@ function PanelPage() {
         }
         height: 450px;
         width: 300px;
+        padding: 8px;
         border: 1px solid rgba(255, 255, 255, 0.1);
         background-color: var(--ts-playbar-color);
       `}
     >
       {/* <h1 css={css`padding: 4px; color: var(--ts-primary-text-color); font-size: 12px;`}>ThemeSong Quick Access Panel</h1> */}
       <div css={{marginBottom: '6px'}}>
-        <h2 css={css`padding: 2px 5px; color: var(--ts-primary-text-color);`}>Open song in</h2>
+        <h3 css={css`padding: 2px 5px; color: var(--ts-primary-text-color);`}>Open song in</h3>
         <PanelButton title="YouTube" onClick={handleYtSearch}><YouTubeIcon title="YouTube" fontSize='large' /></PanelButton>
         <PanelButton title="Google" onClick={handleOpenInGoogle}><GoogleIcon title="Google" fontSize='large' /></PanelButton>
       </div>
       <div css={{marginBottom: '6px'}}>
-        <h2 css={css`padding: 2px 5px; color: var(--ts-primary-text-color);`}>Search for lyrics</h2>
+        <h3 css={css`padding: 2px 5px; color: var(--ts-primary-text-color);`}>Search for lyrics</h3>
         <PanelButton title="Genius" onClick={handleGeniusLyricsSearch}><SiGenius title="Genius" style={{fontSize: '20px'}} /></PanelButton>
         <PanelButton title="Google" onClick={handleGoogleLyricsSearch}><GoogleIcon title="Google" fontSize='large' /></PanelButton>
         <PanelButton title="Musixmatch" onClick={handleMusixmatchSearch}><IoMdBowtie title="Musixmatch" style={{fontSize: '22px'}} /></PanelButton>
@@ -89,7 +90,7 @@ function PanelPage() {
       <VisualizerPanel />
       <DarkModePanel />
       <div css={{marginBottom: '10px'}}>
-        <h2 css={css`padding: 2px 5px; color: var(--ts-primary-text-color);`}>Dev Tools</h2>
+        <h3 css={css`padding: 2px 5px; color: var(--ts-primary-text-color);`}>Dev Tools</h3>
         <PanelButton onClick={e => console.log(reduxStore)}><DataObjectIcon fontSize='large' /></PanelButton>
       </div>
     </div>

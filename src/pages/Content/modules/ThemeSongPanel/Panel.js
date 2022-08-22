@@ -5,6 +5,8 @@ import Popover from '@mui/material/Popover';
 import PanelPage from './PanelPage';
 import Popup from '../../../Popup/Popup';
 
+import InterestsIcon from '@mui/icons-material/Interests';
+
 function Panel() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -28,17 +30,17 @@ function Panel() {
           height: 42px;
           width: 42px;
           background-color: transparent;
-          font-size: 24px;
-          padding: 0;
+          padding: 8px;
+          text-align: center;
           cursor: pointer;
           :hover {
             background: rgba(255, 255, 255, 0.1);
           }
         `}
-        title="Open ThemeSong Panel"
+        title="Open ThemeSong Quick Access Panel"
         onClick={handleClick}
       >
-        🐶
+        <InterestsIcon css={css`font-size: 26px; color: var(--ts-primary-text-color);`} />
       </button>
       <Popover
         id={id}
