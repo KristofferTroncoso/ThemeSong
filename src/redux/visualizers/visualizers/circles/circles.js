@@ -3,6 +3,11 @@ import { jsx, css } from '@emotion/react';
 import { useSelector } from 'react-redux';
 
 import RGB from './variants/RGB';
+import Accent from './variants/Accent';
+import Palette from './variants/Palette';
+import Party from './variants/Party';
+import Bubbles from './variants/Bubbles';
+import OT9 from './variants/OT9';
 
 function Circles({analyser, dataArray, bufferLength}) {
   const circlesActiveVariant = useSelector(state => (
@@ -14,15 +19,15 @@ function Circles({analyser, dataArray, bufferLength}) {
       case "variantId:1":
         return <RGB analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
       case "variantId:2":
-        return <RGB analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
+        return <Accent analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
       case "variantId:3":
-        return <RGB analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
+        return <Palette analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
       case "variantId:4":
-        return <RGB analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
+        return <Party analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
       case "variantId:5":
-        return <RGB analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
+        return <Bubbles analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
       case "variantId:6":
-        return <RGB analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
+        return <OT9 analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
       default:
         return <h1>Unknown Variant</h1>
     }

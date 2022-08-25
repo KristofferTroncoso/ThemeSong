@@ -1,5 +1,7 @@
-import { analyser, dataArray } from '../..';
-import { tsbarvisualizercanvas, isPlaying } from '../circles';
+/** @jsx jsx */
+import React, { useRef }  from 'react';
+import { jsx, css } from '@emotion/react';
+import { useSelector } from 'react-redux';
 
 let circles = [
   {
@@ -133,77 +135,139 @@ let circles = [
 let shorterCanvasSide;
 let circumference = 2 * Math.PI;
 
-function updateValues({x, y, dirX, dirY, radius, speedX, speedY, freq, minByte, minRadius, growRate}) {
-  if (y + radius > tsbarvisualizercanvas.height) {
-    dirY = Math.abs(dirY) * -1;
-  } else if (y - radius < 0) {
-    dirY = Math.abs(dirY);
-  }
-  if (x + radius > tsbarvisualizercanvas.width) {
-    dirX = Math.abs(dirX) * -1;
-  } else if (x - radius < 0) {
-    dirX = Math.abs(dirX);
-  }
-  x += dirX * speedX * (shorterCanvasSide / 500);
-  y += dirY * speedY * (shorterCanvasSide / 500);
+let playState;
+let ctx;
+let tscirclescanvas;
+let isPlaying = false;
+let borderWidth = 4;
 
-  if (x + radius - 300 > tsbarvisualizercanvas.width) {
-    x = tsbarvisualizercanvas.width * Math.random();
-  } else if (x - radius + 300 < 0) {
-    x = radius + 300;
-  }
-  if (y + radius - 300 > tsbarvisualizercanvas.height) {
-    y = tsbarvisualizercanvas.height * Math.random();
-  } else if (y - radius + 300 < 0) {
-    y = radius + 300;
+function OT9({analyser, dataArray, bufferLength}) {
+  const circlesPrefs = useSelector(state => state.visualizers.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")));
+  const playPauseState = useSelector(state => state.playerState.playPauseState);
+  let ytmusicplayer = document.querySelector("ytmusic-player")
+
+  const canvasRef = useRef(null);
+  
+  React.useEffect(() => {
+    console.log('OT9 time');
+    tscirclescanvas = canvasRef.current;
+    isPlaying = true;
+    setUpCircles();
+    ot9();
+
+    return function cleanUp() {
+      console.log('cleaning up');
+      isPlaying = false;
+    }
+  }, [])
+
+  React.useEffect(() => {
+    playState = playPauseState;
+    if (playPauseState === "Play") {
+      setUpCircles();
+      ot9();
+    }
+  }, [playPauseState, circlesPrefs])
+
+  function setUpCircles() {
+    ctx = tscirclescanvas.getContext("2d");
+    ctx.fillStyle = "#fff";
+    ctx.strokeStyle = "#000";
+    ctx.lineWidth = borderWidth;
   }
 
-  radius = ((Math.max(dataArray[freq] - minByte, 0) / growRate ) + minRadius) * (shorterCanvasSide/5);
 
-  return {x, y, dirX, dirY, radius, speedX, speedY, freq, minByte, minRadius};
+  function updateValues({x, y, dirX, dirY, radius, speedX, speedY, freq, minByte, minRadius, growRate}) {
+    if (y + radius > tscirclescanvas.height) {
+      dirY = Math.abs(dirY) * -1;
+    } else if (y - radius < 0) {
+      dirY = Math.abs(dirY);
+    }
+    if (x + radius > tscirclescanvas.width) {
+      dirX = Math.abs(dirX) * -1;
+    } else if (x - radius < 0) {
+      dirX = Math.abs(dirX);
+    }
+    x += dirX * speedX * (shorterCanvasSide / 500);
+    y += dirY * speedY * (shorterCanvasSide / 500);
+
+    if (x + radius - 300 > tscirclescanvas.width) {
+      x = tscirclescanvas.width * Math.random();
+    } else if (x - radius + 300 < 0) {
+      x = radius + 300;
+    }
+    if (y + radius - 300 > tscirclescanvas.height) {
+      y = tscirclescanvas.height * Math.random();
+    } else if (y - radius + 300 < 0) {
+      y = radius + 300;
+    }
+
+    radius = ((Math.max(dataArray[freq] - minByte, 0) / growRate ) + minRadius) * (shorterCanvasSide/5);
+
+    return {x, y, dirX, dirY, radius, speedX, speedY, freq, minByte, minRadius};
+  }
+
+  function updateAndDraw(ctx) {
+    //update values
+    circles = circles.map(circle => {
+      let newValues = updateValues(circle);
+      return { ...circle, ...newValues};
+    });
+
+    //draw values
+    for (let circle of circles) {
+      ctx.beginPath();
+      ctx.lineWidth = 1;
+      ctx.fillStyle = circle.color;
+      ctx.arc(circle.x, circle.y, circle.radius, 0, circumference);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(circle.x - (circle.radius * 0.55), circle.y - (circle.radius * 0.5));
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+      ctx.ellipse(circle.x - (circle.radius * 0.55), circle.y - (circle.radius * 0.55), (circle.radius * 0.08), (circle.radius * 0.18), Math.PI / 4, 0, 2 * Math.PI);
+      ctx.fill();
+    };
+  }
+
+  function ot9() {
+    let ctx = tscirclescanvas.getContext("2d");
+    let ytmusicplayer = document.querySelector("ytmusic-player");
+    tscirclescanvas.height = ytmusicplayer.clientHeight;
+    tscirclescanvas.width = ytmusicplayer.clientWidth;
+    shorterCanvasSide = (ytmusicplayer.clientHeight < ytmusicplayer.clientWidth) ? ytmusicplayer.clientHeight : ytmusicplayer.clientWidth;
+    analyser.fftSize = 512;
+    analyser.getByteFrequencyData(dataArray);
+
+    ctx.clearRect(0, 0, tscirclescanvas.width, tscirclescanvas.height);
+    ctx.strokeStyle = '#000';
+
+    updateAndDraw(ctx);
+
+    if (isPlaying && playState === "Play") {
+      setTimeout(() => {
+        requestAnimationFrame(ot9);
+      }, 17);
+    }
+  }
+
+  return (
+    <canvas
+      id="ts-ot9-circles-canvas"
+      ref={canvasRef}
+      height={ytmusicplayer.clientHeight}
+      width={ytmusicplayer.clientWidth}
+      css={css`
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: inherit;
+      `}
+    />
+  )
 }
 
-function updateAndDraw(ctx) {
-  //update values
-  circles = circles.map(circle => {
-    let newValues = updateValues(circle);
-    return { ...circle, ...newValues};
-  });
-
-  //draw values
-  for (let circle of circles) {
-    ctx.beginPath();
-    ctx.lineWidth = 1;
-    ctx.fillStyle = circle.color;
-    ctx.arc(circle.x, circle.y, circle.radius, 0, circumference);
-    ctx.fill();
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(circle.x - (circle.radius * 0.55), circle.y - (circle.radius * 0.5));
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
-    ctx.ellipse(circle.x - (circle.radius * 0.55), circle.y - (circle.radius * 0.55), (circle.radius * 0.08), (circle.radius * 0.18), Math.PI / 4, 0, 2 * Math.PI);
-    ctx.fill();
-  };
-}
-
-export function ot9() {
-  let ctx = tsbarvisualizercanvas.getContext("2d");
-  let ytmusicplayer = document.querySelector("ytmusic-player");
-  tsbarvisualizercanvas.height = ytmusicplayer.clientHeight;
-  tsbarvisualizercanvas.width = ytmusicplayer.clientWidth;
-  shorterCanvasSide = (ytmusicplayer.clientHeight < ytmusicplayer.clientWidth) ? ytmusicplayer.clientHeight : ytmusicplayer.clientWidth;
-  analyser.fftSize = 512;
-  analyser.getByteFrequencyData(dataArray);
-
-  ctx.clearRect(0, 0, tsbarvisualizercanvas.width, tsbarvisualizercanvas.height);
-  ctx.strokeStyle = '#000';
-
-  updateAndDraw(ctx);
-
-  if (isPlaying) {
-    setTimeout(() => {
-      requestAnimationFrame(ot9);
-    }, 16);
-  }
-}
+export default OT9;
