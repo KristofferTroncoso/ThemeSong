@@ -6,7 +6,7 @@ import './SongInfoDisplay.css';
 
 function SongInfoDisplay() {
   const songName = useSelector(state => state.songDetails.songName);
-  const songArtist = useSelector(state => state.songDetails.songArtist);
+  const songSubtitle = useSelector(state => state.songDetails.songSubtitle);
 
   return (
     <div
@@ -20,20 +20,23 @@ function SongInfoDisplay() {
       <h1 
         css={css`
           font-size: 40px; 
-          color: var(--ts-primary-text-color);
+          color: var(--ts-secondary-text-color);
         `}
       >
         {songName}
       </h1>
-      <h2 
-        css={css`
-          padding: 30px 0; 
-          font-size: 30px; 
-          color: var(--ts-secondary-text-color);
-        `}
-      >
-        {songArtist}
-      </h2>
+      {songSubtitle.split(" • ").map(info => (
+        <h2 
+          key={info}
+          css={css`
+            margin: 14px 0;
+            font-size: 32px; 
+            color: var(--ts-secondary-text-color);
+          `}
+        >
+          {info}
+        </h2>
+      ))}
     </div>
   )
 }
