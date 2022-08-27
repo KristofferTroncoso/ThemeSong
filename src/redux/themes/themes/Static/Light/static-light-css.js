@@ -42,7 +42,9 @@ export const static_light_css = /*css*/`
   --ytmusic-color-white1-alpha10: rgba(0, 0, 0, .1) !important;
 
   --yt-spec-text-primary-inverse: rgba(255,255,255,1) !important;
-
+  
+  --ytmusic-setting-item-toggle-active: rgb(26, 115, 232) !important;
+  --paper-toggle-button-checked-bar-opacity: 0.4 !important;
 }
 
 ytmusic-player {
@@ -263,6 +265,11 @@ button.ytmusic-navigation-button-renderer {
   background: rgba(0,0,0,0.15) !important;
   transition: background-color 0.2s cubic-bezier(0.2,0,0.6,1);
   white-space: normal;
+}
+
+ytmusic-player-bar tp-yt-paper-icon-button:hover {
+  background: rgba(0,0,0,0.2) !important;
+  border-radius: 50%;
 }
 
 ytmusic-navigation-button-renderer:not([button-style=STYLE_OUTLINE_BORDER]):hover button.ytmusic-navigation-button-renderer, ytmusic-navigation-button-renderer:not([button-style=STYLE_OUTLINE_BORDER]) button.ytmusic-navigation-button-renderer:focus-within {

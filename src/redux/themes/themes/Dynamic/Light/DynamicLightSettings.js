@@ -45,7 +45,7 @@ function DynamicLightSettings() {
           <label htmlFor="lightnessSettingNavBar">TopBar:</label>
           <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
             {/* <img src={TopBar} alt="svg" style={{height: '14px', width: '14px', marginRight: '8px'}} /> */}
-            <input type="range" name="lightnessSettingNavBar" min="50" max="100" value={dynamicLightPrefs.lightnessSettingNavBar} step="5" onChange={handleChange} style={{width: '180px'}} />
+            <input type="range" name="lightnessSettingNavBar" min="50" max="100" value={dynamicLightPrefs.lightnessSettingNavBar} step="1" onChange={handleChange} style={{width: '180px'}} />
             <input type="number" min="50" max="100" name="lightnessSettingNavBar" value={dynamicLightPrefs.lightnessSettingNavBar} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
           </div>
         </div>
@@ -53,7 +53,7 @@ function DynamicLightSettings() {
           <label htmlFor="lightnessSettingPlayPage">PlayPage:</label>
           <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
             {/* <img src={PlayPage} alt="svg" style={{height: '14px', width: '14px', marginRight: '8px'}} /> */}
-            <input type="range" name="lightnessSettingPlayPage" min="50" max="100" value={dynamicLightPrefs.lightnessSettingPlayPage} step="5" onChange={handleChange} style={{width: '180px'}} />
+            <input type="range" name="lightnessSettingPlayPage" min="50" max="100" value={dynamicLightPrefs.lightnessSettingPlayPage} step="1" onChange={handleChange} style={{width: '180px'}} />
             <input type="number" min="50" max="100" name="lightnessSettingPlayPage" value={dynamicLightPrefs.lightnessSettingPlayPage} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
           </div>
         </div>
@@ -61,7 +61,7 @@ function DynamicLightSettings() {
           <label htmlFor="lightnessSettingPlayerBar">PlayBar:</label>
           <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
             {/* <img src={PlayBar} alt="svg" style={{height: '14px', width: '14px', marginRight: '8px'}} /> */}
-            <input type="range" name="lightnessSettingPlayerBar" min="50" max="100" value={dynamicLightPrefs.lightnessSettingPlayerBar} step="5" onChange={handleChange} style={{width: '180px'}} />
+            <input type="range" name="lightnessSettingPlayerBar" min="50" max="100" value={dynamicLightPrefs.lightnessSettingPlayerBar} step="1" onChange={handleChange} style={{width: '180px'}} />
             <input type="number" min="50" max="100" name="lightnessSettingPlayerBar" value={dynamicLightPrefs.lightnessSettingPlayerBar} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
           </div>
         </div>
@@ -69,7 +69,7 @@ function DynamicLightSettings() {
           <label htmlFor="lightnessSettingBody">Body:</label>
           <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
             {/* <img src={Body} alt="svg" style={{height: '14px', width: '14px', marginRight: '8px'}} /> */}
-            <input type="range" name="lightnessSettingBody" min="50" max="100" value={dynamicLightPrefs.lightnessSettingBody} step="5" onChange={handleChange} style={{width: '180px'}} />
+            <input type="range" name="lightnessSettingBody" min="50" max="100" value={dynamicLightPrefs.lightnessSettingBody} step="1" onChange={handleChange} style={{width: '180px'}} />
             <input type="number" min="50" max="100" name="lightnessSettingBody" value={dynamicLightPrefs.lightnessSettingBody} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
           </div>
         </div>
