@@ -167,7 +167,11 @@ function OT9({analyser, dataArray, bufferLength}) {
       setUpCircles();
       ot9();
     }
-  }, [playPauseState, circlesPrefs])
+  }, [playPauseState])
+
+  React.useEffect(() => {
+    setUpCircles();
+  }, [circlesPrefs])
 
   function setUpCircles() {
     ctx = tscirclescanvas.getContext("2d");

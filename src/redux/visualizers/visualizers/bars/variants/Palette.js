@@ -37,7 +37,11 @@ function Palette({analyser, dataArray, bufferLength}) {
       setUpBars();
       paletteDraw();
     }
-  }, [playPauseState, barsPrefs, palette])
+  }, [playPauseState, palette])
+
+  React.useEffect(() => {
+    setUpBars();
+  }, [barsPrefs])
 
   function setUpBars() {
     barWidth = barsPrefs.barWidth;

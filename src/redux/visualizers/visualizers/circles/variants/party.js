@@ -294,7 +294,11 @@ function Party({analyser, dataArray, bufferLength}) {
       setUpCircles();
       party();
     }
-  }, [playPauseState, circlesPrefs])
+  }, [playPauseState])
+
+  React.useEffect(() => {
+    setUpCircles();
+  }, [circlesPrefs])
 
   function setUpCircles() {
     ctx = tscirclescanvas.getContext("2d");

@@ -87,7 +87,11 @@ function Palette({analyser, dataArray, bufferLength}) {
       setUpCircles();
       paletteVis();
     }
-  }, [playPauseState, circlesPrefs])
+  }, [playPauseState])
+
+  React.useEffect(() => {
+    setUpCircles();
+  }, [circlesPrefs])
 
   function setUpCircles() {
     ctx = tscirclescanvas.getContext("2d");

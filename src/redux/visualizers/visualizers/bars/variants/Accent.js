@@ -38,7 +38,11 @@ function Accent({analyser, dataArray, bufferLength}) {
       setUpBars();
       accent();
     }
-  }, [playPauseState, barsPrefs, mostPopulatedColor])
+  }, [playPauseState, mostPopulatedColor])
+
+  React.useEffect(() => {
+    setUpBars();
+  }, [barsPrefs])
 
   function setUpBars() {
     barWidth = barsPrefs.barWidth;

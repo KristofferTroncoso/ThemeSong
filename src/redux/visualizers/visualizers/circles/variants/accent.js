@@ -171,7 +171,11 @@ function Accent({analyser, dataArray, bufferLength}) {
       setUpCircles();
       accent();
     }
-  }, [playPauseState, circlesPrefs])
+  }, [playPauseState])
+
+  React.useEffect(() => {
+    setUpCircles();
+  }, [circlesPrefs])
 
   function setUpCircles() {
     ctx = tscirclescanvas.getContext("2d");

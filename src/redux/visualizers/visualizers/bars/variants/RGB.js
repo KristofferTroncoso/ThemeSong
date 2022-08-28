@@ -36,7 +36,11 @@ function RGB({analyser, dataArray, bufferLength}) {
       setUpBars();
       rgb();
     }
-  }, [playPauseState, barsPrefs])
+  }, [playPauseState])
+
+  React.useEffect(() => {
+    setUpBars();
+  }, [barsPrefs])
 
   function setUpBars() {
     barWidth = barsPrefs.barWidth;

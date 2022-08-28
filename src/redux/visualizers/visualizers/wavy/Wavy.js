@@ -32,15 +32,19 @@ function Wavy({analyser, dataArray, bufferLength}) {
 
   React.useEffect(() => {
     playState = playPauseState;
-    lineWidth = wavyPrefs.lineWidth;
     if (playPauseState === "Play") {
       setUpWavy();
       drawOscilloscope();
     }
-  }, [playPauseState, wavyPrefs, mostPopulatedColor])
+  }, [playPauseState, mostPopulatedColor])
+
+  React.useEffect(() => {
+    setUpWavy();
+  }, [wavyPrefs])
 
   function setUpWavy() {
     ctx = tswavycanvas.getContext("2d");
+    lineWidth = wavyPrefs.lineWidth;
     ctx.strokeStyle = '#fff';
     calculatedColor  = `hsl(
       ${(mostPopulatedColor.hsl[0] * 360).toFixed()}, 
@@ -50,6 +54,7 @@ function Wavy({analyser, dataArray, bufferLength}) {
   }
 
   function drawOscilloscope() {
+    analyser.fftSize = 2048; // im trying to set this up just once but it's not working. this one works but its every animate
     analyser.getByteTimeDomainData(dataArray);
     ctx.clearRect(0, 0, tswavycanvas.width, tswavycanvas.height);
     ctx.lineWidth = lineWidth;

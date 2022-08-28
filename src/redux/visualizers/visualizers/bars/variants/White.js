@@ -38,7 +38,11 @@ function White({analyser, dataArray, bufferLength}) {
       setUpBars();
       drawBars();
     }
-  }, [playPauseState, barsPrefs])
+  }, [playPauseState])
+
+  React.useEffect(() => {
+    setUpBars();
+  }, [barsPrefs])
 
   function setUpBars() {
     barWidth = barsPrefs.barWidth;

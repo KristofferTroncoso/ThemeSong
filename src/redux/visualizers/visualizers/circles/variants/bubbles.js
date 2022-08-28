@@ -294,7 +294,11 @@ function Bubbles({analyser, dataArray, bufferLength}) {
       setUpCircles();
       bubbles();
     }
-  }, [playPauseState, circlesPrefs])
+  }, [playPauseState])
+
+  React.useEffect(() => {
+    setUpCircles();
+  }, [circlesPrefs])
 
   function setUpCircles() {
     ctx = tscirclescanvas.getContext("2d");

@@ -19,7 +19,7 @@ function DancingPalette({analyser, dataArray, bufferLength}) {
   const canvasRef = useRef(null);
   
   React.useEffect(() => {
-    console.log('White Bars time');
+    console.log('Dancing Palette time');
     tsbarscanvas = canvasRef.current;
     isPlaying = true;
     setUpBars();
@@ -37,7 +37,11 @@ function DancingPalette({analyser, dataArray, bufferLength}) {
       setUpBars();
       dancingPaletteDraw();
     }
-  }, [playPauseState, barsPrefs, palette])
+  }, [playPauseState, palette])
+
+  React.useEffect(() => {
+    setUpBars();
+  }, [barsPrefs])
 
   function setUpBars() {
     barWidth = barsPrefs.barWidth;

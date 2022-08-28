@@ -14,8 +14,6 @@ let gap = 8;
 function Black({analyser, dataArray, bufferLength}) {
   const barsPrefs = useSelector(state => state.visualizers.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")));
   const playPauseState = useSelector(state => state.playerState.playPauseState);
-  // const palette = useSelector(state => state.palette.palette);
-  const mostPopulatedColor = useSelector(state => state.palette.mostPopulatedColor);
 
   const canvasRef = useRef(null);
   
@@ -38,12 +36,16 @@ function Black({analyser, dataArray, bufferLength}) {
       setUpBars();
       drawBars();
     }
-  }, [playPauseState, barsPrefs, mostPopulatedColor])
+  }, [playPauseState])
+
+  React.useEffect(() => {
+    setUpBars();
+  }, [barsPrefs])
 
   function setUpBars() {
-    barWidth = 30;
-    borderWidth = 4;
-    gap = 8;
+    barWidth = barsPrefs.barWidth;
+    borderWidth = barsPrefs.borderWidth;
+    gap = barsPrefs.gap;
     ctx = tsbarscanvas.getContext("2d");
     ctx.fillStyle = "#000";
     ctx.strokeStyle = "#fff";
