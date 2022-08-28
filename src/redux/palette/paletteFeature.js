@@ -16,7 +16,7 @@ export function addPaletteFeature() {
           rgb: palette.LightVibrant.rgb,
           hex: palette.LightVibrant.hex,
           hsl: palette.LightVibrant.hsl,
-          population: palette.LightVibrant.population
+          population: Math.floor(palette.LightVibrant.population * 0.4)
         },
         "Vibrant": {
           rgb: palette.Vibrant.rgb,
@@ -34,19 +34,19 @@ export function addPaletteFeature() {
           rgb: palette.LightMuted.rgb,
           hex: palette.LightMuted.hex,
           hsl: palette.LightMuted.hsl,
-          population: palette.LightMuted.population
+          population: Math.floor(palette.LightMuted.population * 0.4)
         },
         "Muted": {
           rgb: palette.Muted.rgb,
           hex: palette.Muted.hex,
           hsl: palette.Muted.hsl,
-          population: palette.Muted.population
+          population: Math.floor(palette.Muted.population * 0.7)
         },
         "DarkMuted": {
           rgb: palette.DarkMuted.rgb,
           hex: palette.DarkMuted.hex,
           hsl: palette.DarkMuted.hsl,
-          population: palette.DarkMuted.population
+          population: Math.floor(palette.DarkMuted.population * 0.5)
         }
       };
       let mostPopulatedColor = getMostPopulatedColor(serializedPalette);
@@ -80,7 +80,7 @@ export function addPaletteFeature() {
                   rgb: palette.LightVibrant.rgb,
                   hex: palette.LightVibrant.hex,
                   hsl: palette.LightVibrant.hsl,
-                  population: palette.LightVibrant.population
+                  population: Math.floor(palette.LightVibrant.population * 0.4)
                 },
                 "Vibrant": {
                   rgb: palette.Vibrant.rgb,
@@ -98,19 +98,19 @@ export function addPaletteFeature() {
                   rgb: palette.LightMuted.rgb,
                   hex: palette.LightMuted.hex,
                   hsl: palette.LightMuted.hsl,
-                  population: palette.LightMuted.population
+                  population: Math.floor(palette.LightMuted.population * 0.4)
                 },
                 "Muted": {
                   rgb: palette.Muted.rgb,
                   hex: palette.Muted.hex,
                   hsl: palette.Muted.hsl,
-                  population: palette.Muted.population
+                  population: Math.floor(palette.Muted.population * 0.7)
                 },
                 "DarkMuted": {
                   rgb: palette.DarkMuted.rgb,
                   hex: palette.DarkMuted.hex,
                   hsl: palette.DarkMuted.hsl,
-                  population: palette.DarkMuted.population
+                  population: Math.floor(palette.DarkMuted.population * 0.5)
                 }
               };
               let mostPopulatedColor = getMostPopulatedColor(serializedPalette);
@@ -150,10 +150,10 @@ function getVibrantPalette() {
   .getPalette();
 }
 
-function getMostPopulatedColor(palette) {
+function getMostPopulatedColor(x) {
 	let mostPopulatedColor = {population: 0};
 	
-	for (const [, value] of Object.entries(palette)) {
+	for (const [, value] of Object.entries(x)) {
 		if (value.population >= mostPopulatedColor.population) {
 			mostPopulatedColor = value;
 		}

@@ -8,7 +8,6 @@ import { addPlayPauseChangeObserver } from '../../redux/playerState/addPlayPause
 
 import addPanelContainer from './modules/ThemeSongPanel';
 import addSongInfoDisplay from './modules/SongInfoDisplay';
-import addLogoContainer from './Logo';
 import addVisualizerFeature from '../../redux/visualizers/visualizers';
 
 console.log('Content Script loaded');
@@ -23,6 +22,6 @@ addThemesContainer();
 addVisualizerFeature();
 addPanelContainer();
 addSongInfoDisplay();
-addLogoContainer();
+
 
 

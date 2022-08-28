@@ -451,6 +451,9 @@ ytmusic-two-row-item-renderer[item-size=COLLECTION_STYLE_ITEM_SIZE_SMALL_STATIC]
   color: black !important;
 }
 
+iron-input.tp-yt-paper-input > input.tp-yt-paper-input {
+  color: var(--ts-primary-text-color);
+}
 /* end TEXTS */
 
 
@@ -527,14 +530,13 @@ ytmusic-av-toggle[playback-mode=OMV_PREFERRED] .video-button.ytmusic-av-toggle {
 }
 /* --- end now playing progress bar color ---- */
 
-/* scrollbar */
-body::-webkit-scrollbar {
-  background-color: rgba(0,0,0,0.1);
-  width: 12px !important;
+/* start scrollbars */
+::-webkit-scrollbar {
+  background-color: transparent;
 }
 
-body::-webkit-scrollbar-track {
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
+::-webkit-scrollbar-track {
+  background-color: var(--ts-playbar-color);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -548,9 +550,19 @@ body::-webkit-scrollbar-track {
 }
 
 ::-webkit-scrollbar-corner {
-  background-color: transparent;
+  background-color: var(--ts-playbar-color);
 }
-/* end scrollbar */
+
+body::-webkit-scrollbar {
+
+}
+
+body::-webkit-scrollbar-track {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0,0,0,0.07);
+}
+/* end scrollbars */
 
 ${songImgStyles}
 ${universalstyles}

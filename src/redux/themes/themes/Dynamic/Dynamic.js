@@ -6,8 +6,8 @@ import DynamicSystem from './System/DynamicSystem';
 import { menubar, root } from '../selectors';
 
 function Dynamic() {
-  const darkLightSetting = useSelector(state => (
-    state.themes.themes.find(theme => (theme.themeId === "themeId:6")).userPrefs.darkLightSetting
+  const appearanceSetting = useSelector(state => (
+    state.themes.themes.find(theme => (theme.themeId === "themeId:6")).userPrefs.appearanceSetting
   ));
 
   function processColors(prefs, accentColorArr) {
@@ -38,7 +38,7 @@ function Dynamic() {
   }
   
   function returnVariant() {
-    switch (darkLightSetting) {
+    switch (appearanceSetting) {
       case "dark":
         return <DynamicDark processColors={processColors} />
       case "light":

@@ -18,7 +18,7 @@ function DarkModePanel() {
   const activeThemeUserPrefs = useSelector(state => state.themes.themes.find(theme => theme.themeId === activeTheme).userPrefs);
 
   function handleDarkLightChange(value) {
-    let newActiveThemeUserPrefs = {...activeThemeUserPrefs, darkLightSetting: value};
+    let newActiveThemeUserPrefs = {...activeThemeUserPrefs, appearanceSetting: value};
     let newThemesArr = themes.map(theme => (
       theme.themeId === activeTheme
       ? theme = {...theme, userPrefs: newActiveThemeUserPrefs}
@@ -43,15 +43,15 @@ function DarkModePanel() {
               min-width: 45px;
               width: 60px;
               margin: 5px 4px 5px 5px;
-              background: ${activeThemeUserPrefs.darkLightSetting ===  "dark" ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.4)'};
-              color: ${activeThemeUserPrefs.darkLightSetting ===  "dark" ? '#1565e6' : 'white'};
+              background: ${activeThemeUserPrefs.appearanceSetting ===  "dark" ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.4)'};
+              color: ${activeThemeUserPrefs.appearanceSetting ===  "dark" ? '#1565e6' : 'white'};
               border: 0;
               border-radius: 8px 0 0 8px;
               :hover {
-                background-color: ${activeThemeUserPrefs.darkLightSetting !==  "dark"  && 'rgba(255,255,255,0.4)'};
+                background-color: ${activeThemeUserPrefs.appearanceSetting !==  "dark"  && 'rgba(255,255,255,0.4)'};
               }
             `}
-            disabled={activeThemeUserPrefs.darkLightSetting ===  "dark"}
+            disabled={activeThemeUserPrefs.appearanceSetting ===  "dark"}
             onClick={e => handleDarkLightChange("dark")}
           >
             <DarkModeIcon title="Dark Mode" fontSize='large' />
@@ -63,14 +63,14 @@ function DarkModePanel() {
               min-width: 45px;
               width: 60px;
               margin: 0;
-              background: ${activeThemeUserPrefs.darkLightSetting ===  "light" ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.4)'};
-              color: ${activeThemeUserPrefs.darkLightSetting ===  "light" ? '#1565e6' : 'white'};
+              background: ${activeThemeUserPrefs.appearanceSetting ===  "light" ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.4)'};
+              color: ${activeThemeUserPrefs.appearanceSetting ===  "light" ? '#1565e6' : 'white'};
               border: 0;
               :hover {
-                background-color: ${activeThemeUserPrefs.darkLightSetting !==  "light"  && 'rgba(255,255,255,0.4)'};
+                background-color: ${activeThemeUserPrefs.appearanceSetting !==  "light"  && 'rgba(255,255,255,0.4)'};
               }
             `}
-            disabled={activeThemeUserPrefs.darkLightSetting ===  "light"}
+            disabled={activeThemeUserPrefs.appearanceSetting ===  "light"}
             onClick={e => handleDarkLightChange("light")}
           >
             <LightModeIcon title="Light Mode" fontSize='large' />
@@ -82,15 +82,15 @@ function DarkModePanel() {
               min-width: 45px;
               width: 60px;
               margin: 5px 5px 5px 4px;
-              background: ${activeThemeUserPrefs.darkLightSetting ===  "system"  ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.4)'};
-              color: ${activeThemeUserPrefs.darkLightSetting ===  "system" ? '#1565e6' : 'white'};
+              background: ${activeThemeUserPrefs.appearanceSetting ===  "system"  ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.4)'};
+              color: ${activeThemeUserPrefs.appearanceSetting ===  "system" ? '#1565e6' : 'white'};
               border: 0;
               border-radius: 0 8px 8px 0;
               :hover {
-                background-color: ${activeThemeUserPrefs.darkLightSetting !==  "system"  && 'rgba(255,255,255,0.4)'};
+                background-color: ${activeThemeUserPrefs.appearanceSetting !==  "system"  && 'rgba(255,255,255,0.4)'};
               }
             `}
-            disabled={activeThemeUserPrefs.darkLightSetting ===  "system"}
+            disabled={activeThemeUserPrefs.appearanceSetting ===  "system"}
             onClick={e => handleDarkLightChange("system")}
           >
             <Brightness4Icon title="Use Device Setting" fontSize='large' />

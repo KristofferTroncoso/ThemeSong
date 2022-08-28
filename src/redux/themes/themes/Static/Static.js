@@ -6,8 +6,8 @@ import StaticSystem from './System/StaticSystem';
 import { menubar, root } from '../selectors';
 
 function Static() {
-  const darkLightSetting = useSelector(state => (
-    state.themes.themes.find(theme => (theme.themeId === "themeId:7")).userPrefs.darkLightSetting
+  const appearanceSetting = useSelector(state => (
+    state.themes.themes.find(theme => (theme.themeId === "themeId:7")).userPrefs.appearanceSetting
   ));
 
   function processColors(prefs) {
@@ -32,7 +32,7 @@ function Static() {
   }
 
   function returnVariant() {
-    switch (darkLightSetting) {
+    switch (appearanceSetting) {
       case "dark":
         return <StaticDark processColors={processColors} />
       case "light":

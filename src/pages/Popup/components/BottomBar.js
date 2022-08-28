@@ -8,25 +8,38 @@ function BottomBar() {
   return (
     <div 
       className="BottomBar" 
-      css={{
-        backgroundColor: '#4d4d4d', 
-        height: '30px', 
-        width: '97%',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        alignContent: 'center',
-        padding: '0 10px',
-      }}
+      css={css`
+        * {
+          /* border: 1px solid tomato; */
+        }
+        background-color: #4d4d4d;
+        height: 28px;
+        width: 97%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        padding: 0 10px;
+      `}
     >
-      <h3>Have a nice day<HeadphonesIcon css={css`font-size: 18px;`}  /></h3>
       <div 
-        css={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          alignContent: 'center'
-        }}
+        css={css`
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          align-content: center;
+        `}
+      >
+        <h3 css={css`margin-right: 5px;`}>Have a nice day</h3>
+        <HeadphonesIcon css={css`font-size: 16px;`}  />
+      </div>
+      <div 
+        css={css`
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          align-content: center;
+        `}
       >
         <RatePopover />
         <SettingsPopover />

@@ -15,7 +15,6 @@ chrome.runtime.onInstalled.addListener((details) => {
       executeContentScriptOnYouTubeMusicTabs();
       break;
 
-
     // other cases are "chrome_update" and "shared_module_update"
     default: 
       executeContentScriptOnYouTubeMusicTabs();
@@ -24,19 +23,13 @@ chrome.runtime.onInstalled.addListener((details) => {
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   console.log('Received message:', message, 'from', sender);
-
   switch (message) {
     case "reset": 
       console.log(`Resetting to defaults`)
-      chrome.storage.sync.clear();
-      // chrome.storage.sync.set(defaults);
+      chrome.storage.local.clear();
+      // chrome.storage.local.set(defaults);
       executeContentScriptOnYouTubeMusicTabs();
       sendResponse("Reset to defaults");
-      break;
-
-    case "r u there?":
-      console.log(`Sending response: I'm here`);
-      sendResponse("I'm here");
       break;
 
     default:

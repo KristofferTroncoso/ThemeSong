@@ -19,7 +19,7 @@ const initialState = {
       lightDarkMode: true,
       icon: 0,
       userPrefs: {
-        darkLightSetting: 'dark', // 'dark', 'light', 'system'
+        appearanceSetting: 'dark', // 'dark', 'light', 'system'
         darkPrefs: {
           saturationSetting: 0.8,
           lightnessSettingNavBar: 20,
@@ -31,7 +31,7 @@ const initialState = {
           saturationSetting: 1,
           lightnessSettingNavBar: 85,
           lightnessSettingPlayPage: 80,
-          lightnessSettingBody: 95,
+          lightnessSettingBody: 98,
           lightnessSettingPlayerBar: 85
         }
       }
@@ -44,7 +44,7 @@ const initialState = {
       lightDarkMode: true,
       icon: 0,
       userPrefs: {
-        darkLightSetting: 'dark', // 'dark', 'light', 'system'
+        appearanceSetting: 'dark', // 'dark', 'light', 'system'
         darkPrefs: {
           hue: 216,
           saturationSetting: 70,

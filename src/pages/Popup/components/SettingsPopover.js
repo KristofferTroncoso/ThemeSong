@@ -30,7 +30,7 @@ function SettingsPopover() {
 
   return (
     <>
-      <button css={{background: 0, border: 0, color: 'white', fontSize: '22px'}} onClick={handleClick} title="Settings">
+      <button css={{background: 0, border: 0, color: 'white'}} onClick={handleClick} title="Settings">
         <Settings style={{fontSize: '20px'}} />
       </button>
       <Popover

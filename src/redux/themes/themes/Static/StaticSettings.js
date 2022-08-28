@@ -24,7 +24,7 @@ export function StaticSettings() {
   }
 
   function returnSettingSliders() {
-    switch (staticUserPrefs.darkLightSetting) {
+    switch (staticUserPrefs.appearanceSetting) {
       case "dark":
         return <StaticDarkSettings />
       case "light":
@@ -39,14 +39,14 @@ export function StaticSettings() {
   return (
     <div>
       <h2 style={{color: '#ff4f61'}}>Active Theme: Static</h2>
-      <p style={{margin: '5px 0 0'}}>Static</p>
-      <p style={{marginBottom: '10px'}}>Adjust brightness and saturation below.</p>
+      <p css={css`margin: 5px 0 0;`}>Pick a color, any color.</p>
+      <p css={css`margin-bottom: 10px;`}>Adjust brightness and saturation below.</p>
       <form onSubmit={e => e.preventDefault()} css={css`margin-bottom: 8px; text-align: right;`}>
-        <label htmlFor="darkLightSetting" css={css`margin-right: 8px;`}>Dark / Light Mode:</label>
+        <label htmlFor="appearanceSetting" css={css`margin-right: 8px;`}>Appearance:</label>
         <select 
-          id="darkLightSetting" 
-          name="darkLightSetting" 
-          value={staticUserPrefs.darkLightSetting} 
+          id="appearanceSetting" 
+          name="appearanceSetting" 
+          value={staticUserPrefs.appearanceSetting} 
           onChange={handleDarkLightChange} 
             css={css`
             background-color: #555;

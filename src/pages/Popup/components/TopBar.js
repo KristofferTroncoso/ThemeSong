@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { useSelector } from 'react-redux';
+import React from 'react';
 
 function TopBar() {
-  const extensionVersion = useSelector(state => state.extensionState.extensionVersion);
+  const [extensionVersion, changeExtensionVersion] =  React.useState(chrome.runtime.getManifest().version)
 
   return (
     <div 

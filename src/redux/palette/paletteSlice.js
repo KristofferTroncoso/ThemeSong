@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import logPalette from './logPalette';
 
 const initialState = {
   palette: {
@@ -89,6 +90,7 @@ export const palette = createSlice({
     changePalette: (state, action) => {
       console.log('paletteSlice: changePalette');
       state.palette = action.payload;
+      logPalette(action.payload)
     },
     changeMostPopulatedColor: (state, action) => {
       console.log('paletteSlice: changeMostPopulatedColor')

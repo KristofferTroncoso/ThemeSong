@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  extensionVersion: "0.2.2",
   activePopupTab: 1
 };
 
@@ -12,7 +11,7 @@ export const extensionState = createSlice({
     changeActivePopupTab: (state, action) => {
       console.log('extensionStateSlice: changeActivePopupTab')
       state.activePopupTab = action.payload;
-    }, 
+    }
   }
 });
 

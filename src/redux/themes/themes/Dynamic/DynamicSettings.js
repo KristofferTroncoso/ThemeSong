@@ -24,7 +24,7 @@ function DynamicSettings() {
   }
 
   function returnSettingSliders() {
-    switch (dynamicUserPrefs.darkLightSetting) {
+    switch (dynamicUserPrefs.appearanceSetting) {
       case "dark":
         return <DynamicDarkSettings />
       case "light":
@@ -39,14 +39,14 @@ function DynamicSettings() {
   return (
     <div>
       <h2 css={css`color: #ff4f61;`}>Active Theme: Dynamic</h2>
-      <p css={css`margin: 5px 0 0;`}>Colors change dynamically based on album art. Play any song to get started.</p>
+      <p css={css`margin: 5px 0 0;`}>Colors change dynamically based on album art.</p>
       <p css={css`margin-bottom: 10px;`}>Adjust brightness and saturation below.</p>
       <form onSubmit={e => e.preventDefault()} css={css`margin-bottom: 8px; text-align: right;`}>
-        <label htmlFor="darkLightSetting" css={css`margin-right: 8px;`}>Dark / Light Mode:</label>
+        <label htmlFor="appearanceSetting" css={css`margin-right: 8px;`}>Appearance:</label>
         <select 
-          id="darkLightSetting" 
-          name="darkLightSetting" 
-          value={dynamicUserPrefs.darkLightSetting} 
+          id="appearanceSetting" 
+          name="appearanceSetting" 
+          value={dynamicUserPrefs.appearanceSetting} 
           onChange={handleDarkLightChange}
           css={css`
             background-color: #555;

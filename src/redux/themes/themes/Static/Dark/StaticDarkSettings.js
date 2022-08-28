@@ -64,9 +64,23 @@ export function StaticDarkSettings() {
   return (
     <div className="StaticDarkTheme" css={css`background: #222; padding: 5px; border-radius: 2px;`}>
       <form onSubmit={handleSave}>
-        <div style={{height: '25px', display: 'flex', justifyContent: 'space-between', alignContent: 'center', alignItems: 'center'}}>
+        <div 
+          css={css`
+            height: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            align-items: center;
+            .hue-horizontal div div {
+              height: 15px !important;
+              width: 15px !important;
+              border: 1px solid #555 !important;
+              transform: translate(-9px, -2px) !important;
+            }
+          `}
+        >
           <p>Hue:</p>
-          <HuePicker width="240px" height="14px" color={reactColor} onChange={handleHueChange} onChangeComplete={handleOnHueChangeComplete} />
+          <HuePicker width="240px" height="12px" color={reactColor} onChange={handleHueChange} onChangeComplete={handleOnHueChangeComplete} />
         </div>
         <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
           <label htmlFor="lightnessSettingNavBar">TopBar:</label>

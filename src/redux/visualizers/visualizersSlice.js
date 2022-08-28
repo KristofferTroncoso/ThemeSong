@@ -11,7 +11,7 @@ const initialState = {
     {
       visualizerId: "visualizerId:1",
       name: "Bars",
-      activeVariant: "variantId:4",
+      activeVariant: "variantId:5",
       barWidth: 30,
       borderWidth: 4,
       gap: 4,
