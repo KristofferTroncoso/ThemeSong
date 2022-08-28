@@ -73,7 +73,7 @@ export function StaticDarkSettings() {
           <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
             {/* <img src={TopBar} alt="svg" style={{height: '14px', width: '14px', marginRight: '8px'}} /> */}
             <input type="range" name="lightnessSettingNavBar" min="0" max="36" value={staticDarkPrefs.lightnessSettingNavBar} step="1" onChange={handleChange}  style={{width: '180px'}} />
-            <input type="number" min="0" max="36" name="lightnessSettingNavBar" value={staticDarkPrefs.lightnessSettingNavBar} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+            <input type="number" min="0" max="36" name="lightnessSettingNavBar" value={staticDarkPrefs.lightnessSettingNavBar} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
           </div>
         </div>
         <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
@@ -81,7 +81,7 @@ export function StaticDarkSettings() {
           <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
             {/* <img src={PlayPage} alt="svg" style={{height: '14px', width: '14px', marginRight: '8px'}} /> */}
             <input type="range" name="lightnessSettingPlayPage" min="0" max="36" value={staticDarkPrefs.lightnessSettingPlayPage} step="1" onChange={handleChange}  style={{width: '180px'}} />
-            <input type="number" min="0" max="36" name="lightnessSettingPlayPage" value={staticDarkPrefs.lightnessSettingPlayPage} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+            <input type="number" min="0" max="36" name="lightnessSettingPlayPage" value={staticDarkPrefs.lightnessSettingPlayPage} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
           </div>
         </div>
         <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
@@ -89,7 +89,7 @@ export function StaticDarkSettings() {
           <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
             {/* <img src={PlayBar} alt="svg" style={{height: '14px', width: '14px', marginRight: '8px'}} /> */}
             <input type="range" name="lightnessSettingPlayerBar" min="0" max="36" value={staticDarkPrefs.lightnessSettingPlayerBar} step="1" onChange={handleChange}  style={{width: '180px'}} />
-            <input type="number" min="0" max="36" name="lightnessSettingPlayerBar" value={staticDarkPrefs.lightnessSettingPlayerBar} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+            <input type="number" min="0" max="36" name="lightnessSettingPlayerBar" value={staticDarkPrefs.lightnessSettingPlayerBar} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
           </div>
         </div>
         <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
@@ -97,7 +97,7 @@ export function StaticDarkSettings() {
           <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
             {/* <img src={Body} alt="svg" style={{height: '14px', width: '14px', marginRight: '8px'}} /> */}
             <input type="range" name="lightnessSettingBody" min="0" max="36" value={staticDarkPrefs.lightnessSettingBody} step="1" onChange={handleChange}  style={{width: '180px'}} />
-            <input type="number" min="0" max="36" name="lightnessSettingBody" value={staticDarkPrefs.lightnessSettingBody} onChange={handleChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+            <input type="number" min="0" max="36" name="lightnessSettingBody" value={staticDarkPrefs.lightnessSettingBody} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
           </div>
         </div>
         <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
@@ -105,7 +105,7 @@ export function StaticDarkSettings() {
           <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
             {/* <OpacityIcon sx={{height: '18px', width: '18px', marginRight: '6px'}} /> */}
             <input type="range" name="saturationSetting" min="0" max="100" value={staticDarkPrefs.saturationSetting} step="5" onChange={handleChange}  style={{width: '180px'}} />
-            <input type="number" min="0" max="100" name="saturationSetting" value={staticDarkPrefs.saturationSetting} step="5" onChange={handleChange}  style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+            <input type="number" min="0" max="100" name="saturationSetting" value={staticDarkPrefs.saturationSetting} step="5" onChange={handleChange}  style={{width: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
           </div>
         </div>
       </form>

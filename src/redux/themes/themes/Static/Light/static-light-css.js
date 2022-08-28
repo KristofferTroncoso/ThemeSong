@@ -65,23 +65,6 @@ ytmusic-player {
   border-radius: 6px;
   --ytmusic-player-overlay-gradient: linear-gradient( rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 25%, rgba(0, 0, 0, 0) 100% ) !important;
 }
-#song-image {
-  box-shadow: 2px 6px 20px rgba(0,0,0,0.3);
-  border-radius: 6px;
-}
-#song-image img{
-  border-radius: 6px;
-}
-#song-video {
-  box-shadow: 2px 6px 20px rgba(0,0,0,0.3);
-  border-radius: 6px;
-}
-#song-video .html5-video-player {
-  border-radius: 6px;
-}
-ytmusic-player .song-media-controls {
-  border-radius: 6px;
-}
 /* end PlayPage song img styling */
 
 /* artist image white filter */
