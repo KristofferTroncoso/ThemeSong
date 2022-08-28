@@ -34,11 +34,12 @@ function DarkModePanel() {
   } else {
     return (
       <div css={css`margin-bottom: 10px;`}>
-        <h3 css={css`padding: 2px 5px; color: var(--ts-primary-text-color);`}>{activeThemeInfo.name} Theme - Appearance</h3>
+        <h3 css={css`padding: 2px 5px; color: var(--ts-secondary-text-color);`}>{activeThemeInfo.name} Theme - Appearance</h3>
         <div css={css`display: flex; justify-content: start; align-items: center;`}>
           <button
+            title="Dark Mode"
             css={css`
-              height: 45px;
+              height: 42px;
               min-width: 45px;
               width: 60px;
               margin: 5px 4px 5px 5px;
@@ -53,11 +54,12 @@ function DarkModePanel() {
             disabled={activeThemeUserPrefs.darkLightSetting ===  "dark"}
             onClick={e => handleDarkLightChange("dark")}
           >
-            <DarkModeIcon fontSize='large' />
+            <DarkModeIcon title="Dark Mode" fontSize='large' />
           </button>
           <button
+            title="Light Mode"
             css={css`
-              height: 45px;
+              height: 42px;
               min-width: 45px;
               width: 60px;
               margin: 0;
@@ -71,11 +73,12 @@ function DarkModePanel() {
             disabled={activeThemeUserPrefs.darkLightSetting ===  "light"}
             onClick={e => handleDarkLightChange("light")}
           >
-            <LightModeIcon fontSize='large' />
+            <LightModeIcon title="Light Mode" fontSize='large' />
           </button>
           <button
+            title="Use Device Setting"
             css={css`
-              height: 45px;
+              height: 42px;
               min-width: 45px;
               width: 60px;
               margin: 5px 5px 5px 4px;
@@ -90,7 +93,7 @@ function DarkModePanel() {
             disabled={activeThemeUserPrefs.darkLightSetting ===  "system"}
             onClick={e => handleDarkLightChange("system")}
           >
-            <Brightness4Icon fontSize='large' />
+            <Brightness4Icon title="Use Device Setting" fontSize='large' />
           </button>
         </div>
       </div>

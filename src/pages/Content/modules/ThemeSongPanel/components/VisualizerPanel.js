@@ -20,6 +20,7 @@ function VisualizerPanel() {
       dispatch(toggleIsVisualizerOn())
     } else {
       dispatch(changeActiveVisualizer(id));
+      chrome.storage.local.set({activeVisualizer: id}, () => console.log('chrome.storage.local.set({activeVisualizer}'))
       if (!isVisualizerOn) {
         dispatch(toggleIsVisualizerOn());
       }
@@ -28,11 +29,12 @@ function VisualizerPanel() {
 
   return (
     <div css={css`margin-bottom: 10px;`}>
-      <h3 css={css`padding: 2px 5px; color: var(--ts-primary-text-color);`}>Visualizer</h3>
+      <h3 css={css`padding: 2px 5px; color: var(--ts-secondary-text-color);`}>Visualizer</h3>
       <div css={css`display: flex; justify-content: start; align-items: center;`}>
         <button
+          title="Wavy"
           css={css`
-            height: 45px;
+            height: 42px;
             min-width: 45px;
             width: 60px;
             margin: 5px 4px 5px 5px;
@@ -46,11 +48,12 @@ function VisualizerPanel() {
           `}
           onClick={e => handleVisualizerButtonClick("visualizerId:0")}
         >
-          <WavesIcon fontSize='large' />
+          <WavesIcon title="Wavy" fontSize='large' />
         </button>
         <button
+          title="Bars"
           css={css`
-            height: 45px;
+            height: 42px;
             min-width: 45px;
             width: 60px;
             margin: 0;
@@ -63,11 +66,12 @@ function VisualizerPanel() {
           `}
           onClick={e => handleVisualizerButtonClick("visualizerId:1")}
         >
-          <LeaderboardIcon fontSize='large' />
+          <LeaderboardIcon title="Bars" fontSize='large' />
         </button>
         <button
+          title="Circles"
           css={css`
-            height: 45px;
+            height: 42px;
             min-width: 60px;
             width: 60px;
             margin: 5px 5px 5px 4px;
@@ -82,7 +86,7 @@ function VisualizerPanel() {
           `}
           onClick={e => handleVisualizerButtonClick("visualizerId:2")}
         >
-          <BubbleChart css={css`font-size: 32px;`} />
+          <BubbleChart title="Circles" css={css`font-size: 32px;`} />
         </button>
       </div>
     </div>
