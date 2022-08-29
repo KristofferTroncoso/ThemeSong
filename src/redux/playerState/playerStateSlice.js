@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  playPauseState: "Pause",
+  playPauseState: "Play",
 };
 
 export const playerState = createSlice({

@@ -21,6 +21,14 @@ function Visualizer() {
     console.log('Visualizer: useEffect');
     connectAudio();
     console.log(source)
+  }, [])
+
+  React.useEffect(() => {
+    console.log('Visualizer: useEffect 2');
+    if (isVisualizerOn) {
+      connectAudio();
+    }
+    console.log(source)
   }, [isVisualizerOn])
 
   function connectAudio() {
