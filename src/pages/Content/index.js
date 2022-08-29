@@ -3,7 +3,7 @@ import { addThemesContainer } from '../../redux/themes/themes';
 import { addCloudSyncStorageSyncer } from '../../redux/cloudStorageSyncer';
 
 import { addPaletteFeature } from '../../redux/palette/paletteFeature';
-import { addSongDetailsObserver } from '../../redux/songDetails/addSongDetailsObserver';
+import addSongDetailsFeature from '../../redux/songDetails/addSongDetailsFeature';
 import { addPlayPauseChangeObserver } from '../../redux/playerState/addPlayPauseChangeObserver';
 
 import addPanelContainer from './modules/ThemeSongPanel';
@@ -15,7 +15,7 @@ console.log('Content Script loaded');
 addCloudSyncStorageSyncer();
 
 addPaletteFeature();
-addSongDetailsObserver();
+addSongDetailsFeature();
 addPlayPauseChangeObserver();
 
 addThemesContainer();

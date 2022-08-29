@@ -3,7 +3,10 @@ import { changeSongDetails } from './songDetailsSlice';
 
 let songDetailsObserver;
 
-export function addSongDetailsObserver() {
+export function addSongDetailsFeature() {
+  //initial
+  store.dispatch(changeSongDetails());
+
   let songTitleNode = document.querySelector("ytmusic-player-bar .title");
 
   songDetailsObserver = new MutationObserver(handleSongChange);
@@ -21,3 +24,5 @@ export function addSongDetailsObserver() {
 export function removeSongDetailsObserver() {
   songDetailsObserver.disconnect();
 }
+
+export default addSongDetailsFeature;
