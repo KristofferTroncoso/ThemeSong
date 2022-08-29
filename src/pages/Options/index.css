@@ -8,3 +8,7 @@ body {
   padding: 20px;
   color: white;
 }
+
+button {
+  cursor: pointer;
+}
