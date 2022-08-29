@@ -27,7 +27,7 @@ function RatePopover() {
   return (
     <>
       <button css={{background: 0, border: 0}} onClick={handleClick} title="Rate and comment!">
-        {userLikesExtension ? <Star css={css`font-size: 20px; color: white;`} /> : '😭'}
+        {userLikesExtension ? <Star css={css`font-size: 18px; color: white;`} /> : '😭'}
       </button>
       <Popover
         id={id}

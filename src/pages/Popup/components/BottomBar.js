@@ -30,7 +30,7 @@ function BottomBar() {
           align-content: center;
         `}
       >
-        <h3 css={css`margin-right: 5px;`}>Have a nice day</h3>
+        <h3 css={css`margin-right: 5px; font-size: 14px;`}>Have a nice day</h3>
         <HeadphonesIcon css={css`font-size: 16px;`}  />
       </div>
       <div 
