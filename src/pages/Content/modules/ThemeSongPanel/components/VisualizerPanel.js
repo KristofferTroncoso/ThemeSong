@@ -29,7 +29,7 @@ function VisualizerPanel() {
 
   return (
     <div css={css`margin-bottom: 10px;`}>
-      <h3 css={css`padding: 2px 5px; color: var(--ts-secondary-text-color);`}>Visualizer</h3>
+      <h3 css={css`padding: 2px 5px;`}>Visualizer</h3>
       <div css={css`display: flex; justify-content: start; align-items: center;`}>
         <button
           title="Wavy"

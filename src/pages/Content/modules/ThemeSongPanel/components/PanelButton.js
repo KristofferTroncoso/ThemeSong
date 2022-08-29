@@ -2,7 +2,7 @@
 import { jsx, css } from '@emotion/react';
 // import { Button } from '@mui/material';
 
-function PanelButton({children, ...props}) {
+function PanelButton({hoverTextColor, hoverBgColor, children, ...props}) {
   return (
     <button
       css={css`
@@ -15,7 +15,8 @@ function PanelButton({children, ...props}) {
         border: 0;
         border-radius: 4px;
         :hover {
-          background-color: rgba(255, 255, 255, 0.4);
+          background-color: ${hoverBgColor || 'rgba(255, 255, 255, 0.4)'};
+          color: ${hoverTextColor || '#fff'};
         }
       `}
       {...props}

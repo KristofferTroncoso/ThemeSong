@@ -33,8 +33,8 @@ function DarkModePanel() {
     return <div></div>
   } else {
     return (
-      <div css={css`margin-bottom: 10px;`}>
-        <h3 css={css`padding: 2px 5px; color: var(--ts-secondary-text-color);`}>{activeThemeInfo.name} Theme - Appearance</h3>
+      <div css={css`margin-bottom: 0;`}>
+        <h3 css={css`padding: 2px 5px;`}>{activeThemeInfo.name} Theme - Appearance</h3>
         <div css={css`display: flex; justify-content: start; align-items: center;`}>
           <button
             title="Dark Mode"

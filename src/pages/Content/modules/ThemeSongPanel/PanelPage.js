@@ -12,6 +12,9 @@ import { SiGenius } from 'react-icons/si';
 import { IoMdBowtie } from 'react-icons/io'
 import DataObjectIcon from '@mui/icons-material/DataObject';
 import SnoozeIcon from '@mui/icons-material/Snooze';
+import { Tooltip } from '@mui/material';
+import HelpIcon from '@mui/icons-material/Help';
+import TuneIcon from '@mui/icons-material/Tune';
 
 function PanelPage() {
   const songName = useSelector(state => state.songDetails.songName);
@@ -81,27 +84,30 @@ function PanelPage() {
   return (
     <div
       css={css`
-        height: 320px;
-        width: 250px;
-        padding: 8px;
+        padding: 6px;
         border: 1px solid rgba(255, 255, 255, 0.1);
         background-color: var(--ts-playbar-color);
+        transition: var(--ts-bgcolor-transition);
+        color: var(--ts-secondary-text-color);
       `}
     >
+      <div css={css`text-align: right;`}>
+        <Tooltip title={<p css={css`font-size: 12px;`}>ThemeSong Quick Access Panel</p>}><HelpIcon style={{fontSize: '14px'}} /></Tooltip>
+      </div>
       <div css={{marginBottom: '6px'}}>
-        <h3 css={css`padding: 2px 5px; color: var(--ts-secondary-text-color);`}>Open song in:</h3>
+        <h3 css={css`padding: 0 5px 2px;`}>Open song in:</h3>
         <div css={css`display: flex; justify-content: start; align-items: center;`}>
-          <PanelButton title="YouTube" onClick={handleYtSearch}><YouTubeIcon title="YouTube" style={{fontSize: '26px'}} /></PanelButton>
-          <PanelButton title="Google" onClick={handleOpenInGoogle}><GoogleIcon title="Google" fontSize='large' /></PanelButton>
+          <PanelButton title="YouTube" hoverTextColor="#fff" hoverBgColor="red" onClick={handleYtSearch}><YouTubeIcon title="YouTube" style={{fontSize: '26px'}} /></PanelButton>
+          <PanelButton title="Google" hoverTextColor="#fff" hoverBgColor="#4c8bf5" onClick={handleOpenInGoogle}><GoogleIcon title="Google" fontSize='large' /></PanelButton>
         </div>
       </div>
       <div css={{marginBottom: '6px'}}>
-        <h3 css={css`padding: 2px 5px; color: var(--ts-secondary-text-color);`}>Search for lyrics</h3>
+        <h3 css={css`padding: 2px 5px;`}>Search for lyrics</h3>
         <div css={css`display: flex; justify-content: start; align-items: center;`}>
-          <PanelButton title="Genius" onClick={handleGeniusLyricsSearch}><SiGenius title="Genius" style={{fontSize: '20px'}} /></PanelButton>
-          <PanelButton title="Musixmatch" onClick={handleMusixmatchSearch}><IoMdBowtie title="Musixmatch" style={{fontSize: '24px'}} /></PanelButton>
-          <PanelButton title="Google" onClick={handleGoogleLyricsSearch}><GoogleIcon title="Google" fontSize='large' /></PanelButton>
-          <PanelButton title="YouTube" onClick={handleYtLyricsSearch}><YouTubeIcon title="YouTube" style={{fontSize: '26px'}} /></PanelButton>
+          <PanelButton title="Genius" hoverTextColor="#000" hoverBgColor="#ffff64" onClick={handleGeniusLyricsSearch}><SiGenius title="Genius" style={{fontSize: '20px'}}/></PanelButton>
+          <PanelButton title="Musixmatch" hoverTextColor="#fff" hoverBgColor="#ff5353" onClick={handleMusixmatchSearch}><IoMdBowtie title="Musixmatch" style={{fontSize: '24px'}} /></PanelButton>
+          <PanelButton title="Google" hoverTextColor="#fff" hoverBgColor="#4c8bf5" onClick={handleGoogleLyricsSearch}><GoogleIcon title="Google" fontSize='large' /></PanelButton>
+          <PanelButton title="YouTube" hoverTextColor="#fff" hoverBgColor="red" onClick={handleYtLyricsSearch}><YouTubeIcon title="YouTube" style={{fontSize: '26px'}} /></PanelButton>
         </div>
       </div>
       <VisualizerPanel />
@@ -113,6 +119,12 @@ function PanelPage() {
           <PanelButton onClick={handleTimerClick}><SnoozeIcon css={css`font-size: 28px;`} /></PanelButton>
         </div>
       </div> */}
+      <div css={css`text-align: right;`}>
+        <Tooltip 
+          title={<p css={css`font-size: 12px;`}>Additional settings and options available through the ThemeSong popup icon on your toolbar.</p>}>
+          <TuneIcon style={{fontSize: '16px'}} />
+        </Tooltip>
+      </div>
     </div>
   )
 }

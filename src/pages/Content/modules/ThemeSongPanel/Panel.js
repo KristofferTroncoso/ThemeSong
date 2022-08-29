@@ -39,7 +39,7 @@ function Panel() {
         title="Open ThemeSong Quick Access Panel"
         onClick={handleClick}
       >
-        <InterestsIcon css={css`font-size: 24px; color: var(--ts-primary-text-color);`} />
+        <InterestsIcon css={css`font-size: 24px; color: var(--ts-secondary-text-color);`} />
       </button>
       <Popover
         id={id}
