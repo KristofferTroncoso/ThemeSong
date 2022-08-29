@@ -89,16 +89,20 @@ function PanelPage() {
       `}
     >
       <div css={{marginBottom: '6px'}}>
-        <h3 css={css`padding: 2px 5px; color: var(--ts-secondary-text-color);`}>Open song in</h3>
-        <PanelButton title="YouTube" onClick={handleYtSearch}><YouTubeIcon title="YouTube" style={{fontSize: '26px'}} /></PanelButton>
-        <PanelButton title="Google" onClick={handleOpenInGoogle}><GoogleIcon title="Google" fontSize='large' /></PanelButton>
+        <h3 css={css`padding: 2px 5px; color: var(--ts-secondary-text-color);`}>Open song in:</h3>
+        <div css={css`display: flex; justify-content: start; align-items: center;`}>
+          <PanelButton title="YouTube" onClick={handleYtSearch}><YouTubeIcon title="YouTube" style={{fontSize: '26px'}} /></PanelButton>
+          <PanelButton title="Google" onClick={handleOpenInGoogle}><GoogleIcon title="Google" fontSize='large' /></PanelButton>
+        </div>
       </div>
       <div css={{marginBottom: '6px'}}>
         <h3 css={css`padding: 2px 5px; color: var(--ts-secondary-text-color);`}>Search for lyrics</h3>
-        <PanelButton title="Genius" onClick={handleGeniusLyricsSearch}><SiGenius title="Genius" style={{fontSize: '20px'}} /></PanelButton>
-        <PanelButton title="Musixmatch" onClick={handleMusixmatchSearch}><IoMdBowtie title="Musixmatch" style={{fontSize: '24px'}} /></PanelButton>
-        <PanelButton title="Google" onClick={handleGoogleLyricsSearch}><GoogleIcon title="Google" fontSize='large' /></PanelButton>
-        <PanelButton title="YouTube" onClick={handleYtLyricsSearch}><YouTubeIcon title="YouTube" style={{fontSize: '26px'}} /></PanelButton>
+        <div css={css`display: flex; justify-content: start; align-items: center;`}>
+          <PanelButton title="Genius" onClick={handleGeniusLyricsSearch}><SiGenius title="Genius" style={{fontSize: '20px'}} /></PanelButton>
+          <PanelButton title="Musixmatch" onClick={handleMusixmatchSearch}><IoMdBowtie title="Musixmatch" style={{fontSize: '24px'}} /></PanelButton>
+          <PanelButton title="Google" onClick={handleGoogleLyricsSearch}><GoogleIcon title="Google" fontSize='large' /></PanelButton>
+          <PanelButton title="YouTube" onClick={handleYtLyricsSearch}><YouTubeIcon title="YouTube" style={{fontSize: '26px'}} /></PanelButton>
+        </div>
       </div>
       <VisualizerPanel />
       <DarkModePanel />
