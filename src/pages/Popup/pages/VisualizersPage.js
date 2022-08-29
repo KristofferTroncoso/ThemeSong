@@ -51,7 +51,7 @@ function VisualizersPage() {
 
   return (
     <div>
-      <h2 css={css`font-size: 12px; font-weight: 400; padding: 4px 5px 0;`}>Toggle on the visualizer by hovering the album art and clicking on the 🥽 visualizer icon.</h2>
+      <h2 css={css`font-size: 12px; font-weight: 400; padding: 4px 5px 0;`}>Toggle on the visualizer by hovering the album art and clicking on the visualizer icon.</h2>
       <h2 
         css={css`
           font-size: 11px; 
