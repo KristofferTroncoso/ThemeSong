@@ -15,7 +15,7 @@ function PanelButton({hoverTextColor, hoverBgColor, children, ...props}) {
         border: 0;
         border-radius: 4px;
         :hover {
-          background-color: ${hoverBgColor || 'rgba(255, 255, 255, 0.4)'};
+          background: ${hoverBgColor || 'rgba(255, 255, 255, 0.4)'};
           color: ${hoverTextColor || '#fff'};
         }
       `}
