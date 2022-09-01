@@ -27,7 +27,7 @@ function SongInfoDisplay() {
       </h1>
       {songSubtitle.split(" • ").map(info => (
         <h2 
-          key={info}
+          key={Math.floor(Math.random() * 10000)}
           css={css`
             margin: 14px 0;
             font-size: 32px; 
