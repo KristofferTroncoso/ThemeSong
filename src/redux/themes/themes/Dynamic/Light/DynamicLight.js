@@ -16,7 +16,7 @@ function DynamicLight({processColors}) {
     processColors(dynamicLightPrefs, mostPopulatedColor.hsl);
   }, [mostPopulatedColor, dynamicLightPrefs])
   
-  return <div id="DynamicDark"></div>
+  return <div id="DynamicLight"></div>
 }
 
 export default DynamicLight;
