@@ -9,6 +9,16 @@ function StaticLight({processColors}) {
   React.useEffect(() => {
     addStylesheet(static_light_css);
     processColors(staticLightPrefs);
+
+    //apply dark logo on load
+    document.querySelectorAll("ytmusic-nav-bar #left-content picture source")[1].srcset = chrome.runtime.getURL("/assets/images/dark_youtube_music_logo_themesong_mod.svg")
+    document.querySelector("ytmusic-nav-bar #left-content picture img").src = chrome.runtime.getURL("/assets/images/dark_youtube_music_logo_themesong_mod.svg")
+
+    //remove dark logo on unload
+    return function() {
+      document.querySelectorAll("ytmusic-nav-bar #left-content picture source")[1].srcset = "//music.youtube.com/img/on_platform_logo_dark.svg";
+      document.querySelector("ytmusic-nav-bar #left-content picture img").src = "//music.youtube.com/img/on_platform_logo_dark.svg";
+    }
   }, [])
 
   React.useEffect(() => {

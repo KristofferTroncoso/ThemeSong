@@ -1,7 +1,6 @@
 import { scrollbars } from '../../universal/scrollbars';
 import { playerbar_progressbar } from '../../universal/playerbar-progressbar';
 import { main_BGs } from '../../universal/main-BGs';
-import { logoStyles } from '../../universal/logo';
 import { songImgStyles } from '../../universal/songImgStyles';
 import { universalstyles } from '../../universal/universalstyles';
 
@@ -33,7 +32,6 @@ export const dynamicdark_css = /*css*/`
 ${main_BGs}
 ${scrollbars}
 ${playerbar_progressbar}
-/* logoStyles */
 ${songImgStyles}
 
 ${universalstyles}

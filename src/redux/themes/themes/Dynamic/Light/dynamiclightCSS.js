@@ -13,6 +13,8 @@ export const dynamiclight_css = /*css*/`
 
   --ts-picked-vibrant-static: var(--ts-default-app-color);
   --ts-picked-vibrant-light50: var(--ts-default-app-color);
+  --ts-picked-vibrant-alpha10: var(--ts-default-app-color);
+  --ts-picked-vibrant-alpha20: var(--ts-default-app-color);
   --ts-topnav-color: var(--ts-default-app-color);
   --ts-mainbg-color: var(--ts-default-app-color);
   --ts-playpagebg-color: var(--ts-default-app-color);
@@ -30,7 +32,7 @@ export const dynamiclight_css = /*css*/`
   --ytmusic-text-secondary: #737373 !important;
   --ytmusic-text-disabled: #9b9b9b !important;
 
-  --ytmusic-overlay-text-secondary: #000 !important;
+  --ytmusic-overlay-text-secondary: var(--ts-secondary-text-color) !important;
 
   --ytmusic-10-percent-layer: rgba(0, 0, 0, 0.2) !important;
   --yt-spec-10-percent-layer: rgba(0, 0, 0, 0.2) !important;
@@ -41,7 +43,7 @@ export const dynamiclight_css = /*css*/`
   --ytmusic-divider: rgba(0,0,0,0.3) !important;
   --ytmusic-menu-item-hover-background-color: rgba(0,0,0,0.2) !important;
 
-  --ytmusic-color-white1-alpha10: rgba(0, 0, 0, .1) !important;
+  --ytmusic-color-white1-alpha10: var(--ts-picked-vibrant-alpha20) !important;
 
   --yt-spec-text-primary-inverse: rgba(255,255,255,1) !important;
 
@@ -262,7 +264,7 @@ ytmusic-navigation-button-renderer:not([button-style=STYLE_OUTLINE_BORDER]):hove
 }
 
 ytmusic-dropdown-renderer[dropdown-style=default] {
-  background-color: rgba(0,0,0,0.1) !important;
+  background-color: var(--ts-picked-vibrant-alpha20) !important;
   border: 1px solid rgba(0,0,0,0.1) !important;
 }
 
@@ -348,10 +350,10 @@ ytmusic-unified-share-panel-renderer #title, #share-url {
 }
 
 .duration.ytmusic-player-queue-item, .byline.ytmusic-player-queue-item {
-  color: rgba(0,0,0.8) !important;
-  --yt-endpoint-color: rgba(0,0,0.8) !important;
-  --yt-endpoint-hover-color: rgba(0,0,0.8) !important;
-  --yt-endpoint-visited-color: rgba(0,0,0.8) !important;
+  color: #303030 !important;
+  --yt-endpoint-color: var(--ts-secondary-text-color) !important;
+  --yt-endpoint-hover-color: var(--ts-secondary-text-color) !important;
+  --yt-endpoint-visited-color: var(--ts-secondary-text-color) !important;
 }
 
 
@@ -457,22 +459,6 @@ iron-input.tp-yt-paper-input > input.tp-yt-paper-input {
   color: var(--ts-primary-text-color);
 }
 /* end TEXTS */
-
-
-/* logo */
-ytmusic-nav-bar picture:first-child {
-  display: none !important;
-}
-
-ytmusic-nav-bar picture[hidden] {
-  display: block !important;
-}
-
-ytmusic-nav-bar .left-content img {
-  filter: brightness(15%);
-}
-/* logo end */
-
 
 /* start MAIN */
 /* This can be specific since we would like to individually adjust these portions. */

@@ -9,7 +9,7 @@ export const static_light_css = /*css*/`
   --ts-default-app-color: #ebebeb;
 
   --ts-primary-text-color: #000;
-  --ts-secondary-text-color: #1c1c1c;
+  --ts-secondary-text-color: #474747;
 
   --ts-topnav-color: var(--ts-default-app-color);
   --ts-mainbg-color: var(--ts-default-app-color);
@@ -28,7 +28,7 @@ export const static_light_css = /*css*/`
   --ytmusic-text-secondary: #737373 !important;
   --ytmusic-text-disabled: #9b9b9b !important;
 
-  --ytmusic-overlay-text-secondary: black !important;
+  --ytmusic-overlay-text-secondary: var(--ts-secondary-text-color) !important;
 
   --ytmusic-10-percent-layer: rgba(0, 0, 0, 0.2) !important;
   --yt-spec-10-percent-layer: rgba(0, 0, 0, 0.2) !important;
@@ -455,22 +455,6 @@ iron-input.tp-yt-paper-input > input.tp-yt-paper-input {
   color: var(--ts-primary-text-color);
 }
 /* end TEXTS */
-
-
-/* logo */
-ytmusic-nav-bar picture:first-child {
-  display: none !important;
-}
-
-ytmusic-nav-bar picture[hidden] {
-  display: block !important;
-}
-
-ytmusic-nav-bar .left-content img {
-  filter: brightness(15%);
-}
-/* logo end */
-
 
 /* start MAIN */
 /* This can be specific since we would like to individually adjust these portions. */

@@ -21,6 +21,8 @@ function Dynamic() {
 
     let pickedVibrantColor = `hsl(${hue}, ${saturation}%, ${light}%)`;
     let pickedVibrantColorLight50 = `hsl(${hue}, ${saturation}%, 50%)`;
+    let pickedVibrantColorLightAlpha10 = `hsla(${hue}, ${saturation}%, ${light}%, 0.1)`;
+    let pickedVibrantColorLightAlpha20 = `hsla(${hue}, ${saturation}%, ${light}%, 0.2)`;
     let navBarColor = `hsl(${hue}, ${saturation}%, ${lightnessSettingNavBar}%)`;
     let playPageColor = `hsl(${hue}, ${saturation}%, ${lightnessSettingPlayPage}%)`;
     let bodyColor = `hsl(${hue}, ${saturation}%, ${lightnessSettingBody}%)`;
@@ -30,6 +32,8 @@ function Dynamic() {
     menubar.content = navBarColor;
     root.style.setProperty("--ts-picked-vibrant-static", pickedVibrantColor, "important");
     root.style.setProperty("--ts-picked-vibrant-light50", pickedVibrantColorLight50, "important");
+    root.style.setProperty("--ts-picked-vibrant-alpha10", pickedVibrantColorLightAlpha10, "important");
+    root.style.setProperty("--ts-picked-vibrant-alpha20", pickedVibrantColorLightAlpha20, "important");
     root.style.setProperty("--ts-topnav-color", navBarColor);
     root.style.setProperty("--ts-mainbg-color", bodyColor);
     root.style.setProperty("--ts-playpagebg-color", playPageColor);
