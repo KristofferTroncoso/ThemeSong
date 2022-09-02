@@ -9,7 +9,8 @@ export const static_light_css = /*css*/`
   --ts-default-app-color: #ebebeb;
 
   --ts-primary-text-color: #000;
-  --ts-secondary-text-color: #474747;
+  --ts-secondary-text-color: #1e1e1e;
+  --ts-tertiary-text-color: #474747;
 
   --ts-topnav-color: var(--ts-default-app-color);
   --ts-mainbg-color: var(--ts-default-app-color);

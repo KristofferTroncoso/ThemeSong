@@ -31,7 +31,7 @@ function SongInfoDisplay() {
           css={css`
             margin: 14px 0;
             font-size: 32px; 
-            color: var(--ts-secondary-text-color);
+            color: var(--ts-tertiary-text-color);
           `}
         >
           {info}

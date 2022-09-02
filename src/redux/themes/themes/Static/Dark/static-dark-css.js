@@ -12,7 +12,8 @@ export const static_dark_css = /*css*/`
   --ts-default-app-color: #171717;
 
   --ts-primary-text-color: #fff;
-  --ts-secondary-text-color: #c7c7c7;
+  --ts-secondary-text-color: #d5d5d5;
+  --ts-tertiary-text-color: #adadad;
 
   --ts-topnav-color: var(--ts-default-app-color);
   --ts-mainbg-color: var(--ts-default-app-color);
@@ -20,7 +21,7 @@ export const static_dark_css = /*css*/`
   --ts-playbar-color: var(--ts-default-app-color);
   --ts-playpageavtoggle-color: var(--ts-default-app-color);
 
-  --ts-playprogress-color: white;
+  --ts-playprogress-color: #fff;
 
   --ts-bgcolor-transition: background-color 1s ease-out;
 

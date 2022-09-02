@@ -7,7 +7,8 @@ export const off_css = /*css*/ `
 
 :root {
   --ts-primary-text-color: #fff;
-  --ts-secondary-text-color: #c7c7c7;
+  --ts-secondary-text-color: #d5d5d5;
+  --ts-tertiary-text-color: #adadad;
 
   --ts-topnav-color: #242424;
   --ts-mainbg-color: #242424;

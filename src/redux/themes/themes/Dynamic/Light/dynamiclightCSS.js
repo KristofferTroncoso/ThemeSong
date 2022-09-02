@@ -9,7 +9,8 @@ export const dynamiclight_css = /*css*/`
   --ts-default-app-color: #ebebeb;
 
   --ts-primary-text-color: #000;
-  --ts-secondary-text-color: #474747;
+  --ts-secondary-text-color: #1e1e1e;
+  --ts-tertiary-text-color: #474747;
 
   --ts-picked-vibrant-static: var(--ts-default-app-color);
   --ts-picked-vibrant-light50: var(--ts-default-app-color);
@@ -32,7 +33,7 @@ export const dynamiclight_css = /*css*/`
   --ytmusic-text-secondary: #737373 !important;
   --ytmusic-text-disabled: #9b9b9b !important;
 
-  --ytmusic-overlay-text-secondary: var(--ts-secondary-text-color) !important;
+  --ytmusic-overlay-text-secondary: var(--ts-tertiary-text-color) !important;
 
   --ytmusic-10-percent-layer: rgba(0, 0, 0, 0.2) !important;
   --yt-spec-10-percent-layer: rgba(0, 0, 0, 0.2) !important;
@@ -350,7 +351,7 @@ ytmusic-unified-share-panel-renderer #title, #share-url {
 }
 
 .duration.ytmusic-player-queue-item, .byline.ytmusic-player-queue-item {
-  color: #303030 !important;
+  color: var(--ts-secondary-text-color) !important;
   --yt-endpoint-color: var(--ts-secondary-text-color) !important;
   --yt-endpoint-hover-color: var(--ts-secondary-text-color) !important;
   --yt-endpoint-visited-color: var(--ts-secondary-text-color) !important;
