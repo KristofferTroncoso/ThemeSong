@@ -14,7 +14,6 @@ function SongInfoDisplay() {
       css={css`
         padding: 80px 0 80px 80px;
         height: 600px;
-        max-width: 900px;
       `}
     >
       <h1 

@@ -10,5 +10,12 @@ ytmusic-player:not([player-ui-state_=FULLSCREEN]) #songDivNode {
   #songDivNode {
     text-align: center;
     padding: 80px 0 80px;
+    max-width: 80vw !important;
+  }
+}
+
+@media (min-width: 1199px) {
+  #songDivNode {
+    max-width: 40vw;
   }
 }

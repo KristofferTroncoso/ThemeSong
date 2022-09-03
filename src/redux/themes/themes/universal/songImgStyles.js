@@ -1,5 +1,3 @@
-
-
 export const songImgStyles = /*css*/`
 /* start PlayPage song img styling */
 ytmusic-player {
@@ -30,11 +28,6 @@ ytmusic-player[player-ui-state_=FULLSCREEN] #song-image {
 }
 
 ytmusic-player[player-ui-state_=FULLSCREEN] #thumbnail {
-  /*
-  margin: 160px 950px 160px 269px;
-  max-width: 80%;
-  max-height: 80%;
-  */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,8 +40,8 @@ ytmusic-player[player-ui-state_=FULLSCREEN] #song-image #img {
   border-radius: 6px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.6);
   filter: drop-shadow(0px 0px 200px var(--ts-picked-vibrant-light50));
-  width: 800px;
-  height: 800px;
+  width: 760px;
+  height: 760px;
   margin: 0;
 }
 /* end PlayPage song img styling */
