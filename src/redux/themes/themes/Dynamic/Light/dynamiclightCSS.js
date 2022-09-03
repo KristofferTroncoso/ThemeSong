@@ -67,9 +67,9 @@ ytmusic-player[player-ui-state_=MINIPLAYER] .song-media-controls.ytmusic-player 
 
 /* start PlayPage song img styling */
 ytmusic-player {
-  box-shadow: 0 0 200px var(--ts-picked-vibrant-light50) !important;
-  border-radius: 6px;
-  --ytmusic-player-overlay-gradient: linear-gradient( rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 25%, rgba(0, 0, 0, 0) 40% ) !important;
+  /* below is like an accent gradient for the song img */
+  /* box-shadow: 0 0 200px var(--ts-picked-vibrant-light50) !important; */
+  --ytmusic-player-overlay-gradient: linear-gradient( rgba(255, 255, 255, 0.6) 0%, rgba(0, 0, 0, 0) 40% ) !important;
 }
 /* end PlayPage song img styling */
 
@@ -79,7 +79,7 @@ ytmusic-player {
 }
 
 ytmusic-background-overlay-renderer {
-  --ytmusic-background-overlay-background: linear-gradient(rgba(255, 255, 255,0.9),rgba(255, 255, 255,0.4),rgba(255, 255, 255,0.1)) !important;
+  --ytmusic-background-overlay-background: linear-gradient(rgba(255, 255, 255, 0.6),rgba(255, 255, 255,0.4),rgba(255, 255, 255,0.1)) !important;
 }
 
 
@@ -93,8 +93,21 @@ ytmusic-settings-page .title{
     --ytmusic-text-disabled: #9b9b9b !important;
 }
 /* start icons */
-/* playbar icons */
 tp-yt-paper-icon-button  {
+  color: #000 !important;
+}
+
+ytmusic-two-row-item-renderer .content-wrapper.ytmusic-play-button-renderer {
+  border-radius: 50%;
+}
+
+.content-wrapper.ytmusic-play-button-renderer {
+  border-radius: 0;
+}
+
+/* playbar icons */
+
+ytmusic-player-bar tp-yt-paper-icon-button  {
   color: #4a4a4a !important;
 }
 
@@ -167,6 +180,14 @@ yt-icon.ytmusic-navigation-button-renderer {
   --paper-slider-disabled-knob-color: var(--ts-primary-text-color)  !important;
   --paper-slider-knob-start-color: var(--ts-primary-text-color)  !important;
   --paper-slider-knob-start-border-color: var(--ts-primary-text-color)  !important;
+}
+
+tp-yt-paper-icon-button.ytmusic-carousel-shelf-renderer {
+  border: solid 1px rgba(0,0,0,0.3);
+}
+
+tp-yt-paper-icon-button.ytmusic-carousel-shelf-renderer:hover {
+  background-color: var(--ts-picked-vibrant-alpha20);
 }
 
 /* end icons */
