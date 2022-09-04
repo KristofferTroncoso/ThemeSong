@@ -49,6 +49,7 @@ function DarkModePanel() {
               border-radius: 8px 0 0 8px;
               :hover {
                 background-color: ${activeThemeUserPrefs.appearanceSetting !==  "dark"  && 'rgba(255,255,255,0.4)'};
+                color: #9d00ff;
               }
             `}
             disabled={activeThemeUserPrefs.appearanceSetting ===  "dark"}
@@ -68,6 +69,7 @@ function DarkModePanel() {
               border: 0;
               :hover {
                 background-color: ${activeThemeUserPrefs.appearanceSetting !==  "light"  && 'rgba(255,255,255,0.4)'};
+                color: #fcad00;
               }
             `}
             disabled={activeThemeUserPrefs.appearanceSetting ===  "light"}
@@ -88,6 +90,7 @@ function DarkModePanel() {
               border-radius: 0 8px 8px 0;
               :hover {
                 background-color: ${activeThemeUserPrefs.appearanceSetting !==  "system"  && 'rgba(255,255,255,0.4)'};
+                color: #02c927;
               }
             `}
             disabled={activeThemeUserPrefs.appearanceSetting ===  "system"}

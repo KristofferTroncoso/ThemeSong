@@ -25,21 +25,24 @@ function Panel() {
       <button
         css={css`
           border: 0;
+          padding: 5px 4px 0px;
           border-radius: 50%;
-          height: 42px;
-          width: 42px;
           background-color: transparent;
-          padding: 10px 8px;
-          text-align: center;
-          cursor: pointer;
-          :hover {
-            background: rgba(0,0,0,0.2);
-          }
         `}
         title="Open ThemeSong Quick Access Panel"
         onClick={handleClick}
       >
-        <InterestsIcon css={css`font-size: 24px; color: var(--ts-tertiary-text-color);`} />
+        <InterestsIcon 
+          css={css`
+            font-size: 24px; 
+            padding: 10px;
+            border-radius: 50%;
+            color: var(--ts-tertiary-text-color);
+            :hover {
+              color: var(--ts-primary-text-color);
+            }
+          `} 
+        />
       </button>
       <Popover
         id={id}

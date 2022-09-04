@@ -44,6 +44,7 @@ function VisualizerPanel() {
             border-radius: 8px 0 0 8px;
             :hover {
               background-color: rgba(255, 255, 255, 0.4);
+              color: #fcad00;
             }
           `}
           onClick={e => handleVisualizerButtonClick("visualizerId:0")}
@@ -62,6 +63,7 @@ function VisualizerPanel() {
             border: 0;
             :hover {
               background-color: rgba(255, 255, 255, 0.4);
+              color: #fcad00;
             }
           `}
           onClick={e => handleVisualizerButtonClick("visualizerId:1")}
@@ -82,6 +84,7 @@ function VisualizerPanel() {
             padding: 0;
             :hover {
               background-color: rgba(255, 255, 255, 0.4);
+              color: #fcad00;
             }
           `}
           onClick={e => handleVisualizerButtonClick("visualizerId:2")}
