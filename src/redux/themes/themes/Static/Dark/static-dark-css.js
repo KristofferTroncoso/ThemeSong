@@ -22,18 +22,11 @@ export const static_dark_css = /*css*/`
   --ts-playpageavtoggle-color: var(--ts-default-app-color);
 
   --ts-playprogress-color: #fff;
-
-  --ts-bgcolor-transition: background-color 1s ease-out;
-
-  --ytmusic-brand-background-solid: var(--ts-mainbg-color) !important;
-  --ytmusic-general-background-c: var(--ts-mainbg-color) !important;
-  --ytmusic-search-background: var(--ts-playbar-color) !important;
 }
 
 ${main_BGs}
 ${scrollbars}
 ${playerbar_progressbar}
 ${songImgStyles}
-
 ${universalstyles}
 `;

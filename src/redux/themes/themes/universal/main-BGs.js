@@ -1,5 +1,13 @@
 
 export const main_BGs = /*css*/`
+:root {
+  --ts-bgcolor-transition: background-color 1s ease-out;
+
+  --ytmusic-brand-background-solid: var(--ts-mainbg-color) !important;
+  --ytmusic-general-background-c: var(--ts-mainbg-color) !important;
+  --ytmusic-search-background: var(--ts-playbar-color) !important;
+}
+
 body {
   background: var(--ts-mainbg-color);
   transition: var(--ts-bgcolor-transition) !important;
