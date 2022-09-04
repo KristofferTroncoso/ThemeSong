@@ -3,6 +3,26 @@ import React from 'react';
 import { jsx } from '@emotion/react';
 import VariantButton from '../components/VariantButton';
 
+import { styled } from '@mui/material/styles';
+import Slider from '@mui/material/Slider';
+
+const StyledSlider = styled(Slider)`
+  width: 180px;
+  color: royalblue;
+
+  .MuiSlider-thumb {
+    color: #fff;
+    border: 1px solid #fff;
+    width: 14px;
+    height: 14px;
+  }
+
+  .MuiSlider-thumb::after {
+    width: 1px;
+    height: 1px;
+  }
+`;
+
 function BarsSettings({visualizers, handleVisualizersChange}) {
   const [barsStorageObject, setBarsStorageObject] = React.useState();
 
@@ -38,22 +58,22 @@ function BarsSettings({visualizers, handleVisualizersChange}) {
             <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
               <label htmlFor="barWidth">Bar Width:</label>
               <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
-                <input type="range" name="barWidth" min="5" max="80" value={barsStorageObject.barWidth} step="5" onChange={handleBarSettingsChange} style={{width: '180px'}} />
-                <input type="number" min="5" max="80" name="barWidth" value={barsStorageObject.barWidth} onChange={handleBarSettingsChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+                <StyledSlider name="barWidth" value={barsStorageObject.barWidth} onChange={handleBarSettingsChange} step={5} min={5} max={80} />
+                <input type="number" min="5" max="80" name="barWidth" value={barsStorageObject.barWidth} onChange={handleBarSettingsChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white', marginLeft: '8px'}} />
               </div>
             </div>
             <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
               <label htmlFor="borderWidth">Border Width:</label>
               <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
-                <input type="range" name="borderWidth" min="0" max="10" value={barsStorageObject.borderWidth} step="1" onChange={handleBarSettingsChange} style={{width: '180px'}} />
-                <input type="number" min="0" max="10" name="borderWidth" value={barsStorageObject.borderWidth} onChange={handleBarSettingsChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+                <StyledSlider name="borderWidth" value={barsStorageObject.borderWidth} onChange={handleBarSettingsChange} step={1} min={0} max={10} />
+                <input type="number" min="0" max="10" name="borderWidth" value={barsStorageObject.borderWidth} onChange={handleBarSettingsChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white', marginLeft: '8px'}} />
               </div>
             </div>
             <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
               <label htmlFor="gap">Gap Width:</label>
               <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
-                <input type="range" name="gap" min="0" max="20" value={barsStorageObject.gap} step="2" onChange={handleBarSettingsChange} style={{width: '180px'}} />
-                <input type="number" min="0" max="20" name="gap" value={barsStorageObject.gap} onChange={handleBarSettingsChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} />
+                <StyledSlider name="gap" value={barsStorageObject.gap} onChange={handleBarSettingsChange} step={2} min={0} max={20} />
+                <input type="number" min="0" max="20" name="gap" value={barsStorageObject.gap} onChange={handleBarSettingsChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white', marginLeft: '8px'}} />
               </div>
             </div>
           </form>

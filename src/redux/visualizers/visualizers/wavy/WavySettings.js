@@ -6,6 +6,26 @@ import { jsx } from '@emotion/react';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeVisualizers } from '../../visualizersSlice';
 
+import { styled } from '@mui/material/styles';
+import Slider from '@mui/material/Slider';
+
+const StyledSlider = styled(Slider)`
+  width: 180px;
+  color: royalblue;
+
+  .MuiSlider-thumb {
+    color: #fff;
+    border: 1px solid #fff;
+    width: 14px;
+    height: 14px;
+  }
+
+  .MuiSlider-thumb::after {
+    width: 1px;
+    height: 1px;
+  }
+`;
+
 function WavySettings() {
   const dispatch = useDispatch();
 
@@ -33,16 +53,7 @@ function WavySettings() {
             <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
               <label htmlFor="lineWidth">Line Width:</label>
               <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
-                <input 
-                  type="range" 
-                  name="lineWidth" 
-                  min="4" 
-                  max="14" 
-                  value={wavyStorageObject.lineWidth} 
-                  step="1" 
-                  onChange={handleWavySettingsChange} 
-                  style={{width: '180px'}} 
-                />
+                <StyledSlider name="lineWidth" value={wavyStorageObject.lineWidth} onChange={handleWavySettingsChange} step={1} min={4} max={14} />
                 <input 
                   type="number" 
                   min="4" 
@@ -50,7 +61,7 @@ function WavySettings() {
                   name="lineWidth" 
                   value={wavyStorageObject.lineWidth} 
                   onChange={handleWavySettingsChange} 
-                  style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white'}} 
+                  style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white', marginLeft: '8px'}} 
                 />
               </div>
             </div>

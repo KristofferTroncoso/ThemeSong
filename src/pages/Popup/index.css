@@ -5,10 +5,18 @@
 
 body {
   box-sizing: border-box;
+  font-family: sans-serif;
   background-color: rgb(40, 40, 40);
   color: white;
-  height: 600px;
-  width: 400px;
+
+}
+
+h1, h2 {
+  font-size: 18px;
+}
+
+h3, h4, h5, p, label, form, input {
+  font-size: 12px;
 }
 
 ::-webkit-scrollbar {

@@ -14,7 +14,6 @@ function BottomBar() {
         }
         background-color: #4d4d4d;
         height: 28px;
-        width: 97%;
         display: flex;
         justify-content: space-between;
         align-items: center;
