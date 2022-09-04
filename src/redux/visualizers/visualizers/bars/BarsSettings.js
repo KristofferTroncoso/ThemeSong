@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react';
-import { jsx } from '@emotion/react';
+import { jsx, css } from '@emotion/react';
 import VariantButton from '../components/VariantButton';
 
 import { styled } from '@mui/material/styles';
@@ -51,7 +51,13 @@ function BarsSettings({visualizers, handleVisualizersChange}) {
     return <h1>hi</h1>
   } else {
     return (
-      <div>
+      <div
+        css={css`
+          .MuiSlider-root {
+            padding: 0;
+          }
+        `}
+      >
         <h2 style={{color: '#ff4f61', marginBottom: '4px'}}>Active Visualizer: Bars</h2>
         <div>
           <form onSubmit={e => e.preventDefault()}>
