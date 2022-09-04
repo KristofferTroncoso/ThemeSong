@@ -53,10 +53,6 @@ var options = {
   module: {
     rules: [
       {
-        test: /\.worker\.js$/,
-        loader: 'worker-loader'
-      },
-      {
         // look for .css or .scss files
         test: /\.(css|scss)$/,
         // in the `src` directory
