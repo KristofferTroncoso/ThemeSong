@@ -17,8 +17,8 @@ import Body from '../../../../../assets/font-icons/Body.svg';
 import OpacityIcon from '@mui/icons-material/Opacity';
 
 const StyledSlider = styled(Slider)`
-  width: 180px;
-  color: #e67e00;
+  width: 200px;
+  color: #f58002;
 
   .MuiSlider-thumb {
     color: #eee;
@@ -30,6 +30,10 @@ const StyledSlider = styled(Slider)`
   .MuiSlider-thumb::after {
     width: 1px;
     height: 1px;
+  }
+
+  .MuiSlider-rail {
+    opacity: 0.6;
   }
 `;
 
@@ -81,7 +85,19 @@ function StaticLightSettings () {
 
 
   return (
-    <div className="StaticLightTheme" css={css`background: #555; padding: 5px; border-radius: 2px;`}>
+    <div 
+      className="StaticLightTheme"
+      css={css`
+        background: #444; 
+        padding: 5px; 
+        border-radius: 2px;
+        color: #ddd;
+        
+        .MuiSlider-root {
+          padding: 0;
+        }
+      `}
+    >
       <form onSubmit={handleSave}>
         <div 
           css={css`
@@ -99,46 +115,46 @@ function StaticLightSettings () {
           `}
         >
           <p>Hue:</p>
-          <HuePicker width="240px" height="12px" color={reactColor} onChange={handleHueChange} onChangeComplete={handleOnHueChangeComplete} />
+          <div css={css`margin-right: 20px;`}><HuePicker width="260px" height="12px" color={reactColor} onChange={handleHueChange} onChangeComplete={handleOnHueChangeComplete} /></div>
         </div>
-        <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
+        <div style={{display: 'flex', justifyContent: 'space-between', height: '21px', alignContent: 'center', alignItems: 'center'}}>
           <label htmlFor="lightnessSettingNavBar">TopBar:</label>
           <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
             <img src={TopBar} alt="svg" style={{height: '12px', width: '12px', marginRight: '8px'}} />
             <StyledSlider name="lightnessSettingNavBar" value={staticLightPrefs.lightnessSettingNavBar} onChange={handleChange} step={1} min={50} max={100} />
-            <input type="number" min="50" max="100" name="lightnessSettingNavBar" value={staticLightPrefs.lightnessSettingNavBar} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white', marginLeft: '8px'}} />
+            <input type="number" min="50" max="100" name="lightnessSettingNavBar" value={staticLightPrefs.lightnessSettingNavBar} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, color: 'white', marginLeft: '8px'}} />
           </div>
         </div>
-        <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
+        <div style={{display: 'flex', justifyContent: 'space-between', height: '21px', alignContent: 'center', alignItems: 'center'}}>
           <label htmlFor="lightnessSettingPlayPage">PlayPage:</label>
           <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
             <img src={PlayPage} alt="svg" style={{height: '12px', width: '12px', marginRight: '8px'}} />
             <StyledSlider name="lightnessSettingPlayPage" value={staticLightPrefs.lightnessSettingPlayPage} onChange={handleChange} step={1} min={50} max={100} />
-            <input type="number" min="50" max="100" name="lightnessSettingPlayPage" value={staticLightPrefs.lightnessSettingPlayPage} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white', marginLeft: '8px'}} />
+            <input type="number" min="50" max="100" name="lightnessSettingPlayPage" value={staticLightPrefs.lightnessSettingPlayPage} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, color: 'white', marginLeft: '8px'}} />
           </div>
         </div>
-        <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
+        <div style={{display: 'flex', justifyContent: 'space-between', height: '21px', alignContent: 'center', alignItems: 'center'}}>
           <label htmlFor="lightnessSettingPlayerBar">PlayBar:</label>
           <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
             <img src={PlayBar} alt="svg" style={{height: '12px', width: '12px', marginRight: '8px'}} />
             <StyledSlider name="lightnessSettingPlayerBar" value={staticLightPrefs.lightnessSettingPlayerBar} onChange={handleChange} step={1} min={50} max={100} />
-            <input type="number" min="50" max="100" name="lightnessSettingPlayerBar" value={staticLightPrefs.lightnessSettingPlayerBar} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white', marginLeft: '8px'}} />
+            <input type="number" min="50" max="100" name="lightnessSettingPlayerBar" value={staticLightPrefs.lightnessSettingPlayerBar} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, color: 'white', marginLeft: '8px'}} />
           </div>
         </div>
-        <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
+        <div style={{display: 'flex', justifyContent: 'space-between', height: '21px', alignContent: 'center', alignItems: 'center'}}>
           <label htmlFor="lightnessSettingBody">Body:</label>
           <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
             <img src={Body} alt="svg" style={{height: '12px', width: '12px', marginRight: '8px'}} />
             <StyledSlider name="lightnessSettingBody" value={staticLightPrefs.lightnessSettingBody} onChange={handleChange} step={1} min={50} max={100} />
-            <input type="number" min="50" max="100" name="lightnessSettingBody" value={staticLightPrefs.lightnessSettingBody} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white', marginLeft: '8px'}} />
+            <input type="number" min="50" max="100" name="lightnessSettingBody" value={staticLightPrefs.lightnessSettingBody} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, color: 'white', marginLeft: '8px'}} />
           </div>
         </div>
-        <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
+        <div style={{display: 'flex', justifyContent: 'space-between', height: '21px', alignContent: 'center', alignItems: 'center'}}>
           <label htmlFor="saturationSetting">Saturation:</label>
           <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
             <OpacityIcon sx={{height: '16px', width: '16px', marginRight: '6px'}} />
             <StyledSlider name="saturationSetting" value={staticLightPrefs.saturationSetting} onChange={handleChange} step={5} min={0} max={100} />
-            <input type="number" min="0" max="100" name="saturationSetting" value={staticLightPrefs.saturationSetting} step="5" onChange={handleChange}  style={{width: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white', marginLeft: '8px'}} />
+            <input type="number" min="0" max="100" name="saturationSetting" value={staticLightPrefs.saturationSetting} step="5" onChange={handleChange}  style={{width: '40px', backgroundColor: 'inherit', border: 0, color: 'white', marginLeft: '8px'}} />
           </div>
         </div>
       </form>
