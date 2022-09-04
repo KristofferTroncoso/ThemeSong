@@ -3,7 +3,7 @@ import { jsx } from '@emotion/react';
 import React from 'react';
 
 function TopBar() {
-  const [extensionVersion, changeExtensionVersion] =  React.useState(chrome.runtime.getManifest().version)
+  const [extensionVersionName, changeExtensionVersionName] =  React.useState(chrome.runtime.getManifest().version_name)
 
   return (
     <div 
@@ -31,7 +31,7 @@ function TopBar() {
           ThemeSong - for YouTube Music™
         </a>
       </h1>
-      <p>v{extensionVersion}</p>
+      <p>v{extensionVersionName}</p>
     </div>
   )
 }
