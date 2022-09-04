@@ -57,6 +57,11 @@ function Panel() {
           vertical: 'bottom',
           horizontal: 'left',
         }}
+        css={css`
+          .MuiPaper-root {
+            background-color: var(--ts-playbar-color) !important;
+          }
+        `}
       >
         <PanelPage />
       </Popover>

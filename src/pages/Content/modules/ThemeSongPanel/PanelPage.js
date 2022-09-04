@@ -94,31 +94,33 @@ function PanelPage() {
       <div css={css`text-align: right;`}>
         <Tooltip title={<p css={css`font-size: 12px;`}>ThemeSong Quick Access Panel</p>}><HelpIcon style={{fontSize: '14px'}} /></Tooltip>
       </div>
-      <div css={{marginBottom: '6px'}}>
-        <h3 css={css`padding: 0 5px 2px;`}>Open song in:</h3>
-        <div css={css`display: flex; justify-content: start; align-items: center;`}>
-          <PanelButton title="YouTube" hoverTextColor="#fff" hoverBgColor="#fd1600" onClick={handleYtSearch}><YouTubeIcon title="YouTube" style={{fontSize: '26px'}} /></PanelButton>
-          <PanelButton title="Google" hoverTextColor="#fff" hoverBgColor="#4c8bf5" onClick={handleOpenInGoogle}><GoogleIcon title="Google" fontSize='large' /></PanelButton>
+      <div>
+        <div css={{marginBottom: '6px'}}>
+          <h3 css={css`padding: 0 5px 2px;`}>Open song in:</h3>
+          <div css={css`display: flex; justify-content: start; align-items: center;`}>
+            <PanelButton title="YouTube" hoverTextColor="#fff" hoverBgColor="#fd1600" onClick={handleYtSearch}><YouTubeIcon title="YouTube" style={{fontSize: '26px'}} /></PanelButton>
+            <PanelButton title="Google" hoverTextColor="#fff" hoverBgColor="#4c8bf5" onClick={handleOpenInGoogle}><GoogleIcon title="Google" fontSize='large' /></PanelButton>
+          </div>
         </div>
+        <div css={{marginBottom: '6px'}}>
+          <h3 css={css`padding: 2px 5px;`}>Search for lyrics</h3>
+          <div css={css`display: flex; justify-content: start; align-items: center;`}>
+            <PanelButton title="Genius" hoverTextColor="#000" hoverBgColor="#ffff64" onClick={handleGeniusLyricsSearch}><SiGenius title="Genius" style={{fontSize: '20px'}}/></PanelButton>
+            <PanelButton title="Musixmatch" hoverTextColor="#fff" hoverBgColor="linear-gradient(0deg, rgba(243,8,123,1) 0%, rgba(243,92,52,1) 100%)" onClick={handleMusixmatchSearch}><IoMdBowtie title="Musixmatch" style={{fontSize: '24px'}} /></PanelButton>
+            <PanelButton title="Google" hoverTextColor="#fff" hoverBgColor="#4c8bf5" onClick={handleGoogleLyricsSearch}><GoogleIcon title="Google" fontSize='large' /></PanelButton>
+            <PanelButton title="YouTube" hoverTextColor="#fff" hoverBgColor="#fd1600" onClick={handleYtLyricsSearch}><YouTubeIcon title="YouTube" style={{fontSize: '26px'}} /></PanelButton>
+          </div>
+        </div>
+        <VisualizerPanel />
+        <DarkModePanel />
+        {/* <div css={{marginBottom: '10px'}}>
+          <h3 css={css`padding: 2px 5px; color: var(--ts-secondary-text-color);`}>Tools</h3>
+          <div css={css`display: flex; justify-content: start; align-items: center;`}>
+            <PanelButton onClick={e => console.log(reduxStore)}><DataObjectIcon fontSize='large' /></PanelButton>
+            <PanelButton onClick={handleTimerClick}><SnoozeIcon css={css`font-size: 28px;`} /></PanelButton>
+          </div>
+        </div> */}
       </div>
-      <div css={{marginBottom: '6px'}}>
-        <h3 css={css`padding: 2px 5px;`}>Search for lyrics</h3>
-        <div css={css`display: flex; justify-content: start; align-items: center;`}>
-          <PanelButton title="Genius" hoverTextColor="#000" hoverBgColor="#ffff64" onClick={handleGeniusLyricsSearch}><SiGenius title="Genius" style={{fontSize: '20px'}}/></PanelButton>
-          <PanelButton title="Musixmatch" hoverTextColor="#fff" hoverBgColor="linear-gradient(0deg, rgba(243,8,123,1) 0%, rgba(243,92,52,1) 100%)" onClick={handleMusixmatchSearch}><IoMdBowtie title="Musixmatch" style={{fontSize: '24px'}} /></PanelButton>
-          <PanelButton title="Google" hoverTextColor="#fff" hoverBgColor="#4c8bf5" onClick={handleGoogleLyricsSearch}><GoogleIcon title="Google" fontSize='large' /></PanelButton>
-          <PanelButton title="YouTube" hoverTextColor="#fff" hoverBgColor="#fd1600" onClick={handleYtLyricsSearch}><YouTubeIcon title="YouTube" style={{fontSize: '26px'}} /></PanelButton>
-        </div>
-      </div>
-      <VisualizerPanel />
-      <DarkModePanel />
-      {/* <div css={{marginBottom: '10px'}}>
-        <h3 css={css`padding: 2px 5px; color: var(--ts-secondary-text-color);`}>Tools</h3>
-        <div css={css`display: flex; justify-content: start; align-items: center;`}>
-          <PanelButton onClick={e => console.log(reduxStore)}><DataObjectIcon fontSize='large' /></PanelButton>
-          <PanelButton onClick={handleTimerClick}><SnoozeIcon css={css`font-size: 28px;`} /></PanelButton>
-        </div>
-      </div> */}
       <div css={css`text-align: right;`}>
         <Tooltip 
           title={<p css={css`font-size: 12px;`}>Additional settings and options available through the ThemeSong popup icon on your toolbar.</p>}>
