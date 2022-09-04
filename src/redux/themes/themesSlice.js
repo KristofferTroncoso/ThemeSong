@@ -30,8 +30,8 @@ const initialState = {
         lightPrefs: {
           saturationSetting: 1,
           lightnessSettingNavBar: 85,
-          lightnessSettingPlayPage: 80,
-          lightnessSettingBody: 98,
+          lightnessSettingPlayPage: 75,
+          lightnessSettingBody: 96,
           lightnessSettingPlayerBar: 85
         }
       }
@@ -57,7 +57,7 @@ const initialState = {
           hue: 340,
           saturationSetting: 90,
           lightnessSettingNavBar: 85,
-          lightnessSettingPlayPage: 90,
+          lightnessSettingPlayPage: 80,
           lightnessSettingBody: 95,
           lightnessSettingPlayerBar: 85
         }
