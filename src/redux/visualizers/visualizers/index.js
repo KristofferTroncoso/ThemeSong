@@ -11,6 +11,10 @@ function addVisualizerContainer() {
   let ytmusicplayer = document.querySelector("ytmusic-player")
   let tsvisualizercontainer;
 
+  if (document.getElementById("ts-visualizer-container")) {
+    document.getElementById("ts-visualizer-container").remove();
+  }
+
   ytmusicplayer.appendChild(document.createElement('div')).id = 'ts-visualizer-container';
   tsvisualizercontainer = document.getElementById("ts-visualizer-container");
   tsvisualizercontainer.style.borderRadius = "inherit";
@@ -50,8 +54,8 @@ function addVisualizerButton() {
 
 
 export function addVisualizerFeature() {
-  addVisualizerButton();
   addVisualizerContainer();
+  addVisualizerButton();
 }
 
 export default addVisualizerFeature;
