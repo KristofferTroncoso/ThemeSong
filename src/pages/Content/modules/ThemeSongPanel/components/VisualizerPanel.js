@@ -28,7 +28,7 @@ function VisualizerPanel() {
   }
 
   return (
-    <div css={css`margin-bottom: 10px;`}>
+    <div css={css`margin-bottom: 6px;`}>
       <h3 css={css`padding: 2px 5px;`}>Visualizer</h3>
       <div css={css`display: flex; justify-content: start; align-items: center;`}>
         <button

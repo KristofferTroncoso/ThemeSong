@@ -7,7 +7,7 @@ import { changeThemes } from '../../../../../redux/themes/themesSlice';
 
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
+import { CgDarkMode } from 'react-icons/cg';
 
 function DarkModePanel() {
   const dispatch = useDispatch();
@@ -46,7 +46,7 @@ function DarkModePanel() {
               background: ${activeThemeUserPrefs.appearanceSetting ===  "dark" ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.4)'};
               color: ${activeThemeUserPrefs.appearanceSetting ===  "dark" ? '#1565e6' : 'white'};
               border: 0;
-              border-radius: 8px 0 0 8px;
+              border-radius: 5px 0 0 8px;
               :hover {
                 background-color: ${activeThemeUserPrefs.appearanceSetting !==  "dark"  && 'rgba(255,255,255,0.4)'};
                 color: #9d00ff;
@@ -87,7 +87,7 @@ function DarkModePanel() {
               background: ${activeThemeUserPrefs.appearanceSetting ===  "system"  ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.4)'};
               color: ${activeThemeUserPrefs.appearanceSetting ===  "system" ? '#1565e6' : 'white'};
               border: 0;
-              border-radius: 0 8px 8px 0;
+              border-radius: 0 5px 8px 0;
               :hover {
                 background-color: ${activeThemeUserPrefs.appearanceSetting !==  "system"  && 'rgba(255,255,255,0.4)'};
                 color: #02c927;
@@ -96,7 +96,7 @@ function DarkModePanel() {
             disabled={activeThemeUserPrefs.appearanceSetting ===  "system"}
             onClick={e => handleDarkLightChange("system")}
           >
-            <Brightness4Icon title="Use Device Setting" fontSize='large' />
+            <CgDarkMode title="Use Device Setting" size={24} />
           </button>
         </div>
       </div>

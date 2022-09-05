@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import VisualizerPanel from './components/VisualizerPanel';
 import DarkModePanel from './components/DarkModePanel';
 import PanelButton from './components/PanelButton';
+import ThemePanel from './components/ThemePanel';
 
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import GoogleIcon from '@mui/icons-material/Google';
@@ -112,6 +113,7 @@ function PanelPage() {
           </div>
         </div>
         <VisualizerPanel />
+        <ThemePanel />
         <DarkModePanel />
         {/* <div css={{marginBottom: '10px'}}>
           <h3 css={css`padding: 2px 5px; color: var(--ts-secondary-text-color);`}>Tools</h3>
