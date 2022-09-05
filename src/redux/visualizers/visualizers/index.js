@@ -11,6 +11,8 @@ function addVisualizerContainer() {
   let ytmusicplayer = document.querySelector("ytmusic-player")
   let tsvisualizercontainer;
 
+  /* if i want to do the audioCtx.close() trick in Visualizer.js, i have to
+    comment out or remove the following 3 lines. */
   if (document.getElementById("ts-visualizer-container")) {
     document.getElementById("ts-visualizer-container").remove();
   }
