@@ -136,6 +136,10 @@ ytmusic-play-button-renderer {
   --ytmusic-play-button-background-color: rgba(255,255,255,0.4) !important;
   --ytmusic-play-button-active-background-color: rgba(255,255,255,1) !important;
 }
+
+#bezel.ytmusic-player {
+  background-color: rgba(255,255,255,0.8);
+}
 /* end playbar icons */
 
 .cast-button.ytmusic-cast-button {
