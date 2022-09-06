@@ -2,7 +2,7 @@ import React from 'react';
 import DynamicDark from '../Dark/DynamicDark';
 import DynamicLight from '../Light/DynamicLight';
 
-function DynamicSystem({processColors}) {
+function DynamicSystem() {
   const [isDark, setIsDark] = React.useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
 
   React.useEffect(() => {
@@ -24,7 +24,7 @@ function DynamicSystem({processColors}) {
   
   return (
     <div id="DynamicSystem">
-      {isDark ? <DynamicDark processColors={processColors} /> : <DynamicLight processColors={processColors} />}
+      {isDark ? <DynamicDark /> : <DynamicLight />}
     </div>
   )
 } 

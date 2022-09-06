@@ -24,15 +24,15 @@ const initialState = {
           saturationSetting: 0.8,
           lightnessSettingNavBar: 20,
           lightnessSettingPlayPage: 15,
-          lightnessSettingBody: 10,
+          lightnessSettingBody: 8,
           lightnessSettingPlayerBar: 25
         },
         lightPrefs: {
-          saturationSetting: 1,
-          lightnessSettingNavBar: 85,
-          lightnessSettingPlayPage: 75,
+          saturationSetting: 0.9,
+          lightnessSettingNavBar: 75,
+          lightnessSettingPlayPage: 70,
           lightnessSettingBody: 96,
-          lightnessSettingPlayerBar: 85
+          lightnessSettingPlayerBar: 75
         }
       }
     },
