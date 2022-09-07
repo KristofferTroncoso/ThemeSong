@@ -10,7 +10,6 @@ import ThemePanel from './components/ThemePanel';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import GoogleIcon from '@mui/icons-material/Google';
 import { SiGenius } from 'react-icons/si';
-import { IoMdBowtie } from 'react-icons/io'
 import DataObjectIcon from '@mui/icons-material/DataObject';
 import SnoozeIcon from '@mui/icons-material/Snooze';
 import { Tooltip } from '@mui/material';
@@ -107,7 +106,9 @@ function PanelPage() {
           <h3 css={css`padding: 2px 5px;`}>Search for lyrics</h3>
           <div css={css`display: flex; justify-content: start; align-items: center;`}>
             <PanelButton title="Genius" hoverTextColor="#000" hoverBgColor="#ffff64" onClick={handleGeniusLyricsSearch}><SiGenius title="Genius" style={{fontSize: '20px'}}/></PanelButton>
-            <PanelButton title="Musixmatch" hoverTextColor="#fff" hoverBgColor="linear-gradient(0deg, rgba(243,8,123,1) 0%, rgba(243,92,52,1) 100%)" onClick={handleMusixmatchSearch}><IoMdBowtie title="Musixmatch" style={{fontSize: '24px'}} /></PanelButton>
+            <PanelButton title="Musixmatch" hoverTextColor="#fff" hoverBgColor="linear-gradient(0deg, rgba(243,8,123,1) 0%, rgba(243,92,52,1) 100%)" onClick={handleMusixmatchSearch}>
+              <img src={chrome.runtime.getURL("/assets/images/Musixmatch_Logo.svg")} alt="Musixmatch Logo" css={css`height: 20px;`} />
+            </PanelButton>
             <PanelButton title="Google" hoverTextColor="#fff" hoverBgColor="#4c8bf5" onClick={handleGoogleLyricsSearch}><GoogleIcon title="Google" fontSize='large' /></PanelButton>
             <PanelButton title="YouTube" hoverTextColor="#fff" hoverBgColor="#fd1600" onClick={handleYtLyricsSearch}><YouTubeIcon title="YouTube" style={{fontSize: '26px'}} /></PanelButton>
           </div>
