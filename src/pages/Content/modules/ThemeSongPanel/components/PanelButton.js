@@ -1,28 +1,52 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-// import { Button } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 
-function PanelButton({hoverTextColor, hoverBgColor, children, ...props}) {
+
+const CustomTooltip = styled(({ className, ...props }) => (
+  <Tooltip {...props} arrow classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.arrow}`]: {
+    color: '#111',
+    fontSize: '12px'
+  },
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: "#111",
+    top: '-7px !important',
+    fontSize: '12px',
+    padding: '4px 7px'
+  },
+}));
+
+function PanelButton({hoverTextColor, hoverBgColor, children, title, ...props}) {
   return (
-    <button
-      css={css`
-        height: 45px;
-        min-width: 45px;
-        width: 45px;
-        margin: 5px;
-        background: rgba(0,0,0,0.4);
-        color: white;
-        border: 0;
-        border-radius: 4px;
-        :hover {
-          background: ${hoverBgColor || 'rgba(255, 255, 255, 0.4)'};
-          color: ${hoverTextColor || '#fff'};
-        }
-      `}
-      {...props}
+    <CustomTooltip 
+      placement="bottom" 
+      arrow
+      title={title}
     >
-      {children}
-    </button>
+      <button
+        css={css`
+          height: 45px;
+          min-width: 45px;
+          width: 45px;
+          margin: 5px;
+          background: rgba(0,0,0,0.4);
+          color: white;
+          border: 0;
+          border-radius: 4px;
+          transition: background 0.2s ease-in-out;
+          :hover {
+            background: ${hoverBgColor || 'rgba(255, 255, 255, 0.4)'};
+            color: ${hoverTextColor || '#fff'};
+          }
+        `}
+        {...props}
+      >
+        {children}
+      </button>
+    </CustomTooltip>
   )
 }
 

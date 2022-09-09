@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { toggleIsVisualizerOn, changeActiveVisualizer } from '../../../../../redux/visualizers/visualizersSlice';
 
+import PanelButton from './PanelButton';
+
 import WavesIcon from '@mui/icons-material/Waves';
 import BubbleChart from '@mui/icons-material/BubbleChart';
 import LeaderboardIcon from '@mui/icons-material/Leaderboard';
@@ -31,7 +33,7 @@ function VisualizerPanel() {
     <div css={css`margin-bottom: 6px;`}>
       <h3 css={css`padding: 2px 5px;`}>Visualizer</h3>
       <div css={css`display: flex; justify-content: start; align-items: center;`}>
-        <button
+        <PanelButton
           title="Wavy"
           css={css`
             height: 42px;
@@ -44,14 +46,14 @@ function VisualizerPanel() {
             border-radius: 8px 0 0 8px;
             :hover {
               background-color: rgba(255, 255, 255, 0.4);
-              color: #fcad00;
+              color: #c223c4;
             }
           `}
           onClick={e => handleVisualizerButtonClick("visualizerId:0")}
         >
           <WavesIcon title="Wavy" fontSize='large' />
-        </button>
-        <button
+        </PanelButton>
+        <PanelButton
           title="Bars"
           css={css`
             height: 42px;
@@ -61,6 +63,7 @@ function VisualizerPanel() {
             background: ${isVisualizerOn && activeVisualizer === "visualizerId:1" ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.4)'};
             color: ${isVisualizerOn && activeVisualizer === "visualizerId:1" ? '#1565e6' : 'white'};
             border: 0;
+            border-radius: 0;
             :hover {
               background-color: rgba(255, 255, 255, 0.4);
               color: #fcad00;
@@ -69,8 +72,8 @@ function VisualizerPanel() {
           onClick={e => handleVisualizerButtonClick("visualizerId:1")}
         >
           <LeaderboardIcon title="Bars" fontSize='large' />
-        </button>
-        <button
+        </PanelButton>
+        <PanelButton
           title="Circles"
           css={css`
             height: 42px;
@@ -90,7 +93,7 @@ function VisualizerPanel() {
           onClick={e => handleVisualizerButtonClick("visualizerId:2")}
         >
           <BubbleChart title="Circles" css={css`font-size: 32px;`} />
-        </button>
+        </PanelButton>
       </div>
     </div>
   )

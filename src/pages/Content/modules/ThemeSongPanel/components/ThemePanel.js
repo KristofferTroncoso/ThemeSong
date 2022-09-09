@@ -8,21 +8,27 @@ import InvertColorsOffIcon from '@mui/icons-material/InvertColorsOff';
 import { GiAtom } from 'react-icons/gi';
 import ColorizeIcon from '@mui/icons-material/Colorize';
 
+import PanelButton from './PanelButton';
+
 function ThemePanel() {
   const dispatch = useDispatch();
 
   const activeTheme = useSelector(state => state.themes.activeTheme);
 
   const handleClick = (value) => {
-    dispatch(changeActiveTheme(value));
-    chrome.storage.local.set({activeTheme: value}, () => console.log('chrome.storage.local.set({activeTheme}'));
+    if (activeTheme !== value) {
+      dispatch(changeActiveTheme(value));
+      chrome.storage.local.set({activeTheme: value}, () => console.log('chrome.storage.local.set({activeTheme}'));
+    } else {
+      console.log('Already active')
+    }
   }
 
   return (
     <div css={css`margin-bottom: 2px;`}>
       <h3 css={css`padding: 2px 5px;`}>Theme</h3>
       <div css={css`display: flex; justify-content: start; align-items: center;`}>
-        <button
+        <PanelButton
           title="Off / YTM Default"
           css={css`
             height: 42px;
@@ -40,9 +46,9 @@ function ThemePanel() {
           `}
           onClick={e => handleClick("themeId:0")}
         >
-          <InvertColorsOffIcon title="Off / YTM Default" css={css`font-size: 20px;`} />
-        </button>
-        <button
+          <InvertColorsOffIcon css={css`font-size: 20px;`} />
+        </PanelButton>
+        <PanelButton
           title="Dynamic"
           css={css`
             height: 42px;
@@ -52,6 +58,7 @@ function ThemePanel() {
             background: ${activeTheme === "themeId:6" ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.4)'};
             color: ${activeTheme === "themeId:6" ? '#1565e6' : 'white'};
             border: 0;
+            border-radius: 0;
             :hover {
               background-color: rgba(255, 255, 255, 0.4);
               color: #fcad00;
@@ -59,9 +66,9 @@ function ThemePanel() {
           `}
           onClick={e => handleClick("themeId:6")}
         >
-          <GiAtom title="Dynamic" size={28} css={css`font-weight: 700;`} />
-        </button>
-        <button
+          <GiAtom size={28} css={css`font-weight: 700;`} />
+        </PanelButton>
+        <PanelButton
           title="Static"
           css={css`
             height: 42px;
@@ -80,8 +87,8 @@ function ThemePanel() {
           `}
           onClick={e => handleClick("themeId:7")}
         >
-          <ColorizeIcon title="Static" css={css`font-size: 24px;`} />
-        </button>
+          <ColorizeIcon css={css`font-size: 24px;`} />
+        </PanelButton>
       </div>
     </div>
   )
