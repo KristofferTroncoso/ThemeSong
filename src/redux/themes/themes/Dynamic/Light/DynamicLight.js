@@ -22,7 +22,7 @@ function DynamicLight() {
       let brightnessNum = parseInt(brightness, 10);
     
       if ((hueNum >= 0 && hueNum < 35) || (hueNum > 200)) {
-        return brightnessNum * 1.1;
+        return ((100 - brightnessNum) * 0.3) + brightnessNum;
       } else  {
         return brightnessNum;
       }
