@@ -19,7 +19,7 @@ const CustomTooltip = styled(({ className, ...props }) => (
   },
 }));
 
-function PanelButton({hoverTextColor, hoverBgColor, children, title, ...props}) {
+function PanelButton({color, bgColor, hoverColor, hoverBgColor, children, title, ...props}) {
   return (
     <CustomTooltip 
       placement="bottom" 
@@ -32,14 +32,20 @@ function PanelButton({hoverTextColor, hoverBgColor, children, title, ...props}) 
           min-width: 45px;
           width: 45px;
           margin: 5px;
-          background: rgba(0,0,0,0.4);
-          color: white;
+          background: ${bgColor || 'rgba(0,0,0,0.3)'};
+          color: ${color || '#fff'};
           border: 0;
-          border-radius: 4px;
+          border-radius: 8px;
           transition: background 0.2s ease-in-out;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+          filter: brightness(0.9) saturate(0.9);
           :hover {
-            background: ${hoverBgColor || 'rgba(255, 255, 255, 0.4)'};
-            color: ${hoverTextColor || '#fff'};
+            background: ${hoverBgColor || '#fff'};
+            color: ${hoverColor || '#fff'};
+            filter: contrast(1) saturate(1) grayscale(0) brightness(1);
           }
         `}
         {...props}

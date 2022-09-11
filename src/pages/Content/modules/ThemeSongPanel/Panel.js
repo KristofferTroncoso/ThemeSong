@@ -1,9 +1,8 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx, css } from '@emotion/react';
-import Popover from '@mui/material/Popover';
 import PanelPage from './PanelPage';
-
+import Popover from '@mui/material/Popover';
 import InterestsIcon from '@mui/icons-material/Interests';
 
 function Panel() {

@@ -42,7 +42,7 @@ function DarkModePanel() {
   } else {
     return (
       <div css={css`margin-bottom: 0;`}>
-        <h3 css={css`padding: 2px 5px;`}>{activeThemeInfo.name} Theme - Appearance</h3>
+        <h3 css={css`padding: 2px 5px;`}>{activeThemeInfo.name} - Appearance</h3>
         <div css={css`display: flex; justify-content: start; align-items: center;`}>
           <PanelButton
             title="Dark Mode"
@@ -51,12 +51,11 @@ function DarkModePanel() {
               min-width: 45px;
               width: 60px;
               margin: 5px 4px 5px 5px;
-              background: ${activeThemeUserPrefs.appearanceSetting ===  "dark" ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.4)'};
-              color: ${activeThemeUserPrefs.appearanceSetting ===  "dark" ? '#1565e6' : 'white'};
+              background: ${activeThemeUserPrefs.appearanceSetting ===  "dark" && 'rgba(255,255,255,0.8)'};
+              color: ${activeThemeUserPrefs.appearanceSetting ===  "dark" && '#9d00ff'};
               border: 0;
               border-radius: 5px 0 0 8px;
               :hover {
-                background-color: ${activeThemeUserPrefs.appearanceSetting !==  "dark"  && 'rgba(255,255,255,0.4)'};
                 color: #9d00ff;
               }
             `}
@@ -71,18 +70,17 @@ function DarkModePanel() {
               min-width: 45px;
               width: 60px;
               margin: 0;
-              background: ${activeThemeUserPrefs.appearanceSetting ===  "light" ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.4)'};
-              color: ${activeThemeUserPrefs.appearanceSetting ===  "light" ? '#1565e6' : 'white'};
+              background: ${activeThemeUserPrefs.appearanceSetting ===  "light" && 'rgba(255,255,255,0.8)'};
+              color: ${activeThemeUserPrefs.appearanceSetting ===  "light" && '#de9800'};
               border: 0;
               border-radius: 0;
               :hover {
-                background-color: ${activeThemeUserPrefs.appearanceSetting !==  "light"  && 'rgba(255,255,255,0.4)'};
                 color: #fcad00;
               }
             `}
             onClick={e => handleDarkLightChange("light")}
           >
-            <LightModeIcon fontSize='large' />
+            <LightModeIcon css={css`font-size: 26px;`} />
           </PanelButton>
           <PanelButton
             title="Use Device Setting"
@@ -91,13 +89,12 @@ function DarkModePanel() {
               min-width: 45px;
               width: 60px;
               margin: 5px 5px 5px 4px;
-              background: ${activeThemeUserPrefs.appearanceSetting ===  "system"  ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.4)'};
-              color: ${activeThemeUserPrefs.appearanceSetting ===  "system" ? '#1565e6' : 'white'};
+              background: ${activeThemeUserPrefs.appearanceSetting ===  "system"  && 'rgba(255,255,255,0.8)'};
+              color: ${activeThemeUserPrefs.appearanceSetting ===  "system" && '#009961'};
               border: 0;
               border-radius: 0 5px 8px 0;
               :hover {
-                background-color: ${activeThemeUserPrefs.appearanceSetting !==  "system"  && 'rgba(255,255,255,0.4)'};
-                color: #02c927;
+                color: #009961;
               }
             `}
             onClick={e => handleDarkLightChange("system")}

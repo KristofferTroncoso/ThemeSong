@@ -3,11 +3,10 @@ import { jsx, css } from '@emotion/react';
 
 import SongPanel from './components/SongPanel';
 import VisualizerPanel from './components/VisualizerPanel';
-import ThemePanel from './components/ThemePanel';
-import DarkModePanel from './components/DarkModePanel';
+import AppearancePanel from './components/AppearancePanel';
 // import UtilitiesPanel from './components/UtilitiesPanel';
 
-import { Tooltip } from '@mui/material';
+import Tooltip from '@mui/material/Tooltip';
 import HelpIcon from '@mui/icons-material/Help';
 import TuneIcon from '@mui/icons-material/Tune';
 
@@ -29,9 +28,8 @@ function PanelPage() {
       </div>
       <div>
         <SongPanel />
+        <AppearancePanel />
         <VisualizerPanel />
-        <ThemePanel />
-        <DarkModePanel />
         {/* <UtilitiesPanel /> */}
       </div>
       <div css={css`text-align: right;`}>

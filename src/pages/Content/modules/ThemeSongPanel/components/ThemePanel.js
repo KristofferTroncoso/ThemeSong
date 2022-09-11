@@ -30,19 +30,16 @@ function ThemePanel() {
       <div css={css`display: flex; justify-content: start; align-items: center;`}>
         <PanelButton
           title="Off / YTM Default"
+          bgColor={activeTheme === "themeId:0" && 'rgba(255,255,255,0.8)'}
+          color={activeTheme === "themeId:0" && '#000'}
+          hoverColor="#000"
           css={css`
             height: 42px;
             min-width: 45px;
             width: 60px;
             margin: 5px 4px 5px 5px;
-            background: ${activeTheme === "themeId:0" ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.4)'};
-            color: ${activeTheme === "themeId:0" ? '#1565e6' : 'white'};
             border: 0;
             border-radius: 8px 0 0 5px;
-            :hover {
-              background-color: rgba(255, 255, 255, 0.4);
-              color: #000;
-            }
           `}
           onClick={e => handleClick("themeId:0")}
         >
@@ -50,19 +47,16 @@ function ThemePanel() {
         </PanelButton>
         <PanelButton
           title="Dynamic"
+          bgColor={activeTheme === "themeId:6" && 'rgba(255,255,255,0.8)'}
+          color={activeTheme === "themeId:6" && '#1565e6'}
+          hoverColor="#1565e6"
           css={css`
             height: 42px;
             min-width: 45px;
             width: 60px;
             margin: 0;
-            background: ${activeTheme === "themeId:6" ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.4)'};
-            color: ${activeTheme === "themeId:6" ? '#1565e6' : 'white'};
             border: 0;
             border-radius: 0;
-            :hover {
-              background-color: rgba(255, 255, 255, 0.4);
-              color: #fcad00;
-            }
           `}
           onClick={e => handleClick("themeId:6")}
         >
@@ -70,20 +64,17 @@ function ThemePanel() {
         </PanelButton>
         <PanelButton
           title="Static"
+          bgColor={activeTheme === "themeId:7" && 'rgba(255,255,255,0.8)'}
+          color={activeTheme === "themeId:7" && '#ff3700'}
+          hoverColor="#ff3700"
           css={css`
             height: 42px;
             min-width: 60px;
             width: 60px;
             margin: 5px 5px 5px 4px;
-            background: ${activeTheme === "themeId:7" ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.4)'};
-            color: ${activeTheme === "themeId:7" ? '#1565e6' : 'white'};
             border: 0;
             border-radius: 0 8px 5px 0;
             padding: 0;
-            :hover {
-              background-color: rgba(255, 255, 255, 0.4);
-              color: #fcad00;
-            }
           `}
           onClick={e => handleClick("themeId:7")}
         >
