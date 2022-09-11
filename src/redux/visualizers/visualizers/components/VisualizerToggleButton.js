@@ -28,7 +28,7 @@ function VisualizerToggleButton() {
       case "visualizerId:1":
         return <LeaderboardIcon css={css`font-size: 22px;`} />
       case "visualizerId:2":
-        return <BubbleChart css={css`font-size: 28px;`} />
+        return <BubbleChart css={css`font-size: 27px;`} />
       default:
         return <h1>Unknown Visualizer</h1>
     }
@@ -41,11 +41,15 @@ function VisualizerToggleButton() {
       title={isVisualizerOn ? "Turn OFF Visualizer" : "Turn ON Visualizer"}
       css={css`
         border: 0;
-        height: 30px;
-        width: 50px;
         color: ${isVisualizerOn ? '#ee0606' : 'inherit'};
         background-color: transparent;
-        padding: 9px 2px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        padding: 0 10px;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
         cursor: pointer;
       `}
     >
