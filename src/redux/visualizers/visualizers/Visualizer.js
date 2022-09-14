@@ -21,22 +21,13 @@ function Visualizer() {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    console.log('Visualizer: useEffect');
-    connectAudio();
-    console.log('source 1', source)
-  }, [])
-
-
-  React.useEffect(() => {
     console.log('Visualizer: useEffect 2');
     if (isVisualizerOn) {
       connectAudio();
-      console.log('source 2', source);
 
       if (source === undefined) {
         /* so this is at least a trigger if the visualizer is disconnected. 
           i can just prompt them to refresh and remove the visualizer button and container. 
-          or i can also try to fix the connection.
         */
         console.log('audioCtx', audioCtx)
         if (window.confirm(
@@ -51,21 +42,6 @@ Page reload required to reconnect visualizer. Reload now?`
   }, [isVisualizerOn])
 
   React.useEffect(() => {
-    /* the following try statement is my audioCtx.close() hack to free up the audioCtx
-      and reconnect the visualizers when the extension updates. 
-      I also have to not remove the visualizer container when extension updates in
-      the visualizers/index.js file 
-    */
-    // try {
-    //   chrome.runtime.sendMessage('r u still there?');
-    // } catch {
-    //   console.log('stop visualizers');
-    //   // need this settimeout or else it just pauses
-    //   setTimeout(() => {
-    //     audioCtx.close();
-    //   }, 100)
-    // }
-
     /* visualizer sometimes disconnects when switching from song to specific songs/videos.
     This reconnects the visualizer when the song changes */
     connectAudio();
@@ -94,11 +70,24 @@ Page reload required to reconnect visualizer. Reload now?`
   function connectSource() {
     console.log('connectsource()')
 
-    try {
-      source = audioCtx.createMediaElementSource(document.querySelector('video'));
-      source.connect(analyser);
-    } catch {
-      console.log('error with connecting source');
+    if (document.querySelector('video')) {
+      if (source === undefined) {
+        try {
+          source = audioCtx.createMediaElementSource(document.querySelector('video'));
+          source.connect(analyser);
+        } catch {
+          console.log('error with connecting source');
+        }
+      } else {
+        if (source.mediaElement.isConnected === false) {
+          try {
+            source = audioCtx.createMediaElementSource(document.querySelector('video'));
+            source.connect(analyser);
+          } catch {
+            console.log('error with connecting source');
+          }
+        }
+      }
     }
   }
 
@@ -111,7 +100,20 @@ Page reload required to reconnect visualizer. Reload now?`
       case "visualizerId:2":
         return <Circles analyser={analyser} dataArray={dataArray} bufferLength={bufferLength}  />
       default:
-        return <h1>Unknown Visualizer</h1>
+        return (
+          <button 
+            onClick={e => {
+              if (window.confirm(
+                `ThemeSong extension was recently updated. 
+      Page reload required to reconnect visualizer. Reload now?`
+              )) {
+                window.location.reload();
+              }
+            }}
+          >
+            Reload
+          </button>
+        )
     }
   }
 
