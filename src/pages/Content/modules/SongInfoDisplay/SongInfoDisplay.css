@@ -2,7 +2,7 @@ ytmusic-player:not([player-ui-state_=FULLSCREEN]) #songDivNode {
   display: none;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1500px) {
   ytmusic-player[player-ui-state_=FULLSCREEN] #thumbnail {
     flex-direction: column;
   }
@@ -14,7 +14,7 @@ ytmusic-player:not([player-ui-state_=FULLSCREEN]) #songDivNode {
   }
 }
 
-@media (min-width: 1199px) {
+@media (min-width: 1499px) {
   #songDivNode {
     max-width: 40vw;
   }
