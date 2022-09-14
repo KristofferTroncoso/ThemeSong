@@ -21,8 +21,6 @@ function addVisualizerContainer() {
   tsvisualizercontainer = document.getElementById("ts-visualizer-container");
   tsvisualizercontainer.style.borderRadius = "inherit";
   // tsvisualizercontainer.style.border = "1px solid lightgreen";
-  tsvisualizercontainer.style.height = "100%";
-  tsvisualizercontainer.style.width = "100%";
 
   if (!tsvisualizercontainer) {
     ytmusicplayer.appendChild(document.createElement('canvas')).id = 'ts-visualizer-canvas';
