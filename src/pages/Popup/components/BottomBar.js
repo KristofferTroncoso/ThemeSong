@@ -9,9 +9,6 @@ function BottomBar() {
     <div 
       className="BottomBar" 
       css={css`
-        * {
-          /* border: 1px solid tomato; */
-        }
         background-color: #4d4d4d;
         height: 28px;
         display: flex;

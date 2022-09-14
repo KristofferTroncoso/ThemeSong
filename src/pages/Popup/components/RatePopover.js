@@ -3,6 +3,7 @@ import React from 'react';
 import { jsx, css } from '@emotion/react';
 import Popover from '@mui/material/Popover';
 import Star from '@mui/icons-material/Star';
+import LaunchIcon from '@mui/icons-material/Launch';
 // import Typography from '@mui/material/Typography';
 
 function RatePopover() {
@@ -27,7 +28,7 @@ function RatePopover() {
   return (
     <>
       <button css={{background: 0, border: 0}} onClick={handleClick} title="Rate and comment!">
-        {userLikesExtension ? <Star css={css`font-size: 18px; color: white;`} /> : '😭'}
+        {userLikesExtension ? <Star css={css`font-size: 18px; color: #fff; :hover {color: yellow;}`} /> : '😭'}
       </button>
       <Popover
         id={id}
@@ -48,7 +49,7 @@ function RatePopover() {
           ? (
             <div>
               <p css={{marginBottom: '5px'}}>Liking the extension? Please rate and comment!</p>
-              <div>
+              <div css={css`display: flex; justify-content: space-around;`}>
                 <a 
                   href="https://chrome.google.com/webstore/detail/bgfiegdbajagebogifobkhambpljbfmk/reviews" 
                   target="_blank" 
@@ -59,8 +60,22 @@ function RatePopover() {
                   }}
                   title="😃"
                 >
-                  <button css={{margin: '0 5px', color: 'white', backgroundColor: '#1b8541', border: '1px solid black', padding: '2px 110px', borderRadius: '4px'}}>
-                    Okay!
+                  <button 
+                    css={css`
+                      display: flex;
+                      align-items: center;
+                      align-content: center;
+                      justify-content: center;
+                      margin: 0 5px;
+                      color: white;
+                      background-color: #1b8541;
+                      border: 1px solid #000;
+                      padding: 2px 80px;
+                      border-radius: 4px;
+                    `}
+                  >
+                    <span css={css`padding-right: 5px;`}>Okay!</span>
+                    <LaunchIcon css={css`font-size: 12px;`} />
                   </button>     
                 </a>
                 <button onClick={handleRejection} title="😦" css={{fontSize: '12px', color: 'white', backgroundColor: '#eb102d', border: '1px solid #2e2e2e', borderRadius: '4px', padding: '0 2px'}}>

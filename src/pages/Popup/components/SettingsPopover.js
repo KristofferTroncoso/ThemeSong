@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react';
-import { jsx } from '@emotion/react';
+import { jsx, css } from '@emotion/react';
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
 import Settings from '@mui/icons-material/Settings';
@@ -48,8 +48,11 @@ function SettingsPopover() {
         }}
       >
         <Typography sx={{ p: 1 }}>
-          Repair/Reset to extension defaults: 
-          <button onClick={handleReset} css={{color: 'white', background: 'red', border: '1px solid black', borderRadius: '2px'}}>
+          <span css={css`font-size: 15px;`}>Repair/Reset to extension defaults: </span>
+          <button 
+            onClick={handleReset} 
+            css={{color: 'white', background: 'red', border: '1px solid black', borderRadius: '2px', marginLeft: '5px'}}
+          >
             RESET
           </button>
         </Typography>
