@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { addStylesheet } from '../../addStylesheet';
 import { dynamicdark_css }from './dynamicdarkCSS';
 import { menubar, root } from '../../selectors';
 
@@ -51,7 +50,6 @@ function DynamicDark() {
   }
 
   React.useEffect(() => {
-    addStylesheet(dynamicdark_css);
     processDynamicDarkColors();
   }, [])
 
@@ -59,7 +57,11 @@ function DynamicDark() {
     processDynamicDarkColors();
   }, [mostPopulatedColorHSL, dynamicDarkPrefs])
   
-  return <div id="DynamicDark"></div>
+  return (
+    <style id="DynamicDark">
+      {dynamicdark_css}
+    </style>
+  )
 }
 
 export default DynamicDark;

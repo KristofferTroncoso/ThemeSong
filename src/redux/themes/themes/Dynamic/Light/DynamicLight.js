@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { addStylesheet } from '../../addStylesheet';
 import { dynamiclight_css } from './dynamiclightCSS';
 import { menubar, root } from '../../selectors';
 
@@ -51,7 +50,6 @@ function DynamicLight() {
   }
 
   React.useEffect(() => {
-    addStylesheet(dynamiclight_css);
     processDynamicLightColors();
 
     //apply dark logo on load
@@ -69,7 +67,7 @@ function DynamicLight() {
     processDynamicLightColors();
   }, [mostPopulatedColorHSL, dynamicLightPrefs])
   
-  return <div id="DynamicLight"></div>
+  return <style id="DynamicLight">{dynamiclight_css}</style>
 }
 
 export default DynamicLight;

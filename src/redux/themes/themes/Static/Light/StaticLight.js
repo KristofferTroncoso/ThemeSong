@@ -1,13 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { addStylesheet } from '../../addStylesheet';
 import { static_light_css } from './static-light-css';
 
 function StaticLight({processColors}) {
   const staticLightPrefs = useSelector(state => state.themes.themes.find(theme => (theme.themeId === "themeId:7")).userPrefs.lightPrefs);
 
   React.useEffect(() => {
-    addStylesheet(static_light_css);
     processColors(staticLightPrefs);
 
     //apply dark logo on load
@@ -25,7 +23,7 @@ function StaticLight({processColors}) {
     processColors(staticLightPrefs);
   }, [staticLightPrefs])
   
-  return <div id="StaticLight"></div>
+  return <style id="StaticLight">{static_light_css}</style>
 }
 
 export default StaticLight;
