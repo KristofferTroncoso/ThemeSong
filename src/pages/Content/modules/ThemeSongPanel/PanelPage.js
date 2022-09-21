@@ -4,7 +4,7 @@ import { jsx, css } from '@emotion/react';
 import SongPanel from './components/SongPanel';
 import VisualizerPanel from './components/VisualizerPanel';
 import AppearancePanel from './components/AppearancePanel';
-// import UtilitiesPanel from './components/UtilitiesPanel';
+import UtilitiesPanel from './components/UtilitiesPanel';
 
 import Tooltip from '@mui/material/Tooltip';
 import HelpIcon from '@mui/icons-material/Help';
@@ -30,7 +30,7 @@ function PanelPage() {
         <SongPanel />
         <AppearancePanel />
         <VisualizerPanel />
-        {/* <UtilitiesPanel /> */}
+        <UtilitiesPanel />
       </div>
       <div css={css`text-align: right;`}>
         <Tooltip 

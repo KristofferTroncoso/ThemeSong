@@ -1,27 +1,33 @@
-import { addThemesContainer } from '../../redux/themes/themes';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { store } from '../../redux/store';
+import { Provider  } from 'react-redux';
 
+import ContentScript from './ContentScript';
 import { addCloudSyncStorageSyncer } from '../../redux/cloudStorageSyncer';
-
-import { addPaletteFeature } from '../../redux/palette/paletteFeature';
-import addSongDetailsFeature from '../../redux/songDetails/addSongDetailsFeature';
-import { addPlayPauseChangeObserver } from '../../redux/playerState/addPlayPauseChangeObserver';
-
-import addPanelContainer from './modules/ThemeSongPanel';
-import addSongInfoDisplay from './modules/SongInfoDisplay';
-import addVisualizerFeature from '../../redux/visualizers/visualizers';
 
 console.log('Content Script loaded');
 
 addCloudSyncStorageSyncer();
+insertContentScriptContainer();
 
-addPaletteFeature();
-addSongDetailsFeature();
-addPlayPauseChangeObserver();
+function insertContentScriptContainer() {
+  const ytmusicapp = document.querySelector("ytmusic-app");
+  let themesongContainer;
 
-addThemesContainer();
-addVisualizerFeature();
-addPanelContainer();
-addSongInfoDisplay();
+  if (document.getElementById("ThemeSong-Container")) {
+    document.getElementById("ThemeSong-Container").remove();
+  }
 
+  themesongContainer = document.createElement("div");
+  themesongContainer.id = "ThemeSong-Container";
 
+  ytmusicapp.append(themesongContainer);
 
+  ReactDOM.render(
+    <Provider store={store}>
+      <ContentScript />
+    </Provider>, 
+    themesongContainer
+  );
+}

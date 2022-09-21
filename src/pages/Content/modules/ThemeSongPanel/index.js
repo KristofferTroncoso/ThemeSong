@@ -4,22 +4,26 @@ import Panel from './Panel';
 import { store } from '../../../../redux/store';
 import { Provider  } from 'react-redux';
 
-export function addPanelContainer() {
-  const middleControlButtonsDiv = document.querySelector(".middle-controls-buttons");
-  let panelContainer;
+function PanelContainer() {
+  React.useEffect(() => {
+    const middleControlButtonsDiv = document.querySelector(".middle-controls-buttons");
+    let panelContainer;
+  
+    panelContainer = document.createElement('div');
+    panelContainer.id = "ts-panel-container";
+  
+    if (document.getElementById("ts-panel-container") === null) {
+      middleControlButtonsDiv.append(panelContainer);
+    } else {
+      document.getElementById("ts-panel-container").remove();
+      middleControlButtonsDiv.append(panelContainer);
+    }
+  
+    ReactDOM.render(<Provider store={store}><Panel /></Provider>, panelContainer);
+  }, [])
 
-  panelContainer = document.createElement('div');
-  panelContainer.id = "ts-panel-container";
-
-  if (document.getElementById("ts-panel-container") === null) {
-    middleControlButtonsDiv.append(panelContainer);
-  } else {
-    document.getElementById("ts-panel-container").remove();
-    middleControlButtonsDiv.append(panelContainer);
-  }
-
-  ReactDOM.render(<Provider store={store}><Panel /></Provider>, panelContainer);
+  return null;
 }
 
-export default addPanelContainer;
+export default PanelContainer;
 

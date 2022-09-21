@@ -53,9 +53,13 @@ function addVisualizerButton() {
 }
 
 
-export function addVisualizerFeature() {
-  addVisualizerContainer();
-  addVisualizerButton();
+function VisualizerFeature() {
+  React.useEffect(() => {
+    addVisualizerContainer();
+    addVisualizerButton();
+  }, []);
+
+  return <div id="ThemeSong-Visualizer"></div>
 }
 
-export default addVisualizerFeature;
+export default VisualizerFeature;

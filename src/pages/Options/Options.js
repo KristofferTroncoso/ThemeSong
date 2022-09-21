@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx, css } from '@emotion/react';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleRemoveDislikeButton } from '../../redux/miscSettings/miscSettingsSlice';
 
 function StyledDiv({children}) {
   return (
@@ -17,6 +19,9 @@ function StyledDiv({children}) {
 }
 
 function Options() {
+  const dispatch = useDispatch();
+  const store = useSelector(state => state);
+  const removeDislikeButton = useSelector(state => state.miscSettings.removeDislikeButton);
 
   function handleReset(e) {
     chrome.runtime.sendMessage('reset', response => {
@@ -28,6 +33,20 @@ function Options() {
   return (
     <div>
       <h1 css={{marginBottom: '50px'}}>ThemeSong Options</h1>
+      <StyledDiv>
+        <h2 css={{marginBottom: '15px'}}>Misc Settings:</h2>
+        <p>
+          Remove Dislike Button:  
+          <input 
+            type="checkbox" 
+            checked={removeDislikeButton} 
+            onChange={e => {
+              dispatch(toggleRemoveDislikeButton());
+              chrome.storage.local.set({miscSettings: {removeDislikeButton: e.target.checked}}, () => console.log('chrome.storage.local.set({miscSettings: {removeDislikeButton}}'));
+            }} 
+          />
+        </p>
+      </StyledDiv>
       <StyledDiv>
         <h2 css={{marginBottom: '15px'}}>Contact:</h2>
         <p>
@@ -58,9 +77,10 @@ function Options() {
             RESET
           </button>
         </p>
-        {/* <p>
-            <button onClick={e => chrome.storage.sync.get(null, res => console.log(res))}>console.log() storage</button>
-        </p> */}
+        <p>
+            <button onClick={e => chrome.storage.local.get(null, res => console.log(res))}>console.log() storage</button>
+            <button onClick={e => console.log(store)}>console.log() store</button>
+        </p>
       </StyledDiv>
     </div>
   )
