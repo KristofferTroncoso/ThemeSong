@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import Themes from './Themes';
 import { store } from '../../store';
 import { Provider  } from 'react-redux';
@@ -17,7 +17,8 @@ export function addThemesContainer() {
 
   ytmusicapp.prepend(themesContainer);
 
-  ReactDOM.render(<Provider store={store}><Themes /></Provider>, themesContainer);
+  const root = createRoot(themesContainer)
+  root.render(<Provider store={store}><Themes /></Provider>)
 }
 
 export default addThemesContainer;

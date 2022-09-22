@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import { store } from '../../redux/store';
 import { Provider  } from 'react-redux';
@@ -11,9 +11,6 @@ import cloudStorageSyncer from '../../redux/cloudStorageSyncer';
 
 cloudStorageSyncer();
 
-render(
-  <Provider store={store}><Options /></Provider>,
-  window.document.querySelector('#app-container')
-);
-
-if (module.hot) module.hot.accept();
+const container = document.getElementById('app-container');
+const root = createRoot(container)
+root.render(<Provider store={store}><Options /></Provider>)

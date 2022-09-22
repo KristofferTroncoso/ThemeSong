@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import SongInfoDisplay from './SongInfoDisplay';
 import { store } from '../../store';
 import { Provider  } from 'react-redux';
@@ -18,7 +18,8 @@ function SongInfoDisplayFeature() {
   
     thumbnail.append(songDivContainer);
   
-    ReactDOM.render(<Provider store={store}><SongInfoDisplay /></Provider>, songDivContainer);
+    const root = createRoot(songDivContainer)
+    root.render(<Provider store={store}><SongInfoDisplay /></Provider>)
   }, [])
 
   return <div></div>

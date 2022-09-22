@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import Logo from './Logo';
 import { store } from '../../../../../store';
 import { Provider  } from 'react-redux';
@@ -18,7 +18,8 @@ export function addLogoContainer() {
 
   logoNode.append(logoContainer);
 
-  ReactDOM.render(<Provider store={store}><Logo /></Provider>, logoContainer);
+  const root = createRoot(logoContainer)
+  root.render(<Provider store={store}><Logo /></Provider>)
 }
 
 export default addLogoContainer;

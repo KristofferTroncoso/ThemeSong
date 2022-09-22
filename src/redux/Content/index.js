@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { store } from '../../redux/store';
 import { Provider  } from 'react-redux';
 
@@ -24,10 +24,6 @@ function insertContentScriptContainer() {
 
   ytmusicapp.append(themesongContainer);
 
-  ReactDOM.render(
-    <Provider store={store}>
-      <ContentScript />
-    </Provider>, 
-    themesongContainer
-  );
+  const root = createRoot(themesongContainer)
+  root.render(<Provider store={store}><ContentScript /></Provider>)
 }

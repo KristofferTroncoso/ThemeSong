@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import Panel from './Panel';
 import { store } from '../store';
 import { Provider  } from 'react-redux';
@@ -19,7 +19,8 @@ function PanelContainer() {
       middleControlButtonsDiv.append(panelContainer);
     }
   
-    ReactDOM.render(<Provider store={store}><Panel /></Provider>, panelContainer);
+    const root = createRoot(panelContainer)
+    root.render(<Provider store={store}><Panel /></Provider>)
   }, [])
 
   return null;

@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import { store } from '../../store';
 import { Provider } from 'react-redux';
@@ -28,12 +28,8 @@ function addVisualizerContainer() {
 
   ytmusicplayer.append(tsvisualizercontainer);
 
-  ReactDOM.render(
-    <Provider store={store}>
-      <Visualizer />
-    </Provider>, 
-    tsvisualizercontainer
-  );
+  const root = createRoot(tsvisualizercontainer)
+  root.render(<Provider store={store}><Visualizer /></Provider>)
 }
 
 function addVisualizerButton() {
@@ -49,7 +45,8 @@ function addVisualizerButton() {
 
   topRowButtons.prepend(visualizerDivContainer);
 
-  ReactDOM.render(<Provider store={store}><VisualizerToggleButton /></Provider>, visualizerDivContainer);
+  const root = createRoot(visualizerDivContainer)
+  root.render(<Provider store={store}><VisualizerToggleButton /></Provider>)
 }
 
 
