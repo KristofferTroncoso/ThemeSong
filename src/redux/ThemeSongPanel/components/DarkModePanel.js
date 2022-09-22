@@ -3,7 +3,7 @@ import React from 'react';
 import { jsx, css } from '@emotion/react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { changeThemes } from '../../../../../redux/themes/themesSlice';
+import { changeThemes } from '../../themes/themesSlice';
 
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';

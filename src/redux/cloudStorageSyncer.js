@@ -1,7 +1,7 @@
 import { store } from './store';
 import { changeActiveTheme, changeThemes, changeIsDark } from './themes/themesSlice';
 import { changeActiveVisualizer, changeVisualizers } from './visualizers/visualizersSlice';
-import { changeActivePopupTab } from './extensionState/extensionStateSlice';
+import { changeActivePopupTab } from './popup/popupSlice';
 import { changePlayPauseState } from './playerState/playerStateSlice';
 import { changeRemoveDislikeButton, toggleRemoveDislikeButton } from './miscSettings/miscSettingsSlice';
 

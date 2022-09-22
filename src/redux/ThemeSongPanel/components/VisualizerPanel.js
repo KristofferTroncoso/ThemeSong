@@ -2,7 +2,7 @@
 import { jsx, css } from '@emotion/react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { toggleIsVisualizerOn, changeActiveVisualizer } from '../../../../../redux/visualizers/visualizersSlice';
+import { toggleIsVisualizerOn, changeActiveVisualizer } from '../../visualizers/visualizersSlice';
 
 import StyledPanelDiv from "./StyledPanelDiv";
 import PanelButton from './PanelButton';

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Panel from './Panel';
-import { store } from '../../../../redux/store';
+import { store } from '../store';
 import { Provider  } from 'react-redux';
 
 function PanelContainer() {

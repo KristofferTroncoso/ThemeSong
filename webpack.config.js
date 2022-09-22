@@ -36,10 +36,10 @@ if (fileSystem.existsSync(secretsPath)) {
 var options = {
   mode: process.env.NODE_ENV || 'development',
   entry: {
-    options: path.join(__dirname, 'src', 'pages', 'Options', 'index.js'),
-    popup: path.join(__dirname, 'src', 'pages', 'Popup', 'index.js'),
-    background: path.join(__dirname, 'src', 'pages', 'Background', 'index.js'),
-    contentScript: path.join(__dirname, 'src', 'pages', 'Content', 'index.js')
+    options: path.join(__dirname, 'src', 'redux', 'Options', 'index.js'),
+    popup: path.join(__dirname, 'src', 'redux', 'Popup', 'index.js'),
+    background: path.join(__dirname, 'src', 'redux', 'Background', 'index.js'),
+    contentScript: path.join(__dirname, 'src', 'redux', 'Content', 'index.js')
   },
   chromeExtensionBoilerplate: {
     notHotReload: ['background', 'contentScript'],
@@ -158,13 +158,13 @@ var options = {
       ],
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'pages', 'Options', 'index.html'),
+      template: path.join(__dirname, 'src', 'redux', 'Options', 'index.html'),
       filename: 'options.html',
       chunks: ['options'],
       cache: false,
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'pages', 'Popup', 'index.html'),
+      template: path.join(__dirname, 'src', 'redux', 'Popup', 'index.html'),
       filename: 'popup.html',
       chunks: ['popup'],
       cache: false,

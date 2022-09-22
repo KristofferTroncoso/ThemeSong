@@ -3,11 +3,11 @@
 import { jsx, css } from '@emotion/react';
 import TabButton from './TabButton';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeActivePopupTab } from '../../../redux/extensionState/extensionStateSlice';
+import { changeActivePopupTab } from '../../../redux/popup/popupSlice';
 
 function TabBar() {
   const dispatch = useDispatch();
-  const activePopupTab = useSelector(state => state.extensionState.activePopupTab);
+  const activePopupTab = useSelector(state => state.popup.activePopupTab);
   
   function handleClick(id) {
     dispatch(changeActivePopupTab(id))

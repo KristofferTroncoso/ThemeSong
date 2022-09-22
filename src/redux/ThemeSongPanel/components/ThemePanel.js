@@ -2,7 +2,7 @@
 import { jsx, css } from '@emotion/react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { changeActiveTheme } from '../../../../../redux/themes/themesSlice';
+import { changeActiveTheme } from '../../themes/themesSlice';
 
 import InvertColorsOffIcon from '@mui/icons-material/InvertColorsOff';
 import { GiAtom } from 'react-icons/gi';

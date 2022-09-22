@@ -8,7 +8,7 @@ import VisualizersPage from '../pages/VisualizersPage';
 import ThemesPage from '../pages/ThemesPage';
 
 function ActivePage() {
-  const activePopupTab = useSelector(state => state.extensionState.activePopupTab);
+  const activePopupTab = useSelector(state => state.popup.activePopupTab);
 
   const activePageCalc = () => {
     switch (activePopupTab) {

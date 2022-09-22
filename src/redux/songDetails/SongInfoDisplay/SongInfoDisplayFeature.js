@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SongInfoDisplay from './SongInfoDisplay';
-import { store } from '../../../../redux/store';
+import { store } from '../../store';
 import { Provider  } from 'react-redux';
 
 function SongInfoDisplayFeature() {
