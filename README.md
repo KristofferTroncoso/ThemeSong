@@ -1,3 +1,5 @@
+![ThemeSong Logo](/src/assets/images/icon-128.png)
+
 # ThemeSong
 
 Chrome and Firefox Extension for YouTube Music™
