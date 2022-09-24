@@ -28,10 +28,10 @@ var fileExtensions = [
 var options = {
   mode: process.env.NODE_ENV || 'development',
   entry: {
-    options: path.join(__dirname, 'src', 'redux', 'Options', 'index.js'),
-    popup: path.join(__dirname, 'src', 'redux', 'Popup', 'index.js'),
-    background: path.join(__dirname, 'src', 'redux', 'Background', 'index.js'),
-    contentScript: path.join(__dirname, 'src', 'redux', 'Content', 'index.js')
+    options: path.join(__dirname, 'src', 'app', 'Options', 'index.js'),
+    popup: path.join(__dirname, 'src', 'app', 'Popup', 'index.js'),
+    background: path.join(__dirname, 'src', 'app', 'Background', 'index.js'),
+    contentScript: path.join(__dirname, 'src', 'app', 'Content', 'index.js')
   },
   chromeExtensionBoilerplate: {
     notHotReload: ['background', 'contentScript'],
@@ -144,13 +144,13 @@ var options = {
       ],
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'redux', 'Options', 'index.html'),
+      template: path.join(__dirname, 'src', 'app', 'Options', 'index.html'),
       filename: 'options.html',
       chunks: ['options'],
       cache: false,
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'redux', 'Popup', 'index.html'),
+      template: path.join(__dirname, 'src', 'app', 'Popup', 'index.html'),
       filename: 'popup.html',
       chunks: ['popup'],
       cache: false,
