@@ -12,8 +12,8 @@ import { SiGenius } from 'react-icons/si';
 
 
 function SongPanel() {
-  const songName = useSelector(state => state.songDetails.songName);
-  const songArtist = useSelector(state => state.songDetails.songArtist);
+  const songName = useSelector(state => state.song.songName);
+  const songArtist = useSelector(state => state.song.songArtist);
 
   function sanitize(songTitle) {
     //remove parens

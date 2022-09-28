@@ -7,12 +7,12 @@ const initialState = {
   songImg: ""
 };
 
-export const songDetails = createSlice({
-  name: 'songDetails',
+export const song = createSlice({
+  name: 'song',
   initialState,
   reducers: {
-    changeSongDetails: (state, action) => {
-      console.log('songDetailsSlice: changeSongDetails')
+    changeSong: (state, action) => {
+      console.log('songSlice: changeSong')
       //song name . this is like  the only thing that's guaranteed
       state.songName = document.querySelector("ytmusic-player-bar .title").title;
 
@@ -50,6 +50,6 @@ export const songDetails = createSlice({
   }
 });
 
-export const { changeSongDetails } = songDetails.actions;
+export const { changeSong } = song.actions;
 
-export default songDetails.reducer;
+export default song.reducer;

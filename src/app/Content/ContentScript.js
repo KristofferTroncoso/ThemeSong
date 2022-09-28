@@ -1,10 +1,10 @@
 import React from 'react';
 
 import Themes from '../Theme/Themes';
-import SongDetailsObserver from '../SongDetails/SongDetailsObserver';
+import SongObserver from '../Song/SongObserver';
 import PanelContainer from '../QuickAccessPanel';
 import PlayPauseChangeObserver from '../PlayerState/PlayPauseChangeObserver';
-import SongInfoDisplayFeature from '../SongDetails/SongInfoDisplay/SongInfoDisplayFeature';
+import SongInfoDisplayFeature from '../Song/SongInfoDisplay/SongInfoDisplayFeature';
 import VisualizerFeature from '../Visualizer/visualizers/VisualizerFeature';
 import Palette from '../Palette/Palette';
 import UiOptions from '../UiOptions/UiOptions';
@@ -14,7 +14,7 @@ function ContentScript() {
   return (
     <div id="ThemeSong-ContentScript">
       <Themes />
-      <SongDetailsObserver />
+      <SongObserver />
       <PanelContainer />
       <PlayPauseChangeObserver />
       <SongInfoDisplayFeature />

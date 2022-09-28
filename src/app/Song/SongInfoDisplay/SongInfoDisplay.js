@@ -5,8 +5,8 @@ import { useSelector } from 'react-redux';
 import './SongInfoDisplay.css';
 
 function SongInfoDisplay() {
-  const songName = useSelector(state => state.songDetails.songName);
-  const songSubtitle = useSelector(state => state.songDetails.songSubtitle);
+  const songName = useSelector(state => state.song.songName);
+  const songSubtitle = useSelector(state => state.song.songSubtitle);
 
   return (
     <div

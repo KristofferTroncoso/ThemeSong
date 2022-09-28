@@ -16,7 +16,7 @@ let dataArray;
 function Visualizer() {
   const isVisualizerOn = useSelector(state => state.visualizers.isVisualizerOn);
   const activeVisualizer = useSelector(state => state.visualizers.activeVisualizer);
-  const songName = useSelector(state => state.songDetails.songName);
+  const songName = useSelector(state => state.song.songName);
 
   const dispatch = useDispatch();
 

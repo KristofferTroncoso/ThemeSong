@@ -2,11 +2,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 function AddSongChangeNotification() {
-  const songDetails = useSelector(state => state.songDetails);
+  const song = useSelector(state => state.song);
 
   React.useEffect(() => {
-    chrome.runtime.sendMessage({notify: songDetails})
-  }, [songDetails])
+    chrome.runtime.sendMessage({notify: song})
+  }, [song])
 
   return <div id="AddSongChangeNotification"></div>
 }

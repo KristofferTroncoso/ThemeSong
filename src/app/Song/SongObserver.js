@@ -1,35 +1,35 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { changeSongDetails } from './songDetailsSlice';
+import { changeSong } from './songSlice';
 
-function SongDetailsObserver() {
+function SongObserver() {
   const dispatch = useDispatch();
   React.useEffect(() => { 
-    let songDetailsObserver;
+    let songObserver;
 
-    dispatch(changeSongDetails());
+    dispatch(changeSong());
 
     let songTitleNode = document.querySelector("ytmusic-player-bar .title");
   
-    songDetailsObserver = new MutationObserver(handleSongChange);
+    songObserver = new MutationObserver(handleSongChange);
   
-    songDetailsObserver.observe(songTitleNode, {
+    songObserver.observe(songTitleNode, {
       attributeFilter: ["title"],
       attributeOldValue: true
     });
     
     function handleSongChange(mutationRecord) {
-      dispatch(changeSongDetails());
+      dispatch(changeSong());
     }
 
     return function() {
-      songDetailsObserver.disconnect();
+      songObserver.disconnect();
     }
   }, [])
 
   return (
-    <div id="SongDetailsObserver"></div>
+    <div id="SongObserver"></div>
   )
 }
 
-export default SongDetailsObserver;
+export default SongObserver;
