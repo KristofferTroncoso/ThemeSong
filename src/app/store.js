@@ -5,7 +5,6 @@ import themesReducer from './Theme/themesSlice';
 import visualizersReducer from './Visualizer/visualizersSlice';
 import popupReducer from './popup/popupSlice';
 import playerStateReducer from './PlayerState/playerStateSlice';
-import miscSettingsReducer from './Test/testSlice';
 
 export const store = configureStore({
   reducer: {
@@ -15,6 +14,5 @@ export const store = configureStore({
     visualizers: visualizersReducer,
     popup: popupReducer,
     playerState: playerStateReducer,
-    miscSettings: miscSettingsReducer
   },
 });

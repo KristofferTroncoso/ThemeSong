@@ -3,7 +3,7 @@ import { changeActiveTheme, changeThemes, changeIsDark } from './Theme/themesSli
 import { changeActiveVisualizer, changeVisualizers } from './Visualizer/visualizersSlice';
 import { changeActivePopupTab } from './popup/popupSlice';
 import { changePlayPauseState } from './PlayerState/playerStateSlice';
-import { changeRemoveDislikeButton, toggleRemoveDislikeButton } from './Test/testSlice';
+// import { changeRemoveDislikeButton, toggleRemoveDislikeButton } from './Test/testSlice';
 
 export function addCloudSyncStorageSyncer() {
   console.log('addCloudSyncStorageSyncer');
@@ -36,9 +36,6 @@ export function addCloudSyncStorageSyncer() {
         case "activePopupTab":
           store.dispatch(changeActivePopupTab(value))
           break;
-        case "miscSettings":
-          store.dispatch(changeRemoveDislikeButton(value))
-          break;
         default:
           console.log('addCloudSyncStorageSyncer: default case')
       }
@@ -69,11 +66,6 @@ export function addCloudSyncStorageSyncer() {
           break;
         case "playPauseState":
           store.dispatch(changePlayPauseState(newValue))
-          break;
-        case "miscSettings":
-          console.log('syncToStore changeMiscSettings(newValue)', newValue)
-          store.dispatch(changeRemoveDislikeButton(newValue))
-          // store.dispatch(toggleRemoveDislikeButton())
           break;
         default:
           console.log('syncToStore: default case')

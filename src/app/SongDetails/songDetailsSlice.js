@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   songName: "",
   songSubtitle: "",
-  songArtist: ""
+  songArtist: "",
+  songImg: ""
 };
 
 export const songDetails = createSlice({
@@ -30,7 +31,11 @@ export const songDetails = createSlice({
         state.songSubtitle = "";
       }
 
-      state.songArtist = state.songSubtitle.split(" • ")[0]
+      state.songArtist = state.songSubtitle.split(" • ")[0];
+      let songImgSrc = document.querySelector(".middle-controls .thumbnail-image-wrapper img").src;
+      if (songImgSrc !== "" && songImgSrc !== "https://music.youtube.com/") {
+        state.songImg = document.querySelector(".middle-controls .thumbnail-image-wrapper img").src;
+      }
       
       /*  the reason why the bottom code doesn't work all the time is the ytm dom is not consistent with its details. 
         the subtitle can contain the artist and album or if its a video it may have the channel and the view count.

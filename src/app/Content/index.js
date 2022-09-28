@@ -12,7 +12,7 @@ addCloudSyncStorageSyncer();
 insertContentScriptContainer();
 
 function insertContentScriptContainer() {
-  const ytmusicapp = document.querySelector("ytmusic-app");
+  const body = document.querySelector("body");
   let themesongContainer;
 
   if (document.getElementById("ThemeSong-Container")) {
@@ -22,7 +22,7 @@ function insertContentScriptContainer() {
   themesongContainer = document.createElement("div");
   themesongContainer.id = "ThemeSong-Container";
 
-  ytmusicapp.append(themesongContainer);
+  body.append(themesongContainer);
 
   const root = createRoot(themesongContainer)
   root.render(<Provider store={store}><ContentScript /></Provider>)

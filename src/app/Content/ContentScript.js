@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 import Themes from '../Theme/Themes';
 import SongDetailsObserver from '../SongDetails/SongDetailsObserver';
@@ -8,10 +7,9 @@ import PlayPauseChangeObserver from '../PlayerState/PlayPauseChangeObserver';
 import SongInfoDisplayFeature from '../SongDetails/SongInfoDisplay/SongInfoDisplayFeature';
 import VisualizerFeature from '../Visualizer/visualizers/VisualizerFeature';
 import Palette from '../Palette/Palette';
-import Test from '../Test/Test';
+import UiOptions from '../UiOptions/UiOptions';
 
 function ContentScript() {
-  const removeDislikeButton = useSelector(state => state.miscSettings.removeDislikeButton);
 
   return (
     <div id="ThemeSong-ContentScript">
@@ -22,7 +20,7 @@ function ContentScript() {
       <SongInfoDisplayFeature />
       <VisualizerFeature />
       <Palette />
-      {removeDislikeButton ? <Test /> : null}
+      <UiOptions />
     </div>
   )
 }

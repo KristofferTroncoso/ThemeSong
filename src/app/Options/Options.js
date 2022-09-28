@@ -2,7 +2,7 @@
 import React from 'react';
 import { jsx, css } from '@emotion/react';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleRemoveDislikeButton } from '../Test/testSlice';
+// import { toggleRemoveDislikeButton } from '../Test/testSlice';
 
 function StyledDiv({children}) {
   return (
@@ -33,7 +33,7 @@ function Options() {
   return (
     <div>
       <h1 css={{marginBottom: '50px'}}>ThemeSong Options</h1>
-      <StyledDiv>
+      {/* <StyledDiv>
         <h2 css={{marginBottom: '15px'}}>Misc Settings:</h2>
         <p>
           Remove Dislike Button:  
@@ -46,7 +46,7 @@ function Options() {
             }} 
           />
         </p>
-      </StyledDiv>
+      </StyledDiv> */}
       <StyledDiv>
         <h2 css={{marginBottom: '15px'}}>Contact:</h2>
         <p>
