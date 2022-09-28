@@ -1,6 +1,6 @@
 import React from 'react';
 import { store } from '../store';
-import { changePlayPauseState } from './playerStateSlice';
+import { changePlayPauseState } from './playerSlice';
 
 let playPauseChangeObserver;
 let playPauseState = "Pause";

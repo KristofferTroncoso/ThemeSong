@@ -2,7 +2,7 @@ import { store } from './store';
 import { changeActiveTheme, changeThemes, changeIsDark } from './Theme/themesSlice';
 import { changeActiveVisualizer, changeVisualizers } from './Visualizer/visualizersSlice';
 import { changeActivePopupTab } from './popup/popupSlice';
-import { changePlayPauseState } from './PlayerState/playerStateSlice';
+import { changePlayPauseState } from './Player/playerSlice';
 // import { changeRemoveDislikeButton, toggleRemoveDislikeButton } from './Test/testSlice';
 
 export function addCloudSyncStorageSyncer() {

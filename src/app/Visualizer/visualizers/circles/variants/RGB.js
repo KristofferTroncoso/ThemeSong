@@ -35,7 +35,7 @@ let borderWidth = 4;
 
 function RGB({analyser, dataArray, bufferLength}) {
   const circlesPrefs = useSelector(state => state.visualizers.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")));
-  const playPauseState = useSelector(state => state.playerState.playPauseState);
+  const playPauseState = useSelector(state => state.player.playPauseState);
   let ytmusicplayer = document.querySelector("ytmusic-player")
 
   const canvasRef = useRef(null);

@@ -12,7 +12,7 @@ let calculatedColor;
 
 function Wavy({analyser, dataArray, bufferLength}) {
   const wavyPrefs = useSelector(state => state.visualizers.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:0")));
-  const playPauseState = useSelector(state => state.playerState.playPauseState);
+  const playPauseState = useSelector(state => state.player.playPauseState);
   const mostPopulatedColor = useSelector(state => state.palette.mostPopulatedColor);
 
   const canvasRef = useRef(null);

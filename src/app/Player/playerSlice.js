@@ -4,17 +4,17 @@ const initialState = {
   playPauseState: "Play",
 };
 
-export const playerState = createSlice({
-  name: 'playerState',
+export const player = createSlice({
+  name: 'player',
   initialState,
   reducers: {
     changePlayPauseState: (state, action) => {
-      console.log('playerStateSlice: changePlayPauseState')
+      console.log('playerSlice: changePlayPauseState')
       state.playPauseState = action.payload;
     }, 
   }
 });
 
-export const { changePlayPauseState } = playerState.actions;
+export const { changePlayPauseState } = player.actions;
 
-export default playerState.reducer;
+export default player.reducer;

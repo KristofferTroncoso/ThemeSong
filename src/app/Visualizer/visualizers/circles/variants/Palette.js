@@ -62,7 +62,7 @@ let borderWidth = 4;
 
 function Palette({analyser, dataArray, bufferLength}) {
   const circlesPrefs = useSelector(state => state.visualizers.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")));
-  const playPauseState = useSelector(state => state.playerState.playPauseState);
+  const playPauseState = useSelector(state => state.player.playPauseState);
   const palette = useSelector(state => state.palette.palette);
   let ytmusicplayer = document.querySelector("ytmusic-player")
 

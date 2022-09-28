@@ -13,7 +13,7 @@ let gap = 8;
 
 function White({analyser, dataArray, bufferLength}) {
   const barsPrefs = useSelector(state => state.visualizers.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")));
-  const playPauseState = useSelector(state => state.playerState.playPauseState);
+  const playPauseState = useSelector(state => state.player.playPauseState);
   // const palette = useSelector(state => state.palette.palette);
   // const mostPopulatedColor = useSelector(state => state.palette.mostPopulatedColor);
 

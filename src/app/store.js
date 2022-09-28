@@ -4,7 +4,7 @@ import songReducer from './Song/songSlice';
 import themesReducer from './Theme/themesSlice';
 import visualizersReducer from './Visualizer/visualizersSlice';
 import popupReducer from './popup/popupSlice';
-import playerStateReducer from './PlayerState/playerStateSlice';
+import playerReducer from './Player/playerSlice';
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +13,6 @@ export const store = configureStore({
     themes: themesReducer,
     visualizers: visualizersReducer,
     popup: popupReducer,
-    playerState: playerStateReducer,
+    player: playerReducer,
   },
 });
