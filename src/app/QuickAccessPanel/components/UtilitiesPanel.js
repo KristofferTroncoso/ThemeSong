@@ -16,7 +16,6 @@ function UtilitiesPanel() {
   const store = useStore();
   const dispatch = useDispatch();
 
-
   function handleTimerClick() {
     setTimeout(() => {
       document.getElementById("play-pause-button").click()
@@ -29,7 +28,7 @@ function UtilitiesPanel() {
       <div css={css`display: flex; justify-content: start; align-items: center;`}>
         <PanelButton onClick={e => console.log(reduxStore)} title="log store"><DataObjectIcon fontSize='large' /></PanelButton>
         <PanelButton onClick={handleTimerClick} title="Timer"><SnoozeIcon css={css`font-size: 28px;`} /></PanelButton>
-        <PanelButton 
+        {/* <PanelButton 
           onClick={e => {
             dispatch(store.reducers.miscSettings.toggleRemoveDislikeButton())
             // dispatch(changeMiscSettings({removeDislikeButton: false}))
@@ -38,22 +37,6 @@ function UtilitiesPanel() {
           title="test"
         >
           Test
-        </PanelButton>
-        {/* <PanelButton 
-          onClick={e => {
-            console.log(themes)
-          }}
-          title="test"
-        >
-          log themes
-        </PanelButton> */}
-        {/* <PanelButton 
-          onClick={e => {
-            console.log(dispatch(store.reducers.miscSettings.toggleRemoveDislikeButton()))
-          }}
-          title="test"
-        >
-          log useDispatch
         </PanelButton> */}
       </div>
     </div>
