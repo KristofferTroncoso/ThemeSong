@@ -1,6 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
+export const createVisualizerSlice = (set) => ({
   activeVisualizer: "visualizerId:0",
   visualizers: [
     {
@@ -74,30 +73,19 @@ const initialState = {
       ]
     }
   ],
-  isVisualizerOn: false
-};
-
-export const visualizers = createSlice({
-  name: 'visualizers',
-  initialState,
-  reducers: {
-    changeActiveVisualizer: (state, action) => {
-      console.log('visualizersSlice: changeActiveVisualizer')
-      console.log(action.payload);
-      state.activeVisualizer = action.payload;
-    },
-    changeVisualizers: (state, action) => {
-      console.log('visualizersSlice: changeVisualizers')
-      console.log(action.payload);
-      state.visualizers = action.payload;
-    },
-    toggleIsVisualizerOn: (state) => {
-      console.log('visualizersSlice: toggleIsVisualizerOn')
-      state.isVisualizerOn = !state.isVisualizerOn;
-    }
+  isVisualizerOn: false,
+  changeActiveVisualizer: (payload) => {
+    console.log('visualizerSlice: changeActiveVisualizer')
+    console.log(payload);
+    set(state => { state.visualizer.activeVisualizer = payload })
+  },
+  changeVisualizers: (payload) => {
+    console.log('visualizerSlice: changeVisualizers')
+    console.log(payload);
+    set(state => { state.visualizer.visualizers = payload })
+  },
+  toggleIsVisualizerOn: () => {
+    console.log('visualizerSlice: toggleIsVisualizerOn')
+    set(state => { state.visualizer.isVisualizerOn = !state.visualizer.isVisualizerOn })
   }
-});
-
-export const { changeActiveVisualizer, changeVisualizers, toggleIsVisualizerOn } = visualizers.actions;
-
-export default visualizers.reducer;
+})

@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import { useSelector, useDispatch } from 'react-redux';
-
-import { toggleIsVisualizerOn, changeActiveVisualizer } from '../../Visualizer/visualizersSlice';
+import { useStore } from '../../store';
 
 import StyledPanelDiv from "./StyledPanelDiv";
 import PanelButton from './PanelButton';
@@ -13,19 +11,19 @@ import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 
 
 function VisualizerPanel() {
-  const dispatch = useDispatch();
-
-  const isVisualizerOn = useSelector(state => state.visualizers.isVisualizerOn);
-  const activeVisualizer = useSelector(state => state.visualizers.activeVisualizer);
+  const isVisualizerOn = useStore(state => state.visualizer.isVisualizerOn);
+  const activeVisualizer = useStore(state => state.visualizer.activeVisualizer);
+  const toggleIsVisualizerOn = useStore(state => state.visualizer.toggleIsVisualizerOn);
+  const changeActiveVisualizer = useStore(state => state.visualizer.changeActiveVisualizer);
 
   const handleVisualizerButtonClick = (id) => {
     if (activeVisualizer === id) {
-      dispatch(toggleIsVisualizerOn())
+      toggleIsVisualizerOn()
     } else {
-      dispatch(changeActiveVisualizer(id));
+      changeActiveVisualizer(id);
       chrome.storage.local.set({activeVisualizer: id}, () => console.log('chrome.storage.local.set({activeVisualizer}'))
       if (!isVisualizerOn) {
-        dispatch(toggleIsVisualizerOn());
+        toggleIsVisualizerOn();
       }
     }
   }

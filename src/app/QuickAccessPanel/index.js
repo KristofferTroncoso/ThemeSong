@@ -1,8 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import Panel from './Panel';
-import { store } from '../store';
-import { Provider  } from 'react-redux';
 
 function PanelContainer() {
   React.useEffect(() => {
@@ -20,7 +18,7 @@ function PanelContainer() {
     }
   
     const root = createRoot(panelContainer)
-    root.render(<Provider store={store}><Panel /></Provider>)
+    root.render(<Panel />)
   }, [])
 
   return null;

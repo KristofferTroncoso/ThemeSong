@@ -1,8 +1,8 @@
 /** @jsx jsx */
 // import React from 'react';
 import { jsx } from '@emotion/react';
+import { useStore } from '../../store';
 
-import { useSelector } from 'react-redux';
 // import { GlassSettings } from '../../../themes/frosted-glass/';
 import OffSettings  from '../../Theme/themes/Off/OffSettings';
 import DynamicSettings from '../../Theme/themes/Dynamic/DynamicSettings'; 
@@ -11,8 +11,8 @@ import StaticSettings from '../../Theme/themes/Static/StaticSettings';
 import ThemeButton from '../components/ThemeButton';
 
 function ThemesPage() {
-  const themes = useSelector(state => state.themes.themes);
-  const activeTheme = useSelector(state => state.themes.activeTheme);
+  const themes = useStore(state => state.theme.themes);
+  const activeTheme = useStore(state => state.theme.activeTheme);
 
   let activeThemeSettings = () => {
     switch (activeTheme) {

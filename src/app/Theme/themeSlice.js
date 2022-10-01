@@ -1,6 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
-
-const initialState = {
+export const createThemeSlice = (set) => ({
   activeTheme: "themeId:6",
   isDark: true,
   themes: [
@@ -64,30 +62,19 @@ const initialState = {
       }
     },
   ],
-};
-
-export const themes = createSlice({
-  name: 'themes',
-  initialState,
-  reducers: {
-    changeActiveTheme: (state, action) => {
-      console.log('themesSlice: changeActiveTheme')
-      console.log(action.payload);
-      state.activeTheme = action.payload;
-    },
-    changeThemes: (state, action) => {
-      console.log('themesSlice: changeThemes')
-      console.log(action.payload);
-      state.themes = action.payload;
-    },
-    changeIsDark: (state, action) => {
-      console.log('themesSlice: changeIsDark')
-      console.log(action.payload);
-      state.isDark = action.payload;
-    },
+  changeActiveTheme: (payload) => {
+    console.log('themeSlice: changeActiveTheme')
+    console.log(payload);
+    set(state => { state.theme.activeTheme = payload });
+  },
+  changeThemes: (payload) => {
+    console.log('themeSlice: changeThemes')
+    console.log(payload);
+    set(state => { state.theme.themes = payload });
+  },
+  changeIsDark: (payload) => {
+    console.log('themeSlice: changeIsDark')
+    console.log(payload);
+    set(state => { state.theme.isDark = payload });
   }
-});
-
-export const { changeActiveTheme, changeThemes, changeIsDark } = themes.actions;
-
-export default themes.reducer;
+})

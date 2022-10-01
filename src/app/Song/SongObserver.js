@@ -1,13 +1,12 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { changeSong } from './songSlice';
+import { useStore } from '../store';
 
 function SongObserver() {
-  const dispatch = useDispatch();
+  const changeSong = useStore(state => state.song.changeSong);
   React.useEffect(() => { 
     let songObserver;
 
-    dispatch(changeSong());
+    changeSong();
 
     let songTitleNode = document.querySelector("ytmusic-player-bar .title");
   
@@ -19,7 +18,7 @@ function SongObserver() {
     });
     
     function handleSongChange(mutationRecord) {
-      dispatch(changeSong());
+      changeSong();
     }
 
     return function() {

@@ -1,14 +1,13 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import { off_css } from './off_css';
 import { menubar, root } from '../selectors';
-import { changeIsDark } from '../../themesSlice'
+import { useStore } from '../../../store';
 
 function Off() {
-  const dispatch = useDispatch();
+  const changeIsDark = useStore(state => state.theme.changeIsDark)
 
   React.useEffect(() => {
-    dispatch(changeIsDark(true))
+    changeIsDark(true)
     menubar.content = '#131313';
     root.style.setProperty("--ts-playbar-color", '#242424');
   }, [])

@@ -1,11 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useStore } from '../../../../store';
 import { dynamiclight_css } from './dynamiclightCSS';
 import { menubar, root } from '../../selectors';
 
 function DynamicLight() {
-  const mostPopulatedColorHSL = useSelector(state => state.palette.mostPopulatedColor).hsl;
-  const dynamicLightPrefs = useSelector(state => state.themes.themes.find(theme => (theme.themeId === "themeId:6")).userPrefs.lightPrefs);
+  const mostPopulatedColorHSL = useStore(state => state.palette.mostPopulatedColor).hsl;
+  const dynamicLightPrefs = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:6")).userPrefs.lightPrefs);
 
   function processDynamicLightColors() {
     console.log('Dynamic Theme: processing colors')

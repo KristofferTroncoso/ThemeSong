@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx, css } from '@emotion/react';
-
-import { useSelector, useDispatch } from 'react-redux';
-import { changeThemes } from '../../../themesSlice';
+import { useStore } from '../../../../store';
 
 import { HuePicker } from 'react-color';
 
@@ -38,11 +36,12 @@ const StyledSlider = styled(Slider)`
 `;
 
 function StaticDarkSettings() {
-  const dispatch = useDispatch();
+  
 
-  const themes = useSelector(state => state.themes.themes);
-  const staticPrefs = useSelector(state => state.themes.themes.find(theme => (theme.themeId === "themeId:7")).userPrefs);
-  const staticDarkPrefs = useSelector(state => state.themes.themes.find(theme => (theme.themeId === "themeId:7")).userPrefs.darkPrefs);
+  const themes = useStore(state => state.theme.themes);
+  const changeThemes = useStore(state => state.theme.changeThemes);
+  const staticPrefs = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:7")).userPrefs);
+  const staticDarkPrefs = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:7")).userPrefs.darkPrefs);
 
   function handleChange(e) {
     let darkPrefs = {...staticDarkPrefs, [e.target.name]: e.target.value};
@@ -53,7 +52,7 @@ function StaticDarkSettings() {
       : theme
     ));
     console.log(newThemesArr);
-    dispatch(changeThemes(newThemesArr));
+    changeThemes(newThemesArr);
     chrome.storage.local.set({themes: newThemesArr}, () => console.log('chrome.storage.local.set({themes}'));
   }
 
@@ -79,7 +78,7 @@ function StaticDarkSettings() {
       : theme
     ));
     console.log(newThemesArr);
-    dispatch(changeThemes(newThemesArr));
+    changeThemes(newThemesArr);
     chrome.storage.local.set({themes: newThemesArr}, () => console.log('chrome.storage.local.set({themes}'));
   }
 

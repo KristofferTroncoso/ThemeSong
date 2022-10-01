@@ -3,15 +3,12 @@ import React from 'react';
 import { jsx, css } from '@emotion/react';
 import DynamicDarkSettings from './Dark/DynamicDarkSettings';
 import DynamicLightSettings from './Light/DynamicLightSettings';
-
-import { useSelector, useDispatch } from 'react-redux';
-import { changeThemes } from '../../themesSlice';
+import { useStore } from '../../../store';
 
 function DynamicSettings() {
-  const dispatch = useDispatch();
-
-  const themes = useSelector(state => state.themes.themes);
-  const dynamicUserPrefs = useSelector(state => state.themes.themes.find(theme => (theme.themeId === "themeId:6")).userPrefs);
+  const themes = useStore(state => state.theme.themes);
+  const changeThemes = useStore(state => state.theme.changeThemes);
+  const dynamicUserPrefs = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:6")).userPrefs);
 
   function handleDarkLightChange(e) {
     let newDynamicUserPrefs = {...dynamicUserPrefs, [e.target.name]: e.target.value};
@@ -19,7 +16,7 @@ function DynamicSettings() {
     theme.themeId === "themeId:6"
     ? theme = {...theme, userPrefs: newDynamicUserPrefs}
     : theme);
-    dispatch(changeThemes(newThemesArr));
+    changeThemes(newThemesArr);
     chrome.storage.local.set({themes: newThemesArr}, () => console.log('chrome.storage.local.set({themes}'));
   }
 

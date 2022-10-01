@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import { useSelector } from 'react-redux';
+import { useStore } from '../../../store';
 
 import RGB from './variants/RGB';
 import Accent from './variants/Accent';
@@ -10,8 +10,8 @@ import Bubbles from './variants/Bubbles';
 import OT9 from './variants/OT9';
 
 function Circles({analyser, dataArray, bufferLength}) {
-  const circlesActiveVariant = useSelector(state => (
-    state.visualizers.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")).activeVariant
+  const circlesActiveVariant = useStore(state => (
+    state.visualizer.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")).activeVariant
   ));
 
   function returnActiveVariant() {

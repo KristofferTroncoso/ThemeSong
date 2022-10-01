@@ -1,9 +1,9 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { static_light_css } from './static-light-css';
+import { useStore } from '../../../../store';
 
 function StaticLight({processColors}) {
-  const staticLightPrefs = useSelector(state => state.themes.themes.find(theme => (theme.themeId === "themeId:7")).userPrefs.lightPrefs);
+  const staticLightPrefs = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:7")).userPrefs.lightPrefs);
 
   React.useEffect(() => {
     processColors(staticLightPrefs);

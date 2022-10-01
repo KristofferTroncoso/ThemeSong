@@ -2,13 +2,13 @@
 import React from 'react';
 import { jsx } from '@emotion/react';
 
-import { useSelector } from 'react-redux';
+import { useStore } from '../../store';
 
 import VisualizersPage from '../pages/VisualizersPage';
 import ThemesPage from '../pages/ThemesPage';
 
 function ActivePage() {
-  const activePopupTab = useSelector(state => state.popup.activePopupTab);
+  const activePopupTab = useStore(state => state.popup.activePopupTab);
 
   const activePageCalc = () => {
     switch (activePopupTab) {

@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx, css } from '@emotion/react';
-
-import { useSelector, useDispatch } from 'react-redux';
-import { changeThemes } from '../../../themesSlice';
+import { useStore } from '../../../../store';
 
 import { styled } from '@mui/material/styles';
 import Slider from '@mui/material/Slider';
@@ -36,11 +34,12 @@ const StyledSlider = styled(Slider)`
 `;
 
 function DynamicDarkSettings() {
-  const dispatch = useDispatch();
+  
 
-  const themes = useSelector(state => state.themes.themes);
-  const dynamicPrefs = useSelector(state => state.themes.themes.find(theme => (theme.themeId === "themeId:6")).userPrefs);
-  const dynamicDarkPrefs = useSelector(state => state.themes.themes.find(theme => (theme.themeId === "themeId:6")).userPrefs.darkPrefs);
+  const themes = useStore(state => state.theme.themes);
+  const dynamicPrefs = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:6")).userPrefs);
+  const dynamicDarkPrefs = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:6")).userPrefs.darkPrefs);
+  const changeThemes = useStore(state => state.theme.changeThemes);
 
   function handleChange(e) {
     let darkPrefs = {...dynamicDarkPrefs, [e.target.name]: e.target.value};
@@ -51,7 +50,7 @@ function DynamicDarkSettings() {
       : theme
     ));
     console.log(newThemesArr);
-    dispatch(changeThemes(newThemesArr));
+    changeThemes(newThemesArr);
     chrome.storage.local.set({themes: newThemesArr}, () => console.log('chrome.storage.local.set({themes}'));
   }
 

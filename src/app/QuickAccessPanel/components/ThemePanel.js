@@ -1,23 +1,20 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import { useSelector, useDispatch } from 'react-redux';
-
-import { changeActiveTheme } from '../../Theme/themesSlice';
 
 import InvertColorsOffIcon from '@mui/icons-material/InvertColorsOff';
 import { GiAtom } from 'react-icons/gi';
 import ColorizeIcon from '@mui/icons-material/Colorize';
 
 import PanelButton from './PanelButton';
+import { useStore } from '../../store';
 
 function ThemePanel() {
-  const dispatch = useDispatch();
-
-  const activeTheme = useSelector(state => state.themes.activeTheme);
+  const activeTheme = useStore(state => state.theme.activeTheme);
+  const changeActiveTheme = useStore(state => state.theme.changeActiveTheme);
 
   const handleClick = (value) => {
     if (activeTheme !== value) {
-      dispatch(changeActiveTheme(value));
+      changeActiveTheme(value);
       chrome.storage.local.set({activeTheme: value}, () => console.log('chrome.storage.local.set({activeTheme}'));
     } else {
       console.log('Already active')

@@ -1,12 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useStore } from '../store';
 
 import Off from './themes/Off/Off';
 import Dynamic from './themes/Dynamic/Dynamic';
 import Static from './themes/Static/Static';
 
 function Themes() {
-  const activeTheme = useSelector(state => state.themes.activeTheme);
+  const activeTheme = useStore(state => state.theme.activeTheme);
 
   function returnTheme() {
     switch (activeTheme) {

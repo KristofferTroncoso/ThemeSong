@@ -2,8 +2,7 @@
 import React from 'react';
 import { jsx, css } from '@emotion/react';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { toggleIsVisualizerOn } from '../../visualizersSlice';
+import { useStore } from '../../../store';
 
 import WavesIcon from '@mui/icons-material/Waves';
 import BubbleChart from '@mui/icons-material/BubbleChart';
@@ -11,14 +10,14 @@ import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 
 
 function VisualizerToggleButton() {
-  const dispatch = useDispatch();
 
-  const isVisualizerOn = useSelector(state => state.visualizers.isVisualizerOn);
-  const activeVisualizer = useSelector(state => state.visualizers.activeVisualizer);
+  const isVisualizerOn = useStore(state => state.visualizer.isVisualizerOn);
+  const activeVisualizer = useStore(state => state.visualizer.activeVisualizer);
+  const toggleIsVisualizerOn = useStore(state => state.visualizer.toggleIsVisualizerOn);
 
   const handleVisualizerButtonClick = e => {
     e.stopPropagation();
-    dispatch(toggleIsVisualizerOn())
+    toggleIsVisualizerOn()
   }
 
   const returnActiveVisualizer = () => {

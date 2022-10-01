@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React, { useRef }  from 'react';
 import { jsx, css } from '@emotion/react';
-import { useSelector } from 'react-redux';
+import { useStore } from '../../../../store';
 
 let playState;
 let ctx;
@@ -12,9 +12,10 @@ let borderWidth = 4;
 let gap = 8;
 
 function Palette({analyser, dataArray, bufferLength}) {
-  const barsPrefs = useSelector(state => state.visualizers.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")));
-  const playPauseState = useSelector(state => state.player.playPauseState);
-  const palette = useSelector(state => state.palette.palette);
+  const barsPrefs = useStore(state => state.visualizer.visualizers
+.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")));
+  const playPauseState = useStore(state => state.player.playPauseState);
+  const palette = useStore(state => state.palette.palette);
 
   const canvasRef = useRef(null);
   

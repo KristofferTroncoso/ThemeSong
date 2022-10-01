@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React, { useRef }  from 'react';
 import { jsx, css } from '@emotion/react';
-import { useSelector } from 'react-redux';
+import { useStore } from '../../../store';
 
 let playState;
 let ctx;
@@ -11,9 +11,10 @@ let lineWidth;
 let calculatedColor;
 
 function Wavy({analyser, dataArray, bufferLength}) {
-  const wavyPrefs = useSelector(state => state.visualizers.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:0")));
-  const playPauseState = useSelector(state => state.player.playPauseState);
-  const mostPopulatedColor = useSelector(state => state.palette.mostPopulatedColor);
+  const wavyPrefs = useStore(state => state.visualizer.visualizers
+.find(visualizer => (visualizer.visualizerId  === "visualizerId:0")));
+  const playPauseState = useStore(state => state.player.playPauseState);
+  const mostPopulatedColor = useStore(state => state.palette.mostPopulatedColor);
 
   const canvasRef = useRef(null);
   

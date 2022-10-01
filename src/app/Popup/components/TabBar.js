@@ -2,15 +2,17 @@
 // import React from 'react';
 import { jsx, css } from '@emotion/react';
 import TabButton from './TabButton';
-import { useSelector, useDispatch } from 'react-redux';
-import { changeActivePopupTab } from '../../popup/popupSlice';
+// // import { changeActivePopupTab } from '../../popup/popupSlice';
+import { useStore } from '../../store';
 
 function TabBar() {
-  const dispatch = useDispatch();
-  const activePopupTab = useSelector(state => state.popup.activePopupTab);
+  // 
+  // const activePopupTab = useSelector(state => state.popup.activePopupTab);
+  const activePopupTab = useStore(state => state.popup.activePopupTab);
+  const changeActivePopupTab = useStore(state => state.popup.changeActivePopupTab);
   
   function handleClick(id) {
-    dispatch(changeActivePopupTab(id))
+    changeActivePopupTab(id)
     chrome.storage.local.set({activePopupTab: id})
   }
 

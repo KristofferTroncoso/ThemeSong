@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx, css } from '@emotion/react';
-import { useSelector, useDispatch } from 'react-redux';
-
-import { changeThemes } from '../../Theme/themesSlice';
+import { useStore } from '../../store';
 
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
@@ -12,12 +10,11 @@ import { CgDarkMode } from 'react-icons/cg';
 import PanelButton from './PanelButton';
 
 function DarkModePanel() {
-  const dispatch = useDispatch();
-
-  const themes = useSelector(state => state.themes.themes);
-  const activeTheme = useSelector(state => state.themes.activeTheme);
-  const activeThemeInfo = useSelector(state => state.themes.themes.find(theme => theme.themeId === activeTheme));
-  const activeThemeUserPrefs = useSelector(state => state.themes.themes.find(theme => theme.themeId === activeTheme).userPrefs);
+  const themes = useStore(state => state.theme.themes);
+  const activeTheme = useStore(state => state.theme.activeTheme);
+  const activeThemeInfo = useStore(state => state.theme.themes.find(theme => theme.themeId === activeTheme));
+  const activeThemeUserPrefs = useStore(state => state.theme.themes.find(theme => theme.themeId === activeTheme).userPrefs);
+  const changeThemes = useStore(state => state.theme.changeThemes);
 
   function handleDarkLightChange(value) {
     if (activeThemeUserPrefs.appearanceSetting !== value) {
@@ -28,7 +25,7 @@ function DarkModePanel() {
         : theme
       ));
       console.log(newThemesArr)
-      dispatch(changeThemes(newThemesArr));
+      changeThemes(newThemesArr);
       chrome.storage.local.set({themes: newThemesArr}, () => console.log('chrome.storage.local.set({themes}'));
     } else {
       // i cant just disable="true" the button in the element because the MUI Tooltip requires it to never be disabled

@@ -1,12 +1,12 @@
 /** @jsx jsx */
 // import React from 'react';
 import { jsx, css } from '@emotion/react';
-import { useSelector } from 'react-redux';
 import './SongInfoDisplay.css';
+import { useStore } from '../../store';
 
 function SongInfoDisplay() {
-  const songName = useSelector(state => state.song.songName);
-  const songSubtitle = useSelector(state => state.song.songSubtitle);
+  const songName = useStore(state => state.song.songName);
+  const songSubtitle = useStore(state => state.song.songSubtitle);
 
   return (
     <div

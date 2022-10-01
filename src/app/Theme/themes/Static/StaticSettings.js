@@ -3,15 +3,12 @@ import React from 'react';
 import { jsx, css } from '@emotion/react';
 import StaticDarkSettings from './Dark/StaticDarkSettings';
 import StaticLightSettings from './Light/StaticLightSettings';
-
-import { useSelector, useDispatch } from 'react-redux';
-import { changeThemes } from '../../themesSlice';
+import { useStore } from '../../../store';
 
 export function StaticSettings() {
-  const dispatch = useDispatch();
-
-  const themes = useSelector(state => state.themes.themes);
-  const staticUserPrefs = useSelector(state => state.themes.themes.find(theme => (theme.themeId === "themeId:7")).userPrefs);
+  const themes = useStore(state => state.theme.themes);
+  const staticUserPrefs = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:7")).userPrefs);
+  const changeThemes = useStore(state => state.theme.changeThemes);
 
   function handleDarkLightChange(e) {
     let newStaticUserPrefs = {...staticUserPrefs, [e.target.name]: e.target.value};
@@ -19,7 +16,7 @@ export function StaticSettings() {
     theme.themeId === "themeId:7"
     ? theme = {...theme, userPrefs: newStaticUserPrefs}
     : theme);
-    dispatch(changeThemes(newThemesArr));
+    changeThemes(newThemesArr);
     chrome.storage.local.set({themes: newThemesArr}, () => console.log('chrome.storage.local.set({themes}'));
   }
 

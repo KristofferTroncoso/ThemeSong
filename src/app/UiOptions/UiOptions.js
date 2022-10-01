@@ -1,6 +1,4 @@
 import React from 'react';
-// import { useSelector } from 'react-redux';
-// import create from 'zustand'
 
 import RemoveDislikeButton from './features/RemoveDislikeButton';
 import RemoveCastButton from './features/RemoveCastButton';
@@ -17,8 +15,6 @@ import AddSongChangeNotification from './features/AddSongChangeNotification';
 // }))
 
 function UiOptions() {
-  // const uiOptions = useSelector(state => state.uiOptions);
-
   return (
     <div id="ThemeSong-UiOptions">
       <RemoveDislikeButton />

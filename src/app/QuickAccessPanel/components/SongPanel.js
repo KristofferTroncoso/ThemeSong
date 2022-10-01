@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import { useSelector } from 'react-redux';
+import { useStore } from '../../store';
 
 import StyledPanelDiv from "./StyledPanelDiv";
 import PanelButton from './PanelButton';
@@ -12,8 +12,8 @@ import { SiGenius } from 'react-icons/si';
 
 
 function SongPanel() {
-  const songName = useSelector(state => state.song.songName);
-  const songArtist = useSelector(state => state.song.songArtist);
+  const songName = useStore(state => state.song.songName);
+  const songArtist = useStore(state => state.song.songArtist);
 
   function sanitize(songTitle) {
     //remove parens

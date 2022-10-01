@@ -1,7 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit';
 import logPalette from './logPalette';
 
-const initialState = {
+export const createPaletteSlice = (set) => ({
   palette: {
     Vibrant: {
         hex: "#7f7f7f",
@@ -80,25 +79,14 @@ const initialState = {
     b: 127,
     bodyTextColor: "#000",
     titleTextColor: "#000"
+  },
+  changePalette: (payload) => {
+    console.log('paletteSlice: changePalette');
+    logPalette(payload)
+    set(state => { state.palette.palette = payload })
+  },
+  changeMostPopulatedColor: (payload) => {
+    console.log('paletteSlice: changeMostPopulatedColor')
+    set(state => { state.palette.mostPopulatedColor = payload })
   }
-};
-
-export const palette = createSlice({
-  name: 'palette',
-  initialState,
-  reducers: {
-    changePalette: (state, action) => {
-      console.log('paletteSlice: changePalette');
-      state.palette = action.payload;
-      logPalette(action.payload)
-    },
-    changeMostPopulatedColor: (state, action) => {
-      console.log('paletteSlice: changeMostPopulatedColor')
-      state.mostPopulatedColor = action.payload;
-    }
-  }
-});
-
-export const { changePalette, changeMostPopulatedColor } = palette.actions;
-
-export default palette.reducer;
+})

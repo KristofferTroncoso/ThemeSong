@@ -2,7 +2,7 @@
 import React from 'react';
 import { jsx, css } from '@emotion/react';
 
-import { useSelector, useDispatch, useStore } from 'react-redux';
+import { useStore } from '../../store';
 
 import PanelButton from './PanelButton';
 import DataObjectIcon from '@mui/icons-material/DataObject';
@@ -11,10 +11,7 @@ import SnoozeIcon from '@mui/icons-material/Snooze';
 // import { toggleRemoveDislikeButton, changeRemoveDislikeButton } from '../../Test/testSlice';
 
 function UtilitiesPanel() {
-  const reduxStore = useSelector(state => state);
-  const themes = useSelector(state => state.themes);
-  const store = useStore();
-  const dispatch = useDispatch();
+  const store = useStore()
 
   function handleTimerClick() {
     setTimeout(() => {
@@ -26,18 +23,18 @@ function UtilitiesPanel() {
     <div css={{marginBottom: '10px'}}>
       <h3 css={css`padding: 2px 5px; color: var(--ts-secondary-text-color);`}>Tools</h3>
       <div css={css`display: flex; justify-content: start; align-items: center;`}>
-        <PanelButton onClick={e => console.log(reduxStore)} title="log store"><DataObjectIcon fontSize='large' /></PanelButton>
         <PanelButton onClick={handleTimerClick} title="Timer"><SnoozeIcon css={css`font-size: 28px;`} /></PanelButton>
         {/* <PanelButton 
           onClick={e => {
-            dispatch(store.reducers.miscSettings.toggleRemoveDislikeButton())
-            // dispatch(changeMiscSettings({removeDislikeButton: false}))
-            // dispatch(changeRemoveDislikeButton(false))
+            store.reducers.miscSettings.toggleRemoveDislikeButton()
+            // changeMiscSettings({removeDislikeButton: false})
+            // changeRemoveDislikeButton(false)
           }}
           title="test"
         >
           Test
         </PanelButton> */}
+        <button onClick={e => console.log(store)}>zStore</button>
       </div>
     </div>
   )

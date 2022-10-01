@@ -1,14 +1,11 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx, css } from '@emotion/react'
-
-import { useSelector, useDispatch } from 'react-redux';
-import { changeActiveTheme } from '../../Theme/themesSlice';
+import { useStore } from '../../store';
 
 function ThemeButton({theme}) {
-  const dispatch = useDispatch();
-
-  const activeTheme = useSelector(state => state.themes.activeTheme);
+  const activeTheme = useStore(state => state.theme.activeTheme);
+  const changeActiveTheme = useStore(state => state.theme.changeActiveTheme);
 
   return (
     <button 
@@ -27,7 +24,7 @@ function ThemeButton({theme}) {
       `} 
       disabled={activeTheme === theme.themeId}
       onClick={e => {
-        dispatch(changeActiveTheme(theme.themeId))
+        changeActiveTheme(theme.themeId);
         chrome.storage.local.set({activeTheme: theme.themeId}, () => console.log('chrome.storage.local.set({activeTheme}'));
       }}
     >

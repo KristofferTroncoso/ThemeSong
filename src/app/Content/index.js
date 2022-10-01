@@ -1,14 +1,10 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { store } from '../store';
-import { Provider  } from 'react-redux';
 
 import ContentScript from './ContentScript';
-import { addCloudSyncStorageSyncer } from '../cloudStorageSyncer';
 
 console.log('Content Script loaded');
 
-addCloudSyncStorageSyncer();
 insertContentScriptContainer();
 
 function insertContentScriptContainer() {
@@ -25,5 +21,5 @@ function insertContentScriptContainer() {
   body.append(themesongContainer);
 
   const root = createRoot(themesongContainer)
-  root.render(<Provider store={store}><ContentScript /></Provider>)
+  root.render(<ContentScript />)
 }

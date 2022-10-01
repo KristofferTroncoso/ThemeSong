@@ -1,20 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
-
-const initialState = {
+export const createPlayerSlice = (set) => ({
   playPauseState: "Play",
-};
-
-export const player = createSlice({
-  name: 'player',
-  initialState,
-  reducers: {
-    changePlayPauseState: (state, action) => {
-      console.log('playerSlice: changePlayPauseState')
-      state.playPauseState = action.payload;
-    }, 
-  }
-});
-
-export const { changePlayPauseState } = player.actions;
-
-export default player.reducer;
+  changePlayPauseState: (payload) => {
+    console.log('playerSlice: changePlayPauseState');
+    set(state => { state.player.playPauseState = payload; })
+  }, 
+})

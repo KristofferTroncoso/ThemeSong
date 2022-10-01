@@ -1,20 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
-
-const initialState = {
-  activePopupTab: 1
-};
-
-export const popup = createSlice({
-  name: 'popup',
-  initialState,
-  reducers: {
-    changeActivePopupTab: (state, action) => {
-      console.log('popup: changeActivePopupTab')
-      state.activePopupTab = action.payload;
-    }
+export const createPopupSlice = (set) => ({
+  activePopupTab: 1,
+  changeActivePopupTab: (payload) => {
+    console.log('popup: changeActivePopupTab');
+    set(state => { state.popup.activePopupTab = payload });
   }
-});
-
-export const { changeActivePopupTab } = popup.actions;
-
-export default popup.reducer;
+})

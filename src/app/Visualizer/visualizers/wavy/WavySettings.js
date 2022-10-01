@@ -3,8 +3,7 @@
 
 import { jsx } from '@emotion/react';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { changeVisualizers } from '../../visualizersSlice';
+import { useStore } from '../../../store';
 
 import { styled } from '@mui/material/styles';
 import Slider from '@mui/material/Slider';
@@ -27,10 +26,12 @@ const StyledSlider = styled(Slider)`
 `;
 
 function WavySettings() {
-  const dispatch = useDispatch();
 
-  const visualizers = useSelector(state => state.visualizers.visualizers);
-  const wavyStorageObject = useSelector(state => state.visualizers.visualizers.find(visualizer => (visualizer.visualizerId === "visualizerId:0")));
+  const visualizers = useStore(state => state.visualizer.visualizers
+);
+  const wavyStorageObject = useStore(state => state.visualizer.visualizers
+.find(visualizer => (visualizer.visualizerId === "visualizerId:0")));
+  const changeVisualizers = useStore(state => state.visualizer.changeVisualizers);
 
   const handleWavySettingsChange = (e, id) => {
     let copy = {...wavyStorageObject};
@@ -40,7 +41,7 @@ function WavySettings() {
       ? copy
       : visualizer
     ));
-    dispatch(changeVisualizers(newVisualizersArr));
+    changeVisualizers(newVisualizersArr);
     chrome.storage.local.set({visualizers: newVisualizersArr}, () => console.log('chrome.storage.local.set({visualizers}'))
   }
 

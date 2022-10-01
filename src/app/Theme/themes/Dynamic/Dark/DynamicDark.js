@@ -1,11 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+
+import { useStore } from '../../../../store';
 import { dynamicdark_css }from './dynamicdarkCSS';
 import { menubar, root } from '../../selectors';
 
 function DynamicDark() {
-  const mostPopulatedColorHSL = useSelector(state => state.palette.mostPopulatedColor).hsl;
-  const dynamicDarkPrefs = useSelector(state => state.themes.themes.find(theme => (theme.themeId === "themeId:6")).userPrefs.darkPrefs);
+  const mostPopulatedColorHSL = useStore(state => state.palette.mostPopulatedColor).hsl;
+  const dynamicDarkPrefs = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:6")).userPrefs.darkPrefs);
 
   function processDynamicDarkColors() {
     console.log('Dynamic Theme: processing colors')

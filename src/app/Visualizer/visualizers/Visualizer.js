@@ -1,11 +1,10 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx, css } from '@emotion/react';
-import { useSelector, useDispatch } from 'react-redux';
 import Wavy from './wavy/Wavy';
 import Bars from './bars/Bars';
 import Circles from './circles/Circles';
-import { toggleIsVisualizerOn } from '../visualizersSlice';
+import { useStore } from '../../store';
 
 let source;
 let audioCtx;
@@ -14,11 +13,10 @@ let bufferLength;
 let dataArray;
 
 function Visualizer() {
-  const isVisualizerOn = useSelector(state => state.visualizers.isVisualizerOn);
-  const activeVisualizer = useSelector(state => state.visualizers.activeVisualizer);
-  const songName = useSelector(state => state.song.songName);
-
-  const dispatch = useDispatch();
+  const isVisualizerOn = useStore(state => state.visualizer.isVisualizerOn);
+  const activeVisualizer = useStore(state => state.visualizer.activeVisualizer);
+  const songName = useStore(state => state.song.songName);
+  const toggleIsVisualizerOn = useStore(state => state.visualizer.toggleIsVisualizerOn);
 
   React.useEffect(() => {
     console.log('Visualizer: useEffect 2');
@@ -36,7 +34,7 @@ Page reload required to reconnect visualizer. Reload now?`
         )) {
           window.location.reload();
         }
-        dispatch(toggleIsVisualizerOn())
+        toggleIsVisualizerOn()
       }
     }
   }, [isVisualizerOn])

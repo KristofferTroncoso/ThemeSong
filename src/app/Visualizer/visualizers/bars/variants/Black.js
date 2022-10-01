@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React, { useRef }  from 'react';
 import { jsx, css } from '@emotion/react';
-import { useSelector } from 'react-redux';
+import { useStore } from '../../../../store';
 
 let playState;
 let ctx;
@@ -12,8 +12,9 @@ let borderWidth = 4;
 let gap = 8;
 
 function Black({analyser, dataArray, bufferLength}) {
-  const barsPrefs = useSelector(state => state.visualizers.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")));
-  const playPauseState = useSelector(state => state.player.playPauseState);
+  const barsPrefs = useStore(state => state.visualizer.visualizers
+.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")));
+  const playPauseState = useStore(state => state.player.playPauseState);
 
   const canvasRef = useRef(null);
   

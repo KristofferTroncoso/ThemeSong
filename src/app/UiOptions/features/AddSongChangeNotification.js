@@ -1,8 +1,8 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useStore } from '../../store';
 
 function AddSongChangeNotification() {
-  const song = useSelector(state => state.song);
+  const song = useStore(state => state.song);
 
   React.useEffect(() => {
     chrome.runtime.sendMessage({notify: song})

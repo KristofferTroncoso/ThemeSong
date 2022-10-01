@@ -4,10 +4,8 @@ import { jsx, css } from '@emotion/react';
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
 import Settings from '@mui/icons-material/Settings';
-// import { useDispatch } from 'react-redux';
 
 function SettingsPopover() {
-  // const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {

@@ -6,17 +6,18 @@ import WavySettings from '../../Visualizer/visualizers/wavy/WavySettings';
 import BarsSettings from '../../Visualizer/visualizers/bars/BarsSettings';
 import CirclesSettings from '../../Visualizer/visualizers/circles/CirclesSettings';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { changeActiveVisualizer, changeVisualizers } from '../../Visualizer/visualizersSlice';
+import { useStore } from '../../store';
 
 function VisualizersPage() {
-  const dispatch = useDispatch();
   
-  const activeVisualizer = useSelector(state => state.visualizers.activeVisualizer);
-  const visualizers = useSelector(state => state.visualizers.visualizers)
+  const activeVisualizer = useStore(state => state.visualizer.activeVisualizer);
+  const visualizers = useStore(state => state.visualizer.visualizers)
+  const changeActiveVisualizer = useStore(state => state.visualizer.changeActiveVisualizer);
+  const changeVisualizers = useStore(state => state.visualizer.changeVisualizers);
+
 
   const handleVisualizerClick = (e, id) => {
-    dispatch(changeActiveVisualizer(id));
+    changeActiveVisualizer(id)
     chrome.storage.local.set({activeVisualizer: id}, () => console.log('chrome.storage.local.set({activeVisualizer}'))
   }
 
@@ -30,7 +31,7 @@ function VisualizersPage() {
         return visualizer;
       }
     });
-    dispatch(changeVisualizers(newCopy));
+    changeVisualizers(newCopy);
     chrome.storage.local.set({visualizers: newCopy}, () => console.log('chrome.storage.local.set({visualizers}'))
   }
 

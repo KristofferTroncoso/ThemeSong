@@ -1,12 +1,14 @@
 import React from 'react';
-import { store } from '../store';
-import { changePalette, changeMostPopulatedColor } from './paletteSlice';
+import { useStore } from '../store';
 import * as Vibrant from "node-vibrant";
 import { playerBarSongImgNode } from '../Theme/themes/selectors';
 
 let imgChangeObserver;
 
 function Palette() {
+  const changePalette = useStore(state => state.palette.changePalette);
+  const changeMostPopulatedColor = useStore(state => state.palette.changeMostPopulatedColor);
+
   React.useEffect(() => {
     initialPalette();
     function initialPalette() {
@@ -52,8 +54,8 @@ function Palette() {
           }
         };
         let mostPopulatedColor = getMostPopulatedColor(serializedPalette);
-        store.dispatch(changePalette(serializedPalette));
-        store.dispatch(changeMostPopulatedColor(mostPopulatedColor));
+        changePalette(serializedPalette);
+        changeMostPopulatedColor(mostPopulatedColor);
       })
       .catch((err) => {
         console.log('vibrant error');
@@ -116,8 +118,8 @@ function Palette() {
                   }
                 };
                 let mostPopulatedColor = getMostPopulatedColor(serializedPalette);
-                store.dispatch(changePalette(serializedPalette));
-                store.dispatch(changeMostPopulatedColor(mostPopulatedColor));
+                changePalette(serializedPalette);
+                changeMostPopulatedColor(mostPopulatedColor);
               })
               .catch((err) => {
                 console.log('vibrant error');

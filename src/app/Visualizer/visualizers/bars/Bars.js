@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import { useSelector } from 'react-redux';
+import { useStore } from '../../../store';
 
 import White from './variants/White';
 import Black from './variants/Black';
@@ -10,8 +10,8 @@ import Palette from './variants/Palette';
 import DancingPalette from './variants/DancingPalette';
 
 function Bars({analyser, dataArray, bufferLength}) {
-  const barsActiveVariant = useSelector(state => (
-    state.visualizers.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")).activeVariant
+  const barsActiveVariant = useStore(state => (
+    state.visualizer.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")).activeVariant
   ));
 
   function returnActiveVariant() {

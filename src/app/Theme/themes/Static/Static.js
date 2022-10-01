@@ -1,13 +1,13 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import StaticDark from './Dark/StaticDark';
 import StaticLight from './Light/StaticLight';
 import StaticSystem from './System/StaticSystem';
 import { menubar, root } from '../selectors';
+import { useStore } from '../../../store';
 
 function Static() {
-  const appearanceSetting = useSelector(state => (
-    state.themes.themes.find(theme => (theme.themeId === "themeId:7")).userPrefs.appearanceSetting
+  const appearanceSetting = useStore(state => (
+    state.theme.themes.find(theme => (theme.themeId === "themeId:7")).userPrefs.appearanceSetting
   ));
 
   function processColors(prefs) {

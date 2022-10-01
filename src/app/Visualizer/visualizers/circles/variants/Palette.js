@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import React, { useRef }  from 'react';
 import { jsx, css } from '@emotion/react';
-import { useSelector } from 'react-redux';
 
+import { useStore } from '../../../../store';
 
 let a = 160;
 let b = 350;
@@ -61,9 +61,10 @@ let isPlaying = false;
 let borderWidth = 4;
 
 function Palette({analyser, dataArray, bufferLength}) {
-  const circlesPrefs = useSelector(state => state.visualizers.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")));
-  const playPauseState = useSelector(state => state.player.playPauseState);
-  const palette = useSelector(state => state.palette.palette);
+  const circlesPrefs = useStore(state => state.visualizer.visualizers
+.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")));
+  const playPauseState = useStore(state => state.player.playPauseState);
+  const palette = useStore(state => state.palette.palette);
   let ytmusicplayer = document.querySelector("ytmusic-player")
 
   const canvasRef = useRef(null);

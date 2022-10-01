@@ -1,18 +1,20 @@
-import { configureStore } from '@reduxjs/toolkit';
-import paletteReducer from './Palette/paletteSlice';
-import songReducer from './Song/songSlice';
-import themesReducer from './Theme/themesSlice';
-import visualizersReducer from './Visualizer/visualizersSlice';
-import popupReducer from './popup/popupSlice';
-import playerReducer from './Player/playerSlice';
+import create from 'zustand';
+import { immer } from 'zustand/middleware/immer';
 
-export const store = configureStore({
-  reducer: {
-    palette: paletteReducer,
-    song: songReducer,
-    themes: themesReducer,
-    visualizers: visualizersReducer,
-    popup: popupReducer,
-    player: playerReducer,
-  },
-});
+import { createUiOptionsSlice } from './UiOptions/uiOptionsSlice';
+import { createPopupSlice } from './popup/popupSlice';
+import { createSongSlice } from './Song/songSlice';
+import { createPlayerSlice } from './Player/playerSlice';
+import { createPaletteSlice } from './Palette/paletteSlice';
+import { createVisualizerSlice } from './Visualizer/visualizerSlice';
+import { createThemeSlice } from './Theme/themeSlice';
+
+export const useStore = create(immer((...a) => ({
+  uiOptions: {...createUiOptionsSlice(...a)},
+  popup: {...createPopupSlice(...a)},
+  song: {...createSongSlice(...a)},
+  player: {...createPlayerSlice(...a)},
+  palette: {...createPaletteSlice(...a)},
+  visualizer: {...createVisualizerSlice(...a)},
+  theme: {...createThemeSlice(...a)}
+})))
