@@ -24,7 +24,7 @@ function Panel() {
       <button
         css={css`
           border: 0;
-          padding: 6px 6px 3px 2px;
+          padding: 10px 10px 8px 3px;
           background-color: transparent;
           color: var(--ts-tertiary-text-color);
           :hover {
