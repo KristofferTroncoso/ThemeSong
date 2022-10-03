@@ -6,14 +6,6 @@ import RemoveUpgradeButton from './features/RemoveUpgradeButton';
 import AddConfirmUnlike from './features/AddConfirmUnlike';
 import AddSongChangeNotification from './features/AddSongChangeNotification';
 
-// const useOptionsStore = create((set) => ({
-//   removeDislikeButton: true,
-//   removeCastButton: true,
-//   removeUpgradeButton: true,
-//   confirmOnUnlike: true,
-//   toggleRemoveDislikeButton: () => set((state) => ({ removeDislikeButton: !state.removeDislikeButton }))
-// }))
-
 function UiOptions() {
   return (
     <div id="ThemeSong-UiOptions">
