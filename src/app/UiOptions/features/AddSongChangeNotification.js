@@ -5,7 +5,9 @@ function AddSongChangeNotification() {
   const song = useStore(state => state.song);
 
   React.useEffect(() => {
-    chrome.runtime.sendMessage({notify: song})
+    if (song.songName !== '') {
+      chrome.runtime.sendMessage({notify: song})
+    }
   }, [song])
 
   return <div id="AddSongChangeNotification"></div>
