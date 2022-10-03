@@ -461,6 +461,7 @@ iron-input.tp-yt-paper-input > input.tp-yt-paper-input {
 /* This can be specific since we would like to individually adjust these portions. */
 body {
   background-color: var(--ts-mainbg-color);
+  transition: var(--ts-bgcolor-transition) !important;
 }
 
 #nav-bar-background {
