@@ -4,7 +4,6 @@
   "short_name": "ThemeSong for YouTube Music™",
   "version": "0.4.0",
   "version_name": "0.4.0-c",
-  "default_locale": "en",
   "description": "Dynamic themes and visualizers for YouTube Music™.",
   "minimum_chrome_version": "100",
   "background": { "service_worker": "background.bundle.js" },
