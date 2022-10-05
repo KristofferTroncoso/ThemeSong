@@ -23,10 +23,11 @@ function SongPanel() {
   }
 
   function handleYtSearch(e) {
-    let currentUrl = window.location.href;
-    let newUrl = currentUrl.replace('music', 'www');
-    let noListUrl = newUrl.substring(0, newUrl.indexOf('&'))
-    window.open(noListUrl, '_blank').focus();
+    // let songUrl = document.querySelector(".meta-url").content; // this doesnt change on song change...
+    let songUrl = document.querySelector(".ytp-title-link").href;
+    let youtubeUrl = songUrl.replace('music', 'www');
+    // let noListUrl = youtubeUrl.substring(0, youtubeUrl.indexOf('&'))
+    window.open(youtubeUrl, '_blank').focus();
   }
 
   function handleOpenInGoogle(e) {
