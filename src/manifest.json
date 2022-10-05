@@ -1,9 +1,12 @@
 {
   "manifest_version": 3,
   "name": "ThemeSong for YouTube Music™ (Dynamic Themes)",
-  "version": "0.3.2",
-  "version_name": "0.3.2-c",
+  "short_name": "ThemeSong for YouTube Music™",
+  "version": "0.4.0",
+  "version_name": "0.4.0-c",
+  "default_locale": "en",
   "description": "Dynamic themes and visualizers for YouTube Music™.",
+  "minimum_chrome_version": "100",
   "background": { "service_worker": "background.bundle.js" },
   "permissions": ["storage", "tabs", "scripting", "notifications"],
   "action": {
