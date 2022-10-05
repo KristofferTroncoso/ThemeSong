@@ -24,17 +24,7 @@ function UtilitiesPanel() {
       <h3 css={css`padding: 2px 5px; color: var(--ts-secondary-text-color);`}>Tools</h3>
       <div css={css`display: flex; justify-content: start; align-items: center;`}>
         <PanelButton onClick={handleTimerClick} title="Timer"><SnoozeIcon css={css`font-size: 28px;`} /></PanelButton>
-        {/* <PanelButton 
-          onClick={e => {
-            store.reducers.miscSettings.toggleRemoveDislikeButton()
-            // changeMiscSettings({removeDislikeButton: false})
-            // changeRemoveDislikeButton(false)
-          }}
-          title="test"
-        >
-          Test
-        </PanelButton> */}
-        <button onClick={e => console.log(store)}>zStore</button>
+        <PanelButton onClick={e => console.log(store)} title="Timer"><DataObjectIcon css={css`font-size: 28px;`} /></PanelButton>
       </div>
     </div>
   )

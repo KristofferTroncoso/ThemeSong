@@ -30,7 +30,9 @@ function PanelPage() {
         <SongPanel />
         <AppearancePanel />
         <VisualizerPanel />
-        <UtilitiesPanel />
+        {(process.env.NODE_ENV === 'development') && (
+          <UtilitiesPanel />
+        )}
       </div>
       <div css={css`text-align: right;`}>
         <Tooltip 
