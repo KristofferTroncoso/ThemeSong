@@ -22,11 +22,6 @@ function PlayPauseChangeObserver() {
       playPauseState = mutationRecord[0].oldValue;
       console.log(playPauseState);
       changePlayPauseState(playPauseState);
-      try {
-        chrome.runtime.sendMessage('r u still there?');
-      } catch {
-        playPauseChangeObserver.disconnect();
-      }
     }
 
     return function() {
