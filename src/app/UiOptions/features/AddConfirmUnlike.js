@@ -22,7 +22,7 @@ function AddConfirmUnlike() {
     }
 
     return function() {
-      newDiv.removeEventListener(confirmBeforeUnlike);
+      newDiv.removeEventListener('click', confirmBeforeUnlike);
     }
   }, []);
 
