@@ -5,8 +5,12 @@ function AddSongChangeNotification() {
   const song = useStore(state => state.song);
 
   React.useEffect(() => {
-    if (song.songName !== '') {
-      chrome.runtime.sendMessage({notify: song})
+    try {
+      if (song.songName !== '') {
+        chrome.runtime.sendMessage({notify: song})
+      }
+    } catch {
+      console.log('AddSongChangeNotification: context invalidated')
     }
   }, [song])
 
