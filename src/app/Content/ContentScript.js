@@ -5,11 +5,11 @@ import Themes from '../Theme/Themes';
 import SongObserver from '../Song/SongObserver';
 import PanelContainer from '../QuickAccessPanel';
 import PlayPauseChangeObserver from '../Player/PlayPauseChangeObserver';
-import PlayerUiStateObserver from '../Player/PlayerUiStateObserver';
+// import PlayerUiStateObserver from '../Player/PlayerUiStateObserver';
 import SongInfoDisplayFeature from '../Song/SongInfoDisplay/SongInfoDisplayFeature';
 import VisualizerFeature from '../Visualizer/visualizers/VisualizerFeature';
 import Palette from '../Palette/Palette';
-import UiOptions from '../UiOptions/UiOptions';
+// import UiOptions from '../UiOptions/UiOptions';
 
 function ContentScript() {
 
@@ -20,11 +20,11 @@ function ContentScript() {
       <SongObserver />
       <PanelContainer />
       <PlayPauseChangeObserver />
-      <PlayerUiStateObserver />
+      {/* <PlayerUiStateObserver /> */}
       <SongInfoDisplayFeature />
       <VisualizerFeature />
       <Palette />
-      <UiOptions />
+      {/* <UiOptions /> */}
     </div>
   )
 }
