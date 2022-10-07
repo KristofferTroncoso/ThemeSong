@@ -13,7 +13,6 @@ function SongInfoDisplay() {
       id="songDivNode"
       css={css`
         padding: 80px 0 80px 80px;
-        height: 600px;
       `}
     >
       <h1 
