@@ -29,7 +29,7 @@ export const createThemeSlice = (set) => ({
           saturationSetting: 0.9,
           lightnessSettingNavBar: 75,
           lightnessSettingPlayPage: 70,
-          lightnessSettingBody: 96,
+          lightnessSettingBody: 90,
           lightnessSettingPlayerBar: 75
         }
       }
