@@ -9,7 +9,7 @@ function TopBar() {
     <div 
       className="TopBar" 
       css={{
-        backgroundColor: '#2e2e2e', 
+        backgroundColor: '#2a2a2a', 
         width: 'calc(100% - 20px)', 
         height: '26px',
         display: 'flex',
@@ -18,7 +18,7 @@ function TopBar() {
         padding: '4px 10px 0'
       }}
     >
-      <h1 css={{fontSize: '14px'}}>
+      <h1 css={{fontSize: '12px', fontWeight: '400'}}>
         <a 
           href="https://chrome.google.com/webstore/detail/bgfiegdbajagebogifobkhambpljbfmk" 
           target="_blank" 
@@ -31,7 +31,7 @@ function TopBar() {
           ThemeSong - for YouTube Music™
         </a>
       </h1>
-      <p>v{extensionVersionName}</p>
+      <p css={{fontSize: '12px'}}>v{extensionVersionName}</p>
     </div>
   )
 }

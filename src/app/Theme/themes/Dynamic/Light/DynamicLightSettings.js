@@ -61,7 +61,7 @@ function DynamicLightSettings() {
     <div 
       className="DynamicThemeLight" 
       css={css`
-        background: #444; 
+        background: #333333; 
         padding: 5px; 
         border-radius: 2px;
         color: #ddd;

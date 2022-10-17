@@ -9,7 +9,7 @@ function BottomBar() {
     <div 
       className="BottomBar" 
       css={css`
-        background-color: #4d4d4d;
+        background-color: #333333;
         height: 28px;
         display: flex;
         justify-content: space-between;
@@ -26,8 +26,8 @@ function BottomBar() {
           align-content: center;
         `}
       >
-        <h3 css={css`margin-right: 5px; font-size: 14px;`}>Have a nice day</h3>
-        <HeadphonesIcon css={css`font-size: 16px;`}  />
+        <h3 css={css`margin-right: 5px; font-size: 13px; font-weight: 400;`}>Have a nice day</h3>
+        <HeadphonesIcon css={css`font-size: 14px;`}  />
       </div>
       <div 
         css={css`

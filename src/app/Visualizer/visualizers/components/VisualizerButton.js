@@ -5,7 +5,7 @@ function VisualizerButton({id, children, handleClick, isActive, name, ...props})
   return (
     <button 
       css={css`
-        border-radius: 20px;
+        border-radius: 24px;
         border: 4px solid ${isActive ? '#135eeb' : '#454545'};
         width: 100%;
         min-height: 80px;

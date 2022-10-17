@@ -10,7 +10,7 @@ function ThemeButton({theme}) {
   return (
     <button 
       css={css`
-        border-radius: 16px;
+        border-radius: 24px;
         border: 4px solid ${activeTheme === theme.themeId ? '#135eeb' : '#454545'};
         width: 100%;
         min-height: 80px;

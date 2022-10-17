@@ -9,12 +9,12 @@ function TabButton({isActive, children, ...props}) {
         border: 0;
         width: 100px;
         height: 30px;
-        background: ${isActive ? 'rgb(40, 40, 40)' : 'rgb(20, 20, 20)'};
+        background: ${isActive ? 'rgb(30,30,30)' : 'rgb(20, 20, 20)'};
         color: ${isActive ? '#fff' : '#aaa'};;
         padding: 2px;
         margin: 0 5px;
         :hover {
-          background: ${isActive ? 'rgb(40, 40, 40)' : '#082a69'};
+          background: ${isActive ? 'rgb(30,30,30)' : '#082a69'};
           color: #fff;
         }
       `}

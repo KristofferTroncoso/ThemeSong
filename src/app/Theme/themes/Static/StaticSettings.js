@@ -46,10 +46,10 @@ export function StaticSettings() {
           value={staticUserPrefs.appearanceSetting} 
           onChange={handleDarkLightChange} 
             css={css`
-            background-color: #555;
+            background-color: #333;
             color: white;
             border: 1px solid #888;
-            border-radius: 2px;
+            border-radius: 4px;
             outline: 0;
           `}
         >

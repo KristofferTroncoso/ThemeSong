@@ -5,15 +5,16 @@ function VariantButton({id, children, handleClick, isActive, name, ...props}) {
   return (
     <button 
       css={css`
-        border-radius: 4px;
-        border: 2px solid ${isActive ? '#135eeb' : '#454545'};
+        font-size: 12px;
+        border-radius: 18px;
+        border: 2px solid ${isActive ? '#fff' : '#454545'};
         width: 100%;
-        min-height: 30px;
-        height: 30px;
-        background: #111;
-        color: white;
+        min-height: 28px;
+        height: 28px;
+        background: ${isActive ? '#fff' : '#202020'};
+        color: ${isActive ? '#000' : '#fff'};
         :hover {
-          background: ${isActive ? '#111' : '#082a69'};
+          background: ${isActive ? '#fff' : '#333'};
         }
       `} 
       disabled={isActive}
