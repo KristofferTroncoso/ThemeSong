@@ -69,7 +69,7 @@ export const createPaletteSlice = (set) => ({
         titleTextColor: "#000"
     },
   },
-  mostPopulatedColor: {
+  dominant: {
     hex: "#7f7f7f",
     rgb: [127.5, 127.5, 127.5],
     hsl: [0, 0, 0.5],
@@ -85,8 +85,8 @@ export const createPaletteSlice = (set) => ({
     logPalette(payload)
     set(state => { state.palette.palette = payload })
   },
-  changeMostPopulatedColor: (payload) => {
-    console.log('paletteSlice: changeMostPopulatedColor')
-    set(state => { state.palette.mostPopulatedColor = payload })
+  changeDominantColor: (payload) => {
+    console.log('paletteSlice: changeDominantColor')
+    set(state => { state.palette.dominant = payload })
   }
 })

@@ -149,7 +149,7 @@ function Accent({analyser, dataArray, bufferLength}) {
   const circlesPrefs = useStore(state => state.visualizer.visualizers
 .find(visualizer => (visualizer.visualizerId  === "visualizerId:2")));
   const playPauseState = useStore(state => state.player.playPauseState);
-  const mostPopulatedColor = useStore(state => state.palette.mostPopulatedColor);
+  const dominant = useStore(state => state.palette.dominant);
   let ytmusicplayer = document.querySelector("ytmusic-player")
 
   const canvasRef = useRef(null);
@@ -213,7 +213,7 @@ function Accent({analyser, dataArray, bufferLength}) {
   
     radius = ((Math.max(dataArray[freq] - minByte, 0) / growRate ) + minRadius) * (shorterCanvasSide/5);
   
-    color = mostPopulatedColor.hex;
+    color = dominant.hex;
     return {x, y, dirX, dirY, radius, speedX, speedY, freq, minByte, minRadius, color};
   }
 
@@ -229,8 +229,8 @@ function Accent({analyser, dataArray, bufferLength}) {
       ctx.beginPath();
       ctx.lineWidth = circle.lineWidth;
       ctx.fillStyle = `hsla(
-        ${(mostPopulatedColor.hsl[0] * 360).toFixed()}, 
-        ${mostPopulatedColor.hsl[1] * 100}%, 
+        ${(dominant.hsl[0] * 360).toFixed()}, 
+        ${dominant.hsl[1] * 100}%, 
         ${circle.radius / 2}%, 
         0.95
       )`;

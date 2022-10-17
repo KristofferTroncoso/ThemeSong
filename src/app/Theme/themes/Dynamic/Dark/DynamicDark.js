@@ -5,7 +5,7 @@ import { dynamicdark_css }from './dynamicdarkCSS';
 import { menubar, root } from '../../selectors';
 
 function DynamicDark() {
-  const mostPopulatedColorHSL = useStore(state => state.palette.mostPopulatedColor).hsl;
+  const dominantColorHSL = useStore(state => state.palette.dominant).hsl;
   const dynamicDarkPrefs = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:6")).userPrefs.darkPrefs);
 
   function processDynamicDarkColors() {
@@ -13,9 +13,9 @@ function DynamicDark() {
 
     const {saturationSetting, lightnessSettingNavBar, lightnessSettingPlayPage, lightnessSettingBody, lightnessSettingPlayerBar} = dynamicDarkPrefs;
 
-    let hue = (mostPopulatedColorHSL[0] * 360).toFixed();
-    let saturation = (mostPopulatedColorHSL[1] * 100 * saturationSetting).toFixed();
-    let light = (mostPopulatedColorHSL[2] * 100).toFixed();
+    let hue = (dominantColorHSL[0] * 360).toFixed();
+    let saturation = (dominantColorHSL[1] * 100 * saturationSetting).toFixed();
+    let light = (dominantColorHSL[2] * 100).toFixed();
 
     function calcCurvedBrightness(brightness) {
       let hueNum = parseInt(hue, 10);
@@ -56,7 +56,7 @@ function DynamicDark() {
 
   React.useEffect(() => {
     processDynamicDarkColors();
-  }, [mostPopulatedColorHSL, dynamicDarkPrefs])
+  }, [dominantColorHSL, dynamicDarkPrefs])
   
   return (
     <style id="DynamicDark">

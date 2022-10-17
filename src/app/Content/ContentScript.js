@@ -10,6 +10,7 @@ import SongInfoDisplayFeature from '../Song/SongInfoDisplay/SongInfoDisplayFeatu
 import VisualizerFeature from '../Visualizer/visualizers/VisualizerFeature';
 import Palette from '../Palette/Palette';
 // import UiOptions from '../UiOptions/UiOptions';
+import Snippets from '../Snippets/Snippets';
 
 function ContentScript() {
 
@@ -25,6 +26,7 @@ function ContentScript() {
       <VisualizerFeature />
       <Palette />
       {/* <UiOptions /> */}
+      <Snippets />
     </div>
   )
 }

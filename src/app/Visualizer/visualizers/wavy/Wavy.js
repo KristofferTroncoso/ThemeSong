@@ -14,7 +14,7 @@ function Wavy({analyser, dataArray, bufferLength}) {
   const wavyPrefs = useStore(state => state.visualizer.visualizers
 .find(visualizer => (visualizer.visualizerId  === "visualizerId:0")));
   const playPauseState = useStore(state => state.player.playPauseState);
-  const mostPopulatedColor = useStore(state => state.palette.mostPopulatedColor);
+  const dominant = useStore(state => state.palette.dominant);
 
   const canvasRef = useRef(null);
   
@@ -37,7 +37,7 @@ function Wavy({analyser, dataArray, bufferLength}) {
       setUpWavy();
       drawOscilloscope();
     }
-  }, [playPauseState, mostPopulatedColor])
+  }, [playPauseState, dominant])
 
   React.useEffect(() => {
     setUpWavy();
@@ -48,8 +48,8 @@ function Wavy({analyser, dataArray, bufferLength}) {
     lineWidth = wavyPrefs.lineWidth;
     ctx.strokeStyle = '#fff';
     calculatedColor  = `hsl(
-      ${(mostPopulatedColor.hsl[0] * 360).toFixed()}, 
-      ${mostPopulatedColor.hsl[1] * 100 * 2}%, 
+      ${(dominant.hsl[0] * 360).toFixed()}, 
+      ${dominant.hsl[1] * 100 * 2}%, 
       70%
     )`;
   }

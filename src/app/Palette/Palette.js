@@ -6,8 +6,10 @@ import { playerBarSongImgNode } from '../Theme/themes/selectors';
 let imgChangeObserver;
 
 function Palette() {
+  const palette = useStore(state => state.palette.palette);
+  const dominant = useStore(state => state.palette.dominant);
   const changePalette = useStore(state => state.palette.changePalette);
-  const changeMostPopulatedColor = useStore(state => state.palette.changeMostPopulatedColor);
+  const changeDominantColor = useStore(state => state.palette.changeDominantColor);
 
   React.useEffect(() => {
     initialPalette();
@@ -53,9 +55,9 @@ function Palette() {
             population: Math.floor(palette.DarkMuted.population * 0.5)
           }
         };
-        let mostPopulatedColor = getMostPopulatedColor(serializedPalette);
+        let dominant = getDominantColor(serializedPalette);
         changePalette(serializedPalette);
-        changeMostPopulatedColor(mostPopulatedColor);
+        changeDominantColor(dominant);
       })
       .catch((err) => {
         console.log('vibrant error');
@@ -114,9 +116,9 @@ function Palette() {
                   population: Math.floor(palette.DarkMuted.population * 0.5)
                 }
               };
-              let mostPopulatedColor = getMostPopulatedColor(serializedPalette);
+              let dominant = getDominantColor(serializedPalette);
               changePalette(serializedPalette);
-              changeMostPopulatedColor(mostPopulatedColor);
+              changeDominantColor(dominant);
             })
             .catch((err) => {
               console.log('vibrant error');
@@ -140,7 +142,25 @@ function Palette() {
     }
   }, [])
 
-  return <div id="ThemeSong-Palette"></div>
+  return (
+    <style id="ThemeSong-Palette">
+      {`
+        :root {
+          --themesong-palette-lightvibrant-color: ${palette.LightVibrant.hex};
+          --themesong-palette-vibrant-color: ${palette.Vibrant.hex};
+          --themesong-palette-darkvibrant-color: ${palette.DarkVibrant.hex};
+          --themesong-palette-lightmuted-color: ${palette.LightMuted.hex};
+          --themesong-palette-muted-color: ${palette.Muted.hex};
+          --themesong-palette-darkmuted-color: ${palette.DarkMuted.hex};
+          
+          --themesong-palette-dominant-color: ${dominant.hex};
+          --themesong-palette-dominant-hue: ${(dominant.hsl[0] * 360).toFixed()};
+          --themesong-palette-dominant-saturation: ${(dominant.hsl[1] * 100).toFixed()}%;
+          --themesong-palette-dominant-light: ${(dominant.hsl[2] * 100).toFixed()}%;
+        }
+      `}
+    </style>
+  )
 };
 
 function getVibrantPalette() {
@@ -151,15 +171,15 @@ function getVibrantPalette() {
   .getPalette();
 }
 
-function getMostPopulatedColor(x) {
-	let mostPopulatedColor = {population: 0};
+function getDominantColor(x) {
+	let dominant = {population: 0};
 	
 	for (const [, value] of Object.entries(x)) {
-		if (value.population >= mostPopulatedColor.population) {
-			mostPopulatedColor = value;
+		if (value.population >= dominant.population) {
+			dominant = value;
 		}
 	}
-	return mostPopulatedColor;
+	return dominant;
 }
 
 export default Palette;

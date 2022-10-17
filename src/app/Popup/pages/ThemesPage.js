@@ -7,6 +7,7 @@ import { useStore } from '../../store';
 import OffSettings  from '../../Theme/themes/Off/OffSettings';
 import DynamicSettings from '../../Theme/themes/Dynamic/DynamicSettings'; 
 import StaticSettings from '../../Theme/themes/Static/StaticSettings';
+import CustomSettings from '../../Theme/themes/Custom/CustomSettings';
 
 import ThemeButton from '../components/ThemeButton';
 
@@ -24,6 +25,8 @@ function ThemesPage() {
         return <DynamicSettings />
       case "themeId:7":
         return <StaticSettings />
+      case "themeId:8":
+        return <CustomSettings />
       default:
         break;
     }

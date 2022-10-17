@@ -4,7 +4,7 @@ import { dynamiclight_css } from './dynamiclightCSS';
 import { menubar, root } from '../../selectors';
 
 function DynamicLight() {
-  const mostPopulatedColorHSL = useStore(state => state.palette.mostPopulatedColor).hsl;
+  const dominantColorHSL = useStore(state => state.palette.dominant).hsl;
   const dynamicLightPrefs = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:6")).userPrefs.lightPrefs);
 
   function processDynamicLightColors() {
@@ -12,9 +12,9 @@ function DynamicLight() {
 
     const {saturationSetting, lightnessSettingNavBar, lightnessSettingPlayPage, lightnessSettingBody, lightnessSettingPlayerBar} = dynamicLightPrefs;
 
-    let hue = (mostPopulatedColorHSL[0] * 360).toFixed();
-    let saturation = (mostPopulatedColorHSL[1] * 100 * saturationSetting).toFixed();
-    let light = (mostPopulatedColorHSL[2] * 100).toFixed();
+    let hue = (dominantColorHSL[0] * 360).toFixed();
+    let saturation = (dominantColorHSL[1] * 100 * saturationSetting).toFixed();
+    let light = (dominantColorHSL[2] * 100).toFixed();
 
     function calcCurvedBrightness(brightness) {
       let hueNum = parseInt(hue, 10);
@@ -65,7 +65,7 @@ function DynamicLight() {
 
   React.useEffect(() => {
     processDynamicLightColors();
-  }, [mostPopulatedColorHSL, dynamicLightPrefs])
+  }, [dominantColorHSL, dynamicLightPrefs])
   
   return <style id="DynamicLight">{dynamiclight_css}</style>
 }

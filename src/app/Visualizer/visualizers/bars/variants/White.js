@@ -16,7 +16,7 @@ function White({analyser, dataArray, bufferLength}) {
 .find(visualizer => (visualizer.visualizerId  === "visualizerId:1")));
   const playPauseState = useStore(state => state.player.playPauseState);
   // const palette = useStore(state => state.palette.palette);
-  // const mostPopulatedColor = useStore(state => state.palette.mostPopulatedColor);
+  // const dominant = useStore(state => state.palette.dominant);
 
   const canvasRef = useRef(null);
   

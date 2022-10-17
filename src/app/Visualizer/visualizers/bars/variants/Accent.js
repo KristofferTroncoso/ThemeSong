@@ -16,7 +16,7 @@ function Accent({analyser, dataArray, bufferLength}) {
 .find(visualizer => (visualizer.visualizerId  === "visualizerId:1")));
   const playPauseState = useStore(state => state.player.playPauseState);
   // const palette = useStore(state => state.palette.palette);
-  const mostPopulatedColor = useStore(state => state.palette.mostPopulatedColor);
+  const dominant = useStore(state => state.palette.dominant);
 
   const canvasRef = useRef(null);
   
@@ -39,7 +39,7 @@ function Accent({analyser, dataArray, bufferLength}) {
       setUpBars();
       accent();
     }
-  }, [playPauseState, mostPopulatedColor])
+  }, [playPauseState, dominant])
 
   React.useEffect(() => {
     setUpBars();
@@ -70,11 +70,11 @@ function Accent({analyser, dataArray, bufferLength}) {
       barHeight = dataArray[i] * 2;
   
       ctx.fillStyle = `hsla(
-        ${(mostPopulatedColor.hsl[0] * 360).toFixed()}, 
-        ${mostPopulatedColor.hsl[1] * 100}%, 
+        ${(dominant.hsl[0] * 360).toFixed()}, 
+        ${dominant.hsl[1] * 100}%, 
         ${barHeight/1000 * 100 + 30}%, 
         0.95
-      )`; //mostPopulatedColor accented color: barheight correlates to brightness
+      )`; //dominant accented color: barheight correlates to brightness
   
       ctx.strokeStyle = "black";
       ctx.lineWidth = borderWidth;

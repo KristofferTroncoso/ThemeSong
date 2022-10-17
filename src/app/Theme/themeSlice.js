@@ -61,6 +61,12 @@ export const createThemeSlice = (set) => ({
         }
       }
     },
+    {
+      themeId: "themeId:8",
+      dateAdded: 20221014,
+      name: "Custom",
+      isDynamic: false,
+    },
   ],
   changeActiveTheme: (payload) => {
     console.log('themeSlice: changeActiveTheme')

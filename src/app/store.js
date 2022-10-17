@@ -8,6 +8,7 @@ import { createPlayerSlice } from './Player/playerSlice';
 import { createPaletteSlice } from './Palette/paletteSlice';
 import { createVisualizerSlice } from './Visualizer/visualizerSlice';
 import { createThemeSlice } from './Theme/themeSlice';
+import { createSnippetsSlice } from './Snippets/snippetsSlice';
 
 export const useStore = create(immer((...a) => ({
   uiOptions: {...createUiOptionsSlice(...a)},
@@ -16,5 +17,6 @@ export const useStore = create(immer((...a) => ({
   player: {...createPlayerSlice(...a)},
   palette: {...createPaletteSlice(...a)},
   visualizer: {...createVisualizerSlice(...a)},
-  theme: {...createThemeSlice(...a)}
+  theme: {...createThemeSlice(...a)},
+  snippets: {...createSnippetsSlice(...a)}
 })))
