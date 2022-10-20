@@ -4,29 +4,44 @@ import { jsx, css } from '@emotion/react';
 
 import { useStore } from '../../store';
 
+import StyledPanelDiv from "./StyledPanelDiv";
 import PanelButton from './PanelButton';
 import DataObjectIcon from '@mui/icons-material/DataObject';
 import SnoozeIcon from '@mui/icons-material/Snooze';
-
-// import { toggleRemoveDislikeButton, changeRemoveDislikeButton } from '../../Test/testSlice';
 
 function UtilitiesPanel() {
   const store = useStore()
 
   function handleTimerClick() {
+    const minutes = 0.2;
+
     setTimeout(() => {
-      document.getElementById("play-pause-button").click()
-    }, 10000)
+      if (document.getElementById("play-pause-button").title === "Pause") {
+        document.getElementById("play-pause-button").click()
+      }
+    }, minutes * 60000)
   }
 
   return (
-    <div css={{marginBottom: '10px'}}>
-      <h3 css={css`padding: 2px 5px; color: var(--ts-secondary-text-color);`}>Tools</h3>
+    <StyledPanelDiv>
+      <h3 css={css`padding: 2px 5px; color: var(--ts-secondary-text-color);`}>Utilities</h3>
       <div css={css`display: flex; justify-content: start; align-items: center;`}>
-        <PanelButton onClick={handleTimerClick} title="Timer"><SnoozeIcon css={css`font-size: 28px;`} /></PanelButton>
-        <PanelButton onClick={e => console.log(store)} title="Log Store"><DataObjectIcon css={css`font-size: 28px;`} /></PanelButton>
+        <PanelButton 
+          onClick={handleTimerClick} 
+          title="Timer" 
+          hoverColor="#008c7e"
+        >
+          <SnoozeIcon css={css`font-size: 28px;`} />
+        </PanelButton>
+        <PanelButton 
+          onClick={e => console.log(store)} 
+          title="Log Store" 
+          hoverColor="#008c7e"
+        >
+          <DataObjectIcon css={css`font-size: 28px;`} />
+        </PanelButton>
       </div>
-    </div>
+    </StyledPanelDiv>
   )
 }
 
