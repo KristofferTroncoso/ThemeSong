@@ -6,7 +6,7 @@ function Snippets() {
 
   return (
     <div id="ThemeSong-Snippets">
-      {snippets.map(snippet => (
+      {snippets.filter(snippet => snippet.enabled).map(snippet => (
         <style key={snippet.id} id={snippet.id}>{snippet.css}</style>
       ))}
     </div>

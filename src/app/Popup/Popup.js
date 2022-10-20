@@ -16,7 +16,7 @@ function Popup() {
     <div 
       className="Popup" 
       css={css`
-        background-color: rgb(30,30,30);
+        background-color: rgb(20,20,20);
         color: white;
         height: 600px;
         width: 400px;
