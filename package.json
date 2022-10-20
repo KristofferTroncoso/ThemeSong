@@ -1,7 +1,7 @@
 {
   "name": "themesong",
-  "version": "0.4.0",
-  "description": "Chrome Extension for YouTube Music themes, visualizers, and utilities.",
+  "version": "0.4.1",
+  "description": "Chrome and Firefox Extension for YouTube Music themes, visualizers, and utilities.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "react-color": "^2.19.3",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
+    "uuid": "^9.0.0",
     "zustand": "^4.1.1"
   },
   "devDependencies": {
