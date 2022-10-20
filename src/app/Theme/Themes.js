@@ -4,7 +4,7 @@ import { useStore } from '../store';
 import Off from './themes/Off/Off';
 import Dynamic from './themes/Dynamic/Dynamic';
 import Static from './themes/Static/Static';
-import Custom from './themes/Custom/Custom';
+// import Custom from './themes/Custom/Custom';
 
 function Themes() {
   const activeTheme = useStore(state => state.theme.activeTheme);
@@ -17,8 +17,8 @@ function Themes() {
         return <Dynamic />
       case "themeId:7":
         return <Static />
-      case "themeId:8":
-        return <Custom />
+      // case "themeId:8":
+      //   return <Custom />
       default:
         return <Dynamic />
     }
