@@ -1,7 +1,7 @@
 /** @jsx jsx */
 // import React from 'react';
 
-import { jsx } from '@emotion/react';
+import { jsx, css } from '@emotion/react';
 
 import { useStore } from '../../../store';
 
@@ -47,7 +47,7 @@ function WavySettings() {
 
   return (
     <div>
-      <h2 style={{color: '#ff4f61'}}>Active Visualizer: Wavy</h2>
+      <h2 css={css`color: #ff3232; font-size: 16px; margin-bottom: 4px;`}>Active Visualizer: Wavy</h2>
       <p style={{margin: '5px 0 10px'}}>🌊 🌊 🌊</p>
       <div>
         <form onSubmit={e => e.preventDefault()}>

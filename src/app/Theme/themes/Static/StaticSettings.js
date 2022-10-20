@@ -35,7 +35,7 @@ export function StaticSettings() {
 
   return (
     <div>
-      <h2 style={{color: '#ff4f61'}}>Active Theme: Static</h2>
+      <h2 css={css`color: #ff3232; font-size: 16px;`}>Active Theme: Static</h2>
       <p css={css`margin: 5px 0 0;`}>Pick a color, any color.</p>
       <p css={css`margin-bottom: 10px;`}>Adjust brightness and saturation below.</p>
       <form onSubmit={e => e.preventDefault()} css={css`margin-bottom: 8px; text-align: right;`}>

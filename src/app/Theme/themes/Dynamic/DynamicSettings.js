@@ -35,7 +35,7 @@ function DynamicSettings() {
 
   return (
     <div>
-      <h2 css={css`color: #ff4f61;`}>Active Theme: Dynamic</h2>
+      <h2 css={css`color: #ff3232; font-size: 16px;`}>Active Theme: Dynamic</h2>
       <p css={css`margin: 5px 0 0;`}>Colors change dynamically based on album art.</p>
       <p css={css`margin-bottom: 10px;`}>Adjust brightness and saturation below.</p>
       <form onSubmit={e => e.preventDefault()} css={css`margin-bottom: 8px; text-align: right;`}>

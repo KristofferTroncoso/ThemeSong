@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react';
-import { jsx } from '@emotion/react';
+import { jsx, css } from '@emotion/react';
 import VariantButton from '../components/VariantButton';
 
 function BarsSettings({visualizers, handleVisualizersChange}) {
@@ -24,7 +24,7 @@ function BarsSettings({visualizers, handleVisualizersChange}) {
   } else {
     return (
       <div>
-        <h2 style={{color: '#ff4f61', marginBottom: '4px'}}>Active Visualizer: Circles</h2>
+        <h2 css={css`color: #ff3232; font-size: 16px; margin-bottom: 4px;`}>Active Visualizer: Circles</h2>
         <div>
           <p style={{marginBottom: '6px'}}>Style Variant:</p>
           <div 
