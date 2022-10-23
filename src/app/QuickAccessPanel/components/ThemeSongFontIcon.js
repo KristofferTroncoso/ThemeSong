@@ -4,8 +4,8 @@ import { jsx, css } from '@emotion/react';
 function ThemeSongFontIcon() {
   return (
     <svg 
-      width="21" 
-      height="20" 
+      width="19" 
+      height="18" 
       viewBox="0 0 113 110" 
       xmlns="http://www.w3.org/2000/svg" 
       css={css`
