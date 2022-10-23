@@ -13,8 +13,8 @@ const grayscaleIcon = /*css*/`
 /* when pressing fullscreen on the player page album art, the img goes to COVER. */
 const coloredPlayerBg = /*css*/`
   ytmusic-player {
-    background-color: var(--ts-playpagebg-color);
-    transition: var(--ts-bgcolor-transition);
+    background-color: var(--themesong-playpagebg-color);
+    transition: var(--themesong-bgcolor-transition);
   }
 `;
 
@@ -32,8 +32,8 @@ const fixWeirdMarginWhenFullScreenPlayer = /*css*/`
 `;
 
 
-/* the color for the playbar icons and text is too dark when we're not using the default black theme */
-/* also when fullscreen, the transparent bg on the playbar is hard to see */
+/* the color for the playbarbg icons and text is too dark when we're not using the default black theme */
+/* also when fullscreen, the transparent bg on the playbarbg is hard to see */
 const playBarTextAndIconsColor = /*css*/`
   ytmusic-player-bar {
     color: #bababa;
@@ -52,7 +52,7 @@ const playBarTextAndIconsColor = /*css*/`
   }
 
   ytmusic-app-layout[player-fullscreened_] > [slot=player-bar] {
-    background: var(--ts-playbar-color);
+    background: var(--themesong-playbarbg-color);
     width: 100%;
   }
 `;

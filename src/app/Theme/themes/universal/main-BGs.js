@@ -1,64 +1,64 @@
 
 export const main_BGs = /*css*/`
 :root {
-  --ts-bgcolor-transition: background-color 1s ease-out;
+  --themesong-bgcolor-transition: background-color 1s ease-out;
 
-  --ytmusic-brand-background-solid: var(--ts-mainbg-color) !important;
-  --ytmusic-general-background-c: var(--ts-mainbg-color) !important;
-  --ytmusic-search-background: var(--ts-playbar-color) !important;
+  --ytmusic-brand-background-solid: var(--themesong-bodybg-color) !important;
+  --ytmusic-general-background-c: var(--themesong-bodybg-color) !important;
+  --ytmusic-search-background: var(--themesong-playbarbg-color) !important;
 }
 
 body {
-  background: var(--ts-mainbg-color);
-  transition: var(--ts-bgcolor-transition) !important;
+  background: var(--themesong-bodybg-color);
+  transition: var(--themesong-bgcolor-transition) !important;
 }
 
 #player-page {
-  background-color: var(--ts-playpagebg-color) !important;
-  transition: transform 300ms cubic-bezier(0.2,0,0.6,1), var(--ts-bgcolor-transition);
+  background-color: var(--themesong-playpagebg-color) !important;
+  transition: transform 300ms cubic-bezier(0.2,0,0.6,1), var(--themesong-bgcolor-transition);
 }
 
 #nav-bar-background {
-  background-color: var(--ts-topnav-color) !important;
-  transition: opacity 0.2s, var(--ts-bgcolor-transition) !important;
+  background-color: var(--themesong-topbarbg-color) !important;
+  transition: opacity 0.2s, var(--themesong-bgcolor-transition) !important;
 }
 
 #player-bar-background {
-  background-color: var(--ts-playbar-color) !important;
-  transition: var(--ts-bgcolor-transition) !important;
+  background-color: var(--themesong-playbarbg-color) !important;
+  transition: var(--themesong-bgcolor-transition) !important;
 }
 
 ytmusic-player-bar {
-  --ytmusic-player-bar-background: var(--ts-playbar-color) !important;
-  transition: var(--ts-bgcolor-transition) !important;
+  --ytmusic-player-bar-background: var(--themesong-playbarbg-color) !important;
+  transition: var(--themesong-bgcolor-transition) !important;
 }
 
 tp-yt-paper-listbox {
-  background-color: var(--ts-playbar-color);
+  background-color: var(--themesong-playbarbg-color);
 }
 
 ytmusic-item-section-renderer.stuck #header.ytmusic-item-section-renderer {
-  background-color: var(--ts-mainbg-color);
+  background-color: var(--themesong-bodybg-color);
 }
 
 ytmusic-tabs.stuck {
-  background-color: var(--ts-mainbg-color);
+  background-color: var(--themesong-bodybg-color);
 }
 
 ytmusic-av-toggle[playback-mode=ATV_PREFERRED] .song-button.ytmusic-av-toggle {
-  background-color: var(--ts-playpageavtoggle-color);
+  background-color: var(--themesong-playpageavtoggle-color);
 }
 
 ytmusic-av-toggle[playback-mode=OMV_PREFERRED] .video-button.ytmusic-av-toggle {
-  background-color: var(--ts-playpageavtoggle-color);
+  background-color: var(--themesong-playpageavtoggle-color);
 }
 
 
 ytmusic-search-box[opened], ytmusic-search-box[has-query] {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--themesong-base-00-alpha20-color);
 }
 
 ytmusic-search-suggestions-section.ytmusic-search-box {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--themesong-base-00-alpha10-color);
 }
 `;

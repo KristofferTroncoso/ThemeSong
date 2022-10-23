@@ -1,18 +1,21 @@
 import React from 'react';
-import { off_css } from './off_css';
-import { menubar, root } from '../selectors';
-import { useStore } from '../../../store';
+import { menubar } from '../selectors';
 
 function Off() {
-  const changeIsDark = useStore(state => state.theme.changeIsDark)
-
   React.useEffect(() => {
-    changeIsDark(true)
     menubar.content = '#131313';
-    root.style.setProperty("--ts-playbar-color", '#242424');
   }, [])
 
-  return <style id="Off">{off_css}</style>
+  return (
+    <style id="Off">
+      {`
+      /* ThemeSong */
+      /* Off Theme */
+
+      /* custom styles are off */
+      `}
+    </style>
+  )
 }
 
 export default Off;

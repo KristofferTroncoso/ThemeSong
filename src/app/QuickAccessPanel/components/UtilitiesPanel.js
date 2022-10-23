@@ -24,7 +24,7 @@ function UtilitiesPanel() {
 
   return (
     <StyledPanelDiv>
-      <h3 css={css`padding: 2px 5px; color: var(--ts-secondary-text-color);`}>Utilities</h3>
+      <h3 css={css`padding: 2px 5px; color: var(--themesong-secondary-text-color);`}>Utilities</h3>
       <div css={css`display: flex; justify-content: start; align-items: center;`}>
         <PanelButton 
           onClick={handleTimerClick} 

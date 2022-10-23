@@ -3,22 +3,22 @@ export const glassCSS = /*css*/`
 
 :root {
 
-  --ts-topnav-color: ;
-  --ts-mainbg-color: ;
-  --ts-playpagebg-color: ;
-  --ts-playbar-color: ;
-  --ts-bg-accents-color: ;
+  --themesong-topbarbg-color: ;
+  --themesong-bodybg-color: ;
+  --themesong-playpagebg-color: ;
+  --themesong-playbarbg-color: ;
+  --themesong-bg-accents-color: ;
 
-  --ts-playprogress-color: white;
-  --ts-scrollbar-color: ;
-  --ts-scrollbar-hover-color: ;
+  --themesong-playprogress-color: white;
+  --themesong-scrollbar-color: ;
+  --themesong-scrollbar-hover-color: ;
 
-  --ts-bgcolor-transition: background-color 1s ease-out;
-  --ts-bgcolor-transition-faster: background-color 200ms cubic-bezier(0.2,0,0.6,1);
+  --themesong-bgcolor-transition: background-color 1s ease-out;
+  --themesong-bgcolor-transition-faster: background-color 200ms cubic-bezier(0.2,0,0.6,1);
 
-  --ytmusic-general-background-c: var(--ts-bg-accents-color, --ts-mainbg-color) !important;
+  --ytmusic-general-background-c: var(--themesong-bg-accents-color, --themesong-bodybg-color) !important;
 
-  --ts-img-src-url: ;
+  --themesong-img-src-url: ;
 }
 
 
@@ -26,7 +26,7 @@ export const glassCSS = /*css*/`
 /* for image */
 /*
 html.no-focus-outline {
-  background-image: var(--ts-img-src-url);
+  background-image: var(--themesong-img-src-url);
   height: 500px; 
   background-position: center;
   background-repeat: repeat;
@@ -49,7 +49,7 @@ ytmusic-app-layout > #content {
 }
 
 ytmusic-item-section-renderer.stuck #header.ytmusic-item-section-renderer {
-  background-color: var(--ts-topnav-color);
+  background-color: var(--themesong-topbarbg-color);
   backdrop-filter: blur(50px);
 }
 
@@ -72,27 +72,27 @@ ytmusic-player {
 /* end glass tests */
 
 body {
-  background-color: var(--ts-mainbg-color) !important;
-  transition: var(--ts-bgcolor-transition) !important;
+  background-color: var(--themesong-bodybg-color) !important;
+  transition: var(--themesong-bgcolor-transition) !important;
 }
 
 #player-page {
-  background-color: var(--ts-playpagebg-color) !important;
+  background-color: var(--themesong-playpagebg-color) !important;
   backdrop-filter: blur(50px);
 }
 
 #nav-bar-background {
-  background-color: var(--ts-topnav-color) !important;
+  background-color: var(--themesong-topbarbg-color) !important;
   backdrop-filter: blur(40px);
 }
 
 #player-bar-background {
-  background-color: var(--ts-playbar-color) !important;
+  background-color: var(--themesong-playbarbg-color) !important;
   backdrop-filter: blur(20px) !important;
 }
 
 ytmusic-player-bar {
-  background-color: var(--ts-playbar-color) !important;
+  background-color: var(--themesong-playbarbg-color) !important;
   backdrop-filter: blur(5px);
 }
 
@@ -105,7 +105,7 @@ ytmusic-nav-bar {
 }
 
 tp-yt-paper-listbox {
-  background-color: var(--ts-playbar-color);
+  background-color: var(--themesong-playbarbg-color);
   backdrop-filter: blur(20px);
 }
 
@@ -123,7 +123,7 @@ ytmusic-app-layout > #content {
 ytmusic-browse-response[hidden] {
   display: block !important;
   background-color: hsl(196, 68%, 41%);
-  transition: var(--ts-bgcolor-transition-faster);
+  transition: var(--themesong-bgcolor-transition-faster);
 }
 */
 
@@ -137,34 +137,34 @@ ytmusic-browse-response[hidden] {
 /* setting this simple transition actually affects the popup of the player page */
 /* i had to include the transition-transform that they already had */
 #player-page {
-  transition: transform 300ms cubic-bezier(0.2,0,0.6,1), var(--ts-bgcolor-transition);
+  transition: transform 300ms cubic-bezier(0.2,0,0.6,1), var(--themesong-bgcolor-transition);
 }
 
 /* ya i have to be careful cuz its easy to break animations without noticing. */
 /* the opacity thing was another one i didnt notice until later. i unknowingly overwrote it */
 #nav-bar-background {
-  transition: opacity 0.2s, var(--ts-bgcolor-transition) !important;
+  transition: opacity 0.2s, var(--themesong-bgcolor-transition) !important;
 }
 
 #player-bar-background {
-  transition: var(--ts-bgcolor-transition) !important;
+  transition: var(--themesong-bgcolor-transition) !important;
 }
 
 ytmusic-player-bar {
-  transition: var(--ts-bgcolor-transition) !important;
+  transition: var(--themesong-bgcolor-transition) !important;
 }
 /* --- end of working transitions */
 
 
 /* --- now playing progress bar color ---- */
 #progress-bar.ytmusic-player-bar {
-  --paper-slider-active-color: var(--ts-playprogress-color) !important;
+  --paper-slider-active-color: var(--themesong-playprogress-color) !important;
 }
 
 #progress-bar.ytmusic-player-bar[focused], ytmusic-player-bar:hover #progress-bar.ytmusic-player-bar {
-  --paper-slider-knob-color: var(--ts-playprogress-color) !important;
-  --paper-slider-knob-start-color: var(--ts-playprogress-color) !important;
-  --paper-slider-knob-start-border-color: var(--ts-playprogress-color) !important;
+  --paper-slider-knob-color: var(--themesong-playprogress-color) !important;
+  --paper-slider-knob-start-color: var(--themesong-playprogress-color) !important;
+  --paper-slider-knob-start-border-color: var(--themesong-playprogress-color) !important;
 }
 /* progress bar color */
 

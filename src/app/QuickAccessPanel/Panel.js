@@ -26,9 +26,9 @@ function Panel() {
           border: 0;
           padding: 10px 10px 8px 3px;
           background-color: transparent;
-          color: var(--ts-tertiary-text-color);
+          color: var(--themesong-tertiary-text-color);
           :hover {
-            color: var(--ts-primary-text-color);
+            color: var(--themesong-primary-text-color);
           }
         `}
         title="Open ThemeSong Quick Access Panel"
@@ -51,7 +51,7 @@ function Panel() {
         }}
         css={css`
           .MuiPaper-root {
-            background-color: var(--ts-playbar-color) !important;
+            background-color: var(--themesong-playbarbg-color) !important;
           }
         `}
       >

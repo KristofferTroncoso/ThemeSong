@@ -16,9 +16,9 @@ function PanelPage() {
       css={css`
         padding: 6px;
         border: 1px solid rgba(255, 255, 255, 0.1);
-        background-color: var(--ts-playbar-color);
-        transition: var(--ts-bgcolor-transition);
-        color: var(--ts-secondary-text-color);
+        background-color: var(--themesong-playbarbg-color, #222);
+        transition: var(--themesong-bgcolor-transition);
+        color: var(--themesong-secondary-text-color, #fff);
       `}
     >
       <div css={css`text-align: right;`}>
