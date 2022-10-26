@@ -9,7 +9,7 @@ function CloudSyncStorageSync() {
   const changeVisualizers = useStore(state => state.visualizer.changeVisualizers);
   const changePlayPauseState = useStore(state => state.player.changePlayPauseState);
   const changeActivePopupTab = useStore(state => state.popup.changeActivePopupTab);
-  const changeSnippets = useStore(state => state.snippets.changeSnippets);
+  // const changeSnippets = useStore(state => state.snippets.changeSnippets);
 
   React.useEffect(() => {
     console.log('CloudSyncStorageSync');
@@ -41,9 +41,9 @@ function CloudSyncStorageSync() {
           case "activePopupTab":
             changeActivePopupTab(value)
             break;
-          case "snippets":
-            changeSnippets(value)
-            break;
+          // case "snippets":
+          //   changeSnippets(value)
+          //   break;
           default:
             console.log('syncStorageToStore: default case')
         }
@@ -72,9 +72,9 @@ function CloudSyncStorageSync() {
           case "playPauseState":
             changePlayPauseState(newValue)
             break;
-          case "snippets":
-            changeSnippets(newValue)
-            break;
+          // case "snippets":
+          //   changeSnippets(newValue)
+          //   break;
           default:
             console.log('syncToStore: default case')
         }

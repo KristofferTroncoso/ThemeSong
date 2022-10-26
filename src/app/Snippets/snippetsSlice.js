@@ -1,7 +1,7 @@
 export const createSnippetsSlice = (set) => ({
   snippets: [
     {
-      id: 'uniqueId',
+      id: 'uniqueId1',
       name: 'Hide Cast Button',
       css:
 `ytmusic-cast-button {
