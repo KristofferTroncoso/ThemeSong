@@ -11,7 +11,7 @@ function CloudSyncStorageSync() {
   const changeActivePopupTab = useStore(state => state.popup.changeActivePopupTab);
   const changeSnippets = useStore(state => state.snippets.changeSnippets);
 
-  React.useState(() => {
+  React.useEffect(() => {
     console.log('CloudSyncStorageSync');
 
     //initial get from chrome local storage

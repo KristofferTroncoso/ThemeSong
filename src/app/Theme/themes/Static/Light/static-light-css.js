@@ -28,7 +28,7 @@ export const static_light_css = /*css*/`
   --themesong-playbarbg-color: hsl(var(--themesong-theme-static-hue), var(--themesong-theme-static-saturation), var(--themesong-theme-static-playbarbg-light));
   --themesong-playpageavtoggle-color: hsl(var(--themesong-theme-static-hue), var(--themesong-theme-static-saturation), var(--themesong-theme-static-playpageavtoggle-light));
 
-  --themesong-playprogress-color: var(--themesong-base-100-color) !important;
+  --themesong-playprogress-color: var(--themesong-base-100-color);
 
   --themesong-primary-text-color: var(--themesong-base-100-color);
   --themesong-secondary-text-color: var(--themesong-base-90-color);

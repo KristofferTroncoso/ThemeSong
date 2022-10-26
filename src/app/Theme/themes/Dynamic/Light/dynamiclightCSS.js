@@ -28,7 +28,7 @@ export const dynamiclight_css = /*css*/`
   --themesong-playbarbg-color: hsl(var(--themesong-palette-dominant-hue), var(--themesong-theme-dynamic-saturation), var(--themesong-theme-dynamic-playbarbg-light));
   --themesong-playpageavtoggle-color: hsl(var(--themesong-palette-dominant-hue), var(--themesong-theme-dynamic-saturation), var(--themesong-theme-dynamic-playpageavtoggle-light));
 
-  --themesong-playprogress-color: var(--themesong-base-100-color) !important;
+  --themesong-playprogress-color: var(--themesong-base-100-color);
 
   --themesong-primary-text-color: var(--themesong-base-100-color);
   --themesong-secondary-text-color: var(--themesong-base-90-color);
