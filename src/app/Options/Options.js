@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx, css } from '@emotion/react';
-// import { toggleRemoveDislikeButton } from '../Test/testSlice';
 import CloudSyncStorageSync from '../CloudStorageSync';
 
 function StyledDiv({children}) {
@@ -31,20 +30,6 @@ function Options() {
     <div>
       <CloudSyncStorageSync />
       <h1 css={{marginBottom: '50px'}}>ThemeSong Options</h1>
-      {/* <StyledDiv>
-        <h2 css={{marginBottom: '15px'}}>Misc Settings:</h2>
-        <p>
-          Remove Dislike Button:  
-          <input 
-            type="checkbox" 
-            checked={removeDislikeButton} 
-            onChange={e => {
-              toggleRemoveDislikeButton();
-              chrome.storage.local.set({miscSettings: {removeDislikeButton: e.target.checked}}, () => console.log('chrome.storage.local.set({miscSettings: {removeDislikeButton}}'));
-            }} 
-          />
-        </p>
-      </StyledDiv> */}
       <StyledDiv>
         <h2 css={{marginBottom: '15px'}}>Contact:</h2>
         <p>
