@@ -5,6 +5,7 @@ import Wavy from './wavy/Wavy';
 import Bars from './bars/Bars';
 import Circles from './circles/Circles';
 import { useStore } from '../../store';
+import VolumeChangeObserver from '../../Player/VolumeChangeObserver';
 
 let source;
 let audioCtx;
@@ -124,6 +125,7 @@ Page reload required to reconnect visualizer. Reload now?`
           width: 100%;
         `}
       >
+        <VolumeChangeObserver />
         {returnActiveVisualizer()}
       </div>
     )

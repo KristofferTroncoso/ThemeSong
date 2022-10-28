@@ -3,21 +3,36 @@ import  { executeContentScriptOnYouTubeMusicTabs } from './scripts';
 chrome.runtime.onInstalled.addListener((details) => {
   console.log(details);
 
-  switch (details.reason) {
-    // on installation, execute content script onto existing open tabs
-    case "install":
-      executeContentScriptOnYouTubeMusicTabs();
-      break;
-
-    // on update (extension update, chrome update, or extension refresh)
-    case "update":
-      // chrome.storage.local.clear();
-      executeContentScriptOnYouTubeMusicTabs();
-      break;
-
-    // other cases are "chrome_update" and "shared_module_update"
-    default: 
-      executeContentScriptOnYouTubeMusicTabs();
+  if (details.previousVersion < '0.4') {
+    //force reload of ytm tabs
+    chrome.tabs.query({url: 'https://music.youtube.com/*'}, (tabs) => {
+      for (let tab of tabs) {
+        chrome.scripting.executeScript({
+          target: { tabId: tab.id },
+          func: () => {
+            // eslint-disable-next-line no-restricted-globals
+            location.reload();
+          }
+        });
+      }
+    });
+  } else {
+    switch (details.reason) {
+      // on installation, execute content script onto existing open tabs
+      case "install":
+        executeContentScriptOnYouTubeMusicTabs();
+        break;
+  
+      // on update (extension update, chrome update, or extension refresh)
+      case "update":
+        // chrome.storage.local.clear();
+        executeContentScriptOnYouTubeMusicTabs();
+        break;
+  
+      // other cases are "chrome_update" and "shared_module_update"
+      default: 
+        executeContentScriptOnYouTubeMusicTabs();
+    }
   }
 });
 
