@@ -11,8 +11,7 @@ let lineWidth;
 let calculatedColor;
 
 function Wavy({analyser, dataArray, bufferLength}) {
-  const wavyPrefs = useStore(state => state.visualizer.visualizers
-.find(visualizer => (visualizer.visualizerId  === "visualizerId:0")));
+  const wavyPrefs = useStore(state => state.visualizer.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:0")));
   const playPauseState = useStore(state => state.player.playPauseState);
   const dominant = useStore(state => state.palette.dominant);
 

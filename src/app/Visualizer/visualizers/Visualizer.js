@@ -21,6 +21,7 @@ function Visualizer() {
 
   React.useEffect(() => {
     console.log('Visualizer: useEffect 2');
+    console.log('audioCtx', audioCtx)
     if (isVisualizerOn) {
       connectAudio();
 
@@ -49,7 +50,7 @@ Page reload required to reconnect visualizer. Reload now?`
   function connectAudio() {
     console.log('connectAudio()')
     if (audioCtx === undefined) {
-      console.log('audioCtx is undefined. setting up new AudioContext')
+      console.log('audioCtx is undefined. setting up new AudioContext');
       audioCtx = new AudioContext();
       analyser = audioCtx.createAnalyser();
     } 
@@ -118,16 +119,60 @@ Page reload required to reconnect visualizer. Reload now?`
 
   return (
     isVisualizerOn && (
-      <div
-        css={css`
-          border-radius: inherit;
-          height: 100%;
-          width: 100%;
-        `}
-      >
-        <VolumeChangeObserver />
-        {returnActiveVisualizer()}
-      </div>
+      (audioCtx !== undefined) ? (
+        (source !== undefined) ? (
+          <div
+            css={css`
+              border-radius: inherit;
+              height: 100%;
+              width: 100%;
+            `}
+          >
+            <VolumeChangeObserver />
+            {returnActiveVisualizer()}
+          </div>
+        ) : (
+          <h1
+            css={css`
+              position: absolute;
+              top: 20%;
+              left: 0;
+              background-color: #000;
+              color: tomato;
+              z-index: 1000;
+            `}
+          >
+            error: source is undefined. --
+            {document.querySelector('video').getAttribute('src')}  
+            ---
+            Reload page and try again.
+          </h1>
+        )
+      ) : (
+        <div
+          css={css`
+            border-radius: inherit;
+            height: 100%;
+            width: 100%;
+          `}
+        >
+          <h1
+            css={css`
+              position: absolute;
+              top: 20%;
+              left: 0;
+              background-color: #000;
+              color: tomato;
+              z-index: 1000;
+            `}
+          >
+            error: audioCtx is undefined. --
+            {document.querySelector('video').getAttribute('src')}  
+            ---
+            Reload page and try again.
+          </h1>
+        </div>
+      )
     )
   )
 }
