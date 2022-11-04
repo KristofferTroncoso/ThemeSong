@@ -1,95 +1,77 @@
 /** @jsx jsx */
-import React, { useRef }  from 'react';
+import { useRef, useCallback, useEffect }  from 'react';
 import { jsx, css } from '@emotion/react';
 import { useStore } from '../../../store';
-
-let playState;
-let ctx;
-let tswavycanvas;
-let isPlaying = false;
-let lineWidth;
-let calculatedColor;
 
 function Wavy({analyser, dataArray, bufferLength}) {
   const wavyPrefs = useStore(state => state.visualizer.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:0")));
   const playPauseState = useStore(state => state.player.playPauseState);
-  const dominant = useStore(state => state.palette.dominant);
+  const dominantSwatch = useStore(state => state.palette.dominant);
 
-  const canvasRef = useRef(null);
-  
-  React.useEffect(() => {
-    console.log('wavy time');
-    tswavycanvas = canvasRef.current;
-    isPlaying = true;
-    setUpWavy();
-    drawOscilloscope();
-
-    return function cleanUp() {
-      console.log('cleaning up');
-      isPlaying = false;
-    }
-  }, [])
-
-  React.useEffect(() => {
-    playState = playPauseState;
-    if (playPauseState === "Play") {
-      setUpWavy();
-      drawOscilloscope();
-    }
-  }, [playPauseState, dominant])
-
-  React.useEffect(() => {
-    setUpWavy();
-  }, [wavyPrefs])
-
-  function setUpWavy() {
-    ctx = tswavycanvas.getContext("2d");
-    lineWidth = wavyPrefs.lineWidth;
-    ctx.strokeStyle = '#fff';
-    calculatedColor  = `hsl(
-      ${(dominant.hsl[0] * 360).toFixed()}, 
-      ${dominant.hsl[1] * 100 * 2}%, 
+  const canvasRef = useRef();
+  const intervalId = useRef();
+  const ctx = useRef();
+    
+  const setUpWavy = useCallback(() => {
+    ctx.current = canvasRef.current.getContext("2d");
+    ctx.current.strokeStyle = '#fff';
+    ctx.current.lineWidth = wavyPrefs.lineWidth;
+    ctx.current.shadowBlur = 4;
+    ctx.current.shadowOffsetY = wavyPrefs.lineWidth;
+    ctx.current.shadowColor = `hsl(
+      ${(dominantSwatch.hsl[0] * 360).toFixed()}, 
+      ${dominantSwatch.hsl[1] * 100 * 2}%, 
       70%
     )`;
-  }
+    analyser.fftSize = 2048;
+  }, [analyser, dominantSwatch, wavyPrefs]);
 
-  function drawOscilloscope() {
-    analyser.fftSize = 2048; // im trying to set this up just once but it's not working. this one works but its every animate
+  const drawWavy = useCallback(() => {
     analyser.getByteTimeDomainData(dataArray);
-    ctx.clearRect(0, 0, tswavycanvas.width, tswavycanvas.height);
-    ctx.lineWidth = lineWidth;
-    ctx.shadowBlur = 4;
-    ctx.shadowColor = calculatedColor;
-    ctx.shadowOffsetY = lineWidth;
-    ctx.beginPath();
+    ctx.current.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+    ctx.current.beginPath();
 
-    let sliceWidth = tswavycanvas.width / bufferLength;
+    let sliceWidth = canvasRef.current.width / bufferLength;
     let x = 0;
 
     for (let i = 0; i < bufferLength; i++) {
       let v = dataArray[i] / 128;
-      let y = v * tswavycanvas.height / 2;
+      let y = v * canvasRef.current.height / 2;
       
       if (i === 0) {
-        ctx.moveTo(x, y);
+        ctx.current.moveTo(x, y);
       } else {
-        ctx.lineTo(x, y);
+        ctx.current.lineTo(x, y);
       }
       x += sliceWidth;
     }
 
-    ctx.stroke();
+    ctx.current.stroke();
+  }, [analyser, bufferLength, dataArray]);
 
-    if (isPlaying && playState === "Play") {
-      setTimeout(() => {
-        requestAnimationFrame(drawOscilloscope);
-      }, 17);
+  useEffect(() => {
+    return function cleanUp() {
+      console.log('Wavy: Cleaning up');
+      clearInterval(intervalId.current);
     }
-  }
+  }, [])
+
+  useEffect(() => {
+    setUpWavy();
+  }, [setUpWavy])
+
+  useEffect(() => {
+    console.log('useEffect playPauseState')
+    if (playPauseState === "Pause") {
+      clearInterval(intervalId.current);
+    } else if (playPauseState === "Play") {
+      intervalId.current = setInterval(() => requestAnimationFrame(drawWavy), 17)
+    }
+  }, [playPauseState, drawWavy])
 
   return (
     <div
-      id="ts-wavy-container"
+      id="ThemeSong-Visualizer-Wavy-Container"
       css={css`
         position: absolute;
         bottom: 0;
@@ -101,7 +83,7 @@ function Wavy({analyser, dataArray, bufferLength}) {
       `}
     >
       <canvas
-        id="ts-wavy-canvas"
+        id="ThemeSong-Visualizer-Wavy-Canvas"
         ref={canvasRef}
         height='512'
         width='1920'
