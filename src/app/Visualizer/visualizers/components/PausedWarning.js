@@ -14,7 +14,7 @@ function PausedWarning() {
             margin: 10px;
             position: absolute;
             z-index: 1000;
-            bottom: 0;
+            bottom: 100px;
             left: 0;
             background-color: rgba(0,0,0,0.7);
             border: 4px solid #777;
