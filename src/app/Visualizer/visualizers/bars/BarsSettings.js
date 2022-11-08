@@ -58,7 +58,7 @@ function BarsSettings({visualizers, handleVisualizersChange}) {
           }
         `}
       >
-        <h2 css={css`color: #ff3232; font-size: 16px; margin-bottom: 4px;`}>Active Visualizer: Bars</h2>
+        <h2 css={css`color: #ff3232; font-size: 16px; margin-bottom: 4px;`}>Visualizer: Bars</h2>
         <div>
           <form onSubmit={e => e.preventDefault()}>
             <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>

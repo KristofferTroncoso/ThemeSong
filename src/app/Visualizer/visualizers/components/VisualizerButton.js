@@ -14,7 +14,7 @@ function VisualizerButton({id, children, handleClick, isActive, name, ...props})
         color: white;
         padding: 10px;
         :hover {
-          background: ${isActive ? '#111' : '#082a69'};
+          background: ${isActive ? '#111' : '#222'};
         }
       `} 
       disabled={isActive}
