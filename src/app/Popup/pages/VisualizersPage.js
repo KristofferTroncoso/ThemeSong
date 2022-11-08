@@ -52,32 +52,32 @@ function VisualizersPage() {
 
   return (
     <div>
-      {/* <h2 
+      <h2 
         css={css`
-          font-size: 11px; 
+          font-size: 12px; 
           font-weight: 400; 
-          padding: 0 5px; 
-          text-align: right;
+          padding: 6px 6px 3px; 
+          text-align: left;
         `}
       >
         <span
           css={css`
-            padding: 0 3px 3px; 
-            background-color: #820101; 
+            padding: 3px 10px; 
+            background-color: #0b3e9c; 
             border-radius: 3px;
-            border: 1px solid #a30000;
+            border: 1px solid #135eeb;
             color: white;
           `}
         >
-          ⚠ Warnings: Photosensitivity 😵, Energy Usage 🔋
+          To turn on visualizer: Hover album art and click on visualizer button
         </span>
-      </h2> */}
+      </h2>
       <div 
         className="ActiveVisualizerSettingsContainer" 
         css={{
           background: '#111111', 
           borderRadius: '5px', 
-          border: '2px solid #135eeb',
+          border: '2px solid #999',
           margin: '6px 5px 5px 5px', 
           minHeight: '150px', 
           padding: '5px 10px 10px'

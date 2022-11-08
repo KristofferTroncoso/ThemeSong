@@ -263,44 +263,42 @@ let circles = [
 let shorterCanvasSide;
 let circumference = 2 * Math.PI;
 
-let playState;
 let ctx;
 let tscirclescanvas;
-let isPlaying = false;
 let borderWidth = 4;
 
-function Party({analyser, dataArray, bufferLength}) {
-  const circlesPrefs = useStore(state => state.visualizer.visualizers
-.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")));
+function Party({analyser, dataArray}) {
+  const circlesPrefs = useStore(state => state.visualizer.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")));
   const playPauseState = useStore(state => state.player.playPauseState);
   let ytmusicplayer = document.querySelector("ytmusic-player")
 
   const canvasRef = useRef(null);
+  const intervalId = useRef();
   
   React.useEffect(() => {
     console.log('Party time');
     tscirclescanvas = canvasRef.current;
-    isPlaying = true;
     setUpCircles();
     party();
 
     return function cleanUp() {
       console.log('cleaning up');
-      isPlaying = false;
+      clearInterval(intervalId.current);
     }
   }, [])
 
   React.useEffect(() => {
-    playState = playPauseState;
-    if (playPauseState === "Play") {
-      setUpCircles();
-      party();
-    }
-  }, [playPauseState])
-
-  React.useEffect(() => {
     setUpCircles();
   }, [circlesPrefs])
+
+  React.useEffect(() => {
+    if (playPauseState === "Pause") {
+      clearInterval(intervalId.current);
+    } else if (playPauseState === "Play") {
+      clearInterval(intervalId.current);
+      intervalId.current = setInterval(() => requestAnimationFrame(party), 17)
+    }
+  }, [playPauseState])
 
   function setUpCircles() {
     ctx = tscirclescanvas.getContext("2d");
@@ -366,17 +364,11 @@ function Party({analyser, dataArray, bufferLength}) {
       ctx.fill();
       ctx.stroke();
     };
-
-    if (isPlaying && playState === "Play") {
-      setTimeout(() => {
-        requestAnimationFrame(party);
-      }, 17);
-    }
   }
 
   return (
     <canvas
-      id="ts-party-circles-canvas"
+      id="ThemeSong-Visualizer-Circles-Variant-Party"
       ref={canvasRef}
       height={ytmusicplayer.clientHeight}
       width={ytmusicplayer.clientWidth}

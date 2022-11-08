@@ -1,94 +1,66 @@
 /** @jsx jsx */
-import React, { useRef }  from 'react';
+import { useEffect, useRef }  from 'react';
 import { jsx, css } from '@emotion/react';
-
 import { useStore } from '../../../../store';
 
-let playState;
-let ctx;
-let tsbarscanvas;
-let isPlaying = false;
-let barWidth = 30;
-let borderWidth = 4;
-let gap = 8;
-
 function RGB({analyser, dataArray, bufferLength}) {
-  const barsPrefs = useStore(state => state.visualizer.visualizers
-.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")));
+  const barsPrefs = useStore(state => state.visualizer.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")));
   const playPauseState = useStore(state => state.player.playPauseState);
 
-  const canvasRef = useRef(null);
+  const canvasRef = useRef();
+  const intervalId = useRef();
+  const ctx = useRef();
   
-  React.useEffect(() => {
-    console.log('RGB time');
-    tsbarscanvas = canvasRef.current;
-    isPlaying = true;
-    setUpBars();
-    rgb();
-
+  useEffect(() => {
     return function cleanUp() {
       console.log('cleaning up');
-      isPlaying = false;
+      clearInterval(intervalId.current);
     }
   }, [])
 
-  React.useEffect(() => {
-    playState = playPauseState;
-    if (playPauseState === "Play") {
-      setUpBars();
-      rgb();
-    }
-  }, [playPauseState])
-
-  React.useEffect(() => {
-    setUpBars();
+  useEffect(() => {
+    ctx.current = canvasRef.current.getContext("2d");
+    ctx.current.strokeStyle = "#000";
+    ctx.current.lineWidth = barsPrefs.borderWidth;
   }, [barsPrefs])
 
-  function setUpBars() {
-    barWidth = barsPrefs.barWidth;
-    borderWidth = barsPrefs.borderWidth;
-    gap = barsPrefs.gap;
-    ctx = tsbarscanvas.getContext("2d");
-    ctx.fillStyle = "#fff";
-    ctx.strokeStyle = "#000";
-    ctx.lineWidth = borderWidth;
-  }
-
-  function rgb() {
-    let ctx = tsbarscanvas.getContext("2d");
-  
-    analyser.getByteFrequencyData(dataArray);
-  
-    ctx.clearRect(0, 0, tsbarscanvas.width, tsbarscanvas.height);
+  useEffect(() => {
+    const drawBars = () => {  
+      let context = ctx.current;
+      let canvas = canvasRef.current || {width: 2400, height: 520};
     
-    let barHeight;
-    let x = 0;
-  
-    for(let i = 0; i < bufferLength; i++) {
-      barHeight = dataArray[i] * 2;
-  
-      ctx.fillStyle = `hsla(${barHeight}, 100%, 70%, 0.95)`; //rgb: bar height is correlated to hue
-  
-      ctx.fillRect(x, tsbarscanvas.height - barHeight + 6, barWidth, barHeight);
-      ctx.strokeStyle = "black";
-      ctx.lineWidth = borderWidth;
-      if (borderWidth !== 0) {
-        ctx.strokeRect(x, tsbarscanvas.height - barHeight + 6, barWidth, barHeight);
-      }
-      ctx.stroke();
-      x += barWidth + gap;
-    }
+      analyser.getByteFrequencyData(dataArray);
+    
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      
+      let barHeight;
+      let x = 0;
+    
+      for(let i = 0; i < bufferLength; i++) {
+        barHeight = dataArray[i] * 2;
+    
+        context.fillStyle = `hsla(${barHeight}, 100%, 70%, 0.95)`; //rgb: bar height is correlated to hue
 
-    if (isPlaying && playState === "Play") {
-      setTimeout(() => {
-        requestAnimationFrame(rgb);
-      }, 17);
+        context.fillRect(x, canvas.height - barHeight + 6, barsPrefs.barWidth, barHeight);
+        if (barsPrefs.borderWidth !== 0) {
+          context.strokeRect(x, canvas.height - barHeight + 6, barsPrefs.barWidth, barHeight);
+        }
+        context.stroke();
+        x += barsPrefs.barWidth + barsPrefs.gap;
+      }
+    };
+
+    if (playPauseState === "Pause") {
+      clearInterval(intervalId.current);
+    } else if (playPauseState === "Play") {
+      clearInterval(intervalId.current);
+      intervalId.current = setInterval(() => requestAnimationFrame(drawBars), 17)
     }
-  }
+  }, [playPauseState, analyser, bufferLength, dataArray, barsPrefs])
 
   return (
     <canvas
-      id="ts-white-bars-canvas"
+      id="ThemeSong-Visualizer-Bars-Variant-RGB"
       ref={canvasRef}
       height='520'
       width='2400'

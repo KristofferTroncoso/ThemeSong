@@ -35,7 +35,7 @@ function Circles({analyser, dataArray, bufferLength}) {
 
   return (
     <div
-      id="ts-Circles-container"
+      id="ThemeSong-Visualizer-Circles-Container"
       css={css`
         position: absolute;
         bottom: 0;

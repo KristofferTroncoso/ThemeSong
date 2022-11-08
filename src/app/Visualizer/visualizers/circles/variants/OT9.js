@@ -136,38 +136,36 @@ let circles = [
 let shorterCanvasSide;
 let circumference = 2 * Math.PI;
 
-let playState;
 let ctx;
 let tscirclescanvas;
-let isPlaying = false;
 let borderWidth = 4;
 
-function OT9({analyser, dataArray, bufferLength}) {
-  const circlesPrefs = useStore(state => state.visualizer.visualizers
-.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")));
+function OT9({analyser, dataArray}) {
+  const circlesPrefs = useStore(state => state.visualizer.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")));
   const playPauseState = useStore(state => state.player.playPauseState);
   let ytmusicplayer = document.querySelector("ytmusic-player")
 
   const canvasRef = useRef(null);
+  const intervalId = useRef();
   
   React.useEffect(() => {
     console.log('OT9 time');
     tscirclescanvas = canvasRef.current;
-    isPlaying = true;
     setUpCircles();
     ot9();
 
     return function cleanUp() {
       console.log('cleaning up');
-      isPlaying = false;
+      clearInterval(intervalId.current);
     }
   }, [])
 
   React.useEffect(() => {
-    playState = playPauseState;
-    if (playPauseState === "Play") {
-      setUpCircles();
-      ot9();
+    if (playPauseState === "Pause") {
+      clearInterval(intervalId.current);
+    } else if (playPauseState === "Play") {
+      clearInterval(intervalId.current);
+      intervalId.current = setInterval(() => requestAnimationFrame(ot9), 17)
     }
   }, [playPauseState])
 
@@ -250,17 +248,11 @@ function OT9({analyser, dataArray, bufferLength}) {
     ctx.strokeStyle = '#000';
 
     updateAndDraw(ctx);
-
-    if (isPlaying && playState === "Play") {
-      setTimeout(() => {
-        requestAnimationFrame(ot9);
-      }, 17);
-    }
   }
 
   return (
     <canvas
-      id="ts-ot9-circles-canvas"
+      id="ThemeSong-Visualizer-Circles-Variant-OT9"
       ref={canvasRef}
       height={ytmusicplayer.clientHeight}
       width={ytmusicplayer.clientWidth}

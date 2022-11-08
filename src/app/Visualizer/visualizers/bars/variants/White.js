@@ -1,90 +1,64 @@
 /** @jsx jsx */
-import React, { useRef }  from 'react';
+import { useRef, useEffect }  from 'react';
 import { jsx, css } from '@emotion/react';
 import { useStore } from '../../../../store';
 
-let playState;
-let ctx;
-let tsbarscanvas;
-let isPlaying = false;
-let barWidth = 30;
-let borderWidth = 4;
-let gap = 8;
-
 function White({analyser, dataArray, bufferLength}) {
-  const barsPrefs = useStore(state => state.visualizer.visualizers
-.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")));
+  const barsPrefs = useStore(state => state.visualizer.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")));
   const playPauseState = useStore(state => state.player.playPauseState);
-  // const palette = useStore(state => state.palette.palette);
-  // const dominant = useStore(state => state.palette.dominant);
 
-  const canvasRef = useRef(null);
+  const canvasRef = useRef();
+  const intervalId = useRef();
+  const ctx = useRef();
   
-  React.useEffect(() => {
-    console.log('White Bars time');
-    tsbarscanvas = canvasRef.current;
-    isPlaying = true;
-    setUpBars();
-    drawBars();
-
+  useEffect(() => {
     return function cleanUp() {
       console.log('cleaning up');
-      isPlaying = false;
+      clearInterval(intervalId.current);
     }
   }, [])
 
-  React.useEffect(() => {
-    playState = playPauseState;
-    if (playPauseState === "Play") {
-      setUpBars();
-      drawBars();
-    }
-  }, [playPauseState])
-
-  React.useEffect(() => {
-    setUpBars();
+  useEffect(() => {
+    ctx.current = canvasRef.current.getContext("2d");
+    ctx.current.fillStyle = "#fff";
+    ctx.current.strokeStyle = "#000";
+    ctx.current.lineWidth = barsPrefs.borderWidth;
   }, [barsPrefs])
 
-  function setUpBars() {
-    barWidth = barsPrefs.barWidth;
-    borderWidth = barsPrefs.borderWidth;
-    gap = barsPrefs.gap;
-    ctx = tsbarscanvas.getContext("2d");
-    ctx.fillStyle = "#fff";
-    ctx.strokeStyle = "#000";
-    ctx.lineWidth = borderWidth;
-  }
-
-  function drawBars() {
-    let ctx = tsbarscanvas.getContext("2d");
+  useEffect(() => {
+    const drawBars = () => {  
+      let context = ctx.current;
+      let canvas = canvasRef.current || {width: 2400, height: 520};
   
-    analyser.getByteFrequencyData(dataArray);
-  
-    ctx.clearRect(0, 0, tsbarscanvas.width, tsbarscanvas.height);
-  
-    let x = 0;
-  
-    for(let i = 0; i < bufferLength; i++) {
-      let barHeight = dataArray[i] * 2;
-  
-      ctx.fillRect(x, tsbarscanvas.height - barHeight + 6, barWidth, barHeight);
-      if (borderWidth !== 0) {
-        ctx.strokeRect(x, tsbarscanvas.height - barHeight + 6, barWidth, barHeight);
+      analyser.getByteFrequencyData(dataArray);
+    
+      context.clearRect(0, 0, canvas.width, canvas.height);
+    
+      let x = 0;
+    
+      for(let i = 0; i < bufferLength; i++) {
+        let barHeight = dataArray[i] * 2;
+    
+        context.fillRect(x, canvas.height - barHeight + 6, barsPrefs.barWidth, barHeight);
+        if (barsPrefs.borderWidth !== 0) {
+          context.strokeRect(x, canvas.height - barHeight + 6, barsPrefs.barWidth, barHeight);
+        }
+        context.stroke();
+        x += barsPrefs.barWidth + barsPrefs.gap;
       }
-      ctx.stroke();
-      x += barWidth + gap;
+    };
+
+    if (playPauseState === "Pause") {
+      clearInterval(intervalId.current);
+    } else if (playPauseState === "Play") {
+      clearInterval(intervalId.current);
+      intervalId.current = setInterval(() => requestAnimationFrame(drawBars), 17)
     }
-  
-    if (isPlaying && playState === "Play") {
-      setTimeout(() => {
-        requestAnimationFrame(drawBars);
-      }, 17);
-    }
-  }
+  }, [playPauseState, analyser, bufferLength, dataArray, barsPrefs])
 
   return (
     <canvas
-      id="ts-white-bars-canvas"
+      id="ThemeSong-Visualizer-Bars-Variant-White"
       ref={canvasRef}
       height='520'
       width='2400'

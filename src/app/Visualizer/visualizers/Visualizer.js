@@ -6,6 +6,7 @@ import Bars from './bars/Bars';
 import Circles from './circles/Circles';
 import { useStore } from '../../store';
 import VolumeChangeObserver from '../../Player/VolumeChangeObserver';
+import PausedWarning from './components/PausedWarning';
 
 let source;
 let audioCtx;
@@ -91,90 +92,58 @@ Page reload required to reconnect visualizer. Reload now?`
     }
   }
 
-  const returnActiveVisualizer = () => {
-    switch (activeVisualizer) {
-      case "visualizerId:0":
-        return <Wavy analyser={analyser} dataArray={dataArray} bufferLength={bufferLength}  />
-      case "visualizerId:1":
-        return <Bars analyser={analyser} dataArray={dataArray} bufferLength={bufferLength}  />
-      case "visualizerId:2":
-        return <Circles analyser={analyser} dataArray={dataArray} bufferLength={bufferLength}  />
-      default:
-        return (
-          <button 
-            onClick={e => {
-              if (window.confirm(
-                `ThemeSong extension was recently updated. 
-      Page reload required to reconnect visualizer. Reload now?`
-              )) {
-                window.location.reload();
-              }
-            }}
-          >
-            Reload
-          </button>
-        )
-    }
-  }
-
-  return (
-    isVisualizerOn && (
-      (audioCtx !== undefined) ? (
-        (source !== undefined) ? (
-          <div
-            css={css`
-              border-radius: inherit;
-              height: 100%;
-              width: 100%;
-            `}
-          >
-            <VolumeChangeObserver />
-            {returnActiveVisualizer()}
-          </div>
-        ) : (
-          <h1
-            css={css`
-              position: absolute;
-              top: 20%;
-              left: 0;
-              background-color: #000;
-              color: tomato;
-              z-index: 1000;
-            `}
-          >
-            error: source is undefined. --
-            {document.querySelector('video').getAttribute('src')}  
-            ---
-            Reload page and try again.
-          </h1>
-        )
-      ) : (
-        <div
-          css={css`
-            border-radius: inherit;
-            height: 100%;
-            width: 100%;
-          `}
-        >
-          <h1
-            css={css`
-              position: absolute;
-              top: 20%;
-              left: 0;
-              background-color: #000;
-              color: tomato;
-              z-index: 1000;
-            `}
-          >
-            error: audioCtx is undefined. --
-            {document.querySelector('video').getAttribute('src')}  
-            ---
-            Reload page and try again.
-          </h1>
-        </div>
-      )
+  if (isVisualizerOn) {
+    return (
+      <div>
+        {(audioCtx && source && analyser) ? (
+            <div
+              id="ThemeSong-Visualizer"
+              css={css`
+                border-radius: inherit;
+                height: 100%;
+                width: 100%;
+              `}
+            >
+              <VolumeChangeObserver />
+              <PausedWarning />
+              {{
+                'visualizerId:0': <Wavy analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />,
+                'visualizerId:1': <Bars analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />,
+                'visualizerId:2': <Circles analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />,
+              }[activeVisualizer]}
+            </div>
+          ) : (
+            <div
+              id="ThemeSong-Visualizer-Error"
+              css={css`
+                border-radius: inherit;
+                height: 60%;
+                width: 80%;
+                position: absolute;
+                bottom: 5%;
+                left: 10%;
+                background-color: rgba(0,0,0,0.8);
+                z-index: 1001;
+                padding: 10px;
+              `}
+            >
+              <h1>Sorry, something has gone wrong with the Visualizer</h1>
+              <div>
+                {(!audioCtx) && <h2>audioCtx is undefined</h2>}
+                {(!source) && <h2>source is undefined</h2>}
+                {(!analyser) && <h2>analyser is undefined</h2>}
+                <h2>link:{document.querySelector(".ytp-title-link").href}-end</h2>
+                <h2>bloblink:{document.querySelector('video').getAttribute('src')}-end</h2>
+              </div>
+              <div css={css`margin-top: 20px;`}>
+                <h1>Please reload and try again or report to dev</h1>
+              </div>
+            </div>
+          )
+        }
+      </div>
     )
-  )
+  }
 }
 
 export default Visualizer;

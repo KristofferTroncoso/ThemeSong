@@ -139,39 +139,37 @@ setTimeout(() => {
 let circumference = 2 * Math.PI;
 let shorterCanvasSide;
 
-let playState;
 let ctx;
 let tscirclescanvas;
-let isPlaying = false;
 let borderWidth = 4;
 
-function Accent({analyser, dataArray, bufferLength}) {
-  const circlesPrefs = useStore(state => state.visualizer.visualizers
-.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")));
+function Accent({analyser, dataArray}) {
+  const circlesPrefs = useStore(state => state.visualizer.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")));
   const playPauseState = useStore(state => state.player.playPauseState);
   const dominant = useStore(state => state.palette.dominant);
   let ytmusicplayer = document.querySelector("ytmusic-player")
 
   const canvasRef = useRef(null);
+  const intervalId = useRef();
   
   React.useEffect(() => {
     console.log('Accent time');
     tscirclescanvas = canvasRef.current;
-    isPlaying = true;
     setUpCircles();
     accent();
 
     return function cleanUp() {
       console.log('cleaning up');
-      isPlaying = false;
+      clearInterval(intervalId.current);
     }
   }, [])
 
   React.useEffect(() => {
-    playState = playPauseState;
-    if (playPauseState === "Play") {
-      setUpCircles();
-      accent();
+    if (playPauseState === "Pause") {
+      clearInterval(intervalId.current);
+    } else if (playPauseState === "Play") {
+      clearInterval(intervalId.current);
+      intervalId.current = setInterval(() => requestAnimationFrame(accent), 17)
     }
   }, [playPauseState])
 
@@ -253,17 +251,11 @@ function Accent({analyser, dataArray, bufferLength}) {
     ctx.strokeStyle = '#000';
   
     updateAndDraw(ctx);
-  
-    if (isPlaying && playState === "Play") {
-      setTimeout(() => {
-        requestAnimationFrame(accent);
-      }, 17);
-    }
   }
 
   return (
     <canvas
-      id="ts-accent-circles-canvas"
+      id="ThemeSong-Visualizer-Circles-Variant-Accent"
       ref={canvasRef}
       height={ytmusicplayer.clientHeight}
       width={ytmusicplayer.clientWidth}

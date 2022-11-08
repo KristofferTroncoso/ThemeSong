@@ -53,42 +53,40 @@ let dirR = 1;
 let circumference = 2 * Math.PI;
 let shorterCanvasSide;
 
-
-let playState;
 let ctx;
 let tscirclescanvas;
-let isPlaying = false;
 let borderWidth = 4;
 
-function Palette({analyser, dataArray, bufferLength}) {
-  const circlesPrefs = useStore(state => state.visualizer.visualizers
-.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")));
+function Palette({analyser, dataArray}) {
+  const circlesPrefs = useStore(state => state.visualizer.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")));
   const playPauseState = useStore(state => state.player.playPauseState);
   const palette = useStore(state => state.palette.palette);
   let ytmusicplayer = document.querySelector("ytmusic-player")
 
   const canvasRef = useRef(null);
+  const intervalId = useRef();
   
   React.useEffect(() => {
     console.log('Palette time');
     tscirclescanvas = canvasRef.current;
-    isPlaying = true;
     setUpCircles();
     paletteVis();
 
     return function cleanUp() {
       console.log('cleaning up');
-      isPlaying = false;
+      clearInterval(intervalId.current);
     }
   }, [])
 
   React.useEffect(() => {
-    playState = playPauseState;
-    if (playPauseState === "Play") {
-      setUpCircles();
-      paletteVis();
+    if (playPauseState === "Pause") {
+      clearInterval(intervalId.current);
+    } else if (playPauseState === "Play") {
+      clearInterval(intervalId.current);
+      intervalId.current = setInterval(() => requestAnimationFrame(paletteVis), 17)
     }
   }, [playPauseState])
+
 
   React.useEffect(() => {
     setUpCircles();
@@ -239,18 +237,11 @@ function Palette({analyser, dataArray, bufferLength}) {
     ctx.arc(k, l, radius, 0, circumference);
     ctx.fill();
     ctx.stroke();
-
-
-    if (isPlaying && playState === "Play") {
-      setTimeout(() => {
-        requestAnimationFrame(paletteVis);
-      }, 17);
-    }
   }
 
   return (
     <canvas
-      id="ts-palette-circles-canvas"
+      id="ThemeSong-Visualizer-Circles-Variant-Palette"
       ref={canvasRef}
       height={ytmusicplayer.clientHeight}
       width={ytmusicplayer.clientWidth}

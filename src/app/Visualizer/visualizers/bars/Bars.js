@@ -35,7 +35,7 @@ function Bars({analyser, dataArray, bufferLength}) {
 
   return (
     <div
-      id="ts-Bars-container"
+      id="ThemeSong-Visualizer-Bars-Container"
       css={css`
         position: absolute;
         bottom: 0;

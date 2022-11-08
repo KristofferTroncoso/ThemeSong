@@ -263,38 +263,36 @@ let circles = [
 let shorterCanvasSide;
 let circumference = 2 * Math.PI;
 
-let playState;
 let ctx;
 let tscirclescanvas;
-let isPlaying = false;
 let borderWidth = 4;
 
 function Bubbles({analyser, dataArray, bufferLength}) {
-  const circlesPrefs = useStore(state => state.visualizer.visualizers
-.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")));
+  const circlesPrefs = useStore(state => state.visualizer.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")));
   const playPauseState = useStore(state => state.player.playPauseState);
   let ytmusicplayer = document.querySelector("ytmusic-player")
 
   const canvasRef = useRef(null);
+  const intervalId = useRef();
   
   React.useEffect(() => {
     console.log('Bubbles time');
     tscirclescanvas = canvasRef.current;
-    isPlaying = true;
     setUpCircles();
     bubbles();
 
     return function cleanUp() {
       console.log('cleaning up');
-      isPlaying = false;
+      clearInterval(intervalId.current);
     }
   }, [])
 
   React.useEffect(() => {
-    playState = playPauseState;
-    if (playPauseState === "Play") {
-      setUpCircles();
-      bubbles();
+    if (playPauseState === "Pause") {
+      clearInterval(intervalId.current);
+    } else if (playPauseState === "Play") {
+      clearInterval(intervalId.current);
+      intervalId.current = setInterval(() => requestAnimationFrame(bubbles), 17)
     }
   }, [playPauseState])
 
@@ -372,19 +370,12 @@ function Bubbles({analyser, dataArray, bufferLength}) {
       ctx.ellipse(circle.x - (circle.radius * 0.55), circle.y - (circle.radius * 0.55), (circle.radius * 0.08), (circle.radius * 0.16), Math.PI / 4, 0, 2 * Math.PI);
       ctx.fill();
     };
-
-
-    if (isPlaying && playState === "Play") {
-      setTimeout(() => {
-        requestAnimationFrame(bubbles);
-      }, 17);
-    }
   }
 
 
   return (
     <canvas
-      id="ts-bubbles-circles-canvas"
+      id="ThemeSong-Visualizer-Circles-Variant-Bubbles"
       ref={canvasRef}
       height={ytmusicplayer.clientHeight}
       width={ytmusicplayer.clientWidth}

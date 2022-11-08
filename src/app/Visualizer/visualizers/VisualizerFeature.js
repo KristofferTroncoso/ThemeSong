@@ -53,7 +53,9 @@ function VisualizerFeature() {
     addVisualizerButton();
   }, []);
 
-  return <div id="ThemeSong-Visualizer"></div>
+  return (
+    <div id="ThemeSong-VisualizerFeature"></div>
+  )
 }
 
 export default VisualizerFeature;

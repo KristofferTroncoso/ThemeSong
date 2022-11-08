@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useRef, useCallback, useEffect }  from 'react';
+import { useRef, useEffect }  from 'react';
 import { jsx, css } from '@emotion/react';
 import { useStore } from '../../../store';
 
@@ -11,8 +11,17 @@ function Wavy({analyser, dataArray, bufferLength}) {
   const canvasRef = useRef();
   const intervalId = useRef();
   const ctx = useRef();
-    
-  const setUpWavy = useCallback(() => {
+
+  useEffect(() => {
+    console.log('3')
+    return function cleanUp() {
+      console.log('Wavy: Cleaning up');
+      clearInterval(intervalId.current);
+    }
+  }, [])
+
+  useEffect(() => {
+    console.log('1')
     ctx.current = canvasRef.current.getContext("2d");
     ctx.current.strokeStyle = '#fff';
     ctx.current.lineWidth = wavyPrefs.lineWidth;
@@ -26,48 +35,42 @@ function Wavy({analyser, dataArray, bufferLength}) {
     analyser.fftSize = 2048;
   }, [analyser, dominantSwatch, wavyPrefs]);
 
-  const drawWavy = useCallback(() => {
-    analyser.getByteTimeDomainData(dataArray);
-    ctx.current.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-    ctx.current.beginPath();
+  useEffect(() => {
+    console.log('5')
 
-    let sliceWidth = canvasRef.current.width / bufferLength;
-    let x = 0;
-
-    for (let i = 0; i < bufferLength; i++) {
-      let v = dataArray[i] / 128;
-      let y = v * canvasRef.current.height / 2;
-      
-      if (i === 0) {
-        ctx.current.moveTo(x, y);
-      } else {
-        ctx.current.lineTo(x, y);
+    const drawWavy = () => {
+      let context = ctx.current;
+      let canvas = canvasRef.current || {width: 1920, height: 512};
+  
+      analyser.getByteTimeDomainData(dataArray);
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.beginPath();
+  
+      let sliceWidth = canvas.width / bufferLength;
+      let x = 0;
+  
+      for (let i = 0; i < bufferLength; i++) {
+        let v = dataArray[i] / 128;
+        let y = v * canvas.height / 2;
+        
+        if (i === 0) {
+          context.moveTo(x, y);
+        } else {
+          context.lineTo(x, y);
+        }
+        x += sliceWidth;
       }
-      x += sliceWidth;
-    }
+  
+      ctx.current.stroke();
+    };
 
-    ctx.current.stroke();
-  }, [analyser, bufferLength, dataArray]);
-
-  useEffect(() => {
-    return function cleanUp() {
-      console.log('Wavy: Cleaning up');
-      clearInterval(intervalId.current);
-    }
-  }, [])
-
-  useEffect(() => {
-    setUpWavy();
-  }, [setUpWavy])
-
-  useEffect(() => {
-    console.log('useEffect playPauseState')
     if (playPauseState === "Pause") {
       clearInterval(intervalId.current);
     } else if (playPauseState === "Play") {
+      clearInterval(intervalId.current);
       intervalId.current = setInterval(() => requestAnimationFrame(drawWavy), 17)
     }
-  }, [playPauseState, drawWavy])
+  }, [playPauseState, analyser, bufferLength, dataArray])
 
   return (
     <div

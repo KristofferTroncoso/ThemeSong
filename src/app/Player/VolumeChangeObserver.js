@@ -30,24 +30,24 @@ function VolumeChangeObserver() {
   }, [])
 
   return (
-    <div id="VolumeChangeObserver"
-      css={css`
-        position: absolute;
-        z-index: 1000;
-        top: 10%;
-        left: 0;
-        background-color: rgba(0,0,0,0.5);
-        color: red;
-      `}
-    >
+    <div id="VolumeChangeObserver">
       {(currentVolume === '0') && (
         <h1
           css={css`
-            font-size: 50px;
+            position: absolute;
+            z-index: 1000;
+            top: 10%;
+            left: 0;
+            background-color: rgba(0,0,0,0.7);
+            border: 4px solid #9e0000;
+            color: #fff;
             margin: 20px;
+            border-radius: 10px;
+            font-size: 30px;
+            padding: 20px;
           `}
         >
-          Volume is MUTED. Turn up volume for visualizer to work.
+          MUTED. Turn up volume for visualizer to work.
         </h1>
       )}
     </div>
