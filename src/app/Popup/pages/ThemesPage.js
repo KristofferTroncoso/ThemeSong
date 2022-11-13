@@ -8,6 +8,7 @@ import OffSettings  from '../../Theme/themes/Off/OffSettings';
 import DynamicSettings from '../../Theme/themes/Dynamic/DynamicSettings'; 
 import StaticSettings from '../../Theme/themes/Static/StaticSettings';
 import CustomSettings from '../../Theme/themes/Custom/CustomSettings';
+import DittoSettings from '../../Theme/themes/Ditto/DittoSettings';
 
 import ThemeButton from '../components/ThemeButton';
 
@@ -27,6 +28,8 @@ function ThemesPage() {
         return <StaticSettings />
       case "themeId:8":
         return <CustomSettings />
+      case "themeId:9":
+        return <DittoSettings />
       default:
         break;
     }

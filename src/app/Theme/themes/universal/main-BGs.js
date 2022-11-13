@@ -1,7 +1,7 @@
 
 export const main_BGs = /*css*/`
 :root {
-  --themesong-bgcolor-transition: background-color 1s ease-out;
+  --themesong-bgcolor-transition: background 0.5s ease-out;
 
   --ytmusic-brand-background-solid: var(--themesong-bodybg-color) !important;
   --ytmusic-general-background-c: var(--themesong-bodybg-color) !important;
@@ -14,17 +14,22 @@ body {
 }
 
 #player-page {
-  background-color: var(--themesong-playpagebg-color) !important;
+  background: var(--themesong-playpagebg-color) !important;
+  transition: transform 300ms cubic-bezier(0.2,0,0.6,1), var(--themesong-bgcolor-transition);
+}
+
+#song-image {
+  background: var(--themesong-playpagebg-color) !important;
   transition: transform 300ms cubic-bezier(0.2,0,0.6,1), var(--themesong-bgcolor-transition);
 }
 
 #nav-bar-background {
-  background-color: var(--themesong-topbarbg-color) !important;
+  background: var(--themesong-topbarbg-color) !important;
   transition: opacity 0.2s, var(--themesong-bgcolor-transition) !important;
 }
 
 #player-bar-background {
-  background-color: var(--themesong-playbarbg-color) !important;
+  background: var(--themesong-playbarbg-color) !important;
   transition: var(--themesong-bgcolor-transition) !important;
 }
 
@@ -34,23 +39,23 @@ ytmusic-player-bar {
 }
 
 tp-yt-paper-listbox {
-  background-color: var(--themesong-playbarbg-color);
+  background: var(--themesong-playbarbg-color);
 }
 
 ytmusic-item-section-renderer.stuck #header.ytmusic-item-section-renderer {
-  background-color: var(--themesong-bodybg-color);
+  background: var(--themesong-bodybg-color);
 }
 
 ytmusic-tabs.stuck {
-  background-color: var(--themesong-bodybg-color);
+  background: var(--themesong-bodybg-color);
 }
 
 ytmusic-av-toggle[playback-mode=ATV_PREFERRED] .song-button.ytmusic-av-toggle {
-  background-color: var(--themesong-playpageavtoggle-color);
+  background: var(--themesong-playpageavtoggle-color);
 }
 
 ytmusic-av-toggle[playback-mode=OMV_PREFERRED] .video-button.ytmusic-av-toggle {
-  background-color: var(--themesong-playpageavtoggle-color);
+  background: var(--themesong-playpageavtoggle-color);
 }
 
 
