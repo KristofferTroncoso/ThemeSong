@@ -5,7 +5,7 @@ import Themes from '../Theme/Themes';
 import SongObserver from '../Song/SongObserver';
 import PanelContainer from '../QuickAccessPanel';
 import PlayPauseChangeObserver from '../Player/PlayPauseChangeObserver';
-// import PlayerUiStateObserver from '../Player/PlayerUiStateObserver';
+import PlayerUiStateObserver from '../Player/PlayerUiStateObserver';
 import SongInfoDisplayFeature from '../Song/SongInfoDisplay/SongInfoDisplayFeature';
 import VisualizerFeature from '../Visualizer/visualizers/VisualizerFeature';
 import Palette from '../Palette/Palette';
@@ -21,7 +21,7 @@ function ContentScript() {
       <SongObserver />
       <PanelContainer />
       <PlayPauseChangeObserver />
-      {/* <PlayerUiStateObserver /> */}
+      <PlayerUiStateObserver />
       <SongInfoDisplayFeature />
       <VisualizerFeature />
       <Palette />
