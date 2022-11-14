@@ -39,33 +39,12 @@ let dirJ = 1;
 let speedI = 1;
 let speedJ = 1.3;
 
-let k = 400;
-let l = 5;
-let dirK = 1;
-let dirL = -1;
-let speedK = 1.5;
-let speedL = 0.8;
-
 let m = 150;
 let n = 420;
 let dirM = 1;
 let dirN = -1;
 let speedM = 1;
 let speedN = 3;
-
-let o = 400;
-let p = 290;
-let dirO = 1;
-let dirP = 1;
-let speedO = 1.5;
-let speedP = 1.2;
-
-let q = 200;
-let r = 310;
-let dirQ = 1;
-let dirR = 1;
-let speedQ = 0.9;
-let speedR = 0.6;
 
 let circumference = 2 * Math.PI;
 let shorterCanvasSide;
@@ -204,38 +183,11 @@ function Palette({analyser, dataArray}) {
     ctx.stroke();
 
     ctx.beginPath();
-    ctx.lineWidth = 5;
-    ctx.fillStyle = `${palette.Muted.hex}`;
-    radius = ((Math.max(dataArray[180]-10, 0) / 500) + 0.35) * (shorterCanvasSide/5);
-    [o, p, dirO, dirP] = updateValues(o, p, dirO, dirP, radius, speedO, speedP)
-    ctx.arc(o, p, radius, 0, circumference);
-    ctx.fill();
-    ctx.stroke();
-
-    ctx.beginPath();
     ctx.lineWidth = 4;
-    ctx.fillStyle = `${palette.Vibrant.hex}`;
+    ctx.fillStyle = `${palette.LightMuted.hex}`;
     radius = ((Math.max(dataArray[190], 0) / 1000) + 0.34) * (shorterCanvasSide/5);
     [i, j, dirI, dirJ] = updateValues(i, j,  dirI, dirJ, radius, speedI, speedJ)
     ctx.arc(i, j, radius, 0, circumference);
-    ctx.fill();
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.lineWidth = 3;
-    ctx.fillStyle = `${palette.DarkVibrant.hex}`;
-    radius = ((Math.max(dataArray[200], 0) / 1000) + 0.32) * (shorterCanvasSide/5);
-    [q, r, dirQ, dirR] = updateValues(q, r,  dirQ, dirR, radius, speedQ, speedR)
-    ctx.arc(q, r, radius, 0, circumference);
-    ctx.fill();
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.lineWidth = 3;
-    radius = ((Math.max(dataArray[210], 0) / 1000) + 0.3) * (shorterCanvasSide/5);
-    ctx.fillStyle = `${palette.LightVibrant.hex}`;
-    [k, l, dirK, dirL] = updateValues(k, l, dirK, dirL, radius, speedK, speedL)
-    ctx.arc(k, l, radius, 0, circumference);
     ctx.fill();
     ctx.stroke();
   }
