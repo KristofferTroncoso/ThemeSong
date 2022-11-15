@@ -13,6 +13,10 @@ body {
   transition: var(--themesong-bgcolor-transition) !important;
 }
 
+.background-gradient {
+  background: var(--themesong-bodybg-color) !important;
+}
+
 #player-page {
   background: var(--themesong-playpagebg-color) !important;
   transition: transform 300ms cubic-bezier(0.2,0,0.6,1), var(--themesong-bgcolor-transition);

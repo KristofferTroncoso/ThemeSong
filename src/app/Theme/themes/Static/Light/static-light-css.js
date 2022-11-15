@@ -530,6 +530,11 @@ body {
   background-color: var(--themesong-bodybg-color);
 }
 
+/* styled gradient applied by yt to home page. overwriting with just a solid color */
+.background-gradient {
+  background: var(--themesong-bodybg-color) !important;
+}
+
 #nav-bar-background {
   background-color: var(--themesong-topbarbg-color) !important;
   transition: opacity 0.2s, var(--themesong-bgcolor-transition) !important;
