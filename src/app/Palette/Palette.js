@@ -159,6 +159,20 @@ function Palette() {
           --themesong-palette-lightmuted-hue: ${(palette.LightMuted.hsl[0] * 360).toFixed()};
           --themesong-palette-muted-hue: ${(palette.Muted.hsl[0] * 360).toFixed()};
           --themesong-palette-darkmuted-hue: ${(palette.DarkMuted.hsl[0] * 360).toFixed()};
+
+          --themesong-palette-lightvibrant-saturation: ${(palette.LightVibrant.hsl[1] * 100).toFixed()}%;
+          --themesong-palette-vibrant-saturation: ${(palette.Vibrant.hsl[1] * 100).toFixed()}%;
+          --themesong-palette-darkvibrant-saturation: ${(palette.DarkVibrant.hsl[1] * 100).toFixed()}%;
+          --themesong-palette-lightmuted-saturation: ${(palette.LightMuted.hsl[1] * 100).toFixed()}%;
+          --themesong-palette-muted-saturation: ${(palette.Muted.hsl[1] * 100).toFixed()}%;
+          --themesong-palette-darkmuted-saturation: ${(palette.DarkMuted.hsl[1] * 100).toFixed()}%;
+
+          --themesong-palette-lightvibrant-light: ${(palette.LightVibrant.hsl[2] * 100).toFixed()}%;
+          --themesong-palette-vibrant-light: ${(palette.Vibrant.hsl[2] * 100).toFixed()}%;
+          --themesong-palette-darkvibrant-light: ${(palette.DarkVibrant.hsl[2] * 100).toFixed()}%;
+          --themesong-palette-lightmuted-light: ${(palette.LightMuted.hsl[2] * 100).toFixed()}%;
+          --themesong-palette-muted-light: ${(palette.Muted.hsl[2] * 100).toFixed()}%;
+          --themesong-palette-darkmuted-light: ${(palette.DarkMuted.hsl[2] * 100).toFixed()}%;
           
           --themesong-palette-dominant-color: ${dominant.hex};
           --themesong-palette-dominant-hue: ${(dominant.hsl[0] * 360).toFixed()};
