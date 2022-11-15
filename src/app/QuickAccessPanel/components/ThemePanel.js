@@ -4,6 +4,7 @@ import { jsx, css } from '@emotion/react';
 import InvertColorsOffIcon from '@mui/icons-material/InvertColorsOff';
 import { GiAtom } from 'react-icons/gi';
 import ColorizeIcon from '@mui/icons-material/Colorize';
+import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
 
 import PanelButton from './PanelButton';
 import { useStore } from '../../store';
@@ -33,10 +34,10 @@ function ThemePanel() {
           css={css`
             height: 42px;
             min-width: 45px;
-            width: 60px;
-            margin: 5px 4px 5px 5px;
+            width: 54px;
+            margin: 0 2px;
             border: 0;
-            border-radius: 8px 0 0 5px;
+            border-radius: 5px 0 0 5px;
           `}
           onClick={e => handleClick("themeId:0")}
         >
@@ -50,8 +51,8 @@ function ThemePanel() {
           css={css`
             height: 42px;
             min-width: 45px;
-            width: 60px;
-            margin: 0;
+            width: 54px;
+            margin: 0 2px;
             border: 0;
             border-radius: 0;
           `}
@@ -66,16 +67,33 @@ function ThemePanel() {
           hoverColor="#ff3700"
           css={css`
             height: 42px;
-            min-width: 60px;
-            width: 60px;
-            margin: 5px 5px 5px 4px;
+            min-width: 45px;
+            width: 54px;
+            margin: 0 2px;
             border: 0;
-            border-radius: 0 8px 5px 0;
-            padding: 0;
+            border-radius: 0;
           `}
           onClick={e => handleClick("themeId:7")}
         >
           <ColorizeIcon css={css`font-size: 24px;`} />
+        </PanelButton>
+        <PanelButton
+          title="Ditto"
+          bgColor={activeTheme === "themeId:9" && 'rgba(255,255,255,0.8)'}
+          color={activeTheme === "themeId:9" && '#9c5cad'}
+          hoverColor="#9c5cad"
+          css={css`
+            height: 42px;
+            min-width: 45px;
+            width: 54px;
+            margin: 0 2px;
+            border: 0;
+            border-radius: 0 5px 5px 0;
+            padding: 0;
+          `}
+          onClick={e => handleClick("themeId:9")}
+        >
+          <TheaterComedyIcon css={css`font-size: 28px;`} />
         </PanelButton>
       </div>
     </div>

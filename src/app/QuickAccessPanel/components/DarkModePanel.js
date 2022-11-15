@@ -12,7 +12,7 @@ import PanelButton from './PanelButton';
 function DarkModePanel() {
   const themes = useStore(state => state.theme.themes);
   const activeTheme = useStore(state => state.theme.activeTheme);
-  const activeThemeInfo = useStore(state => state.theme.themes.find(theme => theme.themeId === activeTheme));
+  // const activeThemeInfo = useStore(state => state.theme.themes.find(theme => theme.themeId === activeTheme));
   const activeThemeUserPrefs = useStore(state => state.theme.themes.find(theme => theme.themeId === activeTheme).userPrefs);
   const changeThemes = useStore(state => state.theme.changeThemes);
 
@@ -34,23 +34,24 @@ function DarkModePanel() {
     }
   }
 
-  if (activeTheme === "themeId:0") {
+  if (!(activeTheme === "themeId:6" || activeTheme === "themeId:7")) {
     return <div></div>
   } else {
     return (
       <div css={css`margin-bottom: 0;`}>
+        <h3 css={css`padding: 2px 5px;`}>Appearance</h3>
         <div css={css`display: flex; justify-content: start; align-items: center;`}>
           <PanelButton
             title="Dark Mode"
             css={css`
-              height: 42px;
+              height: 38px;
               min-width: 45px;
               width: 60px;
               margin: 5px 4px 5px 5px;
               background: ${activeThemeUserPrefs.appearanceSetting ===  "dark" && 'rgba(255,255,255,0.8)'};
               color: ${activeThemeUserPrefs.appearanceSetting ===  "dark" && '#9d00ff'};
               border: 0;
-              border-radius: 5px 0 0 8px;
+              border-radius: 5px 0 0 5px;
               :hover {
                 color: #9d00ff;
               }
@@ -62,7 +63,7 @@ function DarkModePanel() {
           <PanelButton
             title="Light Mode"
             css={css`
-              height: 42px;
+              height: 38px;
               min-width: 45px;
               width: 60px;
               margin: 0;
@@ -81,14 +82,14 @@ function DarkModePanel() {
           <PanelButton
             title="Use Device Setting"
             css={css`
-              height: 42px;
+              height: 38px;
               min-width: 45px;
               width: 60px;
               margin: 5px 5px 5px 4px;
               background: ${activeThemeUserPrefs.appearanceSetting ===  "system"  && 'rgba(255,255,255,0.8)'};
               color: ${activeThemeUserPrefs.appearanceSetting ===  "system" && '#009961'};
               border: 0;
-              border-radius: 0 5px 8px 0;
+              border-radius: 0 5px 5px 0;
               :hover {
                 color: #009961;
               }
