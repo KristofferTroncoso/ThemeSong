@@ -22,6 +22,7 @@ function RGB({analyser, dataArray, bufferLength}) {
     ctx.current = canvasRef.current.getContext("2d");
     ctx.current.strokeStyle = "#000";
     ctx.current.lineWidth = barsPrefs.borderWidth;
+    analyser.fftSize = 2048;
   }, [barsPrefs])
 
   useEffect(() => {

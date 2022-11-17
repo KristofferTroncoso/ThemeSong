@@ -23,6 +23,7 @@ function Black({analyser, dataArray, bufferLength}) {
     ctx.current.fillStyle = "#000";
     ctx.current.strokeStyle = "#fff";
     ctx.current.lineWidth = barsPrefs.borderWidth;
+    analyser.fftSize = 2048;
   }, [barsPrefs])
 
   useEffect(() => {
