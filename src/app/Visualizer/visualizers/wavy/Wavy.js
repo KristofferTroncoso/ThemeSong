@@ -82,7 +82,7 @@ function Wavy({analyser, dataArray, bufferLength}) {
         height: 100%;
         width: 100%;
         border-radius: inherit;
-        background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 75%,  rgba(0,0,0,0.3) 100%);
+        background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.7) 75%, rgba(0,0,0,0.6) 100%);
       `}
     >
       <canvas

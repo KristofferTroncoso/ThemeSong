@@ -22,29 +22,29 @@ let e = 230;
 let f = 460;
 let dirE = -1;
 let dirF = -1;
-let speedE = 1.1;
-let speedF = 1.2;
+let speedE = 0.8;
+let speedF = 0.9;
 
 let g = 310;
 let h = 450;
 let dirG = -1;
 let dirH = 1;
-let speedG = 1.4;
-let speedH = 1.2;
+let speedG = 1;
+let speedH = 0.8;
 
 let i = 160;
 let j = 310;
 let dirI = -1;
 let dirJ = 1;
-let speedI = 1;
-let speedJ = 1.3;
+let speedI = 0.9;
+let speedJ = 1.2;
 
 let m = 150;
 let n = 420;
 let dirM = 1;
 let dirN = -1;
-let speedM = 1;
-let speedN = 3;
+let speedM = 0.6;
+let speedN = 2;
 
 let circumference = 2 * Math.PI;
 let shorterCanvasSide;
@@ -139,7 +139,12 @@ function Palette({analyser, dataArray}) {
 
     ctx.beginPath();
     ctx.lineWidth = 6;
-    ctx.fillStyle = `${palette.Vibrant.hex}`;
+    ctx.fillStyle = `hsla(
+      ${(palette.Vibrant.hsl[0] * 360).toFixed()}, 
+      ${palette.Vibrant.hsl[1] * 100}%, 
+      ${palette.Vibrant.hsl[2] * 100}%, 
+      0.9
+    )`;
     radius = ((Math.max(dataArray[0]-200, 0) / 300) + 1) * (shorterCanvasSide/5);
     [a, b, dirA, dirB] = updateValues(a, b, dirA, dirB, radius, speedA, speedB)
     ctx.arc(a, b, radius, 0, circumference);
@@ -148,7 +153,12 @@ function Palette({analyser, dataArray}) {
 
     ctx.beginPath();
     ctx.lineWidth = 5;
-    ctx.fillStyle = `${palette.Muted.hex}`;
+    ctx.fillStyle = `hsla(
+      ${(palette.Muted.hsl[0] * 360).toFixed()}, 
+      ${palette.Muted.hsl[1] * 100}%, 
+      ${palette.Muted.hsl[2] * 100}%, 
+      0.9
+    )`;
     radius = ((Math.max(dataArray[40]-20, 0) / 500) + 0.6) * (shorterCanvasSide/5);
     [c, d, dirC, dirD] = updateValues(c, d, dirC, dirD, radius, speedC, speedD)
     ctx.arc(c, d, radius, 0, circumference);
@@ -157,7 +167,12 @@ function Palette({analyser, dataArray}) {
 
     ctx.beginPath();
     ctx.lineWidth = 4;
-    ctx.fillStyle = `${palette.DarkVibrant.hex}`;
+    ctx.fillStyle = `hsla(
+      ${(palette.DarkVibrant.hsl[0] * 360).toFixed()}, 
+      ${palette.DarkVibrant.hsl[1] * 100}%, 
+      ${palette.DarkVibrant.hsl[2] * 100}%, 
+      0.9
+    )`;
     radius = ((Math.max(dataArray[100], 0) / 500) + 0.38) * (shorterCanvasSide/5);
     [e, f, dirE, dirF] = updateValues(e, f, dirE, dirF, radius, speedE, speedF)
     ctx.arc(e, f, radius, 0, circumference);
@@ -166,7 +181,12 @@ function Palette({analyser, dataArray}) {
 
     ctx.beginPath();
     ctx.lineWidth = 4;
-    ctx.fillStyle = `${palette.LightVibrant.hex}`;
+    ctx.fillStyle = `hsla(
+      ${(palette.LightVibrant.hsl[0] * 360).toFixed()}, 
+      ${palette.LightVibrant.hsl[1] * 100}%, 
+      ${palette.LightVibrant.hsl[2] * 100}%, 
+      0.9
+    )`;
     radius = ((Math.max(dataArray[120], 0) / 500) + 0.37) * (shorterCanvasSide/5);
     [m, n, dirM, dirN] = updateValues(m, n, dirM, dirN, radius, speedM, speedN)
     ctx.arc(m, n, radius, 0, circumference);
@@ -175,7 +195,12 @@ function Palette({analyser, dataArray}) {
 
     ctx.beginPath();
     ctx.lineWidth = 4;
-    ctx.fillStyle = `${palette.DarkMuted.hex}`;
+    ctx.fillStyle = `hsla(
+      ${(palette.DarkMuted.hsl[0] * 360).toFixed()}, 
+      ${palette.DarkMuted.hsl[1] * 100}%, 
+      ${palette.DarkMuted.hsl[2] * 100}%, 
+      0.9
+    )`;
     radius = ((Math.max(dataArray[160]-10, 0) / 400) + 0.36) * (shorterCanvasSide/5);
     [g, h, dirG, dirH] = updateValues(g, h, dirG, dirH, radius, speedG, speedH)
     ctx.arc(g, h, radius, 0, circumference);
@@ -184,7 +209,12 @@ function Palette({analyser, dataArray}) {
 
     ctx.beginPath();
     ctx.lineWidth = 4;
-    ctx.fillStyle = `${palette.LightMuted.hex}`;
+    ctx.fillStyle = `hsla(
+      ${(palette.LightMuted.hsl[0] * 360).toFixed()}, 
+      ${palette.LightMuted.hsl[1] * 100}%, 
+      ${palette.LightMuted.hsl[2] * 100}%, 
+      0.9
+    )`;
     radius = ((Math.max(dataArray[190], 0) / 1000) + 0.34) * (shorterCanvasSide/5);
     [i, j, dirI, dirJ] = updateValues(i, j,  dirI, dirJ, radius, speedI, speedJ)
     ctx.arc(i, j, radius, 0, circumference);
