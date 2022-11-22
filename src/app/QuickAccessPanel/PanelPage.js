@@ -16,7 +16,8 @@ function PanelPage() {
       css={css`
         padding: 6px;
         border: 1px solid rgba(255, 255, 255, 0.1);
-        background-color: var(--themesong-playbarbg-color, #222);
+        background: var(--themesong-playbarbg-color, #222);
+        backdrop-filter: blur(6px);
         transition: var(--themesong-bgcolor-transition);
         color: var(--themesong-secondary-text-color, #fff);
       `}

@@ -148,22 +148,22 @@ ytmusic-two-row-item-renderer .content-wrapper.ytmusic-play-button-renderer {
 
 ytmusic-player-bar tp-yt-paper-icon-button  {
   /* color: #4a4a4a !important; */
-  color: #d60017 !important;
+  color: #4a4a4a !important;
 }
 
 .menu.ytmusic-player-bar {
   /* --iron-icon-fill-color: rgba(0,0,0,0.5) !important; */
-  --iron-icon-fill-color: #d60017 !important;
+  --iron-icon-fill-color: #4a4a4a !important;
 }
 
 .left-controls.ytmusic-player-bar tp-yt-paper-icon-button.ytmusic-player-bar, .left-controls.ytmusic-player-bar .spinner-container.ytmusic-player-bar, .toggle-player-page-button.ytmusic-player-bar {
   /* --iron-icon-fill-color: rgba(0,0,0,0.8) !important; */
-  --iron-icon-fill-color: #d60017 !important;
+  --iron-icon-fill-color: #4a4a4a !important;
 }
 
 ytmusic-player-bar {
   /* color: rgba(0,0,0,0.5) !important; */
-  color: #d60017 !important;
+  color: #4a4a4a !important;
 }
 
 ytmusic-like-button-renderer[like-status=LIKE] .like.ytmusic-like-button-renderer, ytmusic-like-button-renderer[like-status=DISLIKE] .dislike.ytmusic-like-button-renderer {
@@ -533,21 +533,26 @@ iron-input.tp-yt-paper-input > input.tp-yt-paper-input {
 /* start MAIN */
 /* This can be specific since we would like to individually adjust these portions. */
 body {
-  background-color: var(--themesong-bodybg-color);
+  background: var(--themesong-bodybg-color);
+}
+
+.background-gradient {
+  background: var(--themesong-base-00-color) !important;
 }
 
 #nav-bar-background {
-  background-color: var(--themesong-topbarbg-color) !important;
+  background: var(--themesong-topbarbg-color) !important;
+  backdrop-filter: blur(6px);
   transition: opacity 0.2s, var(--themesong-bgcolor-transition) !important;
 }
 
 ytmusic-player-page {
-  background-color: var(--themesong-playpagebg-color);
+  background: var(--themesong-playpagebg-color);
   transition: transform 300ms cubic-bezier(0.2,0,0.6,1), var(--themesong-bgcolor-transition) !important;
 }
 
 #player-bar-background {
-  background-color: var(--themesong-playbarbg-color) !important;
+  background: var(--themesong-playbarbg-color) !important;
   backdrop-filter: blur(6px);
   transition: var(--themesong-bgcolor-transition) !important;
 }
@@ -557,19 +562,19 @@ ytmusic-player-bar {
 }
 
 ytmusic-item-section-renderer.stuck #header.ytmusic-item-section-renderer {
-  background-color: var(--themesong-bodybg-color);
+  background: var(--themesong-bodybg-color);
 }
 
 ytmusic-tabs.stuck {
-  background-color: var(--themesong-bodybg-color);
+  background: var(--themesong-bodybg-color);
 }
 
 ytmusic-av-toggle[playback-mode=ATV_PREFERRED] .song-button.ytmusic-av-toggle {
-  background-color: var(--themesong-playpageavtoggle-color);
+  background: var(--themesong-playpageavtoggle-color);
 }
 
 ytmusic-av-toggle[playback-mode=OMV_PREFERRED] .video-button.ytmusic-av-toggle {
-  background-color: var(--themesong-playpageavtoggle-color);
+  background: var(--themesong-playpageavtoggle-color);
 }
 /* end main */
 

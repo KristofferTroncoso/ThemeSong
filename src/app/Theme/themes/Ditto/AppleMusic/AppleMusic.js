@@ -6,7 +6,7 @@ import { useStore } from '../../../../store';
 
 function AppleMusic() {
   const playerUiState = useStore(state => state.player.playerUiState);
-  const dominantHue = useStore(state => state.palette.dominant.hsl[0])
+  const lightVibrantHSL = useStore(state => state.palette.palette.LightVibrant.hsl)
 
   useEffect(() => {
     console.log('PLAYERUISTATE', playerUiState)
@@ -24,12 +24,12 @@ function AppleMusic() {
   useEffect(() => {
     console.log('PLAYERUISTATE2', playerUiState)
     if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
-      menubar.content = `hsl(0, 0%, 94%)`;
+      menubar.content = `hsl(0, 0%, 96%)`;
       //apply dark logo on load
       document.querySelectorAll("ytmusic-nav-bar #left-content picture source")[1].srcset = chrome.runtime.getURL("/assets/images/dark_youtube_music_logo_themesong_mod.svg")
       document.querySelector("ytmusic-nav-bar #left-content picture img").src = chrome.runtime.getURL("/assets/images/dark_youtube_music_logo_themesong_mod.svg")
     } else {
-      menubar.content = `hsl(${dominantHue * 360}, 22%, 30%)`;
+      menubar.content = `hsl(${lightVibrantHSL[0] * 360}, ${(lightVibrantHSL[1] * 100) * 0.3}%, 25%)`;
       //remove dark logo on unload
       document.querySelectorAll("ytmusic-nav-bar #left-content picture source")[1].srcset = "//music.youtube.com/img/on_platform_logo_dark.svg";
       document.querySelector("ytmusic-nav-bar #left-content picture img").src = "//music.youtube.com/img/on_platform_logo_dark.svg";
@@ -40,7 +40,7 @@ function AppleMusic() {
       document.querySelectorAll("ytmusic-nav-bar #left-content picture source")[1].srcset = "//music.youtube.com/img/on_platform_logo_dark.svg";
       document.querySelector("ytmusic-nav-bar #left-content picture img").src = "//music.youtube.com/img/on_platform_logo_dark.svg";
     }
-  }, [playerUiState, dominantHue])
+  }, [playerUiState, lightVibrantHSL])
 
   return (
     <style id="AppleMusic">
@@ -63,6 +63,7 @@ function AppleMusic() {
           --themesong-theme-static-playpagebg-light: ${96}%;
           --themesong-theme-static-playbarbg-light: ${94}%;
           --themesong-theme-static-playpageavtoggle-light: ${21 + (50 / 25) * 14}%;
+          --themesong-topbarbg-color: rgba(230,230,230,0.4) !important;
         }
         ${apple_music_css}
       `}

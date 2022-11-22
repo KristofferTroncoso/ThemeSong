@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useStore } from '../../../../store';
 import { youtubemusicmobile_css } from './YouTubeMusicMobileCss';
 import { menubar } from '../../selectors';
+import { playerbar_progressbar } from '../../universal/playerbar-progressbar';
 
 function YouTubeMusicMobile() {
   const dominantColorHSL = useStore(state => state.palette.dominant).hsl;
@@ -31,7 +32,7 @@ function YouTubeMusicMobile() {
 
   return (
     <style id="YouTubeMusicMobile">
-      {!(playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER") && `
+      {!(playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER") ? `
         :root {
           --themesong-theme-dynamic-saturation: ${saturation};
           --themesong-theme-dynamic-topbarbg-light: ${calcCurvedBrightness(20)}%;
@@ -43,6 +44,11 @@ function YouTubeMusicMobile() {
         #songDivContainer {
           display: none;
         }
+      ` : `
+        :root {
+          --themesong-playprogress-color: #fff;
+        }
+        ${playerbar_progressbar}
       `}
     </style>
   )
