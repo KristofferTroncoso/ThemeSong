@@ -43,7 +43,7 @@ function Bars({analyser, dataArray, bufferLength}) {
         height: 100%;
         width: 100%;
         border-radius: inherit;
-        background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 70%,  rgba(0,0,0,0.8) 100%);
+        background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 70%,  rgba(0,0,0,0.8) 100%);
       `}
     >
       {returnActiveVariant()}

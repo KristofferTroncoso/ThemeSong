@@ -43,7 +43,7 @@ function Circles({analyser, dataArray, bufferLength}) {
         height: 100%;
         width: 100%;
         border-radius: inherit;
-        background: rgba(0,0,0,0.6);
+        background: rgba(0,0,0,0.5);
       `}
     >
       {returnActiveVariant()}
