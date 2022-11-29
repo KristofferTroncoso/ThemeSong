@@ -22,10 +22,10 @@ export const apple_music_css = /*css*/`
   --themesong-palette-dominant-alpha10-color: var(--themesong-default-app-color);
   --themesong-picked-vibrant-alpha20: var(--themesong-default-app-color);
 
-  --themesong-topbarbg-color: hsl(var(--themesong-theme-static-hue), var(--themesong-theme-static-saturation), var(--themesong-theme-static-topbarbg-light));
-  --themesong-bodybg-color: hsl(var(--themesong-theme-static-hue), var(--themesong-theme-static-saturation), var(--themesong-theme-static-bodybg-light));
+  --themesong-topbarbg-color: rgba(235,235,235,0.7) !important;
+  --themesong-bodybg-color: #fff;
   --themesong-playpagebg-color: hsl(var(--themesong-theme-static-hue), var(--themesong-theme-static-saturation), var(--themesong-theme-static-playpagebg-light));
-  --themesong-playbarbg-color: rgba(230,230,230,0.4);
+  --themesong-playbarbg-color: hsla(var(--themesong-palette-dominant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.7), 88%, 0.4);
   --themesong-playpageavtoggle-color: hsl(var(--themesong-theme-static-hue), var(--themesong-theme-static-saturation), var(--themesong-theme-static-playpageavtoggle-light));
 
   --themesong-playprogress-color: var(--themesong-base-100-color);
@@ -158,7 +158,7 @@ ytmusic-player-bar tp-yt-paper-icon-button  {
 
 .left-controls.ytmusic-player-bar tp-yt-paper-icon-button.ytmusic-player-bar, .left-controls.ytmusic-player-bar .spinner-container.ytmusic-player-bar, .toggle-player-page-button.ytmusic-player-bar {
   /* --iron-icon-fill-color: rgba(0,0,0,0.8) !important; */
-  --iron-icon-fill-color: #4a4a4a !important;
+  --iron-icon-fill-color: #222 !important;
 }
 
 ytmusic-player-bar {
@@ -542,7 +542,7 @@ body {
 
 #nav-bar-background {
   background: var(--themesong-topbarbg-color) !important;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(12px);
   transition: opacity 0.2s, var(--themesong-bgcolor-transition) !important;
 }
 
@@ -553,7 +553,7 @@ ytmusic-player-page {
 
 #player-bar-background {
   background: var(--themesong-playbarbg-color) !important;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(12px);
   transition: var(--themesong-bgcolor-transition) !important;
 }
 ytmusic-player-bar {
@@ -562,11 +562,13 @@ ytmusic-player-bar {
 }
 
 ytmusic-item-section-renderer.stuck #header.ytmusic-item-section-renderer {
-  background: var(--themesong-bodybg-color);
+  background: var(--themesong-topbarbg-color);
+  backdrop-filter: blur(12px);
 }
 
 ytmusic-tabs.stuck {
-  background: var(--themesong-bodybg-color);
+  background: var(--themesong-topbarbg-color);
+  backdrop-filter: blur(12px);
 }
 
 ytmusic-av-toggle[playback-mode=ATV_PREFERRED] .song-button.ytmusic-av-toggle {
@@ -575,6 +577,14 @@ ytmusic-av-toggle[playback-mode=ATV_PREFERRED] .song-button.ytmusic-av-toggle {
 
 ytmusic-av-toggle[playback-mode=OMV_PREFERRED] .video-button.ytmusic-av-toggle {
   background: var(--themesong-playpageavtoggle-color);
+}
+
+tp-yt-iron-dropdown {
+  backdrop-filter: blur(14px);
+}
+
+ytmusic-search-box {
+  backdrop-filter: blur(14px);
 }
 /* end main */
 

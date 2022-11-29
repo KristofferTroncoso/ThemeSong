@@ -23,26 +23,23 @@ export const apple_dark_css = /*css*/`
   --themesong-base-00-alpha10-color: rgba(255, 255, 255, 0.1);
   --themesong-base-00-alpha20-color: rgba(255, 255, 255, 0.2);
 
-  --themesong-theme-ditto-apple-1-color: hsl(var(--themesong-palette-dominant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.3), 25%);
-  --themesong-theme-ditto-apple-2-color: hsl(var(--themesong-palette-vibrant-hue), calc(var(--themesong-palette-vibrant-saturation) * 0.3), 22%);
-  --themesong-theme-ditto-apple-3-color: hsl(var(--themesong-palette-muted-hue), calc(var(--themesong-palette-muted-saturation) * 0.3), 18%);
-  --themesong-theme-ditto-apple-4-color: hsl(var(--themesong-palette-lightvibrant-hue), calc(var(--themesong-palette-lightvibrant-saturation) * 0.3), 25%);
-  --themesong-theme-ditto-apple-5-color: hsl(var(--themesong-palette-darkvibrant-hue), calc(var(--themesong-palette-darkvibrant-saturation) * 0.3), 20%);
+  --themesong-theme-ditto-apple-1-color: hsl(var(--themesong-palette-dominant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.2), 35%);
+  --themesong-theme-ditto-apple-2-color: hsl(var(--themesong-palette-vibrant-hue), calc(var(--themesong-palette-vibrant-saturation) * 0.2), 32%);
+  --themesong-theme-ditto-apple-3-color: hsl(var(--themesong-palette-muted-hue), calc(var(--themesong-palette-muted-saturation) * 0.2), 26%);
+  --themesong-theme-ditto-apple-4-color: hsl(var(--themesong-palette-lightvibrant-hue), calc(var(--themesong-palette-lightvibrant-saturation) * 0.2), 35%);
+  --themesong-theme-ditto-apple-5-color: hsl(var(--themesong-palette-darkvibrant-hue), calc(var(--themesong-palette-darkvibrant-saturation) * 0.2), 28%);
 
-  --themesong-bodybg-color: var(--themesong-palette-dominant-color);
+  --themesong-bodybg-color: #fff;
   --themesong-topbarbg-color: var(--themesong-theme-ditto-apple-4-color);
   --themesong-playpagebg-color: linear-gradient(180deg, var(--themesong-theme-ditto-apple-4-color) 0%, var(--themesong-theme-ditto-apple-2-color) 30%, var(--themesong-theme-ditto-apple-5-color) 66%, var(--themesong-theme-ditto-apple-3-color) 100%);
   --themesong-playbarbg-color: var(--themesong-theme-ditto-apple-3-color);
-  --themesong-playpageavtoggle-color: linear-gradient(180deg, hsl(var(--themesong-palette-dominant-hue), 17%, 30%) 0%, hsl(var(--themesong-palette-vibrant-hue), 15%, 30%) 50%, hsl(var(--themesong-palette-muted-hue), 14%, 25%) 100%);
+  --themesong-playpageavtoggle-color: hsl(var(--themesong-palette-lightvibrant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.4), 27%);
 
   --themesong-primary-text-color: var(--themesong-base-100-color);
   --themesong-secondary-text-color: var(--themesong-base-80-color);
   --themesong-tertiary-text-color: var(--themesong-base-70-color);
 
   --themesong-playprogress-color: var(--themesong-base-100-color);
-
-  --ytmusic-setting-item-toggle-active: #f52043 !important;
-  --paper-toggle-button-checked-bar-opacity: 0.7 !important;
 }
 
 /* start PlayPage song img styling */
@@ -50,7 +47,7 @@ ytmusic-player {
   border-radius: 4px;
 }
 #song-image {
-  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
   border-radius: 4px;
 }
 #song-image img{
