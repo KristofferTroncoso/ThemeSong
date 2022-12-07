@@ -5,7 +5,7 @@ import Off from './themes/Off/Off';
 import Dynamic from './themes/Dynamic/Dynamic';
 import Static from './themes/Static/Static';
 // import Custom from './themes/Custom/Custom';
-import Ditto from './themes/Ditto/Ditto';
+// import Ditto from './themes/Ditto/Ditto';
 
 function Themes() {
   const activeTheme = useStore(state => state.theme.activeTheme);
@@ -20,8 +20,8 @@ function Themes() {
         return <Static />
       // case "themeId:8":
       //   return <Custom />
-      case "themeId:9":
-        return <Ditto />
+      // case "themeId:9":
+      //   return <Ditto />
       default:
         return <Dynamic />
     }
