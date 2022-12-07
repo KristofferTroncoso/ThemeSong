@@ -19,6 +19,7 @@ function Visualizer() {
   const activeVisualizer = useStore(state => state.visualizer.activeVisualizer);
   const songName = useStore(state => state.song.songName);
   const toggleIsVisualizerOn = useStore(state => state.visualizer.toggleIsVisualizerOn);
+  const [isConnected, setIsConnected] = React.useState(false);
 
   React.useEffect(() => {
     console.log('Visualizer: useEffect 2');
@@ -68,6 +69,7 @@ Page reload required to reconnect visualizer. Reload now?`
     connectSource();
 
     analyser.connect(audioCtx.destination);  
+    setIsConnected(true);
   }
 
   function connectSource() {
@@ -94,7 +96,7 @@ Page reload required to reconnect visualizer. Reload now?`
     }
   }
 
-  if (isVisualizerOn) {
+  if (isVisualizerOn && isConnected) {
     return (
       <div>
         {(audioCtx && source && analyser) ? (
