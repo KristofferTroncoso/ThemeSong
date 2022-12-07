@@ -67,24 +67,24 @@ export const createThemeSlice = (set) => ({
     //   name: "Custom",
     //   isDynamic: false,
     // },
-    // {
-    //   themeId: "themeId:9",
-    //   dateAdded: 20221111,
-    //   name: "Ditto",
-    //   isDynamic: false,
-    //   icon: 0,
-    //   activeVariant: "variantId:1",
-    //   variants: [
-    //     {
-    //       variantId: "variantId:1",
-    //       name: "YouTube Music Mobile"
-    //     },
-    //     {
-    //       variantId: "variantId:2",
-    //       name: "Apple Music"
-    //     }
-    //   ]
-    // },
+    {
+      themeId: "themeId:9",
+      dateAdded: 20221111,
+      name: "Ditto",
+      isDynamic: false,
+      icon: 0,
+      activeVariant: "variantId:1",
+      variants: [
+        {
+          variantId: "variantId:1",
+          name: "YouTube Music Mobile"
+        },
+        {
+          variantId: "variantId:2",
+          name: "Apple Music"
+        }
+      ]
+    },
   ],
   userPrefs: [
     {
