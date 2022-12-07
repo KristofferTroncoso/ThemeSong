@@ -45,7 +45,9 @@ Page reload required to reconnect visualizer. Reload now?`
   React.useEffect(() => {
     /* visualizer sometimes disconnects when switching from song to specific songs/videos.
     This reconnects the visualizer when the song changes */
-    connectAudio();
+    if (isVisualizerOn) {
+      connectAudio();
+    }
   }, [songName])
 
   function connectAudio() {

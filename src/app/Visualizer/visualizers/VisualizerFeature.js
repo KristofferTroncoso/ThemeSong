@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 
 import VisualizerToggleButton from './components/VisualizerToggleButton';
-import Visualizer from './Visualizer';
+import VisualizerContainer from './VisualizerContainer';
 
 function addVisualizerContainer() {
   let ytmusicplayer = document.querySelector("ytmusic-player")
@@ -26,7 +26,7 @@ function addVisualizerContainer() {
   ytmusicplayer.append(tsvisualizercontainer);
 
   const root = createRoot(tsvisualizercontainer)
-  root.render(<Visualizer />)
+  root.render(<VisualizerContainer />)
 }
 
 function addVisualizerButton() {
