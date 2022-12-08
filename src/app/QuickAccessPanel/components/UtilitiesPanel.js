@@ -8,6 +8,7 @@ import StyledPanelDiv from "./StyledPanelDiv";
 import PanelButton from './PanelButton';
 import DataObjectIcon from '@mui/icons-material/DataObject';
 import SnoozeIcon from '@mui/icons-material/Snooze';
+import CloudQueueIcon from '@mui/icons-material/CloudQueue';
 
 function UtilitiesPanel() {
   const store = useStore()
@@ -35,10 +36,17 @@ function UtilitiesPanel() {
         </PanelButton>
         <PanelButton 
           onClick={e => console.log(store)} 
-          title="Log Store" 
-          hoverColor="#008c7e"
+          title="Log Zustand Local Store" 
+          hoverColor="tomato"
         >
           <DataObjectIcon css={css`font-size: 28px;`} />
+        </PanelButton>
+        <PanelButton 
+          onClick={e => chrome.storage.local.get(null, res => console.log(res))}
+          title="Log Chrome Local Storage" 
+          hoverColor="dodgerblue"
+        >
+          <CloudQueueIcon css={css`font-size: 28px;`} />
         </PanelButton>
       </div>
     </StyledPanelDiv>
