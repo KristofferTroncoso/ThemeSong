@@ -5,25 +5,27 @@ import { useStore } from '../../../store';
 import VariantButton from '../../../Visualizer/visualizers/components/VariantButton';
 
 function DittoSettings() {
-  const themes = useStore(state => state.theme.themes);
-  const changeThemes = useStore(state => state.theme.changeThemes);
   const dittoTheme = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:9")));
+  const dittoThemePrefs = useStore(state => state.theme.themePrefs.find(theme => (theme.themeId === "themeId:9")));
+  const themePrefs = useStore(state => state.theme.themePrefs);
+  const changeThemePrefs = useStore(state => state.theme.changeThemePrefs);
 
   const handleVariantClick = (e, id) => {
-    let copy = {...dittoTheme};
+    let copy = {...dittoThemePrefs};
     copy.activeVariant = id;
     console.log(copy);
 
-    let themesCopy = [...themes];
-    let newCopy = themesCopy.map(theme => {
-      if (theme.themeId === copy.themeId) {
+    let themePrefsCopy = [...themePrefs];
+    let newCopy = themePrefsCopy.map(themePrefs => {
+      if (themePrefs.themeId === copy.themeId) {
         return copy;
       } else {
-        return theme;
+        return themePrefs;
       }
     });
-    changeThemes(newCopy);
-    chrome.storage.local.set({themes: newCopy}, () => console.log('chrome.storage.local.set({themes}'))
+    console.log(newCopy)
+    changeThemePrefs(newCopy);
+    chrome.storage.local.set({themePrefs: newCopy}, () => console.log('chrome.storage.local.set({themePrefs}'))
   }
 
   return (
@@ -45,7 +47,7 @@ function DittoSettings() {
             key={variant.variantId} 
             id={variant.variantId} 
             onClick={e => handleVariantClick(e, variant.variantId)}
-            isActive={variant.variantId === dittoTheme.activeVariant}
+            isActive={variant.variantId === dittoThemePrefs.activeVariant}
             name={variant.name}
           />
         ))}

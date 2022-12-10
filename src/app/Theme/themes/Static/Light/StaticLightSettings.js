@@ -36,22 +36,22 @@ const StyledSlider = styled(Slider)`
 `;
 
 function StaticLightSettings () {
-  const themes = useStore(state => state.theme.themes);
-  const changeThemes = useStore(state => state.theme.changeThemes);
-  const staticPrefs = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:7")).userPrefs);
-  const staticLightPrefs = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:7")).userPrefs.lightPrefs);
+  const staticPrefs = useStore(state => state.theme.themePrefs.find(theme => (theme.themeId === "themeId:7")));
+  const staticLightPrefs = useStore(state => state.theme.themePrefs.find(theme => (theme.themeId === "themeId:7")).lightPrefs);
+  const themePrefs = useStore(state => state.theme.themePrefs);
+  const changeThemePrefs = useStore(state => state.theme.changeThemePrefs);
 
   function handleChange(e) {
-    let lightPrefs = {...staticLightPrefs, [e.target.name]: e.target.value};
-    let staticUserPrefs = {...staticPrefs, lightPrefs}
-    let newThemesArr = themes.map(theme => (
-      theme.themeId === "themeId:7"
-      ? theme = {...theme, userPrefs: staticUserPrefs}
-      : theme
+    let newLightPrefs = {...staticLightPrefs, [e.target.name]: e.target.value};
+    let newStaticUserPrefs = {...staticPrefs, lightPrefs: newLightPrefs}
+    let newThemePrefsArr = themePrefs.map(themePrefs => (
+      themePrefs.themeId === "themeId:7"
+      ? newStaticUserPrefs
+      : themePrefs
     ));
-    console.log(newThemesArr);
-    changeThemes(newThemesArr);
-    chrome.storage.local.set({themes: newThemesArr}, () => console.log('chrome.storage.local.set({themes}'));
+    console.log(newThemePrefsArr)
+    changeThemePrefs(newThemePrefsArr);
+    chrome.storage.local.set({themePrefs: newThemePrefsArr}, () => console.log('chrome.storage.local.set({themePrefs}'));
   }
 
   function handleSave(e) {
@@ -70,14 +70,14 @@ function StaticLightSettings () {
 
     let lightPrefs = {...staticLightPrefs, hue};
     let staticUserPrefs = {...staticPrefs, lightPrefs}
-    let newThemesArr = themes.map(theme => (
-      theme.themeId === "themeId:7"
-      ? theme = {...theme, userPrefs: staticUserPrefs}
-      : theme
+    let newThemesArr = themePrefs.map(themePrefs => (
+      themePrefs.themeId === "themeId:7"
+      ? staticUserPrefs
+      : themePrefs
     ));
     console.log(newThemesArr);
-    changeThemes(newThemesArr);
-    chrome.storage.local.set({themes: newThemesArr}, () => console.log('chrome.storage.local.set({themes}'));
+    changeThemePrefs(newThemesArr);
+    chrome.storage.local.set({themePrefs: newThemesArr}, () => console.log('chrome.storage.local.set({themePrefs}'));
   }
 
 

@@ -11,7 +11,7 @@ function StaticLight() {
     lightnessSettingPlayPage, 
     lightnessSettingBody, 
     lightnessSettingPlayerBar 
-  } = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:7")).userPrefs.lightPrefs);
+  } = useStore(state => state.theme.themePrefs.find(theme => (theme.themeId === "themeId:7")).lightPrefs);
 
   React.useEffect(() => {
     //apply dark logo on load

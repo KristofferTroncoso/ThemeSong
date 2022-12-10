@@ -34,24 +34,22 @@ const StyledSlider = styled(Slider)`
 `;
 
 function DynamicDarkSettings() {
-  
-
-  const themes = useStore(state => state.theme.themes);
-  const dynamicPrefs = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:6")).userPrefs);
-  const dynamicDarkPrefs = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:6")).userPrefs.darkPrefs);
-  const changeThemes = useStore(state => state.theme.changeThemes);
+  const dynamicPrefs = useStore(state => state.theme.themePrefs.find(theme => (theme.themeId === "themeId:6")));
+  const dynamicDarkPrefs = useStore(state => state.theme.themePrefs.find(theme => (theme.themeId === "themeId:6")).darkPrefs);
+  const themePrefs = useStore(state => state.theme.themePrefs);
+  const changeThemePrefs = useStore(state => state.theme.changeThemePrefs);
 
   function handleChange(e) {
-    let darkPrefs = {...dynamicDarkPrefs, [e.target.name]: e.target.value};
-    let dynamicUserPrefs = {...dynamicPrefs, darkPrefs}
-    let newThemesArr = themes.map(theme => (
-      theme.themeId === "themeId:6"
-      ? theme = {...theme, userPrefs: dynamicUserPrefs}
-      : theme
+    let newDarkPrefs = {...dynamicDarkPrefs, [e.target.name]: e.target.value};
+    let newDynamicUserPrefs = {...dynamicPrefs, darkPrefs: newDarkPrefs}
+    let newThemePrefsArr = themePrefs.map(themePrefs => (
+      themePrefs.themeId === "themeId:6"
+      ? newDynamicUserPrefs
+      : themePrefs
     ));
-    console.log(newThemesArr);
-    changeThemes(newThemesArr);
-    chrome.storage.local.set({themes: newThemesArr}, () => console.log('chrome.storage.local.set({themes}'));
+    console.log(newThemePrefsArr)
+    changeThemePrefs(newThemePrefsArr);
+    chrome.storage.local.set({themePrefs: newThemePrefsArr}, () => console.log('chrome.storage.local.set({themePrefs}'));
   }
 
   function handleSave(e) {

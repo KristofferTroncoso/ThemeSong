@@ -10,23 +10,21 @@ import { CgDarkMode } from 'react-icons/cg';
 import PanelButton from './PanelButton';
 
 function DarkModePanel() {
-  const themes = useStore(state => state.theme.themes);
+  const themePrefs = useStore(state => state.theme.themePrefs);
   const activeTheme = useStore(state => state.theme.activeTheme);
   // const activeThemeInfo = useStore(state => state.theme.themes.find(theme => theme.themeId === activeTheme));
-  const activeThemeUserPrefs = useStore(state => state.theme.themes.find(theme => theme.themeId === activeTheme).userPrefs);
-  const changeThemes = useStore(state => state.theme.changeThemes);
+  const activeThemeUserPrefs = useStore(state => state.theme.themePrefs.find(theme => theme.themeId === activeTheme));
+  const changeThemePrefs = useStore(state => state.theme.changeThemePrefs);
 
   function handleDarkLightChange(value) {
     if (activeThemeUserPrefs.appearanceSetting !== value) {
       let newActiveThemeUserPrefs = {...activeThemeUserPrefs, appearanceSetting: value};
-      let newThemesArr = themes.map(theme => (
-        theme.themeId === activeTheme
-        ? theme = {...theme, userPrefs: newActiveThemeUserPrefs}
-        : theme
-      ));
-      console.log(newThemesArr)
-      changeThemes(newThemesArr);
-      chrome.storage.local.set({themes: newThemesArr}, () => console.log('chrome.storage.local.set({themes}'));
+      let newThemePrefsArr = themePrefs.map(themePrefs => 
+        themePrefs.themeId === activeTheme
+      ? newActiveThemeUserPrefs
+      : themePrefs);
+      changeThemePrefs(newThemePrefsArr);
+      chrome.storage.local.set({themePrefs: newThemePrefsArr}, () => console.log('chrome.storage.local.set({themePrefs}'));
     } else {
       // i cant just disable="true" the button in the element because the MUI Tooltip requires it to never be disabled
       // i used to have it with this which worked well: disabled={activeThemeUserPrefs.appearanceSetting ===  "dark"}

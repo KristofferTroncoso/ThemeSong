@@ -6,18 +6,18 @@ import DynamicLightSettings from './Light/DynamicLightSettings';
 import { useStore } from '../../../store';
 
 function DynamicSettings() {
-  const themes = useStore(state => state.theme.themes);
-  const changeThemes = useStore(state => state.theme.changeThemes);
-  const dynamicUserPrefs = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:6")).userPrefs);
+  const themePrefs = useStore(state => state.theme.themePrefs);
+  const changeThemePrefs = useStore(state => state.theme.changeThemePrefs);
+  const dynamicUserPrefs = useStore(state => state.theme.themePrefs.find(theme => (theme.themeId === "themeId:6")));
 
   function handleDarkLightChange(e) {
     let newDynamicUserPrefs = {...dynamicUserPrefs, [e.target.name]: e.target.value};
-    let newThemesArr = themes.map(theme => 
-    theme.themeId === "themeId:6"
-    ? theme = {...theme, userPrefs: newDynamicUserPrefs}
-    : theme);
-    changeThemes(newThemesArr);
-    chrome.storage.local.set({themes: newThemesArr}, () => console.log('chrome.storage.local.set({themes}'));
+    let newThemePrefsArr = themePrefs.map(themePrefs => 
+      themePrefs.themeId === "themeId:6"
+    ? newDynamicUserPrefs
+    : themePrefs);
+    changeThemePrefs(newThemePrefsArr);
+    chrome.storage.local.set({themePrefs: newThemePrefsArr}, () => console.log('chrome.storage.local.set({themePrefs}'));
   }
 
   function returnSettingSliders() {

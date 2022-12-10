@@ -12,7 +12,7 @@ function DynamicDark() {
     lightnessSettingPlayPage, 
     lightnessSettingBody, 
     lightnessSettingPlayerBar
-  } = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:6")).userPrefs.darkPrefs);
+  } = useStore(state => state.theme.themePrefs.find(theme => (theme.themeId === "themeId:6")).darkPrefs);
 
   let hue = (dominantColorHSL[0] * 360).toFixed();
   let saturation = `${(dominantColorHSL[1] * 100 * saturationSetting).toFixed()}%`;

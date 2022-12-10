@@ -6,7 +6,7 @@ import { useStore } from '../../../store';
 
 function Static() {
   const appearanceSetting = useStore(state => (
-    state.theme.themes.find(theme => (theme.themeId === "themeId:7")).userPrefs.appearanceSetting
+    state.theme.themePrefs.find(theme => (theme.themeId === "themeId:7")).appearanceSetting
   ));
 
   function returnVariant() {

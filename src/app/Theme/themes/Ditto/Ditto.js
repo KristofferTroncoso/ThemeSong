@@ -5,7 +5,7 @@ import { useStore } from '../../../store';
 
 function Ditto() {
   const activeVariant = useStore(state => (
-    state.theme.themes.find(theme => (theme.themeId === "themeId:9")).activeVariant
+    state.theme.themePrefs.find(theme => (theme.themeId === "themeId:9")).activeVariant
   ));
 
   return (

@@ -7,7 +7,6 @@ export const createThemeSlice = (set) => ({
       dateAdded: 20220207,
       name: "Off",
       isDynamic: false,
-      icon: 0
     },
     {
       themeId: "themeId:6",
@@ -15,24 +14,6 @@ export const createThemeSlice = (set) => ({
       name: "Dynamic",
       isDynamic: true,
       lightDarkMode: true,
-      icon: 0,
-      userPrefs: {
-        appearanceSetting: 'dark', // 'dark', 'light', 'system'
-        darkPrefs: {
-          saturationSetting: 0.8,
-          lightnessSettingNavBar: 20,
-          lightnessSettingPlayPage: 15,
-          lightnessSettingBody: 8,
-          lightnessSettingPlayerBar: 25
-        },
-        lightPrefs: {
-          saturationSetting: 0.9,
-          lightnessSettingNavBar: 75,
-          lightnessSettingPlayPage: 70,
-          lightnessSettingBody: 90,
-          lightnessSettingPlayerBar: 75
-        }
-      }
     },
     {
       themeId: "themeId:7",
@@ -40,26 +21,6 @@ export const createThemeSlice = (set) => ({
       name: "Static",
       isDynamic: false,
       lightDarkMode: true,
-      icon: 0,
-      userPrefs: {
-        appearanceSetting: 'dark', // 'dark', 'light', 'system'
-        darkPrefs: {
-          hue: 216,
-          saturationSetting: 70,
-          lightnessSettingNavBar: 16,
-          lightnessSettingPlayPage: 16,
-          lightnessSettingBody: 10,
-          lightnessSettingPlayerBar: 24
-        },
-        lightPrefs: {
-          hue: 340,
-          saturationSetting: 90,
-          lightnessSettingNavBar: 85,
-          lightnessSettingPlayPage: 80,
-          lightnessSettingBody: 95,
-          lightnessSettingPlayerBar: 85
-        }
-      }
     },
     // {
     //   themeId: "themeId:8",
@@ -72,8 +33,6 @@ export const createThemeSlice = (set) => ({
       dateAdded: 20221111,
       name: "Ditto",
       isDynamic: false,
-      icon: 0,
-      activeVariant: "variantId:1",
       variants: [
         {
           variantId: "variantId:1",
@@ -86,7 +45,7 @@ export const createThemeSlice = (set) => ({
       ]
     },
   ],
-  userPrefs: [
+  themePrefs: [
     {
       themeId: "themeId:6",
       appearanceSetting: 'dark', // 'dark', 'light', 'system'
@@ -124,21 +83,25 @@ export const createThemeSlice = (set) => ({
         lightnessSettingBody: 95,
         lightnessSettingPlayerBar: 85
       }
-    }
+    },
+    {
+      themeId: "themeId:9",
+      activeVariant: "variantId:1",
+    },
   ],
   changeActiveTheme: (payload) => {
     console.log('themeSlice: changeActiveTheme')
     console.log(payload);
     set(state => { state.theme.activeTheme = payload });
   },
-  changeThemes: (payload) => {
-    console.log('themeSlice: changeThemes')
-    console.log(payload);
-    set(state => { state.theme.themes = payload });
-  },
   changeIsDark: (payload) => {
     console.log('themeSlice: changeIsDark')
     console.log(payload);
     set(state => { state.theme.isDark = payload });
-  }
+  },
+  changeThemePrefs: (payload) => {
+    console.log('themeSlice: changeThemePrefs')
+    console.log(payload);
+    set(state => { state.theme.themePrefs = payload });
+  },
 })

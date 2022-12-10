@@ -11,7 +11,7 @@ function StaticDark() {
     lightnessSettingPlayPage, 
     lightnessSettingBody, 
     lightnessSettingPlayerBar 
-  } = useStore(state => state.theme.themes.find(theme => (theme.themeId === "themeId:7")).userPrefs.darkPrefs);
+  } = useStore(state => state.theme.themePrefs.find(theme => (theme.themeId === "themeId:7")).darkPrefs);
 
   React.useEffect(() => {
     menubar.content = `hsl(${hue}, ${saturationSetting}%, ${lightnessSettingNavBar}%)`;
