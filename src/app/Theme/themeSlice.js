@@ -1,6 +1,5 @@
 export const createThemeSlice = (set) => ({
   activeTheme: "themeId:6",
-  isDark: true,
   themes: [
     {
       themeId: "themeId:0",
@@ -93,11 +92,6 @@ export const createThemeSlice = (set) => ({
     console.log('themeSlice: changeActiveTheme')
     console.log(payload);
     set(state => { state.theme.activeTheme = payload });
-  },
-  changeIsDark: (payload) => {
-    console.log('themeSlice: changeIsDark')
-    console.log(payload);
-    set(state => { state.theme.isDark = payload });
   },
   changeThemePrefs: (payload) => {
     console.log('themeSlice: changeThemePrefs')
