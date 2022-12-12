@@ -25,7 +25,7 @@ export function userPrefsTransferFromV043toV044() {
           });
           let themePrefsPlusDittoPrefs = [...themePrefs, {
             themeId: "themeId:9",
-            activeVariant: "variantId:1"
+            activeVariant: "variantId:2"
           }]
           console.log(themePrefsPlusDittoPrefs)
           chrome.storage.local.set({themePrefs: themePrefsPlusDittoPrefs});

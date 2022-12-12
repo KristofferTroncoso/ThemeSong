@@ -85,7 +85,7 @@ export const createThemeSlice = (set) => ({
     },
     {
       themeId: "themeId:9",
-      activeVariant: "variantId:1",
+      activeVariant: "variantId:2",
     },
   ],
   changeActiveTheme: (payload) => {
