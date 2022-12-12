@@ -27,7 +27,7 @@ function VisualizersPage() {
       case "visualizerId:2":
         return <CirclesSettings />
       default:
-        break;
+        return <h1>Unknown Visualizer</h1>
     }
   };
 

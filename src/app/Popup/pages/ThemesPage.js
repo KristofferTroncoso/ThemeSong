@@ -3,7 +3,6 @@
 import { jsx } from '@emotion/react';
 import { useStore } from '../../store';
 
-// import { GlassSettings } from '../../../themes/frosted-glass/';
 import OffSettings  from '../../Theme/themes/Off/OffSettings';
 import DynamicSettings from '../../Theme/themes/Dynamic/DynamicSettings'; 
 import StaticSettings from '../../Theme/themes/Static/StaticSettings';
@@ -20,8 +19,6 @@ function ThemesPage() {
     switch (activeTheme) {
       case "themeId:0":
         return <OffSettings />
-      // case "themeId:3":
-      //   return <GlassSettings />
       case "themeId:6":
         return <DynamicSettings />
       case "themeId:7":

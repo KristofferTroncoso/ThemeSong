@@ -8,12 +8,20 @@ function Ditto() {
     state.theme.themePrefs.find(theme => (theme.themeId === "themeId:9")).activeVariant
   ));
 
+  function returnVariant() {
+    switch (activeVariant) {
+      case "variantId:1":
+        return <YouTubeMusicMobile />
+      case "variantId:2":
+        return <AppleMusic />
+      default:
+        return <AppleMusic />
+    }
+  }
+
   return (
     <div id="Ditto">
-      {{
-        "variantId:1": <YouTubeMusicMobile />,
-        "variantId:2": <AppleMusic />,
-      }[activeVariant]}
+      {returnVariant()}
     </div>
   )
 }
