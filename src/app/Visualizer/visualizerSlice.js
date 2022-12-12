@@ -1,19 +1,20 @@
 
 export const createVisualizerSlice = (set) => ({
   activeVisualizer: "visualizerId:0",
+  isVisualizerOn: false,
   visualizers: [
     {
       visualizerId: "visualizerId:0",
       name: "Wavy",
-      lineWidth: 8
+      // lineWidth: 8
     },
     {
       visualizerId: "visualizerId:1",
       name: "Bars",
-      activeVariant: "variantId:5",
-      barWidth: 30,
-      borderWidth: 4,
-      gap: 4,
+      // activeVariant: "variantId:5",
+      // barWidth: 30,
+      // borderWidth: 4,
+      // gap: 4,
       variants: [
         {
           variantId: "variantId:1",
@@ -44,7 +45,7 @@ export const createVisualizerSlice = (set) => ({
     {
       visualizerId: "visualizerId:2",
       name: "Circles",
-      activeVariant: "variantId:5",
+      // activeVariant: "variantId:5",
       variants: [
         {
           variantId: "variantId:1",
@@ -73,7 +74,23 @@ export const createVisualizerSlice = (set) => ({
       ]
     }
   ],
-  isVisualizerOn: false,
+  visualizerPrefs: [
+    {
+      visualizerId: "visualizerId:0",
+      lineWidth: 8
+    },
+    {
+      visualizerId: "visualizerId:1",
+      activeVariant: "variantId:5",
+      barWidth: 30,
+      borderWidth: 4,
+      gap: 4
+    },
+    {
+      visualizerId: "visualizerId:2",
+      activeVariant: "variantId:5",
+    }
+  ],
   changeActiveVisualizer: (payload) => {
     console.log('visualizerSlice: changeActiveVisualizer')
     console.log(payload);
@@ -83,6 +100,11 @@ export const createVisualizerSlice = (set) => ({
     console.log('visualizerSlice: changeVisualizers')
     console.log(payload);
     set(state => { state.visualizer.visualizers = payload })
+  },
+  changeVisualizerPrefs: (payload) => {
+    console.log('visualizerSlice: changeVisualizerPrefs')
+    console.log(payload);
+    set(state => { state.visualizer.visualizerPrefs = payload })
   },
   toggleIsVisualizerOn: () => {
     console.log('visualizerSlice: toggleIsVisualizerOn')

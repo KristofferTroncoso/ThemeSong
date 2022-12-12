@@ -9,46 +9,27 @@ import CirclesSettings from '../../Visualizer/visualizers/circles/CirclesSetting
 import { useStore } from '../../store';
 
 function VisualizersPage() {
-  
   const activeVisualizer = useStore(state => state.visualizer.activeVisualizer);
   const visualizers = useStore(state => state.visualizer.visualizers)
   const changeActiveVisualizer = useStore(state => state.visualizer.changeActiveVisualizer);
-  const changeVisualizers = useStore(state => state.visualizer.changeVisualizers);
-
 
   const handleVisualizerClick = (e, id) => {
     changeActiveVisualizer(id)
     chrome.storage.local.set({activeVisualizer: id}, () => console.log('chrome.storage.local.set({activeVisualizer}'))
   }
 
-  const handleVisualizersChange = visualizerObject => {
-    console.log(visualizerObject);
-    let visualizersCopy = [...visualizers];
-    let newCopy = visualizersCopy.map(visualizer => {
-      if (visualizer.visualizerId === visualizerObject.visualizerId) {
-        return visualizerObject;
-      } else {
-        return visualizer;
-      }
-    });
-    changeVisualizers(newCopy);
-    chrome.storage.local.set({visualizers: newCopy}, () => console.log('chrome.storage.local.set({visualizers}'))
-  }
-
   let activeVisualizerSettings = () => {
     switch (activeVisualizer) {
       case "visualizerId:0":
-        return <WavySettings visualizers={visualizers} handleVisualizersChange={visualizerObject => handleVisualizersChange(visualizerObject)} />
+        return <WavySettings />
       case "visualizerId:1":
-        return <BarsSettings visualizers={visualizers} handleVisualizersChange={visualizerObject => handleVisualizersChange(visualizerObject)} />
+        return <BarsSettings />
       case "visualizerId:2":
-        return <CirclesSettings visualizers={visualizers} handleVisualizersChange={visualizerObject => handleVisualizersChange(visualizerObject)} />
+        return <CirclesSettings />
       default:
         break;
     }
   };
-
-
 
   return (
     <div>

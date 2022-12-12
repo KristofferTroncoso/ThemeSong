@@ -11,7 +11,7 @@ import DancingPalette from './variants/DancingPalette';
 
 function Bars({analyser, dataArray, bufferLength}) {
   const barsActiveVariant = useStore(state => (
-    state.visualizer.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")).activeVariant
+    state.visualizer.visualizerPrefs.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")).activeVariant
   ));
 
   function returnActiveVariant() {

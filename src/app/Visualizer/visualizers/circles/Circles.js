@@ -11,7 +11,7 @@ import OT9 from './variants/OT9';
 
 function Circles({analyser, dataArray, bufferLength}) {
   const circlesActiveVariant = useStore(state => (
-    state.visualizer.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")).activeVariant
+    state.visualizer.visualizerPrefs.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")).activeVariant
   ));
 
   function returnActiveVariant() {

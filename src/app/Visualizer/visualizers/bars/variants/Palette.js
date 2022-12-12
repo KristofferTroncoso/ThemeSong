@@ -4,7 +4,7 @@ import { jsx, css } from '@emotion/react';
 import { useStore } from '../../../../store';
 
 function Palette({analyser, dataArray, bufferLength}) {
-  const barsPrefs = useStore(state => state.visualizer.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")));
+  const barsPrefs = useStore(state => state.visualizer.visualizerPrefs.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")));
   const playPauseState = useStore(state => state.player.playPauseState);
   const palette = useStore(state => state.palette.palette);
 

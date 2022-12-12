@@ -268,7 +268,6 @@ let tscirclescanvas;
 let borderWidth = 4;
 
 function Party({analyser, dataArray}) {
-  const circlesPrefs = useStore(state => state.visualizer.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")));
   const playPauseState = useStore(state => state.player.playPauseState);
   let ytmusicplayer = document.querySelector("ytmusic-player")
 
@@ -286,10 +285,6 @@ function Party({analyser, dataArray}) {
       clearInterval(intervalId.current);
     }
   }, [])
-
-  React.useEffect(() => {
-    setUpCircles();
-  }, [circlesPrefs])
 
   React.useEffect(() => {
     if (playPauseState === "Pause") {

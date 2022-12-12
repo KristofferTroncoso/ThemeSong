@@ -1,6 +1,4 @@
 /** @jsx jsx */
-// import React from 'react';
-
 import { jsx, css } from '@emotion/react';
 
 import { useStore } from '../../../store';
@@ -26,23 +24,21 @@ const StyledSlider = styled(Slider)`
 `;
 
 function WavySettings() {
-
-  const visualizers = useStore(state => state.visualizer.visualizers
-);
-  const wavyStorageObject = useStore(state => state.visualizer.visualizers
-.find(visualizer => (visualizer.visualizerId === "visualizerId:0")));
-  const changeVisualizers = useStore(state => state.visualizer.changeVisualizers);
+  const wavyStorageObject = useStore(state => state.visualizer.visualizerPrefs.find(visualizer => (visualizer.visualizerId === "visualizerId:0")));
+  const changeVisualizerPrefs = useStore(state => state.visualizer.changeVisualizerPrefs);
+  const visualizerPrefs = useStore(state => state.visualizer.visualizerPrefs);
 
   const handleWavySettingsChange = (e, id) => {
     let copy = {...wavyStorageObject};
     copy[e.target.name] = Number(e.target.value);
-    let newVisualizersArr = visualizers.map(visualizer => (
+    let newVisualizersArr = visualizerPrefs.map(visualizer => (
       visualizer.visualizerId === "visualizerId:0"
       ? copy
       : visualizer
     ));
-    changeVisualizers(newVisualizersArr);
-    chrome.storage.local.set({visualizers: newVisualizersArr}, () => console.log('chrome.storage.local.set({visualizers}'))
+    console.log(newVisualizersArr)
+    changeVisualizerPrefs(newVisualizersArr);
+    chrome.storage.local.set({visualizerPrefs: newVisualizersArr}, () => console.log('chrome.storage.local.set({visualizerPrefs}'))
   }
 
   return (

@@ -141,7 +141,6 @@ let tscirclescanvas;
 let borderWidth = 4;
 
 function OT9({analyser, dataArray}) {
-  const circlesPrefs = useStore(state => state.visualizer.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")));
   const playPauseState = useStore(state => state.player.playPauseState);
   let ytmusicplayer = document.querySelector("ytmusic-player")
 
@@ -168,10 +167,6 @@ function OT9({analyser, dataArray}) {
       intervalId.current = setInterval(() => requestAnimationFrame(ot9), 17)
     }
   }, [playPauseState])
-
-  React.useEffect(() => {
-    setUpCircles();
-  }, [circlesPrefs])
 
   function setUpCircles() {
     ctx = tscirclescanvas.getContext("2d");

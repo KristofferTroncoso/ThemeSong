@@ -3,10 +3,9 @@ import { useStore } from './store';
 
 function CloudSyncStorageSync() {
   const changeActiveTheme = useStore(state => state.theme.changeActiveTheme);
-  const changeIsDark = useStore(state => state.theme.changeIsDark);
   const changeActiveVisualizer = useStore(state => state.visualizer.changeActiveVisualizer);
   const changeThemePrefs = useStore(state => state.theme.changeThemePrefs);
-  const changeVisualizers = useStore(state => state.visualizer.changeVisualizers);
+  const changeVisualizerPrefs = useStore(state => state.visualizer.changeVisualizerPrefs);
   const changePlayPauseState = useStore(state => state.player.changePlayPauseState);
   const changeActivePopupTab = useStore(state => state.popup.changeActivePopupTab);
   // const changeSnippets = useStore(state => state.snippets.changeSnippets);
@@ -35,8 +34,8 @@ function CloudSyncStorageSync() {
           case "themePrefs":
             changeThemePrefs(value)
             break;
-          case "visualizers":
-            changeVisualizers(value)
+          case "visualizerPrefs":
+            changeVisualizerPrefs(value)
             break;
           case "activePopupTab":
             changeActivePopupTab(value)
@@ -63,11 +62,8 @@ function CloudSyncStorageSync() {
           case "themePrefs":
             changeThemePrefs(newValue)
             break;
-          case "visualizers":
-            changeVisualizers(newValue)
-            break;
-          case "isDark":
-            changeIsDark(newValue)
+          case "visualizerPrefs":
+            changeVisualizerPrefs(newValue)
             break;
           case "playPauseState":
             changePlayPauseState(newValue)

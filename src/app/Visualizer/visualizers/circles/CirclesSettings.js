@@ -1,25 +1,37 @@
 /** @jsx jsx */
 import React from 'react';
+import { useStore } from '../../../store';
+
 import { jsx, css } from '@emotion/react';
 import VariantButton from '../components/VariantButton';
 
-function BarsSettings({visualizers, handleVisualizersChange}) {
-  const [barsStorageObject, setBarsStorageObject] = React.useState();
+function CirclesSettings() {
+  const visualizerPrefs = useStore(state => state.visualizer.visualizerPrefs)
+  const circlesVisualizer = useStore(state => state.visualizer.visualizers.find(visualizer => (visualizer.visualizerId === "visualizerId:2")));
+  const circlesPrefs = useStore(state => state.visualizer.visualizerPrefs.find(visualizer => (visualizer.visualizerId === "visualizerId:2")));
+  const changeVisualizerPrefs = useStore(state => state.visualizer.changeVisualizerPrefs);
 
-  React.useEffect(() => {
-    let obj = visualizers.find(visualizer => visualizer.visualizerId === "visualizerId:2")
-    setBarsStorageObject(obj);
-  }, [visualizers])
+  const handleVisualizersChange = visualizerObject => {
+    console.log(visualizerObject);
+    let visualizerPrefsCopy = [...visualizerPrefs];
+    let newCopy = visualizerPrefsCopy.map(visualizer => {
+      if (visualizer.visualizerId === visualizerObject.visualizerId) {
+        return visualizerObject;
+      } else {
+        return visualizer;
+      }
+    });
+    changeVisualizerPrefs(newCopy);
+    chrome.storage.local.set({visualizerPrefs: newCopy}, () => console.log('chrome.storage.local.set({visualizerPrefs}'))
+  }
 
   const handleVariantClick = (e, id) => {
-    let copy = {...barsStorageObject};
+    let copy = {...circlesPrefs};
     copy.activeVariant = id;
-    console.log(copy);
-    setBarsStorageObject(copy);
     handleVisualizersChange(copy);
   }
 
-  if (!barsStorageObject) {
+  if (!circlesVisualizer) {
     return <h1>hi</h1>
   } else {
     return (
@@ -36,12 +48,12 @@ function BarsSettings({visualizers, handleVisualizersChange}) {
               gap: '10px'
             }}
           >
-            {barsStorageObject.variants.map(variant => (
+            {circlesVisualizer.variants.map(variant => (
               <VariantButton
                 key={variant.variantId} 
                 id={variant.variantId} 
                 onClick={e => handleVariantClick(e, variant.variantId)}
-                isActive={variant.variantId === barsStorageObject.activeVariant}
+                isActive={variant.variantId === circlesPrefs.activeVariant}
                 name={variant.name}
               />
             ))}
@@ -52,4 +64,4 @@ function BarsSettings({visualizers, handleVisualizersChange}) {
   }
 }
 
-export default BarsSettings;
+export default CirclesSettings;

@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import React from 'react';
+import { useStore } from '../../../store';
 import { jsx, css } from '@emotion/react';
 import VariantButton from '../components/VariantButton';
 
@@ -23,31 +24,40 @@ const StyledSlider = styled(Slider)`
   }
 `;
 
-function BarsSettings({visualizers, handleVisualizersChange}) {
-  const [barsStorageObject, setBarsStorageObject] = React.useState();
+function BarsSettings() {
+  const barsVisualizer = useStore(state => state.visualizer.visualizers.find(visualizer => (visualizer.visualizerId === "visualizerId:1")));
+  const barsPrefs = useStore(state => state.visualizer.visualizerPrefs.find(visualizer => (visualizer.visualizerId === "visualizerId:1")));
+  const visualizerPrefs = useStore(state => state.visualizer.visualizerPrefs)
+  const changeVisualizerPrefs = useStore(state => state.visualizer.changeVisualizerPrefs);
 
-  React.useEffect(() => {
-    let obj = visualizers.find(visualizer => visualizer.visualizerId === "visualizerId:1")
-    setBarsStorageObject(obj);
-  }, [visualizers])
+  const handleVisualizersChange = visualizerObject => {
+    console.log(visualizerObject);
+    let visualizerPrefsCopy = [...visualizerPrefs];
+    let newCopy = visualizerPrefsCopy.map(visualizer => {
+      if (visualizer.visualizerId === visualizerObject.visualizerId) {
+        return visualizerObject;
+      } else {
+        return visualizer;
+      }
+    });
+    changeVisualizerPrefs(newCopy);
+    chrome.storage.local.set({visualizerPrefs: newCopy}, () => console.log('chrome.storage.local.set({visualizerPrefs}'))
+  }
 
   const handleVariantClick = (e, id) => {
-    let copy = {...barsStorageObject};
+    let copy = {...barsPrefs};
     copy.activeVariant = id;
-    console.log(copy);
-    setBarsStorageObject(copy);
     handleVisualizersChange(copy);
   }
 
   const handleBarSettingsChange = (e, id) => {
-    let copy = {...barsStorageObject};
+    let copy = {...barsPrefs};
     copy[e.target.name] = Number(e.target.value);
     console.log(copy);
-    setBarsStorageObject(copy);
     handleVisualizersChange(copy);
   }
 
-  if (!barsStorageObject) {
+  if (!barsVisualizer) {
     return <h1>hi</h1>
   } else {
     return (
@@ -64,22 +74,22 @@ function BarsSettings({visualizers, handleVisualizersChange}) {
             <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
               <label htmlFor="barWidth">Bar Width:</label>
               <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
-                <StyledSlider name="barWidth" value={barsStorageObject.barWidth} onChange={handleBarSettingsChange} step={5} min={5} max={80} />
-                <input type="number" min="5" max="80" name="barWidth" value={barsStorageObject.barWidth} onChange={handleBarSettingsChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white', marginLeft: '8px'}} />
+                <StyledSlider name="barWidth" value={barsPrefs.barWidth} onChange={handleBarSettingsChange} step={5} min={5} max={80} />
+                <input type="number" min="5" max="80" name="barWidth" value={barsPrefs.barWidth} onChange={handleBarSettingsChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white', marginLeft: '8px'}} />
               </div>
             </div>
             <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
               <label htmlFor="borderWidth">Border Width:</label>
               <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
-                <StyledSlider name="borderWidth" value={barsStorageObject.borderWidth} onChange={handleBarSettingsChange} step={1} min={0} max={10} />
-                <input type="number" min="0" max="10" name="borderWidth" value={barsStorageObject.borderWidth} onChange={handleBarSettingsChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white', marginLeft: '8px'}} />
+                <StyledSlider name="borderWidth" value={barsPrefs.borderWidth} onChange={handleBarSettingsChange} step={1} min={0} max={10} />
+                <input type="number" min="0" max="10" name="borderWidth" value={barsPrefs.borderWidth} onChange={handleBarSettingsChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white', marginLeft: '8px'}} />
               </div>
             </div>
             <div style={{display: 'flex', justifyContent: 'space-between', height: '21px'}}>
               <label htmlFor="gap">Gap Width:</label>
               <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
-                <StyledSlider name="gap" value={barsStorageObject.gap} onChange={handleBarSettingsChange} step={2} min={0} max={20} />
-                <input type="number" min="0" max="20" name="gap" value={barsStorageObject.gap} onChange={handleBarSettingsChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white', marginLeft: '8px'}} />
+                <StyledSlider name="gap" value={barsPrefs.gap} onChange={handleBarSettingsChange} step={2} min={0} max={20} />
+                <input type="number" min="0" max="20" name="gap" value={barsPrefs.gap} onChange={handleBarSettingsChange} style={{maxWidth: '40px', backgroundColor: 'inherit', border: 0, borderBottom: '1px solid black', color: 'white', marginLeft: '8px'}} />
               </div>
             </div>
           </form>
@@ -93,12 +103,12 @@ function BarsSettings({visualizers, handleVisualizersChange}) {
               gap: '10px'
             }}
           >
-            {barsStorageObject.variants.map(variant => (
+            {barsVisualizer.variants.map(variant => (
               <VariantButton
                 key={variant.variantId} 
                 id={variant.variantId} 
                 onClick={e => handleVariantClick(e, variant.variantId)}
-                isActive={variant.variantId === barsStorageObject.activeVariant}
+                isActive={variant.variantId === barsPrefs.activeVariant}
                 name={variant.name}
               />
             ))}

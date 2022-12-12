@@ -144,7 +144,6 @@ let tscirclescanvas;
 let borderWidth = 4;
 
 function Accent({analyser, dataArray}) {
-  const circlesPrefs = useStore(state => state.visualizer.visualizers.find(visualizer => (visualizer.visualizerId  === "visualizerId:2")));
   const playPauseState = useStore(state => state.player.playPauseState);
   const dominant = useStore(state => state.palette.dominant);
   let ytmusicplayer = document.querySelector("ytmusic-player")
@@ -172,10 +171,6 @@ function Accent({analyser, dataArray}) {
       intervalId.current = setInterval(() => requestAnimationFrame(accent), 17)
     }
   }, [playPauseState])
-
-  React.useEffect(() => {
-    setUpCircles();
-  }, [circlesPrefs])
 
   function setUpCircles() {
     ctx = tscirclescanvas.getContext("2d");
