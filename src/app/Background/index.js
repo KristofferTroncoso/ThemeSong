@@ -1,4 +1,5 @@
-import  { executeContentScriptOnYouTubeMusicTabs } from './scripts';
+import  { executeContentScriptOnYouTubeMusicTabs, userPrefsTransferFromV043toV044 } from './scripts';
+// import { data043 } from './testData';
 
 chrome.runtime.onInstalled.addListener((details) => {
   console.log(details);
@@ -22,10 +23,17 @@ chrome.runtime.onInstalled.addListener((details) => {
       case "install":
         executeContentScriptOnYouTubeMusicTabs();
         break;
-  
+      
       // on update (extension update, chrome update, or extension refresh)
       case "update":
         // chrome.storage.local.clear();
+        // chrome.storage.local.set(data043);
+
+        userPrefsTransferFromV043toV044();
+
+        // whenever extension is updated, show update note
+        chrome.storage.local.set({showUpdateNote: true});
+
         executeContentScriptOnYouTubeMusicTabs();
         break;
   
