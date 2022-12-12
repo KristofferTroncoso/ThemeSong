@@ -5,12 +5,17 @@ import SongPanel from './components/SongPanel';
 import VisualizerPanel from './components/VisualizerPanel';
 import AppearancePanel from './components/AppearancePanel';
 import UtilitiesPanel from './components/UtilitiesPanel';
+import UpdatePanel from './components/UpdatePanel';
 
 import Tooltip from '@mui/material/Tooltip';
 import HelpIcon from '@mui/icons-material/Help';
 import TuneIcon from '@mui/icons-material/Tune';
 
+import { useStore } from '../store';
+
 function PanelPage() {
+  const showUpdateNote = useStore(state => state.extension.showUpdateNote);
+
   return (
     <div
       css={css`
@@ -34,6 +39,7 @@ function PanelPage() {
         {(process.env.NODE_ENV === 'development') && (
           <UtilitiesPanel />
         )}
+        {showUpdateNote && <UpdatePanel />}
       </div>
       <div css={css`text-align: right;`}>
         <Tooltip 

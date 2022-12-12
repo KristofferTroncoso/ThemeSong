@@ -3,9 +3,12 @@ import React from 'react';
 import { jsx, css } from '@emotion/react';
 import PanelPage from './PanelPage';
 import Popover from '@mui/material/Popover';
+import Badge from '@mui/material/Badge';
 import ThemeSongFontIcon from './components/ThemeSongFontIcon';
+import { useStore } from '../store';
 
 function Panel() {
+  const showUpdateNote = useStore(state => state.extension.showUpdateNote);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -34,7 +37,14 @@ function Panel() {
         title="Open ThemeSong Quick Access Panel"
         onClick={handleClick}
       >
-        <ThemeSongFontIcon />
+        <Badge 
+          variant="dot" 
+          color="warning"
+          // badgeContent="U"
+          invisible={!showUpdateNote}
+        >
+          <ThemeSongFontIcon />
+        </Badge>
       </button>
       <Popover
         id={id}

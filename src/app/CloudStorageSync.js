@@ -8,6 +8,7 @@ function CloudSyncStorageSync() {
   const changeVisualizerPrefs = useStore(state => state.visualizer.changeVisualizerPrefs);
   const changePlayPauseState = useStore(state => state.player.changePlayPauseState);
   const changeActivePopupTab = useStore(state => state.popup.changeActivePopupTab);
+  const changeShowUpdateNote = useStore(state => state.extension.changeShowUpdateNote);
   // const changeSnippets = useStore(state => state.snippets.changeSnippets);
 
   React.useEffect(() => {
@@ -40,6 +41,9 @@ function CloudSyncStorageSync() {
           case "activePopupTab":
             changeActivePopupTab(value)
             break;
+          case "showUpdateNote":
+            changeShowUpdateNote(value)
+            break;
           // case "snippets":
           //   changeSnippets(value)
           //   break;
@@ -67,6 +71,9 @@ function CloudSyncStorageSync() {
             break;
           case "playPauseState":
             changePlayPauseState(newValue)
+            break;
+          case "showUpdateNote":
+            changeShowUpdateNote(newValue)
             break;
           // case "snippets":
           //   changeSnippets(newValue)
