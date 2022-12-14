@@ -1,9 +1,9 @@
 export const createPlayerSlice = (set) => ({
-  playPauseState: "Play",
+  isSongPlaying: true,
   playerUiState: "INACTIVE",
-  changePlayPauseState: (payload) => {
-    console.log('playerSlice: changePlayPauseState');
-    set(state => { state.player.playPauseState = payload; })
+  changeIsSongPlaying: (payload) => {
+    console.log('playerSlice: changeIsSongPlaying');
+    set(state => { state.player.isSongPlaying = payload; })
   }, 
   changePlayerUiState: (payload) => {
     console.log('playerSlice: changePlayerUiState');

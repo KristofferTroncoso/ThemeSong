@@ -28,7 +28,7 @@ let circumference = 2 * Math.PI;
 let shorterCanvasSide;
 
 function RGB({analyser, dataArray}) {
-  const playPauseState = useStore(state => state.player.playPauseState);
+  const isSongPlaying = useStore(state => state.player.isSongPlaying);
   let ytmusicplayer = document.querySelector("ytmusic-player")
 
   const canvasRef = useRef();
@@ -116,13 +116,13 @@ function RGB({analyser, dataArray}) {
       context.stroke();
     }
 
-    if (playPauseState === "Pause") {
+    if (!isSongPlaying) {
       clearInterval(intervalId.current);
-    } else if (playPauseState === "Play") {
+    } else {
       clearInterval(intervalId.current);
       intervalId.current = setInterval(() => requestAnimationFrame(rgb), 17)
     }
-  }, [playPauseState, analyser, dataArray])
+  }, [isSongPlaying, analyser, dataArray])
 
   return (
     <canvas

@@ -5,6 +5,7 @@ import Wavy from './wavy/Wavy';
 import Bars from './bars/Bars';
 import Circles from './circles/Circles';
 import { useStore } from '../../store';
+import PlayPauseChangeObserver from '../../Player/PlayPauseChangeObserver';
 import VolumeChangeObserver from '../../Player/VolumeChangeObserver';
 import PausedWarning from './components/PausedWarning';
 
@@ -108,6 +109,7 @@ Page reload required to reconnect visualizer. Reload now?`
                 width: 100%;
               `}
             >
+              <PlayPauseChangeObserver />
               <VolumeChangeObserver />
               <PausedWarning />
               {{

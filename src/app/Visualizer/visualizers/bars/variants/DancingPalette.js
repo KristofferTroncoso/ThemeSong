@@ -5,7 +5,7 @@ import { useStore } from '../../../../store';
 
 function DancingPalette({analyser, dataArray, bufferLength}) {
   const barsPrefs = useStore(state => state.visualizer.visualizerPrefs.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")));
-  const playPauseState = useStore(state => state.player.playPauseState);
+  const isSongPlaying = useStore(state => state.player.isSongPlaying);
   const palette = useStore(state => state.palette.palette);
 
   const canvasRef = useRef();
@@ -81,13 +81,13 @@ function DancingPalette({analyser, dataArray, bufferLength}) {
       }
     };
 
-    if (playPauseState === "Pause") {
+    if (!isSongPlaying) {
       clearInterval(intervalId.current);
-    } else if (playPauseState === "Play") {
+    } else {
       clearInterval(intervalId.current);
       intervalId.current = setInterval(() => requestAnimationFrame(drawBars), 17)
     }
-  }, [playPauseState, analyser, bufferLength, dataArray, barsPrefs, palette])
+  }, [isSongPlaying, analyser, bufferLength, dataArray, barsPrefs, palette])
 
   return (
     <canvas

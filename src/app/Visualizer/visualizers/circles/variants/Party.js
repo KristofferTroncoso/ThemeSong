@@ -268,7 +268,7 @@ let tscirclescanvas;
 let borderWidth = 4;
 
 function Party({analyser, dataArray}) {
-  const playPauseState = useStore(state => state.player.playPauseState);
+  const isSongPlaying = useStore(state => state.player.isSongPlaying);
   let ytmusicplayer = document.querySelector("ytmusic-player")
 
   const canvasRef = useRef(null);
@@ -287,13 +287,13 @@ function Party({analyser, dataArray}) {
   }, [])
 
   React.useEffect(() => {
-    if (playPauseState === "Pause") {
+    if (!isSongPlaying) {
       clearInterval(intervalId.current);
-    } else if (playPauseState === "Play") {
+    } else {
       clearInterval(intervalId.current);
       intervalId.current = setInterval(() => requestAnimationFrame(party), 17)
     }
-  }, [playPauseState])
+  }, [isSongPlaying])
 
   function setUpCircles() {
     ctx = tscirclescanvas.getContext("2d");

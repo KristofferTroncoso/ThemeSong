@@ -4,7 +4,6 @@ import CloudSyncStorageSync from '../CloudStorageSync';
 import Themes from '../Theme/Themes';
 import SongObserver from '../Song/SongObserver';
 import PanelContainer from '../QuickAccessPanel';
-import PlayPauseChangeObserver from '../Player/PlayPauseChangeObserver';
 import PlayerUiStateObserver from '../Player/PlayerUiStateObserver';
 import SongInfoDisplayFeature from '../Song/SongInfoDisplay/SongInfoDisplayFeature';
 import VisualizerFeature from '../Visualizer/visualizers/VisualizerFeature';
@@ -20,7 +19,6 @@ function ContentScript() {
       <Themes />
       <SongObserver />
       <PanelContainer />
-      <PlayPauseChangeObserver />
       <PlayerUiStateObserver />
       <SongInfoDisplayFeature />
       <VisualizerFeature />

@@ -1,27 +1,29 @@
 import React from 'react';
 import { useStore } from '../store';
 
-let playPauseChangeObserver;
-let playPauseState = "Pause";
-
 function PlayPauseChangeObserver() {
-  const changePlayPauseState = useStore(state => state.player.changePlayPauseState);
+  const changeIsSongPlaying = useStore(state => state.player.changeIsSongPlaying);
 
   React.useEffect(() => {
-    let playPauseButtonNode = document.getElementById("play-pause-button");
+    let playPauseChangeObserver;
+    let moviePlayerNode = document.getElementById("movie_player");
 
     playPauseChangeObserver = new MutationObserver(handlePlayPauseChange);
-  
-    playPauseChangeObserver.observe(playPauseButtonNode, {
-      attributeFilter: ["title"],
-      attributeOldValue: true
+
+    playPauseChangeObserver.observe(moviePlayerNode, {
+      attributeFilter: ["class"]
     });
-    
+
     function handlePlayPauseChange(mutationRecord) {
       console.log('handlePlayPauseChangeObserver')
-      playPauseState = mutationRecord[0].oldValue;
-      console.log(playPauseState);
-      changePlayPauseState(playPauseState);
+      let domtokenlist = mutationRecord[0].target.classList;
+      if (!domtokenlist.contains('playing-mode')) {
+        console.log('song PAUSED')
+        changeIsSongPlaying(false);
+      } else {
+        console.log('song PLAYING');
+        changeIsSongPlaying(true);
+      }
     }
 
     return function() {

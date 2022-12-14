@@ -5,7 +5,7 @@ import { useStore } from '../../../../store';
 
 function Accent({analyser, dataArray, bufferLength}) {
   const barsPrefs = useStore(state => state.visualizer.visualizerPrefs.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")));
-  const playPauseState = useStore(state => state.player.playPauseState);
+  const isSongPlaying = useStore(state => state.player.isSongPlaying);
   const dominant = useStore(state => state.palette.dominant);
 
   const canvasRef = useRef();
@@ -57,13 +57,13 @@ function Accent({analyser, dataArray, bufferLength}) {
       }
     };
 
-    if (playPauseState === "Pause") {
+    if (!isSongPlaying) {
       clearInterval(intervalId.current);
-    } else if (playPauseState === "Play") {
+    } else {
       clearInterval(intervalId.current);
       intervalId.current = setInterval(() => requestAnimationFrame(drawBars), 17)
     }
-  }, [playPauseState, analyser, bufferLength, dataArray, barsPrefs, dominant])
+  }, [isSongPlaying, analyser, bufferLength, dataArray, barsPrefs, dominant])
 
   return (
     <canvas

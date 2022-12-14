@@ -3,11 +3,11 @@ import { jsx, css } from '@emotion/react';
 import { useStore } from '../../../store';
 
 function PausedWarning() {
-  const playPauseState = useStore(state => state.player.playPauseState);
+  const isSongPlaying = useStore(state => state.player.isSongPlaying);
 
   return (
     <div id="PausedWarning">
-      {(playPauseState === 'Pause') && (
+      {(!isSongPlaying) && (
         <h1
           css={css`
             font-size: 20px;

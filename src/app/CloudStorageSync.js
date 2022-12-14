@@ -6,7 +6,6 @@ function CloudSyncStorageSync() {
   const changeActiveVisualizer = useStore(state => state.visualizer.changeActiveVisualizer);
   const changeThemePrefs = useStore(state => state.theme.changeThemePrefs);
   const changeVisualizerPrefs = useStore(state => state.visualizer.changeVisualizerPrefs);
-  const changePlayPauseState = useStore(state => state.player.changePlayPauseState);
   const changeActivePopupTab = useStore(state => state.popup.changeActivePopupTab);
   const changeShowUpdateNote = useStore(state => state.extension.changeShowUpdateNote);
   // const changeSnippets = useStore(state => state.snippets.changeSnippets);
@@ -68,9 +67,6 @@ function CloudSyncStorageSync() {
             break;
           case "visualizerPrefs":
             changeVisualizerPrefs(newValue)
-            break;
-          case "playPauseState":
-            changePlayPauseState(newValue)
             break;
           case "showUpdateNote":
             changeShowUpdateNote(newValue)

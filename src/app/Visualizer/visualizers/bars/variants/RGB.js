@@ -5,7 +5,7 @@ import { useStore } from '../../../../store';
 
 function RGB({analyser, dataArray, bufferLength}) {
   const barsPrefs = useStore(state => state.visualizer.visualizerPrefs.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")));
-  const playPauseState = useStore(state => state.player.playPauseState);
+  const isSongPlaying = useStore(state => state.player.isSongPlaying);
 
   const canvasRef = useRef();
   const intervalId = useRef();
@@ -51,13 +51,13 @@ function RGB({analyser, dataArray, bufferLength}) {
       }
     };
 
-    if (playPauseState === "Pause") {
+    if (!isSongPlaying) {
       clearInterval(intervalId.current);
-    } else if (playPauseState === "Play") {
+    } else {
       clearInterval(intervalId.current);
       intervalId.current = setInterval(() => requestAnimationFrame(drawBars), 17)
     }
-  }, [playPauseState, analyser, bufferLength, dataArray, barsPrefs])
+  }, [isSongPlaying, analyser, bufferLength, dataArray, barsPrefs])
 
   return (
     <canvas
