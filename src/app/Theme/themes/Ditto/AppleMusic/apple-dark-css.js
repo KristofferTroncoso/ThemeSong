@@ -42,6 +42,18 @@ export const apple_dark_css = /*css*/`
   --themesong-playprogress-color: var(--themesong-base-100-color);
 }
 
+/* apple-dark-css overwrite. */
+/* for the bg when clicking avatar menu */
+#contentWrapper ytd-multi-page-menu-renderer {
+  background-color: rgba(30, 30, 30, 0.9);
+}
+
+ytd-active-account-header-renderer {
+  background-color: rgba(30, 30, 30, 0.9);
+}
+
+/* end */
+
 /* start PlayPage song img styling */
 ytmusic-player {
   border-radius: 4px;
