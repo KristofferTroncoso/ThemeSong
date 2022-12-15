@@ -8,6 +8,15 @@ function PlayPauseChangeObserver() {
     let playPauseChangeObserver;
     let moviePlayerNode = document.getElementById("movie_player");
 
+    //initial
+    if (!document.getElementById("movie_player").classList.contains('playing-mode')) {
+      console.log('INITIAL song PAUSED')
+      changeIsSongPlaying(false);
+    } else {
+      console.log('INITIAL song PLAYING');
+      changeIsSongPlaying(true);
+    }
+
     playPauseChangeObserver = new MutationObserver(handlePlayPauseChange);
 
     playPauseChangeObserver.observe(moviePlayerNode, {
