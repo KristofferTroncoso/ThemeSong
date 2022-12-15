@@ -23,7 +23,6 @@ function White({analyser, dataArray, bufferLength}) {
     ctx.current.fillStyle = "#fff";
     ctx.current.strokeStyle = "#000";
     ctx.current.lineWidth = barsPrefs.borderWidth;
-    analyser.fftSize = 2048;
   }, [barsPrefs])
 
   useEffect(() => {
@@ -31,6 +30,7 @@ function White({analyser, dataArray, bufferLength}) {
       let context = ctx.current;
       let canvas = canvasRef.current || {width: 2400, height: 520};
   
+      analyser.fftSize = 2048;
       analyser.getByteFrequencyData(dataArray);
     
       context.clearRect(0, 0, canvas.width, canvas.height);

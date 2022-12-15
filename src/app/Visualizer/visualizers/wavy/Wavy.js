@@ -32,8 +32,7 @@ function Wavy({analyser, dataArray, bufferLength}) {
       ${dominantSwatch.hsl[1] * 100 * 2}%, 
       70%
     )`;
-    analyser.fftSize = 2048;
-  }, [analyser, dominantSwatch, wavyPrefs]);
+  }, [dominantSwatch, wavyPrefs]);
 
   useEffect(() => {
     console.log('5')
@@ -41,7 +40,7 @@ function Wavy({analyser, dataArray, bufferLength}) {
     const drawWavy = () => {
       let context = ctx.current;
       let canvas = canvasRef.current || {width: 1920, height: 512};
-  
+      analyser.fftSize = 2048;
       analyser.getByteTimeDomainData(dataArray);
       context.clearRect(0, 0, canvas.width, canvas.height);
       context.beginPath();
