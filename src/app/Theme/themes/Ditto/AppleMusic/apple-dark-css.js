@@ -31,7 +31,7 @@ export const apple_dark_css = /*css*/`
 
   --themesong-bodybg-color: #fff;
   --themesong-topbarbg-color: var(--themesong-theme-ditto-apple-4-color);
-  --themesong-playpagebg-color: linear-gradient(180deg, var(--themesong-theme-ditto-apple-4-color) 0%, var(--themesong-theme-ditto-apple-2-color) 30%, var(--themesong-theme-ditto-apple-5-color) 66%, var(--themesong-theme-ditto-apple-3-color) 100%);
+  --themesong-playpagebg-color: linear-gradient(180deg, var(--themesong-theme-ditto-apple-4-color) 0%, var(--themesong-theme-ditto-apple-2-color) 20%, var(--themesong-theme-ditto-apple-5-color) 80%, var(--themesong-theme-ditto-apple-3-color) 100%);
   --themesong-playbarbg-color: var(--themesong-theme-ditto-apple-3-color);
   --themesong-playpageavtoggle-color: hsl(var(--themesong-palette-lightvibrant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.4), 27%);
 
@@ -81,6 +81,7 @@ ytmusic-player .song-media-controls {
 ytmusic-player[player-ui-state_=FULLSCREEN] #song-image {
   height: 100%;
   background: var(--themesong-playpagebg-color) !important;
+  border-radius: 0;
 }
 
 ytmusic-player[player-ui-state_=FULLSCREEN] #thumbnail {

@@ -25,6 +25,7 @@ ytmusic-player .song-media-controls {
 
 ytmusic-player[player-ui-state_=FULLSCREEN] #song-image {
   height: 100%;
+  border-radius: 0;
 }
 
 ytmusic-player[player-ui-state_=FULLSCREEN] #thumbnail {

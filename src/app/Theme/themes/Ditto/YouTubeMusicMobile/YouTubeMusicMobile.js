@@ -9,7 +9,7 @@ function YouTubeMusicMobile() {
   const playerUiState = useStore(state => state.player.playerUiState);
 
   let hue = (dominantColorHSL[0] * 360).toFixed();
-  let saturation = `${(dominantColorHSL[1] * 100).toFixed()}%`;
+  let saturation = `${(dominantColorHSL[1] * 100 * 0.5).toFixed()}%`;
 
   function calcCurvedBrightness(brightness) {
     let hueNum = parseInt(hue, 10);
