@@ -24,9 +24,6 @@ let dirH = 1;
 let speedG = 1.4;
 let speedH = 1.2;
 
-let circumference = 2 * Math.PI;
-let shorterCanvasSide;
-
 function RGB({analyser, dataArray}) {
   const isSongPlaying = useStore(state => state.player.isSongPlaying);
   let ytmusicplayer = document.querySelector("ytmusic-player")
@@ -34,6 +31,38 @@ function RGB({analyser, dataArray}) {
   const canvasRef = useRef();
   const intervalId = useRef();
   const ctx = useRef();
+
+  // let circles = [
+  //   {
+  //     x: 160,
+  //     y: 350,
+  //     dirX: 1,
+  //     dirY: 1,
+  //     speedX: 0.7,
+  //     speedY: 0.2,
+  //     freq: 0,
+  //     minByte: 200,
+  //     minRadius: 1,
+  //     growRate: 300,
+  //     lineWidth: 5
+  //   },
+  //   {
+  //     x: 450,
+  //     y: 310,
+  //     dirX: -1,
+  //     dirY: 1,
+  //     speedX: 0.7,
+  //     speedY: 1.2,
+  //     freq: 190,
+  //     minByte: 0,
+  //     minRadius: 0.32,
+  //     growRate: 800,
+  //     lineWidth: 3
+  //   },
+  // ];
+
+  const circumference = 2 * Math.PI;
+  let shorterCanvasSide;
   
   useEffect(() => {
     console.log('1')
