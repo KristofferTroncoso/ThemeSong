@@ -3,8 +3,11 @@ import { jsx, css } from '@emotion/react';
 import HeadphonesIcon from '@mui/icons-material/Headphones';
 import RatePopover from './RatePopover';
 import SettingsPopover from './SettingsPopover';
+import { useStore } from '../../store';
 
 function BottomBar() {
+  const store = useStore()
+
   return (
     <div 
       className="BottomBar" 
@@ -37,6 +40,19 @@ function BottomBar() {
           align-content: center;
         `}
       >
+        {(process.env.NODE_ENV === 'development') && (
+          <div         
+            css={css`
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              align-content: center;
+            `}
+          >
+            <button css={css`color: white; background-color: black; margin: 0 2px; border: 0;`} onClick={e => console.log(store)}>zstore</button>
+            <button css={css`color: white; background-color: black; margin: 0 2px; border: 0;`} onClick={e => {chrome.storage.local.get(null, res => console.log(res))}}>storage.local</button>
+          </div>
+        )}
         <RatePopover />
         <SettingsPopover />
       </div>
