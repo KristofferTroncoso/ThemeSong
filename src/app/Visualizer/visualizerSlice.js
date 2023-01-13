@@ -6,10 +6,12 @@ export const createVisualizerSlice = (set) => ({
     {
       visualizerId: "visualizerId:0",
       name: "Wavy",
+      order: 1
     },
     {
       visualizerId: "visualizerId:1",
       name: "Bars",
+      order: 2,
       variants: [
         {
           variantId: "variantId:1",
@@ -40,6 +42,7 @@ export const createVisualizerSlice = (set) => ({
     {
       visualizerId: "visualizerId:2",
       name: "Circles",
+      order: 3,
       variants: [
         {
           variantId: "variantId:1",
@@ -75,14 +78,14 @@ export const createVisualizerSlice = (set) => ({
     },
     {
       visualizerId: "visualizerId:1",
-      activeVariant: "variantId:5",
+      activeVariant: "variantId:3",
       barWidth: 30,
       borderWidth: 4,
       gap: 4
     },
     {
       visualizerId: "visualizerId:2",
-      activeVariant: "variantId:5",
+      activeVariant: "variantId:3",
     }
   ],
   changeActiveVisualizer: (payload) => {
