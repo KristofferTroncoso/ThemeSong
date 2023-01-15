@@ -74,7 +74,7 @@ function Accent({analyser, dataArray}) {
         ctx.current.fillStyle = `hsla(
           ${(dominant.hsl[0] * 360).toFixed()}, 
           ${dominant.hsl[1] * 100}%, 
-          ${shorterCanvasSide / (circle.radius / 5)}%, 
+          ${shorterCanvasSide / (circle.radius / 2.5) + 40}%, 
           0.95
         )`;
         ctx.current.arc(circle.x, circle.y, circle.radius, 0, circumference);
