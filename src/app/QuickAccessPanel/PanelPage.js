@@ -20,8 +20,9 @@ function PanelPage() {
     <div
       css={css`
         padding: 6px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
         background: var(--themesong-playbarbg-color, #222);
+        border: 1px solid var(--themesong-base-30-color, rgba(255,255,255,0.2));
+        border-radius: 4px;
         backdrop-filter: blur(6px);
         transition: var(--themesong-bgcolor-transition);
         color: var(--themesong-secondary-text-color, #fff);

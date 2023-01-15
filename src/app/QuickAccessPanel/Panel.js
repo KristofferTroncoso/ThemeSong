@@ -61,7 +61,12 @@ function Panel() {
         }}
         css={css`
           .MuiPaper-root {
-            background-color: var(--themesong-playbarbg-color) !important;
+            background-color: rgba(0,0,0,0) !important;
+            min-height: 550px;
+            display: flex;
+            justify-content: end;
+            flex-direction: column;
+            box-shadow: none !important;
           }
         `}
       >
