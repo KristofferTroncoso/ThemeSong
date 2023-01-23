@@ -51,6 +51,7 @@ function SleepTimer() {
       if (document.getElementById("movie_player").classList.contains('playing-mode')) {
         document.getElementById("play-pause-button").click()
       }
+      setIsLastSong(false);
       changeIsActive(false);
       alert(`ThemeSong: Sleep Timer completed`)
     };
