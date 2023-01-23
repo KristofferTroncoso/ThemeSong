@@ -2,10 +2,11 @@
 import { jsx, css } from '@emotion/react';
 
 import SongPanel from './components/SongPanel';
-import VisualizerPanel from './components/VisualizerPanel';
-import AppearancePanel from './components/AppearancePanel';
-import UtilitiesPanel from './components/UtilitiesPanel';
+import VisualizerPanel from '../Visualizer/VisualizerPanel';
+import AppearancePanel from '../Theme/AppearancePanel';
+import UtilitiesPanel from '../Utilities/UtilitiesPanel';
 import UpdatePanel from './components/UpdatePanel';
+import DevToolsPanel from './components/DevToolsPanel';
 
 import Tooltip from '@mui/material/Tooltip';
 import HelpIcon from '@mui/icons-material/Help';
@@ -20,6 +21,7 @@ function PanelPage() {
     <div
       css={css`
         padding: 6px;
+        margin: 2px;
         background: var(--themesong-playbarbg-color, #222);
         border: 1px solid var(--themesong-base-30-color, rgba(255,255,255,0.2));
         border-radius: 4px;
@@ -37,8 +39,9 @@ function PanelPage() {
         <SongPanel />
         <AppearancePanel />
         <VisualizerPanel />
+        <UtilitiesPanel />
         {(process.env.NODE_ENV === 'development') && (
-          <UtilitiesPanel />
+          <DevToolsPanel />
         )}
         {showUpdateNote && <UpdatePanel />}
       </div>

@@ -6,9 +6,12 @@ import Popover from '@mui/material/Popover';
 import Badge from '@mui/material/Badge';
 import ThemeSongFontIcon from './components/ThemeSongFontIcon';
 import { useStore } from '../store';
+import SnoozeIcon from '@mui/icons-material/Snooze';
 
 function Panel() {
   const showUpdateNote = useStore(state => state.extension.showUpdateNote);
+  const isActive = useStore(state => state.utilities.sleepTimer.isActive);
+  const minutesLeft = useStore(state => state.utilities.sleepTimer.minutesLeft);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -40,10 +43,38 @@ function Panel() {
         <Badge 
           variant="dot" 
           color="warning"
-          // badgeContent="U"
           invisible={!showUpdateNote}
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'left',
+          }}
         >
-          <ThemeSongFontIcon />
+          <Badge
+            badgeContent={
+              <span 
+                css={css`
+                  display: flex;
+                  flex-direction: row;
+                  align-content: center;
+                  align-items: center;
+                  justify-content: space-between;
+                `}
+              >
+                <SnoozeIcon /> 
+                <span css={css`margin-top:1px;margin-left:3px;`}>{minutesLeft}</span>
+              </span>
+            }
+            color="secondary"
+            invisible={!isActive}
+            variant="standard"
+            css={css`
+              .MuiBadge-badge {
+                font-size: 12px;
+              }
+            `}
+          >
+            <ThemeSongFontIcon />
+          </Badge>
         </Badge>
       </button>
       <Popover
@@ -62,7 +93,7 @@ function Panel() {
         css={css`
           .MuiPaper-root {
             background-color: rgba(0,0,0,0) !important;
-            min-height: 550px;
+            min-height: 600px;
             display: flex;
             justify-content: end;
             flex-direction: column;

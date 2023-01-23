@@ -10,6 +10,7 @@ import VisualizerFeature from '../Visualizer/visualizers/VisualizerFeature';
 import Palette from '../Palette/Palette';
 // import UiOptions from '../UiOptions/UiOptions';
 // import Snippets from '../Snippets/Snippets';
+import Utilities from '../Utilities/Utilities';
 
 function ContentScript() {
 
@@ -25,6 +26,7 @@ function ContentScript() {
       <Palette />
       {/* <UiOptions /> */}
       {/* <Snippets /> */}
+      <Utilities />
     </div>
   )
 }
