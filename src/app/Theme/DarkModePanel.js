@@ -1,13 +1,13 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx, css } from '@emotion/react';
-import { useStore } from '../../store';
+import { useStore } from '../store';
 
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { CgDarkMode } from 'react-icons/cg';
 
-import PanelButton from './PanelButton';
+import PanelButton from '../QuickAccessPanel/components/PanelButton';
 
 function DarkModePanel() {
   const themePrefs = useStore(state => state.theme.themePrefs);

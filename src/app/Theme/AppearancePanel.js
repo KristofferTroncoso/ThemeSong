@@ -1,5 +1,5 @@
 import React from "react";
-import StyledPanelDiv from "./StyledPanelDiv";
+import StyledPanelDiv from "../QuickAccessPanel/components/StyledPanelDiv";
 import ThemePanel from "./ThemePanel";
 import DarkModePanel from "./DarkModePanel";
 

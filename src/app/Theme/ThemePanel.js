@@ -6,8 +6,8 @@ import { GiAtom } from 'react-icons/gi';
 import ColorizeIcon from '@mui/icons-material/Colorize';
 import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
 
-import PanelButton from './PanelButton';
-import { useStore } from '../../store';
+import PanelButton from '../QuickAccessPanel/components/PanelButton';
+import { useStore } from '../store';
 
 function ThemePanel() {
   const activeTheme = useStore(state => state.theme.activeTheme);
