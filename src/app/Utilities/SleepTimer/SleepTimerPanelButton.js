@@ -16,10 +16,6 @@ function SleepTimerPanelButton() {
       title="Sleep Timer" 
       hoverColor="#ac13cf"
       bgColor={isActive && '#ac13cf'}
-      css={css`
-        display: flex;
-        flex-direction: column;
-      `}
     >
       <SnoozeIcon css={css`font-size: 28px;`} />
     </PanelButton>

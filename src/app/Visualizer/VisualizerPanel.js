@@ -62,7 +62,7 @@ function VisualizerPanel() {
   }
 
   return (
-    <StyledPanelDiv style={{minHeight: '130px'}}>
+    <StyledPanelDiv style={{minHeight: '120px'}}>
       <div css={css`margin-bottom: 2px;`}>
         <h3 css={css`padding: 2px 5px;`}>Visualizer</h3>
         <div css={css`display: flex; justify-content: start; align-items: center;`}>
@@ -75,7 +75,7 @@ function VisualizerPanel() {
               height: 42px;
               min-width: 45px;
               width: 60px;
-              margin: 5px 4px 5px 5px;
+              margin: 0 2px;
               border: 0;
               border-radius: 8px 0 0 8px;
             `}
@@ -92,7 +92,7 @@ function VisualizerPanel() {
               height: 42px;
               min-width: 45px;
               width: 60px;
-              margin: 0;
+              margin: 2px;
               border: 0;
               border-radius: 0;
             `}
@@ -109,7 +109,7 @@ function VisualizerPanel() {
               height: 42px;
               min-width: 60px;
               width: 60px;
-              margin: 5px 5px 5px 4px;
+              margin: 0 2px;
               border: 0;
               border-radius: 0 8px 8px 0;
               padding: 0;
@@ -120,8 +120,8 @@ function VisualizerPanel() {
           </PanelButton>
         </div>
       </div>
-      {(isVisualizerOn && activeVisualizer !== "visualizerId:0")  && (
-        <div css={css`margin-bottom: 2px;`}>
+      {(isVisualizerOn && activeVisualizer !== "visualizerId:0") ? (
+        <div>
           <h3 css={css`padding: 2px 5px;`}>Variants</h3>
           {{
             "visualizerId:1": (
@@ -197,6 +197,19 @@ function VisualizerPanel() {
               </div>
             )
           }[activeVisualizer]}
+        </div>
+      ) : (
+        <div>
+          <h3 css={css`padding: 2px 5px; color: var(--themesong-base-40-color, rgba(255,255,255,0.2));`}>Variants</h3>
+          <div
+            css={css`
+              background-color: rgba(0,0,0,0.15);
+              width: 210px;
+              height: 30px;
+              margin: 1px 3px;
+              border-radius: 5px;
+            `}
+          />
         </div>
       )}
     </StyledPanelDiv>

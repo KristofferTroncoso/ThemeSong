@@ -6,7 +6,7 @@ import DarkModePanel from "./DarkModePanel";
 function AppearancePanel() {
   return (
     <StyledPanelDiv
-      style={{minHeight: '130px'}}
+      style={{minHeight: '120px'}}
     >
       <ThemePanel />
       <DarkModePanel />

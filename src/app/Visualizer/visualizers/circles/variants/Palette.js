@@ -91,7 +91,7 @@ function Palette({analyser, dataArray}) {
       context.strokeStyle = '#000';
   
       context.beginPath();
-      context.lineWidth = 6;
+      context.lineWidth = 4;
       context.fillStyle = `hsla(
         ${(palette.Vibrant.hsl[0] * 360).toFixed()}, 
         ${palette.Vibrant.hsl[1] * 100}%, 
@@ -105,7 +105,7 @@ function Palette({analyser, dataArray}) {
       context.stroke();
   
       context.beginPath();
-      context.lineWidth = 5;
+      context.lineWidth = 3;
       context.fillStyle = `hsla(
         ${(palette.Muted.hsl[0] * 360).toFixed()}, 
         ${palette.Muted.hsl[1] * 100}%, 
@@ -119,7 +119,7 @@ function Palette({analyser, dataArray}) {
       context.stroke();
   
       context.beginPath();
-      context.lineWidth = 4;
+      context.lineWidth = 3;
       context.fillStyle = `hsla(
         ${(palette.DarkVibrant.hsl[0] * 360).toFixed()}, 
         ${palette.DarkVibrant.hsl[1] * 100}%, 
@@ -133,7 +133,7 @@ function Palette({analyser, dataArray}) {
       context.stroke();
   
       context.beginPath();
-      context.lineWidth = 4;
+      context.lineWidth = 2;
       context.fillStyle = `hsla(
         ${(palette.LightVibrant.hsl[0] * 360).toFixed()}, 
         ${palette.LightVibrant.hsl[1] * 100}%, 
@@ -147,7 +147,7 @@ function Palette({analyser, dataArray}) {
       context.stroke();
   
       context.beginPath();
-      context.lineWidth = 4;
+      context.lineWidth = 2;
       context.fillStyle = `hsla(
         ${(palette.DarkMuted.hsl[0] * 360).toFixed()}, 
         ${palette.DarkMuted.hsl[1] * 100}%, 
@@ -161,7 +161,7 @@ function Palette({analyser, dataArray}) {
       context.stroke();
   
       context.beginPath();
-      context.lineWidth = 4;
+      context.lineWidth = 2;
       context.fillStyle = `hsla(
         ${(palette.LightMuted.hsl[0] * 360).toFixed()}, 
         ${palette.LightMuted.hsl[1] * 100}%, 

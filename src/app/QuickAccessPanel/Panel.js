@@ -30,7 +30,7 @@ function Panel() {
       <button
         css={css`
           border: 0;
-          padding: 12px 10px 8px 3px;
+          padding: 12px 16px 10px 6px;
           background-color: transparent;
           color: var(--themesong-tertiary-text-color);
           :hover {
@@ -50,20 +50,7 @@ function Panel() {
           }}
         >
           <Badge
-            badgeContent={
-              <span 
-                css={css`
-                  display: flex;
-                  flex-direction: row;
-                  align-content: center;
-                  align-items: center;
-                  justify-content: space-between;
-                `}
-              >
-                <SnoozeIcon /> 
-                <span css={css`margin-top:1px;margin-left:3px;`}>{minutesLeft}</span>
-              </span>
-            }
+            badgeContent={minutesLeft || <SnoozeIcon />}
             color="secondary"
             invisible={!isActive}
             variant="standard"
@@ -98,6 +85,7 @@ function Panel() {
             justify-content: end;
             flex-direction: column;
             box-shadow: none !important;
+            transition: none !important;
           }
         `}
       >

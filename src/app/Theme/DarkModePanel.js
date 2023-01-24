@@ -33,7 +33,20 @@ function DarkModePanel() {
   }
 
   if (!(activeTheme === "themeId:6" || activeTheme === "themeId:7")) {
-    return <div></div>
+    return (
+      <div>
+        <h3 css={css`padding: 2px 5px; color: var(--themesong-base-40-color, rgba(255,255,255,0.2));`}>Appearance</h3>
+        <div
+          css={css`
+            background-color: rgba(0,0,0,0.15);
+            width: 190px;
+            height: 34px;
+            margin: 3px;
+            border-radius: 7px;
+          `}
+        />
+      </div>
+    )
   } else {
     return (
       <div css={css`margin-bottom: 0;`}>
@@ -45,7 +58,7 @@ function DarkModePanel() {
               height: 38px;
               min-width: 45px;
               width: 60px;
-              margin: 5px 4px 5px 5px;
+              margin: 0 2px;
               background: ${activeThemeUserPrefs.appearanceSetting ===  "dark" && 'rgba(255,255,255,0.8)'};
               color: ${activeThemeUserPrefs.appearanceSetting ===  "dark" && '#9d00ff'};
               border: 0;
@@ -64,7 +77,7 @@ function DarkModePanel() {
               height: 38px;
               min-width: 45px;
               width: 60px;
-              margin: 0;
+              margin: 0 2px;
               background: ${activeThemeUserPrefs.appearanceSetting ===  "light" && 'rgba(255,255,255,0.8)'};
               color: ${activeThemeUserPrefs.appearanceSetting ===  "light" && '#de9800'};
               border: 0;
@@ -83,7 +96,7 @@ function DarkModePanel() {
               height: 38px;
               min-width: 45px;
               width: 60px;
-              margin: 5px 5px 5px 4px;
+              margin: 0 2px;
               background: ${activeThemeUserPrefs.appearanceSetting ===  "system"  && 'rgba(255,255,255,0.8)'};
               color: ${activeThemeUserPrefs.appearanceSetting ===  "system" && '#009961'};
               border: 0;
