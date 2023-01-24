@@ -11,7 +11,7 @@ function YouTubeMusicMobile() {
   let hue = (dominantColorHSL[0] * 360).toFixed();
   let saturation = `${(dominantColorHSL[1] * 100 * 0.5).toFixed()}%`;
 
-  function calcCurvedBrightness(brightness) {
+  const calcCurvedBrightness = React.useCallback((brightness) => {
     let hueNum = parseInt(hue, 10);
     let brightnessNum = parseInt(brightness, 10);
   
@@ -20,7 +20,7 @@ function YouTubeMusicMobile() {
     } else  {
       return brightnessNum;
     }
-  }
+  }, [hue])
 
   useEffect(() => {
     if (playerUiState === "PLAYER_PAGE_OPEN") {
@@ -28,7 +28,7 @@ function YouTubeMusicMobile() {
     } else {
       menubar.content = '#000';
     }
-  }, [hue, saturation, playerUiState])
+  }, [hue, saturation, playerUiState, calcCurvedBrightness])
 
   return (
     <style id="YouTubeMusicMobile">
