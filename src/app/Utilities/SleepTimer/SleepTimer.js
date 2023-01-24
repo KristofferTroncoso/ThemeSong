@@ -71,6 +71,7 @@ function SleepTimer() {
   function handleTimerClick(minutes) {
     clearTimeout(timeoutId);
     clearInterval(intervalId);
+    setIsLastSong(false);
     changeMinutesLeft(minutes);
     intervalId = setInterval(() => {
       decrementMinutesLeft();
@@ -93,6 +94,8 @@ function SleepTimer() {
 
   const handleCancelTimer = () => {
     clearTimeout(timeoutId);
+    clearInterval(intervalId);
+    setIsLastSong(false);
     changeIsActive(false);
     changeIsDialogOpen(false);
   }
