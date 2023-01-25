@@ -134,7 +134,7 @@ function AppleMusic() {
             --themesong-topbarbg-color: rgba(30,30,30,0.4) !important;
             --themesong-bodybg-color: hsl(0,0%,9%);
 
-            --themesong-playbarbg-color: hsla(var(--themesong-palette-dominant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.7), 20%, 0.4);
+            --themesong-playbarbg-color: hsla(var(--themesong-palette-dominant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.6), 15%, 0.4);
 
           }`
           :`:root {
