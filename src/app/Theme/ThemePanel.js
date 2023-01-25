@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 
 import InvertColorsOffIcon from '@mui/icons-material/InvertColorsOff';
 import { GiAtom } from 'react-icons/gi';

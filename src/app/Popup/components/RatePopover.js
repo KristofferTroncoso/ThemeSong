@@ -1,14 +1,13 @@
-/** @jsx jsx */
-import React from 'react';
-import { jsx, css } from '@emotion/react';
+import { useState } from 'react';
+import { css } from '@emotion/react';
 import Popover from '@mui/material/Popover';
 import Star from '@mui/icons-material/Star';
 import LaunchIcon from '@mui/icons-material/Launch';
 // import Typography from '@mui/material/Typography';
 
 function RatePopover() {
-  const [userLikesExtension, setUserLikesExtension] = React.useState(true);
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [userLikesExtension, setUserLikesExtension] = useState(true);
+  const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);

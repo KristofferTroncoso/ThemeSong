@@ -1,5 +1,3 @@
-import React from 'react';
-
 import RemoveDislikeButton from './features/RemoveDislikeButton';
 import RemoveCastButton from './features/RemoveCastButton';
 import RemoveUpgradeButton from './features/RemoveUpgradeButton';

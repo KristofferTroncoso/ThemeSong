@@ -1,5 +1,3 @@
-import React from 'react';
-
 function Custom() {
 
   const customCSS = /*css*/`

@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 
 import SongPanel from './components/SongPanel';
 import VisualizerPanel from '../Visualizer/VisualizerPanel';

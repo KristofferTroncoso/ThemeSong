@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import VisualizerToggleButton from './components/VisualizerToggleButton';
@@ -48,7 +48,7 @@ function addVisualizerButton() {
 
 
 function VisualizerFeature() {
-  React.useEffect(() => {
+  useEffect(() => {
     addVisualizerContainer();
     addVisualizerButton();
   }, []);

@@ -1,4 +1,3 @@
-import React from 'react';
 import DynamicDark from './Dark/DynamicDark';
 import DynamicLight from './Light/DynamicLight';
 import DynamicSystem from './System/DynamicSystem';

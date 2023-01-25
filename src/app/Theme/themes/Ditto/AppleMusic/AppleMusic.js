@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { apple_music_css } from './apple-music-css';
 import { apple_dark_css } from './apple-dark-css';
 import { menubar } from '../../selectors';
@@ -7,7 +7,7 @@ import { useStore } from '../../../../store';
 function AppleMusic() {
   const playerUiState = useStore(state => state.player.playerUiState);
   const lightVibrantHSL = useStore(state => state.palette.palette.LightVibrant.hsl)
-  const [isDark, setIsDark] = React.useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
+  const [isDark, setIsDark] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
 
   function returnDarkOrLightTheme(event) {
     console.log('DynamicSystem: returnDarkOrLightTheme');

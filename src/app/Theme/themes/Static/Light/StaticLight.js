@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { static_light_css } from './static-light-css';
 import { useStore } from '../../../../store';
 import { menubar } from '../../selectors';
@@ -13,7 +13,7 @@ function StaticLight() {
     lightnessSettingPlayerBar 
   } = useStore(state => state.theme.themePrefs.find(theme => (theme.themeId === "themeId:7")).lightPrefs);
 
-  React.useEffect(() => {
+  useEffect(() => {
     //apply dark logo on load
     document.querySelectorAll("ytmusic-nav-bar #left-content picture source")[1].srcset = chrome.runtime.getURL("/assets/images/dark_youtube_music_logo_themesong_mod.svg")
     document.querySelector("ytmusic-nav-bar #left-content picture img").src = chrome.runtime.getURL("/assets/images/dark_youtube_music_logo_themesong_mod.svg")
@@ -25,7 +25,7 @@ function StaticLight() {
     }
   }, [])
 
-  React.useEffect(() => {
+  useEffect(() => {
     menubar.content = `hsl(${hue}, ${saturationSetting}%, ${lightnessSettingNavBar}%)`;
   }, [hue, saturationSetting, lightnessSettingNavBar])
   

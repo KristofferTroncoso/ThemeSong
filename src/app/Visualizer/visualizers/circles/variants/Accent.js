@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import React, { useRef }  from 'react';
-import { jsx, css } from '@emotion/react';
+import { useEffect, useRef } from 'react';
+import { css } from '@emotion/react';
 import { useStore } from '../../../../store';
 
 let circles = [
@@ -45,7 +44,7 @@ function Accent({analyser, dataArray}) {
 
   const circumference = 2 * Math.PI;
 
-  React.useEffect(() => {
+  useEffect(() => {
     console.log('Accent time');
     ctx.current = canvasRef.current.getContext("2d");
     ctx.current.fillStyle = "#fff";
@@ -58,7 +57,7 @@ function Accent({analyser, dataArray}) {
     }
   }, [])
 
-  React.useEffect(() => {
+  useEffect(() => {
     function updateAndDraw(ctx) {
       ctx.current = canvasRef.current.getContext("2d");
       //update values

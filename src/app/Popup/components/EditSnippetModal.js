@@ -1,7 +1,6 @@
-/** @jsx jsx */
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { Modal } from '@mui/material';
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 import { useStore } from '../../store';
 
 function EditSnippetModal({snippet, open, setOpen}) {
@@ -10,10 +9,10 @@ function EditSnippetModal({snippet, open, setOpen}) {
   const deleteSnippet = useStore(state => state.snippets.deleteSnippet);
   const editSnippet = useStore(state => state.snippets.editSnippet);
 
-  const [snippetName, setSnippetName] = React.useState(snippet.name);
-  const [snippetCSS, setSnippetCSS] = React.useState(snippet.css);
+  const [snippetName, setSnippetName] = useState(snippet.name);
+  const [snippetCSS, setSnippetCSS] = useState(snippet.css);
 
-  React.useEffect(() => {
+  useEffect(() => {
     chrome.storage.local.set({snippets}, () => console.log('chrome.storage.local.set({snippets}'));
   }, [snippets]);
 

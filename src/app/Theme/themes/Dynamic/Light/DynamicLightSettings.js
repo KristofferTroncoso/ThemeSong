@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import React from 'react';
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 import { useStore } from '../../../../store';
 
 import { styled } from '@mui/material/styles';
@@ -115,6 +113,6 @@ function DynamicLightSettings() {
     </div>
   );
   
-};
+}
 
 export default DynamicLightSettings;

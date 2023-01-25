@@ -1,6 +1,5 @@
-/** @jsx jsx */
 import { useEffect, useRef }  from 'react';
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 import { useStore } from '../../../../store';
 
 function Black({analyser, dataArray, bufferLength}) {

@@ -1,9 +1,7 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/react';
-import React from 'react';
+import { useState } from 'react';
 
 function TopBar() {
-  const [extensionVersion] =  React.useState(chrome.runtime.getManifest().version)
+  const [extensionVersion] =  useState(chrome.runtime.getManifest().version)
 
   return (
     <div 

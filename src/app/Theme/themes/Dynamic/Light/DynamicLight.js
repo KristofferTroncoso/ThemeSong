@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { useStore } from '../../../../store';
 import { dynamiclight_css } from './dynamiclightCSS';
 import { menubar } from '../../selectors';
@@ -27,7 +27,7 @@ function DynamicLight() {
     }
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     //apply dark logo on load
     document.querySelectorAll("ytmusic-nav-bar #left-content picture source")[1].srcset = chrome.runtime.getURL("/assets/images/dark_youtube_music_logo_themesong_mod.svg")
     document.querySelector("ytmusic-nav-bar #left-content picture img").src = chrome.runtime.getURL("/assets/images/dark_youtube_music_logo_themesong_mod.svg")
@@ -39,7 +39,7 @@ function DynamicLight() {
     }
   }, [])
 
-  React.useEffect(() => {
+  useEffect(() => {
     menubar.content = `hsl(${hue}, ${saturation}, ${calcCurvedBrightness(lightnessSettingNavBar)}%)`;
   }, [hue, saturation, lightnessSettingNavBar])
   

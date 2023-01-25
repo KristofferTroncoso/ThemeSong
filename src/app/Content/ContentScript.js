@@ -1,5 +1,3 @@
-import React from 'react';
-
 import CloudSyncStorageSync from '../CloudStorageSync';
 import Themes from '../Theme/Themes';
 import SongObserver from '../Song/SongObserver';

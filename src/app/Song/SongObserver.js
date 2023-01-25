@@ -1,9 +1,9 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { useStore } from '../store';
 
 function SongObserver() {
   const changeSong = useStore(state => state.song.changeSong);
-  React.useEffect(() => { 
+  useEffect(() => { 
     let songObserver;
 
     changeSong();

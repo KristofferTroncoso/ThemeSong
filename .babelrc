@@ -2,15 +2,23 @@
   "env": {
     "development": {
        "presets": [
-         // "@babel/preset-env",
-         "@babel/preset-react"
-         // "react-app"
-        ]
+          ["@babel/preset-react", {
+            "runtime": "automatic",
+            "importSource": "@emotion/react"
+          }]
+        ],
+        "plugins": ["@emotion"]
      },
     "production": {
-      "presets": ["@babel/preset-react"],
+      "presets": [
+        ["@babel/preset-react", {
+          "runtime": "automatic",
+          "importSource": "@emotion/react"
+        }]
+      ],
       "plugins": [
-        "transform-remove-console"
+        "transform-remove-console",
+        "@emotion"
       ],
       "comments": false
     }

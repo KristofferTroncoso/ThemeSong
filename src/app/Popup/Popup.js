@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 
 import TopBar from './components/TopBar';
 import BottomBar from './components/BottomBar';

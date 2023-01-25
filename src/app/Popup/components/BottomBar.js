@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 import HeadphonesIcon from '@mui/icons-material/Headphones';
 import RatePopover from './RatePopover';
 import SettingsPopover from './SettingsPopover';

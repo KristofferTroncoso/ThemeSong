@@ -1,8 +1,8 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { menubar } from '../selectors';
 
 function Off() {
-  React.useEffect(() => {
+  useEffect(() => {
     menubar.content = '#131313';
   }, [])
 

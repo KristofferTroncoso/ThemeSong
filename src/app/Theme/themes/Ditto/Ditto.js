@@ -1,4 +1,3 @@
-import React from 'react';
 import YouTubeMusicMobile from './YouTubeMusicMobile/YouTubeMusicMobile';
 import AppleMusic from './AppleMusic/AppleMusic';
 import { useStore } from '../../../store';

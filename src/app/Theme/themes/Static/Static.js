@@ -1,4 +1,3 @@
-import React from 'react';
 import StaticDark from './Dark/StaticDark';
 import StaticLight from './Light/StaticLight';
 import StaticSystem from './System/StaticSystem';

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { useStore } from '../store';
 
 function PlayerUiStateObserver() {

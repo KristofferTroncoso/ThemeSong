@@ -1,5 +1,3 @@
-import React from 'react';
-
 function RemoveDislikeButton() {
   const style = /*css*/`
     .dislike {

@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import React, { useRef }  from 'react';
-import { jsx, css } from '@emotion/react';
+import { useEffect, useRef } from 'react';
+import { css } from '@emotion/react';
 import { useStore } from '../../../../store';
 
 let a = 160;
@@ -59,7 +58,7 @@ function Palette({analyser, dataArray}) {
   const circumference = 2 * Math.PI;
 
 
-  React.useEffect(() => {
+  useEffect(() => {
     console.log('Palette time');
 
     ctx.current = canvasRef.current.getContext("2d");
@@ -73,7 +72,7 @@ function Palette({analyser, dataArray}) {
     }
   }, [])
 
-  React.useEffect(() => {
+  useEffect(() => {
     let context = ctx.current;
     let canvas = canvasRef.current;
 

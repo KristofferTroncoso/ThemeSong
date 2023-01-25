@@ -1,9 +1,9 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import Panel from './Panel';
 
 function PanelContainer() {
-  React.useEffect(() => {
+  useEffect(() => {
     const middleControlButtonsDiv = document.querySelector(".middle-controls-buttons");
     let panelContainer;
   

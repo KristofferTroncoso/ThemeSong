@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { useStore } from '../../../../store';
 import { menubar } from '../../selectors';
 import { static_dark_css } from './static-dark-css';
@@ -13,7 +13,7 @@ function StaticDark() {
     lightnessSettingPlayerBar 
   } = useStore(state => state.theme.themePrefs.find(theme => (theme.themeId === "themeId:7")).darkPrefs);
 
-  React.useEffect(() => {
+  useEffect(() => {
     menubar.content = `hsl(${hue}, ${saturationSetting}%, ${lightnessSettingNavBar}%)`;
   }, [hue, saturationSetting, lightnessSettingNavBar])
   

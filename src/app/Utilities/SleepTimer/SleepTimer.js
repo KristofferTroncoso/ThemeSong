@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import React from 'react';
-import { jsx, css } from '@emotion/react';
+import { useState, useEffect } from 'react';
+import { css } from '@emotion/react';
 import { useStore } from '../../store';
 
 import Dialog from '@mui/material/Dialog';
@@ -40,12 +39,12 @@ function SleepTimer() {
   const songName = useStore(state => state.song.songName);
   const isDialogOpen = useStore(state => state.utilities.sleepTimer.isDialogOpen);
   const changeIsDialogOpen = useStore(state => state.utilities.changeIsDialogOpen);
-  const [isLastSong, setIsLastSong] = React.useState(false);
+  const [isLastSong, setIsLastSong] = useState(false);
 
   let timeoutId;
   let intervalId;
 
-  React.useEffect(() => {
+  useEffect(() => {
     console.log('SONGNAME EFFEEEEEEEEECT')
     function lastSongDone() {
       if (document.getElementById("movie_player").classList.contains('playing-mode')) {

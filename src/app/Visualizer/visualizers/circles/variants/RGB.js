@@ -1,6 +1,5 @@
-/** @jsx jsx */
 import { useRef, useEffect }  from 'react';
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 import { useStore } from '../../../../store';
 
 let a = 160;

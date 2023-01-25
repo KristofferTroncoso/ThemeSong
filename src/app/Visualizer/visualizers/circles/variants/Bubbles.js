@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import React, { useRef }  from 'react';
-import { jsx, css } from '@emotion/react';
+import { useEffect, useRef } from 'react';
+import { css } from '@emotion/react';
 
 import { useStore } from '../../../../store';
 
@@ -274,7 +273,7 @@ function Bubbles({analyser, dataArray, bufferLength}) {
   const canvasRef = useRef(null);
   const intervalId = useRef();
   
-  React.useEffect(() => {
+  useEffect(() => {
     console.log('Bubbles time');
     tscirclescanvas = canvasRef.current;
     setUpCircles();
@@ -286,7 +285,7 @@ function Bubbles({analyser, dataArray, bufferLength}) {
     }
   }, [])
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!isSongPlaying) {
       clearInterval(intervalId.current);
     } else {

@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import React from 'react';
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 import CloudSyncStorageSync from '../CloudStorageSync';
 
 function StyledDiv({children}) {
@@ -18,7 +16,6 @@ function StyledDiv({children}) {
 }
 
 function Options() {
-
   function handleReset(e) {
     chrome.runtime.sendMessage('reset', response => {
       console.log(`Received response ${response}`);

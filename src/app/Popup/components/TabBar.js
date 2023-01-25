@@ -1,6 +1,4 @@
-/** @jsx jsx */
-// import React from 'react';
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 import TabButton from './TabButton';
 import { useStore } from '../../store';
 

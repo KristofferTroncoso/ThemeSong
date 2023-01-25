@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import React from 'react';
-import { jsx, css } from '@emotion/react';
+import { useState, useEffect } from 'react';
+import { css } from '@emotion/react';
 import Wavy from './wavy/Wavy';
 import Bars from './bars/Bars';
 import Circles from './circles/Circles';
@@ -20,9 +19,9 @@ function Visualizer() {
   const activeVisualizer = useStore(state => state.visualizer.activeVisualizer);
   const songName = useStore(state => state.song.songName);
   const toggleIsVisualizerOn = useStore(state => state.visualizer.toggleIsVisualizerOn);
-  const [isConnected, setIsConnected] = React.useState(false);
+  const [isConnected, setIsConnected] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     console.log('Visualizer: useEffect 2');
     console.log('audioCtx', audioCtx)
     if (isVisualizerOn) {
@@ -44,7 +43,7 @@ Page reload required to reconnect visualizer. Reload now?`
     }
   }, [isVisualizerOn])
 
-  React.useEffect(() => {
+  useEffect(() => {
     /* visualizer sometimes disconnects when switching from song to specific songs/videos.
     This reconnects the visualizer when the song changes */
     if (isVisualizerOn) {

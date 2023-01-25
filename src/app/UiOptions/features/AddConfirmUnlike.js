@@ -1,7 +1,7 @@
-import React from 'react';
+import { useEffect } from 'react';
 
 function AddConfirmUnlike() {
-  React.useEffect((e) => {
+  useEffect((e) => {
     const likeButton = document.querySelector('.like');
 
     let newDiv = document.createElement('div');

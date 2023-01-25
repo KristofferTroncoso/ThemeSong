@@ -1,12 +1,11 @@
-/** @jsx jsx */
-import React from 'react';
-import { jsx, css } from '@emotion/react';
+import { useState } from 'react';
+import { css } from '@emotion/react';
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
 import Settings from '@mui/icons-material/Settings';
 
 function SettingsPopover() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);

@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import React, { useRef }  from 'react';
-import { jsx, css } from '@emotion/react';
+import { useEffect, useRef } from 'react';
+import { css } from '@emotion/react';
 
 import { useStore } from '../../../../store';
 
@@ -147,7 +146,7 @@ function OT9({analyser, dataArray}) {
   const canvasRef = useRef(null);
   const intervalId = useRef();
   
-  React.useEffect(() => {
+  useEffect(() => {
     console.log('OT9 time');
     tscirclescanvas = canvasRef.current;
     setUpCircles();
@@ -159,7 +158,7 @@ function OT9({analyser, dataArray}) {
     }
   }, [])
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!isSongPlaying) {
       clearInterval(intervalId.current);
     } else {

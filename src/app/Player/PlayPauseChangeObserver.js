@@ -1,10 +1,10 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { useStore } from '../store';
 
 function PlayPauseChangeObserver() {
   const changeIsSongPlaying = useStore(state => state.player.changeIsSongPlaying);
 
-  React.useEffect(() => {
+  useEffect(() => {
     let playPauseChangeObserver;
     let moviePlayerNode = document.getElementById("movie_player");
 

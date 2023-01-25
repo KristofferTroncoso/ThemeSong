@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import React from 'react';
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 import StaticDarkSettings from './Dark/StaticDarkSettings';
 import StaticLightSettings from './Light/StaticLightSettings';
 import { useStore } from '../../../store';

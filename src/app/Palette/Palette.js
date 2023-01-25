@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { useStore } from '../store';
 import * as Vibrant from "node-vibrant";
 import { playerBarSongImgNode } from '../Theme/themes/selectors';
@@ -11,7 +11,7 @@ function Palette() {
   const changePalette = useStore(state => state.palette.changePalette);
   const changeDominantColor = useStore(state => state.palette.changeDominantColor);
 
-  React.useEffect(() => {
+  useEffect(() => {
     initialPalette();
     function initialPalette() {
       getVibrantPalette()

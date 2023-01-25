@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useStore } from '../../../../store';
 import { youtubemusicmobile_css } from './YouTubeMusicMobileCss';
 import { menubar } from '../../selectors';
@@ -11,7 +11,7 @@ function YouTubeMusicMobile() {
   let hue = (dominantColorHSL[0] * 360).toFixed();
   let saturation = `${(dominantColorHSL[1] * 100 * 0.5).toFixed()}%`;
 
-  const calcCurvedBrightness = React.useCallback((brightness) => {
+  const calcCurvedBrightness = useCallback((brightness) => {
     let hueNum = parseInt(hue, 10);
     let brightnessNum = parseInt(brightness, 10);
   

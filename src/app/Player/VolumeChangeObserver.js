@@ -1,11 +1,10 @@
-/** @jsx jsx */
-import React from 'react';
-import { jsx, css } from '@emotion/react';
+import { useState, useEffect } from 'react';
+import { css } from '@emotion/react';
 
 function VolumeChangeObserver() {
-  const [currentVolume, changeCurrentVolume] = React.useState();
+  const [currentVolume, changeCurrentVolume] = useState();
 
-  React.useEffect(() => {
+  useEffect(() => {
     let volumeSliderNode = document.getElementById("volume-slider");
 
     changeCurrentVolume(volumeSliderNode.getAttribute('value'));

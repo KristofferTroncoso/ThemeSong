@@ -1,7 +1,6 @@
-/** @jsx jsx */
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { Switch, Modal } from '@mui/material';
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 import { useStore } from '../../store';
 import EditIcon from '@mui/icons-material/Edit';
 import EditSnippetModal from './EditSnippetModal';
@@ -10,7 +9,7 @@ function Snippet({snippet}) {
   const snippets = useStore(state => state.snippets.snippets);
   const toggleSnippet = useStore(state => state.snippets.toggleSnippet);
 
-  React.useEffect(() => {
+  useEffect(() => {
     chrome.storage.local.set({snippets}, () => console.log('chrome.storage.local.set({snippets}'));
   }, [snippets]);
 
@@ -18,7 +17,7 @@ function Snippet({snippet}) {
     toggleSnippet(snippetId)
   };
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
 
   return (

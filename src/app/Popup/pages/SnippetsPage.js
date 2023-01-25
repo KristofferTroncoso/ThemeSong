@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import React from 'react';
-import { jsx, css } from '@emotion/react';
+import { useEffect } from 'react';
+import { css } from '@emotion/react';
 import { useStore } from '../../store';
 import Snippet from '../components/Snippet';
 import { v4 as uuid } from 'uuid';
@@ -9,7 +8,7 @@ function SnippetsPage() {
   const snippets = useStore(state => state.snippets.snippets);
   const addSnippet = useStore(state => state.snippets.addSnippet);
 
-  React.useEffect(() => {
+  useEffect(() => {
     chrome.storage.local.set({snippets}, () => console.log('chrome.storage.local.set({snippets}'));
   }, [snippets]);
 

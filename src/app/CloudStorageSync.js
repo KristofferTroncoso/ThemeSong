@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { useStore } from './store';
 
 function CloudSyncStorageSync() {
@@ -10,7 +10,7 @@ function CloudSyncStorageSync() {
   const changeShowUpdateNote = useStore(state => state.extension.changeShowUpdateNote);
   // const changeSnippets = useStore(state => state.snippets.changeSnippets);
 
-  React.useEffect(() => {
+  useEffect(() => {
     console.log('CloudSyncStorageSync');
 
     //initial get from chrome local storage

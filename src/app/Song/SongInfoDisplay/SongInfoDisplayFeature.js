@@ -1,9 +1,9 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import SongInfoDisplay from './SongInfoDisplay';
 
 function SongInfoDisplayFeature() {
-  React.useEffect(() => {
+  useEffect(() => {
     const thumbnail = document.querySelector("ytmusic-player #thumbnail");
     let songDivContainer;
   

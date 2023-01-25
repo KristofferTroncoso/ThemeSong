@@ -1,5 +1,3 @@
-import React from 'react';
-
 function RemoveCastButton() {
   const style = /*css*/`
     ytmusic-cast-button {

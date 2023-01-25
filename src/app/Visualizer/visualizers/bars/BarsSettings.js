@@ -1,7 +1,5 @@
-/** @jsx jsx */
-import React from 'react';
 import { useStore } from '../../../store';
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 import VariantButton from '../components/VariantButton';
 
 import { styled } from '@mui/material/styles';

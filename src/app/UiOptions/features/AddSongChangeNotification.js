@@ -1,10 +1,10 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { useStore } from '../../store';
 
 function AddSongChangeNotification() {
   const song = useStore(state => state.song);
 
-  React.useEffect(() => {
+  useEffect(() => {
     try {
       if (song.songName !== '') {
         chrome.runtime.sendMessage({notify: song})

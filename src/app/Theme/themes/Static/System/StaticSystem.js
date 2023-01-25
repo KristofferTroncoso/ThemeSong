@@ -1,11 +1,11 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import StaticDark from '../Dark/StaticDark';
 import StaticLight from '../Light/StaticLight';
 
 function StaticSystem({processColors}) {
-  const [isDark, setIsDark] = React.useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
+  const [isDark, setIsDark] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
 
-  React.useEffect(() => {
+  useEffect(() => {
     console.log('Static System');
     console.log('adding event listener')
     returnDarkOrLightTheme();

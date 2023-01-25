@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import React from 'react';
-import { jsx, css } from '@emotion/react';
+import { useState } from 'react';
+import { css } from '@emotion/react';
 import { useStore } from '../../../../store';
 
 import { HuePicker } from 'react-color';
@@ -58,7 +57,7 @@ function StaticLightSettings () {
     e.preventDefault();
   }
 
-  const [reactColor, setReactColor] = React.useState({ h: staticLightPrefs.hue, s: 80, l: .40 });
+  const [reactColor, setReactColor] = useState({ h: staticLightPrefs.hue, s: 80, l: .40 });
 
   function handleHueChange(color, e) {
     setReactColor(color);

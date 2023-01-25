@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import React from 'react';
-import { jsx, css } from '@emotion/react';
+import { css } from '@emotion/react';
 import VisualizerButton from '../../Visualizer/visualizers/components/VisualizerButton';
 import WavySettings from '../../Visualizer/visualizers/wavy/WavySettings';
 import BarsSettings from '../../Visualizer/visualizers/bars/BarsSettings';

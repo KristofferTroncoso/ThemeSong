@@ -1,4 +1,3 @@
-import React from 'react';
 import SleepTimer from './SleepTimer/SleepTimer';
 
 function Utilities() {

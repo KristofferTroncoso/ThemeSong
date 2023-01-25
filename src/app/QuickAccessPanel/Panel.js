@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import React from 'react';
-import { jsx, css } from '@emotion/react';
+import { useState } from 'react';
+import { css } from '@emotion/react';
 import PanelPage from './PanelPage';
 import Popover from '@mui/material/Popover';
 import Badge from '@mui/material/Badge';
@@ -12,7 +11,7 @@ function Panel() {
   const showUpdateNote = useStore(state => state.extension.showUpdateNote);
   const isActive = useStore(state => state.utilities.sleepTimer.isActive);
   const minutesLeft = useStore(state => state.utilities.sleepTimer.minutesLeft);
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);

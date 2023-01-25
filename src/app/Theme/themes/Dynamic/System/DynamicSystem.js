@@ -1,11 +1,11 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import DynamicDark from '../Dark/DynamicDark';
 import DynamicLight from '../Light/DynamicLight';
 
 function DynamicSystem() {
-  const [isDark, setIsDark] = React.useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
+  const [isDark, setIsDark] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
 
-  React.useEffect(() => {
+  useEffect(() => {
     console.log('Dynamic System');
     console.log('adding event listener')
     returnDarkOrLightTheme();
