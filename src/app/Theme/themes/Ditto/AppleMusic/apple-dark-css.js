@@ -29,7 +29,7 @@ export const apple_dark_css = /*css*/`
   --themesong-theme-ditto-apple-4-color: hsl(var(--themesong-palette-lightvibrant-hue), calc(var(--themesong-palette-lightvibrant-saturation) * 0.2), 35%);
   --themesong-theme-ditto-apple-5-color: hsl(var(--themesong-palette-darkvibrant-hue), calc(var(--themesong-palette-darkvibrant-saturation) * 0.2), 28%);
 
-  --themesong-bodybg-color: #fff;
+  --themesong-bodybg-color: #333;
   --themesong-topbarbg-color: var(--themesong-theme-ditto-apple-4-color);
   --themesong-playpagebg-color: linear-gradient(180deg, var(--themesong-theme-ditto-apple-4-color) 0%, var(--themesong-theme-ditto-apple-2-color) 20%, var(--themesong-theme-ditto-apple-5-color) 80%, var(--themesong-theme-ditto-apple-3-color) 100%);
   --themesong-playbarbg-color: var(--themesong-theme-ditto-apple-3-color);
