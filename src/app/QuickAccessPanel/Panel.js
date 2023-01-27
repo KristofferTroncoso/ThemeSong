@@ -29,11 +29,13 @@ function Panel() {
       <button
         css={css`
           border: 0;
-          padding: 12px 16px 10px 6px;
+          padding: 14px;
           background-color: transparent;
           color: var(--themesong-tertiary-text-color);
+          border-radius: 50%;
           :hover {
             color: var(--themesong-primary-text-color);
+            background-color: var(--themesong-base-100-alpha-02-color, rgba(255,255,255,0.2));
           }
         `}
         title="Open ThemeSong Quick Access Panel"
@@ -76,6 +78,7 @@ function Panel() {
           vertical: 'bottom',
           horizontal: 'left',
         }}
+        transitionDuration={100}
         css={css`
           .MuiPaper-root {
             background-color: rgba(0,0,0,0) !important;
