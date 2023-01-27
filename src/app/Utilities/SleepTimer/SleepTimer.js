@@ -29,6 +29,8 @@ function StyledButton({children, ...rest}) {
   )
 }
 
+let timeoutId;
+let intervalId;
 
 function SleepTimer() {
   const isActive = useStore(state => state.utilities.sleepTimer.isActive);
@@ -40,9 +42,6 @@ function SleepTimer() {
   const isDialogOpen = useStore(state => state.utilities.sleepTimer.isDialogOpen);
   const changeIsDialogOpen = useStore(state => state.utilities.changeIsDialogOpen);
   const [isLastSong, setIsLastSong] = useState(false);
-
-  let timeoutId;
-  let intervalId;
 
   useEffect(() => {
     console.log('SONGNAME EFFEEEEEEEEECT')
