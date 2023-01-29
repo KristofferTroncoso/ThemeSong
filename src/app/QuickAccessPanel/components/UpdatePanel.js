@@ -32,13 +32,13 @@ function UpdatePanel() {
         `}
       >
         <p>
-          <b>v0.4.6 Bug fixes (Jan 14, 2023)</b>
+          <b>v0.4.7 Sleep Timer (Jan 29, 2023)</b>
         </p>
+        <p>* Sleep Timer is here! Try it out right above this note ^</p>
         <p>
-          * Visualizer-Circles Palette and Accent now properly change on each
-          song.
+          * Ditto-AppleMusic Theme now has dark-mode that auto-adjusts with your
+          system.
         </p>
-        <p>* Other minor styling fixes.</p>
       </div>
       <button
         css={css`
