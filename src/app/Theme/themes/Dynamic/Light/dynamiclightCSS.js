@@ -1,7 +1,7 @@
-import { universalstyles } from '../../universal/universalstyles';
-import { songImgStyles } from '../../universal/songImgStyles';
+import { universalstyles } from "../../universal/universalstyles";
+import { songImgStyles } from "../../universal/songImgStyles";
 
-export const dynamiclight_css = /*css*/`
+export const dynamiclight_css = /*css*/ `
 /* ThemeSong */
 /* Dynamic Light Theme */
 

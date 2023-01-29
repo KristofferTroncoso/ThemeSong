@@ -1,6 +1,6 @@
-import { useRef, useEffect }  from 'react';
-import { css } from '@emotion/react';
-import { useStore } from '../../../../store';
+import { useRef, useEffect } from "react";
+import { css } from "@emotion/react";
+import { useStore } from "../../../../store";
 
 let a = 160;
 let b = 350;
@@ -23,9 +23,9 @@ let dirH = 1;
 let speedG = 1.4;
 let speedH = 1.2;
 
-function RGB({analyser, dataArray}) {
-  const isSongPlaying = useStore(state => state.player.isSongPlaying);
-  let ytmusicplayer = document.querySelector("ytmusic-player")
+function RGB({ analyser, dataArray }) {
+  const isSongPlaying = useStore((state) => state.player.isSongPlaying);
+  let ytmusicplayer = document.querySelector("ytmusic-player");
 
   const canvasRef = useRef();
   const intervalId = useRef();
@@ -62,15 +62,15 @@ function RGB({analyser, dataArray}) {
 
   const circumference = 2 * Math.PI;
   let shorterCanvasSide;
-  
+
   useEffect(() => {
-    console.log('1')
+    console.log("1");
     ctx.current = canvasRef.current.getContext("2d");
-    ctx.current.strokeStyle = '#000';
+    ctx.current.strokeStyle = "#000";
     return function cleanUp() {
       clearInterval(intervalId.current);
-    }
-  }, [])
+    };
+  }, []);
 
   useEffect(() => {
     let context = ctx.current;
@@ -87,9 +87,9 @@ function RGB({analyser, dataArray}) {
       } else if (x - radius < 0) {
         dirX = Math.abs(dirX);
       }
-      x += dirX * speedX * (shorterCanvasSide/ 500);
+      x += dirX * speedX * (shorterCanvasSide / 500);
       y += dirY * speedY * (shorterCanvasSide / 500);
-    
+
       if (x + radius - 10 > canvas.width) {
         x = canvas.width - radius - 10;
       } else if (x - radius + 10 < 0) {
@@ -100,7 +100,7 @@ function RGB({analyser, dataArray}) {
       } else if (y - radius + 10 < 0) {
         y = radius + 10;
       }
-    
+
       return [x, y, dirX, dirY];
     }
 
@@ -109,36 +109,69 @@ function RGB({analyser, dataArray}) {
       analyser.fftSize = 512;
       canvas.height = ytmusicplayer.clientHeight;
       canvas.width = ytmusicplayer.clientWidth;
-      shorterCanvasSide = (ytmusicplayer.clientHeight < ytmusicplayer.clientWidth) ? ytmusicplayer.clientHeight : ytmusicplayer.clientWidth;
+      shorterCanvasSide =
+        ytmusicplayer.clientHeight < ytmusicplayer.clientWidth
+          ? ytmusicplayer.clientHeight
+          : ytmusicplayer.clientWidth;
       analyser.getByteFrequencyData(dataArray);
-    
+
       context.clearRect(0, 0, canvas.width, canvas.height);
-    
+
       let radius;
-    
+
       context.beginPath();
       context.lineWidth = 6;
-      radius = ((Math.max(dataArray[0] - 190, 0) / 300) + 1) * (shorterCanvasSide/5);
-      context.fillStyle = `hsla(${345 + (Math.max(dataArray[0]- 190, 0) * 0.4) + 1}, 100%, 50%, 0.9)`;
-      [a, b, dirA, dirB] = updateValues(a, b, dirA, dirB, radius, speedA, speedB)
+      radius =
+        (Math.max(dataArray[0] - 190, 0) / 300 + 1) * (shorterCanvasSide / 5);
+      context.fillStyle = `hsla(${
+        345 + Math.max(dataArray[0] - 190, 0) * 0.4 + 1
+      }, 100%, 50%, 0.9)`;
+      [a, b, dirA, dirB] = updateValues(
+        a,
+        b,
+        dirA,
+        dirB,
+        radius,
+        speedA,
+        speedB
+      );
       context.arc(a, b, radius, 0, circumference);
       context.fill();
       context.stroke();
-    
+
       context.beginPath();
       context.lineWidth = 5;
-      radius = ((Math.max(dataArray[20]- 20, 0) / 700) + 0.5) * (shorterCanvasSide/5);
-      context.fillStyle = `hsla(${210 + (dataArray[40] * 0.4)}, 100%, 50%, 0.9)`;
-      [c, d, dirC, dirD] = updateValues(c, d, dirC, dirD, radius, speedC, speedD)
+      radius =
+        (Math.max(dataArray[20] - 20, 0) / 700 + 0.5) * (shorterCanvasSide / 5);
+      context.fillStyle = `hsla(${210 + dataArray[40] * 0.4}, 100%, 50%, 0.9)`;
+      [c, d, dirC, dirD] = updateValues(
+        c,
+        d,
+        dirC,
+        dirD,
+        radius,
+        speedC,
+        speedD
+      );
       context.arc(c, d, radius, 0, circumference);
       context.fill();
       context.stroke();
-    
+
       context.beginPath();
       context.lineWidth = 3;
-      radius = ((Math.max(dataArray[160]-10, 0) / 600) + 0.33) * (shorterCanvasSide/5);
-      context.fillStyle = `hsla(${105 + (dataArray[160] * 0.5)}, 100%, 40%, 0.9)`;
-      [g, h, dirG, dirH] = updateValues(g, h, dirG, dirH, radius, speedG, speedH)
+      radius =
+        (Math.max(dataArray[160] - 10, 0) / 600 + 0.33) *
+        (shorterCanvasSide / 5);
+      context.fillStyle = `hsla(${105 + dataArray[160] * 0.5}, 100%, 40%, 0.9)`;
+      [g, h, dirG, dirH] = updateValues(
+        g,
+        h,
+        dirG,
+        dirH,
+        radius,
+        speedG,
+        speedH
+      );
       context.arc(g, h, radius, 0, circumference);
       context.fill();
       context.stroke();
@@ -148,9 +181,9 @@ function RGB({analyser, dataArray}) {
       clearInterval(intervalId.current);
     } else {
       clearInterval(intervalId.current);
-      intervalId.current = setInterval(() => requestAnimationFrame(rgb), 17)
+      intervalId.current = setInterval(() => requestAnimationFrame(rgb), 17);
     }
-  }, [isSongPlaying, analyser, dataArray])
+  }, [isSongPlaying, analyser, dataArray]);
 
   return (
     <canvas
@@ -167,7 +200,7 @@ function RGB({analyser, dataArray}) {
         border-radius: inherit;
       `}
     />
-  )
+  );
 }
 
 export default RGB;

@@ -1,40 +1,40 @@
-const webpack = require('webpack');
-const path = require('path');
-const env = require('./utils/env');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require("webpack");
+const path = require("path");
+const env = require("./utils/env");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-const ASSET_PATH = process.env.ASSET_PATH || '/';
+const ASSET_PATH = process.env.ASSET_PATH || "/";
 
 const fileExtensions = [
-  'jpg',
-  'jpeg',
-  'png',
-  'gif',
-  'eot',
-  'otf',
-  'svg',
-  'ttf',
-  'woff',
-  'woff2',
+  "jpg",
+  "jpeg",
+  "png",
+  "gif",
+  "eot",
+  "otf",
+  "svg",
+  "ttf",
+  "woff",
+  "woff2",
 ];
 
 const options = {
-  mode: process.env.NODE_ENV || 'development',
+  mode: process.env.NODE_ENV || "development",
   entry: {
-    options: path.join(__dirname, 'src', 'app', 'Options', 'index.js'),
-    popup: path.join(__dirname, 'src', 'app', 'Popup', 'index.js'),
-    background: path.join(__dirname, 'src', 'app', 'Background', 'index.js'),
-    contentScript: path.join(__dirname, 'src', 'app', 'Content', 'index.js')
+    options: path.join(__dirname, "src", "app", "Options", "index.js"),
+    popup: path.join(__dirname, "src", "app", "Popup", "index.js"),
+    background: path.join(__dirname, "src", "app", "Background", "index.js"),
+    contentScript: path.join(__dirname, "src", "app", "Content", "index.js"),
   },
   chromeExtensionBoilerplate: {
-    notHotReload: ['background', 'contentScript'],
+    notHotReload: ["background", "contentScript"],
   },
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'build'),
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "build"),
     clean: true,
     publicPath: ASSET_PATH,
   },
@@ -44,86 +44,86 @@ const options = {
         test: /\.(css|scss)$/,
         use: [
           {
-            loader: 'style-loader',
+            loader: "style-loader",
           },
           {
-            loader: 'css-loader',
-          }
+            loader: "css-loader",
+          },
         ],
       },
       {
-        test: new RegExp('.(' + fileExtensions.join('|') + ')$'),
-        type: 'asset/resource',
+        test: new RegExp(".(" + fileExtensions.join("|") + ")$"),
+        type: "asset/resource",
         exclude: /node_modules/,
       },
       {
         test: /\.html$/,
-        loader: 'html-loader',
+        loader: "html-loader",
         exclude: /node_modules/,
       },
-      { test: /\.(ts|tsx)$/, loader: 'ts-loader', exclude: /node_modules/ },
+      { test: /\.(ts|tsx)$/, loader: "ts-loader", exclude: /node_modules/ },
       {
         test: /\.(js|jsx)$/,
         use: [
           {
-            loader: 'source-map-loader',
+            loader: "source-map-loader",
           },
           {
-            loader: 'babel-loader',
+            loader: "babel-loader",
           },
         ],
         exclude: /node_modules/,
-      }
+      },
     ],
   },
   plugins: [
     new CleanWebpackPlugin({ verbose: false }),
     new webpack.ProgressPlugin(),
-    new webpack.EnvironmentPlugin(['NODE_ENV']),
+    new webpack.EnvironmentPlugin(["NODE_ENV"]),
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: 'src/manifest.json',
-          to: path.join(__dirname, 'build'),
+          from: "src/manifest.json",
+          to: path.join(__dirname, "build"),
           force: true,
         },
         {
-          from: 'src/assets/images/icon-128.png',
-          to: path.join(__dirname, 'build'),
+          from: "src/assets/images/icon-128.png",
+          to: path.join(__dirname, "build"),
           force: true,
         },
         {
-          from: 'src/assets/images/icon-34.png',
-          to: path.join(__dirname, 'build'),
+          from: "src/assets/images/icon-34.png",
+          to: path.join(__dirname, "build"),
           force: true,
         },
         {
-          from: 'src/assets/',
-          to: path.join(__dirname, 'build/assets'),
+          from: "src/assets/",
+          to: path.join(__dirname, "build/assets"),
           force: true,
         },
       ],
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'app', 'Options', 'index.html'),
-      filename: 'options.html',
-      chunks: ['options'],
+      template: path.join(__dirname, "src", "app", "Options", "index.html"),
+      filename: "options.html",
+      chunks: ["options"],
       cache: false,
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'app', 'Popup', 'index.html'),
-      filename: 'popup.html',
-      chunks: ['popup'],
+      template: path.join(__dirname, "src", "app", "Popup", "index.html"),
+      filename: "popup.html",
+      chunks: ["popup"],
       cache: false,
-    })
+    }),
   ],
   infrastructureLogging: {
-    level: 'info',
+    level: "info",
   },
 };
 
-if (env.NODE_ENV === 'development') {
-  options.devtool = 'cheap-module-source-map';
+if (env.NODE_ENV === "development") {
+  options.devtool = "cheap-module-source-map";
 } else {
   options.optimization = {
     minimize: true,

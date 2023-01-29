@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import { css } from '@emotion/react';
-import { useStore } from '../../store';
+import { useState, useEffect } from "react";
+import { css } from "@emotion/react";
+import { useStore } from "../../store";
 
-import Dialog from '@mui/material/Dialog';
+import Dialog from "@mui/material/Dialog";
 
-function StyledButton({children, ...rest}) {
+function StyledButton({ children, ...rest }) {
   return (
     <button
       css={css`
@@ -26,37 +26,49 @@ function StyledButton({children, ...rest}) {
     >
       {children}
     </button>
-  )
+  );
 }
 
 let timeoutId;
 let intervalId;
 
 function SleepTimer() {
-  const isActive = useStore(state => state.utilities.sleepTimer.isActive);
-  const minutesLeft = useStore(state => state.utilities.sleepTimer.minutesLeft);
-  const changeIsActive = useStore(state => state.utilities.changeIsActive);
-  const changeMinutesLeft = useStore(state => state.utilities.changeMinutesLeft);
-  const decrementMinutesLeft = useStore(state => state.utilities.decrementMinutesLeft);
-  const songName = useStore(state => state.song.songName);
-  const isDialogOpen = useStore(state => state.utilities.sleepTimer.isDialogOpen);
-  const changeIsDialogOpen = useStore(state => state.utilities.changeIsDialogOpen);
+  const isActive = useStore((state) => state.utilities.sleepTimer.isActive);
+  const minutesLeft = useStore(
+    (state) => state.utilities.sleepTimer.minutesLeft
+  );
+  const changeIsActive = useStore((state) => state.utilities.changeIsActive);
+  const changeMinutesLeft = useStore(
+    (state) => state.utilities.changeMinutesLeft
+  );
+  const decrementMinutesLeft = useStore(
+    (state) => state.utilities.decrementMinutesLeft
+  );
+  const songName = useStore((state) => state.song.songName);
+  const isDialogOpen = useStore(
+    (state) => state.utilities.sleepTimer.isDialogOpen
+  );
+  const changeIsDialogOpen = useStore(
+    (state) => state.utilities.changeIsDialogOpen
+  );
   const [isLastSong, setIsLastSong] = useState(false);
   const [isTimeOverDialogOpen, setIsTimeOverDialogOpen] = useState(false);
 
   useEffect(() => {
     function lastSongDone() {
-      if (document.getElementById("movie_player").classList.contains('playing-mode')) {
-        document.getElementById("play-pause-button").click()
+      if (
+        document
+          .getElementById("movie_player")
+          .classList.contains("playing-mode")
+      ) {
+        document.getElementById("play-pause-button").click();
       }
       setIsLastSong(false);
       changeIsActive(false);
       setIsTimeOverDialogOpen(true);
-    };
-    isLastSong && (
-      lastSongDone()
-    )
-  }, [songName])
+    }
+    isLastSong && lastSongDone();
+  }, [songName]);
 
   function handleLastSongClick() {
     clearTimeout(timeoutId);
@@ -66,7 +78,7 @@ function SleepTimer() {
     changeIsActive(true);
     changeIsDialogOpen(false);
   }
-  
+
   function handleTimerClick(minutes) {
     clearTimeout(timeoutId);
     clearInterval(intervalId);
@@ -76,8 +88,12 @@ function SleepTimer() {
       decrementMinutesLeft();
     }, 60000);
     timeoutId = setTimeout(() => {
-      if (document.getElementById("movie_player").classList.contains('playing-mode')) {
-        document.getElementById("play-pause-button").click()
+      if (
+        document
+          .getElementById("movie_player")
+          .classList.contains("playing-mode")
+      ) {
+        document.getElementById("play-pause-button").click();
       }
       clearInterval(intervalId);
       changeIsActive(false);
@@ -97,7 +113,7 @@ function SleepTimer() {
     setIsLastSong(false);
     changeIsActive(false);
     changeIsDialogOpen(false);
-  }
+  };
 
   return (
     <div id="ThemeSong-SleepTimer">
@@ -127,7 +143,15 @@ function SleepTimer() {
             `}
           >
             <h1>Sleep Timer</h1>
-            {isActive && <h1 css={css`color: #ac13cf;`}>{minutesLeft} minutes left</h1>}
+            {isActive && (
+              <h1
+                css={css`
+                  color: #ac13cf;
+                `}
+              >
+                {minutesLeft} minutes left
+              </h1>
+            )}
           </div>
           <div
             css={css`
@@ -136,13 +160,27 @@ function SleepTimer() {
               padding: 10px 0;
             `}
           >
-            <StyledButton onClick={handleLastSongClick}>Finish this song</StyledButton>
-            <StyledButton onClick={e => handleTimerClick(5)}>5 minutes</StyledButton>
-            <StyledButton onClick={e => handleTimerClick(10)}>10 minutes</StyledButton>
-            <StyledButton onClick={e => handleTimerClick(20)}>20 minutes</StyledButton>
-            <StyledButton onClick={e => handleTimerClick(25)}>25 minutes</StyledButton>
-            <StyledButton onClick={e => handleTimerClick(30)}>30 minutes</StyledButton>
-            <StyledButton onClick={e => handleTimerClick(60)}>60 minutes</StyledButton>
+            <StyledButton onClick={handleLastSongClick}>
+              Finish this song
+            </StyledButton>
+            <StyledButton onClick={(e) => handleTimerClick(5)}>
+              5 minutes
+            </StyledButton>
+            <StyledButton onClick={(e) => handleTimerClick(10)}>
+              10 minutes
+            </StyledButton>
+            <StyledButton onClick={(e) => handleTimerClick(20)}>
+              20 minutes
+            </StyledButton>
+            <StyledButton onClick={(e) => handleTimerClick(25)}>
+              25 minutes
+            </StyledButton>
+            <StyledButton onClick={(e) => handleTimerClick(30)}>
+              30 minutes
+            </StyledButton>
+            <StyledButton onClick={(e) => handleTimerClick(60)}>
+              60 minutes
+            </StyledButton>
           </div>
           <button
             css={css`
@@ -161,7 +199,7 @@ function SleepTimer() {
                 color: #fff;
               }
             `}
-            onClick={handleCancelTimer}    
+            onClick={handleCancelTimer}
           >
             Cancel Timer
           </button>
@@ -169,7 +207,7 @@ function SleepTimer() {
       </Dialog>
       <Dialog
         open={isTimeOverDialogOpen}
-        onClose={e => setIsTimeOverDialogOpen(false)}
+        onClose={(e) => setIsTimeOverDialogOpen(false)}
         css={css`
           .MuiDialog-paper {
             border-radius: 5px;
@@ -188,13 +226,36 @@ function SleepTimer() {
             flex-direction: column;
           `}
         >
-          <h1 css={css`margin-bottom: 20px;`}>Sleep Timer completed</h1>
-          <StyledButton css={css`background-color: #0ea135;`} onClick={e => setIsTimeOverDialogOpen(false)}>OK</StyledButton>
-          <StyledButton css={css`background-color: #ac13cf;`} onClick={e => {setIsTimeOverDialogOpen(false); changeIsDialogOpen(true);}}>Set new Timer</StyledButton>
+          <h1
+            css={css`
+              margin-bottom: 20px;
+            `}
+          >
+            Sleep Timer completed
+          </h1>
+          <StyledButton
+            css={css`
+              background-color: #0ea135;
+            `}
+            onClick={(e) => setIsTimeOverDialogOpen(false)}
+          >
+            OK
+          </StyledButton>
+          <StyledButton
+            css={css`
+              background-color: #ac13cf;
+            `}
+            onClick={(e) => {
+              setIsTimeOverDialogOpen(false);
+              changeIsDialogOpen(true);
+            }}
+          >
+            Set new Timer
+          </StyledButton>
         </div>
       </Dialog>
     </div>
-  )
+  );
 }
 
 export default SleepTimer;

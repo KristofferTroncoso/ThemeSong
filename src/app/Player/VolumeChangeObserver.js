@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { css } from '@emotion/react';
+import { useState, useEffect } from "react";
+import { css } from "@emotion/react";
 
 function VolumeChangeObserver() {
   const [currentVolume, changeCurrentVolume] = useState();
@@ -7,37 +7,37 @@ function VolumeChangeObserver() {
   useEffect(() => {
     let volumeSliderNode = document.getElementById("volume-slider");
 
-    changeCurrentVolume(volumeSliderNode.getAttribute('value'));
+    changeCurrentVolume(volumeSliderNode.getAttribute("value"));
 
     let volumeChangeObserver = new MutationObserver(handlePlayPauseChange);
-  
+
     volumeChangeObserver.observe(volumeSliderNode, {
       attributeFilter: ["value"],
-      attributeOldValue: true
+      attributeOldValue: true,
     });
-    
+
     function handlePlayPauseChange(mutationRecord) {
-      console.log('handleVolumeChangeObserver')
+      console.log("handleVolumeChangeObserver");
       let attributesNamedNodeMap = mutationRecord[0].target.attributes;
       changeCurrentVolume(attributesNamedNodeMap.getNamedItem("value").value);
     }
 
-    return function() {
-      console.log('removing volumeChangeObserver')
+    return function () {
+      console.log("removing volumeChangeObserver");
       volumeChangeObserver.disconnect();
-    }
-  }, [])
+    };
+  }, []);
 
   return (
     <div id="VolumeChangeObserver">
-      {(currentVolume === '0') && (
+      {currentVolume === "0" && (
         <h1
           css={css`
             position: absolute;
             z-index: 1000;
             top: 10%;
             left: 0;
-            background-color: rgba(0,0,0,0.7);
+            background-color: rgba(0, 0, 0, 0.7);
             border: 4px solid #9e0000;
             color: #fff;
             margin: 20px;
@@ -50,7 +50,7 @@ function VolumeChangeObserver() {
         </h1>
       )}
     </div>
-  )
+  );
 }
 
 export default VolumeChangeObserver;

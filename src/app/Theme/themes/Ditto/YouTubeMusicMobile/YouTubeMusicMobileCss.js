@@ -1,7 +1,7 @@
-import { playerbar_progressbar } from '../../universal/playerbar-progressbar';
-import { universalstyles } from '../../universal/universalstyles';
+import { playerbar_progressbar } from "../../universal/playerbar-progressbar";
+import { universalstyles } from "../../universal/universalstyles";
 
-export const youtubemusicmobile_css = /*css*/`
+export const youtubemusicmobile_css = /*css*/ `
 /* ThemeSong */
 /* Ditto Theme */
 

@@ -1,10 +1,10 @@
-import { scrollbars } from '../../universal/scrollbars';
-import { playerbar_progressbar } from '../../universal/playerbar-progressbar';
-import { main_BGs } from '../../universal/main-BGs';
-import { songImgStyles } from '../../universal/songImgStyles';
-import { universalstyles } from '../../universal/universalstyles';
+import { scrollbars } from "../../universal/scrollbars";
+import { playerbar_progressbar } from "../../universal/playerbar-progressbar";
+import { main_BGs } from "../../universal/main-BGs";
+import { songImgStyles } from "../../universal/songImgStyles";
+import { universalstyles } from "../../universal/universalstyles";
 
-export const dynamicdark_css = /*css*/`
+export const dynamicdark_css = /*css*/ `
 /* ThemeSong */
 /* Dynamic Dark Theme */
 

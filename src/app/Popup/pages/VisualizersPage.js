@@ -1,48 +1,54 @@
-import { css } from '@emotion/react';
-import VisualizerButton from '../../Visualizer/visualizers/components/VisualizerButton';
-import WavySettings from '../../Visualizer/visualizers/wavy/WavySettings';
-import BarsSettings from '../../Visualizer/visualizers/bars/BarsSettings';
-import CirclesSettings from '../../Visualizer/visualizers/circles/CirclesSettings';
+import { css } from "@emotion/react";
+import VisualizerButton from "../../Visualizer/visualizers/components/VisualizerButton";
+import WavySettings from "../../Visualizer/visualizers/wavy/WavySettings";
+import BarsSettings from "../../Visualizer/visualizers/bars/BarsSettings";
+import CirclesSettings from "../../Visualizer/visualizers/circles/CirclesSettings";
 
-import { useStore } from '../../store';
+import { useStore } from "../../store";
 
 function VisualizersPage() {
-  const activeVisualizer = useStore(state => state.visualizer.activeVisualizer);
-  const visualizers = useStore(state => state.visualizer.visualizers)
-  const changeActiveVisualizer = useStore(state => state.visualizer.changeActiveVisualizer);
+  const activeVisualizer = useStore(
+    (state) => state.visualizer.activeVisualizer
+  );
+  const visualizers = useStore((state) => state.visualizer.visualizers);
+  const changeActiveVisualizer = useStore(
+    (state) => state.visualizer.changeActiveVisualizer
+  );
 
   const handleVisualizerClick = (e, id) => {
-    changeActiveVisualizer(id)
-    chrome.storage.local.set({activeVisualizer: id}, () => console.log('chrome.storage.local.set({activeVisualizer}'))
-  }
+    changeActiveVisualizer(id);
+    chrome.storage.local.set({ activeVisualizer: id }, () =>
+      console.log("chrome.storage.local.set({activeVisualizer}")
+    );
+  };
 
   let activeVisualizerSettings = () => {
     switch (activeVisualizer) {
       case "visualizerId:0":
-        return <WavySettings />
+        return <WavySettings />;
       case "visualizerId:1":
-        return <BarsSettings />
+        return <BarsSettings />;
       case "visualizerId:2":
-        return <CirclesSettings />
+        return <CirclesSettings />;
       default:
-        return <h1>Unknown Visualizer</h1>
+        return <h1>Unknown Visualizer</h1>;
     }
   };
 
   return (
     <div>
-      <h2 
+      <h2
         css={css`
-          font-size: 12px; 
-          font-weight: 400; 
-          padding: 6px 6px 3px; 
+          font-size: 12px;
+          font-weight: 400;
+          padding: 6px 6px 3px;
           text-align: left;
         `}
       >
         <span
           css={css`
-            padding: 3px 10px; 
-            background-color: #0b3e9c; 
+            padding: 3px 10px;
+            background-color: #0b3e9c;
             border-radius: 3px;
             border: 1px solid #135eeb;
             color: white;
@@ -51,42 +57,41 @@ function VisualizersPage() {
           To turn on visualizer: Hover album art and click on visualizer button
         </span>
       </h2>
-      <div 
-        className="ActiveVisualizerSettingsContainer" 
+      <div
+        className="ActiveVisualizerSettingsContainer"
         css={{
-          background: '#111111', 
-          borderRadius: '5px', 
-          border: '2px solid #999',
-          margin: '6px 5px 5px 5px', 
-          minHeight: '150px', 
-          padding: '5px 10px 10px'
+          background: "#111111",
+          borderRadius: "5px",
+          border: "2px solid #999",
+          margin: "6px 5px 5px 5px",
+          minHeight: "150px",
+          padding: "5px 10px 10px",
         }}
       >
         {activeVisualizerSettings()}
       </div>
-      <div 
-        className="VisualizersContainer" 
+      <div
+        className="VisualizersContainer"
         css={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr 1fr',
-          gridAutoRows: '1fr',
-          gap: '16px',
-          padding: '12px'
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr 1fr",
+          gridAutoRows: "1fr",
+          gap: "16px",
+          padding: "12px",
         }}
       >
-        {visualizers.map(visualizer => (
+        {visualizers.map((visualizer) => (
           <VisualizerButton
-            key={visualizer.visualizerId} 
-            id={visualizer.visualizerId} 
-            onClick={e => handleVisualizerClick(e, visualizer.visualizerId)}
+            key={visualizer.visualizerId}
+            id={visualizer.visualizerId}
+            onClick={(e) => handleVisualizerClick(e, visualizer.visualizerId)}
             isActive={visualizer.visualizerId === activeVisualizer}
             name={visualizer.name}
           />
         ))}
-      </div>      
+      </div>
     </div>
-  )
-  
+  );
 }
 
 export default VisualizersPage;

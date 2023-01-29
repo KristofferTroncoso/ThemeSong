@@ -1,5 +1,4 @@
-
-export const playerbar_progressbar = /*css*/`
+export const playerbar_progressbar = /*css*/ `
 #progress-bar.ytmusic-player-bar {
   --paper-slider-active-color: var(--themesong-playprogress-color) !important;
 }

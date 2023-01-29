@@ -1,8 +1,8 @@
-import { createRoot } from 'react-dom/client';
+import { createRoot } from "react-dom/client";
 
-import ContentScript from './ContentScript';
+import ContentScript from "./ContentScript";
 
-console.log('Content Script loaded');
+console.log("Content Script loaded");
 
 insertContentScriptContainer();
 
@@ -19,6 +19,6 @@ function insertContentScriptContainer() {
 
   body.append(themesongContainer);
 
-  const root = createRoot(themesongContainer)
-  root.render(<ContentScript />)
+  const root = createRoot(themesongContainer);
+  root.render(<ContentScript />);
 }

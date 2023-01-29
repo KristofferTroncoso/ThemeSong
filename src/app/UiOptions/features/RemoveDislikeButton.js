@@ -1,5 +1,5 @@
 function RemoveDislikeButton() {
-  const style = /*css*/`
+  const style = /*css*/ `
     .dislike {
       display: none;
     }
@@ -8,11 +8,7 @@ function RemoveDislikeButton() {
       margin-left: 20px;
     }
   `;
-  return (
-    <style id="RemoveDislikeButton">
-      {style}
-    </style>
-  );
+  return <style id="RemoveDislikeButton">{style}</style>;
 }
 
 export default RemoveDislikeButton;

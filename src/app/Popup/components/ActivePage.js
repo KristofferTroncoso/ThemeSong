@@ -1,11 +1,11 @@
-import { useStore } from '../../store';
+import { useStore } from "../../store";
 
-import VisualizersPage from '../pages/VisualizersPage';
-import ThemesPage from '../pages/ThemesPage';
+import VisualizersPage from "../pages/VisualizersPage";
+import ThemesPage from "../pages/ThemesPage";
 // import SnippetsPage from '../pages/SnippetsPage';
 
 function ActivePage() {
-  const activePopupTab = useStore(state => state.popup.activePopupTab);
+  const activePopupTab = useStore((state) => state.popup.activePopupTab);
 
   const activePageCalc = () => {
     switch (activePopupTab) {
@@ -19,13 +19,16 @@ function ActivePage() {
         return (
           <div>
             <p>Active Page Compnent: something has gone wrong...</p>
-            <p>Try resetting to extension defaults by clicking on ⚙ gear icon on lower right corner.</p>
+            <p>
+              Try resetting to extension defaults by clicking on ⚙ gear icon on
+              lower right corner.
+            </p>
           </div>
-        )
+        );
     }
-  }
+  };
 
-  return <>{activePageCalc()}</>
+  return <>{activePageCalc()}</>;
 }
 
 export default ActivePage;

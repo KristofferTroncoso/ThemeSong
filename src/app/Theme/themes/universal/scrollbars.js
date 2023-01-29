@@ -1,5 +1,4 @@
-
-export const scrollbars = /*css*/`
+export const scrollbars = /*css*/ `
 /* scrollbars */
 ::-webkit-scrollbar {
   background-color: transparent;

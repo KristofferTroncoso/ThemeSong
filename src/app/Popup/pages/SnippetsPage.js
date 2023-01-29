@@ -1,32 +1,34 @@
-import { useEffect } from 'react';
-import { css } from '@emotion/react';
-import { useStore } from '../../store';
-import Snippet from '../components/Snippet';
-import { v4 as uuid } from 'uuid';
+import { useEffect } from "react";
+import { css } from "@emotion/react";
+import { useStore } from "../../store";
+import Snippet from "../components/Snippet";
+import { v4 as uuid } from "uuid";
 
 function SnippetsPage() {
-  const snippets = useStore(state => state.snippets.snippets);
-  const addSnippet = useStore(state => state.snippets.addSnippet);
+  const snippets = useStore((state) => state.snippets.snippets);
+  const addSnippet = useStore((state) => state.snippets.addSnippet);
 
   useEffect(() => {
-    chrome.storage.local.set({snippets}, () => console.log('chrome.storage.local.set({snippets}'));
+    chrome.storage.local.set({ snippets }, () =>
+      console.log("chrome.storage.local.set({snippets}")
+    );
   }, [snippets]);
 
   return (
     <div id="Snippets-Page">
       <div id="Snippets-container">
-        {snippets.map(snippet => (
+        {snippets.map((snippet) => (
           <Snippet key={snippet.id} snippet={snippet} />
         ))}
-        <button 
-          onClick={e => {
+        <button
+          onClick={(e) => {
             let newUuid = uuid();
             addSnippet({
               id: newUuid,
               name: `New Snippet ${newUuid.slice(0, 4)}`,
-              css: '',
-              enabled: true
-            })
+              css: "",
+              enabled: true,
+            });
           }}
           css={css`
             background: #333;
@@ -45,7 +47,7 @@ function SnippetsPage() {
         </button>
       </div>
     </div>
-  )
+  );
 }
 
 export default SnippetsPage;

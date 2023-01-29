@@ -1,5 +1,5 @@
 // grayscale/monochrome topbar user icon
-const grayscaleIcon = /*css*/`
+const grayscaleIcon = /*css*/ `
   :root {
     --ThemeSong-TopBar-Icon-Filter: grayscale(1);
   }
@@ -9,9 +9,8 @@ const grayscaleIcon = /*css*/`
   }
 `;
 
-
 /* when pressing fullscreen on the player page album art, the img goes to COVER. */
-const coloredPlayerBg = /*css*/`
+const coloredPlayerBg = /*css*/ `
   ytmusic-player {
     background-color: var(--themesong-playpagebg-color);
     transition: var(--themesong-bgcolor-transition);
@@ -19,22 +18,21 @@ const coloredPlayerBg = /*css*/`
 `;
 
 /* on user icon on top right corner, the grey bg is causing a strange grey outline that looks bad */
-const noGreyBgOnUserIcon = /*css*/`
+const noGreyBgOnUserIcon = /*css*/ `
   tp-yt-paper-icon-button.ytmusic-settings-button {
     background-color: transparent;
   }
 `;
 
-const fixWeirdMarginWhenFullScreenPlayer = /*css*/`
+const fixWeirdMarginWhenFullScreenPlayer = /*css*/ `
   ytmusic-player[player-ui-state_=FULLSCREEN] {
     margin: auto 0 !important;
   }
 `;
 
-
 /* the color for the playbarbg icons and text is too dark when we're not using the default black theme */
 /* also when fullscreen, the transparent bg on the playbarbg is hard to see */
-const playBarTextAndIconsColor = /*css*/`
+const playBarTextAndIconsColor = /*css*/ `
   ytmusic-player-bar {
     color: #bababa;
   }
@@ -57,8 +55,7 @@ const playBarTextAndIconsColor = /*css*/`
   }
 `;
 
-
-export const universalstyles = /*css*/`
+export const universalstyles = /*css*/ `
   /* ThemeSong */
   /* universal styles */
 

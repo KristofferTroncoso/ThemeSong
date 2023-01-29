@@ -14,6 +14,6 @@ export default function getSongImg() {
 
   bestImgAvailable = playerBarSongImgNode.src;
   console.log(`best available img is ${bestImgAvailable}`);
-  
+
   return bestImgAvailable;
 }

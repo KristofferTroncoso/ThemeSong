@@ -1,12 +1,12 @@
-import { css } from '@emotion/react';
-import { useStore } from '../../../store';
+import { css } from "@emotion/react";
+import { useStore } from "../../../store";
 
 function PausedWarning() {
-  const isSongPlaying = useStore(state => state.player.isSongPlaying);
+  const isSongPlaying = useStore((state) => state.player.isSongPlaying);
 
   return (
     <div id="PausedWarning">
-      {(!isSongPlaying) && (
+      {!isSongPlaying && (
         <h1
           css={css`
             font-size: 20px;
@@ -15,7 +15,7 @@ function PausedWarning() {
             z-index: 1000;
             bottom: 100px;
             left: 0;
-            background-color: rgba(0,0,0,0.7);
+            background-color: rgba(0, 0, 0, 0.7);
             border: 4px solid #777;
             color: #eee;
             padding: 10px;
@@ -26,7 +26,7 @@ function PausedWarning() {
         </h1>
       )}
     </div>
-  )
+  );
 }
 
 export default PausedWarning;

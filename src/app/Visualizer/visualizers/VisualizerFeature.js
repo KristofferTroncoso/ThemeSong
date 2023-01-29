@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
-import { createRoot } from 'react-dom/client';
+import { useEffect } from "react";
+import { createRoot } from "react-dom/client";
 
-import VisualizerToggleButton from './components/VisualizerToggleButton';
-import VisualizerContainer from './VisualizerContainer';
+import VisualizerToggleButton from "./components/VisualizerToggleButton";
+import VisualizerContainer from "./VisualizerContainer";
 
 function addVisualizerContainer() {
-  let ytmusicplayer = document.querySelector("ytmusic-player")
+  let ytmusicplayer = document.querySelector("ytmusic-player");
   let tsvisualizercontainer;
 
   /* if i want to do the audioCtx.close() trick in Visualizer.js, i have to
@@ -14,23 +14,25 @@ function addVisualizerContainer() {
     document.getElementById("ts-visualizer-container").remove();
   }
 
-  ytmusicplayer.appendChild(document.createElement('div')).id = 'ts-visualizer-container';
+  ytmusicplayer.appendChild(document.createElement("div")).id =
+    "ts-visualizer-container";
   tsvisualizercontainer = document.getElementById("ts-visualizer-container");
   tsvisualizercontainer.style.borderRadius = "inherit";
   // tsvisualizercontainer.style.border = "1px solid lightgreen";
 
   if (!tsvisualizercontainer) {
-    ytmusicplayer.appendChild(document.createElement('canvas')).id = 'ts-visualizer-canvas';
+    ytmusicplayer.appendChild(document.createElement("canvas")).id =
+      "ts-visualizer-canvas";
   }
 
   ytmusicplayer.append(tsvisualizercontainer);
 
-  const root = createRoot(tsvisualizercontainer)
-  root.render(<VisualizerContainer />)
+  const root = createRoot(tsvisualizercontainer);
+  root.render(<VisualizerContainer />);
 }
 
 function addVisualizerButton() {
-  const topRowButtons = document.querySelector('.top-row-buttons');
+  const topRowButtons = document.querySelector(".top-row-buttons");
   let visualizerDivContainer;
 
   if (document.getElementById("visualizerDivContainer")) {
@@ -42,10 +44,9 @@ function addVisualizerButton() {
 
   topRowButtons.prepend(visualizerDivContainer);
 
-  const root = createRoot(visualizerDivContainer)
-  root.render(<VisualizerToggleButton />)
+  const root = createRoot(visualizerDivContainer);
+  root.render(<VisualizerToggleButton />);
 }
-
 
 function VisualizerFeature() {
   useEffect(() => {
@@ -53,9 +54,7 @@ function VisualizerFeature() {
     addVisualizerButton();
   }, []);
 
-  return (
-    <div id="ThemeSong-VisualizerFeature"></div>
-  )
+  return <div id="ThemeSong-VisualizerFeature"></div>;
 }
 
 export default VisualizerFeature;

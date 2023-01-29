@@ -1,93 +1,164 @@
-import { useState, useEffect } from 'react';
-import { apple_music_css } from './apple-music-css';
-import { apple_dark_css } from './apple-dark-css';
-import { menubar } from '../../selectors';
-import { useStore } from '../../../../store';
+import { useState, useEffect } from "react";
+import { apple_music_css } from "./apple-music-css";
+import { apple_dark_css } from "./apple-dark-css";
+import { menubar } from "../../selectors";
+import { useStore } from "../../../../store";
 
 function AppleMusic() {
-  const playerUiState = useStore(state => state.player.playerUiState);
-  const lightVibrantHSL = useStore(state => state.palette.palette.LightVibrant.hsl)
-  const [isDark, setIsDark] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
+  const playerUiState = useStore((state) => state.player.playerUiState);
+  const lightVibrantHSL = useStore(
+    (state) => state.palette.palette.LightVibrant.hsl
+  );
+  const [isDark, setIsDark] = useState(
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
 
   function returnDarkOrLightTheme(event) {
-    console.log('DynamicSystem: returnDarkOrLightTheme');
-    window.matchMedia('(prefers-color-scheme: dark)').matches ? setIsDark(true) : setIsDark(false);
+    console.log("DynamicSystem: returnDarkOrLightTheme");
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? setIsDark(true)
+      : setIsDark(false);
   }
 
   useEffect(() => {
-    console.log('PLAYERUISTATE', playerUiState)
+    console.log("PLAYERUISTATE", playerUiState);
     //apply dark logo on load
-    document.querySelectorAll("ytmusic-nav-bar #left-content picture source")[1].srcset = chrome.runtime.getURL("/assets/images/dark_youtube_music_logo_themesong_mod.svg")
-    document.querySelector("ytmusic-nav-bar #left-content picture img").src = chrome.runtime.getURL("/assets/images/dark_youtube_music_logo_themesong_mod.svg")
+    document.querySelectorAll(
+      "ytmusic-nav-bar #left-content picture source"
+    )[1].srcset = chrome.runtime.getURL(
+      "/assets/images/dark_youtube_music_logo_themesong_mod.svg"
+    );
+    document.querySelector("ytmusic-nav-bar #left-content picture img").src =
+      chrome.runtime.getURL(
+        "/assets/images/dark_youtube_music_logo_themesong_mod.svg"
+      );
     returnDarkOrLightTheme();
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', returnDarkOrLightTheme);
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", returnDarkOrLightTheme);
 
-    return function() {
+    return function () {
       //remove dark logo on unload
-      document.querySelectorAll("ytmusic-nav-bar #left-content picture source")[1].srcset = "//music.youtube.com/img/on_platform_logo_dark.svg";
-      document.querySelector("ytmusic-nav-bar #left-content picture img").src = "//music.youtube.com/img/on_platform_logo_dark.svg";
-      window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', returnDarkOrLightTheme);
-    }
-  }, [])
+      document.querySelectorAll(
+        "ytmusic-nav-bar #left-content picture source"
+      )[1].srcset = "//music.youtube.com/img/on_platform_logo_dark.svg";
+      document.querySelector("ytmusic-nav-bar #left-content picture img").src =
+        "//music.youtube.com/img/on_platform_logo_dark.svg";
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .removeEventListener("change", returnDarkOrLightTheme);
+    };
+  }, []);
 
   useEffect(() => {
-    if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
+    if (
+      playerUiState === "PLAYER_BAR_ONLY" ||
+      playerUiState === "MINIPLAYER" ||
+      playerUiState === "INACTIVE"
+    ) {
       if (isDark) {
         //remove dark logo on unload
-        document.querySelectorAll("ytmusic-nav-bar #left-content picture source")[1].srcset = "//music.youtube.com/img/on_platform_logo_dark.svg";
-        document.querySelector("ytmusic-nav-bar #left-content picture img").src = "//music.youtube.com/img/on_platform_logo_dark.svg";
+        document.querySelectorAll(
+          "ytmusic-nav-bar #left-content picture source"
+        )[1].srcset = "//music.youtube.com/img/on_platform_logo_dark.svg";
+        document.querySelector(
+          "ytmusic-nav-bar #left-content picture img"
+        ).src = "//music.youtube.com/img/on_platform_logo_dark.svg";
         menubar.content = `#1f1f1f`;
       } else {
         //apply dark logo on load
-        document.querySelectorAll("ytmusic-nav-bar #left-content picture source")[1].srcset = chrome.runtime.getURL("/assets/images/dark_youtube_music_logo_themesong_mod.svg")
-        document.querySelector("ytmusic-nav-bar #left-content picture img").src = chrome.runtime.getURL("/assets/images/dark_youtube_music_logo_themesong_mod.svg")
+        document.querySelectorAll(
+          "ytmusic-nav-bar #left-content picture source"
+        )[1].srcset = chrome.runtime.getURL(
+          "/assets/images/dark_youtube_music_logo_themesong_mod.svg"
+        );
+        document.querySelector(
+          "ytmusic-nav-bar #left-content picture img"
+        ).src = chrome.runtime.getURL(
+          "/assets/images/dark_youtube_music_logo_themesong_mod.svg"
+        );
         menubar.content = `hsl(0, 0%, 95%)`;
       }
     } else {
-      menubar.content = `hsl(${lightVibrantHSL[0] * 360}, ${(lightVibrantHSL[1] * 100) * 0.2}%, 35%)`;
+      menubar.content = `hsl(${lightVibrantHSL[0] * 360}, ${
+        lightVibrantHSL[1] * 100 * 0.2
+      }%, 35%)`;
       //remove dark logo on unload
-      document.querySelectorAll("ytmusic-nav-bar #left-content picture source")[1].srcset = "//music.youtube.com/img/on_platform_logo_dark.svg";
-      document.querySelector("ytmusic-nav-bar #left-content picture img").src = "//music.youtube.com/img/on_platform_logo_dark.svg";
+      document.querySelectorAll(
+        "ytmusic-nav-bar #left-content picture source"
+      )[1].srcset = "//music.youtube.com/img/on_platform_logo_dark.svg";
+      document.querySelector("ytmusic-nav-bar #left-content picture img").src =
+        "//music.youtube.com/img/on_platform_logo_dark.svg";
     }
-  }, [isDark])
+  }, [isDark]);
 
   useEffect(() => {
-    console.log('PLAYERUISTATE2', playerUiState)
-    if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
+    console.log("PLAYERUISTATE2", playerUiState);
+    if (
+      playerUiState === "PLAYER_BAR_ONLY" ||
+      playerUiState === "MINIPLAYER" ||
+      playerUiState === "INACTIVE"
+    ) {
       if (isDark) {
         //remove dark logo on unload
-        document.querySelectorAll("ytmusic-nav-bar #left-content picture source")[1].srcset = "//music.youtube.com/img/on_platform_logo_dark.svg";
-        document.querySelector("ytmusic-nav-bar #left-content picture img").src = "//music.youtube.com/img/on_platform_logo_dark.svg";
+        document.querySelectorAll(
+          "ytmusic-nav-bar #left-content picture source"
+        )[1].srcset = "//music.youtube.com/img/on_platform_logo_dark.svg";
+        document.querySelector(
+          "ytmusic-nav-bar #left-content picture img"
+        ).src = "//music.youtube.com/img/on_platform_logo_dark.svg";
         menubar.content = `#1f1f1f`;
       } else {
         //apply dark logo on load
-        document.querySelectorAll("ytmusic-nav-bar #left-content picture source")[1].srcset = chrome.runtime.getURL("/assets/images/dark_youtube_music_logo_themesong_mod.svg")
-        document.querySelector("ytmusic-nav-bar #left-content picture img").src = chrome.runtime.getURL("/assets/images/dark_youtube_music_logo_themesong_mod.svg")
+        document.querySelectorAll(
+          "ytmusic-nav-bar #left-content picture source"
+        )[1].srcset = chrome.runtime.getURL(
+          "/assets/images/dark_youtube_music_logo_themesong_mod.svg"
+        );
+        document.querySelector(
+          "ytmusic-nav-bar #left-content picture img"
+        ).src = chrome.runtime.getURL(
+          "/assets/images/dark_youtube_music_logo_themesong_mod.svg"
+        );
         menubar.content = `hsl(0, 0%, 95%)`;
       }
     } else {
-      menubar.content = `hsl(${lightVibrantHSL[0] * 360}, ${(lightVibrantHSL[1] * 100) * 0.2}%, 35%)`;
+      menubar.content = `hsl(${lightVibrantHSL[0] * 360}, ${
+        lightVibrantHSL[1] * 100 * 0.2
+      }%, 35%)`;
       //remove dark logo on unload
-      document.querySelectorAll("ytmusic-nav-bar #left-content picture source")[1].srcset = "//music.youtube.com/img/on_platform_logo_dark.svg";
-      document.querySelector("ytmusic-nav-bar #left-content picture img").src = "//music.youtube.com/img/on_platform_logo_dark.svg";
+      document.querySelectorAll(
+        "ytmusic-nav-bar #left-content picture source"
+      )[1].srcset = "//music.youtube.com/img/on_platform_logo_dark.svg";
+      document.querySelector("ytmusic-nav-bar #left-content picture img").src =
+        "//music.youtube.com/img/on_platform_logo_dark.svg";
     }
-  }, [playerUiState, lightVibrantHSL])
+  }, [playerUiState, lightVibrantHSL]);
 
   return (
     <style id="AppleMusic">
-      {!(playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") ? `
+      {!(
+        playerUiState === "PLAYER_BAR_ONLY" ||
+        playerUiState === "MINIPLAYER" ||
+        playerUiState === "INACTIVE"
+      )
+        ? `
         :root {
           --themesong-theme-dynamic-saturation: ${20};
           --themesong-theme-dynamic-topbarbg-light: ${25}%;
           --themesong-theme-dynamic-bodybg-light: ${25}%;
           --themesong-theme-dynamic-playpagebg-light: ${25}%;
           --themesong-theme-dynamic-playbarbg-light: ${25}%;
-          --themesong-theme-dynamic-playpageavtoggle-light: ${21 + (25 / 25) * 14}%;
+          --themesong-theme-dynamic-playpageavtoggle-light: ${
+            21 + (25 / 25) * 14
+          }%;
         }
         ${apple_dark_css}
-      ` : `
-        ${isDark 
-          ?`:root {
+      `
+        : `
+        ${
+          isDark
+            ? `:root {
             --themesong-base-00-color: #000;
             --themesong-base-10-color: #1a1a1a;
             --themesong-base-20-color: #333333;
@@ -130,14 +201,16 @@ function AppleMusic() {
             --themesong-theme-static-bodybg-light: ${20}%;
             --themesong-theme-static-playpagebg-light: ${10}%;
             --themesong-theme-static-playbarbg-light: ${10}%;
-            --themesong-theme-static-playpageavtoggle-light: ${21 + (50 / 25) * 14}%;
+            --themesong-theme-static-playpageavtoggle-light: ${
+              21 + (50 / 25) * 14
+            }%;
             --themesong-topbarbg-color: rgba(30,30,30,0.4) !important;
             --themesong-bodybg-color: hsl(0,0%,9%);
 
             --themesong-playbarbg-color: hsla(var(--themesong-palette-dominant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.6), 15%, 0.4);
 
           }`
-          :`:root {
+            : `:root {
             --themesong-base-00-color: #ffffff;
             --themesong-base-10-color: #e6e6e6;
             --themesong-base-20-color: #cccccc;
@@ -180,7 +253,9 @@ function AppleMusic() {
             --themesong-theme-static-bodybg-light: ${100}%;
             --themesong-theme-static-playpagebg-light: ${96}%;
             --themesong-theme-static-playbarbg-light: ${94}%;
-            --themesong-theme-static-playpageavtoggle-light: ${21 + (50 / 25) * 14}%;
+            --themesong-theme-static-playpageavtoggle-light: ${
+              21 + (50 / 25) * 14
+            }%;
             --themesong-topbarbg-color: rgba(235,235,235,0.4) !important;
             --themesong-bodybg-color: #fff;
 
@@ -190,7 +265,7 @@ function AppleMusic() {
         ${apple_music_css}
       `}
     </style>
-  )
+  );
 }
 
 export default AppleMusic;

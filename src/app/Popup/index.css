@@ -8,14 +8,20 @@ body {
   font-family: sans-serif;
   background-color: rgb(40, 40, 40);
   color: white;
-
 }
 
-h1, h2 {
+h1,
+h2 {
   font-size: 18px;
 }
 
-h3, h4, h5, p, label, form, input {
+h3,
+h4,
+h5,
+p,
+label,
+form,
+input {
   font-size: 12px;
 }
 
@@ -36,7 +42,6 @@ h3, h4, h5, p, label, form, input {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(250, 250, 250, 0.4) !important;
-
 }
 
 button:hover {

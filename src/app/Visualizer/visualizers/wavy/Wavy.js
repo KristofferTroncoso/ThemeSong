@@ -1,28 +1,32 @@
-import { useRef, useEffect }  from 'react';
-import { css } from '@emotion/react';
-import { useStore } from '../../../store';
+import { useRef, useEffect } from "react";
+import { css } from "@emotion/react";
+import { useStore } from "../../../store";
 
-function Wavy({analyser, dataArray, bufferLength}) {
-  const wavyPrefs = useStore(state => state.visualizer.visualizerPrefs.find(visualizer => (visualizer.visualizerId  === "visualizerId:0")));
-  const isSongPlaying = useStore(state => state.player.isSongPlaying);
-  const dominantSwatch = useStore(state => state.palette.dominant);
+function Wavy({ analyser, dataArray, bufferLength }) {
+  const wavyPrefs = useStore((state) =>
+    state.visualizer.visualizerPrefs.find(
+      (visualizer) => visualizer.visualizerId === "visualizerId:0"
+    )
+  );
+  const isSongPlaying = useStore((state) => state.player.isSongPlaying);
+  const dominantSwatch = useStore((state) => state.palette.dominant);
 
   const canvasRef = useRef();
   const intervalId = useRef();
   const ctx = useRef();
 
   useEffect(() => {
-    console.log('3')
+    console.log("3");
     return function cleanUp() {
-      console.log('Wavy: Cleaning up');
+      console.log("Wavy: Cleaning up");
       clearInterval(intervalId.current);
-    }
-  }, [])
+    };
+  }, []);
 
   useEffect(() => {
-    console.log('1')
+    console.log("1");
     ctx.current = canvasRef.current.getContext("2d");
-    ctx.current.strokeStyle = '#fff';
+    ctx.current.strokeStyle = "#fff";
     ctx.current.lineWidth = wavyPrefs.lineWidth;
     ctx.current.shadowBlur = 4;
     ctx.current.shadowOffsetY = wavyPrefs.lineWidth;
@@ -34,23 +38,23 @@ function Wavy({analyser, dataArray, bufferLength}) {
   }, [dominantSwatch, wavyPrefs]);
 
   useEffect(() => {
-    console.log('5')
+    console.log("5");
 
     const drawWavy = () => {
       let context = ctx.current;
-      let canvas = canvasRef.current || {width: 1920, height: 512};
+      let canvas = canvasRef.current || { width: 1920, height: 512 };
       analyser.fftSize = 2048;
       analyser.getByteTimeDomainData(dataArray);
       context.clearRect(0, 0, canvas.width, canvas.height);
       context.beginPath();
-  
+
       let sliceWidth = canvas.width / bufferLength;
       let x = 0;
-  
+
       for (let i = 0; i < bufferLength; i++) {
         let v = dataArray[i] / 128;
-        let y = v * canvas.height / 2;
-        
+        let y = (v * canvas.height) / 2;
+
         if (i === 0) {
           context.moveTo(x, y);
         } else {
@@ -66,9 +70,12 @@ function Wavy({analyser, dataArray, bufferLength}) {
       clearInterval(intervalId.current);
     } else {
       clearInterval(intervalId.current);
-      intervalId.current = setInterval(() => requestAnimationFrame(drawWavy), 17)
+      intervalId.current = setInterval(
+        () => requestAnimationFrame(drawWavy),
+        17
+      );
     }
-  }, [isSongPlaying, analyser, bufferLength, dataArray])
+  }, [isSongPlaying, analyser, bufferLength, dataArray]);
 
   return (
     <div
@@ -80,14 +87,20 @@ function Wavy({analyser, dataArray, bufferLength}) {
         height: 100%;
         width: 100%;
         border-radius: inherit;
-        background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.7) 75%, rgba(0,0,0,0.6) 100%);
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.4) 0%,
+          rgba(0, 0, 0, 0.6) 50%,
+          rgba(0, 0, 0, 0.7) 75%,
+          rgba(0, 0, 0, 0.6) 100%
+        );
       `}
     >
       <canvas
         id="ThemeSong-Visualizer-Wavy-Canvas"
         ref={canvasRef}
-        height='512'
-        width='1920'
+        height="512"
+        width="1920"
         css={css`
           position: absolute;
           bottom: 10%;
@@ -99,11 +112,7 @@ function Wavy({analyser, dataArray, bufferLength}) {
         `}
       />
     </div>
-  )
+  );
 }
 
 export default Wavy;
-
-
-
-

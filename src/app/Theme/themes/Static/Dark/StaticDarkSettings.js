@@ -1,17 +1,17 @@
-import { useState } from 'react';
-import { css } from '@emotion/react';
-import { useStore } from '../../../../store';
+import { useState } from "react";
+import { css } from "@emotion/react";
+import { useStore } from "../../../../store";
 
-import { HuePicker } from 'react-color';
+import { HuePicker } from "react-color";
 
-import { styled } from '@mui/material/styles';
-import Slider from '@mui/material/Slider';
+import { styled } from "@mui/material/styles";
+import Slider from "@mui/material/Slider";
 
-import PlayBar from '../../../../../assets/font-icons/PlayBar.svg';
-import TopBar from '../../../../../assets/font-icons/TopBar.svg';
-import PlayPage from '../../../../../assets/font-icons/PlayPage.svg';
-import Body from '../../../../../assets/font-icons/Body.svg';
-import OpacityIcon from '@mui/icons-material/Opacity';
+import PlayBar from "../../../../../assets/font-icons/PlayBar.svg";
+import TopBar from "../../../../../assets/font-icons/TopBar.svg";
+import PlayPage from "../../../../../assets/font-icons/PlayPage.svg";
+import Body from "../../../../../assets/font-icons/Body.svg";
+import OpacityIcon from "@mui/icons-material/Opacity";
 
 const StyledSlider = styled(Slider)`
   width: 200px;
@@ -35,29 +35,39 @@ const StyledSlider = styled(Slider)`
 `;
 
 function StaticDarkSettings() {
-  const staticPrefs = useStore(state => state.theme.themePrefs.find(theme => (theme.themeId === "themeId:7")));
-  const staticDarkPrefs = useStore(state => state.theme.themePrefs.find(theme => (theme.themeId === "themeId:7")).darkPrefs);
-  const themePrefs = useStore(state => state.theme.themePrefs);
-  const changeThemePrefs = useStore(state => state.theme.changeThemePrefs);
+  const staticPrefs = useStore((state) =>
+    state.theme.themePrefs.find((theme) => theme.themeId === "themeId:7")
+  );
+  const staticDarkPrefs = useStore(
+    (state) =>
+      state.theme.themePrefs.find((theme) => theme.themeId === "themeId:7")
+        .darkPrefs
+  );
+  const themePrefs = useStore((state) => state.theme.themePrefs);
+  const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
 
   function handleChange(e) {
-    let darkPrefs = {...staticDarkPrefs, [e.target.name]: e.target.value};
-    let staticUserPrefs = {...staticPrefs, darkPrefs: darkPrefs}
-    let newThemePrefsArr = themePrefs.map(themePrefs => (
-      themePrefs.themeId === "themeId:7"
-      ? staticUserPrefs
-      : themePrefs
-    ));
-    console.log(newThemePrefsArr)
+    let darkPrefs = { ...staticDarkPrefs, [e.target.name]: e.target.value };
+    let staticUserPrefs = { ...staticPrefs, darkPrefs: darkPrefs };
+    let newThemePrefsArr = themePrefs.map((themePrefs) =>
+      themePrefs.themeId === "themeId:7" ? staticUserPrefs : themePrefs
+    );
+    console.log(newThemePrefsArr);
     changeThemePrefs(newThemePrefsArr);
-    chrome.storage.local.set({themePrefs: newThemePrefsArr}, () => console.log('chrome.storage.local.set({themePrefs}'));
+    chrome.storage.local.set({ themePrefs: newThemePrefsArr }, () =>
+      console.log("chrome.storage.local.set({themePrefs}")
+    );
   }
 
   function handleSave(e) {
     e.preventDefault();
   }
 
-  const [reactColor, setReactColor] = useState({ h: staticDarkPrefs.hue, s: 80, l: .40 });
+  const [reactColor, setReactColor] = useState({
+    h: staticDarkPrefs.hue,
+    s: 80,
+    l: 0.4,
+  });
 
   function handleHueChange(color, e) {
     setReactColor(color);
@@ -67,34 +77,34 @@ function StaticDarkSettings() {
     console.log(color.hsl.h);
     let hue = Math.floor(color.hsl.h);
 
-    let darkPrefs = {...staticDarkPrefs, hue};
-    let staticUserPrefs = {...staticPrefs, darkPrefs}
-    let newThemesArr = themePrefs.map(themePrefs => (
-      themePrefs.themeId === "themeId:7"
-      ? staticUserPrefs
-      : themePrefs
-    ));
+    let darkPrefs = { ...staticDarkPrefs, hue };
+    let staticUserPrefs = { ...staticPrefs, darkPrefs };
+    let newThemesArr = themePrefs.map((themePrefs) =>
+      themePrefs.themeId === "themeId:7" ? staticUserPrefs : themePrefs
+    );
     console.log(newThemesArr);
     changeThemePrefs(newThemesArr);
-    chrome.storage.local.set({themePrefs: newThemesArr}, () => console.log('chrome.storage.local.set({themePrefs}'));
+    chrome.storage.local.set({ themePrefs: newThemesArr }, () =>
+      console.log("chrome.storage.local.set({themePrefs}")
+    );
   }
 
   return (
-    <div 
-      className="StaticDarkTheme" 
+    <div
+      className="StaticDarkTheme"
       css={css`
-        background: #222; 
-        padding: 5px; 
+        background: #222;
+        padding: 5px;
         border-radius: 2px;
         color: #ddd;
-        
+
         .MuiSlider-root {
           padding: 0;
         }
       `}
     >
       <form onSubmit={handleSave}>
-        <div 
+        <div
           css={css`
             height: 25px;
             display: flex;
@@ -110,51 +120,257 @@ function StaticDarkSettings() {
           `}
         >
           <p>Hue:</p>
-          <div css={css`margin-right: 20px;`}><HuePicker width="260px" height="12px" color={reactColor} onChange={handleHueChange} onChangeComplete={handleOnHueChangeComplete} /></div>
+          <div
+            css={css`
+              margin-right: 20px;
+            `}
+          >
+            <HuePicker
+              width="260px"
+              height="12px"
+              color={reactColor}
+              onChange={handleHueChange}
+              onChangeComplete={handleOnHueChangeComplete}
+            />
+          </div>
         </div>
-        <div style={{display: 'flex', justifyContent: 'space-between', height: '21px', alignContent: 'center', alignItems: 'center'}}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            height: "21px",
+            alignContent: "center",
+            alignItems: "center",
+          }}
+        >
           <label htmlFor="lightnessSettingNavBar">TopBar:</label>
-          <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
-            <img src={TopBar} alt="svg" style={{height: '12px', width: '12px', marginRight: '8px'}} />
-            <StyledSlider name="lightnessSettingNavBar" value={staticDarkPrefs.lightnessSettingNavBar} onChange={handleChange} step={1} min={0} max={36} />
-            <input type="number" min="0" max="36" name="lightnessSettingNavBar" value={staticDarkPrefs.lightnessSettingNavBar} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, color: 'white', marginLeft: '8px'}} />
+          <div
+            style={{
+              display: "flex",
+              alignContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={TopBar}
+              alt="svg"
+              style={{ height: "12px", width: "12px", marginRight: "8px" }}
+            />
+            <StyledSlider
+              name="lightnessSettingNavBar"
+              value={staticDarkPrefs.lightnessSettingNavBar}
+              onChange={handleChange}
+              step={1}
+              min={0}
+              max={36}
+            />
+            <input
+              type="number"
+              min="0"
+              max="36"
+              name="lightnessSettingNavBar"
+              value={staticDarkPrefs.lightnessSettingNavBar}
+              onChange={handleChange}
+              style={{
+                width: "40px",
+                backgroundColor: "inherit",
+                border: 0,
+                color: "white",
+                marginLeft: "8px",
+              }}
+            />
           </div>
         </div>
-        <div style={{display: 'flex', justifyContent: 'space-between', height: '21px', alignContent: 'center', alignItems: 'center'}}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            height: "21px",
+            alignContent: "center",
+            alignItems: "center",
+          }}
+        >
           <label htmlFor="lightnessSettingPlayPage">PlayPage:</label>
-          <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
-            <img src={PlayPage} alt="svg" style={{height: '12px', width: '12px', marginRight: '8px'}} />
-            <StyledSlider name="lightnessSettingPlayPage" value={staticDarkPrefs.lightnessSettingPlayPage} onChange={handleChange} step={1} min={0} max={36} />
-            <input type="number" min="0" max="36" name="lightnessSettingPlayPage" value={staticDarkPrefs.lightnessSettingPlayPage} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, color: 'white', marginLeft: '8px'}} />
+          <div
+            style={{
+              display: "flex",
+              alignContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={PlayPage}
+              alt="svg"
+              style={{ height: "12px", width: "12px", marginRight: "8px" }}
+            />
+            <StyledSlider
+              name="lightnessSettingPlayPage"
+              value={staticDarkPrefs.lightnessSettingPlayPage}
+              onChange={handleChange}
+              step={1}
+              min={0}
+              max={36}
+            />
+            <input
+              type="number"
+              min="0"
+              max="36"
+              name="lightnessSettingPlayPage"
+              value={staticDarkPrefs.lightnessSettingPlayPage}
+              onChange={handleChange}
+              style={{
+                width: "40px",
+                backgroundColor: "inherit",
+                border: 0,
+                color: "white",
+                marginLeft: "8px",
+              }}
+            />
           </div>
         </div>
-        <div style={{display: 'flex', justifyContent: 'space-between', height: '21px', alignContent: 'center', alignItems: 'center'}}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            height: "21px",
+            alignContent: "center",
+            alignItems: "center",
+          }}
+        >
           <label htmlFor="lightnessSettingPlayerBar">PlayBar:</label>
-          <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
-            <img src={PlayBar} alt="svg" style={{height: '12px', width: '12px', marginRight: '8px'}} />
-            <StyledSlider name="lightnessSettingPlayerBar" value={staticDarkPrefs.lightnessSettingPlayerBar} onChange={handleChange} step={1} min={0} max={36} />
-            <input type="number" min="0" max="36" name="lightnessSettingPlayerBar" value={staticDarkPrefs.lightnessSettingPlayerBar} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, color: 'white', marginLeft: '8px'}} />
+          <div
+            style={{
+              display: "flex",
+              alignContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={PlayBar}
+              alt="svg"
+              style={{ height: "12px", width: "12px", marginRight: "8px" }}
+            />
+            <StyledSlider
+              name="lightnessSettingPlayerBar"
+              value={staticDarkPrefs.lightnessSettingPlayerBar}
+              onChange={handleChange}
+              step={1}
+              min={0}
+              max={36}
+            />
+            <input
+              type="number"
+              min="0"
+              max="36"
+              name="lightnessSettingPlayerBar"
+              value={staticDarkPrefs.lightnessSettingPlayerBar}
+              onChange={handleChange}
+              style={{
+                width: "40px",
+                backgroundColor: "inherit",
+                border: 0,
+                color: "white",
+                marginLeft: "8px",
+              }}
+            />
           </div>
         </div>
-        <div style={{display: 'flex', justifyContent: 'space-between', height: '21px', alignContent: 'center', alignItems: 'center'}}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            height: "21px",
+            alignContent: "center",
+            alignItems: "center",
+          }}
+        >
           <label htmlFor="lightnessSettingBody">Body:</label>
-          <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
-            <img src={Body} alt="svg" style={{height: '12px', width: '12px', marginRight: '8px'}} />
-            <StyledSlider name="lightnessSettingBody" value={staticDarkPrefs.lightnessSettingBody} onChange={handleChange} step={1} min={0} max={36} />
-            <input type="number" min="0" max="36" name="lightnessSettingBody" value={staticDarkPrefs.lightnessSettingBody} onChange={handleChange} style={{width: '40px', backgroundColor: 'inherit', border: 0, color: 'white', marginLeft: '8px'}} />
+          <div
+            style={{
+              display: "flex",
+              alignContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={Body}
+              alt="svg"
+              style={{ height: "12px", width: "12px", marginRight: "8px" }}
+            />
+            <StyledSlider
+              name="lightnessSettingBody"
+              value={staticDarkPrefs.lightnessSettingBody}
+              onChange={handleChange}
+              step={1}
+              min={0}
+              max={36}
+            />
+            <input
+              type="number"
+              min="0"
+              max="36"
+              name="lightnessSettingBody"
+              value={staticDarkPrefs.lightnessSettingBody}
+              onChange={handleChange}
+              style={{
+                width: "40px",
+                backgroundColor: "inherit",
+                border: 0,
+                color: "white",
+                marginLeft: "8px",
+              }}
+            />
           </div>
         </div>
-        <div style={{display: 'flex', justifyContent: 'space-between', height: '21px', alignContent: 'center', alignItems: 'center'}}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            height: "21px",
+            alignContent: "center",
+            alignItems: "center",
+          }}
+        >
           <label htmlFor="saturationSetting">Saturation:</label>
-          <div style={{display: 'flex', alignContent: 'center', alignItems: 'center'}}>
-            <OpacityIcon sx={{height: '16px', width: '16px', marginRight: '6px'}} />
-            <StyledSlider name="saturationSetting" value={staticDarkPrefs.saturationSetting} onChange={handleChange} step={5} min={0} max={100} />
-            <input type="number" min="0" max="100" name="saturationSetting" value={staticDarkPrefs.saturationSetting} step="5" onChange={handleChange}  style={{width: '40px', backgroundColor: 'inherit', border: 0, color: 'white', marginLeft: '8px'}} />
+          <div
+            style={{
+              display: "flex",
+              alignContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <OpacityIcon
+              sx={{ height: "16px", width: "16px", marginRight: "6px" }}
+            />
+            <StyledSlider
+              name="saturationSetting"
+              value={staticDarkPrefs.saturationSetting}
+              onChange={handleChange}
+              step={5}
+              min={0}
+              max={100}
+            />
+            <input
+              type="number"
+              min="0"
+              max="100"
+              name="saturationSetting"
+              value={staticDarkPrefs.saturationSetting}
+              step="5"
+              onChange={handleChange}
+              style={{
+                width: "40px",
+                backgroundColor: "inherit",
+                border: 0,
+                color: "white",
+                marginLeft: "8px",
+              }}
+            />
           </div>
         </div>
       </form>
     </div>
   );
-};
+}
 
 export default StaticDarkSettings;

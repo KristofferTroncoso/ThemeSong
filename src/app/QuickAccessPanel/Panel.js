@@ -1,16 +1,18 @@
-import { useState } from 'react';
-import { css } from '@emotion/react';
-import PanelPage from './PanelPage';
-import Popover from '@mui/material/Popover';
-import Badge from '@mui/material/Badge';
-import ThemeSongFontIcon from './components/ThemeSongFontIcon';
-import { useStore } from '../store';
-import SnoozeIcon from '@mui/icons-material/Snooze';
+import { useState } from "react";
+import { css } from "@emotion/react";
+import PanelPage from "./PanelPage";
+import Popover from "@mui/material/Popover";
+import Badge from "@mui/material/Badge";
+import ThemeSongFontIcon from "./components/ThemeSongFontIcon";
+import { useStore } from "../store";
+import SnoozeIcon from "@mui/icons-material/Snooze";
 
 function Panel() {
-  const showUpdateNote = useStore(state => state.extension.showUpdateNote);
-  const isActive = useStore(state => state.utilities.sleepTimer.isActive);
-  const minutesLeft = useStore(state => state.utilities.sleepTimer.minutesLeft);
+  const showUpdateNote = useStore((state) => state.extension.showUpdateNote);
+  const isActive = useStore((state) => state.utilities.sleepTimer.isActive);
+  const minutesLeft = useStore(
+    (state) => state.utilities.sleepTimer.minutesLeft
+  );
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
@@ -22,7 +24,7 @@ function Panel() {
   };
 
   const open = Boolean(anchorEl);
-  const id = open ? 'simple-popover' : undefined;
+  const id = open ? "simple-popover" : undefined;
 
   return (
     <div id="Panel">
@@ -35,19 +37,22 @@ function Panel() {
           border-radius: 50%;
           :hover {
             color: var(--themesong-primary-text-color);
-            background-color: var(--themesong-base-100-alpha-02-color, rgba(255,255,255,0.2));
+            background-color: var(
+              --themesong-base-100-alpha-02-color,
+              rgba(255, 255, 255, 0.2)
+            );
           }
         `}
         title="Open ThemeSong Quick Access Panel"
         onClick={handleClick}
       >
-        <Badge 
-          variant="dot" 
+        <Badge
+          variant="dot"
           color="warning"
           invisible={!showUpdateNote}
           anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'left',
+            vertical: "top",
+            horizontal: "left",
           }}
         >
           <Badge
@@ -71,17 +76,17 @@ function Panel() {
         anchorEl={anchorEl}
         onClose={handleClose}
         anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
+          vertical: "top",
+          horizontal: "left",
         }}
         transformOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left',
+          vertical: "bottom",
+          horizontal: "left",
         }}
         transitionDuration={100}
         css={css`
           .MuiPaper-root {
-            background-color: rgba(0,0,0,0) !important;
+            background-color: rgba(0, 0, 0, 0) !important;
             min-height: 600px;
             display: flex;
             justify-content: end;
@@ -94,7 +99,7 @@ function Panel() {
         <PanelPage />
       </Popover>
     </div>
-  )
+  );
 }
 
 export default Panel;

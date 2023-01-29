@@ -1,34 +1,73 @@
-import { css } from '@emotion/react';
-import { useStore } from '../../../store';
+import { css } from "@emotion/react";
+import { useStore } from "../../../store";
 
-import White from './variants/White';
-import Black from './variants/Black';
-import RGB from './variants/RGB';
-import Accent from './variants/Accent';
-import Palette from './variants/Palette';
-import DancingPalette from './variants/DancingPalette';
+import White from "./variants/White";
+import Black from "./variants/Black";
+import RGB from "./variants/RGB";
+import Accent from "./variants/Accent";
+import Palette from "./variants/Palette";
+import DancingPalette from "./variants/DancingPalette";
 
-function Bars({analyser, dataArray, bufferLength}) {
-  const barsActiveVariant = useStore(state => (
-    state.visualizer.visualizerPrefs.find(visualizer => (visualizer.visualizerId  === "visualizerId:1")).activeVariant
-  ));
+function Bars({ analyser, dataArray, bufferLength }) {
+  const barsActiveVariant = useStore(
+    (state) =>
+      state.visualizer.visualizerPrefs.find(
+        (visualizer) => visualizer.visualizerId === "visualizerId:1"
+      ).activeVariant
+  );
 
   function returnActiveVariant() {
     switch (barsActiveVariant) {
       case "variantId:1":
-        return <White analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
+        return (
+          <White
+            analyser={analyser}
+            dataArray={dataArray}
+            bufferLength={bufferLength}
+          />
+        );
       case "variantId:2":
-        return <Black analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
+        return (
+          <Black
+            analyser={analyser}
+            dataArray={dataArray}
+            bufferLength={bufferLength}
+          />
+        );
       case "variantId:3":
-        return <RGB analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
+        return (
+          <RGB
+            analyser={analyser}
+            dataArray={dataArray}
+            bufferLength={bufferLength}
+          />
+        );
       case "variantId:4":
-        return <Accent analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
+        return (
+          <Accent
+            analyser={analyser}
+            dataArray={dataArray}
+            bufferLength={bufferLength}
+          />
+        );
       case "variantId:5":
-        return <Palette analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
+        return (
+          <Palette
+            analyser={analyser}
+            dataArray={dataArray}
+            bufferLength={bufferLength}
+          />
+        );
       case "variantId:6":
-        return <DancingPalette analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
+        return (
+          <DancingPalette
+            analyser={analyser}
+            dataArray={dataArray}
+            bufferLength={bufferLength}
+          />
+        );
       default:
-        return <h1>Unknown Variant</h1>
+        return <h1>Unknown Variant</h1>;
     }
   }
 
@@ -42,16 +81,17 @@ function Bars({analyser, dataArray, bufferLength}) {
         height: 100%;
         width: 100%;
         border-radius: inherit;
-        background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 73%,  rgba(0,0,0,0.8) 100%);
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.2) 0%,
+          rgba(0, 0, 0, 0.7) 73%,
+          rgba(0, 0, 0, 0.8) 100%
+        );
       `}
     >
       {returnActiveVariant()}
     </div>
-  )
+  );
 }
 
 export default Bars;
-
-
-
-

@@ -1,20 +1,22 @@
-import { useEffect, useState } from 'react';
-import { Switch, Modal } from '@mui/material';
-import { css } from '@emotion/react';
-import { useStore } from '../../store';
-import EditIcon from '@mui/icons-material/Edit';
-import EditSnippetModal from './EditSnippetModal';
+import { useEffect, useState } from "react";
+import { Switch, Modal } from "@mui/material";
+import { css } from "@emotion/react";
+import { useStore } from "../../store";
+import EditIcon from "@mui/icons-material/Edit";
+import EditSnippetModal from "./EditSnippetModal";
 
-function Snippet({snippet}) {
-  const snippets = useStore(state => state.snippets.snippets);
-  const toggleSnippet = useStore(state => state.snippets.toggleSnippet);
+function Snippet({ snippet }) {
+  const snippets = useStore((state) => state.snippets.snippets);
+  const toggleSnippet = useStore((state) => state.snippets.toggleSnippet);
 
   useEffect(() => {
-    chrome.storage.local.set({snippets}, () => console.log('chrome.storage.local.set({snippets}'));
+    chrome.storage.local.set({ snippets }, () =>
+      console.log("chrome.storage.local.set({snippets}")
+    );
   }, [snippets]);
 
-  const handleToggle = snippetId => {
-    toggleSnippet(snippetId)
+  const handleToggle = (snippetId) => {
+    toggleSnippet(snippetId);
   };
 
   const [open, setOpen] = useState(false);
@@ -22,8 +24,8 @@ function Snippet({snippet}) {
 
   return (
     <div>
-      <div 
-        key={snippet.id} 
+      <div
+        key={snippet.id}
         id={snippet.id}
         css={css`
           margin: 10px;
@@ -38,12 +40,19 @@ function Snippet({snippet}) {
       >
         <Switch
           checked={snippet.enabled}
-          onChange={e => handleToggle(snippet.id)}
-          inputProps={{ 'aria-label': 'controlled' }}
+          onChange={(e) => handleToggle(snippet.id)}
+          inputProps={{ "aria-label": "controlled" }}
         />
-        <span css={css`margin: 10px; font-size: 14px;`}>{snippet.name}</span>
+        <span
+          css={css`
+            margin: 10px;
+            font-size: 14px;
+          `}
+        >
+          {snippet.name}
+        </span>
         <div>
-          <button 
+          <button
             onClick={handleOpen}
             css={css`
               background-color: #222;
@@ -57,13 +66,13 @@ function Snippet({snippet}) {
               }
             `}
           >
-            <EditIcon fontSize='small'/>
+            <EditIcon fontSize="small" />
           </button>
         </div>
       </div>
       <EditSnippetModal snippet={snippet} open={open} setOpen={setOpen} />
     </div>
-  )
+  );
 }
 
 export default Snippet;

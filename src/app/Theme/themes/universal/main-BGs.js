@@ -1,5 +1,4 @@
-
-export const main_BGs = /*css*/`
+export const main_BGs = /*css*/ `
 :root {
   --themesong-bgcolor-transition: background 0.5s ease-out;
 

@@ -17,20 +17,22 @@
     "128": "icon-128.png"
   },
   "options_page": "options.html",
-  "host_permissions": ["https://music.youtube.com/*", "https://i.ytimg.com/*", "https://www.gstatic.com/*"],
+  "host_permissions": [
+    "https://music.youtube.com/*",
+    "https://i.ytimg.com/*",
+    "https://www.gstatic.com/*"
+  ],
   "content_scripts": [
     {
-      "matches": [
-        "https://music.youtube.com/*"
-      ],
+      "matches": ["https://music.youtube.com/*"],
       "run_at": "document_end",
       "js": ["contentScript.bundle.js"]
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": [ "/assets/*" ],
-      "matches": [ "https://music.youtube.com/*" ]
+      "resources": ["/assets/*"],
+      "matches": ["https://music.youtube.com/*"]
     }
   ]
 }

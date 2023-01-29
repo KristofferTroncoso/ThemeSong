@@ -1,9 +1,9 @@
-ytmusic-player:not([player-ui-state_=FULLSCREEN]) #songDivNode {
+ytmusic-player:not([player-ui-state_="FULLSCREEN"]) #songDivNode {
   display: none;
 }
 
 @media (max-width: 1500px) {
-  ytmusic-player[player-ui-state_=FULLSCREEN] #thumbnail {
+  ytmusic-player[player-ui-state_="FULLSCREEN"] #thumbnail {
     flex-direction: column;
   }
 

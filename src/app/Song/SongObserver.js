@@ -1,34 +1,32 @@
-import { useEffect } from 'react';
-import { useStore } from '../store';
+import { useEffect } from "react";
+import { useStore } from "../store";
 
 function SongObserver() {
-  const changeSong = useStore(state => state.song.changeSong);
-  useEffect(() => { 
+  const changeSong = useStore((state) => state.song.changeSong);
+  useEffect(() => {
     let songObserver;
 
     changeSong();
 
     let songTitleNode = document.querySelector("ytmusic-player-bar .title");
-  
+
     songObserver = new MutationObserver(handleSongChange);
-  
+
     songObserver.observe(songTitleNode, {
       attributeFilter: ["title"],
-      attributeOldValue: true
+      attributeOldValue: true,
     });
-    
+
     function handleSongChange(mutationRecord) {
       changeSong();
     }
 
-    return function() {
+    return function () {
       songObserver.disconnect();
-    }
-  }, [])
+    };
+  }, []);
 
-  return (
-    <div id="SongObserver"></div>
-  )
+  return <div id="SongObserver"></div>;
 }
 
 export default SongObserver;

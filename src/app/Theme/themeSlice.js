@@ -35,44 +35,44 @@ export const createThemeSlice = (set) => ({
       variants: [
         {
           variantId: "variantId:1",
-          name: "YouTube Music Mobile"
+          name: "YouTube Music Mobile",
         },
         {
           variantId: "variantId:2",
-          name: "Apple Music"
-        }
-      ]
+          name: "Apple Music",
+        },
+      ],
     },
   ],
   themePrefs: [
     {
       themeId: "themeId:6",
-      appearanceSetting: 'dark', // 'dark', 'light', 'system'
+      appearanceSetting: "dark", // 'dark', 'light', 'system'
       darkPrefs: {
         saturationSetting: 0.8,
         lightnessSettingNavBar: 20,
         lightnessSettingPlayPage: 15,
         lightnessSettingBody: 8,
-        lightnessSettingPlayerBar: 25
+        lightnessSettingPlayerBar: 25,
       },
       lightPrefs: {
         saturationSetting: 0.9,
         lightnessSettingNavBar: 75,
         lightnessSettingPlayPage: 70,
         lightnessSettingBody: 90,
-        lightnessSettingPlayerBar: 75
-      }
+        lightnessSettingPlayerBar: 75,
+      },
     },
     {
       themeId: "themeId:7",
-      appearanceSetting: 'dark', // 'dark', 'light', 'system'
+      appearanceSetting: "dark", // 'dark', 'light', 'system'
       darkPrefs: {
         hue: 216,
         saturationSetting: 70,
         lightnessSettingNavBar: 16,
         lightnessSettingPlayPage: 16,
         lightnessSettingBody: 10,
-        lightnessSettingPlayerBar: 24
+        lightnessSettingPlayerBar: 24,
       },
       lightPrefs: {
         hue: 340,
@@ -80,8 +80,8 @@ export const createThemeSlice = (set) => ({
         lightnessSettingNavBar: 85,
         lightnessSettingPlayPage: 80,
         lightnessSettingBody: 95,
-        lightnessSettingPlayerBar: 85
-      }
+        lightnessSettingPlayerBar: 85,
+      },
     },
     {
       themeId: "themeId:9",
@@ -89,13 +89,17 @@ export const createThemeSlice = (set) => ({
     },
   ],
   changeActiveTheme: (payload) => {
-    console.log('themeSlice: changeActiveTheme')
+    console.log("themeSlice: changeActiveTheme");
     console.log(payload);
-    set(state => { state.theme.activeTheme = payload });
+    set((state) => {
+      state.theme.activeTheme = payload;
+    });
   },
   changeThemePrefs: (payload) => {
-    console.log('themeSlice: changeThemePrefs')
+    console.log("themeSlice: changeThemePrefs");
     console.log(payload);
-    set(state => { state.theme.themePrefs = payload });
+    set((state) => {
+      state.theme.themePrefs = payload;
+    });
   },
-})
+});

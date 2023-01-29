@@ -1,4 +1,3 @@
-
 export const createVisualizerSlice = (set) => ({
   activeVisualizer: "visualizerId:0",
   isVisualizerOn: false,
@@ -6,7 +5,7 @@ export const createVisualizerSlice = (set) => ({
     {
       visualizerId: "visualizerId:0",
       name: "Wavy",
-      order: 1
+      order: 1,
     },
     {
       visualizerId: "visualizerId:1",
@@ -15,29 +14,29 @@ export const createVisualizerSlice = (set) => ({
       variants: [
         {
           variantId: "variantId:1",
-          name: "White"
+          name: "White",
         },
         {
           variantId: "variantId:2",
-          name: "Black"
+          name: "Black",
         },
         {
           variantId: "variantId:3",
-          name: "RGB"
+          name: "RGB",
         },
         {
           variantId: "variantId:4",
-          name: "Accent"
+          name: "Accent",
         },
         {
           variantId: "variantId:5",
-          name: "Palette"
+          name: "Palette",
         },
         {
           variantId: "variantId:6",
-          name: "Dancing Palette"
-        }
-      ]
+          name: "Dancing Palette",
+        },
+      ],
     },
     {
       visualizerId: "visualizerId:2",
@@ -46,65 +45,73 @@ export const createVisualizerSlice = (set) => ({
       variants: [
         {
           variantId: "variantId:1",
-          name: "RGB"
+          name: "RGB",
         },
         {
           variantId: "variantId:2",
-          name: "Accent"
+          name: "Accent",
         },
         {
           variantId: "variantId:3",
-          name: "Palette"
+          name: "Palette",
         },
         {
           variantId: "variantId:4",
-          name: "Party"
+          name: "Party",
         },
         {
           variantId: "variantId:5",
-          name: "Bubbles"
+          name: "Bubbles",
         },
         {
           variantId: "variantId:6",
-          name: "OT9"
-        }
-      ]
-    }
+          name: "OT9",
+        },
+      ],
+    },
   ],
   visualizerPrefs: [
     {
       visualizerId: "visualizerId:0",
-      lineWidth: 8
+      lineWidth: 8,
     },
     {
       visualizerId: "visualizerId:1",
       activeVariant: "variantId:3",
       barWidth: 30,
       borderWidth: 4,
-      gap: 4
+      gap: 4,
     },
     {
       visualizerId: "visualizerId:2",
       activeVariant: "variantId:3",
-    }
+    },
   ],
   changeActiveVisualizer: (payload) => {
-    console.log('visualizerSlice: changeActiveVisualizer')
+    console.log("visualizerSlice: changeActiveVisualizer");
     console.log(payload);
-    set(state => { state.visualizer.activeVisualizer = payload })
+    set((state) => {
+      state.visualizer.activeVisualizer = payload;
+    });
   },
   changeVisualizers: (payload) => {
-    console.log('visualizerSlice: changeVisualizers')
+    console.log("visualizerSlice: changeVisualizers");
     console.log(payload);
-    set(state => { state.visualizer.visualizers = payload })
+    set((state) => {
+      state.visualizer.visualizers = payload;
+    });
   },
   changeVisualizerPrefs: (payload) => {
-    console.log('visualizerSlice: changeVisualizerPrefs')
+    console.log("visualizerSlice: changeVisualizerPrefs");
     console.log(payload);
-    set(state => { state.visualizer.visualizerPrefs = payload })
+    set((state) => {
+      state.visualizer.visualizerPrefs = payload;
+    });
   },
   toggleIsVisualizerOn: () => {
-    console.log('visualizerSlice: toggleIsVisualizerOn')
-    set(state => { state.visualizer.isVisualizerOn = !state.visualizer.isVisualizerOn })
-  }
-})
+    console.log("visualizerSlice: toggleIsVisualizerOn");
+    set((state) => {
+      state.visualizer.isVisualizerOn = !state.visualizer.isVisualizerOn;
+    });
+  },
+});

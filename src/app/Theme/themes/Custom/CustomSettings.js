@@ -1,17 +1,16 @@
-import { css } from '@emotion/react';
+import { css } from "@emotion/react";
 
 function CustomSettings() {
-
   function handleSave(e) {
     e.preventDefault();
   }
 
   return (
-    <div 
-      className="CustomSettings" 
+    <div
+      className="CustomSettings"
       css={css`
-        background: #222; 
-        padding: 5px; 
+        background: #222;
+        padding: 5px;
         border-radius: 2px;
         color: #ddd;
       `}

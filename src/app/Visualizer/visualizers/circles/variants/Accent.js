@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
-import { css } from '@emotion/react';
-import { useStore } from '../../../../store';
+import { useEffect, useRef } from "react";
+import { css } from "@emotion/react";
+import { useStore } from "../../../../store";
 
 let circles = [
   {
@@ -14,7 +14,7 @@ let circles = [
     minByte: 200,
     minRadius: 1,
     growRate: 300,
-    lineWidth: 5
+    lineWidth: 5,
   },
   {
     x: 150,
@@ -27,15 +27,15 @@ let circles = [
     minByte: 0,
     minRadius: 0.32,
     growRate: 800,
-    lineWidth: 3
+    lineWidth: 3,
   },
 ];
 
 let shorterCanvasSide;
 
-function Accent({analyser, dataArray}) {
-  const isSongPlaying = useStore(state => state.player.isSongPlaying);
-  const dominant = useStore(state => state.palette.dominant);
+function Accent({ analyser, dataArray }) {
+  const isSongPlaying = useStore((state) => state.player.isSongPlaying);
+  const dominant = useStore((state) => state.palette.dominant);
 
   const ytmusicplayer = document.querySelector("ytmusic-player");
   const canvasRef = useRef();
@@ -45,27 +45,27 @@ function Accent({analyser, dataArray}) {
   const circumference = 2 * Math.PI;
 
   useEffect(() => {
-    console.log('Accent time');
+    console.log("Accent time");
     ctx.current = canvasRef.current.getContext("2d");
     ctx.current.fillStyle = "#fff";
     ctx.current.strokeStyle = "#000";
     ctx.current.lineWidth = 4;
 
     return function cleanUp() {
-      console.log('cleaning up');
+      console.log("cleaning up");
       clearInterval(intervalId.current);
-    }
-  }, [])
+    };
+  }, []);
 
   useEffect(() => {
     function updateAndDraw(ctx) {
       ctx.current = canvasRef.current.getContext("2d");
       //update values
-      circles = circles.map(circle => {
+      circles = circles.map((circle) => {
         let newValues = updateValues(circle);
-        return {...circle, ...newValues};
+        return { ...circle, ...newValues };
       });
-    
+
       //draw values
       for (let circle of circles) {
         ctx.current.beginPath();
@@ -79,22 +79,29 @@ function Accent({analyser, dataArray}) {
         ctx.current.arc(circle.x, circle.y, circle.radius, 0, circumference);
         ctx.current.fill();
         ctx.current.stroke();
-      };
+      }
     }
 
-      
     function accent() {
       let context = canvasRef.current.getContext("2d");
       let ytmusicplayer = document.querySelector("ytmusic-player");
       canvasRef.current.height = ytmusicplayer.clientHeight;
       canvasRef.current.width = ytmusicplayer.clientWidth;
-      shorterCanvasSide = (ytmusicplayer.clientHeight < ytmusicplayer.clientWidth) ? ytmusicplayer.clientHeight : ytmusicplayer.clientWidth;
+      shorterCanvasSide =
+        ytmusicplayer.clientHeight < ytmusicplayer.clientWidth
+          ? ytmusicplayer.clientHeight
+          : ytmusicplayer.clientWidth;
       analyser.fftSize = 512;
       analyser.getByteFrequencyData(dataArray);
-    
-      context.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-      context.strokeStyle = '#000';
-    
+
+      context.clearRect(
+        0,
+        0,
+        canvasRef.current.width,
+        canvasRef.current.height
+      );
+      context.strokeStyle = "#000";
+
       updateAndDraw(context);
     }
 
@@ -102,11 +109,24 @@ function Accent({analyser, dataArray}) {
       clearInterval(intervalId.current);
     } else {
       clearInterval(intervalId.current);
-      intervalId.current = setInterval(() => requestAnimationFrame(accent), 17)
+      intervalId.current = setInterval(() => requestAnimationFrame(accent), 17);
     }
-  }, [isSongPlaying, dominant])
+  }, [isSongPlaying, dominant]);
 
-  function updateValues({x, y, dirX, dirY, radius, speedX, speedY, freq, minByte, minRadius, growRate, color}) {
+  function updateValues({
+    x,
+    y,
+    dirX,
+    dirY,
+    radius,
+    speedX,
+    speedY,
+    freq,
+    minByte,
+    minRadius,
+    growRate,
+    color,
+  }) {
     if (y + radius > canvasRef.current.height) {
       dirY = Math.abs(dirY) * -1;
     } else if (y - radius < 0) {
@@ -119,7 +139,7 @@ function Accent({analyser, dataArray}) {
     }
     x += dirX * speedX * (shorterCanvasSide / 500);
     y += dirY * speedY * (shorterCanvasSide / 500);
-  
+
     if (x + radius - 30 > canvasRef.current.width) {
       x = canvasRef.current.width * Math.random();
     } else if (x - radius + 30 < 0) {
@@ -130,11 +150,25 @@ function Accent({analyser, dataArray}) {
     } else if (y - radius + 30 < 0) {
       y = radius + 30;
     }
-  
-    radius = ((Math.max(dataArray[freq] - minByte, 0) / growRate ) + minRadius) * (shorterCanvasSide/5);
-  
+
+    radius =
+      (Math.max(dataArray[freq] - minByte, 0) / growRate + minRadius) *
+      (shorterCanvasSide / 5);
+
     color = dominant.hex;
-    return {x, y, dirX, dirY, radius, speedX, speedY, freq, minByte, minRadius, color};
+    return {
+      x,
+      y,
+      dirX,
+      dirY,
+      radius,
+      speedX,
+      speedY,
+      freq,
+      minByte,
+      minRadius,
+      color,
+    };
   }
 
   return (
@@ -152,7 +186,7 @@ function Accent({analyser, dataArray}) {
         border-radius: inherit;
       `}
     />
-  )
+  );
 }
 
 export default Accent;

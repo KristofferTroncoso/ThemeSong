@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
-import { menubar } from '../selectors';
+import { useEffect } from "react";
+import { menubar } from "../selectors";
 
 function Off() {
   useEffect(() => {
-    menubar.content = '#131313';
-  }, [])
+    menubar.content = "#131313";
+  }, []);
 
   return (
     <style id="Off">
@@ -15,7 +15,7 @@ function Off() {
       /* custom styles are off */
       `}
     </style>
-  )
+  );
 }
 
 export default Off;

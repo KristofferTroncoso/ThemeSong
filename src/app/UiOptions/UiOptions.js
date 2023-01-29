@@ -1,8 +1,8 @@
-import RemoveDislikeButton from './features/RemoveDislikeButton';
-import RemoveCastButton from './features/RemoveCastButton';
-import RemoveUpgradeButton from './features/RemoveUpgradeButton';
-import AddConfirmUnlike from './features/AddConfirmUnlike';
-import AddSongChangeNotification from './features/AddSongChangeNotification';
+import RemoveDislikeButton from "./features/RemoveDislikeButton";
+import RemoveCastButton from "./features/RemoveCastButton";
+import RemoveUpgradeButton from "./features/RemoveUpgradeButton";
+import AddConfirmUnlike from "./features/AddConfirmUnlike";
+import AddSongChangeNotification from "./features/AddSongChangeNotification";
 
 function UiOptions() {
   return (
@@ -13,7 +13,7 @@ function UiOptions() {
       <AddConfirmUnlike />
       <AddSongChangeNotification />
     </div>
-  )
+  );
 }
 
 export default UiOptions;

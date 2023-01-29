@@ -3,26 +3,29 @@ export function userPrefsTransferFromV043toV044() {
     for (let [key, value] of Object.entries(chromeStorageObj)) {
       switch (key) {
         case "themes":
-          let themePrefs = value.map(themeObj => {
+          let themePrefs = value.map((themeObj) => {
             return {
               themeId: themeObj.themeId,
-              ...themeObj.userPrefs
-            }
+              ...themeObj.userPrefs,
+            };
           });
-          let themePrefsPlusDittoPrefs = [...themePrefs, {
-            themeId: "themeId:9",
-            activeVariant: "variantId:2"
-          }]
-          console.log(themePrefsPlusDittoPrefs)
-          chrome.storage.local.set({themePrefs: themePrefsPlusDittoPrefs});
+          let themePrefsPlusDittoPrefs = [
+            ...themePrefs,
+            {
+              themeId: "themeId:9",
+              activeVariant: "variantId:2",
+            },
+          ];
+          console.log(themePrefsPlusDittoPrefs);
+          chrome.storage.local.set({ themePrefs: themePrefsPlusDittoPrefs });
           break;
         case "visualizers":
-          let visualizerPrefs = value.map(visualizerObj => {
+          let visualizerPrefs = value.map((visualizerObj) => {
             if (visualizerObj.visualizerId === "visualizerId:0") {
               return {
                 visualizerId: visualizerObj.visualizerId,
-                lineWidth: visualizerObj.lineWidth
-              }
+                lineWidth: visualizerObj.lineWidth,
+              };
             } else if (visualizerObj.visualizerId === "visualizerId:1") {
               return {
                 visualizerId: visualizerObj.visualizerId,
@@ -30,23 +33,22 @@ export function userPrefsTransferFromV043toV044() {
                 barWidth: visualizerObj.barWidth,
                 borderWidth: visualizerObj.borderWidth,
                 gap: visualizerObj.gap,
-              }
+              };
             } else if (visualizerObj.visualizerId === "visualizerId:2") {
               return {
                 visualizerId: visualizerObj.visualizerId,
-                activeVariant: visualizerObj.activeVariant
-              }
+                activeVariant: visualizerObj.activeVariant,
+              };
             }
-          })
-          console.log(visualizerPrefs)
-          chrome.storage.local.set({visualizerPrefs});
+          });
+          console.log(visualizerPrefs);
+          chrome.storage.local.set({ visualizerPrefs });
           break;
         default:
-          console.log('default case')
+          console.log("default case");
       }
     }
-
   });
 
-  chrome.storage.local.remove(['themes', 'visualizers'])
+  chrome.storage.local.remove(["themes", "visualizers"]);
 }

@@ -1,8 +1,8 @@
-import { createRoot } from 'react-dom/client';
+import { createRoot } from "react-dom/client";
 
-import Options from './Options';
-import './index.css';
+import Options from "./Options";
+import "./index.css";
 
-const container = document.getElementById('app-container');
-const root = createRoot(container)
-root.render(<Options />)
+const container = document.getElementById("app-container");
+const root = createRoot(container);
+root.render(<Options />);

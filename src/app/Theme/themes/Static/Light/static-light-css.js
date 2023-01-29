@@ -1,7 +1,7 @@
-import { universalstyles } from '../../universal/universalstyles';
-import { songImgStyles } from '../../universal/songImgStyles';
+import { universalstyles } from "../../universal/universalstyles";
+import { songImgStyles } from "../../universal/songImgStyles";
 
-export const static_light_css = /*css*/`
+export const static_light_css = /*css*/ `
 /* ThemeSong */
 /* Static Light Theme */
 

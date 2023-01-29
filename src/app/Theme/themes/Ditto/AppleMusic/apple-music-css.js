@@ -1,7 +1,7 @@
-import { universalstyles } from '../../universal/universalstyles';
-import { songImgStyles } from '../../universal/songImgStyles';
+import { universalstyles } from "../../universal/universalstyles";
+import { songImgStyles } from "../../universal/songImgStyles";
 
-export const apple_music_css = /*css*/`
+export const apple_music_css = /*css*/ `
 /* ThemeSong */
 /* Apple Music Theme */
 
