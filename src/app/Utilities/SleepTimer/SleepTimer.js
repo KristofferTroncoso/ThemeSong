@@ -42,16 +42,16 @@ function SleepTimer() {
   const isDialogOpen = useStore(state => state.utilities.sleepTimer.isDialogOpen);
   const changeIsDialogOpen = useStore(state => state.utilities.changeIsDialogOpen);
   const [isLastSong, setIsLastSong] = useState(false);
+  const [isTimeOverDialogOpen, setIsTimeOverDialogOpen] = useState(false);
 
   useEffect(() => {
-    console.log('SONGNAME EFFEEEEEEEEECT')
     function lastSongDone() {
       if (document.getElementById("movie_player").classList.contains('playing-mode')) {
         document.getElementById("play-pause-button").click()
       }
       setIsLastSong(false);
       changeIsActive(false);
-      alert(`ThemeSong: Sleep Timer completed`)
+      setIsTimeOverDialogOpen(true);
     };
     isLastSong && (
       lastSongDone()
@@ -60,6 +60,7 @@ function SleepTimer() {
 
   function handleLastSongClick() {
     clearTimeout(timeoutId);
+    clearInterval(intervalId);
     changeMinutesLeft(0);
     setIsLastSong(true);
     changeIsActive(true);
@@ -80,7 +81,7 @@ function SleepTimer() {
       }
       clearInterval(intervalId);
       changeIsActive(false);
-      alert(`ThemeSong: ${minutes}-minute Sleep Timer completed`)
+      setIsTimeOverDialogOpen(true);
     }, minutes * 60000);
     changeIsActive(true);
     changeIsDialogOpen(false);
@@ -99,7 +100,7 @@ function SleepTimer() {
   }
 
   return (
-    <div>
+    <div id="ThemeSong-SleepTimer">
       <Dialog
         open={isDialogOpen}
         onClose={handleDialogClose}
@@ -164,6 +165,32 @@ function SleepTimer() {
           >
             Cancel Timer
           </button>
+        </div>
+      </Dialog>
+      <Dialog
+        open={isTimeOverDialogOpen}
+        onClose={e => setIsTimeOverDialogOpen(false)}
+        css={css`
+          .MuiDialog-paper {
+            border-radius: 5px;
+            border: 1px solid #aaa;
+          }
+        `}
+      >
+        <div
+          css={css`
+            width: 300px;
+            height: 170px;
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+          `}
+        >
+          <h1 css={css`margin-bottom: 20px;`}>Sleep Timer completed</h1>
+          <StyledButton css={css`background-color: #0ea135;`} onClick={e => setIsTimeOverDialogOpen(false)}>OK</StyledButton>
+          <StyledButton css={css`background-color: #ac13cf;`} onClick={e => {setIsTimeOverDialogOpen(false); changeIsDialogOpen(true);}}>Set new Timer</StyledButton>
         </div>
       </Dialog>
     </div>
