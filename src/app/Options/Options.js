@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import CloudSyncStorageSync from '../CloudStorageSync';
+// import DataStoreSync from '../DataStoreSync';
 
 function StyledDiv({children}) {
   return (
@@ -25,7 +25,7 @@ function Options() {
 
   return (
     <div>
-      <CloudSyncStorageSync />
+      {/* <DataStoreSync /> */}
       <h1 css={{marginBottom: '50px'}}>ThemeSong Options</h1>
       <StyledDiv>
         <h2 css={{marginBottom: '15px'}}>Contact:</h2>

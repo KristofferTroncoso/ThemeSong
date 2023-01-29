@@ -1,4 +1,4 @@
-import CloudSyncStorageSync from '../CloudStorageSync';
+import DataStoreSync from '../DataStoreSync';
 import Themes from '../Theme/Themes';
 import SongObserver from '../Song/SongObserver';
 import PanelContainer from '../QuickAccessPanel';
@@ -11,10 +11,9 @@ import Palette from '../Palette/Palette';
 import Utilities from '../Utilities/Utilities';
 
 function ContentScript() {
-
   return (
     <div id="ThemeSong-ContentScript">
-      <CloudSyncStorageSync />
+      <DataStoreSync />
       <Themes />
       <SongObserver />
       <PanelContainer />

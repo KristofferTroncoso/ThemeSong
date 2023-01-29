@@ -4,7 +4,7 @@ import TopBar from './components/TopBar';
 import BottomBar from './components/BottomBar';
 import TabBar from './components/TabBar';
 import ActivePage from './components/ActivePage';
-import CloudSyncStorageSync from '../CloudStorageSync';
+import DataStoreSync from '../DataStoreSync';
 
 function Popup() {
   return (
@@ -20,7 +20,7 @@ function Popup() {
         justify-content: space-between;
       `}
     >
-      <CloudSyncStorageSync />
+      <DataStoreSync />
       <TopBar />
       <div css={css`height: 100%;`}>
         <TabBar />
