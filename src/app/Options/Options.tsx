@@ -1,7 +1,12 @@
-import { css } from "@emotion/react";
+import React from 'react';
+import { css } from '@emotion/react';
 // import DataStoreSync from '../DataStoreSync';
 
-function StyledDiv({ children }) {
+interface StyledDivProps {
+  children: any;
+}
+
+const StyledDiv: React.FC<StyledDivProps> = ({ children }: StyledDivProps) => {
   return (
     <div
       css={css`
@@ -18,7 +23,7 @@ function StyledDiv({ children }) {
 }
 
 function Options() {
-  function handleReset(e) {
+  function handleReset() {
     chrome.runtime.sendMessage("reset", (response) => {
       console.log(`Received response ${response}`);
     });

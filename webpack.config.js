@@ -76,6 +76,11 @@ const options = {
       },
     ],
   },
+  resolve: {
+    extensions: fileExtensions
+      .map((extension) => "." + extension)
+      .concat([".js", ".jsx", ".ts", ".tsx", ".css"]),
+  },
   plugins: [
     new CleanWebpackPlugin({ verbose: false }),
     new webpack.ProgressPlugin(),
