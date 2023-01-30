@@ -1,3 +1,4 @@
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 import ContentScript from "./ContentScript";
@@ -19,6 +20,9 @@ function insertContentScriptContainer() {
 
   body.append(themesongContainer);
 
-  const root = createRoot(themesongContainer);
-  root.render(<ContentScript />);
+  createRoot(themesongContainer).render(
+    <StrictMode>
+      <ContentScript />
+    </StrictMode>
+  );
 }
