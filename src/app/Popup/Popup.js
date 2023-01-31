@@ -5,6 +5,7 @@ import BottomBar from "./components/BottomBar";
 import TabBar from "./components/TabBar";
 import ActivePage from "./components/ActivePage";
 import DataStoreSync from "../DataStoreSync";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function Popup() {
   return (
@@ -27,8 +28,10 @@ function Popup() {
           height: 100%;
         `}
       >
-        <TabBar />
-        <ActivePage />
+        <ErrorBoundary fallback={<h1>oh noerr</h1>}>
+          <TabBar />
+          <ActivePage />
+        </ErrorBoundary>
       </div>
       <BottomBar />
     </div>
