@@ -1,12 +1,12 @@
-import React from 'react';
-import { css } from '@emotion/react';
+import React from "react";
+import { css } from "@emotion/react";
 // import DataStoreSync from '../DataStoreSync';
 
 interface StyledDivProps {
-  children: any;
+  children: React.ReactNode;
 }
 
-const StyledDiv: React.FC<StyledDivProps> = ({ children }: StyledDivProps) => {
+function StyledDiv({ children }: StyledDivProps) {
   return (
     <div
       css={css`
