@@ -5,15 +5,16 @@ import { useStore } from "../../../store";
 function Ditto() {
   const activeVariant = useStore(
     (state) =>
-      state.theme.themePrefs.find((theme) => theme.themeId === "themeId:9")
-        .activeVariant
+      state.theme.themePrefs.find(
+        (theme) => theme.id === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f"
+      ).activeVariant
   );
 
   function returnVariant() {
     switch (activeVariant) {
-      case "variantId:1":
+      case "55f83bbd-d794-49a8-8912-2b53af3f1d3f":
         return <YouTubeMusicMobile />;
-      case "variantId:2":
+      case "3f71704c-d344-4bd0-9013-a2da7bda13ef":
         return <AppleMusic />;
       default:
         return <AppleMusic />;

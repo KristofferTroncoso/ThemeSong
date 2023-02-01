@@ -5,7 +5,7 @@ import { useStore } from "../../../store";
 function Wavy({ analyser, dataArray, bufferLength }) {
   const wavyPrefs = useStore((state) =>
     state.visualizer.visualizerPrefs.find(
-      (visualizer) => visualizer.visualizerId === "visualizerId:0"
+      (visualizer) => visualizer.id === "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d"
     )
   );
   const isSongPlaying = useStore((state) => state.player.isSongPlaying);

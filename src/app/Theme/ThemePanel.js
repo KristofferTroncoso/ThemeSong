@@ -45,8 +45,13 @@ function ThemePanel() {
       >
         <PanelButton
           title="Off / YTM Default"
-          bgColor={activeTheme === "themeId:0" && "rgba(255,255,255,0.8)"}
-          color={activeTheme === "themeId:0" && "#000"}
+          bgColor={
+            activeTheme === "416034f2-bfb8-46e8-9929-5805dd59a688" &&
+            "rgba(255,255,255,0.8)"
+          }
+          color={
+            activeTheme === "416034f2-bfb8-46e8-9929-5805dd59a688" && "#000"
+          }
           hoverColor="#000"
           css={css`
             height: 42px;
@@ -56,7 +61,7 @@ function ThemePanel() {
             border: 0;
             border-radius: 5px 0 0 5px;
           `}
-          onClick={(e) => handleClick("themeId:0")}
+          onClick={(e) => handleClick("416034f2-bfb8-46e8-9929-5805dd59a688")}
         >
           <InvertColorsOffIcon
             css={css`
@@ -66,8 +71,13 @@ function ThemePanel() {
         </PanelButton>
         <PanelButton
           title="Dynamic"
-          bgColor={activeTheme === "themeId:6" && "rgba(255,255,255,0.8)"}
-          color={activeTheme === "themeId:6" && "#1565e6"}
+          bgColor={
+            activeTheme === "db8854e3-6753-4639-b244-c8091f3b9fcb" &&
+            "rgba(255,255,255,0.8)"
+          }
+          color={
+            activeTheme === "db8854e3-6753-4639-b244-c8091f3b9fcb" && "#1565e6"
+          }
           hoverColor="#1565e6"
           css={css`
             height: 42px;
@@ -77,7 +87,7 @@ function ThemePanel() {
             border: 0;
             border-radius: 0;
           `}
-          onClick={(e) => handleClick("themeId:6")}
+          onClick={(e) => handleClick("db8854e3-6753-4639-b244-c8091f3b9fcb")}
         >
           <GiAtom
             size={28}
@@ -88,8 +98,13 @@ function ThemePanel() {
         </PanelButton>
         <PanelButton
           title="Static"
-          bgColor={activeTheme === "themeId:7" && "rgba(255,255,255,0.8)"}
-          color={activeTheme === "themeId:7" && "#ff3700"}
+          bgColor={
+            activeTheme === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" &&
+            "rgba(255,255,255,0.8)"
+          }
+          color={
+            activeTheme === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" && "#ff3700"
+          }
           hoverColor="#ff3700"
           css={css`
             height: 42px;
@@ -99,7 +114,7 @@ function ThemePanel() {
             border: 0;
             border-radius: 0;
           `}
-          onClick={(e) => handleClick("themeId:7")}
+          onClick={(e) => handleClick("b458eaae-0cbd-4a44-8847-c7a6a6ea1be8")}
         >
           <ColorizeIcon
             css={css`
@@ -109,8 +124,13 @@ function ThemePanel() {
         </PanelButton>
         <PanelButton
           title="Ditto"
-          bgColor={activeTheme === "themeId:9" && "rgba(255,255,255,0.8)"}
-          color={activeTheme === "themeId:9" && "#9c5cad"}
+          bgColor={
+            activeTheme === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f" &&
+            "rgba(255,255,255,0.8)"
+          }
+          color={
+            activeTheme === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f" && "#9c5cad"
+          }
           hoverColor="#9c5cad"
           css={css`
             height: 42px;
@@ -121,7 +141,7 @@ function ThemePanel() {
             border-radius: 0 5px 5px 0;
             padding: 0;
           `}
-          onClick={(e) => handleClick("themeId:9")}
+          onClick={(e) => handleClick("76dd54c5-78a2-4ca3-9c16-3d0d1aab367f")}
         >
           <TheaterComedyIcon
             css={css`

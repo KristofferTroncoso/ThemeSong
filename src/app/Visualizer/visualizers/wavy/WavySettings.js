@@ -25,7 +25,7 @@ const StyledSlider = styled(Slider)`
 function WavySettings() {
   const wavyStorageObject = useStore((state) =>
     state.visualizer.visualizerPrefs.find(
-      (visualizer) => visualizer.visualizerId === "visualizerId:0"
+      (visualizer) => visualizer.id === "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d"
     )
   );
   const changeVisualizerPrefs = useStore(
@@ -37,7 +37,9 @@ function WavySettings() {
     let copy = { ...wavyStorageObject };
     copy[e.target.name] = Number(e.target.value);
     let newVisualizersArr = visualizerPrefs.map((visualizer) =>
-      visualizer.visualizerId === "visualizerId:0" ? copy : visualizer
+      visualizer.id === "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d"
+        ? copy
+        : visualizer
     );
     console.log(newVisualizersArr);
     changeVisualizerPrefs(newVisualizersArr);

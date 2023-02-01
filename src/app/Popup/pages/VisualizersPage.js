@@ -24,11 +24,11 @@ function VisualizersPage() {
 
   let activeVisualizerSettings = () => {
     switch (activeVisualizer) {
-      case "visualizerId:0":
+      case "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d":
         return <WavySettings />;
-      case "visualizerId:1":
+      case "51dc50c8-eb06-4086-ad9c-a89758f63db6":
         return <BarsSettings />;
-      case "visualizerId:2":
+      case "685d0ec7-5c52-4e48-a43d-11184a39f3da":
         return <CirclesSettings />;
       default:
         return <h1>Unknown Visualizer</h1>;
@@ -82,10 +82,10 @@ function VisualizersPage() {
       >
         {visualizers.map((visualizer) => (
           <VisualizerButton
-            key={visualizer.visualizerId}
-            id={visualizer.visualizerId}
-            onClick={(e) => handleVisualizerClick(e, visualizer.visualizerId)}
-            isActive={visualizer.visualizerId === activeVisualizer}
+            key={visualizer.id}
+            id={visualizer.id}
+            onClick={(e) => handleVisualizerClick(e, visualizer.id)}
+            isActive={visualizer.id === activeVisualizer}
             name={visualizer.name}
           />
         ))}

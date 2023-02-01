@@ -11,15 +11,15 @@ function Themes() {
 
   function returnTheme() {
     switch (activeTheme) {
-      case "themeId:0":
+      case "416034f2-bfb8-46e8-9929-5805dd59a688":
         return <Off />;
-      case "themeId:6":
+      case "db8854e3-6753-4639-b244-c8091f3b9fcb":
         return <Dynamic />;
-      case "themeId:7":
+      case "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8":
         return <Static />;
-      // case "themeId:8":
+      // case "8383a680-c786-4c8d-82ee-59e0f1ea7c50":
       //   return <Custom />
-      case "themeId:9":
+      case "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f":
         return <Ditto />;
       default:
         return <Dynamic />;

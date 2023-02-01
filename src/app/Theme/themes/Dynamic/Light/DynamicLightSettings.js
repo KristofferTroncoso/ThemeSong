@@ -33,12 +33,15 @@ const StyledSlider = styled(Slider)`
 
 function DynamicLightSettings() {
   const dynamicPrefs = useStore((state) =>
-    state.theme.themePrefs.find((theme) => theme.themeId === "themeId:6")
+    state.theme.themePrefs.find(
+      (theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb"
+    )
   );
   const dynamicLightPrefs = useStore(
     (state) =>
-      state.theme.themePrefs.find((theme) => theme.themeId === "themeId:6")
-        .lightPrefs
+      state.theme.themePrefs.find(
+        (theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb"
+      ).lightPrefs
   );
   const themePrefs = useStore((state) => state.theme.themePrefs);
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
@@ -50,7 +53,9 @@ function DynamicLightSettings() {
     };
     let newDynamicUserPrefs = { ...dynamicPrefs, lightPrefs: newLightPrefs };
     let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.themeId === "themeId:6" ? newDynamicUserPrefs : themePrefs
+      themePrefs.id === "db8854e3-6753-4639-b244-c8091f3b9fcb"
+        ? newDynamicUserPrefs
+        : themePrefs
     );
     console.log(newThemePrefsArr);
     changeThemePrefs(newThemePrefsArr);

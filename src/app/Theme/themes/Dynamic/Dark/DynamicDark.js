@@ -14,8 +14,9 @@ function DynamicDark() {
     lightnessSettingPlayerBar,
   } = useStore(
     (state) =>
-      state.theme.themePrefs.find((theme) => theme.themeId === "themeId:6")
-        .darkPrefs
+      state.theme.themePrefs.find(
+        (theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb"
+      ).darkPrefs
   );
 
   let hue = (dominantColorHSL[0] * 360).toFixed();

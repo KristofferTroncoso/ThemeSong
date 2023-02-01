@@ -10,9 +10,9 @@ import PanelButton from "../QuickAccessPanel/components/PanelButton";
 function DarkModePanel() {
   const themePrefs = useStore((state) => state.theme.themePrefs);
   const activeTheme = useStore((state) => state.theme.activeTheme);
-  // const activeThemeInfo = useStore(state => state.theme.themes.find(theme => theme.themeId === activeTheme));
+  // const activeThemeInfo = useStore(state => state.theme.themes.find(theme => theme.id === activeTheme));
   const activeThemeUserPrefs = useStore((state) =>
-    state.theme.themePrefs.find((theme) => theme.themeId === activeTheme)
+    state.theme.themePrefs.find((theme) => theme.id === activeTheme)
   );
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
 
@@ -23,9 +23,7 @@ function DarkModePanel() {
         appearanceSetting: value,
       };
       let newThemePrefsArr = themePrefs.map((themePrefs) =>
-        themePrefs.themeId === activeTheme
-          ? newActiveThemeUserPrefs
-          : themePrefs
+        themePrefs.id === activeTheme ? newActiveThemeUserPrefs : themePrefs
       );
       changeThemePrefs(newThemePrefsArr);
       chrome.storage.local.set({ themePrefs: newThemePrefsArr }, () =>
@@ -38,7 +36,12 @@ function DarkModePanel() {
     }
   }
 
-  if (!(activeTheme === "themeId:6" || activeTheme === "themeId:7")) {
+  if (
+    !(
+      activeTheme === "db8854e3-6753-4639-b244-c8091f3b9fcb" ||
+      activeTheme === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"
+    )
+  ) {
     return (
       <div>
         <h3

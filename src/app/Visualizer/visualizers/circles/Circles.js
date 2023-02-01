@@ -12,13 +12,13 @@ function Circles({ analyser, dataArray, bufferLength }) {
   const circlesActiveVariant = useStore(
     (state) =>
       state.visualizer.visualizerPrefs.find(
-        (visualizer) => visualizer.visualizerId === "visualizerId:2"
+        (visualizer) => visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da"
       ).activeVariant
   );
 
   function returnActiveVariant() {
     switch (circlesActiveVariant) {
-      case "variantId:1":
+      case "2040b849-8c7c-4290-8ff8-c0d7716cca77":
         return (
           <RGB
             analyser={analyser}
@@ -26,7 +26,7 @@ function Circles({ analyser, dataArray, bufferLength }) {
             bufferLength={bufferLength}
           />
         );
-      case "variantId:2":
+      case "820e69c5-1531-44b7-8da4-5d43c1b17bfe":
         return (
           <Accent
             analyser={analyser}
@@ -34,7 +34,7 @@ function Circles({ analyser, dataArray, bufferLength }) {
             bufferLength={bufferLength}
           />
         );
-      case "variantId:3":
+      case "b82df5dd-c7f4-4cc1-ad23-9e2b70ca491b":
         return (
           <Palette
             analyser={analyser}
@@ -42,7 +42,7 @@ function Circles({ analyser, dataArray, bufferLength }) {
             bufferLength={bufferLength}
           />
         );
-      case "variantId:4":
+      case "6b14efe2-f082-4f23-9186-8dad394d0b55":
         return (
           <Party
             analyser={analyser}
@@ -50,7 +50,7 @@ function Circles({ analyser, dataArray, bufferLength }) {
             bufferLength={bufferLength}
           />
         );
-      case "variantId:5":
+      case "7dbd8080-84cc-47a8-b199-cfe12c3d9e67":
         return (
           <Bubbles
             analyser={analyser}
@@ -58,7 +58,7 @@ function Circles({ analyser, dataArray, bufferLength }) {
             bufferLength={bufferLength}
           />
         );
-      case "variantId:6":
+      case "aadb67e9-ee59-45f3-8335-d34a39223525":
         return (
           <OT9
             analyser={analyser}

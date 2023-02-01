@@ -13,8 +13,9 @@ function StaticDark() {
     lightnessSettingPlayerBar,
   } = useStore(
     (state) =>
-      state.theme.themePrefs.find((theme) => theme.themeId === "themeId:7")
-        .darkPrefs
+      state.theme.themePrefs.find(
+        (theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"
+      ).darkPrefs
   );
 
   useEffect(() => {

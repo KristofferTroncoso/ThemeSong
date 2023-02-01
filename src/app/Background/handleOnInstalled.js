@@ -10,7 +10,7 @@ export function handleOnInstalled(details) {
 
     // on update (extension update, chrome update, or extension refresh)
     case "update":
-      // chrome.storage.local.clear();
+      chrome.storage.local.clear();
 
       // whenever extension is updated, show update note
       chrome.storage.local.set({ showUpdateNote: true });

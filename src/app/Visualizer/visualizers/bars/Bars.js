@@ -12,13 +12,13 @@ function Bars({ analyser, dataArray, bufferLength }) {
   const barsActiveVariant = useStore(
     (state) =>
       state.visualizer.visualizerPrefs.find(
-        (visualizer) => visualizer.visualizerId === "visualizerId:1"
+        (visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6"
       ).activeVariant
   );
 
   function returnActiveVariant() {
     switch (barsActiveVariant) {
-      case "variantId:1":
+      case "b84ef625-e0af-4e8c-8ab6-b86ee9ee2147":
         return (
           <White
             analyser={analyser}
@@ -26,7 +26,7 @@ function Bars({ analyser, dataArray, bufferLength }) {
             bufferLength={bufferLength}
           />
         );
-      case "variantId:2":
+      case "5890028c-8554-4fa9-bb14-f0c496f207f1":
         return (
           <Black
             analyser={analyser}
@@ -34,7 +34,7 @@ function Bars({ analyser, dataArray, bufferLength }) {
             bufferLength={bufferLength}
           />
         );
-      case "variantId:3":
+      case "12bfd49e-47a2-4cc8-90a9-3e669f7a0c78":
         return (
           <RGB
             analyser={analyser}
@@ -42,7 +42,7 @@ function Bars({ analyser, dataArray, bufferLength }) {
             bufferLength={bufferLength}
           />
         );
-      case "variantId:4":
+      case "c67d53cf-d708-4d31-93e8-c01819e70248":
         return (
           <Accent
             analyser={analyser}
@@ -50,7 +50,7 @@ function Bars({ analyser, dataArray, bufferLength }) {
             bufferLength={bufferLength}
           />
         );
-      case "variantId:5":
+      case "f1b5822f-32a1-4232-87fa-620963c49f0e":
         return (
           <Palette
             analyser={analyser}
@@ -58,7 +58,7 @@ function Bars({ analyser, dataArray, bufferLength }) {
             bufferLength={bufferLength}
           />
         );
-      case "variantId:6":
+      case "f3015c0d-1528-4615-b74f-bd7ab4f91667":
         return (
           <DancingPalette
             analyser={analyser}

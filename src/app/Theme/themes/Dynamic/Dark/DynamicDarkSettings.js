@@ -33,12 +33,15 @@ const StyledSlider = styled(Slider)`
 
 function DynamicDarkSettings() {
   const dynamicPrefs = useStore((state) =>
-    state.theme.themePrefs.find((theme) => theme.themeId === "themeId:6")
+    state.theme.themePrefs.find(
+      (theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb"
+    )
   );
   const dynamicDarkPrefs = useStore(
     (state) =>
-      state.theme.themePrefs.find((theme) => theme.themeId === "themeId:6")
-        .darkPrefs
+      state.theme.themePrefs.find(
+        (theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb"
+      ).darkPrefs
   );
   const themePrefs = useStore((state) => state.theme.themePrefs);
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
@@ -47,7 +50,9 @@ function DynamicDarkSettings() {
     let newDarkPrefs = { ...dynamicDarkPrefs, [e.target.name]: e.target.value };
     let newDynamicUserPrefs = { ...dynamicPrefs, darkPrefs: newDarkPrefs };
     let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.themeId === "themeId:6" ? newDynamicUserPrefs : themePrefs
+      themePrefs.id === "db8854e3-6753-4639-b244-c8091f3b9fcb"
+        ? newDynamicUserPrefs
+        : themePrefs
     );
     console.log(newThemePrefsArr);
     changeThemePrefs(newThemePrefsArr);

@@ -7,7 +7,9 @@ function DynamicSettings() {
   const themePrefs = useStore((state) => state.theme.themePrefs);
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
   const dynamicUserPrefs = useStore((state) =>
-    state.theme.themePrefs.find((theme) => theme.themeId === "themeId:6")
+    state.theme.themePrefs.find(
+      (theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb"
+    )
   );
 
   function handleDarkLightChange(e) {
@@ -16,7 +18,9 @@ function DynamicSettings() {
       [e.target.name]: e.target.value,
     };
     let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.themeId === "themeId:6" ? newDynamicUserPrefs : themePrefs
+      themePrefs.id === "db8854e3-6753-4639-b244-c8091f3b9fcb"
+        ? newDynamicUserPrefs
+        : themePrefs
     );
     changeThemePrefs(newThemePrefsArr);
     chrome.storage.local.set({ themePrefs: newThemePrefsArr }, () =>

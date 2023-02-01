@@ -103,12 +103,12 @@ function VisualizerPanel() {
             title="Wavy"
             bgColor={
               isVisualizerOn &&
-              activeVisualizer === "visualizerId:0" &&
+              activeVisualizer === "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d" &&
               "rgba(255,255,255,0.8)"
             }
             color={
               isVisualizerOn &&
-              activeVisualizer === "visualizerId:0" &&
+              activeVisualizer === "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d" &&
               "#008c7e"
             }
             hoverColor="#008c7e"
@@ -120,7 +120,11 @@ function VisualizerPanel() {
               border: 0;
               border-radius: 8px 0 0 8px;
             `}
-            onClick={(e) => handleVisualizerButtonClick("visualizerId:0")}
+            onClick={(e) =>
+              handleVisualizerButtonClick(
+                "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d"
+              )
+            }
           >
             <WavesIcon title="Wavy" fontSize="large" />
           </PanelButton>
@@ -128,12 +132,12 @@ function VisualizerPanel() {
             title="Bars"
             bgColor={
               isVisualizerOn &&
-              activeVisualizer === "visualizerId:1" &&
+              activeVisualizer === "51dc50c8-eb06-4086-ad9c-a89758f63db6" &&
               "rgba(255,255,255,0.8)"
             }
             color={
               isVisualizerOn &&
-              activeVisualizer === "visualizerId:1" &&
+              activeVisualizer === "51dc50c8-eb06-4086-ad9c-a89758f63db6" &&
               "#fc0303"
             }
             hoverColor="#fc0303"
@@ -145,7 +149,11 @@ function VisualizerPanel() {
               border: 0;
               border-radius: 0;
             `}
-            onClick={(e) => handleVisualizerButtonClick("visualizerId:1")}
+            onClick={(e) =>
+              handleVisualizerButtonClick(
+                "51dc50c8-eb06-4086-ad9c-a89758f63db6"
+              )
+            }
           >
             <LeaderboardIcon title="Bars" fontSize="large" />
           </PanelButton>
@@ -153,12 +161,12 @@ function VisualizerPanel() {
             title="Circles"
             bgColor={
               isVisualizerOn &&
-              activeVisualizer === "visualizerId:2" &&
+              activeVisualizer === "685d0ec7-5c52-4e48-a43d-11184a39f3da" &&
               "rgba(255,255,255,0.8)"
             }
             color={
               isVisualizerOn &&
-              activeVisualizer === "visualizerId:2" &&
+              activeVisualizer === "685d0ec7-5c52-4e48-a43d-11184a39f3da" &&
               "#fc03e3"
             }
             hoverColor="#fc03e3"
@@ -171,7 +179,11 @@ function VisualizerPanel() {
               border-radius: 0 8px 8px 0;
               padding: 0;
             `}
-            onClick={(e) => handleVisualizerButtonClick("visualizerId:2")}
+            onClick={(e) =>
+              handleVisualizerButtonClick(
+                "685d0ec7-5c52-4e48-a43d-11184a39f3da"
+              )
+            }
           >
             <BubbleChart
               title="Circles"
@@ -182,7 +194,8 @@ function VisualizerPanel() {
           </PanelButton>
         </div>
       </div>
-      {isVisualizerOn && activeVisualizer !== "visualizerId:0" ? (
+      {isVisualizerOn &&
+      activeVisualizer !== "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d" ? (
         <div>
           <h3
             css={css`
@@ -193,7 +206,7 @@ function VisualizerPanel() {
           </h3>
           {
             {
-              "visualizerId:1": (
+              "51dc50c8-eb06-4086-ad9c-a89758f63db6": (
                 <div
                   css={css`
                     display: flex;
@@ -202,31 +215,34 @@ function VisualizerPanel() {
                   {visualizers
                     .find(
                       (visualizer) =>
-                        visualizer.visualizerId === "visualizerId:1"
+                        visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6"
                     )
                     .variants.map((variant, index) => (
                       <VisualizerVariantButton
-                        key={variant.variantId}
+                        key={variant.id}
                         disabled={
-                          variant.variantId ===
+                          variant.id ===
                           visualizerPrefs.find(
                             (visualizer) =>
-                              visualizer.visualizerId === "visualizerId:1"
+                              visualizer.id ===
+                              "51dc50c8-eb06-4086-ad9c-a89758f63db6"
                           ).activeVariant
                         }
                         onClick={(e) => {
                           let visualizerObject = {
                             ...visualizerPrefs.find(
                               (visualizer) =>
-                                visualizer.visualizerId === "visualizerId:1"
+                                visualizer.id ===
+                                "51dc50c8-eb06-4086-ad9c-a89758f63db6"
                             ),
-                            activeVariant: variant.variantId,
+                            activeVariant: variant.id,
                           };
                           let visualizerPrefsCopy = [...visualizerPrefs];
                           let newCopy = visualizerPrefsCopy.map(
                             (visualizer) => {
                               if (
-                                visualizer.visualizerId === "visualizerId:1"
+                                visualizer.id ===
+                                "51dc50c8-eb06-4086-ad9c-a89758f63db6"
                               ) {
                                 return visualizerObject;
                               } else {
@@ -246,15 +262,17 @@ function VisualizerPanel() {
                         bgColor={
                           visualizerPrefs.find(
                             (visualizer) =>
-                              visualizer.visualizerId === "visualizerId:1"
-                          ).activeVariant === variant.variantId &&
+                              visualizer.id ===
+                              "51dc50c8-eb06-4086-ad9c-a89758f63db6"
+                          ).activeVariant === variant.id &&
                           "rgba(255,255,255,0.8)"
                         }
                         color={
                           visualizerPrefs.find(
                             (visualizer) =>
-                              visualizer.visualizerId === "visualizerId:1"
-                          ).activeVariant === variant.variantId && "#fc0303"
+                              visualizer.id ===
+                              "51dc50c8-eb06-4086-ad9c-a89758f63db6"
+                          ).activeVariant === variant.id && "#fc0303"
                         }
                         hoverColor="#fc0303"
                       >
@@ -263,7 +281,7 @@ function VisualizerPanel() {
                     ))}
                 </div>
               ),
-              "visualizerId:2": (
+              "685d0ec7-5c52-4e48-a43d-11184a39f3da": (
                 <div
                   css={css`
                     display: flex;
@@ -272,31 +290,34 @@ function VisualizerPanel() {
                   {visualizers
                     .find(
                       (visualizer) =>
-                        visualizer.visualizerId === "visualizerId:2"
+                        visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da"
                     )
                     .variants.map((variant, index) => (
                       <VisualizerVariantButton
-                        key={variant.variantId}
+                        key={variant.id}
                         disabled={
-                          variant.variantId ===
+                          variant.id ===
                           visualizerPrefs.find(
                             (visualizer) =>
-                              visualizer.visualizerId === "visualizerId:2"
+                              visualizer.id ===
+                              "685d0ec7-5c52-4e48-a43d-11184a39f3da"
                           ).activeVariant
                         }
                         onClick={(e) => {
                           let visualizerObject = {
                             ...visualizerPrefs.find(
                               (visualizer) =>
-                                visualizer.visualizerId === "visualizerId:2"
+                                visualizer.id ===
+                                "685d0ec7-5c52-4e48-a43d-11184a39f3da"
                             ),
-                            activeVariant: variant.variantId,
+                            activeVariant: variant.id,
                           };
                           let visualizerPrefsCopy = [...visualizerPrefs];
                           let newCopy = visualizerPrefsCopy.map(
                             (visualizer) => {
                               if (
-                                visualizer.visualizerId === "visualizerId:2"
+                                visualizer.id ===
+                                "685d0ec7-5c52-4e48-a43d-11184a39f3da"
                               ) {
                                 return visualizerObject;
                               } else {
@@ -316,15 +337,17 @@ function VisualizerPanel() {
                         bgColor={
                           visualizerPrefs.find(
                             (visualizer) =>
-                              visualizer.visualizerId === "visualizerId:2"
-                          ).activeVariant === variant.variantId &&
+                              visualizer.id ===
+                              "685d0ec7-5c52-4e48-a43d-11184a39f3da"
+                          ).activeVariant === variant.id &&
                           "rgba(255,255,255,0.8)"
                         }
                         color={
                           visualizerPrefs.find(
                             (visualizer) =>
-                              visualizer.visualizerId === "visualizerId:2"
-                          ).activeVariant === variant.variantId && "#fc03e3"
+                              visualizer.id ===
+                              "685d0ec7-5c52-4e48-a43d-11184a39f3da"
+                          ).activeVariant === variant.id && "#fc03e3"
                         }
                         hoverColor="#fc03e3"
                       >

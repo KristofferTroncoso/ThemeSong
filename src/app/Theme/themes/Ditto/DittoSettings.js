@@ -4,10 +4,14 @@ import VariantButton from "../../../Visualizer/visualizers/components/VariantBut
 
 function DittoSettings() {
   const dittoTheme = useStore((state) =>
-    state.theme.themes.find((theme) => theme.themeId === "themeId:9")
+    state.theme.themes.find(
+      (theme) => theme.id === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f"
+    )
   );
   const dittoThemePrefs = useStore((state) =>
-    state.theme.themePrefs.find((theme) => theme.themeId === "themeId:9")
+    state.theme.themePrefs.find(
+      (theme) => theme.id === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f"
+    )
   );
   const themePrefs = useStore((state) => state.theme.themePrefs);
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
@@ -19,7 +23,7 @@ function DittoSettings() {
 
     let themePrefsCopy = [...themePrefs];
     let newCopy = themePrefsCopy.map((themePrefs) => {
-      if (themePrefs.themeId === copy.themeId) {
+      if (themePrefs.id === copy.id) {
         return copy;
       } else {
         return themePrefs;
@@ -67,10 +71,10 @@ function DittoSettings() {
       >
         {dittoTheme.variants.map((variant) => (
           <VariantButton
-            key={variant.variantId}
-            id={variant.variantId}
-            onClick={(e) => handleVariantClick(e, variant.variantId)}
-            isActive={variant.variantId === dittoThemePrefs.activeVariant}
+            key={variant.id}
+            id={variant.id}
+            onClick={(e) => handleVariantClick(e, variant.id)}
+            isActive={variant.id === dittoThemePrefs.activeVariant}
             name={variant.name}
           />
         ))}

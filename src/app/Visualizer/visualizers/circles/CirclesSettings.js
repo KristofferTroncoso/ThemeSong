@@ -7,12 +7,12 @@ function CirclesSettings() {
   const visualizerPrefs = useStore((state) => state.visualizer.visualizerPrefs);
   const circlesVisualizer = useStore((state) =>
     state.visualizer.visualizers.find(
-      (visualizer) => visualizer.visualizerId === "visualizerId:2"
+      (visualizer) => visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da"
     )
   );
   const circlesPrefs = useStore((state) =>
     state.visualizer.visualizerPrefs.find(
-      (visualizer) => visualizer.visualizerId === "visualizerId:2"
+      (visualizer) => visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da"
     )
   );
   const changeVisualizerPrefs = useStore(
@@ -23,7 +23,7 @@ function CirclesSettings() {
     console.log(visualizerObject);
     let visualizerPrefsCopy = [...visualizerPrefs];
     let newCopy = visualizerPrefsCopy.map((visualizer) => {
-      if (visualizer.visualizerId === visualizerObject.visualizerId) {
+      if (visualizer.id === visualizerObject.id) {
         return visualizerObject;
       } else {
         return visualizer;
@@ -68,10 +68,10 @@ function CirclesSettings() {
           >
             {circlesVisualizer.variants.map((variant) => (
               <VariantButton
-                key={variant.variantId}
-                id={variant.variantId}
-                onClick={(e) => handleVariantClick(e, variant.variantId)}
-                isActive={variant.variantId === circlesPrefs.activeVariant}
+                key={variant.id}
+                id={variant.id}
+                onClick={(e) => handleVariantClick(e, variant.id)}
+                isActive={variant.id === circlesPrefs.activeVariant}
                 name={variant.name}
               />
             ))}

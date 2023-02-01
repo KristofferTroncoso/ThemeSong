@@ -5,7 +5,7 @@ import { useStore } from "../../../../store";
 function Accent({ analyser, dataArray, bufferLength }) {
   const barsPrefs = useStore((state) =>
     state.visualizer.visualizerPrefs.find(
-      (visualizer) => visualizer.visualizerId === "visualizerId:1"
+      (visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6"
     )
   );
   const isSongPlaying = useStore((state) => state.player.isSongPlaying);

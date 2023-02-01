@@ -22,7 +22,7 @@ function VisualizerToggleButton() {
 
   const returnActiveVisualizer = () => {
     switch (activeVisualizer) {
-      case "visualizerId:0":
+      case "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d":
         return (
           <WavesIcon
             css={css`
@@ -30,7 +30,7 @@ function VisualizerToggleButton() {
             `}
           />
         );
-      case "visualizerId:1":
+      case "51dc50c8-eb06-4086-ad9c-a89758f63db6":
         return (
           <LeaderboardIcon
             css={css`
@@ -38,7 +38,7 @@ function VisualizerToggleButton() {
             `}
           />
         );
-      case "visualizerId:2":
+      case "685d0ec7-5c52-4e48-a43d-11184a39f3da":
         return (
           <BubbleChart
             css={css`

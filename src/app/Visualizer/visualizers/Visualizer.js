@@ -123,21 +123,21 @@ Page reload required to reconnect visualizer. Reload now?`
             <PausedWarning />
             {
               {
-                "visualizerId:0": (
+                "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d": (
                   <Wavy
                     analyser={analyser}
                     dataArray={dataArray}
                     bufferLength={bufferLength}
                   />
                 ),
-                "visualizerId:1": (
+                "51dc50c8-eb06-4086-ad9c-a89758f63db6": (
                   <Bars
                     analyser={analyser}
                     dataArray={dataArray}
                     bufferLength={bufferLength}
                   />
                 ),
-                "visualizerId:2": (
+                "685d0ec7-5c52-4e48-a43d-11184a39f3da": (
                   <Circles
                     analyser={analyser}
                     dataArray={dataArray}

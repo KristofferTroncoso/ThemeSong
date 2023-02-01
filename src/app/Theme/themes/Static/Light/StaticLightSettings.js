@@ -36,12 +36,15 @@ const StyledSlider = styled(Slider)`
 
 function StaticLightSettings() {
   const staticPrefs = useStore((state) =>
-    state.theme.themePrefs.find((theme) => theme.themeId === "themeId:7")
+    state.theme.themePrefs.find(
+      (theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"
+    )
   );
   const staticLightPrefs = useStore(
     (state) =>
-      state.theme.themePrefs.find((theme) => theme.themeId === "themeId:7")
-        .lightPrefs
+      state.theme.themePrefs.find(
+        (theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"
+      ).lightPrefs
   );
   const themePrefs = useStore((state) => state.theme.themePrefs);
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
@@ -53,7 +56,9 @@ function StaticLightSettings() {
     };
     let newStaticUserPrefs = { ...staticPrefs, lightPrefs: newLightPrefs };
     let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.themeId === "themeId:7" ? newStaticUserPrefs : themePrefs
+      themePrefs.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"
+        ? newStaticUserPrefs
+        : themePrefs
     );
     console.log(newThemePrefsArr);
     changeThemePrefs(newThemePrefsArr);
@@ -83,7 +88,9 @@ function StaticLightSettings() {
     let lightPrefs = { ...staticLightPrefs, hue };
     let staticUserPrefs = { ...staticPrefs, lightPrefs };
     let newThemesArr = themePrefs.map((themePrefs) =>
-      themePrefs.themeId === "themeId:7" ? staticUserPrefs : themePrefs
+      themePrefs.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"
+        ? staticUserPrefs
+        : themePrefs
     );
     console.log(newThemesArr);
     changeThemePrefs(newThemesArr);

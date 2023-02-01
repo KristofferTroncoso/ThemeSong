@@ -25,12 +25,12 @@ const StyledSlider = styled(Slider)`
 function BarsSettings() {
   const barsVisualizer = useStore((state) =>
     state.visualizer.visualizers.find(
-      (visualizer) => visualizer.visualizerId === "visualizerId:1"
+      (visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6"
     )
   );
   const barsPrefs = useStore((state) =>
     state.visualizer.visualizerPrefs.find(
-      (visualizer) => visualizer.visualizerId === "visualizerId:1"
+      (visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6"
     )
   );
   const visualizerPrefs = useStore((state) => state.visualizer.visualizerPrefs);
@@ -42,7 +42,7 @@ function BarsSettings() {
     console.log(visualizerObject);
     let visualizerPrefsCopy = [...visualizerPrefs];
     let newCopy = visualizerPrefsCopy.map((visualizer) => {
-      if (visualizer.visualizerId === visualizerObject.visualizerId) {
+      if (visualizer.id === visualizerObject.id) {
         return visualizerObject;
       } else {
         return visualizer;
@@ -225,10 +225,10 @@ function BarsSettings() {
           >
             {barsVisualizer.variants.map((variant) => (
               <VariantButton
-                key={variant.variantId}
-                id={variant.variantId}
-                onClick={(e) => handleVariantClick(e, variant.variantId)}
-                isActive={variant.variantId === barsPrefs.activeVariant}
+                key={variant.id}
+                id={variant.id}
+                onClick={(e) => handleVariantClick(e, variant.id)}
+                isActive={variant.id === barsPrefs.activeVariant}
                 name={variant.name}
               />
             ))}
