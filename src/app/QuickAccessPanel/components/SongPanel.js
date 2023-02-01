@@ -8,6 +8,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import GoogleIcon from "@mui/icons-material/Google";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { SiGenius } from "react-icons/si";
+import MusixmatchIcon from "./MusixmatchIcon";
 
 function SongPanel() {
   const songName = useStore((state) => state.song.songName);
@@ -160,13 +161,7 @@ function SongPanel() {
             hoverBgColor="linear-gradient(0deg, rgba(243,8,123,1) 0%, rgba(243,92,52,1) 100%)"
             onClick={handleMusixmatchSearch}
           >
-            <img
-              src={chrome.runtime.getURL("/assets/images/Musixmatch_Logo.svg")}
-              alt="Musixmatch Logo"
-              css={css`
-                height: 20px;
-              `}
-            />
+            <MusixmatchIcon width="22px" height="22px" />
           </PanelButton>
           <PanelButton
             title="Google Lyrics"

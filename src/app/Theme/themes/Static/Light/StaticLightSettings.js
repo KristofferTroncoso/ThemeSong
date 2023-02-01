@@ -7,10 +7,10 @@ import { HuePicker } from "react-color";
 import { styled } from "@mui/material/styles";
 import Slider from "@mui/material/Slider";
 
-import PlayBar from "../../../../../assets/font-icons/PlayBar.svg";
-import TopBar from "../../../../../assets/font-icons/TopBar.svg";
-import PlayPage from "../../../../../assets/font-icons/PlayPage.svg";
-import Body from "../../../../../assets/font-icons/Body.svg";
+import PlayBar from "../../../icons/PlayBar.svg";
+import TopBar from "../../../icons/TopBar.svg";
+import PlayPage from "../../../icons/PlayPage.svg";
+import Body from "../../../icons/Body.svg";
 import OpacityIcon from "@mui/icons-material/Opacity";
 
 const StyledSlider = styled(Slider)`

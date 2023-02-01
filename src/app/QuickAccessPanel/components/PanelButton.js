@@ -34,6 +34,7 @@ function PanelButton({
           min-width: 45px;
           width: 45px;
           margin: 5px;
+          padding: 0;
           background: ${bgColor || "rgba(0,0,0,0.3)"};
           color: ${color || "#fff"};
           border: 0;
