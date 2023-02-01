@@ -33,6 +33,7 @@
     "@babel/preset-react": "^7.16.7",
     "@emotion/babel-plugin": "^11.10.5",
     "@types/chrome": "^0.0.210",
+    "@types/firefox-webext-browser": "^109.0.0",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "babel-eslint": "^10.1.0",

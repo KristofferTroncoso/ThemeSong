@@ -1,6 +1,7 @@
 {
   "extends": "react-app",
   "globals": {
-    "chrome": "readonly"
+    "chrome": "readonly",
+    "browser": "readonly"
   }
 }
