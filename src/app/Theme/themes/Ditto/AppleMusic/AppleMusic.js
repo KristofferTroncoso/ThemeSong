@@ -25,13 +25,9 @@ function AppleMusic() {
     //apply dark logo on load
     document.querySelectorAll(
       "ytmusic-nav-bar #left-content picture source"
-    )[1].srcset = chrome.runtime.getURL(
-      "/assets/images/dark_youtube_music_logo_themesong_mod.svg"
-    );
+    )[1].srcset = chrome.runtime.getURL("/assets/ytm_logo_black.svg");
     document.querySelector("ytmusic-nav-bar #left-content picture img").src =
-      chrome.runtime.getURL(
-        "/assets/images/dark_youtube_music_logo_themesong_mod.svg"
-      );
+      chrome.runtime.getURL("/assets/ytm_logo_black.svg");
     returnDarkOrLightTheme();
     window
       .matchMedia("(prefers-color-scheme: dark)")
@@ -69,14 +65,10 @@ function AppleMusic() {
         //apply dark logo on load
         document.querySelectorAll(
           "ytmusic-nav-bar #left-content picture source"
-        )[1].srcset = chrome.runtime.getURL(
-          "/assets/images/dark_youtube_music_logo_themesong_mod.svg"
-        );
+        )[1].srcset = chrome.runtime.getURL("/assets/ytm_logo_black.svg");
         document.querySelector(
           "ytmusic-nav-bar #left-content picture img"
-        ).src = chrome.runtime.getURL(
-          "/assets/images/dark_youtube_music_logo_themesong_mod.svg"
-        );
+        ).src = chrome.runtime.getURL("/assets/ytm_logo_black.svg");
         menubar.content = `hsl(0, 0%, 95%)`;
       }
     } else {
@@ -112,14 +104,10 @@ function AppleMusic() {
         //apply dark logo on load
         document.querySelectorAll(
           "ytmusic-nav-bar #left-content picture source"
-        )[1].srcset = chrome.runtime.getURL(
-          "/assets/images/dark_youtube_music_logo_themesong_mod.svg"
-        );
+        )[1].srcset = chrome.runtime.getURL("/assets/ytm_logo_black.svg");
         document.querySelector(
           "ytmusic-nav-bar #left-content picture img"
-        ).src = chrome.runtime.getURL(
-          "/assets/images/dark_youtube_music_logo_themesong_mod.svg"
-        );
+        ).src = chrome.runtime.getURL("/assets/ytm_logo_black.svg");
         menubar.content = `hsl(0, 0%, 95%)`;
       }
     } else {

@@ -1,4 +1,4 @@
-![ThemeSong icon](/src/assets/images/icon-128.png)
+![ThemeSong icon](/src/assets/icon-128.png)
 
 # ThemeSong
 

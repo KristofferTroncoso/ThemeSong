@@ -24,7 +24,7 @@ function handleOnMessage(message, sender, sendResponse) {
             {
               type: "basic",
               silent: true,
-              iconUrl: value.songImg || "/assets/images/icon-128.png",
+              iconUrl: value.songImg || "/assets/icon-128.png",
               title: value.songName,
               // contextMessage: value.songArtist,
               message: value.songArtist,
