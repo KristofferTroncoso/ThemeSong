@@ -19,24 +19,6 @@ function StaticLight() {
   );
 
   useEffect(() => {
-    //apply dark logo on load
-    document.querySelectorAll(
-      "ytmusic-nav-bar #left-content picture source"
-    )[1].srcset = chrome.runtime.getURL("/assets/ytm_logo_black.svg");
-    document.querySelector("ytmusic-nav-bar #left-content picture img").src =
-      chrome.runtime.getURL("/assets/ytm_logo_black.svg");
-
-    //remove dark logo on unload
-    return function () {
-      document.querySelectorAll(
-        "ytmusic-nav-bar #left-content picture source"
-      )[1].srcset = "//music.youtube.com/img/on_platform_logo_dark.svg";
-      document.querySelector("ytmusic-nav-bar #left-content picture img").src =
-        "//music.youtube.com/img/on_platform_logo_dark.svg";
-    };
-  }, []);
-
-  useEffect(() => {
     menubar.content = `hsl(${hue}, ${saturationSetting}%, ${lightnessSettingNavBar}%)`;
   }, [hue, saturationSetting, lightnessSettingNavBar]);
 

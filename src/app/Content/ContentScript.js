@@ -1,5 +1,5 @@
 import DataStoreSync from "../DataStoreSync";
-import Themes from "../Theme/Themes";
+import Theme from "../Theme/Theme";
 import SongObserver from "../Song/SongObserver";
 import PanelContainer from "../QuickAccessPanel";
 import PlayerUiStateObserver from "../Player/PlayerUiStateObserver";
@@ -9,13 +9,15 @@ import Palette from "../Palette/Palette";
 // import UiOptions from '../UiOptions/UiOptions';
 // import Snippets from '../Snippets/Snippets';
 import Utilities from "../Utilities/Utilities";
+import LogoContainer from "../YtmLogo";
 
 function ContentScript() {
   return (
     <div id="ThemeSong-ContentScript">
       <DataStoreSync />
-      <Themes />
+      <Theme />
       <SongObserver />
+      <LogoContainer />
       <PanelContainer />
       <PlayerUiStateObserver />
       <SongInfoDisplayFeature />
