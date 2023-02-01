@@ -93,16 +93,6 @@ const options = {
           force: true,
         },
         {
-          from: "src/assets/icon-128.png",
-          to: path.join(__dirname, "build"),
-          force: true,
-        },
-        {
-          from: "src/assets/icon-34.png",
-          to: path.join(__dirname, "build"),
-          force: true,
-        },
-        {
           from: "src/assets/",
           to: path.join(__dirname, "build/assets"),
           force: true,

@@ -9,12 +9,12 @@
   "permissions": ["storage", "tabs", "scripting"],
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "icon-34.png",
+    "default_icon": "assets/icon-34.png",
     "default_title": "ThemeSong for YouTube Music™"
   },
   "icons": {
-    "34": "icon-34.png",
-    "128": "icon-128.png"
+    "34": "assets/icon-34.png",
+    "128": "assets/icon-128.png"
   },
   "options_page": "options.html",
   "host_permissions": [
