@@ -6,7 +6,7 @@ import Static from "./themes/Static/Static";
 // import Custom from './themes/Custom/Custom';
 import Ditto from "./themes/Ditto/Ditto";
 
-function Themes() {
+function Theme() {
   const activeTheme = useStore((state) => state.theme.activeTheme);
 
   function returnTheme() {
@@ -26,7 +26,7 @@ function Themes() {
     }
   }
 
-  return <div id="ThemeSong-Themes">{returnTheme()}</div>;
+  return <div id="ThemeSong-Theme">{returnTheme()}</div>;
 }
 
-export default Themes;
+export default Theme;
