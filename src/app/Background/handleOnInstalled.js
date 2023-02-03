@@ -2,6 +2,7 @@ import { executeContentScriptOnYouTubeMusicTabs } from "./scripts";
 
 export function handleOnInstalled(details) {
   console.log(details);
+  const currentVersion = chrome.runtime.getManifest().version;
   switch (details.reason) {
     // on installation, execute content script onto existing open tabs
     case "install":
@@ -10,7 +11,9 @@ export function handleOnInstalled(details) {
 
     // on update (extension update, chrome update, or extension refresh)
     case "update":
-      chrome.storage.local.clear();
+      if (details.previousVersion !== currentVersion) {
+        chrome.storage.local.clear();
+      }
 
       // whenever extension is updated, show update note
       chrome.storage.local.set({ showUpdateNote: true });
