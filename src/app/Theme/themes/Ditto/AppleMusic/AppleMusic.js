@@ -142,7 +142,7 @@ function AppleMusic() {
             --themesong-topbarbg-color: rgba(30,30,30,0.4) !important;
             --themesong-bodybg-color: hsl(0,0%,9%);
 
-            --themesong-playbarbg-color: hsla(var(--themesong-palette-dominant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.6), 15%, 0.4);
+            --themesong-playbarbg-color: hsla(var(--themesong-palette-dominant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.5), 10%, 0.3);
 
           }`
             : `:root {
@@ -194,7 +194,7 @@ function AppleMusic() {
             --themesong-topbarbg-color: rgba(235,235,235,0.4) !important;
             --themesong-bodybg-color: #fff;
 
-            --themesong-playbarbg-color: hsla(var(--themesong-palette-dominant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.7), 88%, 0.4);
+            --themesong-playbarbg-color: hsla(var(--themesong-palette-dominant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.7), 94%, 0.3);
           }`
         }
         ${apple_music_css}
