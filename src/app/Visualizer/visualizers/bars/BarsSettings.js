@@ -1,6 +1,6 @@
 import { useStore } from "../../../store";
 import { css } from "@emotion/react";
-import VariantButton from "../components/VariantButton";
+import VariantButton from "../../components/VariantButton";
 
 import { styled } from "@mui/material/styles";
 import Slider from "@mui/material/Slider";

@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import { useStore } from "../../../store";
-import VariantButton from "../../../Visualizer/visualizers/components/VariantButton";
+import VariantButton from "../../../Visualizer/components/VariantButton";
 
 function DittoSettings() {
   const dittoTheme = useStore((state) =>

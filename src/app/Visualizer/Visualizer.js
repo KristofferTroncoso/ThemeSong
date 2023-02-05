@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { css } from "@emotion/react";
-import Wavy from "./wavy/Wavy";
-import Bars from "./bars/Bars";
-import Circles from "./circles/Circles";
-import { useStore } from "../../store";
-import PlayPauseChangeObserver from "../../Player/PlayPauseChangeObserver";
-import VolumeChangeObserver from "../../Player/VolumeChangeObserver";
+import Wavy from "./visualizers/wavy/Wavy";
+import Bars from "./visualizers/bars/Bars";
+import Circles from "./visualizers/circles/Circles";
+import { useStore } from "../store";
+import PlayPauseChangeObserver from "../Player/PlayPauseChangeObserver";
+import VolumeChangeObserver from "../Player/VolumeChangeObserver";
 import PausedWarning from "./components/PausedWarning";
 
 let source;

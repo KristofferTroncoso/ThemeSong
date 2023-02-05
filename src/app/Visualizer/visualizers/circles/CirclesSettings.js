@@ -1,7 +1,7 @@
 import { useStore } from "../../../store";
 
 import { css } from "@emotion/react";
-import VariantButton from "../components/VariantButton";
+import VariantButton from "../../components/VariantButton";
 
 function CirclesSettings() {
   const visualizerPrefs = useStore((state) => state.visualizer.visualizerPrefs);

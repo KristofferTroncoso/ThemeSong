@@ -4,7 +4,7 @@ import SongObserver from "../Song/SongObserver";
 import PanelContainer from "../QuickAccessPanel";
 import PlayerUiStateObserver from "../Player/PlayerUiStateObserver";
 import SongInfoDisplayFeature from "../Song/SongInfoDisplay/SongInfoDisplayFeature";
-import VisualizerFeature from "../Visualizer/visualizers/VisualizerFeature";
+import VisualizerCS from "../Visualizer/VisualizerCS";
 import Palette from "../Palette/Palette";
 // import UiOptions from '../UiOptions/UiOptions';
 // import Snippets from '../Snippets/Snippets';
@@ -21,7 +21,7 @@ function ContentScript() {
       <PanelContainer />
       <PlayerUiStateObserver />
       <SongInfoDisplayFeature />
-      <VisualizerFeature />
+      <VisualizerCS />
       <Palette />
       {/* <UiOptions /> */}
       {/* <Snippets /> */}
