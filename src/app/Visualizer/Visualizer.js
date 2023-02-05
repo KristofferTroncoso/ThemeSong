@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import Wavy from "./visualizers/wavy/Wavy";
 import Bars from "./visualizers/bars/Bars";
 import Circles from "./visualizers/circles/Circles";
-import { useStore } from "../store";
+import { useStore } from "/src/app/store";
 import PlayPauseChangeObserver from "../Player/PlayPauseChangeObserver";
 import VolumeChangeObserver from "../Player/VolumeChangeObserver";
 import PausedWarning from "./components/PausedWarning";

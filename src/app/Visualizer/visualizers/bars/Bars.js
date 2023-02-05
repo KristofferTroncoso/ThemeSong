@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { useStore } from "../../../store";
+import { useStore } from "/src/app/store";
 
 import White from "./variants/White";
 import Black from "./variants/Black";

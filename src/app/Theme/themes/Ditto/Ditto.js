@@ -1,6 +1,6 @@
 import YouTubeMusicMobile from "./YouTubeMusicMobile/YouTubeMusicMobile";
 import AppleMusic from "./AppleMusic/AppleMusic";
-import { useStore } from "../../../store";
+import { useStore } from "/src/app/store";
 
 function Ditto() {
   const activeVariant = useStore(

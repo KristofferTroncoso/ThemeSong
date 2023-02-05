@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import { css } from "@emotion/react";
-import { useStore } from "../../../store";
+import { useStore } from "/src/app/store";
 
 function Wavy({ analyser, dataArray, bufferLength }) {
   const wavyPrefs = useStore((state) =>

@@ -1,4 +1,4 @@
-import { useStore } from "../store";
+import { useStore } from "/src/app/store";
 
 import Off from "./themes/Off/Off";
 import Dynamic from "./themes/Dynamic/Dynamic";

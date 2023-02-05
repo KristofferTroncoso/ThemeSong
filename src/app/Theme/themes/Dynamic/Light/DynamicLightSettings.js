@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { useStore } from "../../../../store";
+import { useStore } from "/src/app/store";
 
 import { styled } from "@mui/material/styles";
 import Slider from "@mui/material/Slider";

@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import { css } from "@emotion/react";
-import { useStore } from "../../../../store";
+import { useStore } from "/src/app/store";
 
 let a = 160;
 let b = 350;

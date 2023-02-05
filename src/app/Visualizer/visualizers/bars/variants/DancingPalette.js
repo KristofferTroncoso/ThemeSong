@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { css } from "@emotion/react";
-import { useStore } from "../../../../store";
+import { useStore } from "/src/app/store";
 
 function DancingPalette({ analyser, dataArray, bufferLength }) {
   const barsPrefs = useStore((state) =>

@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import { useStore } from "../store";
+import { useStore } from "/src/app/store";
 
 function PlayerUiStateObserver() {
   // this is necessary because requestAnimationFrame() doesn't account for play page visibility in regards to ytm.

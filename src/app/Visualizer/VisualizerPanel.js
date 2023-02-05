@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { useStore } from "../store";
+import { useStore } from "/src/app/store";
 
 import StyledPanelDiv from "../QuickAccessPanel/components/StyledPanelDiv";
 import PanelButton from "../QuickAccessPanel/components/PanelButton";

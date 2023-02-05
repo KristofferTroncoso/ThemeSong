@@ -6,7 +6,7 @@ import ColorizeIcon from "@mui/icons-material/Colorize";
 import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
 
 import PanelButton from "../QuickAccessPanel/components/PanelButton";
-import { useStore } from "../store";
+import { useStore } from "/src/app/store";
 
 function ThemePanel() {
   const activeTheme = useStore((state) => state.theme.activeTheme);

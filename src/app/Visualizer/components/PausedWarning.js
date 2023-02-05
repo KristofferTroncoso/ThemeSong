@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { useStore } from "../../store";
+import { useStore } from "/src/app/store";
 
 function PausedWarning() {
   const isSongPlaying = useStore((state) => state.player.isSongPlaying);

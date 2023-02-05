@@ -1,7 +1,7 @@
 import DynamicDark from "./Dark/DynamicDark";
 import DynamicLight from "./Light/DynamicLight";
 import DynamicSystem from "./System/DynamicSystem";
-import { useStore } from "../../../store";
+import { useStore } from "/src/app/store";
 
 function Dynamic() {
   const appearanceSetting = useStore(

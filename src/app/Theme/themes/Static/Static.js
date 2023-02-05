@@ -1,7 +1,7 @@
 import StaticDark from "./Dark/StaticDark";
 import StaticLight from "./Light/StaticLight";
 import StaticSystem from "./System/StaticSystem";
-import { useStore } from "../../../store";
+import { useStore } from "/src/app/store";
 
 function Static() {
   const appearanceSetting = useStore(

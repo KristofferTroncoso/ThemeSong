@@ -1,4 +1,4 @@
-import { useStore } from "../store";
+import { useStore } from "/src/app/store";
 import Visualizer from "./Visualizer";
 
 function VisualizerContainer() {

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useStore } from "./store";
+import { useStore } from "/src/app/store";
 
 /* This component keeps chrome.storage.local and the Zustand store in sync. */
 function DataStoreSync() {

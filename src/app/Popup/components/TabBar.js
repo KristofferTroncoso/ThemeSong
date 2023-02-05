@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import TabButton from "./TabButton";
-import { useStore } from "../../store";
+import { useStore } from "/src/app/store";
 
 function TabBar() {
   const activePopupTab = useStore((state) => state.popup.activePopupTab);

@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import StaticDarkSettings from "./Dark/StaticDarkSettings";
 import StaticLightSettings from "./Light/StaticLightSettings";
-import { useStore } from "../../../store";
+import { useStore } from "/src/app/store";
 
 export function StaticSettings() {
   const themePrefs = useStore((state) => state.theme.themePrefs);

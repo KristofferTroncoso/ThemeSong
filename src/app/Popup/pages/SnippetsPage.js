@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { css } from "@emotion/react";
-import { useStore } from "../../store";
+import { useStore } from "/src/app/store";
 import Snippet from "../components/Snippet";
 import { v4 as uuid } from "uuid";
 

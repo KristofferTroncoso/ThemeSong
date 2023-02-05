@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from "react";
-import { useStore } from "../../../../store";
+import { useStore } from "/src/app/store";
 import { youtubemusicmobile_css } from "./YouTubeMusicMobileCss";
 import { menubar } from "../../selectors";
 import { playerbar_progressbar } from "../../universal/playerbar-progressbar";

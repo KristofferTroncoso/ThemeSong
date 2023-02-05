@@ -1,4 +1,4 @@
-import { useStore } from "../../../store";
+import { useStore } from "/src/app/store";
 
 import { css } from "@emotion/react";
 import VariantButton from "../../components/VariantButton";

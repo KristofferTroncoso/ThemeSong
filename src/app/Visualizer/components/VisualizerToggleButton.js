@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 
-import { useStore } from "../../store";
+import { useStore } from "/src/app/store";
 
 import WavesIcon from "@mui/icons-material/Waves";
 import BubbleChart from "@mui/icons-material/BubbleChart";

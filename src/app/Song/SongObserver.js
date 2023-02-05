@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useStore } from "../store";
+import { useStore } from "/src/app/store";
 
 function SongObserver() {
   const changeSong = useStore((state) => state.song.changeSong);

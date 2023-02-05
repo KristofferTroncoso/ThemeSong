@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { css } from "@emotion/react";
-import { useStore } from "../../../../store";
+import { useStore } from "/src/app/store";
 
 import { HuePicker } from "react-color";
 

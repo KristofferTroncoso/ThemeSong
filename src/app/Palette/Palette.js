@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useStore } from "../store";
+import { useStore } from "/src/app/store";
 import * as Vibrant from "node-vibrant";
 import { playerBarSongImgNode } from "../Theme/themes/selectors";
 

@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import "./SongInfoDisplay.css";
-import { useStore } from "../../store";
+import { useStore } from "/src/app/store";
 
 function SongInfoDisplay() {
   const songName = useStore((state) => state.song.songName);

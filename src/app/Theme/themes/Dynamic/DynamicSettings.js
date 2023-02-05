@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import DynamicDarkSettings from "./Dark/DynamicDarkSettings";
 import DynamicLightSettings from "./Light/DynamicLightSettings";
-import { useStore } from "../../../store";
+import { useStore } from "/src/app/store";
 
 function DynamicSettings() {
   const themePrefs = useStore((state) => state.theme.themePrefs);

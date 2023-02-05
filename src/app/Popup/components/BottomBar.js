@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import HeadphonesIcon from "@mui/icons-material/Headphones";
 import RatePopover from "./RatePopover";
 import SettingsPopover from "./SettingsPopover";
-import { useStore } from "../../store";
+import { useStore } from "/src/app/store";
 
 function BottomBar() {
   const store = useStore();

@@ -11,7 +11,7 @@ import Tooltip from "@mui/material/Tooltip";
 import HelpIcon from "@mui/icons-material/Help";
 import TuneIcon from "@mui/icons-material/Tune";
 
-import { useStore } from "../store";
+import { useStore } from "/src/app/store";
 
 function PanelPage() {
   const showUpdateNote = useStore((state) => state.extension.showUpdateNote);

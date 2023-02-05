@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { static_light_css } from "./static-light-css";
-import { useStore } from "../../../../store";
+import { useStore } from "/src/app/store";
 import { menubar } from "../../selectors";
 
 function StaticLight() {

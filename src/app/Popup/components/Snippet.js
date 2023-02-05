@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Switch, Modal } from "@mui/material";
 import { css } from "@emotion/react";
-import { useStore } from "../../store";
+import { useStore } from "/src/app/store";
 import EditIcon from "@mui/icons-material/Edit";
 import EditSnippetModal from "./EditSnippetModal";
 

@@ -1,4 +1,4 @@
-import { useStore } from "../../store";
+import { useStore } from "/src/app/store";
 
 import VisualizersPage from "../pages/VisualizersPage";
 import ThemesPage from "../pages/ThemesPage";

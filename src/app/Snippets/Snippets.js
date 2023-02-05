@@ -1,4 +1,4 @@
-import { useStore } from "../store";
+import { useStore } from "/src/app/store";
 
 function Snippets() {
   const snippets = useStore((state) => state.snippets.snippets);

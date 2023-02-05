@@ -4,7 +4,7 @@ import WavySettings from "../../Visualizer/visualizers/wavy/WavySettings";
 import BarsSettings from "../../Visualizer/visualizers/bars/BarsSettings";
 import CirclesSettings from "../../Visualizer/visualizers/circles/CirclesSettings";
 
-import { useStore } from "../../store";
+import { useStore } from "/src/app/store";
 
 function VisualizersPage() {
   const activeVisualizer = useStore(

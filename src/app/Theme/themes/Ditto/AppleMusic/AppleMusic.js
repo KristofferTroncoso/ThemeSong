@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { apple_music_css } from "./apple-music-css";
 import { apple_dark_css } from "./apple-dark-css";
 import { menubar } from "../../selectors";
-import { useStore } from "../../../../store";
+import { useStore } from "/src/app/store";
 
 function AppleMusic() {
   const playerUiState = useStore((state) => state.player.playerUiState);

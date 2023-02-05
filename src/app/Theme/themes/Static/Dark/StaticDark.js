@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useStore } from "../../../../store";
+import { useStore } from "/src/app/store";
 import { menubar } from "../../selectors";
 import { static_dark_css } from "./static-dark-css";
 

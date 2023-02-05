@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Modal } from "@mui/material";
 import { css } from "@emotion/react";
-import { useStore } from "../../store";
+import { useStore } from "/src/app/store";
 
 function EditSnippetModal({ snippet, open, setOpen }) {
   const snippets = useStore((state) => state.snippets.snippets);
