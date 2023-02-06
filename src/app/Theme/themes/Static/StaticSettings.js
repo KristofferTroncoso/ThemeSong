@@ -36,14 +36,26 @@ export function StaticSettings() {
         return <StaticLightSettings />;
       case "system":
         return (
-          <div>
+          <div
+            css={css`
+              width: 100%;
+              display: flex;
+              justify-content: space-evenly;
+            `}
+          >
             <StaticDarkSettings />
             <StaticLightSettings />
           </div>
         );
       default:
         return (
-          <div>
+          <div
+            css={css`
+              width: 100%;
+              display: flex;
+              justify-content: space-evenly;
+            `}
+          >
             <StaticDarkSettings />
             <StaticLightSettings />
           </div>
@@ -63,17 +75,10 @@ export function StaticSettings() {
       </h2>
       <p
         css={css`
-          margin: 5px 0 0;
+          margin: 5px 0 10px;
         `}
       >
         Pick a color, any color.
-      </p>
-      <p
-        css={css`
-          margin-bottom: 10px;
-        `}
-      >
-        Adjust brightness and saturation below.
       </p>
       <form
         onSubmit={(e) => e.preventDefault()}
@@ -108,7 +113,15 @@ export function StaticSettings() {
           <option value="system">Use Device Setting</option>
         </select>
       </form>
-      {returnSettingSliders()}
+      <div
+        css={css`
+          display: flex;
+          justify-content: center;
+          width: 100%;
+        `}
+      >
+        {returnSettingSliders()}
+      </div>
     </div>
   );
 }

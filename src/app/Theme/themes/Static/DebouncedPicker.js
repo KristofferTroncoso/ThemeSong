@@ -11,10 +11,10 @@ export const DebouncedPicker = ({ color, onChange }) => {
   return (
     <div
       css={css`
-        margin-right: 20px;
+        width: 100%;
 
         .react-colorful {
-          width: 260px;
+          width: 100%;
           height: 12px;
         }
         .react-colorful__saturation {
