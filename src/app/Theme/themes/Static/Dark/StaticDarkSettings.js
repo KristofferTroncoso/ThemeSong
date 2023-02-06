@@ -1,12 +1,9 @@
 import { useState } from "react";
 import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
-
-import { HuePicker } from "react-color";
-
 import { styled } from "@mui/material/styles";
 import Slider from "@mui/material/Slider";
-
+import DebouncedPicker from "../DebouncedPicker";
 import PlayBar from "../../../icons/PlayBar.svg";
 import TopBar from "../../../icons/TopBar.svg";
 import PlayPage from "../../../icons/PlayPage.svg";
@@ -68,19 +65,10 @@ function StaticDarkSettings() {
     e.preventDefault();
   }
 
-  const [reactColor, setReactColor] = useState({
-    h: staticDarkPrefs.hue,
-    s: 80,
-    l: 0.4,
-  });
+  const [color, setColor] = useState({ h: staticDarkPrefs.hue, s: 80, l: 50 });
 
-  function handleHueChange(color, e) {
-    setReactColor(color);
-  }
-
-  function handleOnHueChangeComplete(color, e) {
-    console.log(color.hsl.h);
-    let hue = Math.floor(color.hsl.h);
+  function handleColorOnChange(hslObj) {
+    let hue = hslObj.h;
 
     let darkPrefs = { ...staticDarkPrefs, hue };
     let staticUserPrefs = { ...staticPrefs, darkPrefs };
@@ -94,6 +82,8 @@ function StaticDarkSettings() {
     chrome.storage.local.set({ themePrefs: newThemesArr }, () =>
       console.log("chrome.storage.local.set({themePrefs}")
     );
+
+    setColor(hslObj);
   }
 
   return (
@@ -127,19 +117,7 @@ function StaticDarkSettings() {
           `}
         >
           <p>Hue:</p>
-          <div
-            css={css`
-              margin-right: 20px;
-            `}
-          >
-            <HuePicker
-              width="260px"
-              height="12px"
-              color={reactColor}
-              onChange={handleHueChange}
-              onChangeComplete={handleOnHueChangeComplete}
-            />
-          </div>
+          <DebouncedPicker color={color} onChange={handleColorOnChange} />
         </div>
         <div
           style={{
