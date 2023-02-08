@@ -4,15 +4,15 @@ import DynamicSystem from "./System/DynamicSystem";
 import { useStore } from "/src/app/store";
 
 function Dynamic() {
-  const appearanceSetting = useStore(
+  const appearance = useStore(
     (state) =>
       state.theme.themePrefs.find(
         (theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb"
-      ).appearanceSetting
+      ).appearance
   );
 
   function returnVariant() {
-    switch (appearanceSetting) {
+    switch (appearance) {
       case "dark":
         return <DynamicDark />;
       case "light":

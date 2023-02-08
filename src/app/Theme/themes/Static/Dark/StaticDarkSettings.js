@@ -106,7 +106,7 @@ function StaticDarkSettings() {
       <div
         css={css`
           .MuiSlider-rail {
-            opacity: 0.6;
+            opacity: 1;
             background: linear-gradient(
               90deg,
               #888 10%,

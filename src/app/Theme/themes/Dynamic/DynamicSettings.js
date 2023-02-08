@@ -29,20 +29,37 @@ function DynamicSettings() {
   }
 
   function returnSettingSliders() {
-    switch (dynamicUserPrefs.appearanceSetting) {
-      case "dark":
-        return <DynamicDarkSettings />;
+    switch (dynamicUserPrefs.appearance) {
       case "light":
         return <DynamicLightSettings />;
+      case "dark":
+        return <DynamicDarkSettings />;
       case "system":
         return (
-          <div>
-            <DynamicDarkSettings />
+          <div
+            css={css`
+              width: 100%;
+              display: flex;
+              justify-content: space-evenly;
+            `}
+          >
             <DynamicLightSettings />
+            <DynamicDarkSettings />
           </div>
         );
       default:
-        return <DynamicLightSettings />;
+        return (
+          <div
+            css={css`
+              width: 100%;
+              display: flex;
+              justify-content: space-evenly;
+            `}
+          >
+            <DynamicLightSettings />
+            <DynamicDarkSettings />
+          </div>
+        );
     }
   }
 
@@ -78,7 +95,7 @@ function DynamicSettings() {
         `}
       >
         <label
-          htmlFor="appearanceSetting"
+          htmlFor="appearance"
           css={css`
             margin-right: 8px;
           `}
@@ -86,9 +103,9 @@ function DynamicSettings() {
           Appearance:
         </label>
         <select
-          id="appearanceSetting"
-          name="appearanceSetting"
-          value={dynamicUserPrefs.appearanceSetting}
+          id="appearance"
+          name="appearance"
+          value={dynamicUserPrefs.appearance}
           onChange={handleDarkLightChange}
           css={css`
             background-color: #333;
@@ -98,12 +115,20 @@ function DynamicSettings() {
             outline: 0;
           `}
         >
-          <option value="dark">Dark</option>
           <option value="light">Light</option>
+          <option value="dark">Dark</option>
           <option value="system">Use Device Setting</option>
         </select>
       </form>
-      {returnSettingSliders()}
+      <div
+        css={css`
+          display: flex;
+          justify-content: center;
+          width: 100%;
+        `}
+      >
+        {returnSettingSliders()}
+      </div>
     </div>
   );
 }

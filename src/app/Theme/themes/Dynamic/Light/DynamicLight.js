@@ -5,24 +5,19 @@ import { menubar } from "../../selectors";
 
 function DynamicLight() {
   const dominantColorHSL = useStore((state) => state.palette.dominant).hsl;
-  const {
-    saturationSetting,
-    lightnessSettingNavBar,
-    lightnessSettingPlayPage,
-    lightnessSettingBody,
-    lightnessSettingPlayerBar,
-  } = useStore(
+  const dynamicLightPrefs = useStore(
     (state) =>
       state.theme.themePrefs.find(
         (theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb"
-      ).lightPrefs
+      ).light
   );
+  const lightness = dynamicLightPrefs.lightness;
 
   let hue = (dominantColorHSL[0] * 360).toFixed();
   let saturation = `${(
     dominantColorHSL[1] *
     100 *
-    saturationSetting
+    dynamicLightPrefs.saturation
   ).toFixed()}%`;
 
   function calcCurvedBrightness(brightness) {
@@ -38,29 +33,29 @@ function DynamicLight() {
 
   useEffect(() => {
     menubar.content = `hsl(${hue}, ${saturation}, ${calcCurvedBrightness(
-      lightnessSettingNavBar
+      lightness[0]
     )}%)`;
-  }, [hue, saturation, lightnessSettingNavBar]);
+  }, [hue, saturation, lightness]);
 
   return (
     <style id="DynamicLight">
       {`:root {
         --themesong-theme-dynamic-saturation: ${saturation};
         --themesong-theme-dynamic-topbarbg-light: ${calcCurvedBrightness(
-          lightnessSettingNavBar
-        )}%;
-        --themesong-theme-dynamic-bodybg-light: ${calcCurvedBrightness(
-          lightnessSettingBody
+          lightness[0]
         )}%;
         --themesong-theme-dynamic-playpagebg-light: ${calcCurvedBrightness(
-          lightnessSettingPlayPage
-        )}%;
-        --themesong-theme-dynamic-playbarbg-light: ${calcCurvedBrightness(
-          lightnessSettingPlayerBar
+          lightness[1]
         )}%;
         --themesong-theme-dynamic-playpageavtoggle-light: ${
-          21 + (lightnessSettingPlayPage / 25) * 14
+          21 + (lightness[1] / 25) * 14
         }%;
+        --themesong-theme-dynamic-playbarbg-light: ${calcCurvedBrightness(
+          lightness[2]
+        )}%;
+        --themesong-theme-dynamic-bodybg-light: ${calcCurvedBrightness(
+          lightness[3]
+        )}%;
       }`}
       {dynamiclight_css}
     </style>

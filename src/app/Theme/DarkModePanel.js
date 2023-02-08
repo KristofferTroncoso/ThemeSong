@@ -17,10 +17,10 @@ function DarkModePanel() {
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
 
   function handleDarkLightChange(value) {
-    if (activeThemeUserPrefs.appearanceSetting !== value) {
+    if (activeThemeUserPrefs.appearance !== value) {
       let newActiveThemeUserPrefs = {
         ...activeThemeUserPrefs,
-        appearanceSetting: value,
+        appearance: value,
       };
       let newThemePrefsArr = themePrefs.map((themePrefs) =>
         themePrefs.id === activeTheme ? newActiveThemeUserPrefs : themePrefs
@@ -31,7 +31,7 @@ function DarkModePanel() {
       );
     } else {
       // i cant just disable="true" the button in the element because the MUI Tooltip requires it to never be disabled
-      // i used to have it with this which worked well: disabled={activeThemeUserPrefs.appearanceSetting ===  "dark"}
+      // i used to have it with this which worked well: disabled={activeThemeUserPrefs.appearance ===  "dark"}
       console.log("Already active");
     }
   }
@@ -91,10 +91,9 @@ function DarkModePanel() {
               min-width: 45px;
               width: 60px;
               margin: 0 2px;
-              background: ${activeThemeUserPrefs.appearanceSetting === "dark" &&
+              background: ${activeThemeUserPrefs.appearance === "dark" &&
               "rgba(255,255,255,0.8)"};
-              color: ${activeThemeUserPrefs.appearanceSetting === "dark" &&
-              "#9d00ff"};
+              color: ${activeThemeUserPrefs.appearance === "dark" && "#9d00ff"};
               border: 0;
               border-radius: 5px 0 0 5px;
               :hover {
@@ -112,9 +111,9 @@ function DarkModePanel() {
               min-width: 45px;
               width: 60px;
               margin: 0 2px;
-              background: ${activeThemeUserPrefs.appearanceSetting ===
-                "light" && "rgba(255,255,255,0.8)"};
-              color: ${activeThemeUserPrefs.appearanceSetting === "light" &&
+              background: ${activeThemeUserPrefs.appearance === "light" &&
+              "rgba(255,255,255,0.8)"};
+              color: ${activeThemeUserPrefs.appearance === "light" &&
               "#de9800"};
               border: 0;
               border-radius: 0;
@@ -137,9 +136,9 @@ function DarkModePanel() {
               min-width: 45px;
               width: 60px;
               margin: 0 2px;
-              background: ${activeThemeUserPrefs.appearanceSetting ===
-                "system" && "rgba(255,255,255,0.8)"};
-              color: ${activeThemeUserPrefs.appearanceSetting === "system" &&
+              background: ${activeThemeUserPrefs.appearance === "system" &&
+              "rgba(255,255,255,0.8)"};
+              color: ${activeThemeUserPrefs.appearance === "system" &&
               "#009961"};
               border: 0;
               border-radius: 0 5px 5px 0;

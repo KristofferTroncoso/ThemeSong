@@ -49,20 +49,14 @@ export const createThemeSlice = (set) => ({
   themePrefs: [
     {
       id: "db8854e3-6753-4639-b244-c8091f3b9fcb",
-      appearanceSetting: "dark", // 'dark', 'light', 'system'
-      darkPrefs: {
-        saturationSetting: 0.8,
-        lightnessSettingNavBar: 20,
-        lightnessSettingPlayPage: 15,
-        lightnessSettingBody: 8,
-        lightnessSettingPlayerBar: 25,
+      appearance: "dark",
+      dark: {
+        saturation: 0.8,
+        lightness: [20, 15, 25, 8],
       },
-      lightPrefs: {
-        saturationSetting: 0.9,
-        lightnessSettingNavBar: 75,
-        lightnessSettingPlayPage: 70,
-        lightnessSettingBody: 90,
-        lightnessSettingPlayerBar: 75,
+      light: {
+        saturation: 0.9,
+        lightness: [75, 70, 75, 90],
       },
     },
     {
