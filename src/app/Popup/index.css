@@ -23,6 +23,7 @@ label,
 form,
 input {
   font-size: 12px;
+  color: inherit;
 }
 
 ::-webkit-scrollbar {

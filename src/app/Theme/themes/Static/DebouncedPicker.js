@@ -17,12 +17,14 @@ export const DebouncedPicker = ({ color, onChange }) => {
           width: 100%;
           height: 12px;
         }
+
         .react-colorful__saturation {
           display: none;
         }
 
         .react-colorful__last-control {
           border-radius: 2px;
+          border: 1px solid #999;
         }
 
         .react-colorful__pointer {

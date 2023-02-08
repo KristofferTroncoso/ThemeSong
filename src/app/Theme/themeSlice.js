@@ -67,22 +67,16 @@ export const createThemeSlice = (set) => ({
     },
     {
       id: "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8",
-      appearanceSetting: "dark", // 'dark', 'light', 'system'
-      darkPrefs: {
+      appearance: "light",
+      dark: {
         hue: 216,
-        saturationSetting: 70,
-        lightnessSettingNavBar: 16,
-        lightnessSettingPlayPage: 16,
-        lightnessSettingBody: 10,
-        lightnessSettingPlayerBar: 24,
+        saturation: 70,
+        lightness: [16, 16, 24, 10],
       },
-      lightPrefs: {
+      light: {
         hue: 340,
-        saturationSetting: 90,
-        lightnessSettingNavBar: 85,
-        lightnessSettingPlayPage: 80,
-        lightnessSettingBody: 95,
-        lightnessSettingPlayerBar: 85,
+        saturation: 90,
+        lightness: [85, 80, 85, 95],
       },
     },
     {

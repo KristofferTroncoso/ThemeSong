@@ -29,7 +29,7 @@ export function StaticSettings() {
   }
 
   function returnSettingSliders() {
-    switch (staticUserPrefs.appearanceSetting) {
+    switch (staticUserPrefs.appearance) {
       case "dark":
         return <StaticDarkSettings />;
       case "light":
@@ -43,8 +43,8 @@ export function StaticSettings() {
               justify-content: space-evenly;
             `}
           >
-            <StaticDarkSettings />
             <StaticLightSettings />
+            <StaticDarkSettings />
           </div>
         );
       default:
@@ -56,8 +56,8 @@ export function StaticSettings() {
               justify-content: space-evenly;
             `}
           >
-            <StaticDarkSettings />
             <StaticLightSettings />
+            <StaticDarkSettings />
           </div>
         );
     }
@@ -78,7 +78,7 @@ export function StaticSettings() {
           margin: 5px 0 10px;
         `}
       >
-        Pick a color, any color.
+        Pick a color, any color. 🖍️
       </p>
       <form
         onSubmit={(e) => e.preventDefault()}
@@ -88,7 +88,7 @@ export function StaticSettings() {
         `}
       >
         <label
-          htmlFor="appearanceSetting"
+          htmlFor="appearance"
           css={css`
             margin-right: 8px;
           `}
@@ -96,9 +96,9 @@ export function StaticSettings() {
           Appearance:
         </label>
         <select
-          id="appearanceSetting"
-          name="appearanceSetting"
-          value={staticUserPrefs.appearanceSetting}
+          id="appearance"
+          name="appearance"
+          value={staticUserPrefs.appearance}
           onChange={handleDarkLightChange}
           css={css`
             background-color: #333;
@@ -108,8 +108,8 @@ export function StaticSettings() {
             outline: 0;
           `}
         >
-          <option value="dark">Dark</option>
           <option value="light">Light</option>
+          <option value="dark">Dark</option>
           <option value="system">Use Device Setting</option>
         </select>
       </form>
