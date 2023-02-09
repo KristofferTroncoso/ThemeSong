@@ -6,9 +6,7 @@ import { useStore } from "/src/app/store";
 export function StaticSettings() {
   const themePrefs = useStore((state) => state.theme.themePrefs);
   const staticUserPrefs = useStore((state) =>
-    state.theme.themePrefs.find(
-      (theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"
-    )
+    state.theme.themePrefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8")
   );
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
 
@@ -18,9 +16,7 @@ export function StaticSettings() {
       [e.target.name]: e.target.value,
     };
     let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"
-        ? newStaticUserPrefs
-        : themePrefs
+      themePrefs.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" ? newStaticUserPrefs : themePrefs
     );
     changeThemePrefs(newThemePrefsArr);
     chrome.storage.local.set({ themePrefs: newThemePrefsArr }, () =>

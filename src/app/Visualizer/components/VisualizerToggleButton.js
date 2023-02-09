@@ -8,12 +8,8 @@ import LeaderboardIcon from "@mui/icons-material/Leaderboard";
 
 function VisualizerToggleButton() {
   const isVisualizerOn = useStore((state) => state.visualizer.isVisualizerOn);
-  const activeVisualizer = useStore(
-    (state) => state.visualizer.activeVisualizer
-  );
-  const toggleIsVisualizerOn = useStore(
-    (state) => state.visualizer.toggleIsVisualizerOn
-  );
+  const activeVisualizer = useStore((state) => state.visualizer.activeVisualizer);
+  const toggleIsVisualizerOn = useStore((state) => state.visualizer.toggleIsVisualizerOn);
 
   const handleVisualizerButtonClick = (e) => {
     e.stopPropagation();

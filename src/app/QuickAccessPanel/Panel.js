@@ -10,9 +10,7 @@ import SnoozeIcon from "@mui/icons-material/Snooze";
 function Panel() {
   const showUpdateNote = useStore((state) => state.extension.showUpdateNote);
   const isActive = useStore((state) => state.utilities.sleepTimer.isActive);
-  const minutesLeft = useStore(
-    (state) => state.utilities.sleepTimer.minutesLeft
-  );
+  const minutesLeft = useStore((state) => state.utilities.sleepTimer.minutesLeft);
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
@@ -37,10 +35,7 @@ function Panel() {
           border-radius: 50%;
           :hover {
             color: var(--themesong-primary-text-color);
-            background-color: var(
-              --themesong-base-100-alpha-02-color,
-              rgba(255, 255, 255, 0.2)
-            );
+            background-color: var(--themesong-base-100-alpha-02-color, rgba(255, 255, 255, 0.2));
           }
         `}
         title="Open ThemeSong Quick Access Panel"

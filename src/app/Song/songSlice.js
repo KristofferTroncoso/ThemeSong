@@ -16,12 +16,8 @@ export const createSongSlice = (set) => ({
       from a normal song to a song that has no subtitle, it'll keep the old subtitle in it's details.
     */
     try {
-      if (
-        document.querySelector("ytmusic-player-bar .byline").innerText !== ""
-      ) {
-        songSubtitle = document.querySelector(
-          "ytmusic-player-bar .byline"
-        ).title;
+      if (document.querySelector("ytmusic-player-bar .byline").innerText !== "") {
+        songSubtitle = document.querySelector("ytmusic-player-bar .byline").title;
       } else {
         songSubtitle = "";
       }
@@ -30,13 +26,9 @@ export const createSongSlice = (set) => ({
     }
 
     songArtist = songSubtitle.split(" • ")[0];
-    let songImgSrc = document.querySelector(
-      ".middle-controls .thumbnail-image-wrapper img"
-    ).src;
+    let songImgSrc = document.querySelector(".middle-controls .thumbnail-image-wrapper img").src;
     if (songImgSrc !== "" && songImgSrc !== "https://music.youtube.com/") {
-      songImg = document.querySelector(
-        ".middle-controls .thumbnail-image-wrapper img"
-      ).src;
+      songImg = document.querySelector(".middle-controls .thumbnail-image-wrapper img").src;
     }
 
     /*  the reason why the bottom code doesn't work all the time is the ytm dom is not consistent with its details. 

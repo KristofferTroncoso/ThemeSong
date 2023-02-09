@@ -27,11 +27,7 @@ function DevToolsPanel() {
           align-items: center;
         `}
       >
-        <PanelButton
-          onClick={(e) => console.log(store)}
-          title="Log Zustand Local Store"
-          hoverColor="tomato"
-        >
+        <PanelButton onClick={(e) => console.log(store)} title="Log Zustand Local Store" hoverColor="tomato">
           <DataObjectIcon
             css={css`
               font-size: 28px;
@@ -39,9 +35,7 @@ function DevToolsPanel() {
           />
         </PanelButton>
         <PanelButton
-          onClick={(e) =>
-            chrome.storage.local.get(null, (res) => console.log(res))
-          }
+          onClick={(e) => chrome.storage.local.get(null, (res) => console.log(res))}
           title="Log Chrome Local Storage"
           hoverColor="dodgerblue"
         >

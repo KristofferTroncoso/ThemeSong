@@ -11,9 +11,7 @@ import BrightnessSectionSlider from "../../../components/BrightnessSectionSlider
 
 function StaticLightSettings() {
   const themePrefs = useStore((state) => state.theme.themePrefs);
-  const staticPrefs = themePrefs.find(
-    (theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"
-  );
+  const staticPrefs = themePrefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8");
   const staticLightPrefs = staticPrefs.light;
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
 
@@ -26,9 +24,7 @@ function StaticLightSettings() {
     };
     let newStaticUserPrefs = { ...staticPrefs, light: newLightPrefs };
     let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"
-        ? newStaticUserPrefs
-        : themePrefs
+      themePrefs.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" ? newStaticUserPrefs : themePrefs
     );
     console.log(newThemePrefsArr);
     changeThemePrefs(newThemePrefsArr);
@@ -46,9 +42,7 @@ function StaticLightSettings() {
     };
     let newStaticUserPrefs = { ...staticPrefs, light: newLightPrefs };
     let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"
-        ? newStaticUserPrefs
-        : themePrefs
+      themePrefs.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" ? newStaticUserPrefs : themePrefs
     );
     console.log(newThemePrefsArr);
     changeThemePrefs(newThemePrefsArr);
@@ -63,15 +57,11 @@ function StaticLightSettings() {
     let light = { ...staticLightPrefs, hue };
     let staticUserPrefs = { ...staticPrefs, light };
     let newThemePrefs = themePrefs.map((themePrefs) =>
-      themePrefs.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"
-        ? staticUserPrefs
-        : themePrefs
+      themePrefs.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" ? staticUserPrefs : themePrefs
     );
 
     changeThemePrefs(newThemePrefs);
-    chrome.storage.local.set({ themePrefs: newThemePrefs }, () =>
-      console.log("chrome.storage.local.set({themePrefs}")
-    );
+    chrome.storage.local.set({ themePrefs: newThemePrefs }, () => console.log("chrome.storage.local.set({themePrefs}"));
 
     setColor(hslObj);
   }
@@ -103,11 +93,7 @@ function StaticLightSettings() {
         css={css`
           .MuiSlider-rail {
             opacity: 1;
-            background: linear-gradient(
-              90deg,
-              #888 10%,
-              hsl(${color.h} 100% 40%) 90%
-            );
+            background: linear-gradient(90deg, #888 10%, hsl(${color.h} 100% 40%) 90%);
           }
         `}
       >

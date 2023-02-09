@@ -80,9 +80,7 @@ function Palette({ analyser, dataArray }) {
       canvas.height = ytmusicplayer.clientHeight;
       canvas.width = ytmusicplayer.clientWidth;
       shorterCanvasSide =
-        ytmusicplayer.clientHeight < ytmusicplayer.clientWidth
-          ? ytmusicplayer.clientHeight
-          : ytmusicplayer.clientWidth;
+        ytmusicplayer.clientHeight < ytmusicplayer.clientWidth ? ytmusicplayer.clientHeight : ytmusicplayer.clientWidth;
       analyser.fftSize = 512;
       analyser.getByteFrequencyData(dataArray);
 
@@ -99,17 +97,8 @@ function Palette({ analyser, dataArray }) {
         ${palette.Vibrant.hsl[2] * 100}%, 
         0.9
       )`;
-      radius =
-        (Math.max(dataArray[0] - 200, 0) / 300 + 1) * (shorterCanvasSide / 5);
-      [a, b, dirA, dirB] = updateValues(
-        a,
-        b,
-        dirA,
-        dirB,
-        radius,
-        speedA,
-        speedB
-      );
+      radius = (Math.max(dataArray[0] - 200, 0) / 300 + 1) * (shorterCanvasSide / 5);
+      [a, b, dirA, dirB] = updateValues(a, b, dirA, dirB, radius, speedA, speedB);
       context.arc(a, b, radius, 0, circumference);
       context.fill();
       context.stroke();
@@ -122,17 +111,8 @@ function Palette({ analyser, dataArray }) {
         ${palette.Muted.hsl[2] * 100}%, 
         0.9
       )`;
-      radius =
-        (Math.max(dataArray[40] - 20, 0) / 500 + 0.6) * (shorterCanvasSide / 5);
-      [c, d, dirC, dirD] = updateValues(
-        c,
-        d,
-        dirC,
-        dirD,
-        radius,
-        speedC,
-        speedD
-      );
+      radius = (Math.max(dataArray[40] - 20, 0) / 500 + 0.6) * (shorterCanvasSide / 5);
+      [c, d, dirC, dirD] = updateValues(c, d, dirC, dirD, radius, speedC, speedD);
       context.arc(c, d, radius, 0, circumference);
       context.fill();
       context.stroke();
@@ -145,17 +125,8 @@ function Palette({ analyser, dataArray }) {
         ${palette.DarkVibrant.hsl[2] * 100}%, 
         0.9
       )`;
-      radius =
-        (Math.max(dataArray[100], 0) / 500 + 0.38) * (shorterCanvasSide / 5);
-      [e, f, dirE, dirF] = updateValues(
-        e,
-        f,
-        dirE,
-        dirF,
-        radius,
-        speedE,
-        speedF
-      );
+      radius = (Math.max(dataArray[100], 0) / 500 + 0.38) * (shorterCanvasSide / 5);
+      [e, f, dirE, dirF] = updateValues(e, f, dirE, dirF, radius, speedE, speedF);
       context.arc(e, f, radius, 0, circumference);
       context.fill();
       context.stroke();
@@ -168,17 +139,8 @@ function Palette({ analyser, dataArray }) {
         ${palette.LightVibrant.hsl[2] * 100}%, 
         0.9
       )`;
-      radius =
-        (Math.max(dataArray[120], 0) / 500 + 0.37) * (shorterCanvasSide / 5);
-      [m, n, dirM, dirN] = updateValues(
-        m,
-        n,
-        dirM,
-        dirN,
-        radius,
-        speedM,
-        speedN
-      );
+      radius = (Math.max(dataArray[120], 0) / 500 + 0.37) * (shorterCanvasSide / 5);
+      [m, n, dirM, dirN] = updateValues(m, n, dirM, dirN, radius, speedM, speedN);
       context.arc(m, n, radius, 0, circumference);
       context.fill();
       context.stroke();
@@ -191,18 +153,8 @@ function Palette({ analyser, dataArray }) {
         ${palette.DarkMuted.hsl[2] * 100}%, 
         0.9
       )`;
-      radius =
-        (Math.max(dataArray[160] - 10, 0) / 400 + 0.36) *
-        (shorterCanvasSide / 5);
-      [g, h, dirG, dirH] = updateValues(
-        g,
-        h,
-        dirG,
-        dirH,
-        radius,
-        speedG,
-        speedH
-      );
+      radius = (Math.max(dataArray[160] - 10, 0) / 400 + 0.36) * (shorterCanvasSide / 5);
+      [g, h, dirG, dirH] = updateValues(g, h, dirG, dirH, radius, speedG, speedH);
       context.arc(g, h, radius, 0, circumference);
       context.fill();
       context.stroke();
@@ -215,17 +167,8 @@ function Palette({ analyser, dataArray }) {
         ${palette.LightMuted.hsl[2] * 100}%, 
         0.9
       )`;
-      radius =
-        (Math.max(dataArray[190], 0) / 1000 + 0.34) * (shorterCanvasSide / 5);
-      [i, j, dirI, dirJ] = updateValues(
-        i,
-        j,
-        dirI,
-        dirJ,
-        radius,
-        speedI,
-        speedJ
-      );
+      radius = (Math.max(dataArray[190], 0) / 1000 + 0.34) * (shorterCanvasSide / 5);
+      [i, j, dirI, dirJ] = updateValues(i, j, dirI, dirJ, radius, speedI, speedJ);
       context.arc(i, j, radius, 0, circumference);
       context.fill();
       context.stroke();
@@ -235,10 +178,7 @@ function Palette({ analyser, dataArray }) {
       clearInterval(intervalId.current);
     } else {
       clearInterval(intervalId.current);
-      intervalId.current = setInterval(
-        () => requestAnimationFrame(paletteVis),
-        17
-      );
+      intervalId.current = setInterval(() => requestAnimationFrame(paletteVis), 17);
     }
   }, [isSongPlaying, palette]);
 

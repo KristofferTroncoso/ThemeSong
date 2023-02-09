@@ -4,9 +4,7 @@ import { useStore } from "/src/app/store";
 
 function TabBar() {
   const activePopupTab = useStore((state) => state.popup.activePopupTab);
-  const changeActivePopupTab = useStore(
-    (state) => state.popup.changeActivePopupTab
-  );
+  const changeActivePopupTab = useStore((state) => state.popup.changeActivePopupTab);
 
   function handleClick(id) {
     changeActivePopupTab(id);
@@ -20,20 +18,10 @@ function TabBar() {
         background-color: #000;
       `}
     >
-      <TabButton
-        key={1}
-        id={1}
-        isActive={activePopupTab === 1}
-        onClick={(e) => handleClick(1)}
-      >
+      <TabButton key={1} id={1} isActive={activePopupTab === 1} onClick={(e) => handleClick(1)}>
         Themes
       </TabButton>
-      <TabButton
-        key={2}
-        id={2}
-        isActive={activePopupTab === 2}
-        onClick={(e) => handleClick(2)}
-      >
+      <TabButton key={2} id={2} isActive={activePopupTab === 2} onClick={(e) => handleClick(2)}>
         Visualizers
       </TabButton>
       {/* <TabButton key={3} id={3} isActive={activePopupTab === 3} onClick={e => handleClick(3)}>Snippets (beta)</TabButton> */}

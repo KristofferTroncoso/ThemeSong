@@ -13,9 +13,7 @@ function EditSnippetModal({ snippet, open, setOpen }) {
   const [snippetCSS, setSnippetCSS] = useState(snippet.css);
 
   useEffect(() => {
-    chrome.storage.local.set({ snippets }, () =>
-      console.log("chrome.storage.local.set({snippets}")
-    );
+    chrome.storage.local.set({ snippets }, () => console.log("chrome.storage.local.set({snippets}"));
   }, [snippets]);
 
   const handleSave = (e) => {

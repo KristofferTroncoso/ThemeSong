@@ -10,15 +10,10 @@ import OpacityIcon from "@mui/icons-material/Opacity";
 
 function DynamicLightSettings() {
   const dynamicPrefs = useStore((state) =>
-    state.theme.themePrefs.find(
-      (theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb"
-    )
+    state.theme.themePrefs.find((theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb")
   );
   const dynamicLightPrefs = useStore(
-    (state) =>
-      state.theme.themePrefs.find(
-        (theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb"
-      ).light
+    (state) => state.theme.themePrefs.find((theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb").light
   );
   const themePrefs = useStore((state) => state.theme.themePrefs);
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
@@ -30,9 +25,7 @@ function DynamicLightSettings() {
     };
     let newDynamicUserPrefs = { ...dynamicPrefs, light: newLightPrefs };
     let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.id === "db8854e3-6753-4639-b244-c8091f3b9fcb"
-        ? newDynamicUserPrefs
-        : themePrefs
+      themePrefs.id === "db8854e3-6753-4639-b244-c8091f3b9fcb" ? newDynamicUserPrefs : themePrefs
     );
     console.log(newThemePrefsArr);
     changeThemePrefs(newThemePrefsArr);
@@ -50,9 +43,7 @@ function DynamicLightSettings() {
     };
     let newDynamicUserPrefs = { ...dynamicPrefs, light: newLightPrefs };
     let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.id === "db8854e3-6753-4639-b244-c8091f3b9fcb"
-        ? newDynamicUserPrefs
-        : themePrefs
+      themePrefs.id === "db8854e3-6753-4639-b244-c8091f3b9fcb" ? newDynamicUserPrefs : themePrefs
     );
     console.log(newThemePrefsArr);
     changeThemePrefs(newThemePrefsArr);
@@ -121,11 +112,7 @@ function DynamicLightSettings() {
           margin-top: 10px;
           .MuiSlider-rail {
             opacity: 1;
-            background: linear-gradient(
-              90deg,
-              hsl(30 10% 55%) 20%,
-              hsl(30 100% 50%) 80%
-            );
+            background: linear-gradient(90deg, hsl(30 10% 55%) 20%, hsl(30 100% 50%) 80%);
           }
           input::-webkit-outer-spin-button,
           input::-webkit-inner-spin-button {
@@ -134,9 +121,7 @@ function DynamicLightSettings() {
           }
         `}
       >
-        <OpacityIcon
-          sx={{ height: "16px", width: "16px", marginRight: "6px" }}
-        />
+        <OpacityIcon sx={{ height: "16px", width: "16px", marginRight: "6px" }} />
         <SaturationSlider
           name="saturation"
           value={dynamicLightPrefs.saturation}

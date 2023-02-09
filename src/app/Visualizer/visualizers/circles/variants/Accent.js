@@ -88,18 +88,11 @@ function Accent({ analyser, dataArray }) {
       canvasRef.current.height = ytmusicplayer.clientHeight;
       canvasRef.current.width = ytmusicplayer.clientWidth;
       shorterCanvasSide =
-        ytmusicplayer.clientHeight < ytmusicplayer.clientWidth
-          ? ytmusicplayer.clientHeight
-          : ytmusicplayer.clientWidth;
+        ytmusicplayer.clientHeight < ytmusicplayer.clientWidth ? ytmusicplayer.clientHeight : ytmusicplayer.clientWidth;
       analyser.fftSize = 512;
       analyser.getByteFrequencyData(dataArray);
 
-      context.clearRect(
-        0,
-        0,
-        canvasRef.current.width,
-        canvasRef.current.height
-      );
+      context.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
       context.strokeStyle = "#000";
 
       updateAndDraw(context);
@@ -113,20 +106,7 @@ function Accent({ analyser, dataArray }) {
     }
   }, [isSongPlaying, dominant]);
 
-  function updateValues({
-    x,
-    y,
-    dirX,
-    dirY,
-    radius,
-    speedX,
-    speedY,
-    freq,
-    minByte,
-    minRadius,
-    growRate,
-    color,
-  }) {
+  function updateValues({ x, y, dirX, dirY, radius, speedX, speedY, freq, minByte, minRadius, growRate, color }) {
     if (y + radius > canvasRef.current.height) {
       dirY = Math.abs(dirY) * -1;
     } else if (y - radius < 0) {
@@ -151,9 +131,7 @@ function Accent({ analyser, dataArray }) {
       y = radius + 30;
     }
 
-    radius =
-      (Math.max(dataArray[freq] - minByte, 0) / growRate + minRadius) *
-      (shorterCanvasSide / 5);
+    radius = (Math.max(dataArray[freq] - minByte, 0) / growRate + minRadius) * (shorterCanvasSide / 5);
 
     color = dominant.hex;
     return {

@@ -9,9 +9,7 @@ function SnippetsPage() {
   const addSnippet = useStore((state) => state.snippets.addSnippet);
 
   useEffect(() => {
-    chrome.storage.local.set({ snippets }, () =>
-      console.log("chrome.storage.local.set({snippets}")
-    );
+    chrome.storage.local.set({ snippets }, () => console.log("chrome.storage.local.set({snippets}"));
   }, [snippets]);
 
   return (

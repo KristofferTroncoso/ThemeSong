@@ -174,19 +174,7 @@ function OT9({ analyser, dataArray }) {
     ctx.lineWidth = borderWidth;
   }
 
-  function updateValues({
-    x,
-    y,
-    dirX,
-    dirY,
-    radius,
-    speedX,
-    speedY,
-    freq,
-    minByte,
-    minRadius,
-    growRate,
-  }) {
+  function updateValues({ x, y, dirX, dirY, radius, speedX, speedY, freq, minByte, minRadius, growRate }) {
     if (y + radius > tscirclescanvas.height) {
       dirY = Math.abs(dirY) * -1;
     } else if (y - radius < 0) {
@@ -211,9 +199,7 @@ function OT9({ analyser, dataArray }) {
       y = radius + 300;
     }
 
-    radius =
-      (Math.max(dataArray[freq] - minByte, 0) / growRate + minRadius) *
-      (shorterCanvasSide / 5);
+    radius = (Math.max(dataArray[freq] - minByte, 0) / growRate + minRadius) * (shorterCanvasSide / 5);
 
     return {
       x,
@@ -246,10 +232,7 @@ function OT9({ analyser, dataArray }) {
       ctx.stroke();
 
       ctx.beginPath();
-      ctx.moveTo(
-        circle.x - circle.radius * 0.55,
-        circle.y - circle.radius * 0.5
-      );
+      ctx.moveTo(circle.x - circle.radius * 0.55, circle.y - circle.radius * 0.5);
       ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
       ctx.ellipse(
         circle.x - circle.radius * 0.55,
@@ -270,9 +253,7 @@ function OT9({ analyser, dataArray }) {
     tscirclescanvas.height = ytmusicplayer.clientHeight;
     tscirclescanvas.width = ytmusicplayer.clientWidth;
     shorterCanvasSide =
-      ytmusicplayer.clientHeight < ytmusicplayer.clientWidth
-        ? ytmusicplayer.clientHeight
-        : ytmusicplayer.clientWidth;
+      ytmusicplayer.clientHeight < ytmusicplayer.clientWidth ? ytmusicplayer.clientHeight : ytmusicplayer.clientWidth;
     analyser.fftSize = 512;
     analyser.getByteFrequencyData(dataArray);
 

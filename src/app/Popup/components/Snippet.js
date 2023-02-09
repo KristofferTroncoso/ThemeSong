@@ -10,9 +10,7 @@ function Snippet({ snippet }) {
   const toggleSnippet = useStore((state) => state.snippets.toggleSnippet);
 
   useEffect(() => {
-    chrome.storage.local.set({ snippets }, () =>
-      console.log("chrome.storage.local.set({snippets}")
-    );
+    chrome.storage.local.set({ snippets }, () => console.log("chrome.storage.local.set({snippets}"));
   }, [snippets]);
 
   const handleToggle = (snippetId) => {

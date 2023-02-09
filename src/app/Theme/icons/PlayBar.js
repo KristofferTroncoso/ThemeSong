@@ -1,13 +1,6 @@
 function PlayBar({ ...props }) {
   return (
-    <svg
-      width="100%"
-      height="100%"
-      viewBox="0 0 48 42"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
+    <svg width="100%" height="100%" viewBox="0 0 48 42" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <rect
         x="45.5"
         y="39.5"
@@ -28,15 +21,7 @@ function PlayBar({ ...props }) {
         stroke="currentColor"
         strokeWidth="5"
       />
-      <line
-        x1="42"
-        y1="32"
-        x2="6"
-        y2="32"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="square"
-      />
+      <line x1="42" y1="32" x2="6" y2="32" stroke="currentColor" strokeWidth="6" strokeLinecap="square" />
     </svg>
   );
 }

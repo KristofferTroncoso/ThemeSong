@@ -5,9 +5,7 @@ import { useStore } from "/src/app/store";
 import StyledPanelDiv from "./StyledPanelDiv";
 
 function UpdatePanel() {
-  const changeShowUpdateNote = useStore(
-    (state) => state.extension.changeShowUpdateNote
-  );
+  const changeShowUpdateNote = useStore((state) => state.extension.changeShowUpdateNote);
 
   return (
     <StyledPanelDiv
@@ -35,10 +33,7 @@ function UpdatePanel() {
           <b>v0.4.7 Sleep Timer (Jan 29, 2023)</b>
         </p>
         <p>* Sleep Timer is here! Try it out right above this note ^</p>
-        <p>
-          * Ditto-AppleMusic Theme now has dark-mode that auto-adjusts with your
-          system.
-        </p>
+        <p>* Ditto-AppleMusic Theme now has dark-mode that auto-adjusts with your system.</p>
       </div>
       <button
         css={css`

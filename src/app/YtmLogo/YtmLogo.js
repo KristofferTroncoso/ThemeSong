@@ -32,20 +32,8 @@ function YtmLogo({ circleColor, textColor }) {
           }
         `}
       </style>
-      <svg
-        id="ytm-partial"
-        width="80"
-        height="24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <ellipse
-          cx="12.18"
-          cy="12"
-          rx="12.18"
-          ry="12"
-          fill={circleColor || "var(--themesong-ytmlogo-circle-color)"}
-        />
+      <svg id="ytm-partial" width="80" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="12.18" cy="12" rx="12.18" ry="12" fill={circleColor || "var(--themesong-ytmlogo-circle-color)"} />
         <ellipse
           cx="12.18"
           cy="12"
@@ -57,20 +45,8 @@ function YtmLogo({ circleColor, textColor }) {
         />
         <path d="M16 12L9.775 15.4641L9.775 8.5359L16 12Z" fill="#fff" />
       </svg>
-      <svg
-        id="ytm-full"
-        width="80"
-        height="24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <ellipse
-          cx="12.18"
-          cy="12"
-          rx="12.18"
-          ry="12"
-          fill={circleColor || "var(--themesong-ytmlogo-circle-color)"}
-        />
+      <svg id="ytm-full" width="80" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="12.18" cy="12" rx="12.18" ry="12" fill={circleColor || "var(--themesong-ytmlogo-circle-color)"} />
         <ellipse
           cx="12.18"
           cy="12"

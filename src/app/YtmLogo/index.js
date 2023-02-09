@@ -5,9 +5,7 @@ import YtmLogo from "./YtmLogo";
 function LogoContainer() {
   useEffect(() => {
     const ytLogoDiv = document.querySelector("ytmusic-nav-bar .left-content a");
-    let testNode = document.querySelector(
-      "ytmusic-nav-bar .left-content a picture"
-    );
+    let testNode = document.querySelector("ytmusic-nav-bar .left-content a picture");
 
     if (testNode) {
       ytLogoDiv.removeChild(testNode);

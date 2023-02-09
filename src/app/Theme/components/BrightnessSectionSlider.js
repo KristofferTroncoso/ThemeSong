@@ -1,18 +1,7 @@
 import { css } from "@emotion/react";
 import StyledSlider from "./StyledSlider";
 
-function BrightnessSectionSlider({
-  icon,
-  name,
-  handleChange,
-  value,
-  min,
-  max,
-  color,
-  light,
-  dark,
-  ...props
-}) {
+function BrightnessSectionSlider({ icon, name, handleChange, value, min, max, color, light, dark, ...props }) {
   return (
     <div
       css={{

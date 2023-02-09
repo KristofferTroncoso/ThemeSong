@@ -2,20 +2,14 @@ import { useEffect } from "react";
 import { useStore } from "/src/app/store";
 
 function PlayPauseChangeObserver() {
-  const changeIsSongPlaying = useStore(
-    (state) => state.player.changeIsSongPlaying
-  );
+  const changeIsSongPlaying = useStore((state) => state.player.changeIsSongPlaying);
 
   useEffect(() => {
     let playPauseChangeObserver;
     let moviePlayerNode = document.getElementById("movie_player");
 
     //initial
-    if (
-      !document
-        .getElementById("movie_player")
-        .classList.contains("playing-mode")
-    ) {
+    if (!document.getElementById("movie_player").classList.contains("playing-mode")) {
       console.log("INITIAL song PAUSED");
       changeIsSongPlaying(false);
     } else {

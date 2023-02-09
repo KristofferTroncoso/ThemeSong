@@ -289,10 +289,7 @@ function Bubbles({ analyser, dataArray, bufferLength }) {
       clearInterval(intervalId.current);
     } else {
       clearInterval(intervalId.current);
-      intervalId.current = setInterval(
-        () => requestAnimationFrame(bubbles),
-        17
-      );
+      intervalId.current = setInterval(() => requestAnimationFrame(bubbles), 17);
     }
   }, [isSongPlaying]);
 
@@ -303,19 +300,7 @@ function Bubbles({ analyser, dataArray, bufferLength }) {
     ctx.lineWidth = borderWidth;
   }
 
-  function updateValues({
-    x,
-    y,
-    dirX,
-    dirY,
-    radius,
-    speedX,
-    speedY,
-    freq,
-    minByte,
-    minRadius,
-    growRate,
-  }) {
+  function updateValues({ x, y, dirX, dirY, radius, speedX, speedY, freq, minByte, minRadius, growRate }) {
     if (y + radius > tscirclescanvas.height) {
       dirY = Math.abs(dirY) * -1;
     } else if (y - radius < 0) {
@@ -340,9 +325,7 @@ function Bubbles({ analyser, dataArray, bufferLength }) {
       y = radius + 300;
     }
 
-    radius =
-      (Math.max(dataArray[freq] - minByte, 0) / growRate + minRadius) *
-      (shorterCanvasSide / 5);
+    radius = (Math.max(dataArray[freq] - minByte, 0) / growRate + minRadius) * (shorterCanvasSide / 5);
 
     return {
       x,
@@ -364,9 +347,7 @@ function Bubbles({ analyser, dataArray, bufferLength }) {
     tscirclescanvas.height = ytmusicplayer.clientHeight;
     tscirclescanvas.width = ytmusicplayer.clientWidth;
     shorterCanvasSide =
-      ytmusicplayer.clientHeight < ytmusicplayer.clientWidth
-        ? ytmusicplayer.clientHeight
-        : ytmusicplayer.clientWidth;
+      ytmusicplayer.clientHeight < ytmusicplayer.clientWidth ? ytmusicplayer.clientHeight : ytmusicplayer.clientWidth;
     analyser.fftSize = 512;
     analyser.getByteFrequencyData(dataArray);
 
@@ -389,10 +370,7 @@ function Bubbles({ analyser, dataArray, bufferLength }) {
       ctx.stroke();
 
       ctx.beginPath();
-      ctx.moveTo(
-        circle.x - circle.radius * 0.55,
-        circle.y - circle.radius * 0.5
-      );
+      ctx.moveTo(circle.x - circle.radius * 0.55, circle.y - circle.radius * 0.5);
       ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
       ctx.ellipse(
         circle.x - circle.radius * 0.55,

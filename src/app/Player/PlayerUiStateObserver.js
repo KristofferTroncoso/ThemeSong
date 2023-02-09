@@ -7,9 +7,7 @@ function PlayerUiStateObserver() {
 
   let playerUiStateObserver = useRef();
 
-  const changePlayerUiState = useStore(
-    (state) => state.player.changePlayerUiState
-  );
+  const changePlayerUiState = useStore((state) => state.player.changePlayerUiState);
 
   useEffect(() => {
     const ytmusicplayernode = document.querySelector("ytmusic-player");
@@ -17,9 +15,7 @@ function PlayerUiStateObserver() {
     //initial get
     changePlayerUiState(ytmusicplayernode.getAttribute("player-ui-state_"));
 
-    playerUiStateObserver.current = new MutationObserver(
-      handlePlayerUiStateChange
-    );
+    playerUiStateObserver.current = new MutationObserver(handlePlayerUiStateChange);
 
     playerUiStateObserver.current.observe(ytmusicplayernode, {
       attributeFilter: ["player-ui-state_"],
@@ -28,8 +24,7 @@ function PlayerUiStateObserver() {
 
     function handlePlayerUiStateChange(mutationRecord) {
       let attributesNamedNodeMap = mutationRecord[0].target.attributes;
-      let playerUiState =
-        attributesNamedNodeMap.getNamedItem("player-ui-state_").value;
+      let playerUiState = attributesNamedNodeMap.getNamedItem("player-ui-state_").value;
 
       // INACTIVE
       // PLAYER_PAGE_OPEN

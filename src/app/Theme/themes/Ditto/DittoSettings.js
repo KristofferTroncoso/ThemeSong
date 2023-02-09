@@ -4,14 +4,10 @@ import VariantButton from "../../../Visualizer/components/VariantButton";
 
 function DittoSettings() {
   const dittoTheme = useStore((state) =>
-    state.theme.themes.find(
-      (theme) => theme.id === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f"
-    )
+    state.theme.themes.find((theme) => theme.id === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f")
   );
   const dittoThemePrefs = useStore((state) =>
-    state.theme.themePrefs.find(
-      (theme) => theme.id === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f"
-    )
+    state.theme.themePrefs.find((theme) => theme.id === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f")
   );
   const themePrefs = useStore((state) => state.theme.themePrefs);
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
@@ -31,9 +27,7 @@ function DittoSettings() {
     });
     console.log(newCopy);
     changeThemePrefs(newCopy);
-    chrome.storage.local.set({ themePrefs: newCopy }, () =>
-      console.log("chrome.storage.local.set({themePrefs}")
-    );
+    chrome.storage.local.set({ themePrefs: newCopy }, () => console.log("chrome.storage.local.set({themePrefs}"));
   };
 
   return (

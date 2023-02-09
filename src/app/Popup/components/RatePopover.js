@@ -26,11 +26,7 @@ function RatePopover() {
 
   return (
     <>
-      <button
-        css={{ background: 0, border: 0 }}
-        onClick={handleClick}
-        title="Rate and comment!"
-      >
+      <button css={{ background: 0, border: 0 }} onClick={handleClick} title="Rate and comment!">
         {userLikesExtension ? (
           <Star
             css={css`
@@ -62,9 +58,7 @@ function RatePopover() {
         <div css={{ padding: "10px", fontSize: "14px", color: "black" }}>
           {userLikesExtension ? (
             <div>
-              <p css={{ marginBottom: "5px" }}>
-                Liking the extension? Please rate and comment!
-              </p>
+              <p css={{ marginBottom: "5px" }}>Liking the extension? Please rate and comment!</p>
               <div
                 css={css`
                   display: flex;
@@ -128,8 +122,7 @@ function RatePopover() {
           ) : (
             <>
               <p css={{ marginBottom: "5px" }}>
-                Contact the dev through social media or the store page for any
-                requests.
+                Contact the dev through social media or the store page for any requests.
               </p>
               <a
                 href="https://chrome.google.com/webstore/detail/themesong-for-youtube-mus/bgfiegdbajagebogifobkhambpljbfmk/support"

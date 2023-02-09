@@ -34,33 +34,19 @@ let intervalId;
 
 function SleepTimer() {
   const isActive = useStore((state) => state.utilities.sleepTimer.isActive);
-  const minutesLeft = useStore(
-    (state) => state.utilities.sleepTimer.minutesLeft
-  );
+  const minutesLeft = useStore((state) => state.utilities.sleepTimer.minutesLeft);
   const changeIsActive = useStore((state) => state.utilities.changeIsActive);
-  const changeMinutesLeft = useStore(
-    (state) => state.utilities.changeMinutesLeft
-  );
-  const decrementMinutesLeft = useStore(
-    (state) => state.utilities.decrementMinutesLeft
-  );
+  const changeMinutesLeft = useStore((state) => state.utilities.changeMinutesLeft);
+  const decrementMinutesLeft = useStore((state) => state.utilities.decrementMinutesLeft);
   const songName = useStore((state) => state.song.songName);
-  const isDialogOpen = useStore(
-    (state) => state.utilities.sleepTimer.isDialogOpen
-  );
-  const changeIsDialogOpen = useStore(
-    (state) => state.utilities.changeIsDialogOpen
-  );
+  const isDialogOpen = useStore((state) => state.utilities.sleepTimer.isDialogOpen);
+  const changeIsDialogOpen = useStore((state) => state.utilities.changeIsDialogOpen);
   const [isLastSong, setIsLastSong] = useState(false);
   const [isTimeOverDialogOpen, setIsTimeOverDialogOpen] = useState(false);
 
   useEffect(() => {
     function lastSongDone() {
-      if (
-        document
-          .getElementById("movie_player")
-          .classList.contains("playing-mode")
-      ) {
+      if (document.getElementById("movie_player").classList.contains("playing-mode")) {
         document.getElementById("play-pause-button").click();
       }
       setIsLastSong(false);
@@ -88,11 +74,7 @@ function SleepTimer() {
       decrementMinutesLeft();
     }, 60000);
     timeoutId = setTimeout(() => {
-      if (
-        document
-          .getElementById("movie_player")
-          .classList.contains("playing-mode")
-      ) {
+      if (document.getElementById("movie_player").classList.contains("playing-mode")) {
         document.getElementById("play-pause-button").click();
       }
       clearInterval(intervalId);
@@ -160,27 +142,13 @@ function SleepTimer() {
               padding: 10px 0;
             `}
           >
-            <StyledButton onClick={handleLastSongClick}>
-              Finish this song
-            </StyledButton>
-            <StyledButton onClick={(e) => handleTimerClick(5)}>
-              5 minutes
-            </StyledButton>
-            <StyledButton onClick={(e) => handleTimerClick(10)}>
-              10 minutes
-            </StyledButton>
-            <StyledButton onClick={(e) => handleTimerClick(20)}>
-              20 minutes
-            </StyledButton>
-            <StyledButton onClick={(e) => handleTimerClick(25)}>
-              25 minutes
-            </StyledButton>
-            <StyledButton onClick={(e) => handleTimerClick(30)}>
-              30 minutes
-            </StyledButton>
-            <StyledButton onClick={(e) => handleTimerClick(60)}>
-              60 minutes
-            </StyledButton>
+            <StyledButton onClick={handleLastSongClick}>Finish this song</StyledButton>
+            <StyledButton onClick={(e) => handleTimerClick(5)}>5 minutes</StyledButton>
+            <StyledButton onClick={(e) => handleTimerClick(10)}>10 minutes</StyledButton>
+            <StyledButton onClick={(e) => handleTimerClick(20)}>20 minutes</StyledButton>
+            <StyledButton onClick={(e) => handleTimerClick(25)}>25 minutes</StyledButton>
+            <StyledButton onClick={(e) => handleTimerClick(30)}>30 minutes</StyledButton>
+            <StyledButton onClick={(e) => handleTimerClick(60)}>60 minutes</StyledButton>
           </div>
           <button
             css={css`

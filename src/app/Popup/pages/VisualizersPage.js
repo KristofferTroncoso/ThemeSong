@@ -7,13 +7,9 @@ import CirclesSettings from "../../Visualizer/visualizers/circles/CirclesSetting
 import { useStore } from "/src/app/store";
 
 function VisualizersPage() {
-  const activeVisualizer = useStore(
-    (state) => state.visualizer.activeVisualizer
-  );
+  const activeVisualizer = useStore((state) => state.visualizer.activeVisualizer);
   const visualizers = useStore((state) => state.visualizer.visualizers);
-  const changeActiveVisualizer = useStore(
-    (state) => state.visualizer.changeActiveVisualizer
-  );
+  const changeActiveVisualizer = useStore((state) => state.visualizer.changeActiveVisualizer);
 
   const handleVisualizerClick = (e, id) => {
     changeActiveVisualizer(id);

@@ -12,15 +12,13 @@ function addVisualizerContainer() {
     document.getElementById("ts-visualizer-container").remove();
   }
 
-  ytmusicplayer.appendChild(document.createElement("div")).id =
-    "ts-visualizer-container";
+  ytmusicplayer.appendChild(document.createElement("div")).id = "ts-visualizer-container";
   tsvisualizercontainer = document.getElementById("ts-visualizer-container");
   tsvisualizercontainer.style.borderRadius = "inherit";
   // tsvisualizercontainer.style.border = "1px solid lightgreen";
 
   if (!tsvisualizercontainer) {
-    ytmusicplayer.appendChild(document.createElement("canvas")).id =
-      "ts-visualizer-canvas";
+    ytmusicplayer.appendChild(document.createElement("canvas")).id = "ts-visualizer-canvas";
   }
 
   ytmusicplayer.append(tsvisualizercontainer);

@@ -2,30 +2,22 @@ import { css } from "@emotion/react";
 import { styled } from "@mui/material/styles";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 
-const CustomTooltip = styled(({ className, ...props }) => (
-  <Tooltip {...props} arrow classes={{ popper: className }} />
-))(({ theme }) => ({
-  [`& .${tooltipClasses.arrow}`]: {
-    color: "#111",
-    fontSize: "12px",
-  },
-  [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: "#111",
-    top: "-7px !important",
-    fontSize: "12px",
-    padding: "4px 7px",
-  },
-}));
+const CustomTooltip = styled(({ className, ...props }) => <Tooltip {...props} arrow classes={{ popper: className }} />)(
+  ({ theme }) => ({
+    [`& .${tooltipClasses.arrow}`]: {
+      color: "#111",
+      fontSize: "12px",
+    },
+    [`& .${tooltipClasses.tooltip}`]: {
+      backgroundColor: "#111",
+      top: "-7px !important",
+      fontSize: "12px",
+      padding: "4px 7px",
+    },
+  })
+);
 
-function PanelButton({
-  color,
-  bgColor,
-  hoverColor,
-  hoverBgColor,
-  children,
-  title,
-  ...props
-}) {
+function PanelButton({ color, bgColor, hoverColor, hoverBgColor, children, title, ...props }) {
   return (
     <CustomTooltip placement="bottom" arrow title={title}>
       <button

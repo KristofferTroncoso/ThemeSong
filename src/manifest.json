@@ -17,11 +17,7 @@
     "128": "assets/icon-128.png"
   },
   "options_page": "options.html",
-  "host_permissions": [
-    "https://music.youtube.com/*",
-    "https://i.ytimg.com/*",
-    "https://www.gstatic.com/*"
-  ],
+  "host_permissions": ["https://music.youtube.com/*", "https://i.ytimg.com/*", "https://www.gstatic.com/*"],
   "content_scripts": [
     {
       "matches": ["https://music.youtube.com/*"],

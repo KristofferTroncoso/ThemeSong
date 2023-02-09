@@ -6,18 +6,12 @@ import VariantButton from "../../components/VariantButton";
 function CirclesSettings() {
   const visualizerPrefs = useStore((state) => state.visualizer.visualizerPrefs);
   const circlesVisualizer = useStore((state) =>
-    state.visualizer.visualizers.find(
-      (visualizer) => visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da"
-    )
+    state.visualizer.visualizers.find((visualizer) => visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da")
   );
   const circlesPrefs = useStore((state) =>
-    state.visualizer.visualizerPrefs.find(
-      (visualizer) => visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da"
-    )
+    state.visualizer.visualizerPrefs.find((visualizer) => visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da")
   );
-  const changeVisualizerPrefs = useStore(
-    (state) => state.visualizer.changeVisualizerPrefs
-  );
+  const changeVisualizerPrefs = useStore((state) => state.visualizer.changeVisualizerPrefs);
 
   const handleVisualizersChange = (visualizerObject) => {
     console.log(visualizerObject);

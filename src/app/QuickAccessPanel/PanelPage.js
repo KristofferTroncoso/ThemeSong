@@ -22,8 +22,7 @@ function PanelPage() {
         padding: 6px;
         margin: 2px;
         background: var(--themesong-playbarbg-color, #222);
-        border: 1px solid
-          var(--themesong-base-30-color, rgba(255, 255, 255, 0.2));
+        border: 1px solid var(--themesong-base-30-color, rgba(255, 255, 255, 0.2));
         border-radius: 4px;
         backdrop-filter: blur(6px);
         transition: var(--themesong-bgcolor-transition);
@@ -69,8 +68,7 @@ function PanelPage() {
                 font-size: 12px;
               `}
             >
-              Additional settings and options available through the ThemeSong
-              popup icon on your toolbar.
+              Additional settings and options available through the ThemeSong popup icon on your toolbar.
             </p>
           }
         >

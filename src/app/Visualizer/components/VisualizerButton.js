@@ -1,13 +1,6 @@
 import { css } from "@emotion/react";
 
-function VisualizerButton({
-  id,
-  children,
-  handleClick,
-  isActive,
-  name,
-  ...props
-}) {
+function VisualizerButton({ id, children, handleClick, isActive, name, ...props }) {
   return (
     <button
       css={css`

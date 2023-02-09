@@ -8,18 +8,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const ASSET_PATH = process.env.ASSET_PATH || "/";
 
-const fileExtensions = [
-  "jpg",
-  "jpeg",
-  "png",
-  "gif",
-  "eot",
-  "otf",
-  "svg",
-  "ttf",
-  "woff",
-  "woff2",
-];
+const fileExtensions = ["jpg", "jpeg", "png", "gif", "eot", "otf", "svg", "ttf", "woff", "woff2"];
 
 const options = {
   mode: process.env.NODE_ENV || "development",
@@ -77,9 +66,7 @@ const options = {
     ],
   },
   resolve: {
-    extensions: fileExtensions
-      .map((extension) => "." + extension)
-      .concat([".js", ".jsx", ".ts", ".tsx", ".css"]),
+    extensions: fileExtensions.map((extension) => "." + extension).concat([".js", ".jsx", ".ts", ".tsx", ".css"]),
   },
   plugins: [
     new CleanWebpackPlugin({ verbose: false }),

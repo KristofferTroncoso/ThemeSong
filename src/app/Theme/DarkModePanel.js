@@ -11,9 +11,7 @@ function DarkModePanel() {
   const themePrefs = useStore((state) => state.theme.themePrefs);
   const activeTheme = useStore((state) => state.theme.activeTheme);
   // const activeThemeInfo = useStore(state => state.theme.themes.find(theme => theme.id === activeTheme));
-  const activeThemeUserPrefs = useStore((state) =>
-    state.theme.themePrefs.find((theme) => theme.id === activeTheme)
-  );
+  const activeThemeUserPrefs = useStore((state) => state.theme.themePrefs.find((theme) => theme.id === activeTheme));
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
 
   function handleDarkLightChange(value) {
@@ -37,10 +35,7 @@ function DarkModePanel() {
   }
 
   if (
-    !(
-      activeTheme === "db8854e3-6753-4639-b244-c8091f3b9fcb" ||
-      activeTheme === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"
-    )
+    !(activeTheme === "db8854e3-6753-4639-b244-c8091f3b9fcb" || activeTheme === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8")
   ) {
     return (
       <div>
@@ -91,8 +86,7 @@ function DarkModePanel() {
               min-width: 45px;
               width: 60px;
               margin: 0 2px;
-              background: ${activeThemeUserPrefs.appearance === "dark" &&
-              "rgba(255,255,255,0.8)"};
+              background: ${activeThemeUserPrefs.appearance === "dark" && "rgba(255,255,255,0.8)"};
               color: ${activeThemeUserPrefs.appearance === "dark" && "#9d00ff"};
               border: 0;
               border-radius: 5px 0 0 5px;
@@ -111,10 +105,8 @@ function DarkModePanel() {
               min-width: 45px;
               width: 60px;
               margin: 0 2px;
-              background: ${activeThemeUserPrefs.appearance === "light" &&
-              "rgba(255,255,255,0.8)"};
-              color: ${activeThemeUserPrefs.appearance === "light" &&
-              "#de9800"};
+              background: ${activeThemeUserPrefs.appearance === "light" && "rgba(255,255,255,0.8)"};
+              color: ${activeThemeUserPrefs.appearance === "light" && "#de9800"};
               border: 0;
               border-radius: 0;
               :hover {
@@ -136,10 +128,8 @@ function DarkModePanel() {
               min-width: 45px;
               width: 60px;
               margin: 0 2px;
-              background: ${activeThemeUserPrefs.appearance === "system" &&
-              "rgba(255,255,255,0.8)"};
-              color: ${activeThemeUserPrefs.appearance === "system" &&
-              "#009961"};
+              background: ${activeThemeUserPrefs.appearance === "system" && "rgba(255,255,255,0.8)"};
+              color: ${activeThemeUserPrefs.appearance === "system" && "#009961"};
               border: 0;
               border-radius: 0 5px 5px 0;
               :hover {

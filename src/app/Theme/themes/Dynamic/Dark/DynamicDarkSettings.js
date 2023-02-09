@@ -10,15 +10,10 @@ import OpacityIcon from "@mui/icons-material/Opacity";
 
 function DynamicDarkSettings() {
   const dynamicPrefs = useStore((state) =>
-    state.theme.themePrefs.find(
-      (theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb"
-    )
+    state.theme.themePrefs.find((theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb")
   );
   const dynamicDarkPrefs = useStore(
-    (state) =>
-      state.theme.themePrefs.find(
-        (theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb"
-      ).dark
+    (state) => state.theme.themePrefs.find((theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb").dark
   );
   const themePrefs = useStore((state) => state.theme.themePrefs);
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
@@ -27,9 +22,7 @@ function DynamicDarkSettings() {
     let newDarkPrefs = { ...dynamicDarkPrefs, [e.target.name]: e.target.value };
     let newDynamicUserPrefs = { ...dynamicPrefs, dark: newDarkPrefs };
     let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.id === "db8854e3-6753-4639-b244-c8091f3b9fcb"
-        ? newDynamicUserPrefs
-        : themePrefs
+      themePrefs.id === "db8854e3-6753-4639-b244-c8091f3b9fcb" ? newDynamicUserPrefs : themePrefs
     );
     console.log(newThemePrefsArr);
     changeThemePrefs(newThemePrefsArr);
@@ -47,9 +40,7 @@ function DynamicDarkSettings() {
     };
     let newDynamicUserPrefs = { ...dynamicPrefs, dark: newDarkPrefs };
     let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.id === "db8854e3-6753-4639-b244-c8091f3b9fcb"
-        ? newDynamicUserPrefs
-        : themePrefs
+      themePrefs.id === "db8854e3-6753-4639-b244-c8091f3b9fcb" ? newDynamicUserPrefs : themePrefs
     );
     console.log(newThemePrefsArr);
     changeThemePrefs(newThemePrefsArr);
@@ -118,11 +109,7 @@ function DynamicDarkSettings() {
           margin-top: 10px;
           .MuiSlider-rail {
             opacity: 1;
-            background: linear-gradient(
-              90deg,
-              hsl(230 20% 50%) 20%,
-              hsl(230 100% 50%) 80%
-            );
+            background: linear-gradient(90deg, hsl(230 20% 50%) 20%, hsl(230 100% 50%) 80%);
           }
           input::-webkit-outer-spin-button,
           input::-webkit-inner-spin-button {
@@ -131,9 +118,7 @@ function DynamicDarkSettings() {
           }
         `}
       >
-        <OpacityIcon
-          sx={{ height: "16px", width: "16px", marginRight: "6px" }}
-        />
+        <OpacityIcon sx={{ height: "16px", width: "16px", marginRight: "6px" }} />
         <SaturationSlider
           name="saturation"
           value={dynamicDarkPrefs.saturation}

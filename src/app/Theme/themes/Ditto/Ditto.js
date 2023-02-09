@@ -4,10 +4,7 @@ import { useStore } from "/src/app/store";
 
 function Ditto() {
   const activeVariant = useStore(
-    (state) =>
-      state.theme.themePrefs.find(
-        (theme) => theme.id === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f"
-      ).activeVariant
+    (state) => state.theme.themePrefs.find((theme) => theme.id === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f").activeVariant
   );
 
   function returnVariant() {

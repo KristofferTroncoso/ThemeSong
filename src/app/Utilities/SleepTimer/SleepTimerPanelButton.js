@@ -6,9 +6,7 @@ import SnoozeIcon from "@mui/icons-material/Snooze";
 
 function SleepTimerPanelButton() {
   const isActive = useStore((state) => state.utilities.sleepTimer.isActive);
-  const changeIsDialogOpen = useStore(
-    (state) => state.utilities.changeIsDialogOpen
-  );
+  const changeIsDialogOpen = useStore((state) => state.utilities.changeIsDialogOpen);
 
   return (
     <PanelButton

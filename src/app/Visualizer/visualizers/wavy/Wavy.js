@@ -4,9 +4,7 @@ import { useStore } from "/src/app/store";
 
 function Wavy({ analyser, dataArray, bufferLength }) {
   const wavyPrefs = useStore((state) =>
-    state.visualizer.visualizerPrefs.find(
-      (visualizer) => visualizer.id === "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d"
-    )
+    state.visualizer.visualizerPrefs.find((visualizer) => visualizer.id === "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d")
   );
   const isSongPlaying = useStore((state) => state.player.isSongPlaying);
   const dominantSwatch = useStore((state) => state.palette.dominant);
@@ -70,10 +68,7 @@ function Wavy({ analyser, dataArray, bufferLength }) {
       clearInterval(intervalId.current);
     } else {
       clearInterval(intervalId.current);
-      intervalId.current = setInterval(
-        () => requestAnimationFrame(drawWavy),
-        17
-      );
+      intervalId.current = setInterval(() => requestAnimationFrame(drawWavy), 17);
     }
   }, [isSongPlaying, analyser, bufferLength, dataArray]);
 

@@ -27,9 +27,7 @@ function YouTubeMusicMobile() {
 
   useEffect(() => {
     if (playerUiState === "PLAYER_PAGE_OPEN") {
-      menubar.content = `hsl(${hue}, ${saturation}, ${calcCurvedBrightness(
-        20
-      )}%)`;
+      menubar.content = `hsl(${hue}, ${saturation}, ${calcCurvedBrightness(20)}%)`;
     } else {
       menubar.content = "#000";
     }
@@ -41,18 +39,10 @@ function YouTubeMusicMobile() {
         ? `
         :root {
           --themesong-theme-dynamic-saturation: ${saturation};
-          --themesong-theme-dynamic-topbarbg-light: ${calcCurvedBrightness(
-            20
-          )}%;
-          --themesong-theme-dynamic-playpagebg-light: ${calcCurvedBrightness(
-            20
-          )}%;
-          --themesong-theme-dynamic-playbarbg-light: ${calcCurvedBrightness(
-            28
-          )}%;
-          --themesong-theme-dynamic-playpageavtoggle-light: ${
-            21 + (15 / 25) * 14
-          }%;
+          --themesong-theme-dynamic-topbarbg-light: ${calcCurvedBrightness(20)}%;
+          --themesong-theme-dynamic-playpagebg-light: ${calcCurvedBrightness(20)}%;
+          --themesong-theme-dynamic-playbarbg-light: ${calcCurvedBrightness(28)}%;
+          --themesong-theme-dynamic-playpageavtoggle-light: ${21 + (15 / 25) * 14}%;
         }
         ${youtubemusicmobile_css}
         #songDivContainer {

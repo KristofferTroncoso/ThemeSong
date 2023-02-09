@@ -1,13 +1,6 @@
 import { css } from "@emotion/react";
 
-function VariantButton({
-  id,
-  children,
-  handleClick,
-  isActive,
-  name,
-  ...props
-}) {
+function VariantButton({ id, children, handleClick, isActive, name, ...props }) {
   return (
     <button
       css={css`

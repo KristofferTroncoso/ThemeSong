@@ -27,9 +27,7 @@ function Options() {
     chrome.runtime.sendMessage("reset", (response) => {
       console.log(`Received response ${response}`);
     });
-    alert(
-      "ThemeSong extension settings and storage reset. You may need to also refresh any open YouTube Music tabs."
-    );
+    alert("ThemeSong extension settings and storage reset. You may need to also refresh any open YouTube Music tabs.");
   }
 
   return (
@@ -82,11 +80,7 @@ function Options() {
           </button>
         </p>
         <p>
-          <button
-            onClick={(e) =>
-              chrome.storage.local.get(null, (res) => console.log(res))
-            }
-          >
+          <button onClick={(e) => chrome.storage.local.get(null, (res) => console.log(res))}>
             console.log() storage
           </button>
         </p>

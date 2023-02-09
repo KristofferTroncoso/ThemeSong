@@ -27,11 +27,7 @@ function SettingsPopover() {
 
   return (
     <>
-      <button
-        css={{ background: 0, border: 0, color: "white" }}
-        onClick={handleClick}
-        title="Settings"
-      >
+      <button css={{ background: 0, border: 0, color: "white" }} onClick={handleClick} title="Settings">
         <Settings style={{ fontSize: "16px" }} />
       </button>
       <Popover

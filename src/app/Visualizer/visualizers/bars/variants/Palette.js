@@ -4,9 +4,7 @@ import { useStore } from "/src/app/store";
 
 function Palette({ analyser, dataArray, bufferLength }) {
   const barsPrefs = useStore((state) =>
-    state.visualizer.visualizerPrefs.find(
-      (visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6"
-    )
+    state.visualizer.visualizerPrefs.find((visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6")
   );
   const isSongPlaying = useStore((state) => state.player.isSongPlaying);
   const palette = useStore((state) => state.palette.palette);
@@ -60,19 +58,9 @@ function Palette({ analyser, dataArray, bufferLength }) {
 
         arrLoopNum = (arrLoopNum + 1) % paletteArray.length;
 
-        context.fillRect(
-          x,
-          canvas.height - barHeight + 6,
-          barsPrefs.barWidth,
-          barHeight
-        );
+        context.fillRect(x, canvas.height - barHeight + 6, barsPrefs.barWidth, barHeight);
         if (barsPrefs.borderWidth !== 0) {
-          context.strokeRect(
-            x,
-            canvas.height - barHeight + 6,
-            barsPrefs.barWidth,
-            barHeight
-          );
+          context.strokeRect(x, canvas.height - barHeight + 6, barsPrefs.barWidth, barHeight);
         }
         context.stroke();
         x += barsPrefs.barWidth + barsPrefs.gap;
@@ -83,10 +71,7 @@ function Palette({ analyser, dataArray, bufferLength }) {
       clearInterval(intervalId.current);
     } else {
       clearInterval(intervalId.current);
-      intervalId.current = setInterval(
-        () => requestAnimationFrame(drawBars),
-        17
-      );
+      intervalId.current = setInterval(() => requestAnimationFrame(drawBars), 17);
     }
   }, [isSongPlaying, analyser, bufferLength, dataArray, barsPrefs, palette]);
 

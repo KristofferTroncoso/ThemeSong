@@ -110,9 +110,7 @@ function RGB({ analyser, dataArray }) {
       canvas.height = ytmusicplayer.clientHeight;
       canvas.width = ytmusicplayer.clientWidth;
       shorterCanvasSide =
-        ytmusicplayer.clientHeight < ytmusicplayer.clientWidth
-          ? ytmusicplayer.clientHeight
-          : ytmusicplayer.clientWidth;
+        ytmusicplayer.clientHeight < ytmusicplayer.clientWidth ? ytmusicplayer.clientHeight : ytmusicplayer.clientWidth;
       analyser.getByteFrequencyData(dataArray);
 
       context.clearRect(0, 0, canvas.width, canvas.height);
@@ -121,57 +119,27 @@ function RGB({ analyser, dataArray }) {
 
       context.beginPath();
       context.lineWidth = 6;
-      radius =
-        (Math.max(dataArray[0] - 190, 0) / 300 + 1) * (shorterCanvasSide / 5);
-      context.fillStyle = `hsla(${
-        345 + Math.max(dataArray[0] - 190, 0) * 0.4 + 1
-      }, 100%, 50%, 0.9)`;
-      [a, b, dirA, dirB] = updateValues(
-        a,
-        b,
-        dirA,
-        dirB,
-        radius,
-        speedA,
-        speedB
-      );
+      radius = (Math.max(dataArray[0] - 190, 0) / 300 + 1) * (shorterCanvasSide / 5);
+      context.fillStyle = `hsla(${345 + Math.max(dataArray[0] - 190, 0) * 0.4 + 1}, 100%, 50%, 0.9)`;
+      [a, b, dirA, dirB] = updateValues(a, b, dirA, dirB, radius, speedA, speedB);
       context.arc(a, b, radius, 0, circumference);
       context.fill();
       context.stroke();
 
       context.beginPath();
       context.lineWidth = 5;
-      radius =
-        (Math.max(dataArray[20] - 20, 0) / 700 + 0.5) * (shorterCanvasSide / 5);
+      radius = (Math.max(dataArray[20] - 20, 0) / 700 + 0.5) * (shorterCanvasSide / 5);
       context.fillStyle = `hsla(${210 + dataArray[40] * 0.4}, 100%, 50%, 0.9)`;
-      [c, d, dirC, dirD] = updateValues(
-        c,
-        d,
-        dirC,
-        dirD,
-        radius,
-        speedC,
-        speedD
-      );
+      [c, d, dirC, dirD] = updateValues(c, d, dirC, dirD, radius, speedC, speedD);
       context.arc(c, d, radius, 0, circumference);
       context.fill();
       context.stroke();
 
       context.beginPath();
       context.lineWidth = 3;
-      radius =
-        (Math.max(dataArray[160] - 10, 0) / 600 + 0.33) *
-        (shorterCanvasSide / 5);
+      radius = (Math.max(dataArray[160] - 10, 0) / 600 + 0.33) * (shorterCanvasSide / 5);
       context.fillStyle = `hsla(${105 + dataArray[160] * 0.5}, 100%, 40%, 0.9)`;
-      [g, h, dirG, dirH] = updateValues(
-        g,
-        h,
-        dirG,
-        dirH,
-        radius,
-        speedG,
-        speedH
-      );
+      [g, h, dirG, dirH] = updateValues(g, h, dirG, dirH, radius, speedG, speedH);
       context.arc(g, h, radius, 0, circumference);
       context.fill();
       context.stroke();

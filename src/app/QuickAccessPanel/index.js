@@ -4,9 +4,7 @@ import Panel from "./Panel";
 
 function PanelContainer() {
   useEffect(() => {
-    const middleControlButtonsDiv = document.querySelector(
-      ".middle-controls-buttons"
-    );
+    const middleControlButtonsDiv = document.querySelector(".middle-controls-buttons");
     let panelContainer;
 
     panelContainer = document.createElement("div");

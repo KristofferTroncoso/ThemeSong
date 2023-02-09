@@ -5,10 +5,7 @@ import { menubar } from "../../selectors";
 
 function StaticLight() {
   const { hue, saturation, lightness } = useStore(
-    (state) =>
-      state.theme.themePrefs.find(
-        (theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"
-      ).light
+    (state) => state.theme.themePrefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8").light
   );
 
   useEffect(() => {
@@ -22,9 +19,7 @@ function StaticLight() {
         --themesong-theme-static-saturation: ${saturation}%;
         --themesong-theme-static-topbarbg-light: ${lightness[0]}%;
         --themesong-theme-static-playpagebg-light: ${lightness[1]}%;
-        --themesong-theme-static-playpageavtoggle-light: ${
-          21 + (lightness[1] / 25) * 14
-        }%;
+        --themesong-theme-static-playpageavtoggle-light: ${21 + (lightness[1] / 25) * 14}%;
         --themesong-theme-static-playbarbg-light: ${lightness[2]}%;
         --themesong-theme-static-bodybg-light: ${lightness[3]}%;
       }`}

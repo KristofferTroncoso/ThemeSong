@@ -19,10 +19,7 @@ function ActivePage() {
         return (
           <div>
             <p>Active Page Compnent: something has gone wrong...</p>
-            <p>
-              Try resetting to extension defaults by clicking on ⚙ gear icon on
-              lower right corner.
-            </p>
+            <p>Try resetting to extension defaults by clicking on ⚙ gear icon on lower right corner.</p>
           </div>
         );
     }

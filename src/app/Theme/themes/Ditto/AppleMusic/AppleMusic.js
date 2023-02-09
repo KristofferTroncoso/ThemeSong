@@ -6,77 +6,51 @@ import { useStore } from "/src/app/store";
 
 function AppleMusic() {
   const playerUiState = useStore((state) => state.player.playerUiState);
-  const lightVibrantHSL = useStore(
-    (state) => state.palette.palette.LightVibrant.hsl
-  );
-  const [isDark, setIsDark] = useState(
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-  );
+  const lightVibrantHSL = useStore((state) => state.palette.palette.LightVibrant.hsl);
+  const [isDark, setIsDark] = useState(window.matchMedia("(prefers-color-scheme: dark)").matches);
 
   function returnDarkOrLightTheme(event) {
     console.log("DynamicSystem: returnDarkOrLightTheme");
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? setIsDark(true)
-      : setIsDark(false);
+    window.matchMedia("(prefers-color-scheme: dark)").matches ? setIsDark(true) : setIsDark(false);
   }
 
   useEffect(() => {
     returnDarkOrLightTheme();
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", returnDarkOrLightTheme);
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", returnDarkOrLightTheme);
 
     return function () {
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .removeEventListener("change", returnDarkOrLightTheme);
+      window.matchMedia("(prefers-color-scheme: dark)").removeEventListener("change", returnDarkOrLightTheme);
     };
   }, []);
 
   useEffect(() => {
-    if (
-      playerUiState === "PLAYER_BAR_ONLY" ||
-      playerUiState === "MINIPLAYER" ||
-      playerUiState === "INACTIVE"
-    ) {
+    if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
       if (isDark) {
         menubar.content = `#1f1f1f`;
       } else {
         menubar.content = `hsl(0, 0%, 95%)`;
       }
     } else {
-      menubar.content = `hsl(${lightVibrantHSL[0] * 360}, ${
-        lightVibrantHSL[1] * 100 * 0.2
-      }%, 35%)`;
+      menubar.content = `hsl(${lightVibrantHSL[0] * 360}, ${lightVibrantHSL[1] * 100 * 0.2}%, 35%)`;
     }
   }, [isDark]);
 
   useEffect(() => {
     console.log("PLAYERUISTATE2", playerUiState);
-    if (
-      playerUiState === "PLAYER_BAR_ONLY" ||
-      playerUiState === "MINIPLAYER" ||
-      playerUiState === "INACTIVE"
-    ) {
+    if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
       if (isDark) {
         menubar.content = `#1f1f1f`;
       } else {
         menubar.content = `hsl(0, 0%, 95%)`;
       }
     } else {
-      menubar.content = `hsl(${lightVibrantHSL[0] * 360}, ${
-        lightVibrantHSL[1] * 100 * 0.2
-      }%, 35%)`;
+      menubar.content = `hsl(${lightVibrantHSL[0] * 360}, ${lightVibrantHSL[1] * 100 * 0.2}%, 35%)`;
     }
   }, [playerUiState, lightVibrantHSL]);
 
   return (
     <style id="AppleMusic">
-      {!(
-        playerUiState === "PLAYER_BAR_ONLY" ||
-        playerUiState === "MINIPLAYER" ||
-        playerUiState === "INACTIVE"
-      )
+      {!(playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE")
         ? `
         :root {
           --themesong-theme-dynamic-saturation: ${20};
@@ -84,9 +58,7 @@ function AppleMusic() {
           --themesong-theme-dynamic-bodybg-light: ${25}%;
           --themesong-theme-dynamic-playpagebg-light: ${25}%;
           --themesong-theme-dynamic-playbarbg-light: ${25}%;
-          --themesong-theme-dynamic-playpageavtoggle-light: ${
-            21 + (25 / 25) * 14
-          }%;
+          --themesong-theme-dynamic-playpageavtoggle-light: ${21 + (25 / 25) * 14}%;
         }
         ${apple_dark_css}
       `
@@ -136,9 +108,7 @@ function AppleMusic() {
             --themesong-theme-static-bodybg-light: ${20}%;
             --themesong-theme-static-playpagebg-light: ${10}%;
             --themesong-theme-static-playbarbg-light: ${10}%;
-            --themesong-theme-static-playpageavtoggle-light: ${
-              21 + (50 / 25) * 14
-            }%;
+            --themesong-theme-static-playpageavtoggle-light: ${21 + (50 / 25) * 14}%;
             --themesong-topbarbg-color: rgba(30,30,30,0.4) !important;
             --themesong-bodybg-color: hsl(0,0%,9%);
 
@@ -188,9 +158,7 @@ function AppleMusic() {
             --themesong-theme-static-bodybg-light: ${100}%;
             --themesong-theme-static-playpagebg-light: ${96}%;
             --themesong-theme-static-playbarbg-light: ${94}%;
-            --themesong-theme-static-playpageavtoggle-light: ${
-              21 + (50 / 25) * 14
-            }%;
+            --themesong-theme-static-playpageavtoggle-light: ${21 + (50 / 25) * 14}%;
             --themesong-topbarbg-color: rgba(235,235,235,0.4) !important;
             --themesong-bodybg-color: #fff;
 

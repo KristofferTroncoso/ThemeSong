@@ -16,13 +16,9 @@ let dataArray;
 
 function Visualizer() {
   const isVisualizerOn = useStore((state) => state.visualizer.isVisualizerOn);
-  const activeVisualizer = useStore(
-    (state) => state.visualizer.activeVisualizer
-  );
+  const activeVisualizer = useStore((state) => state.visualizer.activeVisualizer);
   const songName = useStore((state) => state.song.songName);
-  const toggleIsVisualizerOn = useStore(
-    (state) => state.visualizer.toggleIsVisualizerOn
-  );
+  const toggleIsVisualizerOn = useStore((state) => state.visualizer.toggleIsVisualizerOn);
   const [isConnected, setIsConnected] = useState(false);
 
   useEffect(() => {
@@ -84,9 +80,7 @@ Page reload required to reconnect visualizer. Reload now?`
     if (document.querySelector("video")) {
       if (source === undefined) {
         try {
-          source = audioCtx.createMediaElementSource(
-            document.querySelector("video")
-          );
+          source = audioCtx.createMediaElementSource(document.querySelector("video"));
           source.connect(analyser);
         } catch {
           console.log("error with connecting source");
@@ -94,9 +88,7 @@ Page reload required to reconnect visualizer. Reload now?`
       } else {
         if (source.mediaElement.isConnected === false) {
           try {
-            source = audioCtx.createMediaElementSource(
-              document.querySelector("video")
-            );
+            source = audioCtx.createMediaElementSource(document.querySelector("video"));
             source.connect(analyser);
           } catch {
             console.log("error with connecting source");
@@ -124,25 +116,13 @@ Page reload required to reconnect visualizer. Reload now?`
             {
               {
                 "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d": (
-                  <Wavy
-                    analyser={analyser}
-                    dataArray={dataArray}
-                    bufferLength={bufferLength}
-                  />
+                  <Wavy analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
                 ),
                 "51dc50c8-eb06-4086-ad9c-a89758f63db6": (
-                  <Bars
-                    analyser={analyser}
-                    dataArray={dataArray}
-                    bufferLength={bufferLength}
-                  />
+                  <Bars analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
                 ),
                 "685d0ec7-5c52-4e48-a43d-11184a39f3da": (
-                  <Circles
-                    analyser={analyser}
-                    dataArray={dataArray}
-                    bufferLength={bufferLength}
-                  />
+                  <Circles analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
                 ),
               }[activeVisualizer]
             }

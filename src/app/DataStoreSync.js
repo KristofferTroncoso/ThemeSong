@@ -4,19 +4,11 @@ import { useStore } from "/src/app/store";
 /* This component keeps chrome.storage.local and the Zustand store in sync. */
 function DataStoreSync() {
   const changeActiveTheme = useStore((state) => state.theme.changeActiveTheme);
-  const changeActiveVisualizer = useStore(
-    (state) => state.visualizer.changeActiveVisualizer
-  );
+  const changeActiveVisualizer = useStore((state) => state.visualizer.changeActiveVisualizer);
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
-  const changeVisualizerPrefs = useStore(
-    (state) => state.visualizer.changeVisualizerPrefs
-  );
-  const changeActivePopupTab = useStore(
-    (state) => state.popup.changeActivePopupTab
-  );
-  const changeShowUpdateNote = useStore(
-    (state) => state.extension.changeShowUpdateNote
-  );
+  const changeVisualizerPrefs = useStore((state) => state.visualizer.changeVisualizerPrefs);
+  const changeActivePopupTab = useStore((state) => state.popup.changeActivePopupTab);
+  const changeShowUpdateNote = useStore((state) => state.extension.changeShowUpdateNote);
   // const changeSnippets = useStore(state => state.snippets.changeSnippets);
 
   useEffect(() => {
