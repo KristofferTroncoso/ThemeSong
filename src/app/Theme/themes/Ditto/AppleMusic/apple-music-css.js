@@ -4,13 +4,13 @@ export const apple_music_css = /*css*/ `
 
 /* start icons */
 tp-yt-paper-icon-button  {
-  /* color: var(--themesong-base-100-color) !important; */
+  /* color: var(--ts-base-100-color) !important; */
   color: #d60017 !important;
 }
 
 
 ytmusic-like-button-renderer[like-status=LIKE] .like.ytmusic-like-button-renderer, ytmusic-like-button-renderer[like-status=DISLIKE] .dislike.ytmusic-like-button-renderer {
-  /* color: var(--themesong-primary-text-color) !important; */
+  /* color: var(--ts-primary-text-color) !important; */
   color: #d60017 !important;
 }
 
@@ -23,7 +23,7 @@ yt-icon.ytmusic-inline-badge-renderer {
 ytd-multi-page-menu-renderer.ytmusic-popup-container {
   --yt-spec-call-to-action: rgba(24,2,200,0.8) !important;
   --yt-endpoint-hover-color: #3ea6ff;
-  --yt-compact-link-icon-color: var(--themesong-base-100-alpha-06-color) !important;
+  --yt-compact-link-icon-color: var(--ts-base-100-alpha-06-color) !important;
 }
 
 a.ytmusic-icon-link-renderer {
@@ -54,9 +54,9 @@ yt-icon.ytmusic-navigation-button-renderer {
 
 
 #player-bar-background {
-  background: var(--themesong-playbarbg-color) !important;
+  background: var(--ts-playbarbg-color) !important;
   backdrop-filter: blur(12px);
-  transition: var(--themesong-bgcolor-transition) !important;
+  transition: var(--ts-bgcolor-transition) !important;
 }
 
 
@@ -79,13 +79,13 @@ ytmusic-search-box {
 
 /* override to make scrollbar less bright on dark mode */
 body::-webkit-scrollbar-track {
-  background-color: var(--themesong-base-100-alpha-005-color);
+  background-color: var(--ts-base-100-alpha-005-color);
 }
 
 /* for some reason the rulers on the playpage are brighter on this theme than other themes */
 /* i have to override it and make it less bright just for Apple Music */
 /* probably has something to do with the different bg and gradient im using */
 ytmusic-player-queue-item {
-  border-bottom: 1px solid var(--themesong-base-100-alpha-01-color);
+  border-bottom: 1px solid var(--ts-base-100-alpha-01-color);
 }
 `;

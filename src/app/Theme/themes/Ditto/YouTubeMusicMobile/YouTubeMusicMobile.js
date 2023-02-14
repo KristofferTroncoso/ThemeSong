@@ -43,27 +43,27 @@ function YouTubeMusicMobile() {
       {!(playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER")
         ? `
         :root {
-          --themesong-topbarbg-color: hsl(
-            var(--themesong-palette-dominant-hue), 
+          --ts-topbarbg-color: hsl(
+            var(--ts-palette-dominant-hue), 
             ${saturation}%, 
             ${calcCurvedBrightness(20)}%
           );
-          --themesong-playpagebg-color: hsl(
-            var(--themesong-palette-dominant-hue), 
+          --ts-playpagebg-color: hsl(
+            var(--ts-palette-dominant-hue), 
             ${saturation}%, 
             ${calcCurvedBrightness(20)}%
           );
-          --themesong-playpageavtoggle-color: hsl(
-            var(--themesong-palette-dominant-hue), 
+          --ts-playpageavtoggle-color: hsl(
+            var(--ts-palette-dominant-hue), 
             ${saturation}%, 
             ${21 + (15 / 25) * 14}%
           );
-          --themesong-playbarbg-color: hsl(
-            var(--themesong-palette-dominant-hue), 
+          --ts-playbarbg-color: hsl(
+            var(--ts-palette-dominant-hue), 
             ${saturation}%, 
             ${calcCurvedBrightness(28)}%
           );
-          --themesong-bodybg-color: #000000;
+          --ts-bodybg-color: #000000;
         }
 
         ${dark_base_colors}

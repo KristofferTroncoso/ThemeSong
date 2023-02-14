@@ -31,11 +31,11 @@ function Panel() {
           border: 0;
           padding: 14px;
           background-color: transparent;
-          color: var(--themesong-tertiary-text-color);
+          color: var(--ts-tertiary-text-color);
           border-radius: 50%;
           :hover {
-            color: var(--themesong-primary-text-color);
-            background-color: var(--themesong-base-100-alpha-02-color, rgba(255, 255, 255, 0.2));
+            color: var(--ts-primary-text-color);
+            background-color: var(--ts-base-100-alpha-02-color, rgba(255, 255, 255, 0.2));
           }
         `}
         title="Open ThemeSong Quick Access Panel"

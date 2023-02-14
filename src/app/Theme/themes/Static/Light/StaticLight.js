@@ -15,13 +15,13 @@ function StaticLight() {
   return (
     <style id="StaticLight">
       {`:root {
-        --themesong-theme-static-hue: ${hue};
-        --themesong-theme-static-saturation: ${saturation}%;
-        --themesong-theme-static-topbarbg-light: ${lightness[0]}%;
-        --themesong-theme-static-playpagebg-light: ${lightness[1]}%;
-        --themesong-theme-static-playpageavtoggle-light: ${21 + (lightness[1] / 25) * 14}%;
-        --themesong-theme-static-playbarbg-light: ${lightness[2]}%;
-        --themesong-theme-static-bodybg-light: ${lightness[3]}%;
+        --ts-theme-static-hue: ${hue};
+        --ts-theme-static-saturation: ${saturation}%;
+        --ts-theme-static-topbarbg-light: ${lightness[0]}%;
+        --ts-theme-static-playpagebg-light: ${lightness[1]}%;
+        --ts-theme-static-playpageavtoggle-light: ${21 + (lightness[1] / 25) * 14}%;
+        --ts-theme-static-playbarbg-light: ${lightness[2]}%;
+        --ts-theme-static-bodybg-light: ${lightness[3]}%;
       }`}
       {static_light_css}
     </style>

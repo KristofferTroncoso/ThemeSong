@@ -67,17 +67,17 @@ function AppleMusic() {
       {apple_music_css}
       {`
         :root {
-          --themesong-theme-ditto-apple-1-color: hsl(var(--themesong-palette-dominant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.2), 35%);
-          --themesong-theme-ditto-apple-2-color: hsl(var(--themesong-palette-vibrant-hue), calc(var(--themesong-palette-vibrant-saturation) * 0.2), 32%);
-          --themesong-theme-ditto-apple-3-color: hsl(var(--themesong-palette-muted-hue), calc(var(--themesong-palette-muted-saturation) * 0.2), 26%);
-          --themesong-theme-ditto-apple-4-color: hsl(var(--themesong-palette-lightvibrant-hue), calc(var(--themesong-palette-lightvibrant-saturation) * 0.2), 35%);
-          --themesong-theme-ditto-apple-5-color: hsl(var(--themesong-palette-darkvibrant-hue), calc(var(--themesong-palette-darkvibrant-saturation) * 0.2), 28%);
+          --ts-theme-ditto-apple-1-color: hsl(var(--ts-palette-dominant-hue), calc(var(--ts-palette-dominant-saturation) * 0.2), 35%);
+          --ts-theme-ditto-apple-2-color: hsl(var(--ts-palette-vibrant-hue), calc(var(--ts-palette-vibrant-saturation) * 0.2), 32%);
+          --ts-theme-ditto-apple-3-color: hsl(var(--ts-palette-muted-hue), calc(var(--ts-palette-muted-saturation) * 0.2), 26%);
+          --ts-theme-ditto-apple-4-color: hsl(var(--ts-palette-lightvibrant-hue), calc(var(--ts-palette-lightvibrant-saturation) * 0.2), 35%);
+          --ts-theme-ditto-apple-5-color: hsl(var(--ts-palette-darkvibrant-hue), calc(var(--ts-palette-darkvibrant-saturation) * 0.2), 28%);
 
-          --themesong-topbarbg-color: var(--themesong-theme-ditto-apple-4-color);
-          --themesong-playpagebg-color: linear-gradient(180deg, var(--themesong-theme-ditto-apple-4-color) 0%, var(--themesong-theme-ditto-apple-2-color) 20%, var(--themesong-theme-ditto-apple-5-color) 80%, var(--themesong-theme-ditto-apple-3-color) 100%);
-          --themesong-playbarbg-color: var(--themesong-theme-ditto-apple-3-color);
-          --themesong-playpageavtoggle-color: hsl(var(--themesong-palette-lightvibrant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.4), 27%);
-          --themesong-bodybg-color: #333333;
+          --ts-topbarbg-color: var(--ts-theme-ditto-apple-4-color);
+          --ts-playpagebg-color: linear-gradient(180deg, var(--ts-theme-ditto-apple-4-color) 0%, var(--ts-theme-ditto-apple-2-color) 20%, var(--ts-theme-ditto-apple-5-color) 80%, var(--ts-theme-ditto-apple-3-color) 100%);
+          --ts-playbarbg-color: var(--ts-theme-ditto-apple-3-color);
+          --ts-playpageavtoggle-color: hsl(var(--ts-palette-lightvibrant-hue), calc(var(--ts-palette-dominant-saturation) * 0.4), 27%);
+          --ts-bodybg-color: #333333;
         }
      `}
 
@@ -95,14 +95,14 @@ function AppleMusic() {
           isDark
             ? `:root {
 
-            --themesong-topbarbg-color: rgba(30,30,30,0.4) !important;
-            --themesong-bodybg-color: hsl(0,0%,12%);
+            --ts-topbarbg-color: rgba(30,30,30,0.4) !important;
+            --ts-bodybg-color: hsl(0,0%,12%);
 
-            --themesong-playbarbg-color: hsla(var(--themesong-palette-dominant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.5), 10%, 0.3);
+            --ts-playbarbg-color: hsla(var(--ts-palette-dominant-hue), calc(var(--ts-palette-dominant-saturation) * 0.5), 10%, 0.3);
           }
 
           #button-shape-like button {
-            color: var(--themesong-theme-ditto-applemusic-color);
+            color: var(--ts-theme-ditto-applemusic-color);
           }
 
           .ytmusic-section-list-renderer #contents ytmusic-responsive-list-item-renderer:nth-child(odd) {
@@ -116,14 +116,14 @@ function AppleMusic() {
           `
             : `:root {
 
-            --themesong-topbarbg-color: rgba(235,235,235,0.4) !important;
-            --themesong-bodybg-color: #fff;
+            --ts-topbarbg-color: rgba(235,235,235,0.4) !important;
+            --ts-bodybg-color: #fff;
 
-            --themesong-playbarbg-color: hsla(var(--themesong-palette-dominant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.7), 94%, 0.3);
+            --ts-playbarbg-color: hsla(var(--ts-palette-dominant-hue), calc(var(--ts-palette-dominant-saturation) * 0.7), 94%, 0.3);
           }
 
           #button-shape-like button {
-            color: var(--themesong-theme-ditto-applemusic-color);
+            color: var(--ts-theme-ditto-applemusic-color);
           }
           .ytmusic-section-list-renderer #contents ytmusic-responsive-list-item-renderer:nth-child(odd) {
             background-color: rgba(0,0,0,0.04);

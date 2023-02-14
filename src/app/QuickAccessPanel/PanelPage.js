@@ -21,12 +21,12 @@ function PanelPage() {
       css={css`
         padding: 6px;
         margin: 2px;
-        background: var(--themesong-playbarbg-color, #222);
-        border: 1px solid var(--themesong-base-30-color, rgba(255, 255, 255, 0.2));
+        background: var(--ts-playbarbg-color, #222);
+        border: 1px solid var(--ts-base-30-color, rgba(255, 255, 255, 0.2));
         border-radius: 4px;
         backdrop-filter: blur(6px);
-        transition: var(--themesong-bgcolor-transition);
-        color: var(--themesong-secondary-text-color, #fff);
+        transition: var(--ts-bgcolor-transition);
+        color: var(--ts-secondary-text-color, #fff);
       `}
     >
       <div

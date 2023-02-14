@@ -1,7 +1,7 @@
 function Custom() {
   const customCSS = /*css*/ `
     body {
-      background: hsl(var(--themesong-palette-dominant-hue), var(--themesong-palette-dominant-saturation), var(--themesong-palette-dominant-light));
+      background: hsl(var(--ts-palette-dominant-hue), var(--ts-palette-dominant-saturation), var(--ts-palette-dominant-light));
     }
   `;
 

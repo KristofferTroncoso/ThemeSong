@@ -22,11 +22,11 @@ function StaticDark() {
     <style id="StaticDark">
       {
         /*css*/ `:root {
-        --themesong-topbarbg-color: hsl(${hue}, ${saturation}%, ${lightness[0]}%);
-        --themesong-playpagebg-color: hsl(${hue}, ${saturation}%, ${lightness[1]}%);
-        --themesong-playpageavtoggle-color: hsl(${hue}, ${saturation}%, ${21 + (lightness[1] / 25) * 14}%);
-        --themesong-playbarbg-color: hsl(${hue}, ${saturation}%, ${lightness[2]}%);
-        --themesong-bodybg-color: hsl(${hue}, ${saturation}%, ${lightness[3]}%);
+        --ts-topbarbg-color: hsl(${hue}, ${saturation}%, ${lightness[0]}%);
+        --ts-playpagebg-color: hsl(${hue}, ${saturation}%, ${lightness[1]}%);
+        --ts-playpageavtoggle-color: hsl(${hue}, ${saturation}%, ${21 + (lightness[1] / 25) * 14}%);
+        --ts-playbarbg-color: hsl(${hue}, ${saturation}%, ${lightness[2]}%);
+        --ts-bodybg-color: hsl(${hue}, ${saturation}%, ${lightness[3]}%);
       }
       
       ${dark_base_colors}

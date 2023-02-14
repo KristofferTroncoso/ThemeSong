@@ -1,12 +1,12 @@
 export const texts = /*css*/ `
 :root {
-  --themesong-primary-text-color: var(--themesong-base-100-color);
-  --themesong-secondary-text-color: var(--themesong-base-80-color);
-  --themesong-tertiary-text-color: var(--themesong-base-70-color);
+  --ts-primary-text-color: var(--ts-base-100-color);
+  --ts-secondary-text-color: var(--ts-base-80-color);
+  --ts-tertiary-text-color: var(--ts-base-70-color);
 
-  --themesong-primary-icon-color: var(--themesong-base-100-color);
-  --themesong-secondary-icon-color: var(--themesong-base-80-color);
-  --themesong-tertiary-icon-color: var(--themesong-base-70-color);
+  --ts-primary-icon-color: var(--ts-base-100-color);
+  --ts-secondary-icon-color: var(--ts-base-80-color);
+  --ts-tertiary-icon-color: var(--ts-base-70-color);
 }
 
 /* secondary texts on lists like "your likes" */

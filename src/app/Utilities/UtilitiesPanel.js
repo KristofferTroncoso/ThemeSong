@@ -9,7 +9,7 @@ function UtilitiesPanel() {
       <h3
         css={css`
           padding: 2px 5px;
-          color: var(--themesong-secondary-text-color);
+          color: var(--ts-secondary-text-color);
         `}
       >
         Utilities

@@ -38,28 +38,28 @@ function DynamicDark() {
     <style id="DynamicDark">
       {`
         :root {
-          --themesong-topbarbg-color: hsl(
-            var(--themesong-palette-dominant-hue), 
+          --ts-topbarbg-color: hsl(
+            var(--ts-palette-dominant-hue), 
             ${saturation}%, 
             ${calcCurvedBrightness(lightness[0])}%
           );
-          --themesong-playpagebg-color: hsl(
-            var(--themesong-palette-dominant-hue), 
+          --ts-playpagebg-color: hsl(
+            var(--ts-palette-dominant-hue), 
             ${saturation}%, 
             ${calcCurvedBrightness(lightness[1])}%
           );
-          --themesong-playpageavtoggle-color: hsl(
-            var(--themesong-palette-dominant-hue), 
+          --ts-playpageavtoggle-color: hsl(
+            var(--ts-palette-dominant-hue), 
             ${saturation}%, 
             ${21 + (lightness[1] / 25) * 14}%
           );
-          --themesong-playbarbg-color: hsl(
-            var(--themesong-palette-dominant-hue), 
+          --ts-playbarbg-color: hsl(
+            var(--ts-palette-dominant-hue), 
             ${saturation}%, 
             ${calcCurvedBrightness(lightness[2])}%
           );
-          --themesong-bodybg-color: hsl(
-            var(--themesong-palette-dominant-hue), 
+          --ts-bodybg-color: hsl(
+            var(--ts-palette-dominant-hue), 
             ${saturation}%, 
             ${calcCurvedBrightness(lightness[3])}%
           );

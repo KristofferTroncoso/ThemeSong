@@ -269,7 +269,7 @@ function VisualizerPanel() {
           <h3
             css={css`
               padding: 2px 5px;
-              color: var(--themesong-base-40-color, rgba(255, 255, 255, 0.2));
+              color: var(--ts-base-40-color, rgba(255, 255, 255, 0.2));
             `}
           >
             Variants

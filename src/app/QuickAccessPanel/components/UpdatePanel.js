@@ -16,14 +16,14 @@ function UpdatePanel() {
       <h2
         css={css`
           padding: 0 2px;
-          color: var(--themesong-primary-text-color);
+          color: var(--ts-primary-text-color);
         `}
       >
         <u>ThemeSong Update / Notes</u>
       </h2>
       <div
         css={css`
-          color: var(--themesong-primary-text-color);
+          color: var(--ts-primary-text-color);
           padding: 2px;
           font-size: 13px;
           max-width: 280px;
