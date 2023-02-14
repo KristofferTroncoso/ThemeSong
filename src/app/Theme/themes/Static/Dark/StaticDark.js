@@ -1,7 +1,13 @@
 import { useEffect } from "react";
 import { useStore } from "/src/app/store";
 import { menubar } from "../../selectors";
-import { static_dark_css } from "./static-dark-css";
+import { scrollbars } from "../../universal/scrollbars";
+import { playerbar_progressbar } from "../../universal/playerbar-progressbar";
+import { main_BGs } from "../../universal/main-BGs";
+import { songImgStyles } from "../../universal/songImgStyles";
+import { misc_style_improvements } from "../../universal/misc-style-improvements";
+import { dark_base_colors } from "../../universal/dark-base-colors";
+import { texts_and_icons } from "../../universal/texts_and_icons";
 
 function StaticDark() {
   const { hue, saturation, lightness } = useStore(
@@ -14,16 +20,23 @@ function StaticDark() {
 
   return (
     <style id="StaticDark">
-      {`:root {
-        --themesong-theme-static-hue: ${hue};
-        --themesong-theme-static-saturation: ${saturation}%;
-        --themesong-theme-static-topbarbg-light: ${lightness[0]}%;
-        --themesong-theme-static-playpagebg-light: ${lightness[1]}%;
-        --themesong-theme-static-playpageavtoggle-light: ${21 + (lightness[1] / 25) * 14}%;
-        --themesong-theme-static-playbarbg-light: ${lightness[2]}%;
-        --themesong-theme-static-bodybg-light: ${lightness[3]}%;
-      }`}
-      {static_dark_css}
+      {
+        /*css*/ `:root {
+        --themesong-topbarbg-color: hsl(${hue}, ${saturation}%, ${lightness[0]}%);
+        --themesong-playpagebg-color: hsl(${hue}, ${saturation}%, ${lightness[1]}%);
+        --themesong-playpageavtoggle-color: hsl(${hue}, ${saturation}%, ${21 + (lightness[1] / 25) * 14}%);
+        --themesong-playbarbg-color: hsl(${hue}, ${saturation}%, ${lightness[2]}%);
+        --themesong-bodybg-color: hsl(${hue}, ${saturation}%, ${lightness[3]}%);
+      }
+      
+      ${dark_base_colors}
+      ${main_BGs}
+      ${scrollbars}
+      ${playerbar_progressbar}
+      ${songImgStyles}
+      ${misc_style_improvements}
+      `
+      }
     </style>
   );
 }

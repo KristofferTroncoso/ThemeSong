@@ -1,8 +1,16 @@
 import { useState, useEffect } from "react";
 import { apple_music_css } from "./apple-music-css";
-import { apple_dark_css } from "./apple-dark-css";
 import { menubar } from "../../selectors";
 import { useStore } from "/src/app/store";
+import { dark_base_colors } from "../../universal/dark-base-colors";
+import { light_base_colors } from "../../universal/light-base-colors";
+
+import { scrollbars } from "../../universal/scrollbars";
+import { playerbar_progressbar } from "../../universal/playerbar-progressbar";
+import { main_BGs } from "../../universal/main-BGs";
+import { songImgStyles } from "../../universal/songImgStyles";
+import { misc_style_improvements } from "../../universal/misc-style-improvements";
+import { texts_and_icons } from "../../universal/texts_and_icons";
 
 function AppleMusic() {
   const playerUiState = useStore((state) => state.player.playerUiState);
@@ -50,122 +58,95 @@ function AppleMusic() {
 
   return (
     <style id="AppleMusic">
+      {texts_and_icons}
+      {main_BGs}
+      {scrollbars}
+      {playerbar_progressbar}
+      {songImgStyles}
+      {misc_style_improvements}
+      {apple_music_css}
+      {`
+        :root {
+          --themesong-theme-ditto-apple-1-color: hsl(var(--themesong-palette-dominant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.2), 35%);
+          --themesong-theme-ditto-apple-2-color: hsl(var(--themesong-palette-vibrant-hue), calc(var(--themesong-palette-vibrant-saturation) * 0.2), 32%);
+          --themesong-theme-ditto-apple-3-color: hsl(var(--themesong-palette-muted-hue), calc(var(--themesong-palette-muted-saturation) * 0.2), 26%);
+          --themesong-theme-ditto-apple-4-color: hsl(var(--themesong-palette-lightvibrant-hue), calc(var(--themesong-palette-lightvibrant-saturation) * 0.2), 35%);
+          --themesong-theme-ditto-apple-5-color: hsl(var(--themesong-palette-darkvibrant-hue), calc(var(--themesong-palette-darkvibrant-saturation) * 0.2), 28%);
+
+          --themesong-topbarbg-color: var(--themesong-theme-ditto-apple-4-color);
+          --themesong-playpagebg-color: linear-gradient(180deg, var(--themesong-theme-ditto-apple-4-color) 0%, var(--themesong-theme-ditto-apple-2-color) 20%, var(--themesong-theme-ditto-apple-5-color) 80%, var(--themesong-theme-ditto-apple-3-color) 100%);
+          --themesong-playbarbg-color: var(--themesong-theme-ditto-apple-3-color);
+          --themesong-playpageavtoggle-color: hsl(var(--themesong-palette-lightvibrant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.4), 27%);
+          --themesong-bodybg-color: #333333;
+        }
+     `}
+
       {!(playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE")
         ? `
-        :root {
-          --themesong-theme-dynamic-saturation: ${20};
-          --themesong-theme-dynamic-topbarbg-light: ${25}%;
-          --themesong-theme-dynamic-bodybg-light: ${25}%;
-          --themesong-theme-dynamic-playpagebg-light: ${25}%;
-          --themesong-theme-dynamic-playbarbg-light: ${25}%;
-          --themesong-theme-dynamic-playpageavtoggle-light: ${21 + (25 / 25) * 14}%;
+
+        /* i think ytm is putting a 'padding-top: 100%' on this. i have to set it to 0 for my gradient to be good */
+        ytmusic-player[player-ui-state_=FULLSCREEN] #song-image.ytmusic-player {
+          padding-top: 0;
         }
-        ${apple_dark_css}
-      `
+        ${dark_base_colors}
+        `
         : `
         ${
           isDark
             ? `:root {
-            --themesong-base-00-color: #000;
-            --themesong-base-10-color: #1a1a1a;
-            --themesong-base-20-color: #333333;
-            --themesong-base-30-color: #4d4d4d;
-            --themesong-base-40-color: #666666;
-            --themesong-base-50-color: #808080;
-            --themesong-base-60-color: #999999;
-            --themesong-base-70-color: #b3b3b3;
-            --themesong-base-80-color: #cccccc;
-            --themesong-base-90-color: #e6e6e6;
-            --themesong-base-100-color: #ffffff;
 
-            --themesong-base-00-alpha-00-color: rgba(0,0,0,0.0);
-            --themesong-base-00-alpha-01-color: rgba(0,0,0,0.1);
-            --themesong-base-00-alpha-02-color: rgba(0,0,0,0.2);
-            --themesong-base-00-alpha-03-color: rgba(0,0,0,0.3);
-            --themesong-base-00-alpha-04-color: rgba(0,0,0,0.4);
-            --themesong-base-00-alpha-05-color: rgba(0,0,0,0.5);
-            --themesong-base-00-alpha-06-color: rgba(0,0,0,0.6);
-            --themesong-base-00-alpha-07-color: rgba(0,0,0,0.7);
-            --themesong-base-00-alpha-08-color: rgba(0,0,0,0.8);
-            --themesong-base-00-alpha-09-color: rgba(0,0,0,0.9);
-            --themesong-base-00-alpha-10-color: rgba(0,0,0,1);
-
-            --themesong-base-100-alpha-00-color: rgba(255,255,255,0.0);
-            --themesong-base-100-alpha-01-color: rgba(255,255,255,0.1);
-            --themesong-base-100-alpha-02-color: rgba(255,255,255,0.2);
-            --themesong-base-100-alpha-03-color: rgba(255,255,255,0.3);
-            --themesong-base-100-alpha-04-color: rgba(255,255,255,0.4);
-            --themesong-base-100-alpha-05-color: rgba(255,255,255,0.5);
-            --themesong-base-100-alpha-06-color: rgba(255,255,255,0.6);
-            --themesong-base-100-alpha-07-color: rgba(255,255,255,0.7);
-            --themesong-base-100-alpha-08-color: rgba(255,255,255,0.8);
-            --themesong-base-100-alpha-09-color: rgba(255,255,255,0.9);
-            --themesong-base-100-alpha-10-color: rgba(255,255,255,1);
-
-            --themesong-theme-static-hue: ${0};
-            --themesong-theme-static-saturation: ${0}%;
-            --themesong-theme-static-topbarbg-light: ${30}%;
-            --themesong-theme-static-bodybg-light: ${20}%;
-            --themesong-theme-static-playpagebg-light: ${10}%;
-            --themesong-theme-static-playbarbg-light: ${10}%;
-            --themesong-theme-static-playpageavtoggle-light: ${21 + (50 / 25) * 14}%;
             --themesong-topbarbg-color: rgba(30,30,30,0.4) !important;
-            --themesong-bodybg-color: hsl(0,0%,9%);
+            --themesong-bodybg-color: hsl(0,0%,12%);
 
             --themesong-playbarbg-color: hsla(var(--themesong-palette-dominant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.5), 10%, 0.3);
+          }
 
-          }`
+          #button-shape-like button {
+            color: var(--themesong-theme-ditto-applemusic-color);
+          }
+
+          .ytmusic-section-list-renderer #contents ytmusic-responsive-list-item-renderer:nth-child(odd) {
+            background-color: hsl(0,0%, 16%);
+            border-radius: 2px;
+          }
+
+
+
+          ${dark_base_colors}
+          `
             : `:root {
-            --themesong-base-00-color: #ffffff;
-            --themesong-base-10-color: #e6e6e6;
-            --themesong-base-20-color: #cccccc;
-            --themesong-base-30-color: #b3b3b3;
-            --themesong-base-40-color: #999999;
-            --themesong-base-50-color: #808080;
-            --themesong-base-60-color: #666666;
-            --themesong-base-70-color: #4d4d4d;
-            --themesong-base-80-color: #333333;
-            --themesong-base-90-color: #1a1a1a;
-            --themesong-base-100-color: #000;
 
-            --themesong-base-00-alpha-00-color: rgba(255,255,255,0.0);
-            --themesong-base-00-alpha-01-color: rgba(255,255,255,0.1);
-            --themesong-base-00-alpha-02-color: rgba(255,255,255,0.2);
-            --themesong-base-00-alpha-03-color: rgba(255,255,255,0.3);
-            --themesong-base-00-alpha-04-color: rgba(255,255,255,0.4);
-            --themesong-base-00-alpha-05-color: rgba(255,255,255,0.5);
-            --themesong-base-00-alpha-06-color: rgba(255,255,255,0.6);
-            --themesong-base-00-alpha-07-color: rgba(255,255,255,0.7);
-            --themesong-base-00-alpha-08-color: rgba(255,255,255,0.8);
-            --themesong-base-00-alpha-09-color: rgba(255,255,255,0.9);
-            --themesong-base-00-alpha-10-color: rgba(255,255,255,1);
-
-            --themesong-base-100-alpha-00-color: rgba(0,0,0,0.0);
-            --themesong-base-100-alpha-01-color: rgba(0,0,0,0.1);
-            --themesong-base-100-alpha-02-color: rgba(0,0,0,0.2);
-            --themesong-base-100-alpha-03-color: rgba(0,0,0,0.3);
-            --themesong-base-100-alpha-04-color: rgba(0,0,0,0.4);
-            --themesong-base-100-alpha-05-color: rgba(0,0,0,0.5);
-            --themesong-base-100-alpha-06-color: rgba(0,0,0,0.6);
-            --themesong-base-100-alpha-07-color: rgba(0,0,0,0.7);
-            --themesong-base-100-alpha-08-color: rgba(0,0,0,0.8);
-            --themesong-base-100-alpha-09-color: rgba(0,0,0,0.9);
-            --themesong-base-100-alpha-10-color: rgba(0,0,0,1);
-
-            --themesong-theme-static-hue: ${0};
-            --themesong-theme-static-saturation: ${0}%;
-            --themesong-theme-static-topbarbg-light: ${94}%;
-            --themesong-theme-static-bodybg-light: ${100}%;
-            --themesong-theme-static-playpagebg-light: ${96}%;
-            --themesong-theme-static-playbarbg-light: ${94}%;
-            --themesong-theme-static-playpageavtoggle-light: ${21 + (50 / 25) * 14}%;
             --themesong-topbarbg-color: rgba(235,235,235,0.4) !important;
             --themesong-bodybg-color: #fff;
 
             --themesong-playbarbg-color: hsla(var(--themesong-palette-dominant-hue), calc(var(--themesong-palette-dominant-saturation) * 0.7), 94%, 0.3);
-          }`
+          }
+
+          #button-shape-like button {
+            color: var(--themesong-theme-ditto-applemusic-color);
+          }
+          .ytmusic-section-list-renderer #contents ytmusic-responsive-list-item-renderer:nth-child(odd) {
+            background-color: rgba(0,0,0,0.04);
+            border-radius: 2px;
+          }
+          /*
+          ytmusic-responsive-list-item-renderer {
+            height: 40px;
+          }
+          */
+          ${light_base_colors}
+          `
         }
-        ${apple_music_css}
+
+        /* remove border-bottom / ruler from lists */
+        #contents.ytmusic-shelf-renderer>*.ytmusic-shelf-renderer:not(:last-child) {
+          border-bottom: none !important;
+        }
+        
+        #contents.ytmusic-playlist-shelf-renderer>*.ytmusic-playlist-shelf-renderer:not(:last-child) {
+          border-bottom: none !important;
+        }
+
       `}
     </style>
   );

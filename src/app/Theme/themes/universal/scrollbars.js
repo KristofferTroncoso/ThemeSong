@@ -9,13 +9,13 @@ export const scrollbars = /*css*/ `
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(250, 250, 250, 0.2) !important;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: var(--themesong-base-100-alpha-02-color) !important;
+  border: 1px solid var(--themesong-base-00-alpha-03-color);
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(250, 250, 250, 0.5) !important;
+  background-color: var(--themesong-base-100-alpha-05-color) !important;
 }
 
 ::-webkit-scrollbar-corner {
@@ -27,8 +27,8 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(255,255,255,0.07);
+  border-left: 1px solid var(--themesong-base-100-alpha-01-color);
+  border-top: 1px solid var(--themesong-base-100-alpha-01-color);
+  background-color: var(--themesong-base-100-alpha-01-color);
 }
 `;

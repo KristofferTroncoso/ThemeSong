@@ -40,7 +40,7 @@ ytmusic-player[player-ui-state_=FULLSCREEN] #song-image #img {
   background-color: var(--themesong-palette-dominant-color);
   border-radius: 6px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.6);
-  filter: drop-shadow(0px 0px 200px var(--themesong-palette-dominant-light50-color));
+  filter: drop-shadow(0px 0px 200px hsl(var(--themesong-palette-dominant-hue), var(--themesong-palette-dominant-saturation), 50%));
   width: 760px;
   height: 760px;
   margin: 0;

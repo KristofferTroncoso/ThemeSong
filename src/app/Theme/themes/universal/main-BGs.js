@@ -2,7 +2,8 @@ export const main_BGs = /*css*/ `
 :root {
   --themesong-bgcolor-transition: background 0.5s ease-out;
 
-  --ytmusic-brand-background-solid: var(--themesong-bodybg-color) !important;
+  --ytmusic-brand-background-solid: var(--themesong-playbarbg-color) !important;
+  --ytmusic-general-background-a: var(--themesong-bodybg-color) !important;
   --ytmusic-general-background-c: var(--themesong-bodybg-color) !important;
   --ytmusic-search-background: var(--themesong-playbarbg-color) !important;
 }
@@ -68,5 +69,27 @@ ytmusic-search-box[opened], ytmusic-search-box[has-query] {
 
 ytmusic-search-suggestions-section.ytmusic-search-box {
   border-top: 1px solid var(--themesong-base-00-alpha10-color);
+}
+
+/* start PlayPage song img styling */
+ytmusic-player {
+  /* below is like an accent gradient for the song img */
+  --ytmusic-player-overlay-gradient: linear-gradient( var(--themesong-base-00-alpha-06-color) 0%, rgba(0, 0, 0, 0) 40% ) !important;
+}
+/* end PlayPage song img styling */
+
+
+
+/* artist image white filter */
+/* aside from the gradient, there's also a default dark filter applied to the artist image header on the artist page */
+/* this needs to be set to a white/light filter on light themes or else it wont look right */
+.image.ytmusic-immersive-header-renderer~.content-container-wrapper.ytmusic-immersive-header-renderer {
+  background-color: var(--themesong-base-00-alpha-03-color) !important;
+}
+
+
+/* semi-transparent overlay on top of album images (on home page) on-hover */
+ytmusic-background-overlay-renderer {
+  --ytmusic-background-overlay-background: var(--themesong-base-00-alpha-06-color) !important;
 }
 `;

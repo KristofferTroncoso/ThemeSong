@@ -177,11 +177,6 @@ function Palette() {
           --themesong-palette-dominant-hue: ${(dominant.hsl[0] * 360).toFixed()};
           --themesong-palette-dominant-saturation: ${(dominant.hsl[1] * 100).toFixed()}%;
           --themesong-palette-dominant-light: ${(dominant.hsl[2] * 100).toFixed()}%;
-
-          --themesong-palette-dominant-light50-color: hsl(var(--themesong-palette-dominant-hue), var(--themesong-theme-dynamic-saturation), 50%);
-          
-          --themesong-palette-dominant-alpha10-color: hsla(var(--themesong-palette-dominant-hue), var(--themesong-theme-dynamic-saturation), var(--themesong-palette-dominant-light), 0.1);
-          --themesong-palette-dominant-alpha20-color: hsla(var(--themesong-palette-dominant-hue), var(--themesong-theme-dynamic-saturation), var(--themesong-palette-dominant-light), 0.2);
         }
       `}
     </style>

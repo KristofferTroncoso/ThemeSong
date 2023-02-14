@@ -1,7 +1,14 @@
 import { useEffect } from "react";
 import { useStore } from "/src/app/store";
-import { dynamiclight_css } from "./dynamiclightCSS";
 import { menubar } from "../../selectors";
+
+import { scrollbars } from "../../universal/scrollbars";
+import { playerbar_progressbar } from "../../universal/playerbar-progressbar";
+import { main_BGs } from "../../universal/main-BGs";
+import { songImgStyles } from "../../universal/songImgStyles";
+import { misc_style_improvements } from "../../universal/misc-style-improvements";
+import { light_base_colors } from "../../universal/light-base-colors";
+import { texts_and_icons } from "../../universal/texts_and_icons";
 
 function DynamicLight() {
   const dominantColorHSL = useStore((state) => state.palette.dominant).hsl;
@@ -11,7 +18,7 @@ function DynamicLight() {
   const lightness = dynamicLightPrefs.lightness;
 
   let hue = (dominantColorHSL[0] * 360).toFixed();
-  let saturation = `${(dominantColorHSL[1] * 100 * dynamicLightPrefs.saturation).toFixed()}%`;
+  let saturation = (dominantColorHSL[1] * 100 * dynamicLightPrefs.saturation).toFixed();
 
   function calcCurvedBrightness(brightness) {
     let hueNum = parseInt(hue, 10);
@@ -25,20 +32,52 @@ function DynamicLight() {
   }
 
   useEffect(() => {
-    menubar.content = `hsl(${hue}, ${saturation}, ${calcCurvedBrightness(lightness[0])}%)`;
+    menubar.content = `hsl(${hue}, ${saturation}%, ${calcCurvedBrightness(lightness[0])}%)`;
+    // document.querySelector("html").removeAttribute("dark");
+    // document.querySelector("html").setAttribute("light", "true");
   }, [hue, saturation, lightness]);
 
   return (
     <style id="DynamicLight">
-      {`:root {
-        --themesong-theme-dynamic-saturation: ${saturation};
-        --themesong-theme-dynamic-topbarbg-light: ${calcCurvedBrightness(lightness[0])}%;
-        --themesong-theme-dynamic-playpagebg-light: ${calcCurvedBrightness(lightness[1])}%;
-        --themesong-theme-dynamic-playpageavtoggle-light: ${21 + (lightness[1] / 25) * 14}%;
-        --themesong-theme-dynamic-playbarbg-light: ${calcCurvedBrightness(lightness[2])}%;
-        --themesong-theme-dynamic-bodybg-light: ${calcCurvedBrightness(lightness[3])}%;
-      }`}
-      {dynamiclight_css}
+      {
+        /*css*/ `
+        :root {
+            --themesong-topbarbg-color: hsl(
+              var(--themesong-palette-dominant-hue), 
+              ${saturation}%, 
+              ${calcCurvedBrightness(lightness[0])}%
+            );
+            --themesong-playpagebg-color: hsl(
+              var(--themesong-palette-dominant-hue), 
+              ${saturation}%, 
+              ${calcCurvedBrightness(lightness[1])}%
+            );
+            --themesong-playpageavtoggle-color: hsl(
+              var(--themesong-palette-dominant-hue), 
+              ${saturation}%, 
+              ${21 + (lightness[1] / 25) * 14}%
+            );
+            --themesong-playbarbg-color: hsl(
+              var(--themesong-palette-dominant-hue), 
+              ${saturation}%, 
+              ${calcCurvedBrightness(lightness[2])}%
+            );
+            --themesong-bodybg-color: hsl(
+              var(--themesong-palette-dominant-hue), 
+              ${saturation}%, 
+              ${calcCurvedBrightness(lightness[3])}%
+            );
+        }
+      
+        ${light_base_colors}
+        ${main_BGs}
+        ${scrollbars}
+        ${playerbar_progressbar}
+        ${songImgStyles}
+        
+        ${texts_and_icons}
+        `
+      }
     </style>
   );
 }
