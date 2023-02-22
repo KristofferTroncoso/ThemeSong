@@ -21,8 +21,8 @@ function PanelPage() {
       css={css`
         padding: 6px;
         margin: 2px;
-        background: var(--ts-playbarbg-color, #222);
-        border: 1px solid var(--ts-base-30-color, rgba(255, 255, 255, 0.2));
+        background: var(--ts-playerbar-color, #222);
+        border: 1px solid var(--ts-base-100-alpha-02-color, rgba(255, 255, 255, 0.2));
         border-radius: 4px;
         backdrop-filter: blur(6px);
         transition: var(--ts-bgcolor-transition);
