@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { createRoot } from "react-dom/client";
 
 import VisualizerToggleButton from "./components/VisualizerToggleButton";
+import HideCaptions from "./components/HideCaptions";
 import VisualizerContainer from "./VisualizerContainer";
 
 function addVisualizerContainer() {
@@ -27,27 +28,40 @@ function addVisualizerContainer() {
   root.render(<VisualizerContainer />);
 }
 
-function addVisualizerButton() {
+function addThemesongControlButtonsContainer() {
   const topRowButtons = document.querySelector(".top-row-buttons");
-  let visualizerDivContainer;
+  let themesongControlButtonsContainer;
 
-  if (document.getElementById("visualizerDivContainer")) {
-    document.getElementById("visualizerDivContainer").remove();
+  if (document.getElementById("themesongControlButtonsContainer")) {
+    document.getElementById("themesongControlButtonsContainer").remove();
   }
 
-  visualizerDivContainer = document.createElement("span");
-  visualizerDivContainer.id = "visualizerDivContainer";
+  themesongControlButtonsContainer = document.createElement("span");
+  themesongControlButtonsContainer.id = "themesongControlButtonsContainer";
 
-  topRowButtons.prepend(visualizerDivContainer);
+  topRowButtons.prepend(themesongControlButtonsContainer);
 
-  const root = createRoot(visualizerDivContainer);
-  root.render(<VisualizerToggleButton />);
+  const root = createRoot(themesongControlButtonsContainer);
+  root.render(
+    <div
+      css={{
+        margin: "8px 0",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        alignContent: "center",
+      }}
+    >
+      <HideCaptions />
+      <VisualizerToggleButton />
+    </div>
+  );
 }
 
 function VisualizerCS() {
   useEffect(() => {
     addVisualizerContainer();
-    addVisualizerButton();
+    addThemesongControlButtonsContainer();
   }, []);
 
   return null;

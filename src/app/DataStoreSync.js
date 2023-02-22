@@ -10,6 +10,7 @@ function DataStoreSync() {
   const changeActivePopupTab = useStore((state) => state.popup.changeActivePopupTab);
   const changeShowUpdateNote = useStore((state) => state.extension.changeShowUpdateNote);
   // const changeSnippets = useStore(state => state.snippets.changeSnippets);
+  const changeHideCaptions = useStore((state) => state.player.changeHideCaptions);
 
   useEffect(() => {
     console.log("DataStoreSync");
@@ -34,6 +35,9 @@ function DataStoreSync() {
           break;
         case "showUpdateNote":
           changeShowUpdateNote(value);
+          break;
+        case "hideCaptions":
+          changeHideCaptions(value);
           break;
         // case "snippets":
         //   changeSnippets(value)
