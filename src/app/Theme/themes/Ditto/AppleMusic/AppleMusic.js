@@ -83,8 +83,6 @@ function AppleMusic() {
           --ts-playerpageavtoggle-color: hsl(var(--ts-palette-lightvibrant-hue), calc(var(--ts-palette-dominant-saturation) * 0.4), 27%);
           --ts-body-color: #333333;
 
-          --ts-overlay-color: rgba(255,255,255,0.6);
-
           --ts-theme-ditto-applemusic-color: #d60017;
           --ts-colored-button-color: #d60017;
         }
@@ -131,6 +129,9 @@ function AppleMusic() {
 
       {!(playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE")
         ? `
+        :root {
+          --ts-overlay-color: rgba(0,0,0,0.7);
+        }
 
         /* i think ytm is putting a 'padding-top: 100%' on this. i have to set it to 0 for my gradient to be good */
         ytmusic-player[player-ui-state_=FULLSCREEN] #song-image.ytmusic-player {
