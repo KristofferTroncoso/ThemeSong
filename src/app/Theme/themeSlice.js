@@ -51,7 +51,7 @@ export const createThemeSlice = (set) => ({
       id: "db8854e3-6753-4639-b244-c8091f3b9fcb",
       appearance: "dark",
       dark: {
-        saturation: 0.8,
+        saturation: 0.7,
         lightness: [20, 15, 25, 8],
       },
       light: {

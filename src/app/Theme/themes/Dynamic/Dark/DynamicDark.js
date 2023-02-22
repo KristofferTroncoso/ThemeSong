@@ -1,13 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import { useStore } from "/src/app/store";
 import { menubar } from "../../selectors";
 
-import { scrollbars } from "../../universal/scrollbars";
-import { playerbar_progressbar } from "../../universal/playerbar-progressbar";
-import { main_BGs } from "../../universal/main-BGs";
-import { songImgStyles } from "../../universal/songImgStyles";
-import { misc_style_improvements } from "../../universal/misc-style-improvements";
-import { dark_base_colors } from "../../universal/dark-base-colors";
+import { scrollbars } from "../../universal/core/scrollbars";
+import { playerbar_progressbar } from "../../universal/core/playerbar_progressbar";
+import { backgrounds } from "../../universal/core/backgrounds";
+import { song_image } from "../../universal/extra/song_image";
+import { misc_style_improvements } from "../../universal/extra/misc_style_improvements";
+import { dark_base_colors } from "../../universal/colors/dark_base_colors";
+import { Global, css } from "@emotion/react";
 
 function DynamicDark() {
   const dominantColorHSL = useStore((state) => state.palette.dominant).hsl;
@@ -19,60 +20,62 @@ function DynamicDark() {
   let hue = (dominantColorHSL[0] * 360).toFixed();
   let saturation = (dominantColorHSL[1] * 100 * dynamicDarkPrefs.saturation).toFixed();
 
-  function calcCurvedBrightness(brightness) {
-    let hueNum = parseInt(hue, 10);
-    let brightnessNum = parseInt(brightness, 10);
+  const curveLight = useCallback(
+    (brightness) => {
+      let hueNum = parseInt(hue, 10);
+      let brightnessNum = parseInt(brightness, 10);
 
-    if (hueNum > 35 && hueNum < 200) {
-      return brightnessNum * 0.7;
-    } else {
-      return brightnessNum;
-    }
-  }
+      if (hueNum > 35 && hueNum < 200) {
+        return brightnessNum * 0.7;
+      } else {
+        return brightnessNum;
+      }
+    },
+    [hue]
+  );
 
   useEffect(() => {
-    menubar.content = `hsl(${hue}, ${saturation}%, ${calcCurvedBrightness(lightness[0])}%)`;
-  }, [hue, saturation, lightness]);
+    menubar.content = `hsl(${hue}, ${saturation}%, ${curveLight(lightness[0])}%)`;
+  }, [hue, saturation, lightness, curveLight]);
 
   return (
-    <style id="DynamicDark">
-      {`
-        :root {
-          --ts-topbarbg-color: hsl(
-            var(--ts-palette-dominant-hue), 
-            ${saturation}%, 
-            ${calcCurvedBrightness(lightness[0])}%
-          );
-          --ts-playpagebg-color: hsl(
-            var(--ts-palette-dominant-hue), 
-            ${saturation}%, 
-            ${calcCurvedBrightness(lightness[1])}%
-          );
-          --ts-playpageavtoggle-color: hsl(
-            var(--ts-palette-dominant-hue), 
-            ${saturation}%, 
-            ${21 + (lightness[1] / 25) * 14}%
-          );
-          --ts-playbarbg-color: hsl(
-            var(--ts-palette-dominant-hue), 
-            ${saturation}%, 
-            ${calcCurvedBrightness(lightness[2])}%
-          );
-          --ts-bodybg-color: hsl(
-            var(--ts-palette-dominant-hue), 
-            ${saturation}%, 
-            ${calcCurvedBrightness(lightness[3])}%
-          );
-        }
-
+    <Global
+      styles={css`
         ${dark_base_colors}
-        ${main_BGs}
+        ${backgrounds}
         ${scrollbars}
         ${playerbar_progressbar}
-        ${songImgStyles}
+        ${song_image}
         ${misc_style_improvements}
+        :root {
+          --ts-navbar-color: hsl(var(--ts-palette-dominant-hue), ${saturation}%, ${curveLight(lightness[0])}%);
+          --ts-playerpage-color: hsl(var(--ts-palette-dominant-hue), ${saturation}%, ${curveLight(lightness[1])}%);
+          --ts-playerpageavtoggle-color: hsl(
+            var(--ts-palette-dominant-hue),
+            ${saturation}%,
+            ${21 + (lightness[1] / 25) * 14}%
+          );
+          --ts-playerbar-color: hsl(var(--ts-palette-dominant-hue), ${saturation}%, ${curveLight(lightness[2])}%);
+          --ts-body-color: hsl(var(--ts-palette-dominant-hue), ${saturation}%, ${curveLight(lightness[3])}%);
+
+          --ts-playprogress-color: hsl(var(--ts-palette-sorted-1-hue), 80%, 91%);
+          --ts-playprogress-secondary-color: hsla(
+            var(--ts-palette-sorted-2-hue),
+            var(--ts-palette-sorted-2-saturation),
+            35%,
+            0.7
+          );
+          --ts-playprogress-container-color: hsla(
+            var(--ts-palette-sorted-3-hue),
+            var(--ts-palette-sorted-3-saturation),
+            50%,
+            0.3
+          );
+
+          --ts-playprogress-knob-color: var(--ts-playprogress-color);
+        }
       `}
-    </style>
+    />
   );
 }
 

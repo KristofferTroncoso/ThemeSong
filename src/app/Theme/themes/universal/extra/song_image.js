@@ -1,4 +1,4 @@
-export const songImgStyles = /*css*/ `
+export const song_image = /*css*/ `
 /* start PlayPage song img styling */
 ytmusic-player {
   border-radius: 4px;

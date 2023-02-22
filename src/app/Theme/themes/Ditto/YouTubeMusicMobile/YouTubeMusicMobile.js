@@ -1,13 +1,12 @@
 import { useCallback, useEffect } from "react";
 import { useStore } from "/src/app/store";
 import { menubar } from "../../selectors";
-import { scrollbars } from "../../universal/scrollbars";
-import { playerbar_progressbar } from "../../universal/playerbar-progressbar";
-import { main_BGs } from "../../universal/main-BGs";
-import { songImgStyles } from "../../universal/songImgStyles";
-import { misc_style_improvements } from "../../universal/misc-style-improvements";
-import { dark_base_colors } from "../../universal/dark-base-colors";
-import { texts_and_icons } from "../../universal/texts_and_icons";
+import { scrollbars } from "../../universal/core/scrollbars";
+import { playerbar_progressbar } from "../../universal/core/playerbar_progressbar";
+import { backgrounds } from "../../universal/core/backgrounds";
+import { song_image } from "../../universal/extra/song_image";
+import { misc_style_improvements } from "../../universal/extra/misc_style_improvements";
+import { dark_base_colors } from "../../universal/colors/dark_base_colors";
 
 function YouTubeMusicMobile() {
   const dominantColorHSL = useStore((state) => state.palette.dominant).hsl;
@@ -32,7 +31,7 @@ function YouTubeMusicMobile() {
 
   useEffect(() => {
     if (playerUiState === "PLAYER_PAGE_OPEN") {
-      menubar.content = `hsl(${hue}, ${saturation}, ${calcCurvedBrightness(20)}%)`;
+      menubar.content = `hsl(${hue}, ${saturation}%, ${calcCurvedBrightness(20)}%)`;
     } else {
       menubar.content = "#000";
     }
@@ -42,37 +41,38 @@ function YouTubeMusicMobile() {
     <style id="YouTubeMusicMobile">
       {!(playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER")
         ? `
+        ${dark_base_colors}
+        ${backgrounds}
+        ${scrollbars}
+        ${playerbar_progressbar}
+        ${song_image}
+        ${misc_style_improvements}
+        
         :root {
-          --ts-topbarbg-color: hsl(
+          --ts-navbar-color: hsl(
             var(--ts-palette-dominant-hue), 
             ${saturation}%, 
             ${calcCurvedBrightness(20)}%
           );
-          --ts-playpagebg-color: hsl(
+          --ts-playerpage-color: hsl(
             var(--ts-palette-dominant-hue), 
             ${saturation}%, 
             ${calcCurvedBrightness(20)}%
           );
-          --ts-playpageavtoggle-color: hsl(
+          --ts-playerpageavtoggle-color: hsl(
             var(--ts-palette-dominant-hue), 
             ${saturation}%, 
             ${21 + (15 / 25) * 14}%
           );
-          --ts-playbarbg-color: hsl(
+          --ts-playerbar-color: hsl(
             var(--ts-palette-dominant-hue), 
             ${saturation}%, 
             ${calcCurvedBrightness(28)}%
           );
-          --ts-bodybg-color: #000000;
+          --ts-body-color: #000000;
         }
 
-        ${dark_base_colors}
-        ${main_BGs}
-        ${scrollbars}
-        ${playerbar_progressbar}
-        ${songImgStyles}
-        ${misc_style_improvements}
-        ${texts_and_icons}
+
       `
         : `
         ${dark_base_colors}

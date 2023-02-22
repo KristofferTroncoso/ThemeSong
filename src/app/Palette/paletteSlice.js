@@ -69,6 +69,44 @@ export const createPaletteSlice = (set) => ({
       titleTextColor: "#000",
     },
   },
+  sortedPalette: [
+    {
+      hex: "#7f7f7f",
+      rgb: [127.5, 127.5, 127.5],
+      hsl: [0, 0, 0.5],
+      population: 100,
+    },
+    {
+      hex: "#7f7f7f",
+      rgb: [127.5, 127.5, 127.5],
+      hsl: [0, 0, 0.5],
+      population: 100,
+    },
+    {
+      hex: "#7f7f7f",
+      rgb: [127.5, 127.5, 127.5],
+      hsl: [0, 0, 0.5],
+      population: 100,
+    },
+    {
+      hex: "#7f7f7f",
+      rgb: [127.5, 127.5, 127.5],
+      hsl: [0, 0, 0.5],
+      population: 100,
+    },
+    {
+      hex: "#7f7f7f",
+      rgb: [127.5, 127.5, 127.5],
+      hsl: [0, 0, 0.5],
+      population: 100,
+    },
+    {
+      hex: "#7f7f7f",
+      rgb: [127.5, 127.5, 127.5],
+      hsl: [0, 0, 0.5],
+      population: 100,
+    },
+  ],
   dominant: {
     hex: "#7f7f7f",
     rgb: [127.5, 127.5, 127.5],
@@ -85,6 +123,12 @@ export const createPaletteSlice = (set) => ({
     logPalette(payload);
     set((state) => {
       state.palette.palette = payload;
+    });
+  },
+  changeSortedPalette: (payload) => {
+    console.log("paletteSlice: changeSortedPalette");
+    set((state) => {
+      state.palette.sortedPalette = payload;
     });
   },
   changeDominantColor: (payload) => {

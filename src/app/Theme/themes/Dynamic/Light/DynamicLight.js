@@ -2,13 +2,16 @@ import { useEffect } from "react";
 import { useStore } from "/src/app/store";
 import { menubar } from "../../selectors";
 
-import { scrollbars } from "../../universal/scrollbars";
-import { playerbar_progressbar } from "../../universal/playerbar-progressbar";
-import { main_BGs } from "../../universal/main-BGs";
-import { songImgStyles } from "../../universal/songImgStyles";
-import { misc_style_improvements } from "../../universal/misc-style-improvements";
-import { light_base_colors } from "../../universal/light-base-colors";
-import { texts_and_icons } from "../../universal/texts_and_icons";
+import { scrollbars } from "../../universal/core/scrollbars";
+import { playerbar_progressbar } from "../../universal/core/playerbar_progressbar";
+import { backgrounds } from "../../universal/core/backgrounds";
+import { song_image } from "../../universal/extra/song_image";
+import { light_base_colors } from "../../universal/colors/light_base_colors";
+import { misc_style_improvements } from "../../universal/extra/misc_style_improvements";
+import { texts } from "../../universal/core/texts";
+import { icons } from "../../universal/core/icons";
+import { gradients_overlays } from "../../universal/core/gradients_overlays";
+import { rulers_borders } from "../../universal/core/rulers_borders";
 
 function DynamicLight() {
   const dominantColorHSL = useStore((state) => state.palette.dominant).hsl;
@@ -33,50 +36,70 @@ function DynamicLight() {
 
   useEffect(() => {
     menubar.content = `hsl(${hue}, ${saturation}%, ${calcCurvedBrightness(lightness[0])}%)`;
-    // document.querySelector("html").removeAttribute("dark");
-    // document.querySelector("html").setAttribute("light", "true");
   }, [hue, saturation, lightness]);
 
   return (
     <style id="DynamicLight">
       {
         /*css*/ `
+        ${light_base_colors}
+        ${backgrounds}
+        ${scrollbars}
+        ${playerbar_progressbar}
+        ${song_image}
+        ${texts}
+        ${icons}
+        ${gradients_overlays}
+        ${rulers_borders}
+        ${misc_style_improvements}
         :root {
-            --ts-topbarbg-color: hsl(
+            --ts-navbar-color: hsl(
               var(--ts-palette-dominant-hue), 
               ${saturation}%, 
               ${calcCurvedBrightness(lightness[0])}%
             );
-            --ts-playpagebg-color: hsl(
+            --ts-playerpage-color: hsl(
               var(--ts-palette-dominant-hue), 
               ${saturation}%, 
               ${calcCurvedBrightness(lightness[1])}%
             );
-            --ts-playpageavtoggle-color: hsl(
+            --ts-playerpageavtoggle-color: hsl(
               var(--ts-palette-dominant-hue), 
               ${saturation}%, 
               ${21 + (lightness[1] / 25) * 14}%
             );
-            --ts-playbarbg-color: hsl(
+            --ts-playerbar-color: hsl(
               var(--ts-palette-dominant-hue), 
               ${saturation}%, 
               ${calcCurvedBrightness(lightness[2])}%
             );
-            --ts-bodybg-color: hsl(
+            --ts-body-color: hsl(
               var(--ts-palette-dominant-hue), 
               ${saturation}%, 
               ${calcCurvedBrightness(lightness[3])}%
             );
+
+            --ts-playprogress-color: hsl(
+              var(--ts-palette-sorted-1-hue),
+              var(--ts-palette-sorted-1-saturation),
+              25%
+            );
+            --ts-playprogress-secondary-color: hsla(
+              var(--ts-palette-sorted-2-hue),
+              var(--ts-palette-sorted-2-saturation),
+              70%,
+              0.5
+            );
+            --ts-playprogress-container-color: hsla(
+              var(--ts-palette-sorted-3-hue),
+              var(--ts-palette-sorted-3-saturation),
+              20%,
+              0.2
+            );
+  
+            --ts-playprogress-knob-color: var(--ts-playprogress-color);
         }
-      
-        ${light_base_colors}
-        ${main_BGs}
-        ${scrollbars}
-        ${playerbar_progressbar}
-        ${songImgStyles}
-        
-        ${texts_and_icons}
-        `
+      `
       }
     </style>
   );

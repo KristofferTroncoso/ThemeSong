@@ -1,7 +1,7 @@
 /* when pressing fullscreen on the player page album art, the img goes to COVER. */
 export const coloredPlayerBg = /*css*/ `
   ytmusic-player {
-    background-color: var(--ts-playpagebg-color);
+    background-color: var(--ts-playerpage-color);
     transition: var(--ts-bgcolor-transition);
   }
 `;
@@ -35,7 +35,7 @@ export const playBarTextAndIconsColor = /*css*/ `
   }
 
   ytmusic-app-layout[player-fullscreened_] > [slot=player-bar] {
-    background: var(--ts-playbarbg-color);
+    background: var(--ts-playerbar-color);
     width: 100%;
   }
 `;

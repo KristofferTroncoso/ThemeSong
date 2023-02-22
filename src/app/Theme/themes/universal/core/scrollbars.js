@@ -5,7 +5,7 @@ export const scrollbars = /*css*/ `
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--ts-playbarbg-color);
+  background-color: var(--ts-playerbar-color);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -19,7 +19,7 @@ export const scrollbars = /*css*/ `
 }
 
 ::-webkit-scrollbar-corner {
-  background-color: var(--ts-playbarbg-color);
+  background-color: var(--ts-playerbar-color);
 }
 
 body::-webkit-scrollbar {

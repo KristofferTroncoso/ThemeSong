@@ -1,13 +1,12 @@
 import { useEffect } from "react";
 import { useStore } from "/src/app/store";
 import { menubar } from "../../selectors";
-import { scrollbars } from "../../universal/scrollbars";
-import { playerbar_progressbar } from "../../universal/playerbar-progressbar";
-import { main_BGs } from "../../universal/main-BGs";
-import { songImgStyles } from "../../universal/songImgStyles";
-import { misc_style_improvements } from "../../universal/misc-style-improvements";
-import { dark_base_colors } from "../../universal/dark-base-colors";
-import { texts_and_icons } from "../../universal/texts_and_icons";
+import { scrollbars } from "../../universal/core/scrollbars";
+import { playerbar_progressbar } from "../../universal/core/playerbar_progressbar";
+import { backgrounds } from "../../universal/core/backgrounds";
+import { song_image } from "../../universal/extra/song_image";
+import { misc_style_improvements } from "../../universal/extra/misc_style_improvements";
+import { dark_base_colors } from "../../universal/colors/dark_base_colors";
 
 function StaticDark() {
   const { hue, saturation, lightness } = useStore(
@@ -21,20 +20,22 @@ function StaticDark() {
   return (
     <style id="StaticDark">
       {
-        /*css*/ `:root {
-        --ts-topbarbg-color: hsl(${hue}, ${saturation}%, ${lightness[0]}%);
-        --ts-playpagebg-color: hsl(${hue}, ${saturation}%, ${lightness[1]}%);
-        --ts-playpageavtoggle-color: hsl(${hue}, ${saturation}%, ${21 + (lightness[1] / 25) * 14}%);
-        --ts-playbarbg-color: hsl(${hue}, ${saturation}%, ${lightness[2]}%);
-        --ts-bodybg-color: hsl(${hue}, ${saturation}%, ${lightness[3]}%);
-      }
+        /*css*/ `
+        ${dark_base_colors}
+        ${backgrounds}
+        ${scrollbars}
+        ${playerbar_progressbar}
+        ${song_image}
+        ${misc_style_improvements}
+        
+        :root {
+          --ts-navbar-color: hsl(${hue}, ${saturation}%, ${lightness[0]}%);
+          --ts-playerpage-color: hsl(${hue}, ${saturation}%, ${lightness[1]}%);
+          --ts-playerpageavtoggle-color: hsl(${hue}, ${saturation}%, ${21 + (lightness[1] / 25) * 14}%);
+          --ts-playerbar-color: hsl(${hue}, ${saturation}%, ${lightness[2]}%);
+          --ts-body-color: hsl(${hue}, ${saturation}%, ${lightness[3]}%);
+        }
       
-      ${dark_base_colors}
-      ${main_BGs}
-      ${scrollbars}
-      ${playerbar_progressbar}
-      ${songImgStyles}
-      ${misc_style_improvements}
       `
       }
     </style>

@@ -1,7 +1,17 @@
 import { useEffect } from "react";
-import { static_light_css } from "./static-light-css";
 import { useStore } from "/src/app/store";
 import { menubar } from "../../selectors";
+
+import { scrollbars } from "../../universal/core/scrollbars";
+import { playerbar_progressbar } from "../../universal/core/playerbar_progressbar";
+import { backgrounds } from "../../universal/core/backgrounds";
+import { song_image } from "../../universal/extra/song_image";
+import { light_base_colors } from "../../universal/colors/light_base_colors";
+import { misc_style_improvements } from "../../universal/extra/misc_style_improvements";
+import { texts } from "../../universal/core/texts";
+import { icons } from "../../universal/core/icons";
+import { gradients_overlays } from "../../universal/core/gradients_overlays";
+import { rulers_borders } from "../../universal/core/rulers_borders";
 
 function StaticLight() {
   const { hue, saturation, lightness } = useStore(
@@ -14,16 +24,23 @@ function StaticLight() {
 
   return (
     <style id="StaticLight">
+      {light_base_colors}
+      {backgrounds}
+      {scrollbars}
+      {playerbar_progressbar}
+      {song_image}
+      {texts}
+      {icons}
+      {gradients_overlays}
+      {rulers_borders}
+      {misc_style_improvements}
       {`:root {
-        --ts-theme-static-hue: ${hue};
-        --ts-theme-static-saturation: ${saturation}%;
-        --ts-theme-static-topbarbg-light: ${lightness[0]}%;
-        --ts-theme-static-playpagebg-light: ${lightness[1]}%;
-        --ts-theme-static-playpageavtoggle-light: ${21 + (lightness[1] / 25) * 14}%;
-        --ts-theme-static-playbarbg-light: ${lightness[2]}%;
-        --ts-theme-static-bodybg-light: ${lightness[3]}%;
+        --ts-navbar-color: hsl(${hue}, ${saturation}%, ${lightness[0]}%);
+        --ts-playerpage-color: hsl(${hue}, ${saturation}%, ${lightness[1]}%);
+        --ts-playerpageavtoggle-color: hsl(${hue}, ${saturation}%, ${21 + (lightness[1] / 25) * 14}%);
+        --ts-playerbar-color: hsl(${hue}, ${saturation}%, ${lightness[2]}%);
+        --ts-body-color: hsl(${hue}, ${saturation}%, ${lightness[3]}%);
       }`}
-      {static_light_css}
     </style>
   );
 }

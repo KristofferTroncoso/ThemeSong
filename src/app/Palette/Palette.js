@@ -8,8 +8,10 @@ let imgChangeObserver;
 function Palette() {
   const palette = useStore((state) => state.palette.palette);
   const dominant = useStore((state) => state.palette.dominant);
+  const sortedPalette = useStore((state) => state.palette.sortedPalette);
   const changePalette = useStore((state) => state.palette.changePalette);
   const changeDominantColor = useStore((state) => state.palette.changeDominantColor);
+  const changeSortedPalette = useStore((state) => state.palette.changeSortedPalette);
 
   useEffect(() => {
     initialPalette();
@@ -56,8 +58,10 @@ function Palette() {
             },
           };
           let dominant = getDominantColor(serializedPalette);
+          let sortedPalette = getSortedPalette(serializedPalette);
           changePalette(serializedPalette);
           changeDominantColor(dominant);
+          changeSortedPalette(sortedPalette);
         })
         .catch((err) => {
           console.log("vibrant error");
@@ -117,8 +121,10 @@ function Palette() {
                   },
                 };
                 let dominant = getDominantColor(serializedPalette);
+                let sortedPalette = getSortedPalette(serializedPalette);
                 changePalette(serializedPalette);
                 changeDominantColor(dominant);
+                changeSortedPalette(sortedPalette);
               })
               .catch((err) => {
                 console.log("vibrant error");
@@ -145,12 +151,12 @@ function Palette() {
     <style id="ThemeSong-Palette">
       {`
         :root {
-          --ts-palette-lightvibrant-color: ${palette.LightVibrant.hex};
-          --ts-palette-vibrant-color: ${palette.Vibrant.hex};
-          --ts-palette-darkvibrant-color: ${palette.DarkVibrant.hex};
-          --ts-palette-lightmuted-color: ${palette.LightMuted.hex};
-          --ts-palette-muted-color: ${palette.Muted.hex};
-          --ts-palette-darkmuted-color: ${palette.DarkMuted.hex};
+          --ts-palette-lightvibrant-hex: ${palette.LightVibrant.hex};
+          --ts-palette-vibrant-hex: ${palette.Vibrant.hex};
+          --ts-palette-darkvibrant-hex: ${palette.DarkVibrant.hex};
+          --ts-palette-lightmuted-hex: ${palette.LightMuted.hex};
+          --ts-palette-muted-hex: ${palette.Muted.hex};
+          --ts-palette-darkmuted-hex: ${palette.DarkMuted.hex};
 
           --ts-palette-lightvibrant-hue: ${(palette.LightVibrant.hsl[0] * 360).toFixed()};
           --ts-palette-vibrant-hue: ${(palette.Vibrant.hsl[0] * 360).toFixed()};
@@ -177,6 +183,36 @@ function Palette() {
           --ts-palette-dominant-hue: ${(dominant.hsl[0] * 360).toFixed()};
           --ts-palette-dominant-saturation: ${(dominant.hsl[1] * 100).toFixed()}%;
           --ts-palette-dominant-light: ${(dominant.hsl[2] * 100).toFixed()}%;
+
+          --ts-palette-sorted-0-hex:: ${sortedPalette[0].hex};
+          --ts-palette-sorted-0-hue: ${(sortedPalette[0].hsl[0] * 360).toFixed()};
+          --ts-palette-sorted-0-saturation: ${(sortedPalette[0].hsl[1] * 100).toFixed()}%;
+          --ts-palette-sorted-0-light: ${(sortedPalette[0].hsl[2] * 100).toFixed()}%;
+
+          --ts-palette-sorted-1-hex:: ${sortedPalette[1].hex};
+          --ts-palette-sorted-1-hue: ${(sortedPalette[1].hsl[0] * 360).toFixed()};
+          --ts-palette-sorted-1-saturation: ${(sortedPalette[1].hsl[1] * 100).toFixed()}%;
+          --ts-palette-sorted-1-light: ${(sortedPalette[1].hsl[2] * 100).toFixed()}%;
+
+          --ts-palette-sorted-2-hex:: ${sortedPalette[2].hex};
+          --ts-palette-sorted-2-hue: ${(sortedPalette[2].hsl[0] * 360).toFixed()};
+          --ts-palette-sorted-2-saturation: ${(sortedPalette[2].hsl[1] * 100).toFixed()}%;
+          --ts-palette-sorted-2-light: ${(sortedPalette[2].hsl[2] * 100).toFixed()}%;
+
+          --ts-palette-sorted-3-hex:: ${sortedPalette[3].hex};
+          --ts-palette-sorted-3-hue: ${(sortedPalette[3].hsl[0] * 360).toFixed()};
+          --ts-palette-sorted-3-saturation: ${(sortedPalette[3].hsl[1] * 100).toFixed()}%;
+          --ts-palette-sorted-3-light: ${(sortedPalette[3].hsl[2] * 100).toFixed()}%;
+
+          --ts-palette-sorted-4-hex:: ${sortedPalette[4].hex};
+          --ts-palette-sorted-4-hue: ${(sortedPalette[4].hsl[0] * 360).toFixed()};
+          --ts-palette-sorted-4-saturation: ${(sortedPalette[4].hsl[1] * 100).toFixed()}%;
+          --ts-palette-sorted-4-light: ${(sortedPalette[4].hsl[2] * 100).toFixed()}%;
+
+          --ts-palette-sorted-5-hex:: ${sortedPalette[5].hex};
+          --ts-palette-sorted-5-hue: ${(sortedPalette[5].hsl[0] * 360).toFixed()};
+          --ts-palette-sorted-5-saturation: ${(sortedPalette[5].hsl[1] * 100).toFixed()}%;
+          --ts-palette-sorted-5-light: ${(sortedPalette[5].hsl[2] * 100).toFixed()}%;
         }
       `}
     </style>
@@ -189,15 +225,24 @@ function getVibrantPalette() {
   return Vibrant.from(playerBarSongImgNode.src).quality(1).getPalette();
 }
 
-function getDominantColor(x) {
+function getDominantColor(palette) {
   let dominant = { population: 0 };
 
-  for (const [, value] of Object.entries(x)) {
+  for (const [, value] of Object.entries(palette)) {
     if (value.population >= dominant.population) {
       dominant = value;
     }
   }
   return dominant;
+}
+
+function getSortedPalette(palette) {
+  let arr = [];
+  for (const [, value] of Object.entries(palette)) {
+    arr.push(value);
+  }
+  let sortedPalette = arr.sort((a, b) => b.population - a.population);
+  return sortedPalette;
 }
 
 export default Palette;
