@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #000;		
+  font-family: courier;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+a {
+  color: royalblue;
+}
+
+a:hover {
+  color: orange;
+}
