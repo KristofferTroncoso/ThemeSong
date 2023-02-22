@@ -35,7 +35,7 @@ let shorterCanvasSide;
 
 function Accent({ analyser, dataArray }) {
   const isSongPlaying = useStore((state) => state.player.isSongPlaying);
-  const dominant = useStore((state) => state.palette.dominant);
+  const sortedPalette = useStore((state) => state.palette.sortedPalette);
 
   const ytmusicplayer = document.querySelector("ytmusic-player");
   const canvasRef = useRef();
@@ -67,12 +67,12 @@ function Accent({ analyser, dataArray }) {
       });
 
       //draw values
-      for (let circle of circles) {
+      for (let [i, circle] of circles.entries()) {
         ctx.current.beginPath();
         ctx.current.lineWidth = circle.lineWidth;
         ctx.current.fillStyle = `hsla(
-          ${(dominant.hsl[0] * 360).toFixed()}, 
-          ${dominant.hsl[1] * 100}%, 
+          ${(sortedPalette[i].hsl[0] * 360).toFixed()}, 
+          ${sortedPalette[i].hsl[1] * 100}%, 
           ${shorterCanvasSide / (circle.radius / 2.5) + 40}%, 
           0.95
         )`;
@@ -104,7 +104,7 @@ function Accent({ analyser, dataArray }) {
       clearInterval(intervalId.current);
       intervalId.current = setInterval(() => requestAnimationFrame(accent), 17);
     }
-  }, [isSongPlaying, dominant]);
+  }, [isSongPlaying, sortedPalette]);
 
   function updateValues({ x, y, dirX, dirY, radius, speedX, speedY, freq, minByte, minRadius, growRate, color }) {
     if (y + radius > canvasRef.current.height) {
@@ -133,7 +133,7 @@ function Accent({ analyser, dataArray }) {
 
     radius = (Math.max(dataArray[freq] - minByte, 0) / growRate + minRadius) * (shorterCanvasSide / 5);
 
-    color = dominant.hex;
+    color = sortedPalette[0].hex;
     return {
       x,
       y,

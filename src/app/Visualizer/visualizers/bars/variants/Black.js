@@ -21,7 +21,7 @@ function Black({ analyser, dataArray, bufferLength }) {
 
   useEffect(() => {
     ctx.current = canvasRef.current.getContext("2d");
-    ctx.current.fillStyle = "#000";
+    ctx.current.fillStyle = "#9c9c9c";
     ctx.current.strokeStyle = "#fff";
     ctx.current.lineWidth = barsPrefs.borderWidth;
   }, [barsPrefs]);

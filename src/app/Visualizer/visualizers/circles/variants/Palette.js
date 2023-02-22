@@ -34,8 +34,8 @@ let i = 160;
 let j = 310;
 let dirI = -1;
 let dirJ = 1;
-let speedI = 0.9;
-let speedJ = 1.2;
+let speedI = 0.7;
+let speedJ = 1;
 
 let m = 150;
 let n = 420;
