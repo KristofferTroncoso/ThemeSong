@@ -1,6 +1,6 @@
 import ClosedCaptionDisabledIcon from "@mui/icons-material/ClosedCaptionDisabled";
 import ClosedCaptionIcon from "@mui/icons-material/ClosedCaption";
-import { css } from "@emotion/react";
+import { css, Global } from "@emotion/react";
 import { useStore } from "/src/app/store";
 
 function HideCaptions() {
@@ -15,6 +15,7 @@ function HideCaptions() {
 
   return (
     <button
+      id="ts-hidecaptions-button"
       onClick={handleToggle}
       title={hideCaptions ? "Unhide Captions" : "Hide Captions"}
       css={css`
@@ -22,7 +23,7 @@ function HideCaptions() {
         background-color: transparent;
         height: 100%;
         width: 100%;
-        display: flex;
+        display: none;
         padding: 0 10px;
         justify-content: center;
         align-items: center;
@@ -30,6 +31,13 @@ function HideCaptions() {
         cursor: pointer;
       `}
     >
+      <Global
+        styles={css`
+          #player-page[video-mode_] #ts-hidecaptions-button {
+            display: flex;
+          }
+        `}
+      ></Global>
       {hideCaptions ? (
         <>
           <style>
