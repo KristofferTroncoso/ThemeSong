@@ -161,22 +161,19 @@ function AppleMusic() {
               --ts-body-color: hsl(0,0%,12%);
 
               --ts-playerbar-color: hsla(var(--ts-palette-dominant-hue), calc(var(--ts-palette-dominant-saturation) * 0.5), 10%, 0.5);
+              --ts-zebra-stripes-color: rgba(255,255,255,0.03);;
             }
 
           `
             : `
             ${light_base_colors}
             :root {
-
               --ts-navbar-color: rgba(235,235,235,0.5) !important;
               --ts-body-color: #fff;
-
               --ts-playerbar-color: hsla(var(--ts-palette-dominant-hue), calc(var(--ts-palette-dominant-saturation) * 0.7), 94%, 0.5);
-
               --ts-playprogress-color: #5e5e5e;
-
               --ts-primary-icon-color: var(--ts-base-70-color);
-            
+              --ts-zebra-stripes-color: rgba(0,0,0,0.04);
             }
 
             ytmusic-thumbnail-renderer:not([thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"]) {
