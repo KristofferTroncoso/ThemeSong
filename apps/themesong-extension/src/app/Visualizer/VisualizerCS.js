@@ -45,11 +45,11 @@ function addThemesongControlButtonsContainer() {
   root.render(
     <div
       css={{
-        margin: "8px 0",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
         alignContent: "center",
+        padding: "5px 0",
       }}
     >
       <HideCaptions />

@@ -21,20 +21,14 @@ function HideCaptions() {
       css={css`
         border: 0;
         background-color: transparent;
-        height: 100%;
-        width: 100%;
         display: none;
         padding: 0 10px;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        cursor: pointer;
       `}
     >
       <Global
         styles={css`
           #player-page[video-mode_] #ts-hidecaptions-button {
-            display: flex;
+            display: block;
           }
         `}
       ></Global>
