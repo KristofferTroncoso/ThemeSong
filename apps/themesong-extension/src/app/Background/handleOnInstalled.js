@@ -1,5 +1,5 @@
 import { executeContentScriptOnYouTubeMusicTabs } from "./scripts";
-import { userPrefsTransferFromV047toV050 } from "./archivedScripts/archivedScripts";
+import { userPrefsTransferFromV047 } from "./archivedScripts/archivedScripts";
 
 export function handleOnInstalled(details) {
   console.log(details);
@@ -13,7 +13,7 @@ export function handleOnInstalled(details) {
     // on update (extension update, chrome update, or extension refresh)
     case "update":
       if (details.previousVersion !== currentVersion) {
-        userPrefsTransferFromV047toV050();
+        userPrefsTransferFromV047();
       }
 
       // whenever extension is updated, show update note
@@ -24,6 +24,9 @@ export function handleOnInstalled(details) {
 
     // other cases are "chrome_update" and "shared_module_update"
     default:
+      if (details.previousVersion !== currentVersion) {
+        userPrefsTransferFromV047();
+      }
       executeContentScriptOnYouTubeMusicTabs();
   }
 }

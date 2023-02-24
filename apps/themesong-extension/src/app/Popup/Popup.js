@@ -28,7 +28,40 @@ function Popup() {
           height: 100%;
         `}
       >
-        <ErrorBoundary fallback={<h1>oh noerr</h1>}>
+        <ErrorBoundary
+          fallback={
+            <div
+              css={css`
+                padding: 10px;
+              `}
+            >
+              <h1>Woops. Something doesn't look right. Please reset ThemeSong settings below.</h1>
+              <button
+                onClick={(e) => {
+                  chrome.runtime.sendMessage("reset", (response) => {
+                    console.log(`Received response ${response}`);
+                  });
+                  window.location.reload();
+                }}
+                css={css`
+                  margin: 20px;
+                  padding: 10px;
+                  font-size: 16px;
+                  color: #fff;
+                  background-color: tomato;
+                  border: 2px solid #fff;
+                  border-radius: 5px;
+
+                  :hover {
+                    background-color: red;
+                  }
+                `}
+              >
+                Reset ThemeSong Defaults
+              </button>
+            </div>
+          }
+        >
           <TabBar />
           <ActivePage />
         </ErrorBoundary>

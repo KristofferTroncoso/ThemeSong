@@ -9,6 +9,7 @@ function handleOnMessage(message, sender, sendResponse) {
         chrome.storage.local.clear();
         executeContentScriptOnYouTubeMusicTabs();
         sendResponse("Reset to defaults");
+        window.location.reload();
         break;
 
       default:

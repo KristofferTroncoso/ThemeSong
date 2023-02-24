@@ -23,6 +23,7 @@ function SettingsPopover() {
       console.log(`Received response ${response}`);
       handleClose();
     });
+    window.location.reload();
   }
 
   return (

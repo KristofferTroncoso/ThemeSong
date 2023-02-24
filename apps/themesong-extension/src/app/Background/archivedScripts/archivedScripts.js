@@ -53,7 +53,7 @@ export function userPrefsTransferFromV043toV044() {
   chrome.storage.local.remove(["themes", "visualizers"]);
 }
 
-export function userPrefsTransferFromV047toV050() {
+export function userPrefsTransferFromV047() {
   chrome.storage.local.get(null, (chromeStorageObj) => {
     function returnNewThemeId(oldId) {
       let newId = "db8854e3-6753-4639-b244-c8091f3b9fcb";
