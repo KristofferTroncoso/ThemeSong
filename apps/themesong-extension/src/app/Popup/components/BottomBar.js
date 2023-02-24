@@ -65,7 +65,8 @@ function BottomBar() {
                 color: white;
                 background-color: black;
                 margin: 0 2px;
-                border: 0;
+                border: 1px solid #888;
+                padding: 0 4px;
               `}
               onClick={(e) => console.log(store)}
             >
@@ -76,7 +77,8 @@ function BottomBar() {
                 color: white;
                 background-color: black;
                 margin: 0 2px;
-                border: 0;
+                border: 1px solid #888;
+                padding: 0 4px;
               `}
               onClick={(e) => {
                 chrome.storage.local.get(null, (res) => console.log(res));

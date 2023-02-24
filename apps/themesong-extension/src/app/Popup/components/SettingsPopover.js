@@ -28,8 +28,27 @@ function SettingsPopover() {
 
   return (
     <>
-      <button css={{ background: 0, border: 0, color: "white" }} onClick={handleClick} title="Settings">
-        <Settings style={{ fontSize: "16px" }} />
+      <button
+        css={css`
+          background: 0;
+          border: 0;
+          padding: 0 2px 0 4px;
+        `}
+        onClick={handleClick}
+        title="Settings"
+      >
+        <Settings
+          css={css`
+            font-size: 16px;
+            color: #fff;
+            padding: 2px;
+            transition: transform 0.2s ease-in-out;
+            :hover {
+              color: #ff8000;
+              transform: rotate(45deg);
+            }
+          `}
+        />
       </button>
       <Popover
         id={id}
