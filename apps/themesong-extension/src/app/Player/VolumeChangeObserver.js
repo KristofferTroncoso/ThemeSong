@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { css } from "@emotion/react";
+import VolumeOffIcon from "@mui/icons-material/VolumeOff";
 
 function VolumeChangeObserver() {
   const [currentVolume, changeCurrentVolume] = useState();
@@ -31,23 +32,21 @@ function VolumeChangeObserver() {
   return (
     <div id="VolumeChangeObserver">
       {currentVolume === "0" && (
-        <h1
+        <VolumeOffIcon
           css={css`
+            margin: 10px;
+            padding: 4px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
             position: absolute;
             z-index: 1000;
-            top: 10%;
-            left: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            border: 4px solid #9e0000;
-            color: #fff;
-            margin: 20px;
-            border-radius: 10px;
-            font-size: 30px;
-            padding: 20px;
+            top: 0;
+            left: 15%;
+            height: 10%;
+            width: 10%;
           `}
-        >
-          MUTED. Turn up volume for visualizer to work.
-        </h1>
+        />
       )}
     </div>
   );
