@@ -52,7 +52,7 @@ function ThemePanel() {
             width: 54px;
             margin: 0 2px;
             border: 0;
-            border-radius: 5px 0 0 5px;
+            border-radius: 6px;
           `}
           onClick={(e) => handleClick("416034f2-bfb8-46e8-9929-5805dd59a688")}
         >
@@ -73,7 +73,7 @@ function ThemePanel() {
             width: 54px;
             margin: 0 2px;
             border: 0;
-            border-radius: 0;
+            border-radius: 6px;
           `}
           onClick={(e) => handleClick("db8854e3-6753-4639-b244-c8091f3b9fcb")}
         >
@@ -95,7 +95,7 @@ function ThemePanel() {
             width: 54px;
             margin: 0 2px;
             border: 0;
-            border-radius: 0;
+            border-radius: 6px;
           `}
           onClick={(e) => handleClick("b458eaae-0cbd-4a44-8847-c7a6a6ea1be8")}
         >
@@ -116,7 +116,7 @@ function ThemePanel() {
             width: 54px;
             margin: 0 2px;
             border: 0;
-            border-radius: 0 5px 5px 0;
+            border-radius: 6px;
             padding: 0;
           `}
           onClick={(e) => handleClick("76dd54c5-78a2-4ca3-9c16-3d0d1aab367f")}

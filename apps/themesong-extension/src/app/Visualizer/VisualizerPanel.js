@@ -96,7 +96,7 @@ function VisualizerPanel() {
               width: 60px;
               margin: 0 2px;
               border: 0;
-              border-radius: 8px 0 0 8px;
+              border-radius: 6px;
             `}
             onClick={(e) => handleVisualizerButtonClick("6aa34dd4-6775-46c1-8dbb-7ac2931ff80d")}
           >
@@ -115,7 +115,7 @@ function VisualizerPanel() {
               width: 60px;
               margin: 2px;
               border: 0;
-              border-radius: 0;
+              border-radius: 6px;
             `}
             onClick={(e) => handleVisualizerButtonClick("51dc50c8-eb06-4086-ad9c-a89758f63db6")}
           >
@@ -134,7 +134,7 @@ function VisualizerPanel() {
               width: 60px;
               margin: 0 2px;
               border: 0;
-              border-radius: 0 8px 8px 0;
+              border-radius: 6px;
               padding: 0;
             `}
             onClick={(e) => handleVisualizerButtonClick("685d0ec7-5c52-4e48-a43d-11184a39f3da")}
