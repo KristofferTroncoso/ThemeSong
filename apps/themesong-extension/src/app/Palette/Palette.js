@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useStore } from "/src/app/store";
 import * as Vibrant from "node-vibrant";
-import { playerBarSongImgNode } from "../Theme/themes/selectors";
+import { playerBarSongImgNode } from "../Theme/selectors";
 
 let imgChangeObserver;
 

@@ -1,4 +1,4 @@
-import { songImg, playerBarSongImgNode } from "../../../themes/selectors";
+import { songImg, playerBarSongImgNode } from "../../selectors";
 
 export default function getSongImg() {
   let bestImgAvailable;
