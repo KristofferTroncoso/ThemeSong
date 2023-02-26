@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
-import { menubar } from "../../selectors";
+import { menubar } from "../../../selectors";
 import { useStore } from "/src/app/store";
-import { dark_base_colors } from "../../universal/colors/dark_base_colors";
-import { light_base_colors } from "../../universal/colors/light_base_colors";
-import { texts } from "../../universal/core/texts";
-import { icons } from "../../universal/core/icons";
-import { gradients_overlays } from "../../universal/core/gradients_overlays";
-import { rulers_borders } from "../../universal/core/rulers_borders";
-import { scrollbars } from "../../universal/core/scrollbars";
-import { playerbar_progressbar } from "../../universal/core/playerbar_progressbar";
-import { backgrounds } from "../../universal/core/backgrounds";
-import { song_image } from "../../universal/extra/song_image";
-import { misc_style_improvements } from "../../universal/extra/misc_style_improvements";
-import { zebra_stripes } from "../../universal/extra/zebra_stripes";
+import { dark_base_colors } from "../../../css/colors/dark_base_colors";
+import { light_base_colors } from "../../../css/colors/light_base_colors";
+import { texts } from "../../../css/core/texts";
+import { icons_buttons } from "../../../css/core/icons_buttons";
+import { gradients_overlays } from "../../../css/core/gradients_overlays";
+import { rulers_borders } from "../../../css/core/rulers_borders";
+import { scrollbars } from "../../../css/core/scrollbars";
+import { playerbar_progressbar } from "../../../css/core/playerbar_progressbar";
+import { backgrounds } from "../../../css/core/backgrounds";
+import { song_image } from "../../../css/extra/song_image";
+import { misc_style_improvements } from "../../../css/extra/misc_style_improvements";
+import { zebra_stripes } from "../../../css/extra/zebra_stripes";
 
 function AppleMusic() {
   const playerUiState = useStore((state) => state.player.playerUiState);
@@ -60,7 +60,7 @@ function AppleMusic() {
 
   return (
     <style id="AppleMusic">
-      {icons}
+      {icons_buttons}
       {gradients_overlays}
       {rulers_borders}
       {backgrounds}
@@ -69,7 +69,8 @@ function AppleMusic() {
       {song_image}
       {misc_style_improvements}
       {zebra_stripes}
-      {`
+      {
+        /*css*/ `
         :root {
           --ts-theme-ditto-apple-1-color: hsl(var(--ts-palette-dominant-hue), calc(var(--ts-palette-dominant-saturation) * 0.2), 35%);
           --ts-theme-ditto-apple-2-color: hsl(var(--ts-palette-vibrant-hue), calc(var(--ts-palette-vibrant-saturation) * 0.2), 32%);
@@ -85,6 +86,17 @@ function AppleMusic() {
 
           --ts-theme-ditto-applemusic-color: #d60017;
           --ts-colored-button-color: #d60017;
+
+          --ts-overlay-color: rgba(0,0,0,0.5);
+          --ts-overlay-highlighted-color: rgba(0,0,0,0);
+        }
+
+        /* overwriting the icon color for the img hovers */
+        .icon {
+          fill: #fff;
+        }
+        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
+          color: #fff;
         }
 
         /* add blur to navbar, playerbar, and other menus */
@@ -125,13 +137,11 @@ function AppleMusic() {
           color: var(--ts-theme-ditto-applemusic-color);
         }
         
-     `}
+     `
+      }
 
       {!(playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE")
         ? `
-        :root {
-          --ts-overlay-color: rgba(0,0,0,0.7);
-        }
 
         /* i think ytm is putting a 'padding-top: 100%' on this. i have to set it to 0 for my gradient to be good */
         ytmusic-player[player-ui-state_=FULLSCREEN] #song-image.ytmusic-player {
@@ -147,6 +157,10 @@ function AppleMusic() {
           box-shadow: 0 10px 50px rgba(0,0,0,0.4);
           border-radius: 4px;
         }
+
+        ytmusic-player[player-ui-state_=FULLSCREEN] #song-image #img {
+          box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+        }
         ${dark_base_colors}
         `
         : `
@@ -156,14 +170,11 @@ function AppleMusic() {
             ? `
             ${dark_base_colors}
             :root {
-
               --ts-navbar-color: rgba(30,30,30,0.5) !important;
               --ts-body-color: hsl(0,0%,12%);
-
               --ts-playerbar-color: hsla(var(--ts-palette-dominant-hue), calc(var(--ts-palette-dominant-saturation) * 0.5), 10%, 0.5);
               --ts-zebra-stripes-color: rgba(255,255,255,0.03);;
             }
-
           `
             : `
             ${light_base_colors}

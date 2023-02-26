@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { menubar } from "../selectors";
+import { menubar } from "../../selectors";
 
 function Off() {
   useEffect(() => {

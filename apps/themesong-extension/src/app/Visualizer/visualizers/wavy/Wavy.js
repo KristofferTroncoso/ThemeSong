@@ -14,14 +14,6 @@ function Wavy({ analyser, dataArray, bufferLength }) {
   const ctx = useRef();
 
   useEffect(() => {
-    console.log("3");
-    return function cleanUp() {
-      console.log("Wavy: Cleaning up");
-      clearInterval(intervalId.current);
-    };
-  }, []);
-
-  useEffect(() => {
     console.log("1");
     ctx.current = canvasRef.current.getContext("2d");
     ctx.current.strokeStyle = "#fff";
@@ -30,14 +22,18 @@ function Wavy({ analyser, dataArray, bufferLength }) {
     ctx.current.shadowOffsetY = wavyPrefs.lineWidth;
     ctx.current.shadowColor = `hsl(
       ${(dominantSwatch.hsl[0] * 360).toFixed()}, 
-      ${dominantSwatch.hsl[1] * 100 * 2}%, 
+      ${dominantSwatch.hsl[1] * 100}%, 
       70%
     )`;
+    console.log(`hsl(
+      ${(dominantSwatch.hsl[0] * 360).toFixed()}, 
+      ${Math.floor(dominantSwatch.hsl[1] * 100)}%, 
+      70%
+    )`);
   }, [dominantSwatch, wavyPrefs]);
 
   useEffect(() => {
     console.log("5");
-
     const drawWavy = () => {
       let context = ctx.current;
       let canvas = canvasRef.current || { width: 1920, height: 512 };
@@ -70,6 +66,11 @@ function Wavy({ analyser, dataArray, bufferLength }) {
       clearInterval(intervalId.current);
       intervalId.current = setInterval(() => requestAnimationFrame(drawWavy), 17);
     }
+
+    return function cleanUp() {
+      console.log("Wavy: Cleaning up");
+      clearInterval(intervalId.current);
+    };
   }, [isSongPlaying, analyser, bufferLength, dataArray]);
 
   return (

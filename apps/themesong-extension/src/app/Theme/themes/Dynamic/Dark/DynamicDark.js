@@ -1,13 +1,13 @@
 import { useEffect, useCallback } from "react";
 import { useStore } from "/src/app/store";
-import { menubar } from "../../selectors";
+import { menubar } from "../../../selectors";
 
-import { scrollbars } from "../../universal/core/scrollbars";
-import { playerbar_progressbar } from "../../universal/core/playerbar_progressbar";
-import { backgrounds } from "../../universal/core/backgrounds";
-import { song_image } from "../../universal/extra/song_image";
-import { misc_style_improvements } from "../../universal/extra/misc_style_improvements";
-import { dark_base_colors } from "../../universal/colors/dark_base_colors";
+import { scrollbars } from "../../../css/core/scrollbars";
+import { playerbar_progressbar } from "../../../css/core/playerbar_progressbar";
+import { backgrounds } from "../../../css/core/backgrounds";
+import { song_image } from "../../../css/extra/song_image";
+import { misc_style_improvements } from "../../../css/extra/misc_style_improvements";
+import { dark_base_colors } from "../../../css/colors/dark_base_colors";
 import { Global, css } from "@emotion/react";
 
 function DynamicDark() {

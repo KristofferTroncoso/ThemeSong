@@ -1,17 +1,17 @@
 import { useEffect } from "react";
 import { useStore } from "/src/app/store";
-import { menubar } from "../../selectors";
+import { menubar } from "../../../selectors";
 
-import { scrollbars } from "../../universal/core/scrollbars";
-import { playerbar_progressbar } from "../../universal/core/playerbar_progressbar";
-import { backgrounds } from "../../universal/core/backgrounds";
-import { song_image } from "../../universal/extra/song_image";
-import { light_base_colors } from "../../universal/colors/light_base_colors";
-import { misc_style_improvements } from "../../universal/extra/misc_style_improvements";
-import { texts } from "../../universal/core/texts";
-import { icons } from "../../universal/core/icons";
-import { gradients_overlays } from "../../universal/core/gradients_overlays";
-import { rulers_borders } from "../../universal/core/rulers_borders";
+import { scrollbars } from "../../../css/core/scrollbars";
+import { playerbar_progressbar } from "../../../css/core/playerbar_progressbar";
+import { backgrounds } from "../../../css/core/backgrounds";
+import { song_image } from "../../../css/extra/song_image";
+import { light_base_colors } from "../../../css/colors/light_base_colors";
+import { misc_style_improvements } from "../../../css/extra/misc_style_improvements";
+import { texts } from "../../../css/core/texts";
+import { icons_buttons } from "../../../css/core/icons_buttons";
+import { gradients_overlays } from "../../../css/core/gradients_overlays";
+import { rulers_borders } from "../../../css/core/rulers_borders";
 
 function DynamicLight() {
   const dominantColorHSL = useStore((state) => state.palette.dominant).hsl;
@@ -48,7 +48,7 @@ function DynamicLight() {
         ${playerbar_progressbar}
         ${song_image}
         ${texts}
-        ${icons}
+        ${icons_buttons}
         ${gradients_overlays}
         ${rulers_borders}
         ${misc_style_improvements}
@@ -80,24 +80,26 @@ function DynamicLight() {
             );
 
             --ts-playprogress-color: hsl(
-              var(--ts-palette-sorted-1-hue),
-              var(--ts-palette-sorted-1-saturation),
+              var(--ts-palette-sorted-0-hue),
+              var(--ts-palette-sorted-0-saturation),
               25%
             );
-            --ts-playprogress-secondary-color: hsla(
-              var(--ts-palette-sorted-2-hue),
-              var(--ts-palette-sorted-2-saturation),
-              70%,
-              0.5
-            );
-            --ts-playprogress-container-color: hsla(
-              var(--ts-palette-sorted-3-hue),
-              var(--ts-palette-sorted-3-saturation),
-              20%,
-              0.2
-            );
+
   
             --ts-playprogress-knob-color: var(--ts-playprogress-color);
+              /*
+            --ts-primary-icon-color: red;
+            --ts-secondary-icon-color: green;
+            --ts-tertiary-icon-color: blue;
+            --ts-inverse-icon-color: purple;
+            --ts-colored-button-color: orange;
+            */
+            --ts-icon-accent-color: hsla(
+              var(--ts-palette-sorted-0-hue),
+              var(--ts-palette-sorted-0-saturation),
+              18%,
+              0.9
+            );;
         }
       `
       }

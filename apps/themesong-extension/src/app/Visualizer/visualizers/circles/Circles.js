@@ -30,7 +30,7 @@ function Circles({ analyser, dataArray, bufferLength }) {
       case "aadb67e9-ee59-45f3-8335-d34a39223525":
         return <OT9 analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />;
       default:
-        return <h1>Unknown Variant</h1>;
+        return <RGB analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />;
     }
   }
 
