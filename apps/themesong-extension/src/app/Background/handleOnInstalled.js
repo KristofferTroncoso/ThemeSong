@@ -17,7 +17,7 @@ export function handleOnInstalled(details) {
       }
 
       // whenever extension is updated, show update note
-      chrome.storage.local.set({ showUpdateNote: true });
+      // chrome.storage.local.set({ showUpdateNote: true });
 
       executeContentScriptOnYouTubeMusicTabs();
       break;
