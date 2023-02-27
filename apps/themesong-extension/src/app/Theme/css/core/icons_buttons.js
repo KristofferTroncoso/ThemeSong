@@ -125,4 +125,9 @@ export const icons_buttons = /*css*/ `
     background: var(--ts-pill-color);
   }
 
+  /* icons on top 3 buttons on Explore page */
+  yt-icon.ytmusic-navigation-button-renderer {
+    color: var(--ts-secondary-icon-color);
+  }
+
 `;

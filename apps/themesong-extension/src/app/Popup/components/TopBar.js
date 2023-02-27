@@ -55,7 +55,14 @@ function TopBar() {
             textDecoration: "none",
           }}
         >
-          ThemeSong - v{extensionVersion}
+          <span>ThemeSong - </span>
+          <span
+            css={css`
+              font-size: 11px;
+            `}
+          >
+            v{extensionVersion}
+          </span>
         </a>
       </h1>
       <div

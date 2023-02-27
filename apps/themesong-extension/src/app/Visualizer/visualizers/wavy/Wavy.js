@@ -25,11 +25,6 @@ function Wavy({ analyser, dataArray, bufferLength }) {
       ${dominantSwatch.hsl[1] * 100}%, 
       70%
     )`;
-    console.log(`hsl(
-      ${(dominantSwatch.hsl[0] * 360).toFixed()}, 
-      ${Math.floor(dominantSwatch.hsl[1] * 100)}%, 
-      70%
-    )`);
   }, [dominantSwatch, wavyPrefs]);
 
   useEffect(() => {

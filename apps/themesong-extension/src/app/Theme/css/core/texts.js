@@ -148,4 +148,9 @@ ytmusic-tabs.iron-selected .tab.ytmusic-tabs, .tab.selected.ytmusic-tabs {
 .more-button.ytmusic-detail-header-renderer {
   --ytmusic-toggle-button-color: var(--ts-primary-text-color);
 }
+
+/* time info when hovering playerbar progressbar */
+#hover-time-info.ytmusic-player-bar {
+  color: var(--ts-primary-text-color);
+}
 `;
