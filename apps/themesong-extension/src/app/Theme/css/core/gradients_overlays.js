@@ -1,6 +1,6 @@
 export const gradients_overlays = /*css*/ `
   :root {
-    --ts-overlay-color: var(--ts-base-100-alpha-03-color);
+    --ts-overlay-color: var(--ts-base-00-alpha-05-color);
     --ts-overlay-highlighted-color: var(--ts-base-100-alpha-01-color);
     --ts-overlay-highlighted2-color: var(--ts-base-100-alpha-01-color);
   }
@@ -29,6 +29,11 @@ export const gradients_overlays = /*css*/ `
   /* semi-transparent overlay on top of album images (on home page) on-hover */
   ytmusic-background-overlay-renderer {
     --ytmusic-background-overlay-background: var(--ts-overlay-color) !important;
+  }
+
+  /* miniplayer hover overlay */
+  ytmusic-player[player-ui-state_=MINIPLAYER] .song-media-controls.ytmusic-player {
+    background: var(--ts-overlay-color);
   }
 
 `;

@@ -53,6 +53,13 @@ function DynamicLight() {
         ${rulers_borders}
         ${misc_style_improvements}
         :root {
+            --ts-dynamiclight-accent-color: hsla(
+              var(--ts-palette-sorted-0-hue),
+              var(--ts-palette-sorted-0-saturation),
+              18%,
+              0.9
+            );
+
             --ts-navbar-color: hsl(
               var(--ts-palette-dominant-hue), 
               ${saturation}%, 
@@ -85,21 +92,10 @@ function DynamicLight() {
               25%
             );
 
-  
             --ts-playprogress-knob-color: var(--ts-playprogress-color);
-              /*
-            --ts-primary-icon-color: red;
-            --ts-secondary-icon-color: green;
-            --ts-tertiary-icon-color: blue;
-            --ts-inverse-icon-color: purple;
-            --ts-colored-button-color: orange;
-            */
-            --ts-icon-accent-color: hsla(
-              var(--ts-palette-sorted-0-hue),
-              var(--ts-palette-sorted-0-saturation),
-              18%,
-              0.9
-            );;
+
+            --ts-icon-accent-color: var(--ts-dynamiclight-accent-color);
+            --ts-colored-button-color: var(--ts-dynamiclight-accent-color);
         }
       `
       }

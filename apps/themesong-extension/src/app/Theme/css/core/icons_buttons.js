@@ -8,7 +8,7 @@ export const icons_buttons = /*css*/ `
 
     --ts-colored-button-color: var(--ts-base-100-color);
 
-    --ts-icon-accent-color: #644173;
+    --ts-icon-accent-color: var(--ts-base-100-color);
 
     --ts-pill-color: var(--ts-base-100-alpha-01-color);s
   }

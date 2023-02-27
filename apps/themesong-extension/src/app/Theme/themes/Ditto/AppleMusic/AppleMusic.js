@@ -85,10 +85,11 @@ function AppleMusic() {
           --ts-body-color: #333333;
 
           --ts-theme-ditto-applemusic-color: #d60017;
-          --ts-colored-button-color: #d60017;
 
           --ts-overlay-color: rgba(0,0,0,0.5);
           --ts-overlay-highlighted-color: rgba(0,0,0,0);
+
+          
         }
 
         /* overwriting the icon color for the img hovers */
@@ -132,10 +133,6 @@ function AppleMusic() {
           /* --ytmusic-play-button-active-background-color: var(--ts-base-00-alpha-03-color) !important; */
         }
 
-     
-        #button-shape-like button {
-          color: var(--ts-theme-ditto-applemusic-color);
-        }
         
      `
       }
@@ -174,6 +171,12 @@ function AppleMusic() {
               --ts-body-color: hsl(0,0%,12%);
               --ts-playerbar-color: hsla(var(--ts-palette-dominant-hue), calc(var(--ts-palette-dominant-saturation) * 0.5), 10%, 0.5);
               --ts-zebra-stripes-color: rgba(255,255,255,0.03);;
+              --ts-secondary-icon-color: #fa586a;
+              --ts-colored-button-color: #fa586a;
+            }
+
+            #button-shape-like button {
+              color: #fa586a;
             }
           `
             : `
@@ -184,6 +187,8 @@ function AppleMusic() {
               --ts-playerbar-color: hsla(var(--ts-palette-dominant-hue), calc(var(--ts-palette-dominant-saturation) * 0.7), 94%, 0.5);
               --ts-playprogress-color: #5e5e5e;
               --ts-primary-icon-color: var(--ts-base-70-color);
+              --ts-secondary-icon-color: #d60017;
+              --ts-colored-button-color: #d60017;
               --ts-zebra-stripes-color: rgba(0,0,0,0.04);
             }
 
@@ -191,6 +196,10 @@ function AppleMusic() {
               height: initial !important;
               width: initial !important;
               border: 1px solid #d4d4d4;
+            }
+
+            #button-shape-like button {
+              color: #d60017;
             }
           `
         }
