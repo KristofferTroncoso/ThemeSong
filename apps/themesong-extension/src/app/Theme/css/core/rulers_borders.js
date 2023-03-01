@@ -68,4 +68,10 @@ export const rulers_borders = /*css*/ `
   #contents.ytmusic-playlist-shelf-renderer>*.ytmusic-playlist-shelf-renderer:not(:last-child) {
     border-bottom: 1px solid var(--ts-ruler-secondary-color);
   }
+
+  /* list. album page */
+  #contents.ytmusic-shelf-renderer>*.ytmusic-shelf-renderer:not(:last-child) {
+    border-bottom: 1px solid var(--ts-ruler-secondary-color);
+  }
+
 `;
