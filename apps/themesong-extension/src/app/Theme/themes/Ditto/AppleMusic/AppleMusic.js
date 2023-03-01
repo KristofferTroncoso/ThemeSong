@@ -96,7 +96,8 @@ function AppleMusic() {
         .icon {
           fill: #fff;
         }
-        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
+
+        .thumbnail-overlay .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
           color: #fff;
         }
 
