@@ -89,4 +89,8 @@ ytmusic-search-suggestions-section.ytmusic-search-box {
   background-color: var(--ts-base-00-alpha-03-color) !important;
 }
 
+/* when searching a song, the Top Result has a bg gradient applied */
+.immersive-background.ytmusic-card-shelf-renderer:before {
+  background-image: linear-gradient(180deg,rgba(0,0,0,0.05) 0%, var(--ts-base-10-color) 86.67%);
+}
 `;
