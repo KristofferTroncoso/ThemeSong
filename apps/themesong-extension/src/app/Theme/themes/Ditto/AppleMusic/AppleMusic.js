@@ -92,8 +92,17 @@ function AppleMusic() {
           
         }
 
+        /* i think ytm is putting a 'padding-top: 100%' on this. i have to set it to 0 for my gradient to be good */
+        ytmusic-player[player-ui-state_=FULLSCREEN] #song-image.ytmusic-player {
+          padding-top: 0;
+        }
+
+        ytmusic-player[player-ui-state_=MINIPLAYER] #song-image.ytmusic-player {
+          padding-top: 0;
+        }
+
         /* overwriting the icon color for the img hovers */
-        .icon {
+        .thumbnail-overlay .icon {
           fill: #fff;
         }
 
@@ -140,11 +149,6 @@ function AppleMusic() {
 
       {!(playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE")
         ? `
-
-        /* i think ytm is putting a 'padding-top: 100%' on this. i have to set it to 0 for my gradient to be good */
-        ytmusic-player[player-ui-state_=FULLSCREEN] #song-image.ytmusic-player {
-          padding-top: 0;
-        }
 
         #song-image {
           box-shadow: 0 10px 40px rgba(0,0,0,0.4);
@@ -197,6 +201,11 @@ function AppleMusic() {
               height: initial !important;
               width: initial !important;
               border: 1px solid #d4d4d4;
+            }
+
+            /* album page light border */
+            #thumbnail {
+              border: 1px solid #cdcdcd;
             }
 
             #button-shape-like button {
