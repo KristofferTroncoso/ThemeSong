@@ -143,7 +143,10 @@ function AppleMusic() {
           /* --ytmusic-play-button-active-background-color: var(--ts-base-00-alpha-03-color) !important; */
         }
 
-        
+        /* Recaps icon/img . It has a black bg so im inverting it on light themes */
+        #img[src="https://www.gstatic.com/music/listening_review/HOME_RECAP_SHELF_AVATAR_BLACK_60x60.png"] {
+          filter: invert(1);
+        }
      `
       }
 
