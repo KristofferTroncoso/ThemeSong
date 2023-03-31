@@ -207,6 +207,9 @@ function AppleMusic() {
             #thumbnail {
               border: 1px solid #cdcdcd;
             }
+            #song-image > #thumbnail {
+              border: none;
+            }
 
             #button-shape-like button {
               color: #d60017;
