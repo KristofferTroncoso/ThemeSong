@@ -101,6 +101,11 @@ function AppleMusic() {
           padding-top: 0;
         }
 
+        /* white icon all the time for player song image */
+        ytmusic-player {
+          --ts-primary-icon-color: #ffffff;
+        }
+
         /* overwriting the icon color for the img hovers */
         .thumbnail-overlay .icon {
           fill: #fff;
