@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { css } from "@emotion/react";
 import Wavy from "./visualizers/wavy/Wavy";
 import Bars from "./visualizers/bars/Bars";
 import Circles from "./visualizers/circles/Circles";
@@ -98,70 +97,26 @@ Page reload required to reconnect visualizer. Reload now?`
     }
   }
 
+  function returnVisualizer() {
+    switch (activeVisualizer) {
+      case "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d":
+        return <Wavy analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />;
+      case "51dc50c8-eb06-4086-ad9c-a89758f63db6":
+        return <Bars analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />;
+      case "685d0ec7-5c52-4e48-a43d-11184a39f3da":
+        return <Circles analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />;
+      default:
+        return <Wavy analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />;
+    }
+  }
+
   if (isVisualizerOn && isConnected) {
     return (
-      <div>
-        {audioCtx && source && analyser ? (
-          <div
-            id="ThemeSong-Visualizer"
-            css={css`
-              border-radius: inherit;
-              height: 100%;
-              width: 100%;
-            `}
-          >
-            <PlayPauseChangeObserver />
-            <VolumeChangeObserver />
-            <PausedWarning />
-            {
-              {
-                "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d": (
-                  <Wavy analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
-                ),
-                "51dc50c8-eb06-4086-ad9c-a89758f63db6": (
-                  <Bars analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
-                ),
-                "685d0ec7-5c52-4e48-a43d-11184a39f3da": (
-                  <Circles analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />
-                ),
-              }[activeVisualizer]
-            }
-          </div>
-        ) : (
-          <div
-            id="ThemeSong-Visualizer-Error"
-            css={css`
-              border-radius: inherit;
-              height: 60%;
-              width: 80%;
-              position: absolute;
-              bottom: 5%;
-              left: 10%;
-              background-color: rgba(0, 0, 0, 0.8);
-              z-index: 1001;
-              padding: 10px;
-            `}
-          >
-            <h1>Sorry, something has gone wrong with the Visualizer</h1>
-            <div>
-              {!audioCtx && <h2>audioCtx is undefined</h2>}
-              {!source && <h2>source is undefined</h2>}
-              {!analyser && <h2>analyser is undefined</h2>}
-              <h2>link:{document.querySelector(".ytp-title-link").href}-end</h2>
-              <h2>
-                bloblink:{document.querySelector("video").getAttribute("src")}
-                -end
-              </h2>
-            </div>
-            <div
-              css={css`
-                margin-top: 20px;
-              `}
-            >
-              <h1>Please reload and try again or report to dev</h1>
-            </div>
-          </div>
-        )}
+      <div id="ThemeSong-Visualizer">
+        <PlayPauseChangeObserver />
+        <VolumeChangeObserver />
+        <PausedWarning />
+        {returnVisualizer()}
       </div>
     );
   }
