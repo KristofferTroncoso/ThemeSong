@@ -191,6 +191,10 @@ function AppleMusic() {
             #button-shape-like button {
               color: #fa586a;
             }
+
+            body::-webkit-scrollbar-track {
+              background-color: rgba(255,255,255,0.03);
+            }
           `
             : `
             ${light_base_colors}
