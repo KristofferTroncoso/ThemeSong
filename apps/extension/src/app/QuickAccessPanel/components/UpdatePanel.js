@@ -30,8 +30,7 @@ function UpdatePanel() {
         `}
       >
         <p>
-          <b>v0.5.0 (Feb 27, 2023)</b>
-          <p>Just some cleanup and better styling.</p>
+          <b>v0.5.1</b>
         </p>
       </div>
       <button
