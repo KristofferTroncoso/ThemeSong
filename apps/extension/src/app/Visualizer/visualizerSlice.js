@@ -80,7 +80,6 @@ export const createVisualizerSlice = (set) => ({
       activeVariant: "12bfd49e-47a2-4cc8-90a9-3e669f7a0c78",
       barWidth: 25,
       gap: 16,
-      borderWidth: 0,
     },
     {
       id: "685d0ec7-5c52-4e48-a43d-11184a39f3da",

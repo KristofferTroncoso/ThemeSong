@@ -13,17 +13,13 @@ function RGB({ analyser, dataArray, bufferLength }) {
   const ctx = useRef();
 
   useEffect(() => {
+    ctx.current = canvasRef.current.getContext("2d");
+
     return function cleanUp() {
       console.log("cleaning up");
       clearInterval(intervalId.current);
     };
   }, []);
-
-  useEffect(() => {
-    ctx.current = canvasRef.current.getContext("2d");
-    ctx.current.strokeStyle = "#000";
-    ctx.current.lineWidth = barsPrefs.borderWidth;
-  }, [barsPrefs]);
 
   useEffect(() => {
     const drawBars = () => {
@@ -44,10 +40,7 @@ function RGB({ analyser, dataArray, bufferLength }) {
         context.fillStyle = `hsla(${barHeight}, 100%, 70%, 0.95)`; //rgb: bar height is correlated to hue
 
         context.fillRect(x, canvas.height - barHeight + 6, barsPrefs.barWidth, barHeight);
-        if (barsPrefs.borderWidth !== 0) {
-          context.strokeRect(x, canvas.height - barHeight + 6, barsPrefs.barWidth, barHeight);
-        }
-        context.stroke();
+
         x += barsPrefs.barWidth + barsPrefs.gap;
       }
     };

@@ -131,47 +131,6 @@ function BarsSettings() {
                 height: "21px",
               }}
             >
-              <label htmlFor="borderWidth">Border Width:</label>
-              <div
-                style={{
-                  display: "flex",
-                  alignContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <StyledSlider
-                  name="borderWidth"
-                  value={barsPrefs.borderWidth}
-                  onChange={handleBarSettingsChange}
-                  step={1}
-                  min={0}
-                  max={10}
-                />
-                <input
-                  type="number"
-                  min="0"
-                  max="10"
-                  name="borderWidth"
-                  value={barsPrefs.borderWidth}
-                  onChange={handleBarSettingsChange}
-                  style={{
-                    maxWidth: "40px",
-                    backgroundColor: "inherit",
-                    border: 0,
-                    borderBottom: "1px solid black",
-                    color: "white",
-                    marginLeft: "8px",
-                  }}
-                />
-              </div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                height: "21px",
-              }}
-            >
               <label htmlFor="gap">Gap Width:</label>
               <div
                 style={{
