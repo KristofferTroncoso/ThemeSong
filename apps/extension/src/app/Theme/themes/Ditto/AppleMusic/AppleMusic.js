@@ -36,7 +36,7 @@ function AppleMusic() {
   useEffect(() => {
     if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
       if (isDark) {
-        menubar.content = `#191919`;
+        menubar.content = `#262626`;
       } else {
         menubar.content = `hsl(0, 0%, 95%)`;
       }
@@ -49,7 +49,7 @@ function AppleMusic() {
     console.log("PLAYERUISTATE2", playerUiState);
     if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
       if (isDark) {
-        menubar.content = `#191919`;
+        menubar.content = `#262626`;
       } else {
         menubar.content = `hsl(0, 0%, 95%)`;
       }
@@ -88,8 +88,6 @@ function AppleMusic() {
 
           --ts-overlay-color: rgba(0,0,0,0.6);
           --ts-overlay-highlighted-color: rgba(0,0,0,0);
-
-          
         }
 
         /* i think ytm is putting a 'padding-top: 100%' on this. i have to set it to 0 for my gradient to be good */
@@ -131,6 +129,7 @@ function AppleMusic() {
         
         ytmusic-tabs.stuck {
           backdrop-filter: blur(12px);
+          box-shadow: none !important;
         }
         
         tp-yt-iron-dropdown {
@@ -180,18 +179,12 @@ function AppleMusic() {
             ? `
             ${dark_base_colors}
             :root {
-              --ts-navbar-color: rgba(30,30,30,0.8) !important;
+              --ts-navbar-color: #292929db !important;
               --ts-body-color: hsl(0,0%,12%);
-              --ts-playerbar-color: hsla(var(--ts-palette-dominant-hue), calc(var(--ts-palette-dominant-saturation) * 0.3), 10%, 0.3);
+              --ts-playerbar-color: hsla(var(--ts-palette-dominant-hue), calc(var(--ts-palette-dominant-saturation) * 0.2), 16%, 0.5);
               --ts-zebra-stripes-color: rgba(255,255,255,0.03);;
               --ts-secondary-icon-color: #fa586a;
               --ts-colored-button-color: #fa586a;
-            }
-
-            @media all and (display-mode: minimal-ui) {
-              :root {
-                --ts-navbar-color: #191919 !important;
-              }
             }
 
             #button-shape-like button {
@@ -215,10 +208,9 @@ function AppleMusic() {
               --ts-zebra-stripes-color: rgba(0,0,0,0.04);
             }
 
-            @media all and (display-mode: minimal-ui) {
-              :root {
-                --ts-navbar-color: hsl(0, 0%, 95%) !important;
-              }
+            ytmusic-tabs.stuck {
+              border-top: 1px solid #d1d1d1;
+              border-bottom: 1px solid #d1d1d1;
             }
 
             ytmusic-thumbnail-renderer:not([thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"]) {

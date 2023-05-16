@@ -61,7 +61,7 @@ ytmusic-item-section-renderer.stuck #header.ytmusic-item-section-renderer {
 }
 
 ytmusic-tabs.stuck {
-  background: var(--ts-body-color);
+  background: var(--ts-navbar-color);
 }
 
 ytmusic-av-toggle[playback-mode=ATV_PREFERRED] .song-button.ytmusic-av-toggle {
