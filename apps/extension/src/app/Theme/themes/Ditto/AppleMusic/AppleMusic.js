@@ -80,6 +80,7 @@ function AppleMusic() {
 
           --ts-navbar-color: var(--ts-theme-ditto-apple-4-color);
           --ts-playerpage-color: linear-gradient(180deg, var(--ts-theme-ditto-apple-4-color) 0%, var(--ts-theme-ditto-apple-2-color) 20%, var(--ts-theme-ditto-apple-5-color) 80%, var(--ts-theme-ditto-apple-3-color) 100%);
+          --ts-playerbar-color: var(--ts-theme-ditto-apple-3-color);
           --ts-playerpageavtoggle-color: hsl(var(--ts-palette-lightvibrant-hue), calc(var(--ts-palette-dominant-saturation) * 0.4), 27%);
           --ts-body-color: #333333;
 
