@@ -36,7 +36,7 @@ function AppleMusic() {
   useEffect(() => {
     if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
       if (isDark) {
-        menubar.content = `#1f1f1f`;
+        menubar.content = `#191919`;
       } else {
         menubar.content = `hsl(0, 0%, 95%)`;
       }
@@ -49,7 +49,7 @@ function AppleMusic() {
     console.log("PLAYERUISTATE2", playerUiState);
     if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
       if (isDark) {
-        menubar.content = `#1f1f1f`;
+        menubar.content = `#191919`;
       } else {
         menubar.content = `hsl(0, 0%, 95%)`;
       }
@@ -80,13 +80,12 @@ function AppleMusic() {
 
           --ts-navbar-color: var(--ts-theme-ditto-apple-4-color);
           --ts-playerpage-color: linear-gradient(180deg, var(--ts-theme-ditto-apple-4-color) 0%, var(--ts-theme-ditto-apple-2-color) 20%, var(--ts-theme-ditto-apple-5-color) 80%, var(--ts-theme-ditto-apple-3-color) 100%);
-          --ts-playerbar-color: var(--ts-theme-ditto-apple-3-color);
           --ts-playerpageavtoggle-color: hsl(var(--ts-palette-lightvibrant-hue), calc(var(--ts-palette-dominant-saturation) * 0.4), 27%);
           --ts-body-color: #333333;
 
           --ts-theme-ditto-applemusic-color: #d60017;
 
-          --ts-overlay-color: rgba(0,0,0,0.5);
+          --ts-overlay-color: rgba(0,0,0,0.6);
           --ts-overlay-highlighted-color: rgba(0,0,0,0);
 
           
@@ -182,10 +181,16 @@ function AppleMusic() {
             :root {
               --ts-navbar-color: rgba(30,30,30,0.8) !important;
               --ts-body-color: hsl(0,0%,12%);
-              --ts-playerbar-color: hsla(var(--ts-palette-dominant-hue), calc(var(--ts-palette-dominant-saturation) * 0.5), 10%, 0.5);
+              --ts-playerbar-color: hsla(var(--ts-palette-dominant-hue), calc(var(--ts-palette-dominant-saturation) * 0.3), 10%, 0.3);
               --ts-zebra-stripes-color: rgba(255,255,255,0.03);;
               --ts-secondary-icon-color: #fa586a;
               --ts-colored-button-color: #fa586a;
+            }
+
+            @media all and (display-mode: minimal-ui) {
+              :root {
+                --ts-navbar-color: #191919 !important;
+              }
             }
 
             #button-shape-like button {
@@ -207,6 +212,12 @@ function AppleMusic() {
               --ts-secondary-icon-color: #d60017;
               --ts-colored-button-color: #d60017;
               --ts-zebra-stripes-color: rgba(0,0,0,0.04);
+            }
+
+            @media all and (display-mode: minimal-ui) {
+              :root {
+                --ts-navbar-color: hsl(0, 0%, 95%) !important;
+              }
             }
 
             ytmusic-thumbnail-renderer:not([thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"]) {
