@@ -4,7 +4,8 @@ import Off from "./themes/Off/Off";
 import Dynamic from "./themes/Dynamic/Dynamic";
 import Static from "./themes/Static/Static";
 // import Custom from './themes/Custom/Custom';
-import Ditto from "./themes/Ditto/Ditto";
+import AppleMusic from "./themes/AppleMusic/AppleMusic";
+import YouTubeMusicMobile from "./themes/YouTubeMusicMobile/YouTubeMusicMobile";
 
 function Theme() {
   const activeTheme = useStore((state) => state.theme.activeTheme);
@@ -20,7 +21,9 @@ function Theme() {
       // case "8383a680-c786-4c8d-82ee-59e0f1ea7c50":
       //   return <Custom />
       case "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f":
-        return <Ditto />;
+        return <AppleMusic />;
+      case "55f83bbd-d794-49a8-8912-2b53af3f1d3f":
+        return <YouTubeMusicMobile />;
       default:
         return <Dynamic />;
     }

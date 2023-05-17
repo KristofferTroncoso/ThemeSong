@@ -1,58 +1,27 @@
-import { useState, useEffect } from "react";
-import { menubar } from "../../../selectors";
+import { useEffect } from "react";
+import { menubar } from "../../selectors";
 import { useStore } from "/src/app/store";
-import { dark_base_colors } from "../../../css/colors/dark_base_colors";
-import { light_base_colors } from "../../../css/colors/light_base_colors";
-import { texts } from "../../../css/core/texts";
-import { icons_buttons } from "../../../css/core/icons_buttons";
-import { gradients_overlays } from "../../../css/core/gradients_overlays";
-import { rulers_borders } from "../../../css/core/rulers_borders";
-import { scrollbars } from "../../../css/core/scrollbars";
-import { playerbar_progressbar } from "../../../css/core/playerbar_progressbar";
-import { backgrounds } from "../../../css/core/backgrounds";
-import { song_image } from "../../../css/extra/song_image";
-import { misc_style_improvements } from "../../../css/extra/misc_style_improvements";
-import { zebra_stripes } from "../../../css/extra/zebra_stripes";
+import { dark_base_colors } from "../../css/colors/dark_base_colors";
+import { light_base_colors } from "../../css/colors/light_base_colors";
+import { texts } from "../../css/core/texts";
+import { icons_buttons } from "../../css/core/icons_buttons";
+import { gradients_overlays } from "../../css/core/gradients_overlays";
+import { rulers_borders } from "../../css/core/rulers_borders";
+import { scrollbars } from "../../css/core/scrollbars";
+import { playerbar_progressbar } from "../../css/core/playerbar_progressbar";
+import { backgrounds } from "../../css/core/backgrounds";
+import { song_image } from "../../css/extra/song_image";
+import { misc_style_improvements } from "../../css/extra/misc_style_improvements";
+import { zebra_stripes } from "../../css/extra/zebra_stripes";
 
-function AppleMusic() {
+function AppleMusicLight() {
   const playerUiState = useStore((state) => state.player.playerUiState);
   const lightVibrantHSL = useStore((state) => state.palette.palette.LightVibrant.hsl);
-  const [isDark, setIsDark] = useState(window.matchMedia("(prefers-color-scheme: dark)").matches);
-
-  function returnDarkOrLightTheme(event) {
-    console.log("DynamicSystem: returnDarkOrLightTheme");
-    window.matchMedia("(prefers-color-scheme: dark)").matches ? setIsDark(true) : setIsDark(false);
-  }
-
-  useEffect(() => {
-    returnDarkOrLightTheme();
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", returnDarkOrLightTheme);
-
-    return function () {
-      window.matchMedia("(prefers-color-scheme: dark)").removeEventListener("change", returnDarkOrLightTheme);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
-      if (isDark) {
-        menubar.content = `#262626`;
-      } else {
-        menubar.content = `hsl(0, 0%, 95%)`;
-      }
-    } else {
-      menubar.content = `hsl(${lightVibrantHSL[0] * 360}, ${lightVibrantHSL[1] * 100 * 0.2}%, 35%)`;
-    }
-  }, [isDark]);
 
   useEffect(() => {
     console.log("PLAYERUISTATE2", playerUiState);
     if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
-      if (isDark) {
-        menubar.content = `#262626`;
-      } else {
-        menubar.content = `hsl(0, 0%, 95%)`;
-      }
+      menubar.content = `hsl(0, 0%, 95%)`;
     } else {
       menubar.content = `hsl(${lightVibrantHSL[0] * 360}, ${lightVibrantHSL[1] * 100 * 0.2}%, 35%)`;
     }
@@ -174,28 +143,6 @@ function AppleMusic() {
         `
         : `
         ${texts}
-        ${
-          isDark
-            ? `
-            ${dark_base_colors}
-            :root {
-              --ts-navbar-color: #292929db !important;
-              --ts-body-color: hsl(0,0%,12%);
-              --ts-playerbar-color: hsla(var(--ts-palette-dominant-hue), calc(var(--ts-palette-dominant-saturation) * 0.2), 16%, 0.5);
-              --ts-zebra-stripes-color: rgba(255,255,255,0.03);;
-              --ts-secondary-icon-color: #fa586a;
-              --ts-colored-button-color: #fa586a;
-            }
-
-            #button-shape-like button {
-              color: #fa586a;
-            }
-
-            body::-webkit-scrollbar-track {
-              background-color: rgba(255,255,255,0.03);
-            }
-          `
-            : `
             ${light_base_colors}
             :root {
               --ts-navbar-color: rgba(240,240,240,0.8) !important;
@@ -230,12 +177,9 @@ function AppleMusic() {
             #button-shape-like button {
               color: #d60017;
             }
-          `
-        }
-
       `}
     </style>
   );
 }
 
-export default AppleMusic;
+export default AppleMusicLight;

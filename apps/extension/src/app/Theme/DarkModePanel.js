@@ -35,7 +35,11 @@ function DarkModePanel() {
   }
 
   if (
-    !(activeTheme === "db8854e3-6753-4639-b244-c8091f3b9fcb" || activeTheme === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8")
+    !(
+      activeTheme === "db8854e3-6753-4639-b244-c8091f3b9fcb" ||
+      activeTheme === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" ||
+      activeTheme === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f"
+    )
   ) {
     return (
       <div>

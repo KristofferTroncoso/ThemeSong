@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import InvertColorsOffIcon from "@mui/icons-material/InvertColorsOff";
 import { GiAtom } from "react-icons/gi";
 import ColorizeIcon from "@mui/icons-material/Colorize";
-import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
+import AppleIcon from "@mui/icons-material/Apple";
 
 import PanelButton from "../QuickAccessPanel/components/PanelButton";
 import { useStore } from "/src/app/store";
@@ -106,10 +106,10 @@ function ThemePanel() {
           />
         </PanelButton>
         <PanelButton
-          title="Ditto"
+          title="Apple Music"
           bgColor={activeTheme === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f" && "rgba(255,255,255,0.8)"}
-          color={activeTheme === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f" && "#9c5cad"}
-          hoverColor="#9c5cad"
+          color={activeTheme === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f" && "red"}
+          hoverColor="red"
           css={css`
             height: 42px;
             min-width: 45px;
@@ -121,7 +121,7 @@ function ThemePanel() {
           `}
           onClick={(e) => handleClick("76dd54c5-78a2-4ca3-9c16-3d0d1aab367f")}
         >
-          <TheaterComedyIcon
+          <AppleIcon
             css={css`
               font-size: 28px;
             `}

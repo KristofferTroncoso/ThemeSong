@@ -4,7 +4,8 @@ import OffSettings from "../../Theme/themes/Off/OffSettings";
 import DynamicSettings from "../../Theme/themes/Dynamic/DynamicSettings";
 import StaticSettings from "../../Theme/themes/Static/StaticSettings";
 import CustomSettings from "../../Theme/themes/Custom/CustomSettings";
-import DittoSettings from "../../Theme/themes/Ditto/DittoSettings";
+import AppleMusicSettings from "../../Theme/themes/AppleMusic/AppleMusicSettings";
+import YouTubeMusicMobileSettings from "../../Theme/themes/YouTubeMusicMobile/YouTubeMusicMobileSettings";
 
 import ThemeButton from "../components/ThemeButton";
 
@@ -23,7 +24,9 @@ function ThemesPage() {
       case "8383a680-c786-4c8d-82ee-59e0f1ea7c50":
         return <CustomSettings />;
       case "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f":
-        return <DittoSettings />;
+        return <AppleMusicSettings />;
+      case "55f83bbd-d794-49a8-8912-2b53af3f1d3f":
+        return <YouTubeMusicMobileSettings />;
       default:
         break;
     }
