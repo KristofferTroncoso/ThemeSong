@@ -3,11 +3,12 @@ export const gradients_overlays = /*css*/ `
     --ts-overlay-color: var(--ts-base-00-alpha-05-color);
     --ts-overlay-highlighted-color: var(--ts-base-100-alpha-01-color);
     --ts-overlay-highlighted2-color: var(--ts-base-100-alpha-01-color);
+    --ts-overlay-nowplaying-color: var(--ts-base-100-alpha-01-color);
   }
 
   :root {
     /* highlighted now playing song on playerpage */
-    --ytmusic-color-white1-alpha10: var(--ts-overlay-highlighted-color);
+    --ytmusic-color-white1-alpha10: var(--ts-overlay-nowplaying-color);
 
     /* right click menu hover */
     --ytmusic-menu-item-hover-background-color: var(--ts-overlay-highlighted-color);
