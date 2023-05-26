@@ -10,7 +10,7 @@ export const gradients_overlays = /*css*/ `
     --ytmusic-color-white1-alpha10: var(--ts-overlay-highlighted-color);
 
     /* right click menu hover */
-    --ytmusic-menu-item-hover-background-color: var(--ts-overlay-color);
+    --ytmusic-menu-item-hover-background-color: var(--ts-overlay-highlighted-color);
   }
 
   /* search menu search item hover */

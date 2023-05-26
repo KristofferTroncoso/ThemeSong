@@ -55,7 +55,6 @@ function AppleMusicDark() {
           --ts-theme-ditto-applemusic-color: #d60017;
 
           --ts-overlay-color: rgba(0,0,0,0.6);
-          --ts-overlay-highlighted-color: rgba(0,0,0,0);
         }
 
         /* i think ytm is putting a 'padding-top: 100%' on this. i have to set it to 0 for my gradient to be good */
