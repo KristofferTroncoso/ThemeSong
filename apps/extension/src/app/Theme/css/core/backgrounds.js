@@ -16,6 +16,7 @@ export const backgrounds = /*css*/ `
   --ytmusic-general-background-a: var(--ts-body-color) !important;
   --ytmusic-general-background-c: var(--ts-body-color) !important;
   --ytmusic-search-background: var(--ts-playerbar-color) !important;
+  --yt-spec-menu-background: var(--ts-playerbar-color) !important;
 }
 
 body {
