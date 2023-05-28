@@ -30,8 +30,9 @@ function UpdatePanel() {
         `}
       >
         <p>
-          <b>v0.5.1</b>
+          <b>v0.5.2</b>
         </p>
+        <p>Apple Music theme standalone! You can now manually set it to Dark or Light mode anytime. Check it out!</p>
       </div>
       <button
         css={css`
