@@ -15,7 +15,7 @@ function SongInfoDisplay() {
     >
       <h1
         css={css`
-          font-size: 40px;
+          font-size: 36px;
           color: var(--ts-secondary-text-color);
         `}
       >
@@ -26,7 +26,7 @@ function SongInfoDisplay() {
           key={Math.floor(Math.random() * 10000)}
           css={css`
             margin: 14px 0;
-            font-size: 32px;
+            font-size: 24px;
             color: var(--ts-tertiary-text-color);
           `}
         >
