@@ -13,14 +13,6 @@ export const createVisualizerSlice = (set) => ({
       order: 2,
       variants: [
         {
-          id: "b84ef625-e0af-4e8c-8ab6-b86ee9ee2147",
-          name: "White",
-        },
-        {
-          id: "5890028c-8554-4fa9-bb14-f0c496f207f1",
-          name: "Black",
-        },
-        {
           id: "12bfd49e-47a2-4cc8-90a9-3e669f7a0c78",
           name: "RGB",
         },
@@ -69,6 +61,14 @@ export const createVisualizerSlice = (set) => ({
         },
       ],
     },
+    {
+      id: "8315ac5f-0de5-4ef1-ac5d-a4bc6d7b21ae",
+      name: "Experimental",
+    },
+    {
+      id: "57e7f170-a53d-4207-87f0-67633df37959",
+      name: "SpiderVerse",
+    },
   ],
   visualizerPrefs: [
     {
@@ -84,6 +84,10 @@ export const createVisualizerSlice = (set) => ({
     {
       id: "685d0ec7-5c52-4e48-a43d-11184a39f3da",
       activeVariant: "b82df5dd-c7f4-4cc1-ad23-9e2b70ca491b",
+    },
+    {
+      id: "8315ac5f-0de5-4ef1-ac5d-a4bc6d7b21ae",
+      activeVariant: 1,
     },
   ],
   changeActiveVisualizer: (payload) => {

@@ -8,12 +8,14 @@ import Accent from "./variants/Accent";
 import Palette from "./variants/Palette";
 import DancingPalette from "./variants/DancingPalette";
 
-function Bars({ analyser, dataArray, bufferLength }) {
+function Bars({ analyser }) {
   const barsActiveVariant = useStore(
     (state) =>
       state.visualizer.visualizerPrefs.find((visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6")
         .activeVariant
   );
+  const bufferLength = 1024;
+  const dataArray = new Uint8Array(analyser.frequencyBinCount);
 
   function returnActiveVariant() {
     switch (barsActiveVariant) {

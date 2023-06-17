@@ -1,5 +1,7 @@
+import { useRef } from "react";
 import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
+import Canvas from "../../components/Canvas";
 
 import RGB from "./variants/RGB";
 import Accent from "./variants/Accent";
@@ -8,29 +10,31 @@ import Party from "./variants/Party";
 import Bubbles from "./variants/Bubbles";
 import OT9 from "./variants/OT9";
 
-function Circles({ analyser, dataArray, bufferLength }) {
+function Circles({ analyser }) {
   const circlesActiveVariant = useStore(
     (state) =>
       state.visualizer.visualizerPrefs.find((visualizer) => visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da")
         .activeVariant
   );
+  const canvasRef = useRef();
+  const dataArray = new Uint8Array(analyser.frequencyBinCount);
 
-  function returnActiveVariant() {
+  function returnActiveVariant(canvasRef) {
     switch (circlesActiveVariant) {
       case "2040b849-8c7c-4290-8ff8-c0d7716cca77":
-        return <RGB analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />;
+        return <RGB analyser={analyser} dataArray={dataArray} canvasRef={canvasRef} />;
       case "820e69c5-1531-44b7-8da4-5d43c1b17bfe":
-        return <Accent analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />;
+        return <Accent analyser={analyser} dataArray={dataArray} canvasRef={canvasRef} />;
       case "b82df5dd-c7f4-4cc1-ad23-9e2b70ca491b":
-        return <Palette analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />;
+        return <Palette analyser={analyser} dataArray={dataArray} />;
       case "6b14efe2-f082-4f23-9186-8dad394d0b55":
-        return <Party analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />;
+        return <Party analyser={analyser} dataArray={dataArray} />;
       case "7dbd8080-84cc-47a8-b199-cfe12c3d9e67":
-        return <Bubbles analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />;
+        return <Bubbles analyser={analyser} dataArray={dataArray} />;
       case "aadb67e9-ee59-45f3-8335-d34a39223525":
-        return <OT9 analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />;
+        return <OT9 analyser={analyser} dataArray={dataArray} />;
       default:
-        return <RGB analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />;
+        return <RGB analyser={analyser} dataArray={dataArray} />;
     }
   }
 
@@ -47,7 +51,8 @@ function Circles({ analyser, dataArray, bufferLength }) {
         background: rgba(0, 0, 0, 0.5);
       `}
     >
-      {returnActiveVariant()}
+      <Canvas ref={canvasRef} />
+      {returnActiveVariant(canvasRef)}
     </div>
   );
 }

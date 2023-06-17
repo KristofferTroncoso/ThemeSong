@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { createRoot } from "react-dom/client";
+import { useStore } from "/src/app/store";
 
 import VisualizerToggleButton from "./components/VisualizerToggleButton";
 import HideCaptions from "./components/HideCaptions";
-import VisualizerContainer from "./VisualizerContainer";
+import Visualizer from "./Visualizer";
 
 function addVisualizerContainer() {
   let ytmusicplayer = document.querySelector("ytmusic-player");
@@ -16,11 +17,6 @@ function addVisualizerContainer() {
   ytmusicplayer.appendChild(document.createElement("div")).id = "ts-visualizer-container";
   tsvisualizercontainer = document.getElementById("ts-visualizer-container");
   tsvisualizercontainer.style.borderRadius = "inherit";
-  // tsvisualizercontainer.style.border = "1px solid lightgreen";
-
-  if (!tsvisualizercontainer) {
-    ytmusicplayer.appendChild(document.createElement("canvas")).id = "ts-visualizer-canvas";
-  }
 
   ytmusicplayer.append(tsvisualizercontainer);
 
@@ -65,6 +61,12 @@ function VisualizerCS() {
   }, []);
 
   return null;
+}
+
+function VisualizerContainer() {
+  const isVisualizerOn = useStore((state) => state.visualizer.isVisualizerOn);
+
+  return <div id="ThemeSong-VisualizerContainer">{isVisualizerOn && <Visualizer />}</div>;
 }
 
 export default VisualizerCS;

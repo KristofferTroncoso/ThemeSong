@@ -1,76 +1,64 @@
 import { useRef, useEffect } from "react";
 import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
+import useAnimation from "../../components/useAnimation";
 
-function Wavy({ analyser, dataArray, bufferLength }) {
+function Wavy({ analyser }) {
   const wavyPrefs = useStore((state) =>
     state.visualizer.visualizerPrefs.find((visualizer) => visualizer.id === "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d")
   );
-  const isSongPlaying = useStore((state) => state.player.isSongPlaying);
   const dominantSwatch = useStore((state) => state.palette.dominant);
 
   const canvasRef = useRef();
-  const intervalId = useRef();
-  const ctx = useRef();
+  const context = useRef();
+
+  const fftSize = 2048;
+  const bufferLength = fftSize / 2;
+  const dataArray = new Uint8Array(bufferLength);
 
   useEffect(() => {
-    console.log("1");
-    ctx.current = canvasRef.current.getContext("2d");
-    ctx.current.strokeStyle = "#fff";
-    ctx.current.lineWidth = wavyPrefs.lineWidth;
-    ctx.current.shadowBlur = 4;
-    ctx.current.shadowOffsetY = wavyPrefs.lineWidth;
-    ctx.current.shadowColor = `hsl(
+    console.log("Wavy: Setup");
+    context.current = canvasRef.current.getContext("2d");
+    context.current.strokeStyle = "#fff";
+    context.current.lineWidth = wavyPrefs.lineWidth;
+    context.current.shadowBlur = 4;
+    context.current.shadowOffsetY = wavyPrefs.lineWidth;
+    context.current.shadowColor = `hsl(
       ${(dominantSwatch.hsl[0] * 360).toFixed()}, 
-      ${dominantSwatch.hsl[1] * 100}%, 
+      ${dominantSwatch.hsl[1] * 180}%, 
       70%
     )`;
-  }, [dominantSwatch, wavyPrefs]);
+    analyser.fftSize = fftSize;
+  }, [dominantSwatch, wavyPrefs, analyser]);
 
-  useEffect(() => {
-    console.log("5");
-    const drawWavy = () => {
-      let context = ctx.current;
-      let canvas = canvasRef.current || { width: 1920, height: 512 };
-      analyser.fftSize = 2048;
-      analyser.getByteTimeDomainData(dataArray);
-      context.clearRect(0, 0, canvas.width, canvas.height);
-      context.beginPath();
+  useAnimation(() => {
+    let ctx = context.current;
+    let canvas = canvasRef.current;
 
-      let sliceWidth = canvas.width / bufferLength;
-      let x = 0;
+    analyser.getByteTimeDomainData(dataArray);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
 
-      for (let i = 0; i < bufferLength; i++) {
-        let v = dataArray[i] / 128;
-        let y = (v * canvas.height) / 2;
+    let sliceWidth = canvas.width / bufferLength;
+    let x = 0;
 
-        if (i === 0) {
-          context.moveTo(x, y);
-        } else {
-          context.lineTo(x, y);
-        }
-        x += sliceWidth;
+    for (let i = 0; i < bufferLength; i++) {
+      let v = dataArray[i] / 128;
+      let y = (v * canvas.height) / 2;
+
+      if (i === 0) {
+        ctx.moveTo(x, y);
+      } else {
+        ctx.lineTo(x, y);
       }
-
-      ctx.current.stroke();
-    };
-
-    if (!isSongPlaying) {
-      clearInterval(intervalId.current);
-    } else {
-      clearInterval(intervalId.current);
-      intervalId.current = setInterval(() => requestAnimationFrame(drawWavy), 17);
+      x += sliceWidth;
     }
 
-    return function cleanUp() {
-      console.log("Wavy: Cleaning up");
-      clearInterval(intervalId.current);
-    };
-  }, [isSongPlaying, analyser, bufferLength, dataArray]);
+    ctx.stroke();
+  });
 
   return (
     <div
-      id="ThemeSong-Visualizer-Wavy-Container"
       css={css`
         position: absolute;
         bottom: 0;
@@ -88,7 +76,6 @@ function Wavy({ analyser, dataArray, bufferLength }) {
       `}
     >
       <canvas
-        id="ThemeSong-Visualizer-Wavy-Canvas"
         ref={canvasRef}
         height="512"
         width="1920"
