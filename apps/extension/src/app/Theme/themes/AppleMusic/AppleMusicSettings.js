@@ -24,14 +24,6 @@ function AppleMusicSettings() {
 
   return (
     <div>
-      <h2
-        css={css`
-          color: #ff3232;
-          font-size: 16px;
-        `}
-      >
-        Active Theme: Apple Music
-      </h2>
       <form
         onSubmit={(e) => e.preventDefault()}
         css={css`

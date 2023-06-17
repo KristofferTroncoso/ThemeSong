@@ -1,5 +1,3 @@
-import { css } from "@emotion/react";
-
 import { useStore } from "/src/app/store";
 
 import { styled } from "@mui/material/styles";
@@ -44,15 +42,6 @@ function WavySettings() {
 
   return (
     <div>
-      <h2
-        css={css`
-          color: #ff3232;
-          font-size: 16px;
-          margin-bottom: 4px;
-        `}
-      >
-        Visualizer: Wavy
-      </h2>
       <p style={{ margin: "5px 0 10px" }}>🌊 🌊 🌊</p>
       <div>
         <form onSubmit={(e) => e.preventDefault()}>

@@ -61,14 +61,6 @@ function DynamicSettings() {
 
   return (
     <div>
-      <h2
-        css={css`
-          color: #ff3232;
-          font-size: 16px;
-        `}
-      >
-        Active Theme: Dynamic
-      </h2>
       <p
         css={css`
           margin: 5px 0 0;

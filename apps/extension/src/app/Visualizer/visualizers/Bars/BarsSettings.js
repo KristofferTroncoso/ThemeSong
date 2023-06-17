@@ -72,15 +72,6 @@ function BarsSettings() {
           }
         `}
       >
-        <h2
-          css={css`
-            color: #ff3232;
-            font-size: 16px;
-            margin-bottom: 4px;
-          `}
-        >
-          Visualizer: Bars
-        </h2>
         <div>
           <form onSubmit={(e) => e.preventDefault()}>
             <div

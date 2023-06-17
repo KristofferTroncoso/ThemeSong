@@ -40,15 +40,6 @@ function CirclesSettings() {
   } else {
     return (
       <div>
-        <h2
-          css={css`
-            color: #ff3232;
-            font-size: 16px;
-            margin-bottom: 4px;
-          `}
-        >
-          Visualizer: Circles
-        </h2>
         <div>
           <p style={{ marginBottom: "6px" }}>Style Variant:</p>
           <div
