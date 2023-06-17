@@ -1,22 +1,20 @@
+import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
 
-import OffSettings from "../../Theme/themes/Off/OffSettings";
 import DynamicSettings from "../../Theme/themes/Dynamic/DynamicSettings";
 import StaticSettings from "../../Theme/themes/Static/StaticSettings";
 import CustomSettings from "../../Theme/themes/Custom/CustomSettings";
 import AppleMusicSettings from "../../Theme/themes/AppleMusic/AppleMusicSettings";
-import YouTubeMusicMobileSettings from "../../Theme/themes/YouTubeMusicMobile/YouTubeMusicMobileSettings";
 
 import ThemeButton from "../components/ThemeButton";
 
 function ThemesPage() {
   const themes = useStore((state) => state.theme.themes);
   const activeTheme = useStore((state) => state.theme.activeTheme);
+  const activeThemeDetails = useStore((state) => state.theme.themes.find((theme) => theme.id === activeTheme));
 
   let activeThemeSettings = () => {
     switch (activeTheme) {
-      case "416034f2-bfb8-46e8-9929-5805dd59a688":
-        return <OffSettings />;
       case "db8854e3-6753-4639-b244-c8091f3b9fcb":
         return <DynamicSettings />;
       case "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8":
@@ -25,8 +23,6 @@ function ThemesPage() {
         return <CustomSettings />;
       case "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f":
         return <AppleMusicSettings />;
-      case "55f83bbd-d794-49a8-8912-2b53af3f1d3f":
-        return <YouTubeMusicMobileSettings />;
       default:
         break;
     }
@@ -41,10 +37,19 @@ function ThemesPage() {
           borderRadius: "5px",
           border: "2px solid #135eeb",
           margin: "5px",
-          minHeight: "150px",
+          minHeight: "40px",
           padding: "5px 10px 10px",
         }}
       >
+        <h2
+          css={css`
+            color: #ff3232;
+            font-size: 16px;
+            margin-bottom: 4px;
+          `}
+        >
+          Theme: {activeThemeDetails.name}
+        </h2>
         {activeThemeSettings()}
       </div>
       <div

@@ -3,6 +3,7 @@ import VisualizerButton from "../../Visualizer/components/VisualizerButton";
 import WavySettings from "../../Visualizer/visualizers/wavy/WavySettings";
 import BarsSettings from "../../Visualizer/visualizers/bars/BarsSettings";
 import CirclesSettings from "../../Visualizer/visualizers/circles/CirclesSettings";
+import ExperimentalSettings from "../../Visualizer/visualizers/Experimental/ExperimentalSettings";
 
 import { useStore } from "/src/app/store";
 
@@ -10,6 +11,9 @@ function VisualizersPage() {
   const activeVisualizer = useStore((state) => state.visualizer.activeVisualizer);
   const visualizers = useStore((state) => state.visualizer.visualizers);
   const changeActiveVisualizer = useStore((state) => state.visualizer.changeActiveVisualizer);
+  const activeVisualizerDetails = useStore((state) =>
+    state.visualizer.visualizers.find((visualizer) => visualizer.id === activeVisualizer)
+  );
 
   const handleVisualizerClick = (e, id) => {
     changeActiveVisualizer(id);
@@ -26,8 +30,10 @@ function VisualizersPage() {
         return <BarsSettings />;
       case "685d0ec7-5c52-4e48-a43d-11184a39f3da":
         return <CirclesSettings />;
+      case "8315ac5f-0de5-4ef1-ac5d-a4bc6d7b21ae":
+        return <ExperimentalSettings />;
       default:
-        return <h1>Unknown Visualizer</h1>;
+        return <></>;
     }
   };
 
@@ -60,10 +66,19 @@ function VisualizersPage() {
           borderRadius: "5px",
           border: "2px solid #999",
           margin: "6px 5px 5px 5px",
-          minHeight: "150px",
+          minHeight: "40px",
           padding: "5px 10px 10px",
         }}
       >
+        <h2
+          css={css`
+            color: #ff3232;
+            font-size: 16px;
+            margin-bottom: 4px;
+          `}
+        >
+          Visualizer: {activeVisualizerDetails.name}
+        </h2>
         {activeVisualizerSettings()}
       </div>
       <div

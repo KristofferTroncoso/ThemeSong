@@ -17,7 +17,7 @@ function ThemeButton({ theme }) {
         color: white;
         padding: 10px;
         :hover {
-          background: ${activeTheme === theme.id ? "#111" : "#082a69"};
+          border: 4px solid ${activeTheme === theme.id ? "#135eeb" : "#3d5b91"};
         }
       `}
       disabled={activeTheme === theme.id}

@@ -80,6 +80,7 @@ function SettingsPopover() {
               border: "1px solid black",
               borderRadius: "2px",
               marginLeft: "5px",
+              padding: "3px",
             }}
           >
             RESET
