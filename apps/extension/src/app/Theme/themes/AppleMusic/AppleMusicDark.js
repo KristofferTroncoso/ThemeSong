@@ -58,6 +58,13 @@ function AppleMusicDark() {
           --ts-overlay-nowplaying-color: rgba(0,0,0,0);
         }
 
+        ::selection {
+          background: #ff3053; /* WebKit/Blink Browsers */
+        }
+        ::-moz-selection {
+          background: #ff3053; /* Gecko Browsers */
+        }
+
         /* i think ytm is putting a 'padding-top: 100%' on this. i have to set it to 0 for my gradient to be good */
         ytmusic-player[player-ui-state_=FULLSCREEN] #song-image.ytmusic-player {
           padding-top: 0;
