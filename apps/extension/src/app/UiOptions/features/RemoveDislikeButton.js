@@ -1,7 +1,7 @@
 function RemoveDislikeButton() {
   const style = /*css*/ `
     .dislike {
-      display: none;
+      display: none !important;
     }
 
     .like {
