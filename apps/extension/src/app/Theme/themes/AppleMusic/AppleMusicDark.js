@@ -12,6 +12,7 @@ import { backgrounds } from "../../css/core/backgrounds";
 import { song_image } from "../../css/extra/song_image";
 import { misc_style_improvements } from "../../css/extra/misc_style_improvements";
 import { zebra_stripes } from "../../css/extra/zebra_stripes";
+import { nowplaying_overlay } from "../../css/extra/nowplaying_overlay";
 
 function AppleMusicDark() {
   const playerUiState = useStore((state) => state.player.playerUiState);
@@ -37,6 +38,7 @@ function AppleMusicDark() {
       {song_image}
       {misc_style_improvements}
       {zebra_stripes}
+      {nowplaying_overlay}
       {
         /*css*/ `
         :root {
@@ -55,8 +57,11 @@ function AppleMusicDark() {
           --ts-theme-ditto-applemusic-color: #d60017;
 
           --ts-overlay-color: rgba(0,0,0,0.6);
-          --ts-overlay-nowplaying-color: rgba(0,0,0,0);
+
+          --ts-nowplaying-background-color: #db2a47;
         }
+
+
 
         ::selection {
           background: #ff3053; /* WebKit/Blink Browsers */
@@ -121,11 +126,6 @@ function AppleMusicDark() {
           /* --ytmusic-play-button-background-color: var(--ts-base-00-alpha-03-color) !important; */
           /* --ytmusic-play-button-active-background-color: var(--ts-base-00-alpha-03-color) !important; */
         }
-
-        /* Recaps icon/img . It has a black bg so im inverting it on light themes */
-        #img[src="https://www.gstatic.com/music/listening_review/HOME_RECAP_SHELF_AVATAR_BLACK_60x60.png"] {
-          filter: invert(1);
-        }
      `
       }
 
@@ -157,6 +157,25 @@ function AppleMusicDark() {
           --ts-zebra-stripes-color: rgba(255,255,255,0.03);;
           --ts-secondary-icon-color: #fa586a;
           --ts-colored-button-color: #fa586a;
+        }
+
+        ytmusic-tabs.stuck {
+          border-top: 1px solid #454545;
+          border-bottom: 1px solid #454545;
+        }
+
+        ytmusic-thumbnail-renderer:not([thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"]) {
+          height: initial !important;
+          width: initial !important;
+          border: 1px solid #454545;
+        }
+
+        /* album page light border */
+        #thumbnail {
+          border: 1px solid #454545;
+        }
+        #song-image > #thumbnail {
+          border: none;
         }
 
         #button-shape-like button {

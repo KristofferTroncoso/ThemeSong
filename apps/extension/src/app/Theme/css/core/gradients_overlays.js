@@ -30,7 +30,7 @@ export const gradients_overlays = /*css*/ `
   /* semi-transparent overlay on top of album images (on home page) on-hover */
   ytmusic-background-overlay-renderer {
     --ytmusic-background-overlay-background: var(--ts-overlay-color) !important;
-    border-radius: 4px;
+    border-radius: 10px;
   }
 
   /* miniplayer hover overlay */

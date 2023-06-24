@@ -1,4 +1,10 @@
 export const song_image = /*css*/ `
+/* start image thumbnails */
+ytmusic-two-row-item-renderer[aspect-ratio=MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE] .image.ytmusic-two-row-item-renderer {
+  border-radius: 10px;
+}
+/* end image thumbnails */
+
 /* start PlayPage song img styling */
 ytmusic-player {
   border-radius: 4px;

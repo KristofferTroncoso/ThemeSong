@@ -13,6 +13,7 @@ import { backgrounds } from "../../css/core/backgrounds";
 import { song_image } from "../../css/extra/song_image";
 import { misc_style_improvements } from "../../css/extra/misc_style_improvements";
 import { zebra_stripes } from "../../css/extra/zebra_stripes";
+import { nowplaying_overlay } from "../../css/extra/nowplaying_overlay";
 
 function AppleMusicLight() {
   const playerUiState = useStore((state) => state.player.playerUiState);
@@ -38,6 +39,7 @@ function AppleMusicLight() {
       {song_image}
       {misc_style_improvements}
       {zebra_stripes}
+      {nowplaying_overlay}
       {
         /*css*/ `
         :root {
@@ -56,7 +58,6 @@ function AppleMusicLight() {
           --ts-theme-ditto-applemusic-color: #d60017;
 
           --ts-overlay-color: rgba(0,0,0,0.6);
-          --ts-overlay-nowplaying-color: rgba(0,0,0,0);
         }
 
         /* highlight colors */
@@ -127,6 +128,12 @@ function AppleMusicLight() {
         /* Recaps icon/img . It has a black bg so im inverting it on light themes */
         #img[src="https://www.gstatic.com/music/listening_review/HOME_RECAP_SHELF_AVATAR_BLACK_60x60.png"] {
           filter: invert(1);
+          border: 20px;
+        }
+
+        #img[src="https://www.gstatic.com/music/listening_review/HOME_RECAP_SHELF_AVATAR_BLACK_120x120.png"] {
+          filter: invert(1);
+          border: 20px;
         }
      `
       }
