@@ -167,12 +167,12 @@ function AppleMusicDark() {
         ytmusic-thumbnail-renderer:not([thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"]) {
           height: initial !important;
           width: initial !important;
-          border: 1px solid #454545;
+          border: 1px solid #3d3d3d;
         }
 
         /* album page light border */
         #thumbnail {
-          border: 1px solid #454545;
+          border: 1px solid #3d3d3d;
         }
         #song-image > #thumbnail {
           border: none;
