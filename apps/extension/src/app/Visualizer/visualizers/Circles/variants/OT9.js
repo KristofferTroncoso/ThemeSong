@@ -276,7 +276,6 @@ function OT9({ analyser, dataArray }) {
         height: 100%;
         width: 100%;
         border-radius: inherit;
-        background-color: rgba(10, 10, 70, 0.5);
       `}
     />
   );

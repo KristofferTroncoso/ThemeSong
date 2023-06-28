@@ -1,7 +1,5 @@
-import { useRef } from "react";
 import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
-import Canvas from "../../components/Canvas";
 
 import RGB from "./variants/RGB";
 import Accent from "./variants/Accent";
@@ -16,15 +14,15 @@ function Circles({ analyser }) {
       state.visualizer.visualizerPrefs.find((visualizer) => visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da")
         .activeVariant
   );
-  const canvasRef = useRef();
+
   const dataArray = new Uint8Array(analyser.frequencyBinCount);
 
-  function returnActiveVariant(canvasRef) {
+  function returnActiveVariant() {
     switch (circlesActiveVariant) {
       case "2040b849-8c7c-4290-8ff8-c0d7716cca77":
-        return <RGB analyser={analyser} dataArray={dataArray} canvasRef={canvasRef} />;
+        return <RGB analyser={analyser} dataArray={dataArray} />;
       case "820e69c5-1531-44b7-8da4-5d43c1b17bfe":
-        return <Accent analyser={analyser} dataArray={dataArray} canvasRef={canvasRef} />;
+        return <Accent analyser={analyser} dataArray={dataArray} />;
       case "b82df5dd-c7f4-4cc1-ad23-9e2b70ca491b":
         return <Palette analyser={analyser} dataArray={dataArray} />;
       case "6b14efe2-f082-4f23-9186-8dad394d0b55":
@@ -51,8 +49,7 @@ function Circles({ analyser }) {
         background: rgba(0, 0, 0, 0.5);
       `}
     >
-      <Canvas ref={canvasRef} />
-      {returnActiveVariant(canvasRef)}
+      {returnActiveVariant()}
     </div>
   );
 }

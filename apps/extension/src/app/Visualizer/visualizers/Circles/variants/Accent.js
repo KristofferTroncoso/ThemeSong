@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
 
 let circles = [
@@ -32,10 +33,12 @@ let circles = [
 
 let shorterCanvasSide;
 
-function Accent({ analyser, dataArray, canvasRef }) {
+function Accent({ analyser, dataArray }) {
   const isSongPlaying = useStore((state) => state.player.isSongPlaying);
   const sortedPalette = useStore((state) => state.palette.sortedPalette);
 
+  const ytmusicplayer = document.querySelector("ytmusic-player");
+  const canvasRef = useRef();
   const intervalId = useRef();
   const ctx = useRef();
 
@@ -55,8 +58,6 @@ function Accent({ analyser, dataArray, canvasRef }) {
   }, []);
 
   useEffect(() => {
-    let canvas = canvasRef.current;
-
     function updateAndDraw(ctx) {
       ctx.current = canvasRef.current.getContext("2d");
       //update values
@@ -84,9 +85,10 @@ function Accent({ analyser, dataArray, canvasRef }) {
     function accent() {
       let context = canvasRef.current.getContext("2d");
       let ytmusicplayer = document.querySelector("ytmusic-player");
-
-      shorterCanvasSide = canvas.height < canvas.width ? canvas.height : canvas.width;
-
+      canvasRef.current.height = ytmusicplayer.clientHeight;
+      canvasRef.current.width = ytmusicplayer.clientWidth;
+      shorterCanvasSide =
+        ytmusicplayer.clientHeight < ytmusicplayer.clientWidth ? ytmusicplayer.clientHeight : ytmusicplayer.clientWidth;
       analyser.fftSize = 512;
       analyser.getByteFrequencyData(dataArray);
 
@@ -147,7 +149,22 @@ function Accent({ analyser, dataArray, canvasRef }) {
     };
   }
 
-  return null;
+  return (
+    <canvas
+      id="ThemeSong-Visualizer-Circles-Variant-Accent"
+      ref={canvasRef}
+      height={ytmusicplayer.clientHeight}
+      width={ytmusicplayer.clientWidth}
+      css={css`
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: inherit;
+      `}
+    />
+  );
 }
 
 export default Accent;
