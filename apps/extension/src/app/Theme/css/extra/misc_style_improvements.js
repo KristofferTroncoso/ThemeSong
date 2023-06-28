@@ -40,6 +40,14 @@ export const playBarTextAndIconsColor = /*css*/ `
   }
 `;
 
+/* June 2023. Album image on player page is directly touching the player bar.
+Feedback sent to YTM but no fix. Other users confirmed issue. */
+export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
+  ytmusic-player {
+    margin: auto 0 auto 50px !important;
+  }
+`;
+
 export const misc_style_improvements = /*css*/ `
   /* ThemeSong */
   /* universal styles */
@@ -48,4 +56,5 @@ export const misc_style_improvements = /*css*/ `
   ${noGreyBgOnUserIcon}
   ${fixWeirdMarginWhenFullScreenPlayer}
   ${playBarTextAndIconsColor}
+  ${fixNoMarginBottomOnNowPlayingAlbumImage}
 `;
