@@ -4,10 +4,6 @@ import { useStore } from "/src/app/store";
 import StyledPanelDiv from "../QuickAccessPanel/components/StyledPanelDiv";
 import PanelButton from "../QuickAccessPanel/components/PanelButton";
 
-import WavesIcon from "@mui/icons-material/Waves";
-import BubbleChart from "@mui/icons-material/BubbleChart";
-import LeaderboardIcon from "@mui/icons-material/Leaderboard";
-
 function VisualizerVariantButton({ color, bgColor, hoverColor, hoverBgColor, children, title, ...props }) {
   return (
     <button
@@ -78,77 +74,36 @@ function VisualizerPanel() {
         </h3>
         <div
           css={css`
-            display: flex;
-            justify-content: start;
-            align-items: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-row-gap: 4px;
+            grid-column-gap: 4px;
           `}
         >
-          <PanelButton
-            title="Wavy"
-            bgColor={
-              isVisualizerOn && activeVisualizer === "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d" && "rgba(255,255,255,0.8)"
-            }
-            color={isVisualizerOn && activeVisualizer === "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d" && "#008c7e"}
-            hoverColor="#008c7e"
-            css={css`
-              height: 42px;
-              min-width: 45px;
-              width: 60px;
-              margin: 0 2px;
-              border: 0;
-              border-radius: 6px;
-            `}
-            onClick={(e) => handleVisualizerButtonClick("6aa34dd4-6775-46c1-8dbb-7ac2931ff80d")}
-          >
-            <WavesIcon title="Wavy" fontSize="large" />
-          </PanelButton>
-          <PanelButton
-            title="Bars"
-            bgColor={
-              isVisualizerOn && activeVisualizer === "51dc50c8-eb06-4086-ad9c-a89758f63db6" && "rgba(255,255,255,0.8)"
-            }
-            color={isVisualizerOn && activeVisualizer === "51dc50c8-eb06-4086-ad9c-a89758f63db6" && "#fc0303"}
-            hoverColor="#fc0303"
-            css={css`
-              height: 42px;
-              min-width: 45px;
-              width: 60px;
-              margin: 2px;
-              border: 0;
-              border-radius: 6px;
-            `}
-            onClick={(e) => handleVisualizerButtonClick("51dc50c8-eb06-4086-ad9c-a89758f63db6")}
-          >
-            <LeaderboardIcon title="Bars" fontSize="large" />
-          </PanelButton>
-          <PanelButton
-            title="Circles"
-            bgColor={
-              isVisualizerOn && activeVisualizer === "685d0ec7-5c52-4e48-a43d-11184a39f3da" && "rgba(255,255,255,0.8)"
-            }
-            color={isVisualizerOn && activeVisualizer === "685d0ec7-5c52-4e48-a43d-11184a39f3da" && "#fc03e3"}
-            hoverColor="#fc03e3"
-            css={css`
-              height: 42px;
-              min-width: 60px;
-              width: 60px;
-              margin: 0 2px;
-              border: 0;
-              border-radius: 6px;
-              padding: 0;
-            `}
-            onClick={(e) => handleVisualizerButtonClick("685d0ec7-5c52-4e48-a43d-11184a39f3da")}
-          >
-            <BubbleChart
-              title="Circles"
+          {visualizers.map((visualizer) => (
+            <PanelButton
+              bgColor={isVisualizerOn && activeVisualizer === visualizer.id && "rgba(255,255,255,0.8)"}
+              color={isVisualizerOn && activeVisualizer === visualizer.id && "#008c7e"}
+              hoverColor="#008c7e"
               css={css`
-                font-size: 32px;
+                height: 25px;
+                width: 100%;
+                margin: 0;
+                border: 0;
+                border-radius: 6px;
+                font-size: 12px;
+                padding: 2px 6px;
               `}
-            />
-          </PanelButton>
+              onClick={(e) => handleVisualizerButtonClick(visualizer.id)}
+              key={visualizer.id}
+            >
+              {visualizer.name}
+            </PanelButton>
+          ))}
         </div>
       </div>
-      {isVisualizerOn && activeVisualizer !== "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d" ? (
+      {(isVisualizerOn && activeVisualizer === "51dc50c8-eb06-4086-ad9c-a89758f63db6") ||
+      activeVisualizer === "685d0ec7-5c52-4e48-a43d-11184a39f3da" ? (
         <div>
           <h3
             css={css`
