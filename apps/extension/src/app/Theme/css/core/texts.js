@@ -159,9 +159,4 @@ ytmusic-tabs.iron-selected .tab.ytmusic-tabs, .tab.selected.ytmusic-tabs {
 .action-text.ytmusic-guide-signin-promo-renderer {
   color: var(--ts-primary-text-color);
 }
-
-/* filter pills */
-ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style] .text.ytmusic-chip-cloud-chip-renderer {
-  color: #999 !important;
-}
 `;
