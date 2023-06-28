@@ -1,13 +1,11 @@
 import { useRef } from "react";
-import useAnimation from "../../../components/useAnimation";
+import useAnimation from "../../components/useAnimation";
 import { Canvas } from "@react-three/fiber";
 import { css } from "@emotion/react";
 
 function Sphere({ analyser, dataArray, ...props }) {
-  // This reference will give us direct access to the mesh
   const mesh = useRef();
 
-  // Subscribe this component to the render-loop, rotate the mesh every frame
   useAnimation(() => {
     analyser.fftSize = 512;
     analyser.getByteFrequencyData(dataArray);
@@ -21,7 +19,6 @@ function Sphere({ analyser, dataArray, ...props }) {
     mesh.current.scale.z = radius;
   });
 
-  // Return view, these are regular three.js elements expressed in JSX
   return (
     <mesh {...props} ref={mesh} scale={0.4}>
       <sphereGeometry args={[1, 24, 24]} />
@@ -30,7 +27,7 @@ function Sphere({ analyser, dataArray, ...props }) {
   );
 }
 
-function DiscoBall({ analyser }) {
+export const DiscoBall = ({ analyser }) => {
   const dataArray = new Uint8Array(analyser.frequencyBinCount);
 
   return (
@@ -42,7 +39,7 @@ function DiscoBall({ analyser }) {
         height: 100%;
         width: 100%;
         border-radius: inherit;
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(0, 0, 0, 0.8);
       `}
     >
       <Canvas>
@@ -58,6 +55,6 @@ function DiscoBall({ analyser }) {
       </Canvas>
     </div>
   );
-}
+};
 
 export default DiscoBall;

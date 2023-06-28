@@ -3,10 +3,10 @@ import { css } from "@emotion/react";
 
 function ExperimentalSettings() {
   const visualizerPrefs = useStore((state) => state.visualizer.visualizerPrefs);
-  const circlesVisualizer = useStore((state) =>
+  const experimentalVisualizer = useStore((state) =>
     state.visualizer.visualizers.find((visualizer) => visualizer.id === "8315ac5f-0de5-4ef1-ac5d-a4bc6d7b21ae")
   );
-  const circlesPrefs = useStore((state) =>
+  const experimentalPrefs = useStore((state) =>
     state.visualizer.visualizerPrefs.find((visualizer) => visualizer.id === "8315ac5f-0de5-4ef1-ac5d-a4bc6d7b21ae")
   );
   const changeVisualizerPrefs = useStore((state) => state.visualizer.changeVisualizerPrefs);
@@ -28,29 +28,30 @@ function ExperimentalSettings() {
   };
 
   const handleVariantClick = (e, id) => {
-    let copy = { ...circlesPrefs };
+    let copy = { ...experimentalPrefs };
     copy.activeVariant = e.target.value;
 
     handleVisualizersChange(copy);
   };
 
-  if (!circlesVisualizer) {
+  if (!experimentalVisualizer) {
     return <h1>hi</h1>;
   } else {
     return (
       <div>
         <div>
-          <p style={{ marginBottom: "6px" }}>Subject to change</p>
+          <p style={{ marginBottom: "6px" }}>Experimental visualizers. Subject to change.</p>
         </div>
         <input
           type="number"
           onChange={handleVariantClick}
-          value={circlesPrefs.activeVariant}
+          value={experimentalPrefs.activeVariant}
           min={1}
+          max={12}
           css={css`
             color: #000;
-            font-size: 20px;
-            height: 50px;
+            font-size: 30px;
+            width: 100px;
           `}
         />
       </div>

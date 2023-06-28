@@ -6,17 +6,14 @@ import E2 from "./variants/E2";
 import E3 from "./variants/E3";
 import E4 from "./variants/E4";
 import E5 from "./variants/E5";
-import E6 from "./variants/E6";
 import E7 from "./variants/E7";
 import E8 from "./variants/E8";
 import E9 from "./variants/E9";
 import E10 from "./variants/E10";
-import E11 from "./variants/E11";
-import E12 from "./variants/E12";
 import E13 from "./variants/E13";
 import E14 from "./variants/E14";
-import E15 from "./variants/E15";
 import E16 from "./variants/E16";
+// import Fire from "./variants/Fire";
 
 function Experimental({ analyser }) {
   const experimentalActiveVariant = useStore(
@@ -35,28 +32,25 @@ function Experimental({ analyser }) {
         height: 100%;
         width: 100%;
         border-radius: inherit;
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba(0, 0, 0, 0.6);
       `}
     >
       {
         [
           <E1 analyser={analyser} />,
+          <E8 analyser={analyser} />,
           <E1 analyser={analyser} />,
           <E2 analyser={analyser} />,
           <E3 analyser={analyser} />,
           <E4 analyser={analyser} />,
           <E5 analyser={analyser} />,
-          <E6 analyser={analyser} />,
           <E7 analyser={analyser} />,
-          <E8 analyser={analyser} />,
           <E9 analyser={analyser} />,
           <E10 analyser={analyser} />,
-          <E11 analyser={analyser} />,
-          <E12 analyser={analyser} />,
           <E13 analyser={analyser} />,
           <E14 analyser={analyser} />,
-          <E15 analyser={analyser} />,
           <E16 analyser={analyser} />,
+          // <Fire analyser={analyser} />,
         ][experimentalActiveVariant]
       }
     </div>

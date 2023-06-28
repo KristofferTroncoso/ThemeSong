@@ -7,11 +7,10 @@ function E1({ analyser }) {
   const context = useRef();
 
   const bufferLength = 1024;
-  const dataArray = new Uint8Array(analyser.frequencyBinCount);
 
   useEffect(() => {
     context.current = canvasRef.current.getContext("2d");
-    context.current.strokeStyle = "#000";
+    context.current.strokeStyle = "#000000";
   }, []);
 
   useAnimation(() => {
@@ -19,7 +18,8 @@ function E1({ analyser }) {
     let ctx = context.current;
 
     ctx = canvas.getContext("2d");
-    analyser.fftSize = 4096;
+    analyser.fftSize = 2048;
+    const dataArray = new Uint8Array(analyser.frequencyBinCount);
 
     // Clear the canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);

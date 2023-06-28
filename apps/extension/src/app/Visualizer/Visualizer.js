@@ -8,6 +8,9 @@ import PlayPauseChangeObserver from "../Player/PlayPauseChangeObserver";
 import VolumeChangeObserver from "../Player/VolumeChangeObserver";
 import PausedWarning from "./components/PausedWarning";
 import SpiderVerse from "./visualizers/SpiderVerse/SpiderVerse";
+import DiscoBall from "./visualizers/DiscoBall/DiscoBall";
+import Snowfall from "./visualizers/Snowfall/Snowfall";
+import RetroBars from "./visualizers/RetroBars/RetroBars";
 
 let source;
 let audioCtx;
@@ -84,20 +87,22 @@ Page reload required to reconnect visualizer. Reload now?`
     }
   }
 
+  const visualizers = {
+    "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d": <Wavy analyser={analyser} />,
+    "51dc50c8-eb06-4086-ad9c-a89758f63db6": <Bars analyser={analyser} />,
+    "685d0ec7-5c52-4e48-a43d-11184a39f3da": <Circles analyser={analyser} />,
+    "8315ac5f-0de5-4ef1-ac5d-a4bc6d7b21ae": <Experimental analyser={analyser} />,
+    "57e7f170-a53d-4207-87f0-67633df37959": <SpiderVerse analyser={analyser} />,
+    "2f34a5b3-6d29-42c8-bac0-a7356ee88151": <DiscoBall analyser={analyser} />,
+    "86a81510-3e5d-4d1e-9318-3ea0750393a3": <Snowfall analyser={analyser} />,
+    "f8cfcb9f-6639-4702-aa44-2261ba7a543b": <RetroBars analyser={analyser} />,
+  };
+
   function returnVisualizer() {
-    switch (activeVisualizer) {
-      case "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d":
-        return <Wavy analyser={analyser} />;
-      case "51dc50c8-eb06-4086-ad9c-a89758f63db6":
-        return <Bars analyser={analyser} />;
-      case "685d0ec7-5c52-4e48-a43d-11184a39f3da":
-        return <Circles analyser={analyser} />;
-      case "8315ac5f-0de5-4ef1-ac5d-a4bc6d7b21ae":
-        return <Experimental analyser={analyser} />;
-      case "57e7f170-a53d-4207-87f0-67633df37959":
-        return <SpiderVerse analyser={analyser} />;
-      default:
-        return <Wavy analyser={analyser} />;
+    if (!visualizers.hasOwnProperty(activeVisualizer)) {
+      return <Wavy analyser={analyser} />;
+    } else {
+      return visualizers[activeVisualizer];
     }
   }
 

@@ -6,7 +6,6 @@ function E8({ analyser }) {
   const canvasRef = useRef();
 
   const bufferLength = 1024;
-  const dataArray = new Uint8Array(analyser.frequencyBinCount);
 
   useAnimation(() => {
     const canvas = canvasRef.current;
@@ -15,15 +14,14 @@ function E8({ analyser }) {
     ctx.shadowBlur = 4;
     ctx.shadowOffsetY = 8;
     ctx.shadowColor = `#000`;
-    analyser.fftSize = 4096;
+    analyser.fftSize = 2048;
+    const dataArray = new Uint8Array(analyser.frequencyBinCount);
 
     // Constants for the visualizer effect
     const numPoints = 200;
     const radius = Math.min(canvas.width, canvas.height) * 0.1;
     const angleIncrement = (Math.PI * 2) / numPoints;
     const lineThickness = 3;
-
-    // ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // Get the current frequency data from the analyser
     analyser.getByteFrequencyData(dataArray);
@@ -42,7 +40,7 @@ function E8({ analyser }) {
       let barHeight = dataArray[i] * 2;
       ctx.strokeStyle = `hsla(${barHeight}, 100%, 70%, 0.95)`;
       const frequencyIndex = Math.floor((i / numPoints) * bufferLength);
-      const radiusOffset = (dataArray[frequencyIndex] / 40) * radius;
+      const radiusOffset = (dataArray[frequencyIndex] / 50) * radius;
       const x = Math.cos(i * angleIncrement) * (radius + radiusOffset);
       const y = Math.sin(i * angleIncrement) * (radius + radiusOffset);
       ctx.lineTo(x, y);

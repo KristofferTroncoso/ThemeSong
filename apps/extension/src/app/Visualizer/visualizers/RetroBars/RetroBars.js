@@ -1,10 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { css } from "@emotion/react";
-import Canvas from "../../../components/Canvas";
-import useAnimation from "../../../components/useAnimation";
-import useDraw from "../../../components/useDraw";
+import Canvas from "../../components/Canvas";
+import useAnimation from "../../components/useAnimation";
+import useDraw from "../../components/useDraw";
 
-function RGB({ analyser }) {
+function RetroBars({ analyser }) {
   const barsPrefs = { barWidth: 34, gap: 4 };
   const canvasRef = useRef();
   const canvasRef2 = useRef();
@@ -71,7 +71,6 @@ function RGB({ analyser }) {
 
   return (
     <div
-      id="ThemeSong-Visualizer-Bars-Container"
       css={css`
         position: absolute;
         bottom: 0;
@@ -79,6 +78,7 @@ function RGB({ analyser }) {
         height: 100%;
         width: 100%;
         border-radius: inherit;
+        background-color: rgba(0, 0, 0, 0.4);
       `}
     >
       <Canvas
@@ -92,4 +92,4 @@ function RGB({ analyser }) {
   );
 }
 
-export default RGB;
+export default RetroBars;

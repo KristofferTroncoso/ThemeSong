@@ -109,15 +109,9 @@ function RGB({ analyser }) {
           position: absolute;
           bottom: 0;
           left: 0;
-          border: 1px solid tomato;
         `}
       >
-        <Canvas
-          ref={canvasRef}
-          css={css`
-            border: 1px solid steelblue;
-          `}
-        />
+        <Canvas ref={canvasRef} />
       </div>
       <Canvas ref={canvasRef2} />
       <div

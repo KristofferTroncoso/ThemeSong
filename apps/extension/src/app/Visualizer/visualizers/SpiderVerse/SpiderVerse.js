@@ -11,16 +11,15 @@ function SpiderVerse({ analyser }) {
   const ctx = useRef();
 
   const bufferLength = 1024;
-  const dataArray = new Uint8Array(analyser.frequencyBinCount);
 
   useAnimation(() => {
     let context = ctx.current;
     let canvas = canvasRef.current;
 
     ctx.current = canvasRef.current.getContext("2d");
-    ctx.current.fillStyle = "blue";
 
     analyser.fftSize = 2048;
+    const dataArray = new Uint8Array(analyser.frequencyBinCount);
     analyser.getByteFrequencyData(dataArray);
 
     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -95,9 +94,9 @@ function SpiderVerse({ analyser }) {
         border-radius: inherit;
         background: linear-gradient(
           180deg,
-          rgba(20, 20, 90, 0.1) 0%,
-          rgba(10, 10, 80, 0.6) 73%,
-          rgba(10, 10, 80, 0.8) 100%
+          rgba(0, 0, 60, 0.1) 0%,
+          rgba(0, 0, 60, 0.85) 65%,
+          rgba(0, 0, 60, 0.95) 100%
         );
       `}
     >

@@ -11,13 +11,13 @@ function E4({ analyser }) {
   const context = useRef();
 
   const bufferLength = 1024;
-  const dataArray = new Uint8Array(analyser.frequencyBinCount);
+  let dataArray = new Uint8Array(analyser.frequencyBinCount);
 
   useEffect(() => {
     console.log("1");
     context.current = canvasRef.current.getContext("2d");
 
-    analyser.fftSize = 4096;
+    analyser.fftSize = 2048;
     return function cleanUp() {
       clearInterval(intervalId.current);
     };
@@ -26,6 +26,8 @@ function E4({ analyser }) {
   useEffect(() => {
     let ctx = context.current;
     let canvas = canvasRef.current;
+
+    dataArray = new Uint8Array(analyser.frequencyBinCount);
 
     // Camera variables
     let zoomFactor = 1;
