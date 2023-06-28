@@ -38,4 +38,8 @@ export const gradients_overlays = /*css*/ `
     background: var(--ts-overlay-color);
   }
 
+  /* sidebar active bg */
+  ytmusic-guide-entry-renderer[active] tp-yt-paper-item.ytmusic-guide-entry-renderer {
+    background-color: var(--ts-overlay-highlighted-color);
+  }
 `;

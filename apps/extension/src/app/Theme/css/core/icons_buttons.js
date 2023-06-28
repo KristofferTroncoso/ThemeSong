@@ -10,7 +10,7 @@ export const icons_buttons = /*css*/ `
 
     --ts-icon-accent-color: var(--ts-base-100-color);
 
-    --ts-pill-color: var(--ts-base-100-alpha-01-color);s
+    --ts-pill-color: var(--ts-base-100-alpha-01-color);
   }
 
   /* icons on playerpage song image */
@@ -37,6 +37,10 @@ export const icons_buttons = /*css*/ `
 
   .middle-controls-buttons {
     --iron-icon-fill-color: var(--ts-secondary-icon-color, purple);
+  }
+
+  .search-icon #icon {
+    fill: var(--ts-secondary-icon-color, crimson);
   }
 
   ytmusic-search-suggestion {
@@ -128,6 +132,33 @@ export const icons_buttons = /*css*/ `
   /* icons on top 3 buttons on Explore page */
   yt-icon.ytmusic-navigation-button-renderer {
     color: var(--ts-secondary-icon-color);
+  }
+
+  /* sidebar icons */
+  tp-yt-app-drawer yt-icon, tp-yt-app-drawer .yt-icon-container.yt-icon {
+    fill: var(--ts-secondary-icon-color);
+  }
+
+  yt-icon, .yt-icon-container.yt-icon {
+    fill: var(--ts-secondary-icon-color);
+  }
+
+  /* top bar icons */
+  ytmusic-nav-bar yt-icon, tp-yt-app-drawer .yt-icon-container.yt-icon {
+    fill: var(--ts-secondary-icon-color);
+  }
+
+  #menu-button.ytmusic-nav-bar {
+    color: var(--ts-secondary-icon-color);
+  }
+
+  /* sign in button (sidebar) */
+  .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
+    background-color: var(--ts-secondary-icon-color);
+  }
+
+  .yt-spec-touch-feedback-shape--touch-response .yt-spec-touch-feedback-shape__fill {
+    background-color: var(--ts-primary-icon-color);
   }
 
 `;

@@ -48,6 +48,15 @@ body {
   transition: var(--ts-bgcolor-transition) !important;
 }
 
+/* sidebar */
+#guide-wrapper {
+  background: var(--ts-navbar-color) !important;
+}
+
+#mini-guide-background {
+  background: var(--ts-navbar-color) !important;
+}
+
 ytmusic-player-bar {
   --ytmusic-player-bar-background: var(--ts-playerbar-color) !important;
   transition: var(--ts-bgcolor-transition) !important;
@@ -77,15 +86,24 @@ ytmusic-av-toggle[playback-mode=OMV_PREFERRED] .video-button.ytmusic-av-toggle {
   background: var(--ts-playerpageavtoggle-color);
 }
 
-
-ytmusic-search-box[opened], ytmusic-search-box[has-query] {
-  border: 1px solid var(--ts-base-100-alpha-02-color);
-}
-
 ytmusic-search-suggestions-section.ytmusic-search-box {
   border-top: 1px solid var(--ts-base-100-alpha-02-color);
 }
 
+ytmusic-search-box[is-bauhaus-sidenav-enabled] {
+  --ytmusic-search-background: var(--ts-playerbar-color);
+  backdrop-filter: blur(12px);
+}
+
+ytmusic-search-suggestions-section {
+  background: var(--ts-playerbar-color);
+  backdrop-filter: blur(12px);
+}
+
+#suggestion-list {
+  background-color: var(--ts-playerbar-color) !important;
+  backdrop-filter: blur(12px);
+}
 
 /* artist image white filter */
 /* aside from the gradient, there's also a default dark filter applied to the artist image header on the artist page */

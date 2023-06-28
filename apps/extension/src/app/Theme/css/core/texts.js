@@ -70,7 +70,8 @@ ytmusic-pivot-bar-item-renderer {
 }
 
 
-/* "Search" button on navbar */
+/* "Search" on navbar */
+
 ytmusic-search-box:not([opened]):hover {
   color: var(--ts-primary-text-color, indianred);
 }
@@ -83,8 +84,13 @@ ytmusic-search-box[opened] input.ytmusic-search-box::placeholder {
   color: var(--ts-tertiary-text-color, peru) !important;
 }
 
+ytmusic-search-box[has-query] input.ytmusic-search-box, ytmusic-search-box[opened] input.ytmusic-search-box {
+  color: var(--ts-tertiary-text-color, purple);
+}
 
-
+tp-yt-paper-icon-button.ytmusic-search-box, input.ytmusic-search-box, input.ytmusic-search-box::placeholder {
+  color: var(--ts-tertiary-text-color, purple);
+}
 
 /* playpage. up next subtitles like artists and time */
 /* also subtitles on the playbar */
@@ -129,12 +135,6 @@ button.ytmusic-navigation-button-renderer {
   color: var(--ts-primary-text-alpha-color, red);
 }
 
-/* search */
-ytmusic-search-box[has-query] input.ytmusic-search-box, ytmusic-search-box[opened] input.ytmusic-search-box {
-  color: var(--ts-primary-text-alpha-color);
-}
-
-
 /* search page that comes up */
 ytmusic-tabs.iron-selected .tab.ytmusic-tabs, .tab.selected.ytmusic-tabs {
   color: var(--ts-primary-text-color);
@@ -151,6 +151,12 @@ ytmusic-tabs.iron-selected .tab.ytmusic-tabs, .tab.selected.ytmusic-tabs {
 
 /* time info when hovering playerbar progressbar */
 #hover-time-info.ytmusic-player-bar {
+  color: var(--ts-primary-text-color);
+}
+
+/* sidebar */
+/* "sign in" */
+.action-text.ytmusic-guide-signin-promo-renderer {
   color: var(--ts-primary-text-color);
 }
 `;
