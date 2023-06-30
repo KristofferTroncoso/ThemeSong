@@ -30,6 +30,7 @@ body {
 
 .background-gradient {
   background: var(--ts-body-color) !important;
+  transition: var(--ts-bgcolor-transition) !important;
 }
 
 #player-page {
@@ -55,10 +56,12 @@ body {
 /* sidebar */
 #guide-wrapper {
   background: var(--ts-navbar-color) !important;
+  transition: var(--ts-bgcolor-transition) !important;
 }
 
 #mini-guide-background {
   background: var(--ts-navbar-color) !important;
+  transition: var(--ts-bgcolor-transition) !important;
 }
 
 ytmusic-player-bar {
