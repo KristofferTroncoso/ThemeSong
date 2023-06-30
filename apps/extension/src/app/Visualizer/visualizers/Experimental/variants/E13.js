@@ -3,6 +3,8 @@ import { css } from "@emotion/react";
 
 import * as THREE from "three";
 
+/* this needs to stop the animation when unloading */
+
 function VanillaThree() {
   const threeRef = useRef();
 

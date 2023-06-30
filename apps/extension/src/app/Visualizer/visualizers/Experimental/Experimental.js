@@ -10,7 +10,7 @@ import E7 from "./variants/E7";
 import E8 from "./variants/E8";
 import E9 from "./variants/E9";
 import E10 from "./variants/E10";
-import E13 from "./variants/E13";
+// import E13 from "./variants/E13";
 import E14 from "./variants/E14";
 import E16 from "./variants/E16";
 // import Fire from "./variants/Fire";
@@ -47,7 +47,7 @@ function Experimental({ analyser }) {
           <E7 analyser={analyser} />,
           <E9 analyser={analyser} />,
           <E10 analyser={analyser} />,
-          <E13 analyser={analyser} />,
+          // <E13 analyser={analyser} />,
           <E14 analyser={analyser} />,
           <E16 analyser={analyser} />,
           // <Fire analyser={analyser} />,
