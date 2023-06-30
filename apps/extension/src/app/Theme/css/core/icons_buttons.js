@@ -207,4 +207,14 @@ export const icons_buttons = /*css*/ `
   .close-icon.ytmusic-unified-share-panel-renderer {
     color: var(--ts-primary-icon-color);
   }
+  
+  /* sidebar Sign In hover */
+  :root {
+    --yt-spec-mono-tonal-hover: var(--ts-tertiary-icon-color) !important;
+  }
+
+  /* sidebar menu items hover */
+  tp-yt-paper-item.ytmusic-guide-entry-renderer:hover {
+    --ytmusic-guide-entry-background-color: var(--ts-pill-hover-color) !important;
+  }
 `;
