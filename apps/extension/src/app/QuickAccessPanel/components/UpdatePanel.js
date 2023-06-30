@@ -30,22 +30,16 @@ function UpdatePanel() {
         `}
       >
         <p>
+          <b>v0.5.4</b>
+          <span> (June 30, 2023)</span>
+        </p>
+        <p>- Bug fixes and better styling.</p>
+        <br></br>
+        <p>
           <b>v0.5.3</b>
+          <span> (June 28, 2023)</span>
         </p>
-        <br></br>
-        <p>
-          <b>New Visualizers!</b>
-        </p>
-        <p>* Spider-Verse, Experimental, Snowfall, Retro Bars, and Disco Ball.</p>
-        <br></br>
-        <p>
-          <b>Theme styling fixed for new sidebar layout</b>
-        </p>
-        <p>* For those with the new sidebar layout, all themes should look better now.</p>
-        <br></br>
-        <p>
-          <b>Reminder:</b> There are additional options available through the ThemeSong popup icon on your toolbar.
-        </p>
+        <p>- New music visualizers and sidebar styles.</p>
       </div>
       <button
         css={css`
