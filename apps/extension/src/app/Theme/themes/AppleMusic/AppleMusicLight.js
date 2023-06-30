@@ -117,6 +117,11 @@ function AppleMusicLight() {
         ytmusic-search-box {
           backdrop-filter: blur(14px);
         }
+
+        tp-yt-paper-dialog {
+          background: transparent !important;
+          backdrop-filter: blur(14px);
+        }
         /* end blur */
 
         ytmusic-play-button-renderer {
@@ -156,42 +161,48 @@ function AppleMusicLight() {
         }
         ${dark_base_colors}
         `
-        : `
+        : /*css*/ `
         ${texts}
-            ${light_base_colors}
-            :root {
-              --ts-navbar-color: rgba(240,240,240,0.8) !important;
-              --ts-body-color: #fff;
-              --ts-playerbar-color: hsla(var(--ts-palette-dominant-hue), calc(var(--ts-palette-dominant-saturation) * 0.7), 94%, 0.5);
-              --ts-playprogress-color: #5e5e5e;
-              --ts-primary-icon-color: var(--ts-base-70-color);
-              --ts-secondary-icon-color: #d60017;
-              --ts-colored-button-color: #d60017;
-              --ts-zebra-stripes-color: rgba(0,0,0,0.04);
-            }
+        ${light_base_colors}
+        :root {
+          --ts-navbar-color: rgba(240,240,240,0.8) !important;
+          --ts-body-color: #fff;
+          --ts-playerbar-color: hsla(var(--ts-palette-dominant-hue), calc(var(--ts-palette-dominant-saturation) * 0.7), 94%, 0.5);
+          --ts-playprogress-color: #5e5e5e;
+          --ts-primary-icon-color: var(--ts-base-70-color);
+          --ts-secondary-icon-color: #d60017;
+          --ts-colored-button-color: #d60017;
+          --ts-zebra-stripes-color: rgba(0,0,0,0.04);
+        }
 
-            ytmusic-tabs.stuck {
-              border-top: 1px solid #d1d1d1;
-              border-bottom: 1px solid #d1d1d1;
-            }
+        ytmusic-tabs.stuck {
+          border-top: 1px solid #d1d1d1;
+          border-bottom: 1px solid #d1d1d1;
+        }
+        
+        /* border around album thumbnails */
+        ytmusic-thumbnail-renderer:not([thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"]) {
+          height: initial !important;
+          width: initial !important;
+          border: 1px solid #d4d4d4 !important;
+        }
+        /* set thumbnail back to 44px for add-to-playlist menu */
+        .thumbnail.ytmusic-playlist-add-to-option-renderer {
+          height: 44px !important;
+          width: 44px !important;
+        }
 
-            ytmusic-thumbnail-renderer:not([thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"]) {
-              height: initial !important;
-              width: initial !important;
-              border: 1px solid #d4d4d4;
-            }
+        /* album page light border */
+        #thumbnail {
+          border: 1px solid #cdcdcd;
+        }
+        #song-image > #thumbnail {
+          border: none;
+        }
 
-            /* album page light border */
-            #thumbnail {
-              border: 1px solid #cdcdcd;
-            }
-            #song-image > #thumbnail {
-              border: none;
-            }
-
-            #button-shape-like button {
-              color: #d60017;
-            }
+        #button-shape-like button {
+          color: #d60017;
+        }
       `}
     </style>
   );

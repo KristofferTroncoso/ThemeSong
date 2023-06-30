@@ -61,8 +61,6 @@ function AppleMusicDark() {
           --ts-nowplaying-background-color: #db2a47;
         }
 
-
-
         ::selection {
           background: #ff3053; /* WebKit/Blink Browsers */
         }
@@ -119,6 +117,11 @@ function AppleMusicDark() {
         ytmusic-search-box {
           backdrop-filter: blur(14px);
         }
+
+        tp-yt-paper-dialog {
+          background: transparent !important;
+          backdrop-filter: blur(14px);
+        }
         /* end blur */
 
         ytmusic-play-button-renderer {
@@ -164,10 +167,17 @@ function AppleMusicDark() {
           border-bottom: 1px solid #454545;
         }
 
+        /* border around album thumbnails */
         ytmusic-thumbnail-renderer:not([thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"]) {
           height: initial !important;
           width: initial !important;
           border: 1px solid #3d3d3d;
+        }
+
+        /* set thumbnail back to 44px for add-to-playlist menu */
+        .thumbnail.ytmusic-playlist-add-to-option-renderer {
+          height: 44px !important;
+          width: 44px !important;
         }
 
         /* album page light border */
