@@ -40,4 +40,10 @@ ytmusic-responsive-list-item-renderer[play-button-state=playing] yt-checkbox-ren
 ytmusic-responsive-list-item-renderer[play-button-state=paused] yt-checkbox-renderer {
   color: var(--ts-nowplaying-text-color) !important;
 }
+
+ytmusic-responsive-list-item-renderer[play-button-state=loading] yt-icon, 
+ytmusic-responsive-list-item-renderer[play-button-state=playing] yt-icon, 
+ytmusic-responsive-list-item-renderer[play-button-state=paused] yt-icon {
+  fill: var(--ts-nowplaying-text-color);
+}
 `;
