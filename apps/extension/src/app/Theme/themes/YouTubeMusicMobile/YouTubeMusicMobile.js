@@ -39,7 +39,7 @@ function YouTubeMusicMobile() {
 
   return (
     <style id="YouTubeMusicMobile">
-      {!(playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER")
+      {!(playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE")
         ? `
         ${dark_base_colors}
         ${backgrounds}
@@ -47,7 +47,6 @@ function YouTubeMusicMobile() {
         ${playerbar_progressbar}
         ${song_image}
         ${misc_style_improvements}
-        
         :root {
           --ts-navbar-color: hsl(
             var(--ts-palette-dominant-hue), 
@@ -71,8 +70,6 @@ function YouTubeMusicMobile() {
           );
           --ts-body-color: #000000;
         }
-
-
       `
         : `
         ${dark_base_colors}
