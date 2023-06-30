@@ -188,4 +188,23 @@ export const icons_buttons = /*css*/ `
     --ytmusic-subscribe-button-outline-color: var(--ts-secondary-icon-color);
   }
 
+  /* little pin on add-to-playlist menu */
+  yt-icon.ytmusic-playlist-add-to-option-renderer {
+    fill: var(--ts-primary-icon-color);
+  }
+
+  /* icons on settings popup */
+  yt-icon.ytd-compact-link-renderer {
+    fill: var(--ts-secondary-icon-color);
+  }
+
+  /* share menu next circle */
+  :root {
+    --yt-spec-brand-background-primary: var(--ts-inverse-icon-color) !important;
+  }
+
+  /* x close butto on share menu */
+  .close-icon.ytmusic-unified-share-panel-renderer {
+    color: var(--ts-primary-icon-color);
+  }
 `;
