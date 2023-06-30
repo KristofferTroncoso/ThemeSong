@@ -1,5 +1,4 @@
 export const icons_buttons = /*css*/ `
-
   :root {
     --ts-primary-icon-color: var(--ts-base-100-color);
     --ts-secondary-icon-color: var(--ts-base-100-alpha-06-color);
@@ -16,6 +15,10 @@ export const icons_buttons = /*css*/ `
   /* icons on playerpage song image */
   ytmusic-player {
     color: var(--ts-primary-icon-color);
+  }
+ 
+  yt-icon, .yt-icon-container.yt-icon {
+    fill: inherit;
   }
       
   .icon {
@@ -91,8 +94,6 @@ export const icons_buttons = /*css*/ `
     color: var(--ts-icon-accent-color);
   }
 
-
-
   /* some pills on the home page */
   ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_LARGE_TRANSLUCENT_AND_SELECTED_WHITE] a.ytmusic-chip-cloud-chip-renderer {
     background: var(--ts-pill-color);
@@ -136,10 +137,6 @@ export const icons_buttons = /*css*/ `
 
   /* sidebar icons */
   tp-yt-app-drawer yt-icon, tp-yt-app-drawer .yt-icon-container.yt-icon {
-    fill: var(--ts-secondary-icon-color);
-  }
-
-  yt-icon, .yt-icon-container.yt-icon {
     fill: var(--ts-secondary-icon-color);
   }
 
