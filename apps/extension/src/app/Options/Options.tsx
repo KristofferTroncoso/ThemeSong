@@ -79,11 +79,6 @@ function Options() {
             RESET
           </button>
         </p>
-        <p>
-          <button onClick={(e) => chrome.storage.local.get(null, (res) => console.log(res))}>
-            console.log() storage
-          </button>
-        </p>
       </StyledDiv>
     </div>
   );
