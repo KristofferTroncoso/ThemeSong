@@ -17,6 +17,10 @@ export const backgrounds = /*css*/ `
   --ytmusic-general-background-c: var(--ts-body-color) !important;
   --ytmusic-search-background: var(--ts-playerbar-color) !important;
   --yt-spec-menu-background: var(--ts-playerbar-color) !important;
+
+  /* share menu */
+  --yt-spec-brand-background-solid: var(--ts-playerbar-color) !important;
+  --yt-spec-general-background-a: var(--ts-playerbar-color) !important;
 }
 
 body {
@@ -115,5 +119,10 @@ ytmusic-search-suggestions-section {
 /* when searching a song, the Top Result has a bg gradient applied */
 .immersive-background.ytmusic-card-shelf-renderer:before {
   background-image: linear-gradient(180deg,rgba(0,0,0,0.05) 0%, var(--ts-base-10-color) 86.67%);
+}
+
+/* settings menu */
+.content.ytmusic-settings-page {
+  background-color: var(--ts-body-color);
 }
 `;

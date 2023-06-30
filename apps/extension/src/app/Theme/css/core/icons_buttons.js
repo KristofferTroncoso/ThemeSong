@@ -10,6 +10,12 @@ export const icons_buttons = /*css*/ `
     --ts-icon-accent-color: var(--ts-base-100-color);
 
     --ts-pill-color: var(--ts-base-100-alpha-01-color);
+    --ts-pill-hover-color: var(--ts-base-100-alpha-02-color);
+  }
+
+  :root {
+    /* hovering a button like on the artist or album page */
+    --yt-spec-mono-filled-hover: var(--ts-primary-icon-color) !important;
   }
 
   /* icons on playerpage song image */
@@ -119,6 +125,14 @@ export const icons_buttons = /*css*/ `
     background: var(--ts-pill-color);
   }
 
+  ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_LARGE_TRANSLUCENT_AND_SELECTED_WHITE] a.ytmusic-chip-cloud-chip-renderer:hover {
+    background-color: var(--ts-pill-hover-color) !important;
+  } 
+
+  ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_UNKNOWN] a.ytmusic-chip-cloud-chip-renderer:hover, ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_DEFAULT] a.ytmusic-chip-cloud-chip-renderer:hover {
+    background-color: var(--ts-pill-hover-color) !important;
+  }
+
 
   /* 'recent activity' dropdown buttons */
   button.ytmusic-sort-filter-button-renderer {
@@ -162,4 +176,16 @@ export const icons_buttons = /*css*/ `
   ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_PRIMARY] a.ytmusic-chip-cloud-chip-renderer, ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_SECONDARY] a.ytmusic-chip-cloud-chip-renderer, ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_UNKNOWN][is-selected] a.ytmusic-chip-cloud-chip-renderer {
     background-color: var(--ts-secondary-icon-color) !important;
   }
+
+  /* selected item */
+  .menu-bar-icon.ytmusic-multi-select-menu-bar {
+    color: var(--ts-secondary-icon-color);
+  }
+
+  /* artist page subscribed button */
+  ytmusic-subscribe-button-renderer[is-subscribed] {
+    --ytmusic-subscribe-button-color: var(--ts-secondary-icon-color);
+    --ytmusic-subscribe-button-outline-color: var(--ts-secondary-icon-color);
+  }
+
 `;

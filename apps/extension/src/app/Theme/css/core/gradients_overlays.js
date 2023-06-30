@@ -42,4 +42,18 @@ export const gradients_overlays = /*css*/ `
   ytmusic-guide-entry-renderer[active] tp-yt-paper-item.ytmusic-guide-entry-renderer {
     background-color: var(--ts-overlay-highlighted-color);
   }
+
+  /* add to playlist menu */
+  ytmusic-playlist-add-to-option-renderer:hover {
+    background-color: var(--ts-overlay-highlighted-color);
+  }
+
+  /* user menu */
+  #items.yt-multi-page-menu-section-renderer>*.yt-multi-page-menu-section-renderer:not([compact-link-style=compact-link-style-type-disclaimer]):not([component-style=RENDER_STYLE_SIMPLE_HEADER]):hover {
+    background-color: var(--ts-overlay-highlighted-color);
+  }
+
+  .category-menu-item.iron-selected.ytmusic-settings-page {
+    background: var(--ts-overlay-highlighted-color);
+  }
 `;

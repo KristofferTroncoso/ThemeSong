@@ -26,6 +26,11 @@ button.ytmusic-sort-filter-button-renderer {
   --ytmusic-text-primary: var(--ts-primary-text-color, tomato) !important;
 }
 
+/* getting the rest of texts */
+yt-formatted-string {
+  color: var(--ts-secondary-text-color) !important;
+}
+
 /* random texts like on the right click menu and some pills and buttons */
 .text {
   color: var(--ts-primary-text-color, #947a41)!important;
@@ -56,12 +61,12 @@ button.ytmusic-sort-filter-button-renderer {
 }
 
 /* large navbar texts (Home, Explore etc) */
-ytmusic-pivot-bar-item-renderer:hover, ytmusic-pivot-bar-item-renderer.iron-selected {
-  color: var(--ts-primary-text-color, yellow);
+ytmusic-pivot-bar-item-renderer yt-formatted-string:hover, ytmusic-pivot-bar-item-renderer.iron-selected {
+  color: var(--ts-primary-text-color, yellow) !important;
 }
 
-ytmusic-pivot-bar-item-renderer {
-  color: var(--ts-tertiary-text-color, hotpink);
+ytmusic-pivot-bar-item-renderer yt-formatted-string {
+  color: var(--ts-tertiary-text-color, hotpink) !important;
 }
 
 /* on playerpage */
@@ -157,6 +162,11 @@ ytmusic-tabs.iron-selected .tab.ytmusic-tabs, .tab.selected.ytmusic-tabs {
 /* sidebar */
 /* "sign in" */
 .action-text.ytmusic-guide-signin-promo-renderer {
+  color: var(--ts-primary-text-color);
+}
+
+/* dropdown texts. Like picking region in settins */
+tp-yt-paper-dropdown-menu.ytmusic-setting-single-option-menu-renderer .input-content.tp-yt-paper-input-container>input, tp-yt-paper-dropdown-menu.ytmusic-setting-single-option-menu-renderer .input-content.tp-yt-paper-input-container>iron-input, tp-yt-paper-dropdown-menu.ytmusic-setting-single-option-menu-renderer .input-content.tp-yt-paper-input-container>textarea, tp-yt-paper-dropdown-menu.ytmusic-setting-single-option-menu-renderer .input-content.tp-yt-paper-input-container>iron-autogrow-textarea, tp-yt-paper-dropdown-menu.ytmusic-setting-single-option-menu-renderer .input-content.tp-yt-paper-input-container>.paper-input-input {
   color: var(--ts-primary-text-color);
 }
 `;

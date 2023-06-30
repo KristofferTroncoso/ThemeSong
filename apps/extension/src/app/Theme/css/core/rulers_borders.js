@@ -103,4 +103,17 @@ export const rulers_borders = /*css*/ `
   ytmusic-app-layout[is-bauhaus-sidenav-enabled] #mini-guide-background.ytmusic-app-layout {
     border-right: 1px solid var(--ts-ruler-secondary-color);
   }
+
+  /* add to playlist menu */
+  ytmusic-add-to-playlist-renderer {
+    border: 1px solid var(--ts-ruler-secondary-color);
+  }
+
+  .top-bar.ytmusic-add-to-playlist-renderer {
+    border-bottom: 1px solid var(--ts-ruler-secondary-color);
+  }
+
+  ytmusic-carousel-shelf-renderer.ytmusic-add-to-playlist-renderer:not(:empty) {
+    border-bottom: 1px solid var(--ts-ruler-secondary-color);
+  }
 `;
