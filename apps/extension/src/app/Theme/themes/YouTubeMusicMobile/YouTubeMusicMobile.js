@@ -39,14 +39,16 @@ function YouTubeMusicMobile() {
 
   return (
     <style id="YouTubeMusicMobile">
-      {!(playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE")
-        ? `
+      {`
         ${dark_base_colors}
-        ${backgrounds}
         ${scrollbars}
         ${playerbar_progressbar}
-        ${song_image}
         ${misc_style_improvements}
+        ${song_image}
+      `}
+      {(playerUiState === "PLAYER_PAGE_OPEN" || playerUiState === "FULLSCREEN") &&
+        ` 
+        ${backgrounds}
         :root {
           --ts-navbar-color: hsl(
             var(--ts-palette-dominant-hue), 
@@ -70,12 +72,6 @@ function YouTubeMusicMobile() {
           );
           --ts-body-color: #000000;
         }
-      `
-        : `
-        ${dark_base_colors}
-        ${scrollbars}
-        ${playerbar_progressbar}
-        ${misc_style_improvements}
       `}
     </style>
   );
