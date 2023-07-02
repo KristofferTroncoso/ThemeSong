@@ -2,13 +2,14 @@ import { useEffect, useRef } from "react";
 import { useStore } from "/src/app/store";
 
 export default function useAnimation(func, fps) {
+  const playerUiState = useStore((state) => state.player.playerUiState);
   const isSongPlaying = useStore((state) => state.player.isSongPlaying);
   const intervalId = useRef();
 
   useEffect(() => {
     console.log("Setup animate");
 
-    if (!isSongPlaying) {
+    if (!isSongPlaying || playerUiState === "PLAYER_BAR_ONLY") {
       clearInterval(intervalId.current);
     } else {
       clearInterval(intervalId.current);
@@ -19,5 +20,5 @@ export default function useAnimation(func, fps) {
       console.log("Animation: Cleaning up");
       clearInterval(intervalId.current);
     };
-  }, [func, fps, isSongPlaying]);
+  }, [func, fps, isSongPlaying, playerUiState]);
 }
