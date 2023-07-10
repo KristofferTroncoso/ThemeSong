@@ -29,12 +29,12 @@ ytmusic-player .song-media-controls {
 }
 
 
-ytmusic-player[player-ui-state_=FULLSCREEN] #song-image {
+ytmusic-player[player-ui-state=FULLSCREEN] #song-image {
   height: 100%;
   border-radius: 0;
 }
 
-ytmusic-player[player-ui-state_=FULLSCREEN] #thumbnail {
+ytmusic-player[player-ui-state=FULLSCREEN] #thumbnail {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +42,7 @@ ytmusic-player[player-ui-state_=FULLSCREEN] #thumbnail {
   height: 100%;
 }
 
-ytmusic-player[player-ui-state_=FULLSCREEN] #song-image #img {
+ytmusic-player[player-ui-state=FULLSCREEN] #song-image #img {
   background-color: var(--ts-palette-dominant-color);
   border-radius: 6px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.6);

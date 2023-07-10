@@ -34,7 +34,7 @@ export const gradients_overlays = /*css*/ `
   }
 
   /* miniplayer hover overlay */
-  ytmusic-player[player-ui-state_=MINIPLAYER] .song-media-controls.ytmusic-player {
+  ytmusic-player[player-ui-state=MINIPLAYER] .song-media-controls.ytmusic-player {
     background: var(--ts-overlay-color);
   }
 
