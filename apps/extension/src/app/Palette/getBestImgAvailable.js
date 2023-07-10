@@ -1,4 +1,4 @@
-import { songImg, playerBarSongImgNode } from "../../selectors";
+import { songImg, playerBarSongImgNode } from "../Theme/selectors";
 
 export default function getSongImg() {
   let bestImgAvailable;
@@ -12,7 +12,6 @@ export default function getSongImg() {
     bestImgAvailable = songImg.src;
   }
 
-  bestImgAvailable = playerBarSongImgNode.src;
   console.log(`best available img is ${bestImgAvailable}`);
 
   return bestImgAvailable;
