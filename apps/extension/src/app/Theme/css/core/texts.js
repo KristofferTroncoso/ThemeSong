@@ -6,6 +6,8 @@ export const texts = /*css*/ `
   --ts-inverse-text-color: var(--ts-base-00-color);
   --ts-primary-text-alpha-color: var(--ts-base-100-alpha-07-color);
   --ts-secondary-text-alpha-color: var(--ts-base-100-alpha-03-color);
+
+  --ts-texts-selection-color: dodgerblue;
 }
 
 :root {
@@ -168,5 +170,14 @@ ytmusic-tabs.iron-selected .tab.ytmusic-tabs, .tab.selected.ytmusic-tabs {
 /* dropdown texts. Like picking region in settins */
 tp-yt-paper-dropdown-menu.ytmusic-setting-single-option-menu-renderer .input-content.tp-yt-paper-input-container>input, tp-yt-paper-dropdown-menu.ytmusic-setting-single-option-menu-renderer .input-content.tp-yt-paper-input-container>iron-input, tp-yt-paper-dropdown-menu.ytmusic-setting-single-option-menu-renderer .input-content.tp-yt-paper-input-container>textarea, tp-yt-paper-dropdown-menu.ytmusic-setting-single-option-menu-renderer .input-content.tp-yt-paper-input-container>iron-autogrow-textarea, tp-yt-paper-dropdown-menu.ytmusic-setting-single-option-menu-renderer .input-content.tp-yt-paper-input-container>.paper-input-input {
   color: var(--ts-primary-text-color);
+}
+
+
+/* text selection */
+::selection {
+  background: var(--ts-texts-selection-color); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: var(--ts-texts-selection-color); /* Gecko Browsers */
 }
 `;
