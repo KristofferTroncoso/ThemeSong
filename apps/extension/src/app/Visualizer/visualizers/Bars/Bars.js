@@ -1,8 +1,6 @@
 import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
 
-import White from "./variants/White";
-import Black from "./variants/Black";
 import RGB from "./variants/RGB";
 import Accent from "./variants/Accent";
 import Palette from "./variants/Palette";
@@ -19,10 +17,6 @@ function Bars({ analyser }) {
 
   function returnActiveVariant() {
     switch (barsActiveVariant) {
-      case "b84ef625-e0af-4e8c-8ab6-b86ee9ee2147":
-        return <White analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />;
-      case "5890028c-8554-4fa9-bb14-f0c496f207f1":
-        return <Black analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />;
       case "12bfd49e-47a2-4cc8-90a9-3e669f7a0c78":
         return <RGB analyser={analyser} dataArray={dataArray} bufferLength={bufferLength} />;
       case "c67d53cf-d708-4d31-93e8-c01819e70248":
