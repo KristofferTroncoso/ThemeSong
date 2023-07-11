@@ -69,11 +69,11 @@ function AppleMusicLight() {
         }
 
         /* i think ytm is putting a 'padding-top: 100%' on this. i have to set it to 0 for my gradient to be good */
-        ytmusic-player[player-ui-state_=FULLSCREEN] #song-image.ytmusic-player {
+        ytmusic-player[player-ui-state=FULLSCREEN] #song-image.ytmusic-player {
           padding-top: 0;
         }
 
-        ytmusic-player[player-ui-state_=MINIPLAYER] #song-image.ytmusic-player {
+        ytmusic-player[player-ui-state=MINIPLAYER] #song-image.ytmusic-player {
           padding-top: 0;
         }
 
@@ -156,7 +156,7 @@ function AppleMusicLight() {
           border-radius: 4px;
         }
 
-        ytmusic-player[player-ui-state_=FULLSCREEN] #song-image #img {
+        ytmusic-player[player-ui-state=FULLSCREEN] #song-image #img {
           box-shadow: 0 10px 50px rgba(0,0,0,0.5);
         }
         ${dark_base_colors}

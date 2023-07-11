@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import { useStore } from "/src/app/store";
 import { menubar } from "../../selectors";
 import { scrollbars } from "../../css/core/scrollbars";
@@ -9,33 +9,16 @@ import { misc_style_improvements } from "../../css/extra/misc_style_improvements
 import { dark_base_colors } from "../../css/colors/dark_base_colors";
 
 function YouTubeMusicMobile() {
-  const dominantColorHSL = useStore((state) => state.palette.dominant).hsl;
+  const dominantColorLCH = useStore((state) => state.palette.dominant).oklch;
   const playerUiState = useStore((state) => state.player.playerUiState);
-
-  let hue = (dominantColorHSL[0] * 360).toFixed();
-  let saturation = (dominantColorHSL[1] * 100 * 0.5).toFixed();
-
-  const calcCurvedBrightness = useCallback(
-    (brightness) => {
-      let hueNum = parseInt(hue, 10);
-      let brightnessNum = parseInt(brightness, 10);
-
-      if (hueNum > 35 && hueNum < 200) {
-        return brightnessNum * 0.7;
-      } else {
-        return brightnessNum;
-      }
-    },
-    [hue]
-  );
 
   useEffect(() => {
     if (playerUiState === "PLAYER_PAGE_OPEN") {
-      menubar.content = `hsl(${hue}, ${saturation}%, ${calcCurvedBrightness(20)}%)`;
+      menubar.content = `oklch(0.28 ${dominantColorLCH[1] / 3} ${dominantColorLCH[2]})`;
     } else {
-      menubar.content = "#000";
+      menubar.content = "#000000";
     }
-  }, [hue, saturation, playerUiState, calcCurvedBrightness]);
+  }, [playerUiState, dominantColorLCH]);
 
   return (
     <style id="YouTubeMusicMobile">
@@ -47,29 +30,13 @@ function YouTubeMusicMobile() {
         ${song_image}
       `}
       {(playerUiState === "PLAYER_PAGE_OPEN" || playerUiState === "FULLSCREEN") &&
-        ` 
+        /* css */ ` 
         ${backgrounds}
         :root {
-          --ts-navbar-color: hsl(
-            var(--ts-palette-dominant-hue), 
-            ${saturation}%, 
-            ${calcCurvedBrightness(20)}%
-          );
-          --ts-playerpage-color: hsl(
-            var(--ts-palette-dominant-hue), 
-            ${saturation}%, 
-            ${calcCurvedBrightness(20)}%
-          );
-          --ts-playerpageavtoggle-color: hsl(
-            var(--ts-palette-dominant-hue), 
-            ${saturation}%, 
-            ${21 + (15 / 25) * 14}%
-          );
-          --ts-playerbar-color: hsl(
-            var(--ts-palette-dominant-hue), 
-            ${saturation}%, 
-            ${calcCurvedBrightness(28)}%
-          );
+          --ts-navbar-color: oklch(0.28 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h));
+          --ts-playerpage-color: oklch(0.28 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h));
+          --ts-playerpageavtoggle-color: oklch(0.35 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h));
+          --ts-playerbar-color: oklch(0.35 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h));
           --ts-body-color: #000000;
         }
       `}
