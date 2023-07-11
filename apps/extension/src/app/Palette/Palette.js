@@ -34,37 +34,37 @@ function Palette() {
               hex: palette.LightVibrant.hex,
               hsl: palette.LightVibrant.hsl,
               population: Math.floor(palette.LightVibrant.population * 0.4),
-              lch: lightvibrant.coords.map((coord) => Number(coord) || 0),
+              oklch: lightvibrant.coords.map((coord) => Number(coord) || 0),
             },
             Vibrant: {
               hex: palette.Vibrant.hex,
               hsl: palette.Vibrant.hsl,
               population: palette.Vibrant.population,
-              lch: vibrant.coords.map((coord) => Number(coord) || 0),
+              oklch: vibrant.coords.map((coord) => Number(coord) || 0),
             },
             DarkVibrant: {
               hex: palette.DarkVibrant.hex,
               hsl: palette.DarkVibrant.hsl,
               population: palette.DarkVibrant.population,
-              lch: darkvibrant.coords.map((coord) => Number(coord) || 0),
+              oklch: darkvibrant.coords.map((coord) => Number(coord) || 0),
             },
             LightMuted: {
               hex: palette.LightMuted.hex,
               hsl: palette.LightMuted.hsl,
               population: Math.floor(palette.LightMuted.population * 0.4),
-              lch: lightmuted.coords.map((coord) => Number(coord) || 0),
+              oklch: lightmuted.coords.map((coord) => Number(coord) || 0),
             },
             Muted: {
               hex: palette.Muted.hex,
               hsl: palette.Muted.hsl,
               population: Math.floor(palette.Muted.population * 0.7),
-              lch: muted.coords.map((coord) => Number(coord) || 0),
+              oklch: muted.coords.map((coord) => Number(coord) || 0),
             },
             DarkMuted: {
               hex: palette.DarkMuted.hex,
               hsl: palette.DarkMuted.hsl,
               population: Math.floor(palette.DarkMuted.population * 0.5),
-              lch: darkmuted.coords.map((coord) => Number(coord) || 0),
+              oklch: darkmuted.coords.map((coord) => Number(coord) || 0),
             },
           };
 
@@ -141,82 +141,82 @@ function Palette() {
           --ts-palette-muted-light: ${(palette.Muted.hsl[2] * 100).toFixed()}%;
           --ts-palette-darkmuted-light: ${(palette.DarkMuted.hsl[2] * 100).toFixed()}%;
 
-          --ts-palette-lightvibrant-l: ${palette.LightVibrant.lch[0]};
-          --ts-palette-vibrant-l: ${palette.Vibrant.lch[0]};
-          --ts-palette-darkvibrant-l: ${palette.DarkVibrant.lch[0]};
-          --ts-palette-lightmuted-l: ${palette.LightMuted.lch[0]};
-          --ts-palette-muted-l: ${palette.Muted.lch[0]};
-          --ts-palette-darkmuted-l: ${palette.DarkMuted.lch[0]};
+          --ts-palette-lightvibrant-l: ${palette.LightVibrant.oklch[0]};
+          --ts-palette-vibrant-l: ${palette.Vibrant.oklch[0]};
+          --ts-palette-darkvibrant-l: ${palette.DarkVibrant.oklch[0]};
+          --ts-palette-lightmuted-l: ${palette.LightMuted.oklch[0]};
+          --ts-palette-muted-l: ${palette.Muted.oklch[0]};
+          --ts-palette-darkmuted-l: ${palette.DarkMuted.oklch[0]};
 
-          --ts-palette-lightvibrant-c: ${palette.LightVibrant.lch[1]};
-          --ts-palette-vibrant-c: ${palette.Vibrant.lch[1]};
-          --ts-palette-darkvibrant-c: ${palette.DarkVibrant.lch[1]};
-          --ts-palette-lightmuted-c: ${palette.LightMuted.lch[1]};
-          --ts-palette-muted-c: ${palette.Muted.lch[1]};
-          --ts-palette-darkmuted-c: ${palette.DarkMuted.lch[1]};
+          --ts-palette-lightvibrant-c: ${palette.LightVibrant.oklch[1]};
+          --ts-palette-vibrant-c: ${palette.Vibrant.oklch[1]};
+          --ts-palette-darkvibrant-c: ${palette.DarkVibrant.oklch[1]};
+          --ts-palette-lightmuted-c: ${palette.LightMuted.oklch[1]};
+          --ts-palette-muted-c: ${palette.Muted.oklch[1]};
+          --ts-palette-darkmuted-c: ${palette.DarkMuted.oklch[1]};
 
-          --ts-palette-lightvibrant-h: ${palette.LightVibrant.lch[2]};
-          --ts-palette-vibrant-h: ${palette.Vibrant.lch[2]};
-          --ts-palette-darkvibrant-h: ${palette.DarkVibrant.lch[2]};
-          --ts-palette-lightmuted-h: ${palette.LightMuted.lch[2]};
-          --ts-palette-muted-h: ${palette.Muted.lch[2]};
-          --ts-palette-darkmuted-h: ${palette.DarkMuted.lch[2]};
+          --ts-palette-lightvibrant-h: ${palette.LightVibrant.oklch[2]};
+          --ts-palette-vibrant-h: ${palette.Vibrant.oklch[2]};
+          --ts-palette-darkvibrant-h: ${palette.DarkVibrant.oklch[2]};
+          --ts-palette-lightmuted-h: ${palette.LightMuted.oklch[2]};
+          --ts-palette-muted-h: ${palette.Muted.oklch[2]};
+          --ts-palette-darkmuted-h: ${palette.DarkMuted.oklch[2]};
           
           --ts-palette-dominant-color: ${dominant.hex};
           --ts-palette-dominant-hue: ${(dominant.hsl[0] * 360).toFixed()};
           --ts-palette-dominant-saturation: ${(dominant.hsl[1] * 100).toFixed()}%;
           --ts-palette-dominant-light: ${(dominant.hsl[2] * 100).toFixed()}%;
-          --ts-palette-dominant-l: ${sortedPalette[0].lch[0]};
-          --ts-palette-dominant-c: ${sortedPalette[0].lch[1]};
-          --ts-palette-dominant-h: ${sortedPalette[0].lch[2]};
+          --ts-palette-dominant-l: ${sortedPalette[0].oklch[0]};
+          --ts-palette-dominant-c: ${sortedPalette[0].oklch[1]};
+          --ts-palette-dominant-h: ${sortedPalette[0].oklch[2]};
 
           --ts-palette-0-hex:: ${sortedPalette[0].hex};
           --ts-palette-0-hue: ${(sortedPalette[0].hsl[0] * 360).toFixed()};
           --ts-palette-0-saturation: ${(sortedPalette[0].hsl[1] * 100).toFixed()}%;
           --ts-palette-0-light: ${(sortedPalette[0].hsl[2] * 100).toFixed()}%;
-          --ts-palette-0-l: ${sortedPalette[0].lch[0]};
-          --ts-palette-0-c: ${sortedPalette[0].lch[1]};
-          --ts-palette-0-h: ${sortedPalette[0].lch[2]};
+          --ts-palette-0-l: ${sortedPalette[0].oklch[0]};
+          --ts-palette-0-c: ${sortedPalette[0].oklch[1]};
+          --ts-palette-0-h: ${sortedPalette[0].oklch[2]};
 
           --ts-palette-1-hex:: ${sortedPalette[1].hex};
           --ts-palette-1-hue: ${(sortedPalette[1].hsl[0] * 360).toFixed()};
           --ts-palette-1-saturation: ${(sortedPalette[1].hsl[1] * 100).toFixed()}%;
           --ts-palette-1-light: ${(sortedPalette[1].hsl[2] * 100).toFixed()}%;
-          --ts-palette-1-l: ${sortedPalette[1].lch[0]};
-          --ts-palette-1-c: ${sortedPalette[1].lch[1]};
-          --ts-palette-1-h: ${sortedPalette[1].lch[2]};
+          --ts-palette-1-l: ${sortedPalette[1].oklch[0]};
+          --ts-palette-1-c: ${sortedPalette[1].oklch[1]};
+          --ts-palette-1-h: ${sortedPalette[1].oklch[2]};
 
           --ts-palette-2-hex:: ${sortedPalette[2].hex};
           --ts-palette-2-hue: ${(sortedPalette[2].hsl[0] * 360).toFixed()};
           --ts-palette-2-saturation: ${(sortedPalette[2].hsl[1] * 100).toFixed()}%;
           --ts-palette-2-light: ${(sortedPalette[2].hsl[2] * 100).toFixed()}%;
-          --ts-palette-2-l: ${sortedPalette[2].lch[0]};
-          --ts-palette-2-c: ${sortedPalette[2].lch[1]};
-          --ts-palette-2-h: ${sortedPalette[2].lch[2]};
+          --ts-palette-2-l: ${sortedPalette[2].oklch[0]};
+          --ts-palette-2-c: ${sortedPalette[2].oklch[1]};
+          --ts-palette-2-h: ${sortedPalette[2].oklch[2]};
 
           --ts-palette-3-hex:: ${sortedPalette[3].hex};
           --ts-palette-3-hue: ${(sortedPalette[3].hsl[0] * 360).toFixed()};
           --ts-palette-3-saturation: ${(sortedPalette[3].hsl[1] * 100).toFixed()}%;
           --ts-palette-3-light: ${(sortedPalette[3].hsl[2] * 100).toFixed()}%;
-          --ts-palette-3-l: ${sortedPalette[3].lch[0]};
-          --ts-palette-3-c: ${sortedPalette[3].lch[1]};
-          --ts-palette-3-h: ${sortedPalette[3].lch[2]};
+          --ts-palette-3-l: ${sortedPalette[3].oklch[0]};
+          --ts-palette-3-c: ${sortedPalette[3].oklch[1]};
+          --ts-palette-3-h: ${sortedPalette[3].oklch[2]};
 
           --ts-palette-4-hex:: ${sortedPalette[4].hex};
           --ts-palette-4-hue: ${(sortedPalette[4].hsl[0] * 360).toFixed()};
           --ts-palette-4-saturation: ${(sortedPalette[4].hsl[1] * 100).toFixed()}%;
           --ts-palette-4-light: ${(sortedPalette[4].hsl[2] * 100).toFixed()}%;
-          --ts-palette-4-l: ${sortedPalette[4].lch[0]};
-          --ts-palette-4-c: ${sortedPalette[4].lch[1]};
-          --ts-palette-4-h: ${sortedPalette[4].lch[2]};
+          --ts-palette-4-l: ${sortedPalette[4].oklch[0]};
+          --ts-palette-4-c: ${sortedPalette[4].oklch[1]};
+          --ts-palette-4-h: ${sortedPalette[4].oklch[2]};
 
           --ts-palette-5-hex:: ${sortedPalette[5].hex};
           --ts-palette-5-hue: ${(sortedPalette[5].hsl[0] * 360).toFixed()};
           --ts-palette-5-saturation: ${(sortedPalette[5].hsl[1] * 100).toFixed()}%;
           --ts-palette-5-light: ${(sortedPalette[5].hsl[2] * 100).toFixed()}%;
-          --ts-palette-5-l: ${sortedPalette[5].lch[0]};
-          --ts-palette-5-c: ${sortedPalette[5].lch[1]};
-          --ts-palette-5-h: ${sortedPalette[5].lch[2]};
+          --ts-palette-5-l: ${sortedPalette[5].oklch[0]};
+          --ts-palette-5-c: ${sortedPalette[5].oklch[1]};
+          --ts-palette-5-h: ${sortedPalette[5].oklch[2]};
         }
       `}
     </style>
@@ -230,11 +230,11 @@ function getVibrantPalette() {
 }
 
 function getDominantColor(palette) {
-  let dominant = { hex: "#000", hsl: [0.1, 0.5, 0.2], lch: [20, 20, 20], population: 0 };
+  let dominant = { hex: "#000", hsl: [0.1, 0.5, 0.2], oklch: [20, 20, 20], population: 0 };
 
   for (const [, value] of Object.entries(palette)) {
     if (value.population >= dominant.population) {
-      dominant = value || { hex: "#000", hsl: [0.1, 0.5, 0.2], lch: [20, 20, 20], population: 0 };
+      dominant = value || { hex: "#000", hsl: [0.1, 0.5, 0.2], oklch: [20, 20, 20], population: 0 };
     }
   }
   return dominant;
