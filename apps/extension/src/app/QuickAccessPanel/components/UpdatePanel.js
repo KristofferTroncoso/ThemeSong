@@ -30,16 +30,14 @@ function UpdatePanel() {
         `}
       >
         <p>
-          <b>v0.5.4</b>
-          <span> (June 30, 2023)</span>
+          <b>v0.5.5</b>
+          <span> (July 10, 2023)</span>
         </p>
-        <p>- Bug fixes and better styling.</p>
-        <br></br>
+        <p>Update/fix styling related to player_ui_state.</p>
         <p>
-          <b>v0.5.3</b>
-          <span> (June 28, 2023)</span>
+          - Sometimes ThemeSong has to be updated/fixed to match new features introduced in the official web app. Thanks
+          for your patience!
         </p>
-        <p>- New music visualizers and sidebar styles.</p>
       </div>
       <button
         css={css`
