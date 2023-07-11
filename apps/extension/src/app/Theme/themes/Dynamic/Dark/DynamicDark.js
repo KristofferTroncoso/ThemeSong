@@ -58,19 +58,9 @@ function DynamicDark() {
           --ts-playerbar-color: hsl(var(--ts-palette-dominant-hue), ${saturation}%, ${curveLight(lightness[2])}%);
           --ts-body-color: hsl(var(--ts-palette-dominant-hue), ${saturation}%, ${curveLight(lightness[3])}%);
 
-          --ts-playprogress-color: hsl(var(--ts-palette-sorted-1-hue), 80%, 91%);
-          --ts-playprogress-secondary-color: hsla(
-            var(--ts-palette-sorted-2-hue),
-            var(--ts-palette-sorted-2-saturation),
-            35%,
-            0.7
-          );
-          --ts-playprogress-container-color: hsla(
-            var(--ts-palette-sorted-3-hue),
-            var(--ts-palette-sorted-3-saturation),
-            50%,
-            0.3
-          );
+          --ts-playprogress-color: hsl(var(--ts-palette-1-hue), 80%, 91%);
+          --ts-playprogress-secondary-color: hsla(var(--ts-palette-2-hue), var(--ts-palette-2-saturation), 35%, 0.7);
+          --ts-playprogress-container-color: hsla(var(--ts-palette-3-hue), var(--ts-palette-3-saturation), 50%, 0.3);
 
           --ts-playprogress-knob-color: var(--ts-playprogress-color);
         }
