@@ -36,7 +36,7 @@ function YouTubeMusicMobile() {
           --ts-navbar-color: oklch(0.28 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h));
           --ts-playerpage-color: oklch(0.28 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h));
           --ts-playerpageavtoggle-color: oklch(0.35 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h));
-          --ts-playerbar-color: oklch(0.35 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h));
+          --ts-playerbar-color: oklch(0.35 calc(var(--ts-palette-dominant-c) / 2) var(--ts-palette-dominant-h));
           --ts-body-color: #000000;
         }
       `}
