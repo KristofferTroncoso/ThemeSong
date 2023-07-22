@@ -54,7 +54,7 @@ function SleepTimer() {
       setIsTimeOverDialogOpen(true);
     }
     isLastSong && lastSongDone();
-  }, [songName]);
+  }, [songName, changeIsActive, isLastSong]);
 
   function handleLastSongClick() {
     clearTimeout(timeoutId);
@@ -142,7 +142,7 @@ function SleepTimer() {
               padding: 10px 0;
             `}
           >
-            <StyledButton onClick={handleLastSongClick}>Finish this song</StyledButton>
+            <StyledButton onClick={handleLastSongClick}>End of track</StyledButton>
             <StyledButton onClick={(e) => handleTimerClick(5)}>5 minutes</StyledButton>
             <StyledButton onClick={(e) => handleTimerClick(10)}>10 minutes</StyledButton>
             <StyledButton onClick={(e) => handleTimerClick(20)}>20 minutes</StyledButton>
