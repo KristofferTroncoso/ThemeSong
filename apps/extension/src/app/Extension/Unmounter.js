@@ -18,7 +18,7 @@ function Unmounter({ root }) {
       } catch {
         root.unmount();
         setTimeout(() => {
-          document.querySelectorAll("#ThemeSong-Container")[0].remove();
+          document.querySelectorAll("#ThemeSong-ContentContainer")[0].remove();
         }, 1000);
       }
     }
