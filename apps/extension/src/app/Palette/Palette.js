@@ -3,6 +3,7 @@ import { useStore } from "/src/app/store";
 import * as Vibrant from "node-vibrant";
 import { playerBarSongImgNode } from "../Theme/selectors";
 import Color from "colorjs.io";
+// import getBestImgAvailable from "./getBestImgAvailable";
 
 function Palette() {
   const palette = useStore((state) => state.palette.palette);
@@ -33,38 +34,44 @@ function Palette() {
             LightVibrant: {
               hex: palette.LightVibrant.hex,
               hsl: palette.LightVibrant.hsl,
-              population: Math.floor(palette.LightVibrant.population * 0.4),
               oklch: lightvibrant.coords.map((coord) => Number(coord) || 0),
+              population: palette.LightVibrant.population,
+              adjustedPopulation: Math.floor(palette.LightVibrant.population * 0.1),
             },
             Vibrant: {
               hex: palette.Vibrant.hex,
               hsl: palette.Vibrant.hsl,
-              population: palette.Vibrant.population,
               oklch: vibrant.coords.map((coord) => Number(coord) || 0),
+              population: palette.Vibrant.population,
+              adjustedPopulation: palette.Vibrant.population,
             },
             DarkVibrant: {
               hex: palette.DarkVibrant.hex,
               hsl: palette.DarkVibrant.hsl,
-              population: palette.DarkVibrant.population,
               oklch: darkvibrant.coords.map((coord) => Number(coord) || 0),
+              population: palette.DarkVibrant.population,
+              adjustedPopulation: palette.DarkVibrant.population,
             },
             LightMuted: {
               hex: palette.LightMuted.hex,
               hsl: palette.LightMuted.hsl,
-              population: Math.floor(palette.LightMuted.population * 0.4),
               oklch: lightmuted.coords.map((coord) => Number(coord) || 0),
+              population: palette.LightMuted.population,
+              adjustedPopulation: Math.floor(palette.LightMuted.population * 0.04),
             },
             Muted: {
               hex: palette.Muted.hex,
               hsl: palette.Muted.hsl,
-              population: Math.floor(palette.Muted.population * 0.7),
               oklch: muted.coords.map((coord) => Number(coord) || 0),
+              population: palette.Muted.population,
+              adjustedPopulation: Math.floor(palette.Muted.population * 0.1),
             },
             DarkMuted: {
               hex: palette.DarkMuted.hex,
               hsl: palette.DarkMuted.hsl,
-              population: Math.floor(palette.DarkMuted.population * 0.5),
               oklch: darkmuted.coords.map((coord) => Number(coord) || 0),
+              population: palette.DarkMuted.population,
+              adjustedPopulation: Math.floor(palette.DarkMuted.population * 0.04),
             },
           };
 
@@ -105,6 +112,7 @@ function Palette() {
     });
 
     return function () {
+      console.log("removing imgChangeObserver");
       imgChangeObserver.current.disconnect();
     };
   }, []);
@@ -162,7 +170,7 @@ function Palette() {
           --ts-palette-muted-h: ${palette.Muted.oklch[2]};
           --ts-palette-darkmuted-h: ${palette.DarkMuted.oklch[2]};
           
-          --ts-palette-dominant-color: ${dominant.hex};
+          --ts-palette-dominant-hex: ${dominant.hex};
           --ts-palette-dominant-hue: ${(dominant.hsl[0] * 360).toFixed()};
           --ts-palette-dominant-saturation: ${(dominant.hsl[1] * 100).toFixed()}%;
           --ts-palette-dominant-light: ${(dominant.hsl[2] * 100).toFixed()}%;
@@ -226,15 +234,17 @@ function Palette() {
 function getVibrantPalette() {
   console.log("getting palette hsl");
   console.log(playerBarSongImgNode.src);
+  // const bestImg = getBestImgAvailable();
+  // console.log(bestImg);
   return Vibrant.from(playerBarSongImgNode.src).quality(1).getPalette();
 }
 
 function getDominantColor(palette) {
-  let dominant = { hex: "#000", hsl: [0.1, 0.5, 0.2], oklch: [20, 20, 20], population: 0 };
+  let dominant = { hex: "#000", hsl: [0.1, 0.5, 0.2], oklch: [20, 20, 20], adjustedPopulation: 0 };
 
   for (const [, value] of Object.entries(palette)) {
-    if (value.population >= dominant.population) {
-      dominant = value || { hex: "#000", hsl: [0.1, 0.5, 0.2], oklch: [20, 20, 20], population: 0 };
+    if (value.adjustedPopulation >= dominant.adjustedPopulation) {
+      dominant = value || { hex: "#000", hsl: [0.1, 0.5, 0.2], oklch: [20, 20, 20], adjustedPopulation: 0 };
     }
   }
   return dominant;
@@ -245,7 +255,7 @@ function getSortedPalette(palette) {
   for (const [, value] of Object.entries(palette)) {
     arr.push(value);
   }
-  let sortedPalette = arr.sort((a, b) => b.population - a.population);
+  let sortedPalette = arr.sort((a, b) => b.adjustedPopulation - a.adjustedPopulation);
   return sortedPalette;
 }
 
