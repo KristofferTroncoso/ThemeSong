@@ -1,11 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useStore } from "/src/app/store";
 
 function PlayPauseChangeObserver() {
   const changeIsSongPlaying = useStore((state) => state.player.changeIsSongPlaying);
+  const playPauseChangeObserver = useRef();
 
   useEffect(() => {
-    let playPauseChangeObserver;
     let moviePlayerNode = document.getElementById("movie_player");
 
     //initial
@@ -17,9 +17,9 @@ function PlayPauseChangeObserver() {
       changeIsSongPlaying(true);
     }
 
-    playPauseChangeObserver = new MutationObserver(handlePlayPauseChange);
+    playPauseChangeObserver.current = new MutationObserver(handlePlayPauseChange);
 
-    playPauseChangeObserver.observe(moviePlayerNode, {
+    playPauseChangeObserver.current.observe(moviePlayerNode, {
       attributeFilter: ["class"],
     });
 
@@ -37,7 +37,7 @@ function PlayPauseChangeObserver() {
 
     return function () {
       console.log("removing playPauseChangeObserver");
-      playPauseChangeObserver.disconnect();
+      playPauseChangeObserver.current.disconnect();
     };
   }, []);
 
