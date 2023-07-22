@@ -8,16 +8,23 @@ insertContentScriptContainer();
 
 function insertContentScriptContainer() {
   const body = document.querySelector("body");
-  let themesongContainer;
 
-  if (document.getElementById("ThemeSong-Container")) {
-    document.getElementById("ThemeSong-Container").remove();
+  let themesongMainContainer;
+
+  if (!document.getElementById("ThemeSong-MainContainer")) {
+    themesongMainContainer = document.createElement("div");
+    themesongMainContainer.id = "ThemeSong-MainContainer";
+    body.append(themesongMainContainer);
   }
+
+  let themesongContainer;
 
   themesongContainer = document.createElement("div");
   themesongContainer.id = "ThemeSong-Container";
 
-  body.append(themesongContainer);
+  themesongMainContainer = document.getElementById("ThemeSong-MainContainer");
+  themesongMainContainer.append(themesongContainer);
 
-  createRoot(themesongContainer).render(<ContentScript />);
+  let root = createRoot(themesongContainer);
+  root.render(<ContentScript root={root} />);
 }

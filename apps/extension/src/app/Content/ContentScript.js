@@ -10,10 +10,12 @@ import Palette from "../Palette/Palette";
 // import Snippets from '../Snippets/Snippets';
 import Utilities from "../Utilities/Utilities";
 import LogoContainer from "../YtmLogo";
+import Unmounter from "../Extension/Unmounter";
 
-function ContentScript() {
+function ContentScript({ root }) {
   return (
     <div id="ThemeSong-ContentScript">
+      <Unmounter root={root} />
       <DataStoreSync />
       <Theme />
       <SongObserver />
