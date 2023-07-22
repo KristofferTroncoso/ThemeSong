@@ -39,14 +39,14 @@ function DynamicDark() {
   }, [hue, saturation, lightness, curveLight]);
 
   return (
-    <Global
-      styles={css`
-        ${dark_base_colors}
-        ${backgrounds}
-        ${scrollbars}
-        ${playerbar_progressbar}
-        ${song_image}
-        ${misc_style_improvements}
+    <style>
+      {dark_base_colors}
+      {backgrounds}
+      {scrollbars}
+      {playerbar_progressbar}
+      {song_image}
+      {misc_style_improvements}
+      {`
         :root {
           --ts-navbar-color: hsl(var(--ts-palette-dominant-hue), ${saturation}%, ${curveLight(lightness[0])}%);
           --ts-playerpage-color: hsl(var(--ts-palette-dominant-hue), ${saturation}%, ${curveLight(lightness[1])}%);
@@ -57,7 +57,9 @@ function DynamicDark() {
           );
           --ts-playerbar-color: hsl(var(--ts-palette-dominant-hue), ${saturation}%, ${curveLight(lightness[2])}%);
           --ts-body-color: hsl(var(--ts-palette-dominant-hue), ${saturation}%, ${curveLight(lightness[3])}%);
-
+          --ts-body-alpha-gradient-color: hsl(
+            var(--ts-palette-dominant-hue) ${saturation}% ${curveLight(lightness[3])}% / 60%
+          );
           --ts-playprogress-color: hsl(var(--ts-palette-1-hue), 80%, 91%);
           --ts-playprogress-secondary-color: hsla(var(--ts-palette-2-hue), var(--ts-palette-2-saturation), 35%, 0.7);
           --ts-playprogress-container-color: hsla(var(--ts-palette-3-hue), var(--ts-palette-3-saturation), 50%, 0.3);
@@ -65,7 +67,7 @@ function DynamicDark() {
           --ts-playprogress-knob-color: var(--ts-playprogress-color);
         }
       `}
-    />
+    </style>
   );
 }
 

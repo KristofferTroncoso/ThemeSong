@@ -54,6 +54,13 @@ export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
   }
 `;
 
+/* the box-shadow on the new sidebar-layout Search input doesn't look so good. it only looks good on dark or Off because you can't see it haha */
+export const removeSearchBoxShadow = /*css*/ `
+  ytmusic-search-box[has-query] .search-container.ytmusic-search-box, ytmusic-search-box[opened] .search-container.ytmusic-search-box {
+    box-shadow: none;
+  }
+`;
+
 export const misc_style_improvements = /*css*/ `
   /* ThemeSong */
   /* universal styles */
@@ -63,4 +70,5 @@ export const misc_style_improvements = /*css*/ `
   ${fixWeirdMarginWhenFullScreenPlayer}
   ${playBarTextAndIconsColor}
   ${fixNoMarginBottomOnNowPlayingAlbumImage}
+  ${removeSearchBoxShadow}
 `;

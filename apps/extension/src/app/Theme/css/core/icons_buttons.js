@@ -22,14 +22,10 @@ export const icons_buttons = /*css*/ `
   ytmusic-player {
     color: var(--ts-primary-icon-color);
   }
- 
-  yt-icon, .yt-icon-container.yt-icon {
-    fill: inherit;
-  }
-      
-  .icon {
-    fill: var(--ts-primary-icon-color, hotpink);
-    color: var(--ts-primary-icon-color, hotpink);
+
+  /* sidebar icons; and when collapsed */
+  #mini-guide yt-icon {
+    fill: var(--ts-secondary-icon-color);
   }
 
   .left-controls-buttons tp-yt-iron-icon {
@@ -154,6 +150,15 @@ export const icons_buttons = /*css*/ `
     fill: var(--ts-secondary-icon-color);
   }
 
+  /* sidebar circle play button */
+  tp-yt-app-drawer ytmusic-play-button-renderer[icon="yt-sys-icons:play_arrow"] .icon.ytmusic-play-button-renderer {
+    fill: var(--ts-inverse-icon-color);
+  }
+
+  ytmusic-guide-entry-renderer:not([is-primary]) #play-button.ytmusic-guide-entry-renderer {
+    background-color: var(--ts-primary-icon-color);
+  }
+
   /* top bar icons */
   ytmusic-nav-bar yt-icon, tp-yt-app-drawer .yt-icon-container.yt-icon {
     fill: var(--ts-secondary-icon-color);
@@ -163,9 +168,9 @@ export const icons_buttons = /*css*/ `
     color: var(--ts-secondary-icon-color);
   }
 
-  /* sign in button (sidebar) */
+  /* sidebar buttons ("sign in", "New Playlist") */
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
-    background-color: var(--ts-secondary-icon-color);
+    background-color: var(--ts-base-100-alpha-02-color);
   }
 
   .yt-spec-touch-feedback-shape--touch-response .yt-spec-touch-feedback-shape__fill {
@@ -216,5 +221,20 @@ export const icons_buttons = /*css*/ `
   /* sidebar menu items hover */
   tp-yt-paper-item.ytmusic-guide-entry-renderer:hover {
     --ytmusic-guide-entry-background-color: var(--ts-pill-hover-color) !important;
+  }
+
+  /* explicit icon on explore page */
+  yt-icon.ytmusic-inline-badge-renderer {
+    color: var(--ts-primary-icon-color);
+  }
+
+  /* dropdown icon in New playlist */
+  ytmusic-dropdown-renderer[dropdown-style=underline] .icon.ytmusic-dropdown-renderer {
+    color: var(--ts-tertiary-icon-color);
+  }
+
+  /* some icon buttons like the "x" in "saved to playlist" toast */
+  button.yt-icon-button {
+    color: var(--ts-primary-icon-color);
   }
 `;

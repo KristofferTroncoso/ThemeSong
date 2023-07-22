@@ -6,8 +6,6 @@ export const texts = /*css*/ `
   --ts-inverse-text-color: var(--ts-base-00-color);
   --ts-primary-text-alpha-color: var(--ts-base-100-alpha-07-color);
   --ts-secondary-text-alpha-color: var(--ts-base-100-alpha-03-color);
-
-  --ts-texts-selection-color: dodgerblue;
 }
 
 :root {
@@ -172,12 +170,25 @@ tp-yt-paper-dropdown-menu.ytmusic-setting-single-option-menu-renderer .input-con
   color: var(--ts-primary-text-color);
 }
 
+ytmusic-dropdown-renderer[dropdown-style=underline] tp-yt-paper-dropdown-menu.ytmusic-dropdown-renderer .input-content.tp-yt-paper-input-container>input, ytmusic-dropdown-renderer[dropdown-style=underline] tp-yt-paper-dropdown-menu.ytmusic-dropdown-renderer .input-content.tp-yt-paper-input-container>iron-input, ytmusic-dropdown-renderer[dropdown-style=underline] tp-yt-paper-dropdown-menu.ytmusic-dropdown-renderer .input-content.tp-yt-paper-input-container>textarea, ytmusic-dropdown-renderer[dropdown-style=underline] tp-yt-paper-dropdown-menu.ytmusic-dropdown-renderer .input-content.tp-yt-paper-input-container>iron-autogrow-textarea, ytmusic-dropdown-renderer[dropdown-style=underline] tp-yt-paper-dropdown-menu.ytmusic-dropdown-renderer .input-content.tp-yt-paper-input-container>.paper-input-input {
+  color: var(--ts-primary-text-color);
+}
 
-/* text selection */
-::selection {
-  background: var(--ts-texts-selection-color); /* WebKit/Blink Browsers */
+/* input texts (e.g. New playlist) */
+.input.ytmusic-playlist-form:not(tp-yt-paper-textarea) .input-content.tp-yt-paper-input-container>input, .input.ytmusic-playlist-form:not(tp-yt-paper-textarea) .input-content.tp-yt-paper-input-container>iron-input, .input.ytmusic-playlist-form:not(tp-yt-paper-textarea) .input-content.tp-yt-paper-input-container>textarea, .input.ytmusic-playlist-form:not(tp-yt-paper-textarea) .input-content.tp-yt-paper-input-container>iron-autogrow-textarea, .input.ytmusic-playlist-form:not(tp-yt-paper-textarea) .input-content.tp-yt-paper-input-container>.paper-input-input {
+  color: var(--ts-primary-text-color);
 }
-::-moz-selection {
-  background: var(--ts-texts-selection-color); /* Gecko Browsers */
+
+tp-yt-paper-textarea.ytmusic-playlist-form .input-content.tp-yt-paper-input-container>input, tp-yt-paper-textarea.ytmusic-playlist-form .input-content.tp-yt-paper-input-container>iron-input, tp-yt-paper-textarea.ytmusic-playlist-form .input-content.tp-yt-paper-input-container>textarea, tp-yt-paper-textarea.ytmusic-playlist-form .input-content.tp-yt-paper-input-container>iron-autogrow-textarea, tp-yt-paper-textarea.ytmusic-playlist-form .input-content.tp-yt-paper-input-container>.paper-input-input {
+  color: var(--ts-primary-text-color);
 }
+
+.input.ytmusic-playlist-form #labelAndInputContainer#labelAndInputContainer.label-is-floating>label, .input.ytmusic-playlist-form #labelAndInputContainer#labelAndInputContainer.label-is-floating>.paper-input-label {
+  color: var(--ts-secondary-text-color);
+}
+
+ytmusic-dropdown-renderer[dropdown-style=underline] tp-yt-paper-dropdown-menu.ytmusic-dropdown-renderer #labelAndInputContainer#labelAndInputContainer.label-is-floating>label, ytmusic-dropdown-renderer[dropdown-style=underline] tp-yt-paper-dropdown-menu.ytmusic-dropdown-renderer #labelAndInputContainer#labelAndInputContainer.label-is-floating>.paper-input-label {
+  color: var(--ts-secondary-text-color);
+}
+
 `;

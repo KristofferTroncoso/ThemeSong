@@ -1,7 +1,7 @@
 export const rulers_borders = /*css*/ `
   :root {
     --ts-ruler-primary-color: var(--ts-base-100-color);
-    --ts-ruler-secondary-color: var(--ts-base-100-alpha-01-color);
+    --ts-ruler-secondary-color: var(--ts-base-100-alpha-02-color);
   }
 
 
@@ -21,7 +21,6 @@ export const rulers_borders = /*css*/ `
   ytmusic-player-queue-item {
     border-bottom: 1px solid var(--ts-ruler-secondary-color, hotpink);
   }
-
 
   /* navbar border bottom */
   #nav-bar-divider.ytmusic-app-layout {

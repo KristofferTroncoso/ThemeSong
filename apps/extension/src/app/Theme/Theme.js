@@ -6,8 +6,16 @@ import Static from "./themes/Static/Static";
 // import Custom from './themes/Custom/Custom';
 import AppleMusic from "./themes/AppleMusic/AppleMusic";
 import YouTubeMusicMobile from "./themes/YouTubeMusicMobile/YouTubeMusicMobile";
+import { useEffect } from "react";
+import { menubar } from "./selectors";
 
 function Theme() {
+  useEffect(() => {
+    return function () {
+      menubar.content = "#000";
+    };
+  }, []);
+
   const activeTheme = useStore((state) => state.theme.activeTheme);
 
   function returnTheme() {

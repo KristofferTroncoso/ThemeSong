@@ -1,21 +1,24 @@
 export const backgrounds = /*css*/ `
 
 :root {
-  --ts-navbar-color: #c92443;
-  --ts-playerpage-color: #c92443;
-  --ts-playerpageavtoggle-color: #c92443;
-  --ts-playerbar-color: #c92443;
-  --ts-body-color: #c92443;
+  --ts-navbar-color: #991a31;
+  --ts-sidebar-color: var(--ts-navbar-color, #991a31);
+  --ts-playerpage-color: #991a31;
+  --ts-playerpageavtoggle-color: #991a31;
+  --ts-playerbar-color: #991a31;
+  --ts-body-color: #991a31;
+
+  /* if an alpha color is specified, this will let the "hue" lights on the homepage show through */
+  --ts-body-alpha-gradient-color: var(--ts-body-color);
 
   --ts-bgcolor-transition: background 0.5s ease-out;
 }
-
 
 :root {
   --ytmusic-brand-background-solid: var(--ts-playerbar-color) !important;
   --ytmusic-general-background-a: var(--ts-body-color) !important;
   --ytmusic-general-background-c: var(--ts-body-color) !important;
-  --ytmusic-search-background: var(--ts-playerbar-color) !important;
+  --ytmusic-search-background: var(--ts-body-color) !important;
   --yt-spec-menu-background: var(--ts-playerbar-color) !important;
 
   /* share menu */
@@ -28,8 +31,8 @@ body {
   transition: var(--ts-bgcolor-transition) !important;
 }
 
-.background-gradient {
-  background: var(--ts-body-color) !important;
+ytmusic-browse-response[has-background]:not([disable-gradient]) .background-gradient.ytmusic-browse-response {
+  background-image: linear-gradient(to bottom, var(--ts-body-alpha-gradient-color),var(--ts-body-color));
   transition: var(--ts-bgcolor-transition) !important;
 }
 
@@ -55,12 +58,12 @@ body {
 
 /* sidebar */
 #guide-wrapper {
-  background: var(--ts-navbar-color) !important;
+  background: var(--ts-sidebar-color) !important;
   transition: var(--ts-bgcolor-transition) !important;
 }
 
 #mini-guide-background {
-  background: var(--ts-navbar-color) !important;
+  background: var(--ts-sidebar-color) !important;
   transition: var(--ts-bgcolor-transition) !important;
 }
 
@@ -98,18 +101,15 @@ ytmusic-search-suggestions-section.ytmusic-search-box {
 }
 
 ytmusic-search-box[is-bauhaus-sidenav-enabled] {
-  --ytmusic-search-background: var(--ts-playerbar-color);
-  backdrop-filter: blur(12px);
+  --ytmusic-search-background: var(--ts-body-color);
 }
 
 ytmusic-search-suggestions-section {
-  background: var(--ts-playerbar-color);
-  backdrop-filter: blur(12px);
+  background: var(--ts-body-color);
 }
 
 #suggestion-list {
-  background-color: var(--ts-playerbar-color) !important;
-  backdrop-filter: blur(12px);
+  background-color: var(--ts-body-color) !important;
 }
 
 /* artist image white filter */
@@ -127,5 +127,37 @@ ytmusic-search-suggestions-section {
 /* settings menu */
 .content.ytmusic-settings-page {
   background-color: var(--ts-body-color);
+}
+
+/* search bar new sidebar layout */
+ytmusic-search-box[is-bauhaus-sidenav-enabled][is-mobile-view][opened], ytmusic-search-box[is-bauhaus-sidenav-enabled][is-mobile-view][has-query] {
+  --ytmusic-search-background: var(--ts-playerbar-color) !important;
+}
+
+ytmusic-search-box[is-bauhaus-sidenav-enabled]:not([opened]):not([has-query]) .search-box.ytmusic-search-box {
+  background: var(--ts-base-100-alpha-005-color);
+}
+
+/* new playlist form */
+ytmusic-playlist-form {
+  background: var(--ts-base-10-color);
+}
+
+.dropdown-content.ytmusic-dropdown-renderer {
+  --paper-listbox-background-color: var(--ts-base-10-color);
+}
+
+/* toast color. like when "saved to playlist" thing pops up */
+tp-yt-paper-toast {
+  background-color: var(--ts-base-10-color);
+}
+
+/* image filters */
+ytmusic-fullbleed-thumbnail-renderer {
+  filter: var(--ts-image-filter-brightness, brightness(1)) !important;
+}
+
+.immersive-background {
+  filter: var(--ts-image-filter-brightness, brightness(1)) !important;
 }
 `;

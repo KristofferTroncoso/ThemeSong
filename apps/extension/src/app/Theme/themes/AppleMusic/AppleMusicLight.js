@@ -5,76 +5,33 @@ import { dark_base_colors } from "../../css/colors/dark_base_colors";
 import { light_base_colors } from "../../css/colors/light_base_colors";
 import { texts } from "../../css/core/texts";
 import { icons_buttons } from "../../css/core/icons_buttons";
-import { gradients_overlays } from "../../css/core/gradients_overlays";
-import { rulers_borders } from "../../css/core/rulers_borders";
-import { scrollbars } from "../../css/core/scrollbars";
-import { playerbar_progressbar } from "../../css/core/playerbar_progressbar";
-import { backgrounds } from "../../css/core/backgrounds";
-import { song_image } from "../../css/extra/song_image";
-import { misc_style_improvements } from "../../css/extra/misc_style_improvements";
-import { zebra_stripes } from "../../css/extra/zebra_stripes";
-import { nowplaying_overlay } from "../../css/extra/nowplaying_overlay";
 
 function AppleMusicLight() {
   const playerUiState = useStore((state) => state.player.playerUiState);
   const lightVibrantHSL = useStore((state) => state.palette.palette.LightVibrant.hsl);
+  const dominantOKLCH = useStore((state) => state.palette.dominant.oklch);
 
   useEffect(() => {
-    console.log("PLAYERUISTATE2", playerUiState);
     if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
-      menubar.content = `hsl(0, 0%, 95%)`;
+      /*menubar.content = `oklch(0.96 ${dominantOKLCH[1] / 7} ${dominantOKLCH[2]})`;*/
+      menubar.content = `rgb(235 235 235)`;
     } else {
       menubar.content = `hsl(${lightVibrantHSL[0] * 360}, ${lightVibrantHSL[1] * 100 * 0.2}%, 35%)`;
     }
-  }, [playerUiState, lightVibrantHSL]);
+  }, [playerUiState, lightVibrantHSL, dominantOKLCH]);
 
   return (
-    <style id="AppleMusic">
-      {icons_buttons}
-      {gradients_overlays}
-      {rulers_borders}
-      {backgrounds}
-      {scrollbars}
-      {playerbar_progressbar}
-      {song_image}
-      {misc_style_improvements}
-      {zebra_stripes}
-      {nowplaying_overlay}
+    <style>
       {
         /*css*/ `
         :root {
-          --ts-theme-ditto-apple-1-color: hsl(var(--ts-palette-dominant-hue), calc(var(--ts-palette-dominant-saturation) * 0.2), 35%);
-          --ts-theme-ditto-apple-2-color: hsl(var(--ts-palette-vibrant-hue), calc(var(--ts-palette-vibrant-saturation) * 0.2), 32%);
-          --ts-theme-ditto-apple-3-color: hsl(var(--ts-palette-muted-hue), calc(var(--ts-palette-muted-saturation) * 0.2), 26%);
-          --ts-theme-ditto-apple-4-color: hsl(var(--ts-palette-lightvibrant-hue), calc(var(--ts-palette-lightvibrant-saturation) * 0.2), 35%);
-          --ts-theme-ditto-apple-5-color: hsl(var(--ts-palette-darkvibrant-hue), calc(var(--ts-palette-darkvibrant-saturation) * 0.2), 28%);
-
-          --ts-navbar-color: var(--ts-theme-ditto-apple-4-color);
-          --ts-playerpage-color: linear-gradient(180deg, var(--ts-theme-ditto-apple-4-color) 0%, var(--ts-theme-ditto-apple-2-color) 20%, var(--ts-theme-ditto-apple-5-color) 80%, var(--ts-theme-ditto-apple-3-color) 100%);
-          --ts-playerbar-color: var(--ts-theme-ditto-apple-3-color);
-          --ts-playerpageavtoggle-color: hsl(var(--ts-palette-lightvibrant-hue), calc(var(--ts-palette-dominant-saturation) * 0.4), 27%);
           --ts-body-color: #333333;
-
-          --ts-theme-ditto-applemusic-color: #d60017;
-
+          --ts-body-alpha-gradient-color: hsl(0 0% 100% / 0.5);
           --ts-overlay-color: rgba(0,0,0,0.6);
-        }
+          --ts-texts-selection-color: dodgerblue;
+          --ts-songimg-box-shadow: 0 10px 40px rgba(0,0,0,0.4);
 
-        /* highlight colors */
-        ::selection {
-          background: #ff3053; /* WebKit/Blink Browsers */
-        }
-        ::-moz-selection {
-          background: #ff3053; /* Gecko Browsers */
-        }
-
-        /* i think ytm is putting a 'padding-top: 100%' on this. i have to set it to 0 for my gradient to be good */
-        ytmusic-player[player-ui-state=FULLSCREEN] #song-image.ytmusic-player {
-          padding-top: 0;
-        }
-
-        ytmusic-player[player-ui-state=MINIPLAYER] #song-image.ytmusic-player {
-          padding-top: 0;
+          --applemusic-color: #d60017;
         }
 
         /* white icon all the time for player song image */
@@ -91,38 +48,6 @@ function AppleMusicLight() {
           color: #fff;
         }
 
-        /* add blur to navbar, playerbar, and other menus */
-        #nav-bar-background {
-          backdrop-filter: blur(12px);
-        }
-        
-        #player-bar-background {
-          backdrop-filter: blur(12px);
-        }
-        
-        
-        ytmusic-item-section-renderer.stuck #header.ytmusic-item-section-renderer {
-          backdrop-filter: blur(12px);
-        }
-        
-        ytmusic-tabs.stuck {
-          backdrop-filter: blur(12px);
-          box-shadow: none !important;
-        }
-        
-        tp-yt-iron-dropdown {
-          backdrop-filter: blur(14px);
-        }
-        
-        ytmusic-search-box {
-          backdrop-filter: blur(14px);
-        }
-
-        tp-yt-paper-dialog {
-          background: transparent !important;
-          backdrop-filter: blur(14px);
-        }
-        /* end blur */
 
         ytmusic-play-button-renderer {
           --ytmusic-play-button-icon-color: #fff !important;
@@ -145,33 +70,26 @@ function AppleMusicLight() {
 
       {!(playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE")
         ? `
-
-        #song-image {
-          box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-          border-radius: 4px;
-        }
-        
-        #song-video {
-          box-shadow: 0 10px 50px rgba(0,0,0,0.4);
-          border-radius: 4px;
-        }
-
-        ytmusic-player[player-ui-state=FULLSCREEN] #song-image #img {
-          box-shadow: 0 10px 50px rgba(0,0,0,0.5);
-        }
         ${dark_base_colors}
         `
         : /*css*/ `
         ${texts}
         ${light_base_colors}
+        ${icons_buttons}
         :root {
           --ts-navbar-color: rgba(240,240,240,0.8) !important;
+          /* --ts-navbar-color: oklch(0.9 calc(var(--ts-palette-dominant-c) / 6) var(--ts-palette-dominant-h) / 0.3); */
+          --ts-sidebar-color: linear-gradient(
+            0deg,
+            oklch(0.9 calc(var(--ts-palette-dominant-c) / 6) var(--ts-palette-dominant-h) / 0.8) 0%,
+            rgb(240 240 240 / 0.5) 70%
+          );
           --ts-body-color: #fff;
-          --ts-playerbar-color: hsla(var(--ts-palette-dominant-hue), calc(var(--ts-palette-dominant-saturation) * 0.7), 94%, 0.5);
+          --ts-playerbar-color: oklch(0.9 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h) / 0.3);
           --ts-playprogress-color: #5e5e5e;
           --ts-primary-icon-color: var(--ts-base-70-color);
-          --ts-secondary-icon-color: #d60017;
-          --ts-colored-button-color: #d60017;
+          --ts-secondary-icon-color: var(--applemusic-color);
+          --ts-colored-button-color: var(--applemusic-color);
           --ts-zebra-stripes-color: rgba(0,0,0,0.04);
         }
 
@@ -179,29 +97,9 @@ function AppleMusicLight() {
           border-top: 1px solid #d1d1d1;
           border-bottom: 1px solid #d1d1d1;
         }
-        
-        /* border around album thumbnails */
-        ytmusic-thumbnail-renderer:not([thumbnail-crop="MUSIC_THUMBNAIL_CROP_CIRCLE"]) {
-          height: initial !important;
-          width: initial !important;
-          border: 1px solid #d4d4d4 !important;
-        }
-        /* set thumbnail back to 44px for add-to-playlist menu */
-        .thumbnail.ytmusic-playlist-add-to-option-renderer {
-          height: 44px !important;
-          width: 44px !important;
-        }
-
-        /* album page light border */
-        #thumbnail {
-          border: 1px solid #cdcdcd;
-        }
-        #song-image > #thumbnail {
-          border: none;
-        }
 
         #button-shape-like button {
-          color: #d60017;
+          color: var(--applemusic-color);
         }
       `}
     </style>

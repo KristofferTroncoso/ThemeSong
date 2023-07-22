@@ -1,34 +1,40 @@
 export const frosted_glass = /*css*/ `
-/* add blur to navbar, playerbar, and other menus */
+:root {
+  --ts-frosted-glass-blur: blur(12px);
+}
+
 #nav-bar-background {
-  backdrop-filter: blur(12px);
+  backdrop-filter: var(--ts-frosted-glass-blur);
 }
 
 #player-bar-background {
-  backdrop-filter: blur(12px);
+  backdrop-filter: var(--ts-frosted-glass-blur);
 }
 
-
 ytmusic-item-section-renderer.stuck #header.ytmusic-item-section-renderer {
-  backdrop-filter: blur(12px);
+  backdrop-filter: var(--ts-frosted-glass-blur);
 }
 
 ytmusic-tabs.stuck {
-  backdrop-filter: blur(12px);
+  backdrop-filter: var(--ts-frosted-glass-blur);
   box-shadow: none !important;
 }
 
 tp-yt-iron-dropdown {
-  backdrop-filter: blur(14px);
+  backdrop-filter: var(--ts-frosted-glass-blur);
 }
 
 ytmusic-search-box {
-  backdrop-filter: blur(14px);
+  backdrop-filter: var(--ts-frosted-glass-blur);
 }
 
 tp-yt-paper-dialog {
   background: transparent !important;
-  backdrop-filter: blur(14px);
+  backdrop-filter: var(--ts-frosted-glass-blur);
 }
-/* end blur */
+
+/* sidebar */
+#guide {
+  backdrop-filter: var(--ts-frosted-glass-blur);
+}
 `;
