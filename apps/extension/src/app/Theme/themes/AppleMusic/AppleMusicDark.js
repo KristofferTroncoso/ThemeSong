@@ -28,7 +28,7 @@ function AppleMusicDark() {
           --ts-nowplaying-background-color: #db2a47;
           --ts-texts-selection-color: #1665b5;
           --ts-songimg-box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-
+          
           --applemusic-color: #fa586a;
         }
      `
@@ -42,6 +42,11 @@ function AppleMusicDark() {
           --ts-zebra-stripes-color: rgba(255,255,255,0.03);;
           --ts-secondary-icon-color: var(--applemusic-color);
           --ts-colored-button-color: var(--applemusic-color);
+          --ts-sidebar-color: linear-gradient(
+            0deg,
+            oklch(0.3 calc(var(--ts-palette-dominant-c) / 6) var(--ts-palette-dominant-h) / 0.8) 0%,
+            rgb(45 45 45 / 0.5) 70%
+          );
         }
 
         ytmusic-tabs.stuck {
