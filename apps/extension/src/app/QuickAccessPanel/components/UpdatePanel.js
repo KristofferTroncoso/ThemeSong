@@ -31,14 +31,10 @@ function UpdatePanel() {
         `}
       >
         <p>
-          <b>v0.5.5</b>
-          <span> (July 10, 2023)</span>
+          <b>v0.5.6</b>
+          <span> (July 22, 2023)</span>
         </p>
-        <p>Update/fix styling related to player_ui_state.</p>
-        <p>
-          - Sometimes ThemeSong has to be updated/fixed to match new features introduced in the official web app. Thanks
-          for your patience!
-        </p>
+        <p>CSS</p>
       </div>
       <button
         css={css`
