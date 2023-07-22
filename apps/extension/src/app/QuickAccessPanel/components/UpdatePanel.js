@@ -10,20 +10,21 @@ function UpdatePanel() {
   return (
     <StyledPanelDiv
       css={css`
-        background-color: #d95600;
+        background-color: #ff771e;
+        border: 1px solid orange;
       `}
     >
       <h2
         css={css`
           padding: 0 2px;
-          color: var(--ts-primary-text-color);
+          color: #000000;
         `}
       >
         <u>ThemeSong Update / Notes</u>
       </h2>
       <div
         css={css`
-          color: var(--ts-primary-text-color);
+          color: #000000;
           padding: 2px;
           font-size: 13px;
           max-width: 280px;
@@ -53,7 +54,6 @@ function UpdatePanel() {
           }
         `}
         onClick={(e) => {
-          console.log("hi");
           changeShowUpdateNote(false);
           chrome.storage.local.set({ showUpdateNote: false }, () =>
             console.log("chrome.storage.local.set({showUpdateNote}")
