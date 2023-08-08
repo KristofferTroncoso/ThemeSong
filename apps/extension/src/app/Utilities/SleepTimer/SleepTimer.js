@@ -54,7 +54,7 @@ function SleepTimer() {
       setIsTimeOverDialogOpen(true);
     }
     isLastSong && lastSongDone();
-  }, [songName, changeIsActive, isLastSong]);
+  }, [songName]); // Need to redo this whole feature. cant change the dependency array or it breaks "end of track" feature.
 
   function handleLastSongClick() {
     clearTimeout(timeoutId);
