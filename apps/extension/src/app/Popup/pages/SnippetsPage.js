@@ -29,6 +29,7 @@ function SnippetsPage() {
             });
           }}
           css={css`
+            display: ${snippets.length < 5 ? "block" : "none"};
             background: #333;
             padding: 10px;
             color: #fff;

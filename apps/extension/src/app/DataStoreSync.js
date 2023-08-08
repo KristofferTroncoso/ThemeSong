@@ -9,7 +9,7 @@ function DataStoreSync() {
   const changeVisualizerPrefs = useStore((state) => state.visualizer.changeVisualizerPrefs);
   const changeActivePopupTab = useStore((state) => state.popup.changeActivePopupTab);
   const changeShowUpdateNote = useStore((state) => state.extension.changeShowUpdateNote);
-  // const changeSnippets = useStore(state => state.snippets.changeSnippets);
+  // const changeSnippets = useStore((state) => state.snippets.changeSnippets);
   const changeHideCaptions = useStore((state) => state.player.changeHideCaptions);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ function DataStoreSync() {
           changeHideCaptions(value);
           break;
         // case "snippets":
-        //   changeSnippets(value)
+        //   changeSnippets(value);
         //   break;
         default:
           console.log("DataStoreSync: default case");

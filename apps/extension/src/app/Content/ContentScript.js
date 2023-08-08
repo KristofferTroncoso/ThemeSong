@@ -7,7 +7,7 @@ import SongInfoDisplayFeature from "../Song/SongInfoDisplay/SongInfoDisplayFeatu
 import VisualizerCS from "../Visualizer/VisualizerCS";
 import Palette from "../Palette/Palette";
 // import UiOptions from '../UiOptions/UiOptions';
-// import Snippets from '../Snippets/Snippets';
+// import Snippets from "../Snippets/Snippets";
 import Utilities from "../Utilities/Utilities";
 import LogoContainer from "../YtmLogo";
 import Unmounter from "../Extension/Unmounter";

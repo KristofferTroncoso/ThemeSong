@@ -9,7 +9,7 @@ import { createPaletteSlice } from "./Palette/paletteSlice";
 import { createVisualizerSlice } from "./Visualizer/visualizerSlice";
 import { createThemeSlice } from "./Theme/themeSlice";
 import { createExtensionSlice } from "./Extension/extensionSlice";
-// import { createSnippetsSlice } from './Snippets/snippetsSlice';
+// import { createSnippetsSlice } from "./Snippets/snippetsSlice";
 import { createUtilitiesSlice } from "./Utilities/utilitiesSlice";
 
 export const useStore = create(
@@ -23,6 +23,6 @@ export const useStore = create(
     theme: { ...createThemeSlice(...a) },
     extension: { ...createExtensionSlice(...a) },
     utilities: { ...createUtilitiesSlice(...a) },
-    // snippets: {...createSnippetsSlice(...a)}
+    // snippets: { ...createSnippetsSlice(...a) },
   }))
 );

@@ -2,7 +2,7 @@ import { useStore } from "/src/app/store";
 
 import VisualizersPage from "../pages/VisualizersPage";
 import ThemesPage from "../pages/ThemesPage";
-// import SnippetsPage from '../pages/SnippetsPage';
+// import SnippetsPage from "../pages/SnippetsPage";
 
 function ActivePage() {
   const activePopupTab = useStore((state) => state.popup.activePopupTab);

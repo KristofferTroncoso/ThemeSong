@@ -66,6 +66,7 @@ function EditSnippetModal({ snippet, open, setOpen }) {
               color: #fff;
               border: 1px solid #555;
               border-radius: 2px;
+              padding: 3px 10px;
               :hover {
                 background-color: #fff;
                 color: #000;

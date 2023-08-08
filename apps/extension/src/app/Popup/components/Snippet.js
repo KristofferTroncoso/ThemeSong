@@ -57,14 +57,18 @@ function Snippet({ snippet }) {
               color: #fff;
               border: 1px solid #444;
               border-radius: 5px;
-              padding-top: 3px;
+              padding: 6px 8px 3px;
               :hover {
                 color: #000;
                 background-color: #fff;
               }
             `}
           >
-            <EditIcon fontSize="small" />
+            <EditIcon
+              css={css`
+                font-size: 16px;
+              `}
+            />
           </button>
         </div>
       </div>

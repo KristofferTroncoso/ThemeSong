@@ -1,7 +1,7 @@
 export const createSnippetsSlice = (set) => ({
   snippets: [
     {
-      id: "uniqueId1",
+      id: "bf472cf5-689f-4be0-9eef-67c5cc8715e9",
       name: "Hide Cast Button",
       css: `ytmusic-cast-button {
   display: none;
@@ -9,13 +9,13 @@ export const createSnippetsSlice = (set) => ({
       enabled: false,
     },
     {
-      id: "uniqueId2",
+      id: "a2c1185b-1d9b-4c0f-aef3-8c7887374cc5",
       name: "Hide Dislike",
-      css: `.dislike {
+      css: `#button-shape-dislike {
   display: none;
 }
 
-.like {
+#button-shape-like {
   margin-left: 20px;
 }`,
       enabled: false,
