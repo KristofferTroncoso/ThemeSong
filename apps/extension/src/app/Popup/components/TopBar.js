@@ -47,7 +47,7 @@ function TopBar() {
     >
       <h1 css={{ fontSize: "12px", fontWeight: "400" }}>
         <a
-          href="https://chrome.google.com/webstore/detail/bgfiegdbajagebogifobkhambpljbfmk"
+          href={STORE_URL}
           target="_blank"
           rel="noreferrer"
           css={{

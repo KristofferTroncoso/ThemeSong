@@ -2,11 +2,7 @@ import React from "react";
 import { css } from "@emotion/react";
 // import DataStoreSync from '../DataStoreSync';
 
-interface StyledDivProps {
-  children: React.ReactNode;
-}
-
-function StyledDiv({ children }: StyledDivProps) {
+function StyledDiv({ children }) {
   return (
     <div
       css={css`
@@ -39,7 +35,7 @@ function Options() {
         <p>
           Contact the Developer (Support, Questions, Suggestions, Problems):
           <a
-            href="https://chrome.google.com/webstore/detail/themesong-for-youtube-mus/bgfiegdbajagebogifobkhambpljbfmk/support"
+            href={STORE_URL}
             target="_blank"
             rel="noreferrer"
             css={{
@@ -57,7 +53,7 @@ function Options() {
                 borderRadius: "2px",
               }}
             >
-              Chrome Web Store Support Page
+              Support
             </button>
           </a>
         </p>

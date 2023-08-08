@@ -23,7 +23,7 @@ const options = {
   },
   output: {
     filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "builds/chrome-build"),
+    path: path.resolve(__dirname, "builds/firefox-build"),
     clean: true,
     publicPath: ASSET_PATH,
   },
@@ -70,7 +70,7 @@ const options = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      STORE_URL: JSON.stringify("https://chrome.google.com/webstore/detail/bgfiegdbajagebogifobkhambpljbfmk"),
+      STORE_URL: JSON.stringify("https://addons.mozilla.org/firefox/addon/themesong-for-youtube-music/"),
     }),
     new CleanWebpackPlugin({ verbose: false }),
     new webpack.ProgressPlugin(),
@@ -78,14 +78,14 @@ const options = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: "src/chrome-mv3.json",
-          to: path.join(__dirname, "builds/chrome-build/manifest.json"),
+          from: "src/firefox-mv2.json",
+          to: path.join(__dirname, "builds/firefox-build/manifest.json"),
           toType: "template",
           force: true,
         },
         {
           from: "src/assets/",
-          to: path.join(__dirname, "builds/chrome-build/assets"),
+          to: path.join(__dirname, "builds/firefox-build/assets"),
           force: true,
         },
       ],

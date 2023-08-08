@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "ThemeSong for YouTube Music™ (Enhancer)",
+  "version": "0.5.6",
+  "description": "Enhancer for YouTube Music™. Dynamic Themes, Visualizers, Lyrics, Sleep Timer, and more!",
+  "background": { "scripts": ["background.bundle.js"] },
+  "permissions": ["<all_urls>", "storage", "tabs"],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "assets/icon-34.png"
+  },
+  "icons": {
+    "34": "assets/icon-34.png",
+    "128": "assets/icon-128.png"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://music.youtube.com/*"],
+      "run_at": "document_end",
+      "js": ["contentScript.bundle.js"]
+    }
+  ],
+  "web_accessible_resources": ["/assets/*"]
+}

@@ -8,10 +8,13 @@
     "url": "https://github.com/KristofferTroncoso/ThemeSong"
   },
   "scripts": {
-    "build": "node utils/build.js",
-    "start": "node utils/webserver.js",
+    "start": "node tasks/webserver.js",
+    "build": "node tasks/build.js",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
-    "zip": "npm run build && web-ext build --source-dir ./build --artifacts-dir zip --overwrite-dest"
+    "zip": "pnpm run build && web-ext build --source-dir ./builds/chrome-build --artifacts-dir zip/chrome-zip --overwrite-dest",
+    "start-firefox": "node tasks/webserver-firefox.js",
+    "build-firefox": "node tasks/build-firefox.js",
+    "zip-firefox": "pnpm run build-firefox && web-ext build --source-dir ./builds/firefox-build --artifacts-dir zip/firefox-zip --overwrite-dest"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",

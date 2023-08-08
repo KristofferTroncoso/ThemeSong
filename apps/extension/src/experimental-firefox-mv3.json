@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "ThemeSong for YouTube Music™ (Dynamic Themes)",
+  "version": "0.4.8",
+  "description": "Dynamic themes and visualizers for YouTube Music™.",
+  "background": { "scripts": ["background.bundle.js"] },
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon-34.png"
+  },
+  "icons": {
+    "34": "icon-34.png",
+    "128": "icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://music.youtube.com/*"],
+      "js": ["contentScript.bundle.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["/assets/*"],
+      "matches": ["https://music.youtube.com/*"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{755f6e5d-c7f8-402b-aead-74f17b8f62c5}"
+    }
+  }
+}
