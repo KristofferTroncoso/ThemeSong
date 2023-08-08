@@ -11,11 +11,6 @@ function insertContentScriptContainer() {
 
   let themesongMainContainer;
 
-  /* remove old container. i can remove following block of code after 0.5.6 */
-  if (document.getElementById("ThemeSong-Container")) {
-    document.getElementById("ThemeSong-Container").remove();
-  }
-
   if (!document.getElementById("ThemeSong-MainContainer")) {
     themesongMainContainer = document.createElement("div");
     themesongMainContainer.id = "ThemeSong-MainContainer";
