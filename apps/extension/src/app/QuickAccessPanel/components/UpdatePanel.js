@@ -31,10 +31,11 @@ function UpdatePanel() {
         `}
       >
         <p>
-          <b>v0.5.6</b>
-          <span> (July 22, 2023)</span>
+          <b>v0.5.7</b>
+          <span> (August 8, 2023)</span>
         </p>
-        <p>CSS</p>
+        <p>- fix "End of Track" sleep feature</p>
+        <p>- better styling</p>
       </div>
       <button
         css={css`
