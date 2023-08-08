@@ -24,19 +24,19 @@ export const rulers_borders = /*css*/ `
 
   /* navbar border bottom */
   #nav-bar-divider.ytmusic-app-layout {
-    border-top: 1px solid var(--ts-ruler-secondary-color, rgba(0,0,0,0.2));
+    border-top: 1px solid var(--ts-ruler-secondary-color, rgb(0 0 0 / 0.2));
   }
 
   ytmusic-app-layout[is-bauhaus-sidenav-enabled] #nav-bar-divider.ytmusic-app-layout {
-    border-top: 1px solid var(--ts-ruler-secondary-color, rgba(0,0,0,0.2));
+    border-top: 1px solid var(--ts-ruler-secondary-color, rgb(0 0 0 / 0.2));
   }
 
   ytmusic-app-layout[is-bauhaus-sidenav-enabled] #nav-bar-background.ytmusic-app-layout {
-    border-bottom: 1px solid var(--ts-ruler-secondary-color, rgba(0,0,0,0.2));
+    border-bottom: 1px solid var(--ts-ruler-secondary-color, rgb(0 0 0 / 0.2));
   }
 
   tp-yt-paper-listbox.ytmusic-menu-popup-renderer {
-    border: 1px solid var(--ts-ruler-secondary-color, rgba(0,0,0,0.2));
+    border: 1px solid var(--ts-ruler-secondary-color, rgb(0 0 0 / 0.2));
   }
 
   /* search box border */
@@ -95,11 +95,11 @@ export const rulers_borders = /*css*/ `
     border-top: 1px solid var(--ts-ruler-secondary-color);
   }
 
-  ytmusic-app[is-bauhaus-sidenav-enabled] #guide-wrapper.ytmusic-app {
-    border-right: 1px solid var(--ts-ruler-secondary-color) !important;
-  }
-  
   ytmusic-app-layout[is-bauhaus-sidenav-enabled] #mini-guide-background.ytmusic-app-layout {
+    border-right: 1px solid var(--ts-ruler-secondary-color);
+  }
+
+  #contentContainer.tp-yt-app-drawer[opened] {
     border-right: 1px solid var(--ts-ruler-secondary-color);
   }
 

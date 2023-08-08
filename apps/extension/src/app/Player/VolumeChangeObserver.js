@@ -36,8 +36,8 @@ function VolumeChangeObserver() {
           css={css`
             margin: 10px;
             padding: 4px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: rgba(255, 255, 255, 0.8);
+            background-color: rgb(0 0 0 / 0.5);
+            color: rgb(255 255 255 / 0.8);
             border-radius: 10px;
             position: absolute;
             z-index: 1000;

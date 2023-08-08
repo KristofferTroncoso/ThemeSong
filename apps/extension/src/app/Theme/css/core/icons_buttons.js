@@ -215,7 +215,7 @@ export const icons_buttons = /*css*/ `
   
   /* sidebar Sign In hover */
   :root {
-    --yt-spec-mono-tonal-hover: var(--ts-tertiary-icon-color) !important;
+    --yt-spec-mono-tonal-hover: var(--ts-base-100-alpha-03-color) !important;
   }
 
   /* sidebar menu items hover */

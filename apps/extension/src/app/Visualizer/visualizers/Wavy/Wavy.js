@@ -68,10 +68,10 @@ function Wavy({ analyser }) {
         border-radius: inherit;
         background: linear-gradient(
           180deg,
-          rgba(0, 0, 0, 0.4) 0%,
-          rgba(0, 0, 0, 0.6) 50%,
-          rgba(0, 0, 0, 0.7) 75%,
-          rgba(0, 0, 0, 0.6) 100%
+          rgb(0 0 0 / 0.4) 0%,
+          rgb(0 0 0 / 0.6) 50%,
+          rgb(0 0 0 / 0.7) 75%,
+          rgb(0 0 0 / 0.6) 100%
         );
       `}
     >

@@ -115,7 +115,7 @@ tp-yt-paper-icon-button.ytmusic-search-box, input.ytmusic-search-box, input.ytmu
 /* some new additions. "More" button on the home page */
 .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline {
   color: var(--ts-primary-text-color, #8a3b96);
-  border-color: var(--ts-secondary-text-color, blue);
+  border-color: var(--ts-secondary-text-alpha-color, blue);
 }
 
 /* player page sidebar headers */
@@ -191,4 +191,8 @@ ytmusic-dropdown-renderer[dropdown-style=underline] tp-yt-paper-dropdown-menu.yt
   color: var(--ts-secondary-text-color);
 }
 
+/* toast that pops up when a song is played next */
+tp-yt-paper-toast {
+  color: var(--ts-primary-text-color);
+}
 `;

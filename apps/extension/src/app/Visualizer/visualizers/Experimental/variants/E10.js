@@ -82,7 +82,7 @@ function RGB({ analyser }) {
 
         context.beginPath();
         context.arc(x, y, circleSize / 2, 0, 2 * Math.PI);
-        context.fillStyle = `rgba(255, 255, 255, ${opacity * 0.1})`; // Set the opacity
+        context.fillStyle = `rgb(255 255 255 / ${opacity * 0.1})`; // Set the opacity
         context.fill();
         context.closePath();
       }
@@ -121,7 +121,7 @@ function RGB({ analyser }) {
           left: 0;
           background: linear-gradient(
             180deg,
-            rgba(255, 255, 255, 0) 85%,
+            rgb(255 255 255 / 0) 85%,
             rgba(200, 200, 255, 0.1) 93%,
             rgba(220, 220, 255, 0.3) 100%
           );
@@ -136,20 +136,20 @@ function RGB({ analyser }) {
           width: 100%;
           background: linear-gradient(
             320deg,
-            rgba(255, 255, 255, 0) 30%,
-            rgba(255, 255, 255, 0.05) 40%,
-            rgba(255, 255, 255, 0.1) 50%,
-            rgba(255, 255, 255, 0.05) 60%,
-            rgba(255, 255, 255, 0) 65%,
+            rgb(255 255 255 / 0) 30%,
+            rgb(255 255 255 / 0.05) 40%,
+            rgb(255 255 255 / 0.1) 50%,
+            rgb(255 255 255 / 0.05) 60%,
+            rgb(255 255 255 / 0) 65%,
             rgba(200, 200, 255, 0.2) 95%,
             rgba(200, 200, 255, 0.4) 100%
           );
           /* background: linear-gradient(
             142deg,
-            rgba(255, 255, 255, 0.2) 0%,
+            rgb(255 255 255 / 0.2) 0%,
             rgba(241, 240, 244, 0.2) 4%,
-            rgba(255, 255, 255, 0.2) 56%,
-            rgba(255, 255, 255, 0.2) 59%
+            rgb(255 255 255 / 0.2) 56%,
+            rgb(255 255 255 / 0.2) 59%
           ); */
         `}
       />

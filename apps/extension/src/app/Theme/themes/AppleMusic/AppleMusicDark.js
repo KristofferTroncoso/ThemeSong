@@ -12,7 +12,7 @@ function AppleMusicDark() {
     if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
       menubar.content = `#262626`;
     } else {
-      menubar.content = `hsl(${lightVibrantHSL[0] * 360}, ${lightVibrantHSL[1] * 100 * 0.2}%, 35%)`;
+      menubar.content = `hsl(${lightVibrantHSL[0] * 360} ${lightVibrantHSL[1] * 100 * 0.2}% 35%)`;
     }
   }, [playerUiState, lightVibrantHSL]);
 
@@ -22,12 +22,12 @@ function AppleMusicDark() {
       {
         /*css*/ `
         :root {
-          --ts-body-color: hsl(0,0%,12%);
+          --ts-body-color: hsl(0 0% 12%);
           --ts-body-alpha-gradient-color: hsl(0 0% 12% / 0.6);
-          --ts-overlay-color: rgba(0,0,0,0.6);
+          --ts-overlay-color: rgb(0 0 0 / 0.6);
           --ts-nowplaying-background-color: #db2a47;
           --ts-texts-selection-color: #1665b5;
-          --ts-songimg-box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+          --ts-songimg-box-shadow: 0 10px 40px rgb(0 0 0 / 0.4);
           
           --applemusic-color: #fa586a;
         }
@@ -37,15 +37,28 @@ function AppleMusicDark() {
         /*css*/ `
         ${icons_buttons}
         :root {
-          --ts-navbar-color: #292929db !important;
-          --ts-playerbar-color: oklch(0.3 calc(var(--ts-palette-dominant-c) / 4) var(--ts-palette-dominant-h) / 0.2);
-          --ts-zebra-stripes-color: rgba(255,255,255,0.03);;
+          --ts-navbar-color: linear-gradient(
+            180deg,
+            hsl(0 0% 15%) 0%,
+            hsl(0 0% 15% / 0.8) 60%
+          ) !important;
+          --ts-playerbar-color: linear-gradient(
+            90deg,
+            hsl(0 0% 15% / 0.8) 15%,
+            oklch(0.3 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h) / 0.7) 25%,
+            oklch(0.3 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h) / 0.7) 75%,
+            hsl(0 0% 15% / 0.8) 85%
+          );
+          --ts-zebra-stripes-color: rgb(255 255 255 / 0.03);
           --ts-secondary-icon-color: var(--applemusic-color);
           --ts-colored-button-color: var(--applemusic-color);
           --ts-sidebar-color: linear-gradient(
-            0deg,
-            oklch(0.3 calc(var(--ts-palette-dominant-c) / 6) var(--ts-palette-dominant-h) / 0.8) 0%,
-            rgb(45 45 45 / 0.5) 70%
+            180deg,
+            hsl(0 0% 15%) 1%,
+            hsl(0 0% 15% / 0.3) 5%,
+            oklch(0.3 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h) / 0.3) 50%,
+            oklch(0.3 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h) / 0.5) 70%,
+            hsl(0 0% 15% / 0.8) 80%
           );
         }
 
@@ -59,7 +72,7 @@ function AppleMusicDark() {
         }
 
         body::-webkit-scrollbar-track {
-          background-color: rgba(255,255,255,0.03);
+          background-color: rgb(255 255 255 / 0.03);
         }
       `}
     </style>

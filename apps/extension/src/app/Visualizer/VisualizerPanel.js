@@ -12,7 +12,7 @@ function VisualizerVariantButton({ color, bgColor, hoverColor, hoverBgColor, chi
         min-width: 32px;
         width: 32px;
         margin: 2px;
-        background: ${bgColor || "rgba(0,0,0,0.3)"};
+        background: ${bgColor || "rgb(0 0 0 / 0.3)"};
         color: ${color || "#fff"};
         border: 0;
         border-radius: 4px;
@@ -82,7 +82,7 @@ function VisualizerPanel() {
         >
           {visualizers.map((visualizer) => (
             <PanelButton
-              bgColor={isVisualizerOn && activeVisualizer === visualizer.id && "rgba(255,255,255,0.8)"}
+              bgColor={isVisualizerOn && activeVisualizer === visualizer.id && "rgb(255 255 255 / 0.8)"}
               color={isVisualizerOn && activeVisualizer === visualizer.id && "#008c7e"}
               hoverColor="#008c7e"
               css={css`
@@ -152,7 +152,7 @@ function VisualizerPanel() {
                         }}
                         bgColor={
                           visualizerPrefs.find((visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6")
-                            .activeVariant === variant.id && "rgba(255,255,255,0.8)"
+                            .activeVariant === variant.id && "rgb(255 255 255 / 0.8)"
                         }
                         color={
                           visualizerPrefs.find((visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6")
@@ -203,7 +203,7 @@ function VisualizerPanel() {
                         }}
                         bgColor={
                           visualizerPrefs.find((visualizer) => visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da")
-                            .activeVariant === variant.id && "rgba(255,255,255,0.8)"
+                            .activeVariant === variant.id && "rgb(255 255 255 / 0.8)"
                         }
                         color={
                           visualizerPrefs.find((visualizer) => visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da")
@@ -224,14 +224,14 @@ function VisualizerPanel() {
           <h3
             css={css`
               padding: 2px 5px;
-              color: var(--ts-base-40-color, rgba(255, 255, 255, 0.2));
+              color: var(--ts-base-40-color, rgb(255 255 255 / 0.2));
             `}
           >
             Variants
           </h3>
           <div
             css={css`
-              background-color: rgba(0, 0, 0, 0.15);
+              background-color: rgb(0 0 0 / 0.15);
               width: 210px;
               height: 30px;
               margin: 1px 3px;

@@ -371,7 +371,7 @@ function Bubbles({ analyser, dataArray, bufferLength }) {
 
       ctx.beginPath();
       ctx.moveTo(circle.x - circle.radius * 0.55, circle.y - circle.radius * 0.5);
-      ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
+      ctx.fillStyle = "rgb(255 255 255 / 0.7)";
       ctx.ellipse(
         circle.x - circle.radius * 0.55,
         circle.y - circle.radius * 0.55,

@@ -1,8 +1,8 @@
 export const playerbar_progressbar = /*css*/ `
 :root {
   --ts-playprogress-color: var(--ts-base-100-color, #ffffff);
-  --ts-playprogress-secondary-color: var(--ts-base-100-alpha-02-color, rgba(255,255,255,0.2));
-  --ts-playprogress-container-color: var(--ts-base-100-alpha-01-color, rgba(255,255,255,0.1));
+  --ts-playprogress-secondary-color: var(--ts-base-100-alpha-02-color, rgb(255 255 255 / 0.2));
+  --ts-playprogress-container-color: var(--ts-base-100-alpha-01-color, rgb(255 255 255 / 0.1));
 
   --ts-playprogress-knob-color: var(--ts-playprogress-color);
 }

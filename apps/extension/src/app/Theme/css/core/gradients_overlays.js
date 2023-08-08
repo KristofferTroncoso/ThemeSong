@@ -22,7 +22,7 @@ export const gradients_overlays = /*css*/ `
   /* start PlayPage song img styling */
   ytmusic-player {
     /* below is like an accent gradient for the song img */
-    --ytmusic-player-overlay-gradient: linear-gradient( var(--ts-overlay-color) 0%, rgba(0, 0, 0, 0) 40% ) !important;
+    --ytmusic-player-overlay-gradient: linear-gradient( var(--ts-overlay-color) 0%, rgb(0 0 0 / 0) 40% ) !important;
   }
   /* end PlayPage song img styling */
 
@@ -40,6 +40,11 @@ export const gradients_overlays = /*css*/ `
 
   /* sidebar active bg */
   ytmusic-guide-entry-renderer[active] tp-yt-paper-item.ytmusic-guide-entry-renderer {
+    background-color: var(--ts-overlay-highlighted-color);
+  }
+
+  /*sidebar hamburger icon hover */
+  ytmusic-nav-bar[is-bauhaus-sidenav-enabled] .left-content.ytmusic-nav-bar yt-icon-button.ytmusic-nav-bar:hover {
     background-color: var(--ts-overlay-highlighted-color);
   }
 

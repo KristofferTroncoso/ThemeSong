@@ -40,7 +40,7 @@ function Bars({ analyser }) {
         height: 100%;
         width: 100%;
         border-radius: inherit;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 73%, rgba(0, 0, 0, 0.85) 100%);
+        background: linear-gradient(180deg, rgb(0 0 0 / 0.2) 0%, rgb(0 0 0 / 0.8) 73%, rgb(0 0 0 / 0.85) 100%);
       `}
     >
       {returnActiveVariant()}

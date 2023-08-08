@@ -75,7 +75,7 @@ function SpiderVerse({ analyser }) {
 
         context.beginPath();
         context.arc(x, y, circleSize / 2, 0, 2 * Math.PI);
-        context.fillStyle = `rgba(255, 255, 255, ${opacity * 0.07})`; // Set the opacity
+        context.fillStyle = `rgb(255 255 255 / ${opacity * 0.07})`; // Set the opacity
         context.fill();
         context.closePath();
       }
@@ -92,12 +92,7 @@ function SpiderVerse({ analyser }) {
         height: 100%;
         width: 100%;
         border-radius: inherit;
-        background: linear-gradient(
-          180deg,
-          rgba(0, 0, 60, 0.1) 0%,
-          rgba(0, 0, 60, 0.85) 65%,
-          rgba(0, 0, 60, 0.95) 100%
-        );
+        background: linear-gradient(180deg, rgb(0 0 60 / 0.1) 0%, rgb(0 0 60 / 0.85) 65%, rgb(0 0 60 / 0.95) 100%);
       `}
     >
       <Canvas ref={canvasRef} height="1100" />
@@ -111,9 +106,9 @@ function SpiderVerse({ analyser }) {
           width: 100%;
           background: linear-gradient(
             180deg,
-            rgba(255, 255, 255, 0) 85%,
-            rgba(200, 200, 255, 0.1) 93%,
-            rgba(200, 200, 255, 0.4) 100%
+            rgb(255 255 255 / 0) 85%,
+            rgb(200 200 255 / 0.1) 93%,
+            rgb(200 200 255 / 0.4) 100%
           );
         `}
       />
@@ -126,9 +121,9 @@ function SpiderVerse({ analyser }) {
           width: 100%;
           background: linear-gradient(
             320deg,
-            rgba(255, 255, 255, 0) 65%,
-            rgba(200, 200, 255, 0.2) 85%,
-            rgba(200, 200, 255, 0.4) 100%
+            rgb(255 255 255 / 0) 65%,
+            rgb(200 200 255 / 0.2) 85%,
+            rgb(200 200 255 / 0.4) 100%
           );
         `}
       />

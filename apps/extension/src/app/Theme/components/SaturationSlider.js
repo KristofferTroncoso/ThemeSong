@@ -23,7 +23,7 @@ function SaturationSlider({ ...props }) {
 
         .MuiSlider-track {
           border: none;
-          background: rgba(0, 0, 0, 0);
+          background: rgb(0 0 0 / 0);
         }
       `}
       {...props}

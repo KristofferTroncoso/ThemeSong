@@ -13,10 +13,9 @@ function AppleMusicLight() {
 
   useEffect(() => {
     if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
-      /*menubar.content = `oklch(0.96 ${dominantOKLCH[1] / 7} ${dominantOKLCH[2]})`;*/
       menubar.content = `rgb(235 235 235)`;
     } else {
-      menubar.content = `hsl(${lightVibrantHSL[0] * 360}, ${lightVibrantHSL[1] * 100 * 0.2}%, 35%)`;
+      menubar.content = `hsl(${lightVibrantHSL[0] * 360} ${lightVibrantHSL[1] * 100 * 0.2}% 35%)`;
     }
   }, [playerUiState, lightVibrantHSL, dominantOKLCH]);
 
@@ -26,10 +25,10 @@ function AppleMusicLight() {
         /*css*/ `
         :root {
           --ts-body-color: #333333;
-          --ts-body-alpha-gradient-color: hsl(0 0% 100% / 0.5);
-          --ts-overlay-color: rgba(0,0,0,0.6);
+          --ts-body-alpha-gradient-color: hsl(0 0% 100% / 0.7);
+          --ts-overlay-color: rgb(0 0 0 / 0.6);
           --ts-texts-selection-color: dodgerblue;
-          --ts-songimg-box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+          --ts-songimg-box-shadow: 0 10px 40px rgb(0 0 0 / 0.4);
 
           --applemusic-color: #d60017;
         }
@@ -51,8 +50,6 @@ function AppleMusicLight() {
 
         ytmusic-play-button-renderer {
           --ytmusic-play-button-icon-color: #fff !important;
-          /* --ytmusic-play-button-background-color: var(--ts-base-00-alpha-03-color) !important; */
-          /* --ytmusic-play-button-active-background-color: var(--ts-base-00-alpha-03-color) !important; */
         }
 
         /* Recaps icon/img . It has a black bg so im inverting it on light themes */
@@ -77,20 +74,32 @@ function AppleMusicLight() {
         ${light_base_colors}
         ${icons_buttons}
         :root {
-          --ts-navbar-color: rgba(240,240,240,0.8) !important;
-          /* --ts-navbar-color: oklch(0.9 calc(var(--ts-palette-dominant-c) / 6) var(--ts-palette-dominant-h) / 0.3); */
+          --ts-navbar-color: linear-gradient(
+            180deg,
+            rgb(235 235 235) 0%,
+            rgb(240 240 240 / 0.8) 60%
+          ) !important;
           --ts-sidebar-color: linear-gradient(
-            0deg,
-            oklch(0.9 calc(var(--ts-palette-dominant-c) / 6) var(--ts-palette-dominant-h) / 0.8) 0%,
-            rgb(240 240 240 / 0.5) 70%
+            180deg,
+            rgb(235 235 235) 1%,
+            rgb(235 235 235 / 0.3) 5%,
+            oklch(0.95 calc(var(--ts-palette-dominant-c) / 2) var(--ts-palette-dominant-h) / 0.3) 50%,
+            oklch(0.95 calc(var(--ts-palette-dominant-c) / 2) var(--ts-palette-dominant-h) / 0.5) 70%,
+            rgb(240 240 240 / 0.8) 80%
           );
           --ts-body-color: #fff;
-          --ts-playerbar-color: oklch(0.9 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h) / 0.3);
+          --ts-playerbar-color: linear-gradient(
+            90deg,
+            rgb(240 240 240 / 0.8) 15%,
+            oklch(1 calc(var(--ts-palette-dominant-c) / 2) var(--ts-palette-dominant-h) / 0.7) 25%,
+            oklch(1 calc(var(--ts-palette-dominant-c) / 2) var(--ts-palette-dominant-h) / 0.7) 75%,
+            rgb(240 240 240 / 0.8) 85%
+          );
           --ts-playprogress-color: #5e5e5e;
           --ts-primary-icon-color: var(--ts-base-70-color);
           --ts-secondary-icon-color: var(--applemusic-color);
           --ts-colored-button-color: var(--applemusic-color);
-          --ts-zebra-stripes-color: rgba(0,0,0,0.04);
+          --ts-zebra-stripes-color: rgb(0 0 0 / 0.04);
         }
 
         ytmusic-tabs.stuck {

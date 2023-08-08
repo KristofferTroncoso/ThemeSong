@@ -22,7 +22,7 @@ function PanelPage() {
         padding: 6px;
         margin: 2px;
         background: var(--ts-playerbar-color, #222);
-        border: 1px solid var(--ts-base-100-alpha-02-color, rgba(255, 255, 255, 0.2));
+        border: 1px solid var(--ts-base-100-alpha-02-color, rgb(255 255 255 / 0.2));
         border-radius: 4px;
         backdrop-filter: blur(16px);
         transition: var(--ts-bgcolor-transition);

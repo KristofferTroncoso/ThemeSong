@@ -27,7 +27,7 @@ function PanelButton({ color, bgColor, hoverColor, hoverBgColor, children, title
           width: 45px;
           margin: 5px;
           padding: 0;
-          background: ${bgColor || "rgba(0,0,0,0.3)"};
+          background: ${bgColor || "rgb(0 0 0 / 0.3)"};
           color: ${color || "#fff"};
           border: 0;
           border-radius: 8px;

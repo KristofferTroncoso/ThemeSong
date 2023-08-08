@@ -14,7 +14,7 @@ function YouTubeMusicMobile() {
 
   useEffect(() => {
     if (playerUiState === "PLAYER_PAGE_OPEN") {
-      menubar.content = `oklch(0.28 ${dominantColorLCH[1] / 3} ${dominantColorLCH[2]})`;
+      menubar.content = `oklch(0.3 ${dominantColorLCH[1] / 2.5} ${dominantColorLCH[2]})`;
     } else {
       menubar.content = "#121212";
     }
@@ -45,7 +45,7 @@ function YouTubeMusicMobile() {
       {(playerUiState === "PLAYER_PAGE_OPEN" || playerUiState === "FULLSCREEN") &&
         /* css */ ` 
         :root  {
-          --ts-navbar-color: oklch(0.30 calc(var(--ts-palette-dominant-c) / 2.5) var(--ts-palette-dominant-h));
+          --ts-navbar-color: oklch(0.3 calc(var(--ts-palette-dominant-c) / 2.5) var(--ts-palette-dominant-h));
           --ts-playerbar-color: oklch(0.35 calc(var(--ts-palette-dominant-c) / 2) var(--ts-palette-dominant-h));
         }
       `}

@@ -32,7 +32,7 @@ function Experimental({ analyser }) {
         height: 100%;
         width: 100%;
         border-radius: inherit;
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgb(0 0 0 / 0.6);
       `}
     >
       {

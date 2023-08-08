@@ -121,7 +121,7 @@ ytmusic-search-suggestions-section {
 
 /* when searching a song, the Top Result has a bg gradient applied */
 .immersive-background.ytmusic-card-shelf-renderer:before {
-  background-image: linear-gradient(180deg,rgba(0,0,0,0.05) 0%, var(--ts-base-10-color) 86.67%);
+  background-image: linear-gradient(180deg,rgb(0 0 0 / 0.05) 0%, var(--ts-base-10-color) 86.67%);
 }
 
 /* settings menu */
@@ -154,10 +154,6 @@ tp-yt-paper-toast {
 
 /* image filters */
 ytmusic-fullbleed-thumbnail-renderer {
-  filter: var(--ts-image-filter-brightness, brightness(1)) !important;
-}
-
-.immersive-background {
-  filter: var(--ts-image-filter-brightness, brightness(1)) !important;
+  filter: var(--ts-image-filter-brightness, brightness(1));
 }
 `;

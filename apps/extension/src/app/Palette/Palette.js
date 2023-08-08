@@ -240,11 +240,11 @@ function getVibrantPalette() {
 }
 
 function getDominantColor(palette) {
-  let dominant = { hex: "#000", hsl: [0.1, 0.5, 0.2], oklch: [20, 20, 20], adjustedPopulation: 0 };
+  let dominant = { hex: "#000", hsl: [0.1, 0.5, 0.2], oklch: [20, 0, 20], adjustedPopulation: 0 };
 
   for (const [, value] of Object.entries(palette)) {
     if (value.adjustedPopulation >= dominant.adjustedPopulation) {
-      dominant = value || { hex: "#000", hsl: [0.1, 0.5, 0.2], oklch: [20, 20, 20], adjustedPopulation: 0 };
+      dominant = value || { hex: "#000", hsl: [0.1, 0.5, 0.2], oklch: [20, 0, 20], adjustedPopulation: 0 };
     }
   }
   return dominant;

@@ -46,14 +46,14 @@ function DarkModePanel() {
         <h3
           css={css`
             padding: 2px 5px;
-            color: var(--ts-base-40-color, rgba(255, 255, 255, 0.2));
+            color: var(--ts-base-40-color, rgb(255 255 255 / 0.2));
           `}
         >
           Appearance
         </h3>
         <div
           css={css`
-            background-color: rgba(0, 0, 0, 0.15);
+            background-color: rgb(0 0 0 / 0.15);
             width: 190px;
             height: 34px;
             margin: 3px;
@@ -90,7 +90,7 @@ function DarkModePanel() {
               min-width: 45px;
               width: 60px;
               margin: 0 2px;
-              background: ${activeThemeUserPrefs.appearance === "dark" && "rgba(255,255,255,0.8)"};
+              background: ${activeThemeUserPrefs.appearance === "dark" && "rgb(255 255 255 / 0.8)"};
               color: ${activeThemeUserPrefs.appearance === "dark" && "#9d00ff"};
               border: 0;
               border-radius: 6px;
@@ -109,7 +109,7 @@ function DarkModePanel() {
               min-width: 45px;
               width: 60px;
               margin: 0 2px;
-              background: ${activeThemeUserPrefs.appearance === "light" && "rgba(255,255,255,0.8)"};
+              background: ${activeThemeUserPrefs.appearance === "light" && "rgb(255 255 255 / 0.8)"};
               color: ${activeThemeUserPrefs.appearance === "light" && "#de9800"};
               border: 0;
               border-radius: 6px;
@@ -132,7 +132,7 @@ function DarkModePanel() {
               min-width: 45px;
               width: 60px;
               margin: 0 2px;
-              background: ${activeThemeUserPrefs.appearance === "system" && "rgba(255,255,255,0.8)"};
+              background: ${activeThemeUserPrefs.appearance === "system" && "rgb(255 255 255 / 0.8)"};
               color: ${activeThemeUserPrefs.appearance === "system" && "#009961"};
               border: 0;
               border-radius: 6px;

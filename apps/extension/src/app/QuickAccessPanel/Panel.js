@@ -35,7 +35,7 @@ function Panel() {
           border-radius: 50%;
           :hover {
             color: var(--ts-primary-text-color);
-            background-color: var(--ts-base-100-alpha-02-color, rgba(255, 255, 255, 0.2));
+            background-color: var(--ts-base-100-alpha-02-color, rgb(255 255 255 / 0.2));
           }
         `}
         title="Open ThemeSong Quick Access Panel"
@@ -81,7 +81,7 @@ function Panel() {
         transitionDuration={100}
         css={css`
           .MuiPaper-root {
-            background-color: rgba(0, 0, 0, 0) !important;
+            background-color: rgb(0 0 0 / 0) !important;
             min-height: 600px;
             display: flex;
             justify-content: end;

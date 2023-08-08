@@ -233,7 +233,7 @@ function OT9({ analyser, dataArray }) {
 
       ctx.beginPath();
       ctx.moveTo(circle.x - circle.radius * 0.55, circle.y - circle.radius * 0.5);
-      ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
+      ctx.fillStyle = "rgb(255 255 255 / 0.9)";
       ctx.ellipse(
         circle.x - circle.radius * 0.55,
         circle.y - circle.radius * 0.55,

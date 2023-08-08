@@ -12,31 +12,31 @@ export const dark_base_colors = `
   --ts-base-90-color: #e6e6e6;
   --ts-base-100-color: #ffffff;
 
-  --ts-base-00-alpha-005-color: rgba(0,0,0,0.05);
-  --ts-base-00-alpha-00-color: rgba(0,0,0,0.0);
-  --ts-base-00-alpha-01-color: rgba(0,0,0,0.1);
-  --ts-base-00-alpha-02-color: rgba(0,0,0,0.2);
-  --ts-base-00-alpha-03-color: rgba(0,0,0,0.3);
-  --ts-base-00-alpha-04-color: rgba(0,0,0,0.4);
-  --ts-base-00-alpha-05-color: rgba(0,0,0,0.5);
-  --ts-base-00-alpha-06-color: rgba(0,0,0,0.6);
-  --ts-base-00-alpha-07-color: rgba(0,0,0,0.7);
-  --ts-base-00-alpha-08-color: rgba(0,0,0,0.8);
-  --ts-base-00-alpha-09-color: rgba(0,0,0,0.9);
-  --ts-base-00-alpha-10-color: rgba(0,0,0,1);
+  --ts-base-00-alpha-005-color: rgb(0 0 0 / 0.05);
+  --ts-base-00-alpha-00-color: rgb(0 0 0 / 0.0);
+  --ts-base-00-alpha-01-color: rgb(0 0 0 / 0.1);
+  --ts-base-00-alpha-02-color: rgb(0 0 0 / 0.2);
+  --ts-base-00-alpha-03-color: rgb(0 0 0 / 0.3);
+  --ts-base-00-alpha-04-color: rgb(0 0 0 / 0.4);
+  --ts-base-00-alpha-05-color: rgb(0 0 0 / 0.5);
+  --ts-base-00-alpha-06-color: rgb(0 0 0 / 0.6);
+  --ts-base-00-alpha-07-color: rgb(0 0 0 / 0.7);
+  --ts-base-00-alpha-08-color: rgb(0 0 0 / 0.8);
+  --ts-base-00-alpha-09-color: rgb(0 0 0 / 0.9);
+  --ts-base-00-alpha-10-color: rgb(0 0 0 / 1);
 
-  --ts-base-100-alpha-005-color: rgba(255,255,255,0.05);
-  --ts-base-100-alpha-00-color: rgba(255,255,255,0.0);
-  --ts-base-100-alpha-01-color: rgba(255,255,255,0.1);
-  --ts-base-100-alpha-02-color: rgba(255,255,255,0.2);
-  --ts-base-100-alpha-03-color: rgba(255,255,255,0.3);
-  --ts-base-100-alpha-04-color: rgba(255,255,255,0.4);
-  --ts-base-100-alpha-05-color: rgba(255,255,255,0.5);
-  --ts-base-100-alpha-06-color: rgba(255,255,255,0.6);
-  --ts-base-100-alpha-07-color: rgba(255,255,255,0.7);
-  --ts-base-100-alpha-08-color: rgba(255,255,255,0.8);
-  --ts-base-100-alpha-09-color: rgba(255,255,255,0.9);
-  --ts-base-100-alpha-10-color: rgba(255,255,255,1);
+  --ts-base-100-alpha-005-color: rgb(255 255 255 / 0.05);
+  --ts-base-100-alpha-00-color: rgb(255 255 255 / 0.0);
+  --ts-base-100-alpha-01-color: rgb(255 255 255 / 0.1);
+  --ts-base-100-alpha-02-color: rgb(255 255 255 / 0.2);
+  --ts-base-100-alpha-03-color: rgb(255 255 255 / 0.3);
+  --ts-base-100-alpha-04-color: rgb(255 255 255 / 0.4);
+  --ts-base-100-alpha-05-color: rgb(255 255 255 / 0.5);
+  --ts-base-100-alpha-06-color: rgb(255 255 255 / 0.6);
+  --ts-base-100-alpha-07-color: rgb(255 255 255 / 0.7);
+  --ts-base-100-alpha-08-color: rgb(255 255 255 / 0.8);
+  --ts-base-100-alpha-09-color: rgb(255 255 255 / 0.9);
+  --ts-base-100-alpha-10-color: rgb(255 255 255 / 1);
 
   --ts-image-filter-brightness: brightness(1);
 
