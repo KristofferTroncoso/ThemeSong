@@ -38,6 +38,6 @@ export const light_base_colors = `
     --ts-base-100-alpha-09-color: rgb(0 0 0 / 0.9);
     --ts-base-100-alpha-10-color: rgb(0 0 0 / 1);
 
-    --ts-image-filter-brightness: brightness(2);
+    --ts-image-filter-brightness: brightness(2.5);
   }
 `;
