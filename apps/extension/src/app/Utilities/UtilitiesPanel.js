@@ -2,6 +2,7 @@ import { css } from "@emotion/react";
 
 import SleepTimerPanelButton from "./SleepTimer/SleepTimerPanelButton";
 import StyledPanelDiv from "../QuickAccessPanel/components/StyledPanelDiv";
+import NotificationPanelButton from "./Notification/NotificationPanelButton";
 
 function UtilitiesPanel() {
   return (
@@ -22,6 +23,7 @@ function UtilitiesPanel() {
         `}
       >
         <SleepTimerPanelButton />
+        <NotificationPanelButton />
       </div>
     </StyledPanelDiv>
   );

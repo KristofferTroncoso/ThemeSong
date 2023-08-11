@@ -4,6 +4,7 @@ export const createUtilitiesSlice = (set) => ({
     isDialogOpen: false,
     minutesLeft: 0,
   },
+  notificationEnabled: false,
   changeIsActive: (payload) => {
     console.log("utilities: changeSleepTimer");
     console.log(payload);
@@ -29,6 +30,13 @@ export const createUtilitiesSlice = (set) => ({
     console.log("utilities: decrementMinutesLeft");
     set((state) => {
       state.utilities.sleepTimer.minutesLeft--;
+    });
+  },
+  toggleNotifications: (payload) => {
+    console.log("utilities: toggleNotifications");
+    console.log(payload);
+    set((state) => {
+      state.utilities.notificationEnabled = !state.utilities.notificationEnabled;
     });
   },
 });

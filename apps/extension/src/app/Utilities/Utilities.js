@@ -1,9 +1,14 @@
 import SleepTimer from "./SleepTimer/SleepTimer";
+import Notification from "./Notification/Notification";
+import { useStore } from "/src/app/store";
 
 function Utilities() {
+  const notificationEnabled = useStore((state) => state.utilities.notificationEnabled);
+
   return (
     <div id="ThemeSong-Utilities">
       <SleepTimer />
+      {notificationEnabled && <Notification />}
     </div>
   );
 }

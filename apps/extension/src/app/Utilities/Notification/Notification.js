@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useStore } from "/src/app/store";
 
-function AddSongChangeNotification() {
+function Notification() {
   const song = useStore((state) => state.song);
 
   useEffect(() => {
@@ -10,11 +10,11 @@ function AddSongChangeNotification() {
         chrome.runtime.sendMessage({ notify: song });
       }
     } catch {
-      console.log("AddSongChangeNotification: context invalidated");
+      console.log("Notification: context invalidated");
     }
   }, [song]);
 
-  return <div id="AddSongChangeNotification"></div>;
+  return null;
 }
 
-export default AddSongChangeNotification;
+export default Notification;
