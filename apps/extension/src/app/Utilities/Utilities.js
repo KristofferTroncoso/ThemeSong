@@ -3,12 +3,12 @@ import Notification from "./Notification/Notification";
 import { useStore } from "/src/app/store";
 
 function Utilities() {
-  const notificationEnabled = useStore((state) => state.utilities.notificationEnabled);
+  const notificationsEnabled = useStore((state) => state.utilities.notificationsEnabled);
 
   return (
     <div id="ThemeSong-Utilities">
       <SleepTimer />
-      {notificationEnabled && <Notification />}
+      {notificationsEnabled && <Notification />}
     </div>
   );
 }
