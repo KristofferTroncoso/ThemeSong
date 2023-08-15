@@ -6,11 +6,11 @@ import PlayerUiStateObserver from "../Player/PlayerUiStateObserver";
 import SongInfoDisplayFeature from "../Song/SongInfoDisplay/SongInfoDisplayFeature";
 import VisualizerCS from "../Visualizer/VisualizerCS";
 import Palette from "../Palette/Palette";
-// import UiOptions from '../UiOptions/UiOptions';
 // import Snippets from "../Snippets/Snippets";
 import Utilities from "../Utilities/Utilities";
 import LogoContainer from "../YtmLogo";
 import Unmounter from "../Extension/Unmounter";
+import Pieces from "../Pieces/Pieces";
 
 function ContentScript({ root }) {
   return (
@@ -25,9 +25,9 @@ function ContentScript({ root }) {
       <SongInfoDisplayFeature />
       <VisualizerCS />
       <Palette />
-      {/* <UiOptions /> */}
       {/* <Snippets /> */}
       <Utilities />
+      <Pieces />
     </div>
   );
 }
