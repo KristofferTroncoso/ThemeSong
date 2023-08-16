@@ -4,7 +4,7 @@
   "version": "0.4.8",
   "description": "Dynamic themes and visualizers for YouTube Music™.",
   "background": { "scripts": ["background.bundle.js"] },
-  "permissions": ["storage", "tabs"],
+  "permissions": ["storage", "tabs", "notifications"],
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup.html",

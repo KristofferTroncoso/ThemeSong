@@ -4,7 +4,7 @@
   "version": "0.5.7",
   "description": "Enhancer for YouTube Music™. Dynamic Themes, Visualizers, Lyrics, Sleep Timer, and more!",
   "background": { "scripts": ["background.bundle.js"] },
-  "permissions": ["<all_urls>", "storage", "tabs"],
+  "permissions": ["<all_urls>", "storage", "tabs", "notifications"],
   "browser_action": {
     "default_popup": "popup.html",
     "default_icon": "assets/icon-34.png"
