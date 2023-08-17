@@ -65,7 +65,6 @@ function Wavy({ analyser }) {
         left: 0;
         height: 100%;
         width: 100%;
-        border-radius: inherit;
         background: linear-gradient(
           180deg,
           rgb(0 0 0 / 0.4) 0%,

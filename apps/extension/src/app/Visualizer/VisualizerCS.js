@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { useStore } from "/src/app/store";
+import { css } from "@emotion/react";
 
 import VisualizerToggleButton from "./components/VisualizerToggleButton";
 import HideCaptions from "./components/HideCaptions";
@@ -67,7 +68,17 @@ function VisualizerContainer() {
   const isVisualizerOn = useStore((state) => state.visualizer.isVisualizerOn);
 
   return (
-    <div id="ThemeSong-VisualizerContainer" css={{ borderRadius: "inherit" }}>
+    <div
+      id="ThemeSong-VisualizerContainer"
+      css={css`
+        border-radius: inherit;
+
+        div,
+        canvas {
+          border-radius: inherit;
+        }
+      `}
+    >
       {isVisualizerOn && <Visualizer />}
     </div>
   );

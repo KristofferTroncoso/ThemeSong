@@ -91,7 +91,6 @@ function SpiderVerse({ analyser }) {
         left: 0;
         height: 100%;
         width: 100%;
-        border-radius: inherit;
         background: linear-gradient(180deg, rgb(0 0 60 / 0.1) 0%, rgb(0 0 60 / 0.85) 65%, rgb(0 0 60 / 0.95) 100%);
       `}
     >

@@ -39,7 +39,6 @@ function Bars({ analyser }) {
         left: 0;
         height: 100%;
         width: 100%;
-        border-radius: inherit;
         background: linear-gradient(
           180deg,
           oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0.2) 0%,

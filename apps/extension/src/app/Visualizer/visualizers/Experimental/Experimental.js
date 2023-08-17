@@ -31,7 +31,6 @@ function Experimental({ analyser }) {
         left: 0;
         height: 100%;
         width: 100%;
-        border-radius: inherit;
         background-color: rgb(0 0 0 / 0.6);
       `}
     >

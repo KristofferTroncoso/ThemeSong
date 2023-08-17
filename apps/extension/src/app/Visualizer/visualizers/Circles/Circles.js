@@ -7,6 +7,7 @@ import Palette from "./variants/Palette";
 import Party from "./variants/Party";
 import Bubbles from "./variants/Bubbles";
 import OT9 from "./variants/OT9";
+import OT6 from "./variants/OT6";
 
 function Circles({ analyser }) {
   const circlesActiveVariant = useStore(
@@ -31,6 +32,8 @@ function Circles({ analyser }) {
         return <Bubbles analyser={analyser} dataArray={dataArray} />;
       case "aadb67e9-ee59-45f3-8335-d34a39223525":
         return <OT9 analyser={analyser} dataArray={dataArray} />;
+      case "3d0b31ae-008e-474a-a33e-71d19c3d335d":
+        return <OT6 analyser={analyser} dataArray={dataArray} />;
       default:
         return <RGB analyser={analyser} dataArray={dataArray} />;
     }
@@ -45,7 +48,6 @@ function Circles({ analyser }) {
         left: 0;
         height: 100%;
         width: 100%;
-        border-radius: inherit;
         background: rgb(0 0 0 / 0.5);
       `}
     >
