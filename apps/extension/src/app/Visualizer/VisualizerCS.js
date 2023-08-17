@@ -66,7 +66,11 @@ function VisualizerCS() {
 function VisualizerContainer() {
   const isVisualizerOn = useStore((state) => state.visualizer.isVisualizerOn);
 
-  return <div id="ThemeSong-VisualizerContainer">{isVisualizerOn && <Visualizer />}</div>;
+  return (
+    <div id="ThemeSong-VisualizerContainer" css={{ borderRadius: "inherit" }}>
+      {isVisualizerOn && <Visualizer />}
+    </div>
+  );
 }
 
 export default VisualizerCS;

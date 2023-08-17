@@ -38,6 +38,14 @@ ytmusic-player .song-media-controls {
   border-radius: var(--ts-songimg-border-radius);
 }
 
+ytmusic-player[player-ui-state=MINIPLAYER] {
+  border-radius: var(--ts-songimg-border-radius);
+}
+
+ytmusic-player[player-ui-state=FULLSCREEN] {
+  border-radius: 0;
+}
+
 ytmusic-player[player-ui-state=FULLSCREEN] #song-image {
   height: 100%;
   border-radius: 0;

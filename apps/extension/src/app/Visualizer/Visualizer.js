@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { css } from "@emotion/react";
 import Wavy from "./visualizers/Wavy/Wavy";
 import Bars from "./visualizers/Bars/Bars";
 import Circles from "./visualizers/Circles/Circles";
@@ -108,7 +109,12 @@ Page reload required to reconnect visualizer. Reload now?`
 
   if (isVisualizerOn && isConnected) {
     return (
-      <div id="ThemeSong-Visualizer">
+      <div
+        id="ThemeSong-Visualizer"
+        css={css`
+          border-radius: inherit;
+        `}
+      >
         <PlayPauseChangeObserver />
         <VolumeChangeObserver />
         <PausedWarning />
