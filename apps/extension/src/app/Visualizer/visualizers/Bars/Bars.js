@@ -40,7 +40,12 @@ function Bars({ analyser }) {
         height: 100%;
         width: 100%;
         border-radius: inherit;
-        background: linear-gradient(180deg, rgb(0 0 0 / 0.2) 0%, rgb(0 0 0 / 0.8) 73%, rgb(0 0 0 / 0.85) 100%);
+        background: linear-gradient(
+          180deg,
+          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0.2) 0%,
+          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0.8) 73%,
+          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0.85) 100%
+        );
       `}
     >
       {returnActiveVariant()}
