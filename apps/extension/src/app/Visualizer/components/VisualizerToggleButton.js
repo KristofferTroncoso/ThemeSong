@@ -17,8 +17,9 @@ function VisualizerToggleButton() {
       onClick={handleVisualizerButtonClick}
       title={isVisualizerOn ? "Turn OFF Visualizer" : "Turn ON Visualizer"}
       css={css`
-        color: ${isVisualizerOn ? "#ee0606" : "inherit"};
-        background-color: transparent;
+        color: ${isVisualizerOn ? "#fff" : "inherit"};
+        background-color: ${isVisualizerOn ? "#ee0606" : "inherit"};
+        border-radius: 6px;
         border: 0;
         margin: 0 6px;
       `}
