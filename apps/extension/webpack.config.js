@@ -13,16 +13,16 @@ const fileExtensions = ["jpg", "jpeg", "png", "gif", "eot", "otf", "svg", "ttf",
 const options = {
   mode: process.env.NODE_ENV || "development",
   entry: {
-    options: path.join(__dirname, "src", "app", "Options", "index.js"),
-    popup: path.join(__dirname, "src", "app", "Popup", "index.js"),
-    background: path.join(__dirname, "src", "app", "Background", "index.js"),
-    contentScript: path.join(__dirname, "src", "app", "Content", "index.js"),
+    "themesong-options": path.join(__dirname, "src", "app", "Options", "index.js"),
+    "themesong-popup": path.join(__dirname, "src", "app", "Popup", "index.js"),
+    "themesong-background": path.join(__dirname, "src", "app", "Background", "index.js"),
+    "themesong-content": path.join(__dirname, "src", "app", "Content", "index.js"),
   },
   chromeExtensionBoilerplate: {
-    notHotReload: ["background", "contentScript"],
+    notHotReload: ["themesong-background", "themesong-content"],
   },
   output: {
-    filename: "[name].bundle.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "builds/chrome-build"),
     clean: true,
     publicPath: ASSET_PATH,
@@ -93,13 +93,13 @@ const options = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "app", "Options", "index.html"),
       filename: "options.html",
-      chunks: ["options"],
+      chunks: ["themesong-options"],
       cache: false,
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "app", "Popup", "index.html"),
       filename: "popup.html",
-      chunks: ["popup"],
+      chunks: ["themesong-popup"],
       cache: false,
     }),
   ],

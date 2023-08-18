@@ -5,7 +5,7 @@
   "version": "0.5.7",
   "description": "Enhancer for YouTube Music™. Dynamic Themes, Visualizers, Lyrics, Sleep Timer, and more!",
   "minimum_chrome_version": "105",
-  "background": { "service_worker": "background.bundle.js" },
+  "background": { "service_worker": "themesong-background.js" },
   "permissions": ["storage", "tabs", "scripting", "notifications"],
   "action": {
     "default_popup": "popup.html",
@@ -22,7 +22,7 @@
     {
       "matches": ["https://music.youtube.com/*"],
       "run_at": "document_end",
-      "js": ["contentScript.bundle.js"]
+      "js": ["themesong-content.js"]
     }
   ],
   "web_accessible_resources": [

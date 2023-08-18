@@ -3,7 +3,7 @@
   "name": "ThemeSong for YouTube Music™ (Enhancer)",
   "version": "0.5.7",
   "description": "Enhancer for YouTube Music™. Dynamic Themes, Visualizers, Lyrics, Sleep Timer, and more!",
-  "background": { "scripts": ["background.bundle.js"] },
+  "background": { "scripts": ["themesong-background.js"] },
   "permissions": ["<all_urls>", "storage", "tabs", "notifications"],
   "browser_action": {
     "default_popup": "popup.html",
@@ -21,7 +21,7 @@
     {
       "matches": ["https://music.youtube.com/*"],
       "run_at": "document_end",
-      "js": ["contentScript.bundle.js"]
+      "js": ["themesong-content.js"]
     }
   ],
   "web_accessible_resources": ["/assets/*"]
