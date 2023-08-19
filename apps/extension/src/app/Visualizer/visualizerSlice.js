@@ -58,7 +58,7 @@ export const createVisualizerSlice = (set) => ({
         },
         {
           id: "3d0b31ae-008e-474a-a33e-71d19c3d335d",
-          name: "OT6",
+          name: "Swith",
         },
       ],
     },

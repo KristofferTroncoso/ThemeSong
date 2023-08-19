@@ -46,7 +46,7 @@ function CirclesSettings() {
             className="VariantsContainer"
             css={{
               display: "grid",
-              gridTemplateColumns: "1fr 1fr 1fr",
+              gridTemplateColumns: "1fr 1fr 1fr 1fr",
               gridAutoRows: "1fr",
               gap: "10px",
             }}
