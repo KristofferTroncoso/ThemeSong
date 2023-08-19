@@ -3,7 +3,7 @@ export function executeContentScriptOnYouTubeMusicTabs() {
     for (let tab of tabs) {
       chrome.scripting.executeScript({
         target: { tabId: tab.id },
-        files: ["contentScript.bundle.js"],
+        files: ["themesong-content.js"],
       });
     }
   });
