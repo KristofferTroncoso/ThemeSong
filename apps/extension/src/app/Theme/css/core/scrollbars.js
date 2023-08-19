@@ -5,7 +5,7 @@ export const scrollbars = /*css*/ `
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--ts-playerbar-color);
+  background-color: inherit;
 }
 
 ::-webkit-scrollbar-thumb {

@@ -129,6 +129,15 @@ export const icons_buttons = /*css*/ `
     background-color: var(--ts-pill-hover-color) !important;
   }
 
+  /* selected pill */
+  ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_LARGE_TRANSLUCENT_AND_SELECTED_WHITE][is-selected]:not(.iron-selected) a.ytmusic-chip-cloud-chip-renderer {
+    background-color: var(--ts-primary-icon-color);
+  }
+
+  ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_LARGE_TRANSLUCENT_AND_SELECTED_WHITE][is-selected]:not(.iron-selected) a.ytmusic-chip-cloud-chip-renderer .text {
+    color: var(--ts-inverse-icon-color) !important;
+  }
+
 
   /* 'recent activity' dropdown buttons */
   button.ytmusic-sort-filter-button-renderer {
