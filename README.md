@@ -1,4 +1,8 @@
-![ThemeSong icon](/assets/icon-128.png)
+<p align="center">
+  <a href="https://themesong.app" target="_blank" rel="noopener noreferrer">
+    <img src="/assets/icon-128.png" alt="ThemeSong logo">
+  </a>
+</p>
 
 # ThemeSong
 
