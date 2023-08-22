@@ -83,16 +83,16 @@ function AppleMusicLight() {
             180deg,
             rgb(235 235 235) 1%,
             rgb(235 235 235 / 0.3) 5%,
-            oklch(0.95 calc(var(--ts-palette-dominant-c) / 2) var(--ts-palette-dominant-h) / 0.3) 50%,
-            oklch(0.95 calc(var(--ts-palette-dominant-c) / 2) var(--ts-palette-dominant-h) / 0.5) 70%,
+            hsl(var(--ts-palette-dominant-hue) calc(var(--ts-palette-dominant-saturation) / 2) 90% / 0.3) 50%,
+            hsl(var(--ts-palette-dominant-hue) calc(var(--ts-palette-dominant-saturation) / 2) 90% / 0.5) 70%,
             rgb(240 240 240 / 0.8) 80%
           );
           --ts-body-color: #fff;
           --ts-playerbar-color: linear-gradient(
             90deg,
             rgb(240 240 240 / 0.8) 15%,
-            oklch(1 calc(var(--ts-palette-dominant-c) / 2) var(--ts-palette-dominant-h) / 0.7) 25%,
-            oklch(1 calc(var(--ts-palette-dominant-c) / 2) var(--ts-palette-dominant-h) / 0.7) 75%,
+            hsl(var(--ts-palette-dominant-hue) calc(var(--ts-palette-dominant-saturation) / 2) 90% / 0.7) 25%,
+            hsl(var(--ts-palette-dominant-hue) calc(var(--ts-palette-dominant-saturation) / 2) 90% / 0.7) 75%,
             rgb(240 240 240 / 0.8) 85%
           );
           --ts-playprogress-color: #5e5e5e;
