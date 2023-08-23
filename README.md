@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://themesong.app" target="_blank" rel="noopener noreferrer">
-    <img src="/assets/icon-128.png" alt="ThemeSong logo">
+    <img src="/assets/ThemeSong-Full-Logo.png" alt="ThemeSong logo">
   </a>
 </p>
 
