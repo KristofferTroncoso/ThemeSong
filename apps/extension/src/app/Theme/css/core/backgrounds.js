@@ -153,7 +153,7 @@ tp-yt-paper-toast {
 }
 
 /* image filters */
-ytmusic-fullbleed-thumbnail-renderer {
+.immersive-background ytmusic-fullbleed-thumbnail-renderer {
   filter: var(--ts-image-filter-brightness, brightness(1));
 }
 `;
