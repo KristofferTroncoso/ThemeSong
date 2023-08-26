@@ -7,7 +7,14 @@ function Notification() {
   useEffect(() => {
     try {
       if (song.songName !== "") {
-        chrome.runtime.sendMessage({ notify: song });
+        chrome.runtime.sendMessage({
+          notify: {
+            songName: song.songName,
+            songSubtitle: song.songSubtitle,
+            songArtist: song.songArtist,
+            songImg: song.songImg,
+          },
+        });
       }
     } catch {
       console.log("Notification: context invalidated");
