@@ -14,8 +14,8 @@ export const createPiecesSlice = (set) => ({
     // },
   ],
   piecesPrefs: {
-    "bf472cf5-689f-4be0-9eef-67c5cc8715e9": true,
-    "a2c1185b-1d9b-4c0f-aef3-8c7887374cc5": true,
+    "bf472cf5-689f-4be0-9eef-67c5cc8715e9": false,
+    "a2c1185b-1d9b-4c0f-aef3-8c7887374cc5": false,
     // "2a606045-80f3-4aee-93de-cf3cd39d2920": {
     //   enabled: false,
     //   css: "/* put css styles here */",
