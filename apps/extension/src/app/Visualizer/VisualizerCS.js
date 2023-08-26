@@ -46,7 +46,7 @@ function addThemesongControlButtonsContainer() {
         justifyContent: "space-between",
         alignItems: "center",
         alignContent: "center",
-        padding: "5px 0",
+        padding: "2px 0",
       }}
     >
       <HideCaptions />

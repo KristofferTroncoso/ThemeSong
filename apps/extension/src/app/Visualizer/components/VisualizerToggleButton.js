@@ -21,7 +21,8 @@ function VisualizerToggleButton() {
         background-color: ${isVisualizerOn ? "#ee0606" : "inherit"};
         border-radius: 6px;
         border: 0;
-        margin: 0 6px;
+        margin: 0 3px;
+        padding: 4px 7px 0;
       `}
     >
       <GiProtectionGlasses
