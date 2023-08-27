@@ -23,10 +23,10 @@ function Wavy({ analyser }) {
     context.current.lineWidth = wavyPrefs.lineWidth;
     context.current.shadowBlur = 4;
     context.current.shadowOffsetY = wavyPrefs.lineWidth;
-    context.current.shadowColor = `hsl(
-      ${(dominantSwatch.hsl[0] * 360).toFixed()}, 
-      ${dominantSwatch.hsl[1] * 180}%, 
-      70%
+    context.current.shadowColor = `oklch(
+      0.6
+      ${dominantSwatch.oklch[1]}
+      ${dominantSwatch.oklch[2]}
     )`;
     analyser.fftSize = fftSize;
   }, [dominantSwatch, wavyPrefs, analyser]);
