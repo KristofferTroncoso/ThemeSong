@@ -45,6 +45,7 @@ function UpdatePanel() {
           background-color: orange;
           border: 1px solid black;
           border-radius: 3px;
+          color: #000;
 
           :hover {
             background-color: white;
@@ -57,7 +58,7 @@ function UpdatePanel() {
           );
         }}
       >
-        ok
+        OK
       </button>
     </StyledPanelDiv>
   );
