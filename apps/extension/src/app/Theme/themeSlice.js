@@ -16,11 +16,6 @@ export const createThemeSlice = (set) => ({
       dateAdded: 20220702,
       name: "Static",
     },
-    // {
-    //   id: "8383a680-c786-4c8d-82ee-59e0f1ea7c50",
-    //   dateAdded: 20221014,
-    //   name: "Custom",
-    // },
     {
       id: "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f",
       dateAdded: 20221111,
@@ -32,7 +27,7 @@ export const createThemeSlice = (set) => ({
       name: "YouTube Music Mobile",
     },
   ],
-  themePrefs: [
+  prefs: [
     {
       id: "db8854e3-6753-4639-b244-c8091f3b9fcb",
       appearance: "dark",
@@ -75,7 +70,7 @@ export const createThemeSlice = (set) => ({
     console.log("themeSlice: changeThemePrefs");
     console.log(payload);
     set((state) => {
-      state.theme.themePrefs = payload;
+      state.theme.prefs = payload;
     });
   },
 });

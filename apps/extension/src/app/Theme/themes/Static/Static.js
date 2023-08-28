@@ -5,7 +5,7 @@ import { useStore } from "/src/app/store";
 
 function Static() {
   const appearance = useStore(
-    (state) => state.theme.themePrefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8").appearance
+    (state) => state.theme.prefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8").appearance
   );
 
   function returnVariant() {

@@ -11,12 +11,12 @@ import BrightnessSectionSlider from "../../../components/BrightnessSectionSlider
 
 function StaticDarkSettings() {
   const staticPrefs = useStore((state) =>
-    state.theme.themePrefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8")
+    state.theme.prefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8")
   );
   const staticDarkPrefs = useStore(
-    (state) => state.theme.themePrefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8").dark
+    (state) => state.theme.prefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8").dark
   );
-  const themePrefs = useStore((state) => state.theme.themePrefs);
+  const themePrefs = useStore((state) => state.theme.prefs);
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
 
   function handleChange(e) {

@@ -11,7 +11,7 @@ import { icons_buttons } from "../../../css/core/icons_buttons";
 
 function StaticDark() {
   const { hue, saturation, lightness } = useStore(
-    (state) => state.theme.themePrefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8").dark
+    (state) => state.theme.prefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8").dark
   );
 
   useEffect(() => {

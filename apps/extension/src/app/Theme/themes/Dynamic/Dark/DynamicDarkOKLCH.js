@@ -13,7 +13,7 @@ import { Global, css } from "@emotion/react";
 function DynamicDark() {
   const dominantColorLCH = useStore((state) => state.palette.dominant).oklch;
   const dynamicDarkPrefs = useStore(
-    (state) => state.theme.themePrefs.find((theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb").dark
+    (state) => state.theme.prefs.find((theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb").dark
   );
   const lightness = dynamicDarkPrefs.lightness;
 

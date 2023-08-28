@@ -2,10 +2,10 @@ import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
 
 function AppleMusicSettings() {
-  const themePrefs = useStore((state) => state.theme.themePrefs);
+  const themePrefs = useStore((state) => state.theme.prefs);
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
   const appleMusicPrefs = useStore((state) =>
-    state.theme.themePrefs.find((theme) => theme.id === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f")
+    state.theme.prefs.find((theme) => theme.id === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f")
   );
 
   function handleDarkLightChange(e) {

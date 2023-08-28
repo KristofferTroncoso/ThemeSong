@@ -4,9 +4,9 @@ import StaticLightSettings from "./Light/StaticLightSettings";
 import { useStore } from "/src/app/store";
 
 export function StaticSettings() {
-  const themePrefs = useStore((state) => state.theme.themePrefs);
+  const themePrefs = useStore((state) => state.theme.prefs);
   const staticUserPrefs = useStore((state) =>
-    state.theme.themePrefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8")
+    state.theme.prefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8")
   );
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
 

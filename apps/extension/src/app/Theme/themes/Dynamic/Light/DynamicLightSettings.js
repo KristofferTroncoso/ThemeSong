@@ -10,12 +10,12 @@ import OpacityIcon from "@mui/icons-material/Opacity";
 
 function DynamicLightSettings() {
   const dynamicPrefs = useStore((state) =>
-    state.theme.themePrefs.find((theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb")
+    state.theme.prefs.find((theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb")
   );
   const dynamicLightPrefs = useStore(
-    (state) => state.theme.themePrefs.find((theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb").light
+    (state) => state.theme.prefs.find((theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb").light
   );
-  const themePrefs = useStore((state) => state.theme.themePrefs);
+  const themePrefs = useStore((state) => state.theme.prefs);
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
 
   function handleChange(e) {

@@ -17,7 +17,7 @@ import { thumbnail_border } from "../../css/extra/thumbnail_border";
 
 function AppleMusic() {
   const appearance = useStore(
-    (state) => state.theme.themePrefs.find((theme) => theme.id === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f").appearance
+    (state) => state.theme.prefs.find((theme) => theme.id === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f").appearance
   );
 
   function returnVariant() {

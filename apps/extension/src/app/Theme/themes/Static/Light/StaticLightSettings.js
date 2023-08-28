@@ -10,7 +10,7 @@ import Body from "../../../icons/Body";
 import BrightnessSectionSlider from "../../../components/BrightnessSectionSlider";
 
 function StaticLightSettings() {
-  const themePrefs = useStore((state) => state.theme.themePrefs);
+  const themePrefs = useStore((state) => state.theme.prefs);
   const staticPrefs = themePrefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8");
   const staticLightPrefs = staticPrefs.light;
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);

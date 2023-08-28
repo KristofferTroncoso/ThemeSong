@@ -8,10 +8,10 @@ import { CgDarkMode } from "react-icons/cg";
 import PanelButton from "../QuickAccessPanel/components/PanelButton";
 
 function DarkModePanel() {
-  const themePrefs = useStore((state) => state.theme.themePrefs);
+  const themePrefs = useStore((state) => state.theme.prefs);
   const activeTheme = useStore((state) => state.theme.activeTheme);
   // const activeThemeInfo = useStore(state => state.theme.themes.find(theme => theme.id === activeTheme));
-  const activeThemeUserPrefs = useStore((state) => state.theme.themePrefs.find((theme) => theme.id === activeTheme));
+  const activeThemeUserPrefs = useStore((state) => state.theme.prefs.find((theme) => theme.id === activeTheme));
   const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
 
   function handleDarkLightChange(value) {

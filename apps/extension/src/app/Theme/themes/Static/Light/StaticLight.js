@@ -15,7 +15,7 @@ import { rulers_borders } from "../../../css/core/rulers_borders";
 
 function StaticLight() {
   const { hue, saturation, lightness } = useStore(
-    (state) => state.theme.themePrefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8").light
+    (state) => state.theme.prefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8").light
   );
 
   useEffect(() => {
