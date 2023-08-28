@@ -10,7 +10,7 @@ function DataStoreSync() {
   const changeActivePopupTab = useStore((state) => state.popup.changeActivePopupTab);
   const changeShowUpdateNote = useStore((state) => state.extension.changeShowUpdateNote);
   const changeHideCaptions = useStore((state) => state.player.changeHideCaptions);
-  const changePiecesPrefs = useStore((state) => state.pieces.changePiecesPrefs);
+  const setPiecesPrefs = useStore((state) => state.pieces.setPiecesPrefs);
   const changeNotificationsEnabled = useStore((state) => state.utilities.changeNotificationsEnabled);
 
   useEffect(() => {
@@ -44,7 +44,7 @@ function DataStoreSync() {
           changeNotificationsEnabled(value);
           break;
         case "piecesPrefs":
-          changePiecesPrefs(value);
+          setPiecesPrefs(value);
           break;
         default:
           console.log("DataStoreSync: default case");

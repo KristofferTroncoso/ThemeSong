@@ -1,4 +1,5 @@
-export const createPiecesSlice = (set) => ({
+export const createPiecesSlice = (set, get) => ({
+  test: "hello",
   pieces: [
     {
       id: "bf472cf5-689f-4be0-9eef-67c5cc8715e9",
@@ -13,7 +14,7 @@ export const createPiecesSlice = (set) => ({
     //   name: "User Snippet",
     // },
   ],
-  piecesPrefs: {
+  prefs: {
     "bf472cf5-689f-4be0-9eef-67c5cc8715e9": false,
     "a2c1185b-1d9b-4c0f-aef3-8c7887374cc5": false,
     // "2a606045-80f3-4aee-93de-cf3cd39d2920": {
@@ -24,14 +25,15 @@ export const createPiecesSlice = (set) => ({
   togglePiece: (payload) => {
     console.log("pieces: togglePiece");
     set((state) => {
-      state.pieces.piecesPrefs[payload] = !state.pieces.piecesPrefs[payload];
+      state.pieces.prefs[payload] = !state.pieces.prefs[payload];
     });
+    chrome.storage.local.set({ piecesPrefs: get().pieces.prefs });
   },
-  changePiecesPrefs: (payload) => {
-    console.log("pieces: changePiecesPrefs");
+  setPiecesPrefs: (payload) => {
+    console.log("pieces: setPiecesPrefs");
     console.log(payload);
     set((state) => {
-      state.pieces.piecesPrefs = payload;
+      state.pieces.prefs = payload;
     });
   },
 });

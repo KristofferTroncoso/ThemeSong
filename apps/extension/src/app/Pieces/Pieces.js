@@ -6,7 +6,7 @@ import RemoveCastButton from "./pieces/RemoveCastButton";
 // import UserSnippet from "./pieces/UserSnippet";
 
 function Pieces() {
-  const piecesPrefs = useStore((state) => state.pieces.piecesPrefs);
+  const piecesPrefs = useStore((state) => state.pieces.prefs);
 
   return (
     <div id="ThemeSong-Pieces">

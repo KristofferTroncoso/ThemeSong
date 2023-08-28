@@ -1,20 +1,13 @@
-import { useEffect } from "react";
 import { Switch } from "@mui/material";
 import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
 
 function PiecesPage() {
-  const pieces = useStore((state) => state.pieces.pieces);
-  const piecesPrefs = useStore((state) => state.pieces.piecesPrefs);
-  const togglePiece = useStore((state) => state.pieces.togglePiece);
-
-  useEffect(() => {
-    chrome.storage.local.set({ piecesPrefs }, () => console.log("chrome.storage.local.set({piecesPrefs}"));
-  }, [piecesPrefs]);
-
-  const handleToggle = (pieceId) => {
-    togglePiece(pieceId);
-  };
+  const [pieces, piecesPrefs, togglePiece] = useStore((state) => [
+    state.pieces.pieces,
+    state.pieces.prefs,
+    state.pieces.togglePiece,
+  ]);
 
   return (
     <div id="Pieces-Page">
@@ -44,7 +37,7 @@ function PiecesPage() {
             </span>
             <Switch
               checked={piecesPrefs[piece.id]}
-              onChange={(e) => handleToggle(piece.id)}
+              onChange={(e) => togglePiece(piece.id)}
               inputProps={{ "aria-label": "controlled" }}
             />
           </div>
