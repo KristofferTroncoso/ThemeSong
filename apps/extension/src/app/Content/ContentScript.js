@@ -6,7 +6,6 @@ import PlayerUiStateObserver from "../Player/PlayerUiStateObserver";
 import SongInfoDisplayFeature from "../Song/SongInfoDisplay/SongInfoDisplayFeature";
 import VisualizerCS from "../Visualizer/VisualizerCS";
 import Palette from "../Palette/Palette";
-// import Snippets from "../Snippets/Snippets";
 import Utilities from "../Utilities/Utilities";
 import LogoContainer from "../YtmLogo";
 import Unmounter from "../Extension/Unmounter";
@@ -25,7 +24,6 @@ function ContentScript({ root }) {
       <SongInfoDisplayFeature />
       <VisualizerCS />
       <Palette />
-      {/* <Snippets /> */}
       <Utilities />
       <Pieces />
     </div>

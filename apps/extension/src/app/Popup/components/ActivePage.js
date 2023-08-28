@@ -2,7 +2,6 @@ import { useStore } from "/src/app/store";
 
 import VisualizersPage from "../pages/VisualizersPage";
 import ThemesPage from "../pages/ThemesPage";
-// import SnippetsPage from "../pages/SnippetsPage";
 import PiecesPage from "../pages/PiecesPage";
 
 function ActivePage() {
