@@ -4,7 +4,7 @@ import { useStore } from "/src/app/store";
 
 function Palette({ analyser, dataArray, bufferLength }) {
   const barsPrefs = useStore((state) =>
-    state.visualizer.visualizerPrefs.find((visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6")
+    state.visualizer.prefs.find((visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6")
   );
   const isSongPlaying = useStore((state) => state.player.isSongPlaying);
   const palette = useStore((state) => state.palette.palette);

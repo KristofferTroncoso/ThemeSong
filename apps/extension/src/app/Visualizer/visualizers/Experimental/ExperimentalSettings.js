@@ -2,12 +2,12 @@ import { useStore } from "/src/app/store";
 import { css } from "@emotion/react";
 
 function ExperimentalSettings() {
-  const visualizerPrefs = useStore((state) => state.visualizer.visualizerPrefs);
+  const visualizerPrefs = useStore((state) => state.visualizer.prefs);
   const experimentalVisualizer = useStore((state) =>
     state.visualizer.visualizers.find((visualizer) => visualizer.id === "8315ac5f-0de5-4ef1-ac5d-a4bc6d7b21ae")
   );
   const experimentalPrefs = useStore((state) =>
-    state.visualizer.visualizerPrefs.find((visualizer) => visualizer.id === "8315ac5f-0de5-4ef1-ac5d-a4bc6d7b21ae")
+    state.visualizer.prefs.find((visualizer) => visualizer.id === "8315ac5f-0de5-4ef1-ac5d-a4bc6d7b21ae")
   );
   const changeVisualizerPrefs = useStore((state) => state.visualizer.changeVisualizerPrefs);
 

@@ -83,7 +83,7 @@ export const createVisualizerSlice = (set) => ({
       name: "RetroBars",
     },
   ],
-  visualizerPrefs: [
+  prefs: [
     {
       id: "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d",
       lineWidth: 8,
@@ -121,7 +121,7 @@ export const createVisualizerSlice = (set) => ({
     console.log("visualizerSlice: changeVisualizerPrefs");
     console.log(payload);
     set((state) => {
-      state.visualizer.visualizerPrefs = payload;
+      state.visualizer.prefs = payload;
     });
   },
   toggleIsVisualizerOn: () => {

@@ -18,7 +18,7 @@ import E16 from "./variants/E16";
 function Experimental({ analyser }) {
   const experimentalActiveVariant = useStore(
     (state) =>
-      state.visualizer.visualizerPrefs.find((visualizer) => visualizer.id === "8315ac5f-0de5-4ef1-ac5d-a4bc6d7b21ae")
+      state.visualizer.prefs.find((visualizer) => visualizer.id === "8315ac5f-0de5-4ef1-ac5d-a4bc6d7b21ae")
         .activeVariant
   );
 

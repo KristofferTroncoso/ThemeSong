@@ -5,7 +5,7 @@ import useAnimation from "../../components/useAnimation";
 
 function Wavy({ analyser }) {
   const wavyPrefs = useStore((state) =>
-    state.visualizer.visualizerPrefs.find((visualizer) => visualizer.id === "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d")
+    state.visualizer.prefs.find((visualizer) => visualizer.id === "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d")
   );
   const dominantSwatch = useStore((state) => state.palette.dominant);
 

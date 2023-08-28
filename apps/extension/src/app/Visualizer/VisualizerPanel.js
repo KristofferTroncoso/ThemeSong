@@ -41,7 +41,7 @@ function VisualizerPanel() {
   const toggleIsVisualizerOn = useStore((state) => state.visualizer.toggleIsVisualizerOn);
   const changeActiveVisualizer = useStore((state) => state.visualizer.changeActiveVisualizer);
   const visualizers = useStore((state) => state.visualizer.visualizers);
-  const visualizerPrefs = useStore((state) => state.visualizer.visualizerPrefs);
+  const visualizerPrefs = useStore((state) => state.visualizer.prefs);
   const changeVisualizerPrefs = useStore((state) => state.visualizer.changeVisualizerPrefs);
 
   const handleVisualizerButtonClick = (id) => {

@@ -12,7 +12,7 @@ import Swith from "./variants/Swith";
 function Circles({ analyser }) {
   const circlesActiveVariant = useStore(
     (state) =>
-      state.visualizer.visualizerPrefs.find((visualizer) => visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da")
+      state.visualizer.prefs.find((visualizer) => visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da")
         .activeVariant
   );
 

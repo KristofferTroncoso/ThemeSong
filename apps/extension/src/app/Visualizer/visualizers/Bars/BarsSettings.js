@@ -27,9 +27,9 @@ function BarsSettings() {
     state.visualizer.visualizers.find((visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6")
   );
   const barsPrefs = useStore((state) =>
-    state.visualizer.visualizerPrefs.find((visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6")
+    state.visualizer.prefs.find((visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6")
   );
-  const visualizerPrefs = useStore((state) => state.visualizer.visualizerPrefs);
+  const visualizerPrefs = useStore((state) => state.visualizer.prefs);
   const changeVisualizerPrefs = useStore((state) => state.visualizer.changeVisualizerPrefs);
 
   const handleVisualizersChange = (visualizerObject) => {
