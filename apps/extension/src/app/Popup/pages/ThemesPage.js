@@ -3,7 +3,6 @@ import { useStore } from "/src/app/store";
 
 import DynamicSettings from "../../Theme/themes/Dynamic/DynamicSettings";
 import StaticSettings from "../../Theme/themes/Static/StaticSettings";
-import CustomSettings from "../../Theme/themes/Custom/CustomSettings";
 import AppleMusicSettings from "../../Theme/themes/AppleMusic/AppleMusicSettings";
 
 import ThemeButton from "../components/ThemeButton";
@@ -19,8 +18,6 @@ function ThemesPage() {
         return <DynamicSettings />;
       case "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8":
         return <StaticSettings />;
-      case "8383a680-c786-4c8d-82ee-59e0f1ea7c50":
-        return <CustomSettings />;
       case "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f":
         return <AppleMusicSettings />;
       default:
