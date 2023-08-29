@@ -3,15 +3,10 @@ import { useStore } from "/src/app/store";
 
 import PanelButton from "../../QuickAccessPanel/components/PanelButton";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import { useEffect } from "react";
 
 function NotificationPanelButton() {
-  const notificationsEnabled = useStore((state) => state.utilities.notificationsEnabled);
+  const notificationsEnabled = useStore((state) => state.utilities.prefs.notificationsEnabled);
   const toggleNotifications = useStore((state) => state.utilities.toggleNotifications);
-
-  useEffect(() => {
-    chrome.storage.local.set({ notificationsEnabled: notificationsEnabled });
-  }, [notificationsEnabled]);
 
   return (
     <PanelButton

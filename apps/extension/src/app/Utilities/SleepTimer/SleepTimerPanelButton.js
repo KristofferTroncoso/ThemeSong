@@ -6,11 +6,11 @@ import SnoozeIcon from "@mui/icons-material/Snooze";
 
 function SleepTimerPanelButton() {
   const isActive = useStore((state) => state.utilities.sleepTimer.isActive);
-  const changeIsDialogOpen = useStore((state) => state.utilities.changeIsDialogOpen);
+  const setTimerIsDialogOpen = useStore((state) => state.utilities.setTimerIsDialogOpen);
 
   return (
     <PanelButton
-      onClick={(e) => changeIsDialogOpen(true)}
+      onClick={(e) => setTimerIsDialogOpen(true)}
       title="Sleep Timer"
       hoverColor="#ac13cf"
       bgColor={isActive && "#ac13cf"}

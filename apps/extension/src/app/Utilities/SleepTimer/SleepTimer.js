@@ -35,12 +35,12 @@ let intervalId;
 function SleepTimer() {
   const isActive = useStore((state) => state.utilities.sleepTimer.isActive);
   const minutesLeft = useStore((state) => state.utilities.sleepTimer.minutesLeft);
-  const changeIsActive = useStore((state) => state.utilities.changeIsActive);
-  const changeMinutesLeft = useStore((state) => state.utilities.changeMinutesLeft);
+  const setTimerIsActive = useStore((state) => state.utilities.setTimerIsActive);
+  const setMinutesLeft = useStore((state) => state.utilities.setMinutesLeft);
   const decrementMinutesLeft = useStore((state) => state.utilities.decrementMinutesLeft);
   const songName = useStore((state) => state.song.songName);
   const isDialogOpen = useStore((state) => state.utilities.sleepTimer.isDialogOpen);
-  const changeIsDialogOpen = useStore((state) => state.utilities.changeIsDialogOpen);
+  const setTimerIsDialogOpen = useStore((state) => state.utilities.setTimerIsDialogOpen);
   const [isLastSong, setIsLastSong] = useState(false);
   const [isTimeOverDialogOpen, setIsTimeOverDialogOpen] = useState(false);
 
@@ -50,7 +50,7 @@ function SleepTimer() {
         document.getElementById("play-pause-button").click();
       }
       setIsLastSong(false);
-      changeIsActive(false);
+      setTimerIsActive(false);
       setIsTimeOverDialogOpen(true);
     }
     isLastSong && lastSongDone();
@@ -59,17 +59,17 @@ function SleepTimer() {
   function handleLastSongClick() {
     clearTimeout(timeoutId);
     clearInterval(intervalId);
-    changeMinutesLeft(0);
+    setMinutesLeft(0);
     setIsLastSong(true);
-    changeIsActive(true);
-    changeIsDialogOpen(false);
+    setTimerIsActive(true);
+    setTimerIsDialogOpen(false);
   }
 
   function handleTimerClick(minutes) {
     clearTimeout(timeoutId);
     clearInterval(intervalId);
     setIsLastSong(false);
-    changeMinutesLeft(minutes);
+    setMinutesLeft(minutes);
     intervalId = setInterval(() => {
       decrementMinutesLeft();
     }, 60000);
@@ -78,23 +78,23 @@ function SleepTimer() {
         document.getElementById("play-pause-button").click();
       }
       clearInterval(intervalId);
-      changeIsActive(false);
+      setTimerIsActive(false);
       setIsTimeOverDialogOpen(true);
     }, minutes * 60000);
-    changeIsActive(true);
-    changeIsDialogOpen(false);
+    setTimerIsActive(true);
+    setTimerIsDialogOpen(false);
   }
 
   const handleDialogClose = () => {
-    changeIsDialogOpen(false);
+    setTimerIsDialogOpen(false);
   };
 
   const handleCancelTimer = () => {
     clearTimeout(timeoutId);
     clearInterval(intervalId);
     setIsLastSong(false);
-    changeIsActive(false);
-    changeIsDialogOpen(false);
+    setTimerIsActive(false);
+    setTimerIsDialogOpen(false);
   };
 
   return (
@@ -215,7 +215,7 @@ function SleepTimer() {
             `}
             onClick={(e) => {
               setIsTimeOverDialogOpen(false);
-              changeIsDialogOpen(true);
+              setTimerIsDialogOpen(true);
             }}
           >
             Set new Timer

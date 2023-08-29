@@ -9,7 +9,7 @@ function DataStoreSync() {
   const overwriteAllExtensionPrefs = useStore((state) => state.extension.overwriteAllExtensionPrefs);
   const changeHideCaptions = useStore((state) => state.player.changeHideCaptions);
   const setPiecesPrefs = useStore((state) => state.pieces.setPiecesPrefs);
-  const changeNotificationsEnabled = useStore((state) => state.utilities.changeNotificationsEnabled);
+  const overwriteAllUtilitiesPrefs = useStore((state) => state.utilities.overwriteAllUtilitiesPrefs);
 
   useEffect(() => {
     console.log("DataStoreSync");
@@ -32,8 +32,8 @@ function DataStoreSync() {
         case "hideCaptions":
           changeHideCaptions(value);
           break;
-        case "notificationsEnabled":
-          changeNotificationsEnabled(value);
+        case "utilitiesPrefs":
+          overwriteAllUtilitiesPrefs(value);
           break;
         case "piecesPrefs":
           setPiecesPrefs(value);

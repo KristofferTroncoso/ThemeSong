@@ -1,26 +1,28 @@
-export const createUtilitiesSlice = (set) => ({
+export const createUtilitiesSlice = (set, get) => ({
   sleepTimer: {
     isActive: false,
     isDialogOpen: false,
     minutesLeft: 0,
   },
-  notificationsEnabled: false,
-  changeIsActive: (payload) => {
-    console.log("utilities: changeSleepTimer");
+  prefs: {
+    notificationsEnabled: false,
+  },
+  setTimerIsActive: (payload) => {
+    console.log("utilities: setTimerIsActive");
     console.log(payload);
     set((state) => {
       state.utilities.sleepTimer.isActive = payload;
     });
   },
-  changeIsDialogOpen: (payload) => {
-    console.log("utilities: changeIsDialogOpen");
+  setTimerIsDialogOpen: (payload) => {
+    console.log("utilities: setTimerIsDialogOpen");
     console.log(payload);
     set((state) => {
       state.utilities.sleepTimer.isDialogOpen = payload;
     });
   },
-  changeMinutesLeft: (payload) => {
-    console.log("utilities: changeMinutesLeft");
+  setMinutesLeft: (payload) => {
+    console.log("utilities: setMinutesLeft");
     console.log(payload);
     set((state) => {
       state.utilities.sleepTimer.minutesLeft = payload;
@@ -36,14 +38,22 @@ export const createUtilitiesSlice = (set) => ({
     console.log("utilities: toggleNotifications");
     console.log(payload);
     set((state) => {
-      state.utilities.notificationsEnabled = !state.utilities.notificationsEnabled;
+      state.utilities.prefs.notificationsEnabled = !state.utilities.prefs.notificationsEnabled;
     });
+    chrome.storage.local.set({ utilitiesPrefs: get().utilities.prefs });
   },
-  changeNotificationsEnabled: (payload) => {
-    console.log("utilities: changeNotificationsEnabled");
+  setNotificationsEnabled: (payload) => {
+    console.log("utilities: setNotificationsEnabled");
     console.log(payload);
     set((state) => {
-      state.utilities.notificationsEnabled = payload;
+      state.utilities.prefs.notificationsEnabled = payload;
+    });
+    chrome.storage.local.set({ utilitiesPrefs: get().utilities.prefs });
+  },
+  overwriteAllUtilitiesPrefs: (payload) => {
+    console.log("extensionSlice: overwriteAllUtilitiesPrefs");
+    set((state) => {
+      state.utilities.prefs = payload;
     });
   },
 });
