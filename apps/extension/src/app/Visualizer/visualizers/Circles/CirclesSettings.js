@@ -1,32 +1,15 @@
 import { useStore } from "/src/app/store";
-
-import { css } from "@emotion/react";
 import VariantButton from "../../components/VariantButton";
 
 function CirclesSettings() {
-  const visualizerPrefs = useStore((state) => state.visualizer.prefs);
   const circlesVisualizer = useStore((state) =>
     state.visualizer.visualizers.find((visualizer) => visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da")
   );
-  const circlesPrefs = useStore((state) =>
-    state.visualizer.prefs.find((visualizer) => visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da")
-  );
-  const changeVisualizerPrefs = useStore((state) => state.visualizer.changeVisualizerPrefs);
+  const circlesPrefs = useStore((state) => state.visualizer.prefs["685d0ec7-5c52-4e48-a43d-11184a39f3da"]);
+  const setSingleVisualizerPrefs = useStore((state) => state.visualizer.setSingleVisualizerPrefs);
 
   const handleVisualizersChange = (visualizerObject) => {
-    console.log(visualizerObject);
-    let visualizerPrefsCopy = [...visualizerPrefs];
-    let newCopy = visualizerPrefsCopy.map((visualizer) => {
-      if (visualizer.id === visualizerObject.id) {
-        return visualizerObject;
-      } else {
-        return visualizer;
-      }
-    });
-    changeVisualizerPrefs(newCopy);
-    chrome.storage.local.set({ visualizerPrefs: newCopy }, () =>
-      console.log("chrome.storage.local.set({visualizerPrefs}")
-    );
+    setSingleVisualizerPrefs("685d0ec7-5c52-4e48-a43d-11184a39f3da", visualizerObject);
   };
 
   const handleVariantClick = (e, id) => {

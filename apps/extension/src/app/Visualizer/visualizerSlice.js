@@ -1,5 +1,4 @@
-export const createVisualizerSlice = (set) => ({
-  activeVisualizer: "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d",
+export const createVisualizerSlice = (set, get) => ({
   isVisualizerOn: false,
   visualizers: [
     {
@@ -83,42 +82,41 @@ export const createVisualizerSlice = (set) => ({
       name: "RetroBars",
     },
   ],
-  prefs: [
-    {
-      id: "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d",
+  prefs: {
+    activeVisualizer: "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d",
+    "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d": {
       lineWidth: 8,
     },
-    {
-      id: "51dc50c8-eb06-4086-ad9c-a89758f63db6",
+    "51dc50c8-eb06-4086-ad9c-a89758f63db6": {
       activeVariant: "12bfd49e-47a2-4cc8-90a9-3e669f7a0c78",
       barWidth: 30,
       gap: 8,
     },
-    {
-      id: "685d0ec7-5c52-4e48-a43d-11184a39f3da",
+    "685d0ec7-5c52-4e48-a43d-11184a39f3da": {
       activeVariant: "b82df5dd-c7f4-4cc1-ad23-9e2b70ca491b",
     },
-    {
-      id: "8315ac5f-0de5-4ef1-ac5d-a4bc6d7b21ae",
+    "8315ac5f-0de5-4ef1-ac5d-a4bc6d7b21ae": {
       activeVariant: 1,
     },
-  ],
-  changeActiveVisualizer: (payload) => {
-    console.log("visualizerSlice: changeActiveVisualizer");
+  },
+  setActiveVisualizer: (payload) => {
+    console.log("visualizerSlice: setActiveVisualizer");
     console.log(payload);
     set((state) => {
-      state.visualizer.activeVisualizer = payload;
+      state.visualizer.prefs.activeVisualizer = payload;
     });
+    chrome.storage.local.set({ visualizerPrefs: get().visualizer.prefs });
   },
-  changeVisualizers: (payload) => {
-    console.log("visualizerSlice: changeVisualizers");
-    console.log(payload);
+  setSingleVisualizerPrefs: (visualizerId, newVisualizerPrefObject) => {
+    console.log("visualizerSlice: setSingleVisualizerPrefs");
+    console.log(newVisualizerPrefObject);
     set((state) => {
-      state.visualizer.visualizers = payload;
+      state.visualizer.prefs[visualizerId] = newVisualizerPrefObject;
     });
+    chrome.storage.local.set({ visualizerPrefs: get().visualizer.prefs });
   },
-  changeVisualizerPrefs: (payload) => {
-    console.log("visualizerSlice: changeVisualizerPrefs");
+  overwriteAllVisualizerPrefs: (payload) => {
+    console.log("visualizerSlice: overwriteAllVisualizerPrefs");
     console.log(payload);
     set((state) => {
       state.visualizer.prefs = payload;

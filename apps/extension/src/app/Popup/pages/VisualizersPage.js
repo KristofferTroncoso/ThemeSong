@@ -1,25 +1,22 @@
 import { css } from "@emotion/react";
 import VisualizerButton from "../../Visualizer/components/VisualizerButton";
-import WavySettings from "../../Visualizer/visualizers/wavy/WavySettings";
-import BarsSettings from "../../Visualizer/visualizers/bars/BarsSettings";
-import CirclesSettings from "../../Visualizer/visualizers/circles/CirclesSettings";
+import WavySettings from "../../Visualizer/visualizers/Wavy/WavySettings";
+import BarsSettings from "../../Visualizer/visualizers/Bars/BarsSettings";
+import CirclesSettings from "../../Visualizer/visualizers/Circles/CirclesSettings";
 import ExperimentalSettings from "../../Visualizer/visualizers/Experimental/ExperimentalSettings";
 
 import { useStore } from "/src/app/store";
 
 function VisualizersPage() {
-  const activeVisualizer = useStore((state) => state.visualizer.activeVisualizer);
+  const activeVisualizer = useStore((state) => state.visualizer.prefs.activeVisualizer);
   const visualizers = useStore((state) => state.visualizer.visualizers);
-  const changeActiveVisualizer = useStore((state) => state.visualizer.changeActiveVisualizer);
+  const setActiveVisualizer = useStore((state) => state.visualizer.setActiveVisualizer);
   const activeVisualizerDetails = useStore((state) =>
     state.visualizer.visualizers.find((visualizer) => visualizer.id === activeVisualizer)
   );
 
   const handleVisualizerClick = (e, id) => {
-    changeActiveVisualizer(id);
-    chrome.storage.local.set({ activeVisualizer: id }, () =>
-      console.log("chrome.storage.local.set({activeVisualizer}")
-    );
+    setActiveVisualizer(id);
   };
 
   let activeVisualizerSettings = () => {

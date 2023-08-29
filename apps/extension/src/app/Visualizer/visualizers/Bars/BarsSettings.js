@@ -26,26 +26,11 @@ function BarsSettings() {
   const barsVisualizer = useStore((state) =>
     state.visualizer.visualizers.find((visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6")
   );
-  const barsPrefs = useStore((state) =>
-    state.visualizer.prefs.find((visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6")
-  );
-  const visualizerPrefs = useStore((state) => state.visualizer.prefs);
-  const changeVisualizerPrefs = useStore((state) => state.visualizer.changeVisualizerPrefs);
+  const barsPrefs = useStore((state) => state.visualizer.prefs["51dc50c8-eb06-4086-ad9c-a89758f63db6"]);
+  const setSingleVisualizerPrefs = useStore((state) => state.visualizer.setSingleVisualizerPrefs);
 
   const handleVisualizersChange = (visualizerObject) => {
-    console.log(visualizerObject);
-    let visualizerPrefsCopy = [...visualizerPrefs];
-    let newCopy = visualizerPrefsCopy.map((visualizer) => {
-      if (visualizer.id === visualizerObject.id) {
-        return visualizerObject;
-      } else {
-        return visualizer;
-      }
-    });
-    changeVisualizerPrefs(newCopy);
-    chrome.storage.local.set({ visualizerPrefs: newCopy }, () =>
-      console.log("chrome.storage.local.set({visualizerPrefs}")
-    );
+    setSingleVisualizerPrefs("51dc50c8-eb06-4086-ad9c-a89758f63db6", visualizerObject);
   };
 
   const handleVariantClick = (e, id) => {

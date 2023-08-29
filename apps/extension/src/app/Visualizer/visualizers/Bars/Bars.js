@@ -8,9 +8,7 @@ import DancingPalette from "./variants/DancingPalette";
 
 function Bars({ analyser }) {
   const barsActiveVariant = useStore(
-    (state) =>
-      state.visualizer.prefs.find((visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6")
-        .activeVariant
+    (state) => state.visualizer.prefs["51dc50c8-eb06-4086-ad9c-a89758f63db6"].activeVariant
   );
   const bufferLength = 1024;
   const dataArray = new Uint8Array(analyser.frequencyBinCount);

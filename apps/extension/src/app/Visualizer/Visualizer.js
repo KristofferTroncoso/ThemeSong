@@ -18,7 +18,7 @@ let analyser;
 
 function Visualizer() {
   const isVisualizerOn = useStore((state) => state.visualizer.isVisualizerOn);
-  const activeVisualizer = useStore((state) => state.visualizer.activeVisualizer);
+  const activeVisualizer = useStore((state) => state.visualizer.prefs.activeVisualizer);
   const toggleIsVisualizerOn = useStore((state) => state.visualizer.toggleIsVisualizerOn);
   const [isConnected, setIsConnected] = useState(false);
 

@@ -37,21 +37,18 @@ function VisualizerVariantButton({ color, bgColor, hoverColor, hoverBgColor, chi
 
 function VisualizerPanel() {
   const isVisualizerOn = useStore((state) => state.visualizer.isVisualizerOn);
-  const activeVisualizer = useStore((state) => state.visualizer.activeVisualizer);
+  const activeVisualizer = useStore((state) => state.visualizer.prefs.activeVisualizer);
   const toggleIsVisualizerOn = useStore((state) => state.visualizer.toggleIsVisualizerOn);
-  const changeActiveVisualizer = useStore((state) => state.visualizer.changeActiveVisualizer);
+  const setActiveVisualizer = useStore((state) => state.visualizer.setActiveVisualizer);
   const visualizers = useStore((state) => state.visualizer.visualizers);
   const visualizerPrefs = useStore((state) => state.visualizer.prefs);
-  const changeVisualizerPrefs = useStore((state) => state.visualizer.changeVisualizerPrefs);
+  const setSingleVisualizerPrefs = useStore((state) => state.visualizer.setSingleVisualizerPrefs);
 
   const handleVisualizerButtonClick = (id) => {
     if (activeVisualizer === id) {
       toggleIsVisualizerOn();
     } else {
-      changeActiveVisualizer(id);
-      chrome.storage.local.set({ activeVisualizer: id }, () =>
-        console.log("chrome.storage.local.set({activeVisualizer}")
-      );
+      setActiveVisualizer(id);
       if (!isVisualizerOn) {
         toggleIsVisualizerOn();
       }
@@ -125,38 +122,21 @@ function VisualizerPanel() {
                     .variants.map((variant, index) => (
                       <VisualizerVariantButton
                         key={variant.id}
-                        disabled={
-                          variant.id ===
-                          visualizerPrefs.find((visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6")
-                            .activeVariant
-                        }
+                        disabled={variant.id === visualizerPrefs["51dc50c8-eb06-4086-ad9c-a89758f63db6"].activeVariant}
                         onClick={(e) => {
                           let visualizerObject = {
-                            ...visualizerPrefs.find(
-                              (visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6"
-                            ),
+                            ...visualizerPrefs["51dc50c8-eb06-4086-ad9c-a89758f63db6"],
                             activeVariant: variant.id,
                           };
-                          let visualizerPrefsCopy = [...visualizerPrefs];
-                          let newCopy = visualizerPrefsCopy.map((visualizer) => {
-                            if (visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6") {
-                              return visualizerObject;
-                            } else {
-                              return visualizer;
-                            }
-                          });
-                          changeVisualizerPrefs(newCopy);
-                          chrome.storage.local.set({ visualizerPrefs: newCopy }, () =>
-                            console.log("chrome.storage.local.set({visualizerPrefs}")
-                          );
+                          setSingleVisualizerPrefs("51dc50c8-eb06-4086-ad9c-a89758f63db6", visualizerObject);
                         }}
                         bgColor={
-                          visualizerPrefs.find((visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6")
-                            .activeVariant === variant.id && "rgb(255 255 255 / 0.8)"
+                          visualizerPrefs["51dc50c8-eb06-4086-ad9c-a89758f63db6"].activeVariant === variant.id &&
+                          "rgb(255 255 255 / 0.8)"
                         }
                         color={
-                          visualizerPrefs.find((visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6")
-                            .activeVariant === variant.id && "#fc0303"
+                          visualizerPrefs["51dc50c8-eb06-4086-ad9c-a89758f63db6"].activeVariant === variant.id &&
+                          "#fc0303"
                         }
                         hoverColor="#fc0303"
                       >
@@ -176,38 +156,21 @@ function VisualizerPanel() {
                     .variants.map((variant, index) => (
                       <VisualizerVariantButton
                         key={variant.id}
-                        disabled={
-                          variant.id ===
-                          visualizerPrefs.find((visualizer) => visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da")
-                            .activeVariant
-                        }
+                        disabled={variant.id === visualizerPrefs["685d0ec7-5c52-4e48-a43d-11184a39f3da"].activeVariant}
                         onClick={(e) => {
                           let visualizerObject = {
-                            ...visualizerPrefs.find(
-                              (visualizer) => visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da"
-                            ),
+                            ...visualizerPrefs["685d0ec7-5c52-4e48-a43d-11184a39f3da"],
                             activeVariant: variant.id,
                           };
-                          let visualizerPrefsCopy = [...visualizerPrefs];
-                          let newCopy = visualizerPrefsCopy.map((visualizer) => {
-                            if (visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da") {
-                              return visualizerObject;
-                            } else {
-                              return visualizer;
-                            }
-                          });
-                          changeVisualizerPrefs(newCopy);
-                          chrome.storage.local.set({ visualizerPrefs: newCopy }, () =>
-                            console.log("chrome.storage.local.set({visualizerPrefs}")
-                          );
+                          setSingleVisualizerPrefs("685d0ec7-5c52-4e48-a43d-11184a39f3da", visualizerObject);
                         }}
                         bgColor={
-                          visualizerPrefs.find((visualizer) => visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da")
-                            .activeVariant === variant.id && "rgb(255 255 255 / 0.8)"
+                          visualizerPrefs["685d0ec7-5c52-4e48-a43d-11184a39f3da"].activeVariant === variant.id &&
+                          "rgb(255 255 255 / 0.8)"
                         }
                         color={
-                          visualizerPrefs.find((visualizer) => visualizer.id === "685d0ec7-5c52-4e48-a43d-11184a39f3da")
-                            .activeVariant === variant.id && "#fc03e3"
+                          visualizerPrefs["685d0ec7-5c52-4e48-a43d-11184a39f3da"].activeVariant === variant.id &&
+                          "#fc03e3"
                         }
                         hoverColor="#fc03e3"
                       >

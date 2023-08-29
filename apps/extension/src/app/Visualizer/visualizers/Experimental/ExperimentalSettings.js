@@ -2,29 +2,14 @@ import { useStore } from "/src/app/store";
 import { css } from "@emotion/react";
 
 function ExperimentalSettings() {
-  const visualizerPrefs = useStore((state) => state.visualizer.prefs);
   const experimentalVisualizer = useStore((state) =>
     state.visualizer.visualizers.find((visualizer) => visualizer.id === "8315ac5f-0de5-4ef1-ac5d-a4bc6d7b21ae")
   );
-  const experimentalPrefs = useStore((state) =>
-    state.visualizer.prefs.find((visualizer) => visualizer.id === "8315ac5f-0de5-4ef1-ac5d-a4bc6d7b21ae")
-  );
-  const changeVisualizerPrefs = useStore((state) => state.visualizer.changeVisualizerPrefs);
+  const experimentalPrefs = useStore((state) => state.visualizer.prefs["8315ac5f-0de5-4ef1-ac5d-a4bc6d7b21ae"]);
+  const setSingleVisualizerPrefs = useStore((state) => state.visualizer.setSingleVisualizerPrefs);
 
   const handleVisualizersChange = (visualizerObject) => {
-    console.log(visualizerObject);
-    let visualizerPrefsCopy = [...visualizerPrefs];
-    let newCopy = visualizerPrefsCopy.map((visualizer) => {
-      if (visualizer.id === visualizerObject.id) {
-        return visualizerObject;
-      } else {
-        return visualizer;
-      }
-    });
-    changeVisualizerPrefs(newCopy);
-    chrome.storage.local.set({ visualizerPrefs: newCopy }, () =>
-      console.log("chrome.storage.local.set({visualizerPrefs}")
-    );
+    setSingleVisualizerPrefs("8315ac5f-0de5-4ef1-ac5d-a4bc6d7b21ae", visualizerObject);
   };
 
   const handleVariantClick = (e, id) => {

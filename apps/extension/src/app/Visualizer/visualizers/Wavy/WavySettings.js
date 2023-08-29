@@ -21,23 +21,13 @@ const StyledSlider = styled(Slider)`
 `;
 
 function WavySettings() {
-  const wavyStorageObject = useStore((state) =>
-    state.visualizer.prefs.find((visualizer) => visualizer.id === "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d")
-  );
-  const changeVisualizerPrefs = useStore((state) => state.visualizer.changeVisualizerPrefs);
-  const visualizerPrefs = useStore((state) => state.visualizer.prefs);
+  const wavyStorageObject = useStore((state) => state.visualizer.prefs["6aa34dd4-6775-46c1-8dbb-7ac2931ff80d"]);
+  const setSingleVisualizerPrefs = useStore((state) => state.visualizer.setSingleVisualizerPrefs);
 
   const handleWavySettingsChange = (e, id) => {
     let copy = { ...wavyStorageObject };
     copy[e.target.name] = Number(e.target.value);
-    let newVisualizersArr = visualizerPrefs.map((visualizer) =>
-      visualizer.id === "6aa34dd4-6775-46c1-8dbb-7ac2931ff80d" ? copy : visualizer
-    );
-    console.log(newVisualizersArr);
-    changeVisualizerPrefs(newVisualizersArr);
-    chrome.storage.local.set({ visualizerPrefs: newVisualizersArr }, () =>
-      console.log("chrome.storage.local.set({visualizerPrefs}")
-    );
+    setSingleVisualizerPrefs("6aa34dd4-6775-46c1-8dbb-7ac2931ff80d", copy);
   };
 
   return (

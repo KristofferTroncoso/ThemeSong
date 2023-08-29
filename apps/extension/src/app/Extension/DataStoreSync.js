@@ -3,10 +3,8 @@ import { useStore } from "/src/app/store";
 
 /* This component keeps chrome.storage.local and the Zustand store in sync. */
 function DataStoreSync() {
-  const setActiveTheme = useStore((state) => state.theme.setActiveTheme);
-  const changeActiveVisualizer = useStore((state) => state.visualizer.changeActiveVisualizer);
   const overwriteAllThemePrefs = useStore((state) => state.theme.overwriteAllThemePrefs);
-  const changeVisualizerPrefs = useStore((state) => state.visualizer.changeVisualizerPrefs);
+  const overwriteAllVisualizerPrefs = useStore((state) => state.visualizer.overwriteAllVisualizerPrefs);
   const changeActivePopupTab = useStore((state) => state.popup.changeActivePopupTab);
   const changeShowUpdateNote = useStore((state) => state.extension.changeShowUpdateNote);
   const changeHideCaptions = useStore((state) => state.player.changeHideCaptions);
@@ -19,17 +17,11 @@ function DataStoreSync() {
     function handleKeyValueData(key, value) {
       console.log(key, value);
       switch (key) {
-        case "activeTheme":
-          setActiveTheme(value);
-          break;
-        case "activeVisualizer":
-          changeActiveVisualizer(value);
-          break;
         case "themePrefs":
           overwriteAllThemePrefs(value);
           break;
         case "visualizerPrefs":
-          changeVisualizerPrefs(value);
+          overwriteAllVisualizerPrefs(value);
           break;
         case "activePopupTab":
           changeActivePopupTab(value);

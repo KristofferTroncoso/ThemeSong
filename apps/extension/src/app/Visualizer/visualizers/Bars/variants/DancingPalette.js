@@ -3,9 +3,7 @@ import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
 
 function DancingPalette({ analyser, dataArray, bufferLength }) {
-  const barsPrefs = useStore((state) =>
-    state.visualizer.prefs.find((visualizer) => visualizer.id === "51dc50c8-eb06-4086-ad9c-a89758f63db6")
-  );
+  const barsPrefs = useStore((state) => state.visualizer.prefs["51dc50c8-eb06-4086-ad9c-a89758f63db6"]);
   const isSongPlaying = useStore((state) => state.player.isSongPlaying);
   const palette = useStore((state) => state.palette.palette);
 
