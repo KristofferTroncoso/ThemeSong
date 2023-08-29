@@ -3,12 +3,11 @@ import TabButton from "./TabButton";
 import { useStore } from "/src/app/store";
 
 function TabBar() {
-  const activePopupTab = useStore((state) => state.popup.activePopupTab);
-  const changeActivePopupTab = useStore((state) => state.popup.changeActivePopupTab);
+  const activePopupTab = useStore((state) => state.popup.prefs.activePopupTab);
+  const setActivePopupTab = useStore((state) => state.popup.setActivePopupTab);
 
   function handleClick(id) {
-    changeActivePopupTab(id);
-    chrome.storage.local.set({ activePopupTab: id });
+    setActivePopupTab(id);
   }
 
   return (

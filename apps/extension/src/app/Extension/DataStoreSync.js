@@ -5,7 +5,7 @@ import { useStore } from "/src/app/store";
 function DataStoreSync() {
   const overwriteAllThemePrefs = useStore((state) => state.theme.overwriteAllThemePrefs);
   const overwriteAllVisualizerPrefs = useStore((state) => state.visualizer.overwriteAllVisualizerPrefs);
-  const changeActivePopupTab = useStore((state) => state.popup.changeActivePopupTab);
+  const overwriteAllPopupPrefs = useStore((state) => state.popup.overwriteAllPopupPrefs);
   const changeShowUpdateNote = useStore((state) => state.extension.changeShowUpdateNote);
   const changeHideCaptions = useStore((state) => state.player.changeHideCaptions);
   const setPiecesPrefs = useStore((state) => state.pieces.setPiecesPrefs);
@@ -23,8 +23,8 @@ function DataStoreSync() {
         case "visualizerPrefs":
           overwriteAllVisualizerPrefs(value);
           break;
-        case "activePopupTab":
-          changeActivePopupTab(value);
+        case "popupPrefs":
+          overwriteAllPopupPrefs(value);
           break;
         case "showUpdateNote":
           changeShowUpdateNote(value);
