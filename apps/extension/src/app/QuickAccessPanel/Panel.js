@@ -8,7 +8,7 @@ import { useStore } from "/src/app/store";
 import SnoozeIcon from "@mui/icons-material/Snooze";
 
 function Panel() {
-  const showUpdateNote = useStore((state) => state.extension.showUpdateNote);
+  const showUpdateNote = useStore((state) => state.extension.prefs.showUpdateNote);
   const isActive = useStore((state) => state.utilities.sleepTimer.isActive);
   const minutesLeft = useStore((state) => state.utilities.sleepTimer.minutesLeft);
   const [anchorEl, setAnchorEl] = useState(null);

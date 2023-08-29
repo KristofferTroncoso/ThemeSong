@@ -6,7 +6,7 @@ function DataStoreSync() {
   const overwriteAllThemePrefs = useStore((state) => state.theme.overwriteAllThemePrefs);
   const overwriteAllVisualizerPrefs = useStore((state) => state.visualizer.overwriteAllVisualizerPrefs);
   const overwriteAllPopupPrefs = useStore((state) => state.popup.overwriteAllPopupPrefs);
-  const changeShowUpdateNote = useStore((state) => state.extension.changeShowUpdateNote);
+  const overwriteAllExtensionPrefs = useStore((state) => state.extension.overwriteAllExtensionPrefs);
   const changeHideCaptions = useStore((state) => state.player.changeHideCaptions);
   const setPiecesPrefs = useStore((state) => state.pieces.setPiecesPrefs);
   const changeNotificationsEnabled = useStore((state) => state.utilities.changeNotificationsEnabled);
@@ -26,8 +26,8 @@ function DataStoreSync() {
         case "popupPrefs":
           overwriteAllPopupPrefs(value);
           break;
-        case "showUpdateNote":
-          changeShowUpdateNote(value);
+        case "extensionPrefs":
+          overwriteAllExtensionPrefs(value);
           break;
         case "hideCaptions":
           changeHideCaptions(value);

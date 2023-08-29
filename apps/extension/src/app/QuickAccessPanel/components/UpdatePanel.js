@@ -5,7 +5,7 @@ import { useStore } from "/src/app/store";
 import StyledPanelDiv from "./StyledPanelDiv";
 
 function UpdatePanel() {
-  const changeShowUpdateNote = useStore((state) => state.extension.changeShowUpdateNote);
+  const setShowUpdateNote = useStore((state) => state.extension.setShowUpdateNote);
 
   return (
     <StyledPanelDiv
@@ -38,7 +38,7 @@ function UpdatePanel() {
         <br></br>
         <p>
           It's finally here! MIT OPEN-SOURCE. You're invited to contribute on{" "}
-          <a target="_blank" href="https://github.com/KristofferTroncoso/ThemeSong">
+          <a target="_blank" rel="noreferrer" href="https://github.com/KristofferTroncoso/ThemeSong">
             GitHub
           </a>
           !
@@ -77,10 +77,7 @@ function UpdatePanel() {
           }
         `}
         onClick={(e) => {
-          changeShowUpdateNote(false);
-          chrome.storage.local.set({ showUpdateNote: false }, () =>
-            console.log("chrome.storage.local.set({showUpdateNote}")
-          );
+          setShowUpdateNote(false);
         }}
       >
         OK

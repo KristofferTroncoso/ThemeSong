@@ -11,7 +11,9 @@ export function handleOnInstalled(details) {
     // on update (extension update, chrome update, or extension refresh)
     case "update":
       // whenever extension is updated, show update note
-      chrome.storage.local.set({ showUpdateNote: true });
+      chrome.storage.local.get("extensionPrefs", (res) => {
+        chrome.storage.local.set({ extensionPrefs: { ...res.extensionPrefs, showUpdateNote: true } });
+      });
 
       executeContentScriptOnYouTubeMusicTabs();
       break;

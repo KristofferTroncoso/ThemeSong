@@ -14,7 +14,7 @@ import TuneIcon from "@mui/icons-material/Tune";
 import { useStore } from "/src/app/store";
 
 function PanelPage() {
-  const showUpdateNote = useStore((state) => state.extension.showUpdateNote);
+  const showUpdateNote = useStore((state) => state.extension.prefs.showUpdateNote);
 
   return (
     <div
