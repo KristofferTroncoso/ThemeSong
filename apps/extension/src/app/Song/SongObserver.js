@@ -3,6 +3,7 @@ import { useStore } from "/src/app/store";
 
 function SongObserver() {
   const changeSong = useStore((state) => state.song.changeSong);
+
   useEffect(() => {
     let songObserver;
 
@@ -26,7 +27,7 @@ function SongObserver() {
     };
   }, []);
 
-  return <div id="SongObserver"></div>;
+  return null;
 }
 
 export default SongObserver;

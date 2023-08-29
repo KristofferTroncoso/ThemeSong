@@ -40,7 +40,7 @@ function PlayerUiStateObserver() {
     };
   }, [changePlayerUiState]);
 
-  return <div id="PlayerUiStateObserver"></div>;
+  return null;
 }
 
 export default PlayerUiStateObserver;

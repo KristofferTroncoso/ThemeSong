@@ -20,7 +20,7 @@ function SongInfoDisplayFeature() {
     root.render(<SongInfoDisplay />);
   }, []);
 
-  return <div id="SongInfoDisplayFeature"></div>;
+  return null;
 }
 
 export default SongInfoDisplayFeature;

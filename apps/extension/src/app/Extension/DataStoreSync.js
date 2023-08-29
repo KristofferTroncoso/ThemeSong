@@ -60,7 +60,7 @@ function DataStoreSync() {
     });
   });
 
-  return <div id="DataStoreSync"></div>;
+  return null;
 }
 
 export default DataStoreSync;
