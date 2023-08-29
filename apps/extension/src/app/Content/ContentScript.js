@@ -1,4 +1,4 @@
-import DataStoreSync from "../DataStoreSync";
+import DataStoreSync from "../Extension/DataStoreSync";
 import Theme from "../Theme/Theme";
 import SongObserver from "../Song/SongObserver";
 import PanelContainer from "../QuickAccessPanel";

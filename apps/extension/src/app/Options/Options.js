@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "@emotion/react";
-// import DataStoreSync from '../DataStoreSync';
+// import DataStoreSync from '../Extension/DataStoreSync';
 
 function StyledDiv({ children }) {
   return (
