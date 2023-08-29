@@ -9,14 +9,9 @@ import BrightnessSectionSlider from "../../../components/BrightnessSectionSlider
 import OpacityIcon from "@mui/icons-material/Opacity";
 
 function DynamicLightSettings() {
-  const dynamicPrefs = useStore((state) =>
-    state.theme.prefs.find((theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb")
-  );
-  const dynamicLightPrefs = useStore(
-    (state) => state.theme.prefs.find((theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb").light
-  );
-  const themePrefs = useStore((state) => state.theme.prefs);
-  const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
+  const dynamicPrefs = useStore((state) => state.theme.prefs["db8854e3-6753-4639-b244-c8091f3b9fcb"]);
+  const dynamicLightPrefs = dynamicPrefs.light;
+  const setSingleThemePrefs = useStore((state) => state.theme.setSingleThemePrefs);
 
   function handleChange(e) {
     let newLightPrefs = {
@@ -24,14 +19,7 @@ function DynamicLightSettings() {
       [e.target.name]: e.target.value,
     };
     let newDynamicUserPrefs = { ...dynamicPrefs, light: newLightPrefs };
-    let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.id === "db8854e3-6753-4639-b244-c8091f3b9fcb" ? newDynamicUserPrefs : themePrefs
-    );
-    console.log(newThemePrefsArr);
-    changeThemePrefs(newThemePrefsArr);
-    chrome.storage.local.set({ themePrefs: newThemePrefsArr }, () =>
-      console.log("chrome.storage.local.set({themePrefs}")
-    );
+    setSingleThemePrefs("db8854e3-6753-4639-b244-c8091f3b9fcb", newDynamicUserPrefs);
   }
 
   function handleLightChange(e) {
@@ -42,14 +30,7 @@ function DynamicLightSettings() {
       lightness: dynamicLightPrefsLightnessCopy,
     };
     let newDynamicUserPrefs = { ...dynamicPrefs, light: newLightPrefs };
-    let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.id === "db8854e3-6753-4639-b244-c8091f3b9fcb" ? newDynamicUserPrefs : themePrefs
-    );
-    console.log(newThemePrefsArr);
-    changeThemePrefs(newThemePrefsArr);
-    chrome.storage.local.set({ themePrefs: newThemePrefsArr }, () =>
-      console.log("chrome.storage.local.set({themePrefs}")
-    );
+    setSingleThemePrefs("db8854e3-6753-4639-b244-c8091f3b9fcb", newDynamicUserPrefs);
   }
 
   return (

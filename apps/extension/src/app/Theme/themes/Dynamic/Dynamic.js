@@ -4,9 +4,7 @@ import DynamicSystem from "./System/DynamicSystem";
 import { useStore } from "/src/app/store";
 
 function Dynamic() {
-  const appearance = useStore(
-    (state) => state.theme.prefs.find((theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb").appearance
-  );
+  const appearance = useStore((state) => state.theme.prefs["db8854e3-6753-4639-b244-c8091f3b9fcb"].appearance);
 
   function returnVariant() {
     switch (appearance) {

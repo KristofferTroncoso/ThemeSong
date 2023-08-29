@@ -8,11 +8,9 @@ import { CgDarkMode } from "react-icons/cg";
 import PanelButton from "../QuickAccessPanel/components/PanelButton";
 
 function DarkModePanel() {
-  const themePrefs = useStore((state) => state.theme.prefs);
-  const activeTheme = useStore((state) => state.theme.activeTheme);
-  // const activeThemeInfo = useStore(state => state.theme.themes.find(theme => theme.id === activeTheme));
-  const activeThemeUserPrefs = useStore((state) => state.theme.prefs.find((theme) => theme.id === activeTheme));
-  const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
+  const activeTheme = useStore((state) => state.theme.prefs.activeTheme);
+  const activeThemeUserPrefs = useStore((state) => state.theme.prefs[activeTheme]);
+  const setSingleThemePrefs = useStore((state) => state.theme.setSingleThemePrefs);
 
   function handleDarkLightChange(value) {
     if (activeThemeUserPrefs.appearance !== value) {
@@ -20,13 +18,7 @@ function DarkModePanel() {
         ...activeThemeUserPrefs,
         appearance: value,
       };
-      let newThemePrefsArr = themePrefs.map((themePrefs) =>
-        themePrefs.id === activeTheme ? newActiveThemeUserPrefs : themePrefs
-      );
-      changeThemePrefs(newThemePrefsArr);
-      chrome.storage.local.set({ themePrefs: newThemePrefsArr }, () =>
-        console.log("chrome.storage.local.set({themePrefs}")
-      );
+      setSingleThemePrefs(activeTheme, newActiveThemeUserPrefs);
     } else {
       // i cant just disable="true" the button in the element because the MUI Tooltip requires it to never be disabled
       // i used to have it with this which worked well: disabled={activeThemeUserPrefs.appearance ===  "dark"}

@@ -11,12 +11,12 @@ import { useStore } from "/src/app/store";
 
 function ThemePanel() {
   const themes = useStore((state) => state.theme.themes);
-  const activeTheme = useStore((state) => state.theme.activeTheme);
-  const changeActiveTheme = useStore((state) => state.theme.changeActiveTheme);
+  const activeTheme = useStore((state) => state.theme.prefs.activeTheme);
+  const setActiveTheme = useStore((state) => state.theme.setActiveTheme);
 
   const handleClick = (value) => {
     if (activeTheme !== value) {
-      changeActiveTheme(value);
+      setActiveTheme(value);
       chrome.storage.local.set({ activeTheme: value }, () => console.log("chrome.storage.local.set({activeTheme}"));
     } else {
       console.log("Already active");

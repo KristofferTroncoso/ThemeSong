@@ -15,9 +15,7 @@ import { rulers_borders } from "../../../css/core/rulers_borders";
 
 function DynamicLight() {
   const dominantColorHSL = useStore((state) => state.palette.dominant).hsl;
-  const dynamicLightPrefs = useStore(
-    (state) => state.theme.prefs.find((theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb").light
-  );
+  const dynamicLightPrefs = useStore((state) => state.theme.prefs["db8854e3-6753-4639-b244-c8091f3b9fcb"].light);
   const lightness = dynamicLightPrefs.lightness;
 
   let hue = (dominantColorHSL[0] * 360).toFixed();

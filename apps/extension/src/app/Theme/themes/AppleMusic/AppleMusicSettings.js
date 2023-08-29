@@ -2,24 +2,11 @@ import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
 
 function AppleMusicSettings() {
-  const themePrefs = useStore((state) => state.theme.prefs);
-  const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
-  const appleMusicPrefs = useStore((state) =>
-    state.theme.prefs.find((theme) => theme.id === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f")
-  );
+  const appleMusicPrefs = useStore((state) => state.theme.prefs["76dd54c5-78a2-4ca3-9c16-3d0d1aab367f"]);
+  const setSingleThemePrefs = useStore((state) => state.theme.setSingleThemePrefs);
 
   function handleDarkLightChange(e) {
-    let newAppleMusicUserPrefs = {
-      id: "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f",
-      appearance: e.target.value,
-    };
-    let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.id === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f" ? newAppleMusicUserPrefs : themePrefs
-    );
-    changeThemePrefs(newThemePrefsArr);
-    chrome.storage.local.set({ themePrefs: newThemePrefsArr }, () =>
-      console.log("chrome.storage.local.set({themePrefs}")
-    );
+    setSingleThemePrefs("76dd54c5-78a2-4ca3-9c16-3d0d1aab367f", { appearance: e.target.value });
   }
 
   return (

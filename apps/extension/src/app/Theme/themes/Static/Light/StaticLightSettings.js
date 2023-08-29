@@ -11,9 +11,9 @@ import BrightnessSectionSlider from "../../../components/BrightnessSectionSlider
 
 function StaticLightSettings() {
   const themePrefs = useStore((state) => state.theme.prefs);
-  const staticPrefs = themePrefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8");
+  const staticPrefs = themePrefs["b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"];
   const staticLightPrefs = staticPrefs.light;
-  const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
+  const setSingleThemePrefs = useStore((state) => state.theme.setSingleThemePrefs);
 
   const [color, setColor] = useState({ h: staticLightPrefs.hue, s: 80, l: 50 });
 
@@ -23,14 +23,7 @@ function StaticLightSettings() {
       [e.target.name]: e.target.value,
     };
     let newStaticUserPrefs = { ...staticPrefs, light: newLightPrefs };
-    let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" ? newStaticUserPrefs : themePrefs
-    );
-    console.log(newThemePrefsArr);
-    changeThemePrefs(newThemePrefsArr);
-    chrome.storage.local.set({ themePrefs: newThemePrefsArr }, () =>
-      console.log("chrome.storage.local.set({themePrefs}")
-    );
+    setSingleThemePrefs("b458eaae-0cbd-4a44-8847-c7a6a6ea1be8", newStaticUserPrefs);
   }
 
   function handleLightChange(e) {
@@ -41,14 +34,7 @@ function StaticLightSettings() {
       lightness: staticLightPrefsLightnessCopy,
     };
     let newStaticUserPrefs = { ...staticPrefs, light: newLightPrefs };
-    let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" ? newStaticUserPrefs : themePrefs
-    );
-    console.log(newThemePrefsArr);
-    changeThemePrefs(newThemePrefsArr);
-    chrome.storage.local.set({ themePrefs: newThemePrefsArr }, () =>
-      console.log("chrome.storage.local.set({themePrefs}")
-    );
+    setSingleThemePrefs("b458eaae-0cbd-4a44-8847-c7a6a6ea1be8", newStaticUserPrefs);
   }
 
   function handleColorOnChange(hslObj) {
@@ -56,12 +42,7 @@ function StaticLightSettings() {
 
     let light = { ...staticLightPrefs, hue };
     let staticUserPrefs = { ...staticPrefs, light };
-    let newThemePrefs = themePrefs.map((themePrefs) =>
-      themePrefs.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" ? staticUserPrefs : themePrefs
-    );
-
-    changeThemePrefs(newThemePrefs);
-    chrome.storage.local.set({ themePrefs: newThemePrefs }, () => console.log("chrome.storage.local.set({themePrefs}"));
+    setSingleThemePrefs("b458eaae-0cbd-4a44-8847-c7a6a6ea1be8", staticUserPrefs);
 
     setColor(hslObj);
   }

@@ -10,26 +10,14 @@ import Body from "../../../icons/Body";
 import BrightnessSectionSlider from "../../../components/BrightnessSectionSlider";
 
 function StaticDarkSettings() {
-  const staticPrefs = useStore((state) =>
-    state.theme.prefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8")
-  );
-  const staticDarkPrefs = useStore(
-    (state) => state.theme.prefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8").dark
-  );
-  const themePrefs = useStore((state) => state.theme.prefs);
-  const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
+  const staticPrefs = useStore((state) => state.theme.prefs["b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"]);
+  const staticDarkPrefs = staticPrefs.dark;
+  const setSingleThemePrefs = useStore((state) => state.theme.setSingleThemePrefs);
 
   function handleChange(e) {
     let dark = { ...staticDarkPrefs, [e.target.name]: e.target.value };
     let staticUserPrefs = { ...staticPrefs, dark: dark };
-    let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" ? staticUserPrefs : themePrefs
-    );
-    console.log(newThemePrefsArr);
-    changeThemePrefs(newThemePrefsArr);
-    chrome.storage.local.set({ themePrefs: newThemePrefsArr }, () =>
-      console.log("chrome.storage.local.set({themePrefs}")
-    );
+    setSingleThemePrefs("b458eaae-0cbd-4a44-8847-c7a6a6ea1be8", staticUserPrefs);
   }
 
   const [color, setColor] = useState({ h: staticDarkPrefs.hue, s: 80, l: 50 });
@@ -39,12 +27,7 @@ function StaticDarkSettings() {
 
     let dark = { ...staticDarkPrefs, hue };
     let staticUserPrefs = { ...staticPrefs, dark };
-    let newThemesArr = themePrefs.map((themePrefs) =>
-      themePrefs.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" ? staticUserPrefs : themePrefs
-    );
-    console.log(newThemesArr);
-    changeThemePrefs(newThemesArr);
-    chrome.storage.local.set({ themePrefs: newThemesArr }, () => console.log("chrome.storage.local.set({themePrefs}"));
+    setSingleThemePrefs("b458eaae-0cbd-4a44-8847-c7a6a6ea1be8", staticUserPrefs);
 
     setColor(hslObj);
   }
@@ -57,14 +40,7 @@ function StaticDarkSettings() {
       lightness: staticDarkPrefsLightnessCopy,
     };
     let newStaticUserPrefs = { ...staticPrefs, dark: newDarkPrefs };
-    let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" ? newStaticUserPrefs : themePrefs
-    );
-    console.log(newThemePrefsArr);
-    changeThemePrefs(newThemePrefsArr);
-    chrome.storage.local.set({ themePrefs: newThemePrefsArr }, () =>
-      console.log("chrome.storage.local.set({themePrefs}")
-    );
+    setSingleThemePrefs("b458eaae-0cbd-4a44-8847-c7a6a6ea1be8", newStaticUserPrefs);
   }
 
   return (

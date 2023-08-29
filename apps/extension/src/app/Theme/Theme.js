@@ -16,7 +16,7 @@ function Theme() {
     };
   }, []);
 
-  const activeTheme = useStore((state) => state.theme.activeTheme);
+  const activeTheme = useStore((state) => state.theme.prefs.activeTheme);
 
   function returnTheme() {
     switch (activeTheme) {

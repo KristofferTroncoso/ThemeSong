@@ -12,9 +12,7 @@ import { Global, css } from "@emotion/react";
 
 function DynamicDark() {
   const dominantColorHSL = useStore((state) => state.palette.dominant).hsl;
-  const dynamicDarkPrefs = useStore(
-    (state) => state.theme.prefs.find((theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb").dark
-  );
+  const dynamicDarkPrefs = useStore((state) => state.theme.prefs["db8854e3-6753-4639-b244-c8091f3b9fcb"].dark);
   const lightness = dynamicDarkPrefs.lightness;
 
   let hue = (dominantColorHSL[0] * 360).toFixed();

@@ -1,5 +1,4 @@
-export const createThemeSlice = (set) => ({
-  activeTheme: "db8854e3-6753-4639-b244-c8091f3b9fcb",
+export const createThemeSlice = (set, get) => ({
   themes: [
     {
       id: "416034f2-bfb8-46e8-9929-5805dd59a688",
@@ -27,9 +26,9 @@ export const createThemeSlice = (set) => ({
       name: "YouTube Music Mobile",
     },
   ],
-  prefs: [
-    {
-      id: "db8854e3-6753-4639-b244-c8091f3b9fcb",
+  prefs: {
+    activeTheme: "db8854e3-6753-4639-b244-c8091f3b9fcb",
+    "db8854e3-6753-4639-b244-c8091f3b9fcb": {
       appearance: "dark",
       dark: {
         saturation: 0.7,
@@ -40,8 +39,7 @@ export const createThemeSlice = (set) => ({
         lightness: [80, 70, 75, 90],
       },
     },
-    {
-      id: "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8",
+    "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8": {
       appearance: "light",
       dark: {
         hue: 216,
@@ -54,20 +52,28 @@ export const createThemeSlice = (set) => ({
         lightness: [85, 80, 85, 95],
       },
     },
-    {
-      id: "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f",
+    "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f": {
       appearance: "system",
     },
-  ],
-  changeActiveTheme: (payload) => {
-    console.log("themeSlice: changeActiveTheme");
+  },
+  setActiveTheme: (payload) => {
+    console.log("themeSlice: setActiveTheme");
     console.log(payload);
     set((state) => {
-      state.theme.activeTheme = payload;
+      state.theme.prefs.activeTheme = payload;
     });
+    chrome.storage.local.set({ themePrefs: get().theme.prefs });
   },
-  changeThemePrefs: (payload) => {
-    console.log("themeSlice: changeThemePrefs");
+  setSingleThemePrefs: (themeId, newThemePrefObject) => {
+    console.log("themeSlice: setSingleThemePrefs");
+    console.log(newThemePrefObject);
+    set((state) => {
+      state.theme.prefs[themeId] = newThemePrefObject;
+    });
+    chrome.storage.local.set({ themePrefs: get().theme.prefs });
+  },
+  overwriteAllThemePrefs: (payload) => {
+    console.log("themeSlice: overwriteAllThemePrefs");
     console.log(payload);
     set((state) => {
       state.theme.prefs = payload;

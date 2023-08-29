@@ -4,24 +4,15 @@ import DynamicLightSettings from "./Light/DynamicLightSettings";
 import { useStore } from "/src/app/store";
 
 function DynamicSettings() {
-  const themePrefs = useStore((state) => state.theme.prefs);
-  const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
-  const dynamicUserPrefs = useStore((state) =>
-    state.theme.prefs.find((theme) => theme.id === "db8854e3-6753-4639-b244-c8091f3b9fcb")
-  );
+  const setSingleThemePrefs = useStore((state) => state.theme.setSingleThemePrefs);
+  const dynamicUserPrefs = useStore((state) => state.theme.prefs["db8854e3-6753-4639-b244-c8091f3b9fcb"]);
 
   function handleDarkLightChange(e) {
     let newDynamicUserPrefs = {
       ...dynamicUserPrefs,
       [e.target.name]: e.target.value,
     };
-    let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.id === "db8854e3-6753-4639-b244-c8091f3b9fcb" ? newDynamicUserPrefs : themePrefs
-    );
-    changeThemePrefs(newThemePrefsArr);
-    chrome.storage.local.set({ themePrefs: newThemePrefsArr }, () =>
-      console.log("chrome.storage.local.set({themePrefs}")
-    );
+    setSingleThemePrefs("db8854e3-6753-4639-b244-c8091f3b9fcb", newDynamicUserPrefs);
   }
 
   function returnSettingSliders() {

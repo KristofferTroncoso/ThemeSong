@@ -9,7 +9,7 @@ import ThemeButton from "../components/ThemeButton";
 
 function ThemesPage() {
   const themes = useStore((state) => state.theme.themes);
-  const activeTheme = useStore((state) => state.theme.activeTheme);
+  const activeTheme = useStore((state) => state.theme.prefs.activeTheme);
   const activeThemeDetails = useStore((state) => state.theme.themes.find((theme) => theme.id === activeTheme));
 
   let activeThemeSettings = () => {

@@ -4,24 +4,15 @@ import StaticLightSettings from "./Light/StaticLightSettings";
 import { useStore } from "/src/app/store";
 
 export function StaticSettings() {
-  const themePrefs = useStore((state) => state.theme.prefs);
-  const staticUserPrefs = useStore((state) =>
-    state.theme.prefs.find((theme) => theme.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8")
-  );
-  const changeThemePrefs = useStore((state) => state.theme.changeThemePrefs);
+  const staticUserPrefs = useStore((state) => state.theme.prefs["b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"]);
+  const setSingleThemePrefs = useStore((state) => state.theme.setSingleThemePrefs);
 
   function handleDarkLightChange(e) {
     let newStaticUserPrefs = {
       ...staticUserPrefs,
       [e.target.name]: e.target.value,
     };
-    let newThemePrefsArr = themePrefs.map((themePrefs) =>
-      themePrefs.id === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" ? newStaticUserPrefs : themePrefs
-    );
-    changeThemePrefs(newThemePrefsArr);
-    chrome.storage.local.set({ themePrefs: newThemePrefsArr }, () =>
-      console.log("chrome.storage.local.set({themePrefs}")
-    );
+    setSingleThemePrefs("b458eaae-0cbd-4a44-8847-c7a6a6ea1be8", newStaticUserPrefs);
   }
 
   function returnSettingSliders() {

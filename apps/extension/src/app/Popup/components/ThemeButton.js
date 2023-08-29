@@ -2,8 +2,10 @@ import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
 
 function ThemeButton({ theme }) {
-  const activeTheme = useStore((state) => state.theme.activeTheme);
-  const changeActiveTheme = useStore((state) => state.theme.changeActiveTheme);
+  const [activeTheme, setActiveTheme] = useStore((state) => [
+    state.theme.prefs.activeTheme,
+    state.theme.setActiveTheme,
+  ]);
 
   return (
     <button
@@ -22,7 +24,7 @@ function ThemeButton({ theme }) {
       `}
       disabled={activeTheme === theme.id}
       onClick={(e) => {
-        changeActiveTheme(theme.id);
+        setActiveTheme(theme.id);
         chrome.storage.local.set({ activeTheme: theme.id }, () =>
           console.log("chrome.storage.local.set({activeTheme}")
         );

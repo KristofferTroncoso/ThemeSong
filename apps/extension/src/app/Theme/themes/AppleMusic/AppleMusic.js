@@ -16,12 +16,10 @@ import { texts_selection } from "../../css/extra/texts_selection";
 import { thumbnail_border } from "../../css/extra/thumbnail_border";
 
 function AppleMusic() {
-  const appearance = useStore(
-    (state) => state.theme.prefs.find((theme) => theme.id === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f").appearance
-  );
+  const appleMusicPrefs = useStore((state) => state.theme.prefs["76dd54c5-78a2-4ca3-9c16-3d0d1aab367f"]);
 
   function returnVariant() {
-    switch (appearance) {
+    switch (appleMusicPrefs.appearance) {
       case "dark":
         return <AppleMusicDark />;
       case "light":
