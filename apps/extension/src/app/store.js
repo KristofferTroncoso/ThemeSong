@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 
-import { createPopupSlice } from "./popup/popupSlice";
+import { createPopupSlice } from "./Popup/popupSlice";
 import { createSongSlice } from "./Song/songSlice";
 import { createPlayerSlice } from "./Player/playerSlice";
 import { createPaletteSlice } from "./Palette/paletteSlice";
