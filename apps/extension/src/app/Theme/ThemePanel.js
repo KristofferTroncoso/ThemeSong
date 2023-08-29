@@ -17,7 +17,6 @@ function ThemePanel() {
   const handleClick = (value) => {
     if (activeTheme !== value) {
       setActiveTheme(value);
-      chrome.storage.local.set({ activeTheme: value }, () => console.log("chrome.storage.local.set({activeTheme}"));
     } else {
       console.log("Already active");
     }

@@ -25,9 +25,6 @@ function ThemeButton({ theme }) {
       disabled={activeTheme === theme.id}
       onClick={(e) => {
         setActiveTheme(theme.id);
-        chrome.storage.local.set({ activeTheme: theme.id }, () =>
-          console.log("chrome.storage.local.set({activeTheme}")
-        );
       }}
     >
       <h4>{theme.name}</h4>
