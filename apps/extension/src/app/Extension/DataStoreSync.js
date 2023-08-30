@@ -3,12 +3,12 @@ import { useStore } from "/src/app/store";
 
 /* This component keeps chrome.storage.local and the Zustand store in sync. */
 function DataStoreSync() {
-  const overwriteAllThemePrefs = useStore((state) => state.theme.overwriteAllThemePrefs);
-  const overwriteAllVisualizerPrefs = useStore((state) => state.visualizer.overwriteAllVisualizerPrefs);
-  const overwriteAllPopupPrefs = useStore((state) => state.popup.overwriteAllPopupPrefs);
-  const overwriteAllExtensionPrefs = useStore((state) => state.extension.overwriteAllExtensionPrefs);
-  const overwriteAllPiecesPrefs = useStore((state) => state.pieces.overwriteAllPiecesPrefs);
-  const overwriteAllUtilitiesPrefs = useStore((state) => state.utilities.overwriteAllUtilitiesPrefs);
+  const mergeThemePrefs = useStore((state) => state.theme.mergeThemePrefs);
+  const mergeVisualizerPrefs = useStore((state) => state.visualizer.mergeVisualizerPrefs);
+  const mergePopupPrefs = useStore((state) => state.popup.mergePopupPrefs);
+  const mergeExtensionPrefs = useStore((state) => state.extension.mergeExtensionPrefs);
+  const mergePiecesPrefs = useStore((state) => state.pieces.mergePiecesPrefs);
+  const mergeUtilitiesPrefs = useStore((state) => state.utilities.mergeUtilitiesPrefs);
 
   useEffect(() => {
     console.log("DataStoreSync");
@@ -17,22 +17,22 @@ function DataStoreSync() {
       console.log(key, value);
       switch (key) {
         case "themePrefs":
-          overwriteAllThemePrefs(value);
+          mergeThemePrefs(value);
           break;
         case "visualizerPrefs":
-          overwriteAllVisualizerPrefs(value);
+          mergeVisualizerPrefs(value);
           break;
         case "popupPrefs":
-          overwriteAllPopupPrefs(value);
+          mergePopupPrefs(value);
           break;
         case "extensionPrefs":
-          overwriteAllExtensionPrefs(value);
+          mergeExtensionPrefs(value);
           break;
         case "utilitiesPrefs":
-          overwriteAllUtilitiesPrefs(value);
+          mergeUtilitiesPrefs(value);
           break;
         case "piecesPrefs":
-          overwriteAllPiecesPrefs(value);
+          mergePiecesPrefs(value);
           break;
         default:
           console.log("DataStoreSync: default case");

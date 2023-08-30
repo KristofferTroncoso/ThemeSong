@@ -50,8 +50,14 @@ export const createUtilitiesSlice = (set, get) => ({
     });
     chrome.storage.local.set({ utilitiesPrefs: get().utilities.prefs });
   },
+  mergeUtilitiesPrefs: (payload) => {
+    console.log("utilities: mergeUtilitiesPrefs");
+    set((state) => {
+      state.utilities.prefs = { ...state.utilities.prefs, ...payload };
+    });
+  },
   overwriteAllUtilitiesPrefs: (payload) => {
-    console.log("extensionSlice: overwriteAllUtilitiesPrefs");
+    console.log("utilities: overwriteAllUtilitiesPrefs");
     set((state) => {
       state.utilities.prefs = payload;
     });

@@ -115,17 +115,24 @@ export const createVisualizerSlice = (set, get) => ({
     });
     chrome.storage.local.set({ visualizerPrefs: get().visualizer.prefs });
   },
+  toggleIsVisualizerOn: () => {
+    console.log("visualizerSlice: toggleIsVisualizerOn");
+    set((state) => {
+      state.visualizer.isVisualizerOn = !state.visualizer.isVisualizerOn;
+    });
+  },
+  mergeVisualizerPrefs: (payload) => {
+    console.log("visualizerSlice: mergeVisualizerPrefs");
+    console.log(payload);
+    set((state) => {
+      state.visualizer.prefs = { ...state.visualizer.prefs, ...payload };
+    });
+  },
   overwriteAllVisualizerPrefs: (payload) => {
     console.log("visualizerSlice: overwriteAllVisualizerPrefs");
     console.log(payload);
     set((state) => {
       state.visualizer.prefs = payload;
-    });
-  },
-  toggleIsVisualizerOn: () => {
-    console.log("visualizerSlice: toggleIsVisualizerOn");
-    set((state) => {
-      state.visualizer.isVisualizerOn = !state.visualizer.isVisualizerOn;
     });
   },
 });

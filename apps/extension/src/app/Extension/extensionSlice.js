@@ -10,6 +10,12 @@ export const createExtensionSlice = (set, get) => ({
     });
     chrome.storage.local.set({ extensionPrefs: get().extension.prefs });
   },
+  mergeExtensionPrefs: (payload) => {
+    console.log("extensionSlice: mergeExtensionPrefs");
+    set((state) => {
+      state.extension.prefs = { ...state.extension.prefs, ...payload };
+    });
+  },
   overwriteAllExtensionPrefs: (payload) => {
     console.log("extensionSlice: overwriteAllExtensionPrefs");
     set((state) => {

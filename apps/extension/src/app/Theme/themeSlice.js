@@ -72,6 +72,13 @@ export const createThemeSlice = (set, get) => ({
     });
     chrome.storage.local.set({ themePrefs: get().theme.prefs });
   },
+  mergeThemePrefs: (payload) => {
+    console.log("themeSlice: mergeThemePrefs");
+    console.log(payload);
+    set((state) => {
+      state.theme.prefs = { ...state.theme.prefs, ...payload };
+    });
+  },
   overwriteAllThemePrefs: (payload) => {
     console.log("themeSlice: overwriteAllThemePrefs");
     console.log(payload);

@@ -40,6 +40,13 @@ export const createPiecesSlice = (set, get) => ({
     });
     chrome.storage.local.set({ piecesPrefs: get().pieces.prefs });
   },
+  mergePiecesPrefs: (payload) => {
+    console.log("pieces: mergePiecesPrefs");
+    console.log(payload);
+    set((state) => {
+      state.pieces.prefs = { ...state.pieces.prefs, ...payload };
+    });
+  },
   overwriteAllPiecesPrefs: (payload) => {
     console.log("pieces: overwriteAllPiecesPrefs");
     console.log(payload);
