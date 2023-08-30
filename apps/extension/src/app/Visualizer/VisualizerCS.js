@@ -4,7 +4,7 @@ import { useStore } from "/src/app/store";
 import { css } from "@emotion/react";
 
 import VisualizerToggleButton from "./components/VisualizerToggleButton";
-import HideCaptions from "./components/HideCaptions";
+import HideCaptions from "../Pieces/pieces/HideCaptions";
 import Visualizer from "./Visualizer";
 
 function addVisualizerContainer() {

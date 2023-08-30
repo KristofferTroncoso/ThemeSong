@@ -17,11 +17,11 @@ function PiecesPage() {
             key={piece.id}
             id={piece.id}
             css={css`
-              margin: 10px;
+              margin: 5px;
               border: 0;
               border-radius: 10px;
-              padding: 3px 10px;
-              background-color: #333;
+              padding: 1px 10px;
+              background-color: #222;
               display: flex;
               justify-content: space-between;
               align-items: center;
@@ -36,9 +36,10 @@ function PiecesPage() {
               {piece.name}
             </span>
             <Switch
-              checked={piecesPrefs[piece.id]}
+              checked={piecesPrefs[piece.id].enabled}
               onChange={(e) => togglePiece(piece.id)}
               inputProps={{ "aria-label": "controlled" }}
+              size="small"
             />
           </div>
         ))}

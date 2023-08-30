@@ -7,8 +7,7 @@ function DataStoreSync() {
   const overwriteAllVisualizerPrefs = useStore((state) => state.visualizer.overwriteAllVisualizerPrefs);
   const overwriteAllPopupPrefs = useStore((state) => state.popup.overwriteAllPopupPrefs);
   const overwriteAllExtensionPrefs = useStore((state) => state.extension.overwriteAllExtensionPrefs);
-  const changeHideCaptions = useStore((state) => state.player.changeHideCaptions);
-  const setPiecesPrefs = useStore((state) => state.pieces.setPiecesPrefs);
+  const overwriteAllPiecesPrefs = useStore((state) => state.pieces.overwriteAllPiecesPrefs);
   const overwriteAllUtilitiesPrefs = useStore((state) => state.utilities.overwriteAllUtilitiesPrefs);
 
   useEffect(() => {
@@ -29,14 +28,11 @@ function DataStoreSync() {
         case "extensionPrefs":
           overwriteAllExtensionPrefs(value);
           break;
-        case "hideCaptions":
-          changeHideCaptions(value);
-          break;
         case "utilitiesPrefs":
           overwriteAllUtilitiesPrefs(value);
           break;
         case "piecesPrefs":
-          setPiecesPrefs(value);
+          overwriteAllPiecesPrefs(value);
           break;
         default:
           console.log("DataStoreSync: default case");

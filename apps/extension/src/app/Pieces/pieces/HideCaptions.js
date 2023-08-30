@@ -4,20 +4,19 @@ import { css, Global } from "@emotion/react";
 import { useStore } from "/src/app/store";
 
 function HideCaptions() {
-  const hideCaptions = useStore((state) => state.player.hideCaptions);
-  const changeHideCaptions = useStore((state) => state.player.changeHideCaptions);
+  const hideCaptionsPrefs = useStore((state) => state.pieces.prefs["fe8f93d0-45a3-4214-afa5-3e3db4274e1b"]);
+  const togglePiece = useStore((state) => state.pieces.togglePiece);
 
   function handleToggle(e) {
     e.stopPropagation();
-    changeHideCaptions(!hideCaptions);
-    chrome.storage.local.set({ hideCaptions: !hideCaptions });
+    togglePiece("fe8f93d0-45a3-4214-afa5-3e3db4274e1b");
   }
 
   return (
     <button
       id="ts-hidecaptions-button"
       onClick={handleToggle}
-      title={hideCaptions ? "Unhide Captions" : "Hide Captions"}
+      title={hideCaptionsPrefs.enabled ? "Unhide Captions" : "Hide Captions"}
       css={css`
         border: 0;
         background-color: transparent;
@@ -32,7 +31,7 @@ function HideCaptions() {
           }
         `}
       ></Global>
-      {hideCaptions ? (
+      {hideCaptionsPrefs.enabled ? (
         <>
           <style>
             {`
