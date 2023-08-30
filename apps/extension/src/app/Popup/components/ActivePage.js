@@ -1,8 +1,8 @@
 import { useStore } from "/src/app/store";
 
-import VisualizersPage from "../pages/VisualizersPage";
-import ThemesPage from "../pages/ThemesPage";
-import PiecesPage from "../pages/PiecesPage";
+import VisualizersPage from "../../Visualizer/VisualizersPage";
+import ThemesPage from "../../Theme/ThemesPage";
+import PiecesPage from "../../Pieces/PiecesPage";
 
 function ActivePage() {
   const activePopupTab = useStore((state) => state.popup.prefs.activePopupTab);

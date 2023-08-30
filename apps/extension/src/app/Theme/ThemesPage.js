@@ -1,11 +1,11 @@
 import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
 
-import DynamicSettings from "../../Theme/themes/Dynamic/DynamicSettings";
-import StaticSettings from "../../Theme/themes/Static/StaticSettings";
-import AppleMusicSettings from "../../Theme/themes/AppleMusic/AppleMusicSettings";
+import DynamicSettings from "./themes/Dynamic/DynamicSettings";
+import StaticSettings from "./themes/Static/StaticSettings";
+import AppleMusicSettings from "./themes/AppleMusic/AppleMusicSettings";
 
-import ThemeButton from "../components/ThemeButton";
+import ThemeButton from "../Popup/components/ThemeButton";
 
 function ThemesPage() {
   const themes = useStore((state) => state.theme.themes);

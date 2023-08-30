@@ -1,9 +1,9 @@
 import { css } from "@emotion/react";
-import VisualizerButton from "../../Visualizer/components/VisualizerButton";
-import WavySettings from "../../Visualizer/visualizers/Wavy/WavySettings";
-import BarsSettings from "../../Visualizer/visualizers/Bars/BarsSettings";
-import CirclesSettings from "../../Visualizer/visualizers/Circles/CirclesSettings";
-import ExperimentalSettings from "../../Visualizer/visualizers/Experimental/ExperimentalSettings";
+import VisualizerButton from "./components/VisualizerButton";
+import WavySettings from "./visualizers/Wavy/WavySettings";
+import BarsSettings from "./visualizers/Bars/BarsSettings";
+import CirclesSettings from "./visualizers/Circles/CirclesSettings";
+import ExperimentalSettings from "./visualizers/Experimental/ExperimentalSettings";
 
 import { useStore } from "/src/app/store";
 
