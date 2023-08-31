@@ -5,7 +5,7 @@ import BottomBar from "./components/BottomBar";
 import TabBar from "./components/TabBar";
 import ActivePage from "./components/ActivePage";
 import DataStoreSync from "../Extension/DataStoreSync";
-import ErrorBoundary from "./components/ErrorBoundary";
+import ErrorBoundary from "../Extension/ErrorBoundary/ErrorBoundary";
 
 function Popup() {
   return (
