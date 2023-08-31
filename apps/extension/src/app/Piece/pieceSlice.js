@@ -37,21 +37,20 @@ export const createPieceSlice = (set, get) => ({
     set((state) => {
       state.piece.prefs[payload] = { ...state.piece.prefs[payload], enabled: !state.piece.prefs[payload].enabled };
     });
-    chrome.storage.local.set({ piecePrefs: get().pieces.prefs });
+    chrome.storage.local.set({ piecePrefs: get().piece.prefs });
   },
   setPiecePrefs: (pieceId, payload) => {
     console.log("pieces: setPiecePrefs");
     set((state) => {
       state.piece.prefs[pieceId] = payload;
     });
-    chrome.storage.local.set({ piecePrefs: get().pieces.prefs });
+    chrome.storage.local.set({ piecePrefs: get().piece.prefs });
   },
   mergePiecePrefs: (payload) => {
     console.log("pieces: mergePiecePrefs");
     console.log(payload);
     set((state) => {
       state.piece.prefs = { ...state.piece.prefs, ...payload };
-      // state.piece.prefs = payload; //this is the broken code. testing only. please delete this line
     });
   },
   overwriteAllPiecePrefs: (payload) => {
