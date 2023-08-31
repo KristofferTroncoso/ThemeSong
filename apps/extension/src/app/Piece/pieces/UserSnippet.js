@@ -5,7 +5,7 @@ import { css } from "@emotion/react";
 import EditIcon from "@mui/icons-material/Edit";
 
 export default function UserSnippet() {
-  const userSnippetPrefs = useStore((state) => state.pieces.prefs["2a606045-80f3-4aee-93de-cf3cd39d2920"]);
+  const userSnippetPrefs = useStore((state) => state.piece.prefs["2a606045-80f3-4aee-93de-cf3cd39d2920"]);
 
   return <style id="UserSnippet">{userSnippetPrefs.css}</style>;
 }
@@ -44,13 +44,13 @@ export function UserSnippetSettings() {
 }
 
 export function EditSnippetModal({ open, setOpen }) {
-  const userSnippetPrefs = useStore((state) => state.pieces.prefs["2a606045-80f3-4aee-93de-cf3cd39d2920"]);
-  const setPiecesPrefs = useStore((state) => state.pieces.setPiecesPrefs);
+  const userSnippetPrefs = useStore((state) => state.piece.prefs["2a606045-80f3-4aee-93de-cf3cd39d2920"]);
+  const setPiecePrefs = useStore((state) => state.piece.setPiecePrefs);
 
   const [snippetCSS, setSnippetCSS] = useState(userSnippetPrefs.css);
 
   const handleSave = (e) => {
-    setPiecesPrefs("2a606045-80f3-4aee-93de-cf3cd39d2920", { ...userSnippetPrefs, enabled: true, css: snippetCSS });
+    setPiecePrefs("2a606045-80f3-4aee-93de-cf3cd39d2920", { ...userSnippetPrefs, enabled: true, css: snippetCSS });
     handleClose();
   };
 

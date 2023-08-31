@@ -2,7 +2,7 @@ import { useStore } from "/src/app/store";
 
 import VisualizersPage from "../../Visualizer/VisualizersPage";
 import ThemesPage from "../../Theme/ThemesPage";
-import PiecesPage from "../../Pieces/PiecesPage";
+import PiecePage from "../../Piece/PiecePage";
 
 function ActivePage() {
   const activePopupTab = useStore((state) => state.popup.prefs.activePopupTab);
@@ -14,7 +14,7 @@ function ActivePage() {
       case 2:
         return <VisualizersPage />;
       case 3:
-        return <PiecesPage />;
+        return <PiecePage />;
       default:
         return (
           <div>

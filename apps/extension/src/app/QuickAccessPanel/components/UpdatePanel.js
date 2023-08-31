@@ -49,7 +49,7 @@ function UpdatePanel() {
           - <b>Notifications</b>: Toggle desktop notifications for song changes.
         </p>
         <p>
-          - <b>Pieces</b>: Toggle on small UI options such as hiding the Cast icon.
+          - <b>Piece</b>: Toggle on small UI options such as hiding the Cast icon.
         </p>
         <br></br>
         <p>
@@ -65,7 +65,7 @@ function UpdatePanel() {
       <button
         css={css`
           margin-top: 5px;
-          width: 100px;
+          width: 130px;
           padding: 4px;
           background-color: orange;
           border: 1px solid black;
@@ -94,9 +94,9 @@ function UpdatePanel() {
         <button
           css={css`
             margin: 5px 8px 0 15px;
-            width: 100px;
+            width: 130px;
             padding: 3px;
-            background-color: dodgerblue;
+            background-color: #63a9c9;
             border: 1px solid black;
             border-radius: 3px;
             color: #000;

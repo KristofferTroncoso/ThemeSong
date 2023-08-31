@@ -9,7 +9,7 @@ import { createVisualizerSlice } from "./Visualizer/visualizerSlice";
 import { createThemeSlice } from "./Theme/themeSlice";
 import { createExtensionSlice } from "./Extension/extensionSlice";
 import { createUtilitiesSlice } from "./Utilities/utilitiesSlice";
-import { createPiecesSlice } from "./Pieces/piecesSlice";
+import { createPieceSlice } from "./Piece/pieceSlice";
 
 export const useStore = create(
   immer((...a) => ({
@@ -21,6 +21,6 @@ export const useStore = create(
     theme: { ...createThemeSlice(...a) },
     extension: { ...createExtensionSlice(...a) },
     utilities: { ...createUtilitiesSlice(...a) },
-    pieces: { ...createPiecesSlice(...a) },
+    pieces: { ...createPieceSlice(...a) },
   }))
 );

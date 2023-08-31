@@ -4,8 +4,8 @@ import { css, Global } from "@emotion/react";
 import { useStore } from "/src/app/store";
 
 function HideCaptions() {
-  const hideCaptionsPrefs = useStore((state) => state.pieces.prefs["fe8f93d0-45a3-4214-afa5-3e3db4274e1b"]);
-  const togglePiece = useStore((state) => state.pieces.togglePiece);
+  const hideCaptionsPrefs = useStore((state) => state.piece.prefs["fe8f93d0-45a3-4214-afa5-3e3db4274e1b"]);
+  const togglePiece = useStore((state) => state.piece.togglePiece);
 
   function handleToggle(e) {
     e.stopPropagation();

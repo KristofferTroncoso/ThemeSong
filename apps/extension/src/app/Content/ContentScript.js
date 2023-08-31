@@ -9,7 +9,7 @@ import Palette from "../Palette/Palette";
 import Utilities from "../Utilities/Utilities";
 import LogoContainer from "../YtmLogo";
 import Unmounter from "../Extension/Unmounter";
-import Pieces from "../Pieces/Pieces";
+import Piece from "../Piece/Piece";
 
 function ContentScript({ root }) {
   return (
@@ -25,7 +25,7 @@ function ContentScript({ root }) {
       <VisualizerCS />
       <Palette />
       <Utilities />
-      <Pieces />
+      <Piece />
     </div>
   );
 }

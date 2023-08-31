@@ -7,7 +7,7 @@ function DataStoreSync() {
   const mergeVisualizerPrefs = useStore((state) => state.visualizer.mergeVisualizerPrefs);
   const mergePopupPrefs = useStore((state) => state.popup.mergePopupPrefs);
   const mergeExtensionPrefs = useStore((state) => state.extension.mergeExtensionPrefs);
-  const mergePiecesPrefs = useStore((state) => state.pieces.mergePiecesPrefs);
+  const mergePiecePrefs = useStore((state) => state.piece.mergePiecePrefs);
   const mergeUtilitiesPrefs = useStore((state) => state.utilities.mergeUtilitiesPrefs);
 
   useEffect(() => {
@@ -31,8 +31,8 @@ function DataStoreSync() {
         case "utilitiesPrefs":
           mergeUtilitiesPrefs(value);
           break;
-        case "piecesPrefs":
-          mergePiecesPrefs(value);
+        case "piecePrefs":
+          mergePiecePrefs(value);
           break;
         default:
           console.log("DataStoreSync: default case");

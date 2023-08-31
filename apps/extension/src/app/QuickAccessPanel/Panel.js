@@ -6,13 +6,13 @@ import Badge from "@mui/material/Badge";
 import { useStore } from "/src/app/store";
 import SnoozeIcon from "@mui/icons-material/Snooze";
 import ThemeSongFontIcon from "./components/ThemeSongFontIcon";
-import QapIconAlt from "../Pieces/pieces/QapIconAlt";
+import QapIconAlt from "../Piece/pieces/QapIconAlt";
 
 function Panel() {
   const showUpdateNote = useStore((state) => state.extension.prefs.showUpdateNote);
   const isActive = useStore((state) => state.utilities.sleepTimer.isActive);
   const minutesLeft = useStore((state) => state.utilities.sleepTimer.minutesLeft);
-  const quickAccessPanelIconPrefs = useStore((state) => state.pieces.prefs["34637b81-0c1a-4982-b130-0ff9ac232e4d"]);
+  const quickAccessPanelIconPrefs = useStore((state) => state.piece.prefs["34637b81-0c1a-4982-b130-0ff9ac232e4d"]);
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {

@@ -9,14 +9,14 @@ import { FaIceCream } from "react-icons/fa";
 
 export function QapIconAltSettings() {
   const icons = useStore(
-    (state) => state.pieces.pieces.find((piece) => piece.id === "34637b81-0c1a-4982-b130-0ff9ac232e4d").icons
+    (state) => state.piece.pieces.find((piece) => piece.id === "34637b81-0c1a-4982-b130-0ff9ac232e4d").icons
   );
-  const setPiecesPrefs = useStore((state) => state.pieces.setPiecesPrefs);
-  const selectedIcon = useStore((state) => state.pieces.prefs["34637b81-0c1a-4982-b130-0ff9ac232e4d"].icon);
+  const setPiecePrefs = useStore((state) => state.piece.setPiecePrefs);
+  const selectedIcon = useStore((state) => state.piece.prefs["34637b81-0c1a-4982-b130-0ff9ac232e4d"].icon);
 
   function handleChange(e) {
     let newPref = { enabled: true, icon: e.target.value };
-    setPiecesPrefs("34637b81-0c1a-4982-b130-0ff9ac232e4d", newPref);
+    setPiecePrefs("34637b81-0c1a-4982-b130-0ff9ac232e4d", newPref);
   }
 
   return (
@@ -33,7 +33,7 @@ export function QapIconAltSettings() {
 }
 
 export default function QapIconAlt() {
-  const quickAccessPanelIconPrefs = useStore((state) => state.pieces.prefs["34637b81-0c1a-4982-b130-0ff9ac232e4d"]);
+  const quickAccessPanelIconPrefs = useStore((state) => state.piece.prefs["34637b81-0c1a-4982-b130-0ff9ac232e4d"]);
 
   return (
     <>

@@ -1,4 +1,4 @@
-export const createPiecesSlice = (set, get) => ({
+export const createPieceSlice = (set, get) => ({
   pieces: [
     {
       id: "bf472cf5-689f-4be0-9eef-67c5cc8715e9",
@@ -35,30 +35,30 @@ export const createPiecesSlice = (set, get) => ({
   togglePiece: (payload) => {
     console.log("pieces: togglePiece");
     set((state) => {
-      state.pieces.prefs[payload] = { ...state.pieces.prefs[payload], enabled: !state.pieces.prefs[payload].enabled };
+      state.piece.prefs[payload] = { ...state.piece.prefs[payload], enabled: !state.piece.prefs[payload].enabled };
     });
-    chrome.storage.local.set({ piecesPrefs: get().pieces.prefs });
+    chrome.storage.local.set({ piecePrefs: get().pieces.prefs });
   },
-  setPiecesPrefs: (pieceId, payload) => {
-    console.log("pieces: setPiecesPrefs");
+  setPiecePrefs: (pieceId, payload) => {
+    console.log("pieces: setPiecePrefs");
     set((state) => {
-      state.pieces.prefs[pieceId] = payload;
+      state.piece.prefs[pieceId] = payload;
     });
-    chrome.storage.local.set({ piecesPrefs: get().pieces.prefs });
+    chrome.storage.local.set({ piecePrefs: get().pieces.prefs });
   },
-  mergePiecesPrefs: (payload) => {
-    console.log("pieces: mergePiecesPrefs");
+  mergePiecePrefs: (payload) => {
+    console.log("pieces: mergePiecePrefs");
     console.log(payload);
     set((state) => {
-      state.pieces.prefs = { ...state.pieces.prefs, ...payload };
-      // state.pieces.prefs = payload; //this is the broken code. testing only. please delete this line
+      state.piece.prefs = { ...state.piece.prefs, ...payload };
+      // state.piece.prefs = payload; //this is the broken code. testing only. please delete this line
     });
   },
-  overwriteAllPiecesPrefs: (payload) => {
-    console.log("pieces: overwriteAllPiecesPrefs");
+  overwriteAllPiecePrefs: (payload) => {
+    console.log("pieces: overwriteAllPiecePrefs");
     console.log(payload);
     set((state) => {
-      state.pieces.prefs = payload;
+      state.piece.prefs = payload;
     });
   },
 });

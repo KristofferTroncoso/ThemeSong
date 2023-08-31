@@ -4,16 +4,16 @@ import { useStore } from "/src/app/store";
 import { QapIconAltSettings } from "./pieces/QapIconAlt";
 import { UserSnippetSettings } from "./pieces/UserSnippet";
 
-function PiecesPage() {
-  const [pieces, piecesPrefs, togglePiece] = useStore((state) => [
-    state.pieces.pieces,
-    state.pieces.prefs,
-    state.pieces.togglePiece,
+function PiecePage() {
+  const [pieces, piecePrefs, togglePiece] = useStore((state) => [
+    state.piece.pieces,
+    state.piece.prefs,
+    state.piece.togglePiece,
   ]);
 
   return (
-    <div id="Pieces-Page">
-      <div id="Pieces-container">
+    <div id="Piece-Page">
+      <div id="Piece-container">
         {pieces.map((piece) => (
           <div
             key={piece.id}
@@ -31,7 +31,7 @@ function PiecesPage() {
           >
             <div>
               <Switch
-                checked={piecesPrefs[piece.id].enabled}
+                checked={piecePrefs[piece.id].enabled}
                 onChange={(e) => togglePiece(piece.id)}
                 inputProps={{ "aria-label": "controlled" }}
                 size="small"
@@ -60,4 +60,4 @@ function PiecesPage() {
   );
 }
 
-export default PiecesPage;
+export default PiecePage;
