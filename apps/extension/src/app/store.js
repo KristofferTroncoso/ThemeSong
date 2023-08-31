@@ -21,6 +21,6 @@ export const useStore = create(
     theme: { ...createThemeSlice(...a) },
     extension: { ...createExtensionSlice(...a) },
     utilities: { ...createUtilitiesSlice(...a) },
-    pieces: { ...createPieceSlice(...a) },
+    piece: { ...createPieceSlice(...a) },
   }))
 );
