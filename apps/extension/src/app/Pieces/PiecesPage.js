@@ -1,6 +1,8 @@
 import { Switch } from "@mui/material";
 import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
+import { QapIconAltSettings } from "./pieces/QapIconAlt";
+import { UserSnippetSettings } from "./pieces/UserSnippet";
 
 function PiecesPage() {
   const [pieces, piecesPrefs, togglePiece] = useStore((state) => [
@@ -20,27 +22,37 @@ function PiecesPage() {
               margin: 5px;
               border: 0;
               border-radius: 10px;
-              padding: 1px 10px;
+              padding: 8px;
               background-color: #222;
               display: flex;
               justify-content: space-between;
               align-items: center;
             `}
           >
-            <span
-              css={css`
-                margin: 10px;
-                font-size: 14px;
-              `}
-            >
-              {piece.name}
-            </span>
-            <Switch
-              checked={piecesPrefs[piece.id].enabled}
-              onChange={(e) => togglePiece(piece.id)}
-              inputProps={{ "aria-label": "controlled" }}
-              size="small"
-            />
+            <div>
+              <Switch
+                checked={piecesPrefs[piece.id].enabled}
+                onChange={(e) => togglePiece(piece.id)}
+                inputProps={{ "aria-label": "controlled" }}
+                size="small"
+              />
+              <span
+                css={css`
+                  margin: 10px;
+                  font-size: 14px;
+                `}
+              >
+                {piece.name}
+              </span>
+            </div>
+            <div>
+              {
+                {
+                  "34637b81-0c1a-4982-b130-0ff9ac232e4d": <QapIconAltSettings />,
+                  "2a606045-80f3-4aee-93de-cf3cd39d2920": <UserSnippetSettings />,
+                }[piece.id]
+              }
+            </div>
           </div>
         ))}
       </div>

@@ -56,3 +56,11 @@ button:hover {
 input:hover {
   cursor: pointer;
 }
+
+select {
+  background-color: #333;
+  color: white;
+  border: 1px solid #888;
+  border-radius: 4px;
+  outline: 0;
+}

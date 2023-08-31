@@ -12,19 +12,25 @@ export const createPiecesSlice = (set, get) => ({
       id: "fe8f93d0-45a3-4214-afa5-3e3db4274e1b",
       name: "Hide Video Captions",
     },
-    // {
-    //   id: "2a606045-80f3-4aee-93de-cf3cd39d2920",
-    //   name: "User Snippet",
-    // },
+    {
+      id: "34637b81-0c1a-4982-b130-0ff9ac232e4d",
+      name: "Quick Access Panel alt icon",
+      icons: ["Headphones", "Lollipop", "Dog", "Cat", "Burger", "Pokeball", "IceCream"],
+    },
+    {
+      id: "2a606045-80f3-4aee-93de-cf3cd39d2920",
+      name: "User Snippet",
+    },
   ],
   prefs: {
     "bf472cf5-689f-4be0-9eef-67c5cc8715e9": { enabled: false },
     "a2c1185b-1d9b-4c0f-aef3-8c7887374cc5": { enabled: false },
     "fe8f93d0-45a3-4214-afa5-3e3db4274e1b": { enabled: false },
-    // "2a606045-80f3-4aee-93de-cf3cd39d2920": {
-    //   enabled: false,
-    //   css: "/* put css styles here */",
-    // },
+    "34637b81-0c1a-4982-b130-0ff9ac232e4d": { enabled: false, icon: "Headphones" },
+    "2a606045-80f3-4aee-93de-cf3cd39d2920": {
+      enabled: false,
+      css: "",
+    },
   },
   togglePiece: (payload) => {
     console.log("pieces: togglePiece");
@@ -45,6 +51,7 @@ export const createPiecesSlice = (set, get) => ({
     console.log(payload);
     set((state) => {
       state.pieces.prefs = { ...state.pieces.prefs, ...payload };
+      // state.pieces.prefs = payload; //this is the broken code. testing only. please delete this line
     });
   },
   overwriteAllPiecesPrefs: (payload) => {

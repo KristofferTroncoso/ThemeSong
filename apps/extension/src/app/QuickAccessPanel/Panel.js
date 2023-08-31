@@ -3,14 +3,16 @@ import { css } from "@emotion/react";
 import PanelPage from "./PanelPage";
 import Popover from "@mui/material/Popover";
 import Badge from "@mui/material/Badge";
-import ThemeSongFontIcon from "./components/ThemeSongFontIcon";
 import { useStore } from "/src/app/store";
 import SnoozeIcon from "@mui/icons-material/Snooze";
+import ThemeSongFontIcon from "./components/ThemeSongFontIcon";
+import QapIconAlt from "../Pieces/pieces/QapIconAlt";
 
 function Panel() {
   const showUpdateNote = useStore((state) => state.extension.prefs.showUpdateNote);
   const isActive = useStore((state) => state.utilities.sleepTimer.isActive);
   const minutesLeft = useStore((state) => state.utilities.sleepTimer.minutesLeft);
+  const quickAccessPanelIconPrefs = useStore((state) => state.pieces.prefs["34637b81-0c1a-4982-b130-0ff9ac232e4d"]);
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
@@ -29,7 +31,7 @@ function Panel() {
       <button
         css={css`
           border: 0;
-          padding: 14px;
+          padding: 8px;
           background-color: transparent;
           color: var(--ts-tertiary-text-color);
           border-radius: 50%;
@@ -61,7 +63,7 @@ function Panel() {
               }
             `}
           >
-            <ThemeSongFontIcon />
+            {quickAccessPanelIconPrefs.enabled ? <QapIconAlt /> : <ThemeSongFontIcon />}
           </Badge>
         </Badge>
       </button>
