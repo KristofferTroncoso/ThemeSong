@@ -24,6 +24,11 @@ function BrightnessSectionSlider({ icon, name, handleChange, value, min, max, co
             -webkit-appearance: none;
             margin: 0;
           }
+
+          // firefox
+          input[type="number"] {
+            appearance: textfield;
+          }
         `}
       >
         <div

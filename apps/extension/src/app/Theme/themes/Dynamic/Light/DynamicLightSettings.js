@@ -100,6 +100,11 @@ function DynamicLightSettings() {
             -webkit-appearance: none;
             margin: 0;
           }
+
+          // firefox
+          input[type="number"] {
+            appearance: textfield;
+          }
         `}
       >
         <OpacityIcon sx={{ height: "16px", width: "16px", marginRight: "6px" }} />
