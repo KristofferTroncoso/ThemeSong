@@ -5,7 +5,8 @@ function RemoveDislikeButton() {
     }
 
     .like {
-      margin-left: 20px;
+      margin-left: 25px;
+      margin-right: 10px;
     }
   `;
   return <style id="RemoveDislikeButton">{style}</style>;
