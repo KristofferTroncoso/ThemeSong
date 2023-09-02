@@ -6,15 +6,17 @@ function TopBar() {
   const [extensionVersion] = useState(chrome.runtime.getManifest().version);
 
   function handleYTMclick() {
-    chrome.tabs.query({ url: "https://music.youtube.com/*" }, (tabs) => {
-      console.log(tabs);
-      if (tabs.length === 0) {
+    chrome.tabs.query({}, (tabs) => {
+      let ytmTabs = tabs.filter((tab) => "url" in tab);
+      console.log(ytmTabs);
+      if (ytmTabs.length === 0) {
         window.open("https://music.youtube.com");
-      } else if (tabs.length === 1) {
-        chrome.tabs.update(tabs[0].id, { active: true });
+      } else if (ytmTabs.length === 1) {
+        chrome.windows.update(ytmTabs[0].windowId, { focused: true });
+        chrome.tabs.update(ytmTabs[0].id, { active: true });
       } else {
         let audibleTabId;
-        for (let tab of tabs) {
+        for (let tab of ytmTabs) {
           switch (tab.audible) {
             case true:
               audibleTabId = tab.id;
@@ -24,9 +26,10 @@ function TopBar() {
           }
         }
         if (audibleTabId) {
-          chrome.tabs.update(audibleTabId, { active: true });
+          chrome.windows.update(ytmTabs[0].windowId, { focused: true });
+          chrome.tabs.update(ytmTabs[0].id, { active: true });
         } else {
-          chrome.tabs.update(tabs.at(-1).id, { active: true });
+          chrome.tabs.update(ytmTabs.at(-1).id, { active: true });
         }
       }
     });

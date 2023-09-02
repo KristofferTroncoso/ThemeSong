@@ -1,10 +1,13 @@
 export function executeContentScriptOnYouTubeMusicTabs() {
-  chrome.tabs.query({ url: "https://music.youtube.com/*" }, (tabs) => {
+  chrome.tabs.query({}, (tabs) => {
+    console.log(tabs);
     for (let tab of tabs) {
-      chrome.scripting.executeScript({
-        target: { tabId: tab.id },
-        files: ["themesong-content.js"],
-      });
+      if ("url" in tab) {
+        chrome.scripting.executeScript({
+          target: { tabId: tab.id },
+          files: ["themesong-content.js"],
+        });
+      }
     }
   });
 }
