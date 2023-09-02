@@ -9,7 +9,6 @@
     "https://*.googleusercontent.com/*",
     "https://*.ytimg.com/*",
     "storage",
-    "tabs",
     "notifications",
     "scripting"
   ],
