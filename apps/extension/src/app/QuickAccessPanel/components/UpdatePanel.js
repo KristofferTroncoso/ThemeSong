@@ -1,8 +1,10 @@
 import { css } from "@emotion/react";
-
 import { useStore } from "/src/app/store";
-
 import StyledPanelDiv from "./StyledPanelDiv";
+
+import StarBorderIcon from "@mui/icons-material/StarBorder";
+import LaunchIcon from "@mui/icons-material/Launch";
+import { FaGithubAlt } from "react-icons/fa";
 
 function UpdatePanel() {
   const setShowUpdateNote = useStore((state) => state.extension.setShowUpdateNote);
@@ -32,12 +34,16 @@ function UpdatePanel() {
       >
         <p>
           <b>v1.0.0</b>
-          <span> (August 27, 2023)</span>
+          <span> (September 1, 2023)</span>
           <span> 🎉</span>
         </p>
-        <br></br>
         <p>
-          It's finally here! MIT OPEN-SOURCE. You're invited to contribute on{" "}
+          (Some settings may have been <b>SOFT-RESET</b>)
+        </p>
+        <br></br>
+        <FaGithubAlt style={{ fontSize: "18px" }} />
+        <p>
+          It's finally here! OPEN-SOURCE. You're invited to contribute on{" "}
           <a target="_blank" rel="noreferrer" href="https://github.com/KristofferTroncoso/ThemeSong">
             GitHub
           </a>
@@ -46,69 +52,89 @@ function UpdatePanel() {
         <br></br>
         <h4>Changes:</h4>
         <p>
-          - <b>Notifications</b>: Toggle desktop notifications for song changes.
+          - <b>Notifications</b>: Toggle desktop notifications for song changes (Panel).
         </p>
         <p>
-          - <b>Piece</b>: Toggle on small UI options such as hiding the Cast icon.
+          - <b>Pieces</b>: Toggle on small UI options such as hiding the Cast icon (Popup).
+        </p>
+        <p>
+          - <b>styling and performance improvements</b>
         </p>
         <br></br>
         <p>
           <b>
-            <i>Thanks to the first 2000 users! I've seen all the stars and reviews! You guys are great!</i>
+            <i>Thanks to the first 2000 users! I've seen all the stars and reviews! You guys are awesome!</i>
           </b>
         </p>
         <p>
-          <i>-- Kris / GraphiteEater</i>
-          <span style={{ fontSize: "18px" }}> 😃</span>
+          <i>-- Kris / Graphite Eater</i>
+          <span style={{ fontSize: "16px" }}> 😃</span>
         </p>
       </div>
-      <button
+      <div
         css={css`
-          margin-top: 5px;
-          width: 130px;
-          padding: 4px;
-          background-color: orange;
-          border: 1px solid black;
-          border-radius: 3px;
-          color: #000;
-
-          :hover {
-            background-color: white;
-          }
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          align-content: center;
         `}
-        onClick={(e) => {
-          setShowUpdateNote(false);
-        }}
-      >
-        OK
-      </button>
-      <a
-        href={STORE_URL}
-        target="_blank"
-        rel="noreferrer"
-        css={{
-          textDecoration: "none",
-          color: "white",
-        }}
       >
         <button
           css={css`
-            margin: 5px 8px 0 15px;
+            margin-top: 5px;
             width: 130px;
-            padding: 3px;
-            background-color: #63a9c9;
+            height: 30px;
+            padding: 4px;
+            background-color: orange;
             border: 1px solid black;
             border-radius: 3px;
             color: #000;
 
             :hover {
-              background-color: yellow;
+              background-color: white;
             }
           `}
+          onClick={(e) => {
+            setShowUpdateNote(false);
+          }}
         >
-          ⭐️ Leave a rating
+          OK
         </button>
-      </a>
+        <a
+          href={STORE_URL}
+          target="_blank"
+          rel="noreferrer"
+          css={{
+            textDecoration: "none",
+            color: "white",
+          }}
+        >
+          <button
+            css={css`
+              margin: 5px 8px 0 15px;
+              width: 130px;
+              height: 30px;
+              padding: 3px;
+              background-color: #63a9c9;
+              border: 1px solid black;
+              border-radius: 3px;
+              color: #000;
+              display: flex;
+              justify-content: space-evenly;
+              align-content: center;
+              align-items: center;
+
+              :hover {
+                background-color: yellow;
+              }
+            `}
+          >
+            <StarBorderIcon style={{ fontSize: "20px" }} />
+            <span>Rate</span>
+            <LaunchIcon />
+          </button>
+        </a>
+      </div>
     </StyledPanelDiv>
   );
 }
