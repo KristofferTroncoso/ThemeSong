@@ -10,7 +10,7 @@ Since it's still an early OSS project, I thought I'd just keep the processes min
 
 ## Notice to potential contributors
 
-- If you'd like to avoid potentially wasting your time, first open a GitHub Issue to discuss your proposed contribution before diving into coding
+- If you'd like to avoid potentially wasting your time, first start a GitHub Discussion to discuss your proposed contribution before diving into coding
   - Low-quality features (themes, visualizers, utilities, etc) may be rejected to avoid software bloat and/or feature creep.
 - Naming and written copy may be changed by the maintainer to avoid abuse
   - e.g. A Theme named "KrisWasHereLol Theme" will probably require a change before being accepted.
@@ -21,12 +21,12 @@ Since it's still an early OSS project, I thought I'd just keep the processes min
 
 - Bug fixes and perfomance improvements:
   - Less bugs is always good
-  - Major code refactors and optimization may be postponed. Please open a GitHub Issue first.
+  - Major code refactors and optimization may be postponed. Please start a GitHub Discussion first.
 - Visualizers:
   - We can always use more high quality audio visualizers
   - Should be fairly good quality and not too redundant
-- Pieces:
-  - "Pieces" are small UI/UX options such as hiding the dislike button or changing the font
+- Piece:
+  - "Piece" are small UI/UX options such as hiding the dislike button or changing the font
   - These options on top of Themes can really personalize the YouTube Music experience
 - Utilities:
   - There's room for more utilities
@@ -40,10 +40,10 @@ Since it's still an early OSS project, I thought I'd just keep the processes min
   - There is some room for more "clones" and other creative ideas but for the most part, the existing themes will need maintenance
 - Website [currently off limits]
 - Etcetera / Art / Drawings / Images / Non-Code stuff:
-  - Feel free to explore GitHub Discussions or GitHub Issues
+  - Feel free to explore GitHub Discussions
   - People can submit designs and other artwork if they want
 
-Check GitHub Issues, Discussions, or Projects for updated ideas to work on.
+Check GitHub Discussions for updates.
 
 # Project Overview:
 
