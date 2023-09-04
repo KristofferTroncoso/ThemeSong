@@ -16,6 +16,11 @@
   </a>
 </p>
 
+## Demo
+
+https://github.com/KristofferTroncoso/ThemeSong/assets/95312141/3f0b04d6-e08d-49af-8823-54bb96c4f067
+
+
 ## Features
 
 - Dynamic Themes
