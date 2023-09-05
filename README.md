@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://themesong.app" target="_blank" rel="noopener noreferrer">
-    <img src="https://github.com/KristofferTroncoso/ThemeSong/assets/24760124/46819e0b-a6a2-4a62-8dcd-d6dfdd55e770" alt="ThemeSong">
+    <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/24760124/265588049-46819e0b-a6a2-4a62-8dcd-d6dfdd55e770.png" alt="ThemeSong">
   </a>
 </p>
 
