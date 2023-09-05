@@ -24,7 +24,7 @@ function TabBar() {
         Visualizers
       </TabButton>
       <TabButton key={3} id={3} isActive={activePopupTab === 3} onClick={(e) => handleClick(3)}>
-        Piece
+        Pieces
       </TabButton>
     </div>
   );

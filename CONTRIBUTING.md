@@ -25,8 +25,8 @@ Since it's still an early OSS project, I thought I'd just keep the processes min
 - Visualizers:
   - We can always use more high quality audio visualizers
   - Should be fairly good quality and not too redundant
-- Piece:
-  - "Piece" are small UI/UX options such as hiding the dislike button or changing the font
+- Pieces:
+  - "Pieces" are small UI/UX options such as hiding the dislike button or changing the font
   - These options on top of Themes can really personalize the YouTube Music experience
 - Utilities:
   - There's room for more utilities
