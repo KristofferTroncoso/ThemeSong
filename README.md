@@ -1,8 +1,9 @@
 <p align="center">
   <a href="https://themesong.app" target="_blank" rel="noopener noreferrer">
-    <img src="assets/ThemeSong-Full-Logo.png" alt="ThemeSong">
+    <img src="https://github.com/KristofferTroncoso/ThemeSong/assets/24760124/46819e0b-a6a2-4a62-8dcd-d6dfdd55e770" alt="ThemeSong">
   </a>
 </p>
+
 <p align="center">
   Dynamic themes, visualizers, and utilities for YouTube Music™ (https://music.youtube.com)
 </p>
