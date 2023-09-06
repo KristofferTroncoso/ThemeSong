@@ -36,7 +36,7 @@ function Palette() {
               hsl: palette.LightVibrant.hsl,
               oklch: lightvibrant.coords.map((coord) => Number(coord) || 0),
               population: palette.LightVibrant.population,
-              adjustedPopulation: Math.floor(palette.LightVibrant.population * 0.1),
+              adjustedPopulation: Math.floor(palette.LightVibrant.population * 0.3),
             },
             Vibrant: {
               hex: palette.Vibrant.hex,
