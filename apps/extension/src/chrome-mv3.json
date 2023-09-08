@@ -6,7 +6,7 @@
   "description": "Enhancer for YouTube Music™. Dynamic Themes, Visualizers, Lyrics, Sleep Timer, and more!",
   "minimum_chrome_version": "105",
   "background": { "service_worker": "themesong-background.js" },
-  "permissions": ["storage", "scripting", "notifications", "action"],
+  "permissions": ["storage", "scripting", "notifications"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": "assets/icon-34.png",
