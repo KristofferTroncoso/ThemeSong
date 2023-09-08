@@ -1,4 +1,5 @@
 import { executeContentScriptOnYouTubeMusicTabs } from "./scripts";
+import handleIconColor from "../Extension/IconColor/handleIconColor";
 
 function handleOnMessage(message, sender, sendResponse) {
   console.log("Received message:", message, "from", sender);
@@ -36,6 +37,11 @@ function handleOnMessage(message, sender, sendResponse) {
               }, 30000)
           );
           break;
+
+        case "iconColor":
+          handleIconColor(value);
+          break;
+
         default:
           console.log("default case");
           sendResponse("It's a me, the background script!");

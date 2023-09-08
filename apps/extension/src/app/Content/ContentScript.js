@@ -10,6 +10,7 @@ import Utilities from "../Utilities/Utilities";
 import LogoContainer from "../YtmLogo";
 import Unmounter from "../Extension/Unmounter";
 import Piece from "../Piece/Piece";
+import IconColor from "../Extension/IconColor/IconColor";
 
 function ContentScript({ root }) {
   return (
@@ -26,6 +27,7 @@ function ContentScript({ root }) {
       <Palette />
       <Utilities />
       <Piece />
+      <IconColor />
     </div>
   );
 }
