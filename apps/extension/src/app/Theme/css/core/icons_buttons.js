@@ -246,4 +246,14 @@ export const icons_buttons = /*css*/ `
   button.yt-icon-button {
     color: var(--ts-primary-icon-color);
   }
+
+  /* Save button on up next player page */
+  ytmusic-chip-cloud-chip-renderer[chip-style=STYLE_TRANSPARENT] a.ytmusic-chip-cloud-chip-renderer {
+    color: var(--ts-inverse-icon-color);
+    background: var(--ts-primary-icon-color);
+  }
+
+  ytmusic-chip-cloud-chip-renderer[chip-style=STYLE_TRANSPARENT] a.ytmusic-chip-cloud-chip-renderer .text {
+    color: var(--ts-inverse-icon-color) !important;
+  }
 `;
