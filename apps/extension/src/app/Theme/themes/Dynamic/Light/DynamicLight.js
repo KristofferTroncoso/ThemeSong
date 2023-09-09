@@ -85,7 +85,7 @@ function DynamicLight() {
             );
 
             --ts-body-alpha-gradient-color: hsl(
-              var(--ts-palette-dominant-hue) ${saturation}% ${calcCurvedBrightness(lightness[3])}% / 50%
+              var(--ts-palette-dominant-hue) ${saturation}% ${calcCurvedBrightness(lightness[3])}% / 75%
             );
 
             --ts-playprogress-color: hsl(
