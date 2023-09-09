@@ -2,10 +2,13 @@ export const scrollbars = /*css*/ `
 /* scrollbars */
 ::-webkit-scrollbar {
   background-color: transparent;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
   background-color: inherit;
+
 }
 
 ::-webkit-scrollbar-thumb {
@@ -23,7 +26,8 @@ export const scrollbars = /*css*/ `
 }
 
 body::-webkit-scrollbar {
-
+  width: 16px;
+  height: 16px;
 }
 
 body::-webkit-scrollbar-track {
