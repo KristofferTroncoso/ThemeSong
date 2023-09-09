@@ -195,4 +195,9 @@ ytmusic-dropdown-renderer[dropdown-style=underline] tp-yt-paper-dropdown-menu.yt
 tp-yt-paper-toast {
   color: var(--ts-primary-text-color);
 }
+
+/* button texts when you try to delete an uploaded song */
+.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text {
+  color: var(--ts-primary-text-color) !important;
+}
 `;
