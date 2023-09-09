@@ -21,18 +21,35 @@ function SongInfoDisplay() {
       >
         {songName}
       </h1>
-      {songSubtitle.split(" • ").map((info) => (
-        <h2
-          key={Math.floor(Math.random() * 10000)}
-          css={css`
-            margin: 14px 0;
-            font-size: 24px;
-            color: var(--ts-tertiary-text-color);
-          `}
-        >
-          {info}
-        </h2>
-      ))}
+      {songSubtitle.split(" • ").map((info, index) => {
+        if (index === 0) {
+          return (
+            <h2
+              key={Math.floor(Math.random() * 10000)}
+              css={css`
+                margin: 14px 0;
+                font-size: 26px;
+                color: var(--ts-tertiary-text-color);
+              `}
+            >
+              {info}
+            </h2>
+          );
+        } else {
+          return (
+            <h3
+              key={Math.floor(Math.random() * 10000)}
+              css={css`
+                margin: 14px 0;
+                font-size: 20px;
+                color: var(--ts-tertiary-text-color);
+              `}
+            >
+              {info}
+            </h3>
+          );
+        }
+      })}
     </div>
   );
 }
