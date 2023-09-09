@@ -6,15 +6,15 @@ import { icons_buttons } from "../../css/core/icons_buttons";
 
 function AppleMusicDark() {
   const playerUiState = useStore((state) => state.player.playerUiState);
-  const lightVibrantHSL = useStore((state) => state.palette.palette.LightVibrant.hsl);
+  const lightVibrantOKLCH = useStore((state) => state.palette.palette.LightVibrant.oklch);
 
   useEffect(() => {
     if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
       menubar.content = `#262626`;
     } else {
-      menubar.content = `hsl(${lightVibrantHSL[0] * 360} ${lightVibrantHSL[1] * 100 * 0.2}% 35%)`;
+      menubar.content = menubar.content = `oklch(45% ${lightVibrantOKLCH[1] * 0.4} ${lightVibrantOKLCH[2]})`;
     }
-  }, [playerUiState, lightVibrantHSL]);
+  }, [playerUiState, lightVibrantOKLCH]);
 
   return (
     <style>

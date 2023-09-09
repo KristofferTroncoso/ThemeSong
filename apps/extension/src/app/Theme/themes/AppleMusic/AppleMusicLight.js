@@ -8,16 +8,16 @@ import { icons_buttons } from "../../css/core/icons_buttons";
 
 function AppleMusicLight() {
   const playerUiState = useStore((state) => state.player.playerUiState);
-  const lightVibrantHSL = useStore((state) => state.palette.palette.LightVibrant.hsl);
+  const lightVibrantOKLCH = useStore((state) => state.palette.palette.LightVibrant.oklch);
   const dominantOKLCH = useStore((state) => state.palette.dominant.oklch);
 
   useEffect(() => {
     if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
       menubar.content = `rgb(235 235 235)`;
     } else {
-      menubar.content = `hsl(${lightVibrantHSL[0] * 360} ${lightVibrantHSL[1] * 100 * 0.2}% 35%)`;
+      menubar.content = `oklch(45% ${lightVibrantOKLCH[1] * 0.4} ${lightVibrantOKLCH[2]})`;
     }
-  }, [playerUiState, lightVibrantHSL, dominantOKLCH]);
+  }, [playerUiState, lightVibrantOKLCH, dominantOKLCH]);
 
   return (
     <style>
