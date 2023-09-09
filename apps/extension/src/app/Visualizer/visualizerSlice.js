@@ -88,7 +88,7 @@ export const createVisualizerSlice = (set, get) => ({
       lineWidth: 8,
     },
     "51dc50c8-eb06-4086-ad9c-a89758f63db6": {
-      activeVariant: "12bfd49e-47a2-4cc8-90a9-3e669f7a0c78",
+      activeVariant: "f3015c0d-1528-4615-b74f-bd7ab4f91667",
       barWidth: 30,
       gap: 8,
     },
