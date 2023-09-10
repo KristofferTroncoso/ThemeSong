@@ -88,6 +88,11 @@ const options = {
           to: path.join(__dirname, "builds/chrome-build/assets"),
           force: true,
         },
+        {
+          from: "src/_locales/",
+          to: path.join(__dirname, "builds/chrome-build/_locales"),
+          force: true,
+        },
       ],
     }),
     new HtmlWebpackPlugin({

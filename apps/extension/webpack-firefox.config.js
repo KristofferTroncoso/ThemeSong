@@ -88,6 +88,11 @@ const options = {
           to: path.join(__dirname, "builds/firefox-build/assets"),
           force: true,
         },
+        {
+          from: "src/_locales/",
+          to: path.join(__dirname, "builds/firefox-build/_locales"),
+          force: true,
+        },
       ],
     }),
     new HtmlWebpackPlugin({
