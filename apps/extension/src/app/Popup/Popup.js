@@ -14,8 +14,7 @@ function Popup() {
       css={css`
         background-color: rgb(20, 20, 20);
         color: white;
-        height: 600px;
-        width: 400px;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
