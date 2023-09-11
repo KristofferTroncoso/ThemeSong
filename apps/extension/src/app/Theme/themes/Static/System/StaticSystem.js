@@ -1,6 +1,6 @@
 import StaticDark from "../Dark/StaticDark";
 import StaticLight from "../Light/StaticLight";
-import useSystemPrefColorScheme from "../../../useSystemPrefColorScheme";
+import useSystemPrefColorScheme from "../../../components/useSystemPrefColorScheme";
 
 function StaticSystem() {
   const sysPrefColorScheme = useSystemPrefColorScheme();

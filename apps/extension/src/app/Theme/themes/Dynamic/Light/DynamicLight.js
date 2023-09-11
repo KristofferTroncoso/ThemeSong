@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useStore } from "/src/app/store";
 import { menubar } from "../../../selectors";
 
+import useLightAppearance from "../../../components/useLightAppearance";
 import { scrollbars } from "../../../css/core/scrollbars";
 import { playerbar_progressbar } from "../../../css/core/playerbar_progressbar";
 import { backgrounds } from "../../../css/core/backgrounds";
@@ -14,6 +15,8 @@ import { gradients_overlays } from "../../../css/core/gradients_overlays";
 import { rulers_borders } from "../../../css/core/rulers_borders";
 
 function DynamicLight() {
+  useLightAppearance();
+
   const dominantColorHSL = useStore((state) => state.palette.dominant).hsl;
   const dynamicLightPrefs = useStore((state) => state.theme.prefs["db8854e3-6753-4639-b244-c8091f3b9fcb"].light);
   const lightness = dynamicLightPrefs.lightness;

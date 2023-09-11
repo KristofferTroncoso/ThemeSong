@@ -1,6 +1,6 @@
 import DynamicDark from "../Dark/DynamicDark";
 import DynamicLight from "../Light/DynamicLight";
-import useSystemPrefColorScheme from "../../../useSystemPrefColorScheme";
+import useSystemPrefColorScheme from "../../../components/useSystemPrefColorScheme";
 
 function DynamicSystem() {
   const sysPrefColorScheme = useSystemPrefColorScheme();

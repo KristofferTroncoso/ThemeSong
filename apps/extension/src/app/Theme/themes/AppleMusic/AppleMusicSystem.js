@@ -1,6 +1,6 @@
 import AppleMusicDark from "./AppleMusicDark";
 import AppleMusicLight from "./AppleMusicLight";
-import useSystemPrefColorScheme from "../../useSystemPrefColorScheme";
+import useSystemPrefColorScheme from "../../components/useSystemPrefColorScheme";
 
 function AppleMusicSystem() {
   const sysPrefColorScheme = useSystemPrefColorScheme();
