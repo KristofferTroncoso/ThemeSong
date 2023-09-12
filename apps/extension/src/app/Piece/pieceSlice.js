@@ -21,6 +21,10 @@ export const createPieceSlice = (set, get) => ({
       id: "2a606045-80f3-4aee-93de-cf3cd39d2920",
       name: "User Snippet",
     },
+    {
+      id: "895e0c50-c0a0-4752-8014-bd4cb5029e9b",
+      name: "Lyrics font size",
+    },
   ],
   prefs: {
     "bf472cf5-689f-4be0-9eef-67c5cc8715e9": { enabled: false },
@@ -31,6 +35,7 @@ export const createPieceSlice = (set, get) => ({
       enabled: false,
       css: "",
     },
+    "895e0c50-c0a0-4752-8014-bd4cb5029e9b": { enabled: false, size: 18 },
   },
   togglePiece: (payload) => {
     console.log("pieces: togglePiece");
