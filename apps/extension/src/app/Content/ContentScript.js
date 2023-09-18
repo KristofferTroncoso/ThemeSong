@@ -1,3 +1,4 @@
+import MountWhenPlayerActive from "./MountWhenPlayerActive";
 import DataStoreSync from "../Extension/DataStoreSync";
 import Theme from "../Theme/Theme";
 import SongObserver from "../Song/SongObserver";
@@ -11,6 +12,7 @@ import LogoContainer from "../YtmLogo";
 import Unmounter from "../Extension/Unmounter";
 import Piece from "../Piece/Piece";
 import IconColor from "../Extension/IconColor/IconColor";
+import PlayPauseChangeObserver from "../Player/PlayPauseChangeObserver";
 
 function ContentScript({ root }) {
   return (
@@ -18,16 +20,19 @@ function ContentScript({ root }) {
       <Unmounter root={root} />
       <DataStoreSync />
       <Theme />
-      <SongObserver />
       <LogoContainer />
-      <PanelContainer />
-      <PlayerUiStateObserver />
-      <SongInfoDisplayFeature />
-      <VisualizerCS />
       <Palette />
       <Utilities />
       <Piece />
-      <IconColor />
+      <MountWhenPlayerActive>
+        <SongInfoDisplayFeature />
+        <VisualizerCS />
+        <SongObserver />
+        <IconColor />
+        <PanelContainer />
+        <PlayerUiStateObserver />
+        <PlayPauseChangeObserver />
+      </MountWhenPlayerActive>
     </div>
   );
 }
