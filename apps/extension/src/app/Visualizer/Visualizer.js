@@ -4,7 +4,6 @@ import Bars from "./visualizers/Bars/Bars";
 import Circles from "./visualizers/Circles/Circles";
 import Experimental from "./visualizers/Experimental/Experimental";
 import { useStore } from "/src/app/store";
-import PlayPauseChangeObserver from "../Player/PlayPauseChangeObserver";
 import VolumeChangeObserver from "../Player/VolumeChangeObserver";
 import PausedWarning from "./components/PausedWarning";
 import SpiderVerse from "./visualizers/SpiderVerse/SpiderVerse";
@@ -109,7 +108,6 @@ Page reload required to reconnect visualizer. Reload now?`
   if (isVisualizerOn && isConnected) {
     return (
       <div id="ThemeSong-Visualizer">
-        <PlayPauseChangeObserver />
         <VolumeChangeObserver />
         <PausedWarning />
         {returnVisualizer()}
