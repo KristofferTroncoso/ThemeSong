@@ -3,7 +3,7 @@ import { useEffect } from "react";
 export default function useLightAppearance() {
   useEffect(() => {
     const htmlEl = document.querySelector("html");
-    htmlEl.setAttribute("dark", "false");
+    htmlEl.removeAttribute("dark");
     htmlEl.setAttribute("light", "true");
 
     return function cleanup() {

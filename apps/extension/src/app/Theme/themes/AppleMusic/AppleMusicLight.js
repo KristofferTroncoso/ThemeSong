@@ -17,12 +17,12 @@ function AppleMusicLight() {
   useEffect(() => {
     if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
       menubar.content = `rgb(235 235 235)`;
-      document.querySelector("html").setAttribute("dark", "false");
+      document.querySelector("html").removeAttribute("dark");
       document.querySelector("html").setAttribute("light", "true");
     } else {
       menubar.content = `oklch(45% ${lightVibrantOKLCH[1] * 0.4} ${lightVibrantOKLCH[2]})`;
       document.querySelector("html").setAttribute("dark", "true");
-      document.querySelector("html").setAttribute("light", "false");
+      document.querySelector("html").removeAttribute("light");
     }
   }, [playerUiState, lightVibrantOKLCH, dominantOKLCH]);
 
