@@ -72,29 +72,30 @@ function VisualizerPanel() {
         <div
           css={css`
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
             grid-row-gap: 4px;
             grid-column-gap: 4px;
           `}
         >
           {visualizers.map((visualizer) => (
             <PanelButton
+              title={visualizer.name}
               bgColor={isVisualizerOn && activeVisualizer === visualizer.id && "rgb(255 255 255 / 0.8)"}
               color={isVisualizerOn && activeVisualizer === visualizer.id && "#008c7e"}
               hoverColor="#008c7e"
               css={css`
-                height: 25px;
+                height: 35px;
                 width: 100%;
                 margin: 0;
                 border: 0;
                 border-radius: 6px;
-                font-size: 12px;
+                font-size: 20px;
                 padding: 2px 6px;
               `}
               onClick={(e) => handleVisualizerButtonClick(visualizer.id)}
               key={visualizer.id}
             >
-              {visualizer.name}
+              {visualizer.icon}
             </PanelButton>
           ))}
         </div>
