@@ -27,10 +27,20 @@ function DevToolsPanel() {
           align-items: center;
         `}
       >
-        <PanelButton onClick={(e) => console.log(store)} title="Log Zustand Local Store" hoverColor="tomato">
+        <PanelButton
+          onClick={(e) => console.log(store)}
+          title="Log Zustand Local Store"
+          hoverColor="tomato"
+          css={css`
+            height: 32px;
+            width: 32px;
+            font-size: 20px;
+            border-radius: 0;
+          `}
+        >
           <DataObjectIcon
             css={css`
-              font-size: 28px;
+              font-size: 20px;
             `}
           />
         </PanelButton>
@@ -38,10 +48,16 @@ function DevToolsPanel() {
           onClick={(e) => chrome.storage.local.get(null, (res) => console.log(res))}
           title="Log Chrome Local Storage"
           hoverColor="dodgerblue"
+          css={css`
+            height: 32px;
+            width: 32px;
+            font-size: 20px;
+            border-radius: 0;
+          `}
         >
           <CloudQueueIcon
             css={css`
-              font-size: 28px;
+              font-size: 20px;
             `}
           />
         </PanelButton>
