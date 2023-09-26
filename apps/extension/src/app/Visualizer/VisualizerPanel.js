@@ -3,6 +3,7 @@ import { useStore } from "/src/app/store";
 
 import StyledPanelDiv from "../QuickAccessPanel/components/StyledPanelDiv";
 import PanelButton from "../QuickAccessPanel/components/PanelButton";
+import { GiProtectionGlasses } from "react-icons/gi";
 
 function VisualizerVariantButton({ color, bgColor, hoverColor, hoverBgColor, children, title, ...props }) {
   return (
@@ -65,9 +66,12 @@ function VisualizerPanel() {
         <h3
           css={css`
             padding: 2px 5px;
+            display: flex;
+            align-items: center;
           `}
         >
-          Visualizer
+          <GiProtectionGlasses style={{ fontSize: "20px", marginRight: "5px", paddingBottom: "2px" }} />
+          <span>Visualizer</span>
         </h3>
         <div
           css={css`
@@ -84,7 +88,7 @@ function VisualizerPanel() {
               color={isVisualizerOn && activeVisualizer === visualizer.id && "#008c7e"}
               hoverColor="#008c7e"
               css={css`
-                height: 35px;
+                height: 38px;
                 width: 100%;
                 margin: 0;
                 border: 0;
