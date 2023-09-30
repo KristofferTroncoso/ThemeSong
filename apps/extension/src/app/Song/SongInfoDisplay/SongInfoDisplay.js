@@ -25,7 +25,7 @@ function SongInfoDisplay() {
         if (index === 0) {
           return (
             <h2
-              key={Math.floor(Math.random() * 10000)}
+              key={index}
               css={css`
                 margin: 14px 0;
                 font-size: 26px;
@@ -38,7 +38,7 @@ function SongInfoDisplay() {
         } else {
           return (
             <h3
-              key={Math.floor(Math.random() * 10000)}
+              key={index}
               css={css`
                 margin: 14px 0;
                 font-size: 20px;
