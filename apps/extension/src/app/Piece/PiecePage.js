@@ -1,7 +1,7 @@
 import { Switch } from "@mui/material";
 import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
-import { QapIconAltSettings } from "./pieces/QapIconAlt";
+import QapIconAltSettings from "./pieces/QapIconAlt/QapIconAltSettings";
 import { UserSnippetSettings } from "./pieces/UserSnippet";
 import { LyricsSizeSettings } from "./pieces/LyricsSize";
 
