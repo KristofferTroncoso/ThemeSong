@@ -3,7 +3,6 @@ const path = require("path");
 const env = require("./tasks/env");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const ASSET_PATH = process.env.ASSET_PATH || "/";
@@ -110,11 +109,6 @@ const options = {
 
 if (env.NODE_ENV === "development") {
   options.devtool = "cheap-module-source-map";
-} else {
-  options.optimization = {
-    minimize: true,
-    minimizer: [new TerserPlugin()],
-  };
 }
 
 module.exports = options;
