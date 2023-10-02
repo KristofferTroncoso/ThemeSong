@@ -22,7 +22,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.11",
     "@mui/material": "^5.14.11",
-    "@react-three/fiber": "^8.14.3",
+    "@react-three/fiber": "^8.14.4",
     "colorjs.io": "^0.4.5",
     "immer": "^9.0.21",
     "node-vibrant": "^3.1.6",

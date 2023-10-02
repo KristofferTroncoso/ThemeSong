@@ -21,8 +21,8 @@ dependencies:
     specifier: ^5.14.11
     version: 5.14.11(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.23)(react-dom@18.2.0)(react@18.2.0)
   '@react-three/fiber':
-    specifier: ^8.14.3
-    version: 8.14.3(react-dom@18.2.0)(react@18.2.0)(three@0.153.0)
+    specifier: ^8.14.4
+    version: 8.14.4(react-dom@18.2.0)(react@18.2.0)(three@0.153.0)
   colorjs.io:
     specifier: ^0.4.5
     version: 0.4.5
@@ -2207,8 +2207,8 @@ packages:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
     dev: false
 
-  /@react-three/fiber@8.14.3(react-dom@18.2.0)(react@18.2.0)(three@0.153.0):
-    resolution: {integrity: sha512-i1IldQKsotrm7lFG5emEofWs2IDHdPigp648d7Bh1B2p8Y+T5WVVHvEHsB9Ou5n5N773OxFWV++8sV9cdD44UA==}
+  /@react-three/fiber@8.14.4(react-dom@18.2.0)(react@18.2.0)(three@0.153.0):
+    resolution: {integrity: sha512-opkLsfO9sxTFlI26ycKcTsXViRtOa1v+0AQoeP6yQ59dkhABn+UKhGrx6/zWrH5mUxzg812zJd7sTJflZQmLgA==}
     peerDependencies:
       expo: '>=43.0'
       expo-asset: '>=8.4'
