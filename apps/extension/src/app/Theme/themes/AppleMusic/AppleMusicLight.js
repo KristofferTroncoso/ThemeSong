@@ -5,17 +5,24 @@ import { dark_base_colors } from "../../css/colors/dark_base_colors";
 import { light_base_colors } from "../../css/colors/light_base_colors";
 import { texts } from "../../css/core/texts";
 import { icons_buttons } from "../../css/core/icons_buttons";
+import useLightAppearance from "../../components/useLightAppearance";
 
 function AppleMusicLight() {
   const playerUiState = useStore((state) => state.player.playerUiState);
   const lightVibrantOKLCH = useStore((state) => state.palette.palette.LightVibrant.oklch);
   const dominantOKLCH = useStore((state) => state.palette.dominant.oklch);
 
+  useLightAppearance();
+
   useEffect(() => {
     if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
       menubar.content = `rgb(235 235 235)`;
+      document.querySelector("html").removeAttribute("dark");
+      document.querySelector("html").setAttribute("light", "true");
     } else {
       menubar.content = `oklch(45% ${lightVibrantOKLCH[1] * 0.4} ${lightVibrantOKLCH[2]})`;
+      document.querySelector("html").setAttribute("dark", "true");
+      document.querySelector("html").removeAttribute("light");
     }
   }, [playerUiState, lightVibrantOKLCH, dominantOKLCH]);
 

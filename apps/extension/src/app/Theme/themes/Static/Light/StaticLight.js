@@ -12,8 +12,11 @@ import { texts } from "../../../css/core/texts";
 import { icons_buttons } from "../../../css/core/icons_buttons";
 import { gradients_overlays } from "../../../css/core/gradients_overlays";
 import { rulers_borders } from "../../../css/core/rulers_borders";
+import useLightAppearance from "../../../components/useLightAppearance";
 
 function StaticLight() {
+  useLightAppearance();
+
   const { hue, saturation, lightness } = useStore(
     (state) => state.theme.prefs["b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"].light
   );

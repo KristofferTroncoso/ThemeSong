@@ -4,6 +4,7 @@ import RemoveCastButton from "./pieces/RemoveCastButton";
 // import RemoveUpgradeButton from "./pieces/RemoveUpgradeButton";
 // import AddConfirmUnlike from "./pieces/AddConfirmUnlike";
 import UserSnippet from "./pieces/UserSnippet";
+import LyricsSize from "./pieces/LyricsSize";
 
 function Piece() {
   const piecePrefs = useStore((state) => state.piece.prefs);
@@ -14,6 +15,7 @@ function Piece() {
       {piecePrefs["bf472cf5-689f-4be0-9eef-67c5cc8715e9"].enabled && <RemoveCastButton />}
       {/* {piecePrefs["2706684f-a566-4ad0-8341-50acb366ad7a"] && <AddConfirmUnlike />} */}
       {piecePrefs["2a606045-80f3-4aee-93de-cf3cd39d2920"].enabled && <UserSnippet />}
+      {piecePrefs["895e0c50-c0a0-4752-8014-bd4cb5029e9b"].enabled && <LyricsSize />}
     </div>
   );
 }

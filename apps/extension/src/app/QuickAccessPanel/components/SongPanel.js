@@ -8,7 +8,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import GoogleIcon from "@mui/icons-material/Google";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { SiGenius } from "react-icons/si";
-import MusixmatchIcon from "./MusixmatchIcon";
+import MusixmatchIcon from "../../Icon/MusixmatchIcon";
 
 function SongPanel() {
   const songName = useStore((state) => state.song.songName);

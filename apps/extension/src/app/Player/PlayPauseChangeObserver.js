@@ -6,34 +6,36 @@ function PlayPauseChangeObserver() {
   const playPauseChangeObserver = useRef();
 
   useEffect(() => {
-    let moviePlayerNode = document.getElementById("movie_player");
+    setTimeout(() => {
+      let moviePlayerNode = document.getElementById("movie_player");
 
-    //initial
-    if (!document.getElementById("movie_player").classList.contains("playing-mode")) {
-      console.log("INITIAL song PAUSED");
-      changeIsSongPlaying(false);
-    } else {
-      console.log("INITIAL song PLAYING");
-      changeIsSongPlaying(true);
-    }
+      playPauseChangeObserver.current = new MutationObserver(handlePlayPauseChange);
 
-    playPauseChangeObserver.current = new MutationObserver(handlePlayPauseChange);
+      playPauseChangeObserver.current.observe(moviePlayerNode, {
+        attributeFilter: ["class"],
+      });
 
-    playPauseChangeObserver.current.observe(moviePlayerNode, {
-      attributeFilter: ["class"],
-    });
-
-    function handlePlayPauseChange(mutationRecord) {
-      console.log("handlePlayPauseChangeObserver");
-      let domtokenlist = mutationRecord[0].target.classList;
-      if (!domtokenlist.contains("playing-mode")) {
-        console.log("song PAUSED");
+      //initial
+      if (!document.getElementById("movie_player").classList.contains("playing-mode")) {
+        console.log("INITIAL song PAUSED");
         changeIsSongPlaying(false);
       } else {
-        console.log("song PLAYING");
+        console.log("INITIAL song PLAYING");
         changeIsSongPlaying(true);
       }
-    }
+
+      function handlePlayPauseChange(mutationRecord) {
+        console.log("handlePlayPauseChangeObserver");
+        let domtokenlist = mutationRecord[0].target.classList;
+        if (!domtokenlist.contains("playing-mode")) {
+          console.log("song PAUSED");
+          changeIsSongPlaying(false);
+        } else {
+          console.log("song PLAYING");
+          changeIsSongPlaying(true);
+        }
+      }
+    }, 500);
 
     return function () {
       console.log("removing playPauseChangeObserver");
@@ -41,7 +43,7 @@ function PlayPauseChangeObserver() {
     };
   }, []);
 
-  return <div id="PlayPauseChangeObserver"></div>;
+  return null;
 }
 
 export default PlayPauseChangeObserver;

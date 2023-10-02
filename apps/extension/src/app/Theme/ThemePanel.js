@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 
+import { IoColorPalette } from "react-icons/io5";
 import InvertColorsOffIcon from "@mui/icons-material/InvertColorsOff";
 import { GiAtom } from "react-icons/gi";
 import ColorizeIcon from "@mui/icons-material/Colorize";
@@ -31,9 +32,12 @@ function ThemePanel() {
       <h3
         css={css`
           padding: 2px 5px;
+          display: flex;
+          align-items: center;
         `}
       >
-        Theme
+        <IoColorPalette style={{ fontSize: "16px", marginRight: "5px" }} />
+        <span>Theme</span>
       </h3>
       <div
         css={css`

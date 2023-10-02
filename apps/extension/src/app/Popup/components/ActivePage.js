@@ -1,8 +1,9 @@
+import { lazy, Suspense } from "react";
 import { useStore } from "/src/app/store";
 
-import VisualizersPage from "../../Visualizer/VisualizersPage";
-import ThemesPage from "../../Theme/ThemesPage";
-import PiecePage from "../../Piece/PiecePage";
+const VisualizersPage = lazy(() => import("../../Visualizer/VisualizersPage"));
+const ThemesPage = lazy(() => import("../../Theme/ThemesPage"));
+const PiecePage = lazy(() => import("../../Piece/PiecePage"));
 
 function ActivePage() {
   const activePopupTab = useStore((state) => state.popup.prefs.activePopupTab);
@@ -25,7 +26,7 @@ function ActivePage() {
     }
   };
 
-  return <>{activePageCalc()}</>;
+  return <Suspense fallback={<h1>💿</h1>}>{activePageCalc()}</Suspense>;
 }
 
 export default ActivePage;

@@ -5,8 +5,8 @@ import Popover from "@mui/material/Popover";
 import Badge from "@mui/material/Badge";
 import { useStore } from "/src/app/store";
 import SnoozeIcon from "@mui/icons-material/Snooze";
-import ThemeSongFontIcon from "./components/ThemeSongFontIcon";
-import QapIconAlt from "../Piece/pieces/QapIconAlt";
+import ThemeSongFontIcon from "../Icon/ThemeSongFontIcon";
+import QapIconAlt from "../Piece/pieces/QapIconAlt/QapIconAlt";
 
 function Panel() {
   const showUpdateNote = useStore((state) => state.extension.prefs.showUpdateNote);

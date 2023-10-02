@@ -3,6 +3,8 @@ import HeadphonesIcon from "@mui/icons-material/Headphones";
 import RatePopover from "./RatePopover";
 import SettingsPopover from "./SettingsPopover";
 import { useStore } from "/src/app/store";
+import DataObjectIcon from "@mui/icons-material/DataObject";
+import CloudQueueIcon from "@mui/icons-material/CloudQueue";
 
 function BottomBar() {
   const store = useStore();
@@ -39,7 +41,7 @@ function BottomBar() {
         </h3>
         <HeadphonesIcon
           css={css`
-            font-size: 14px;
+            font-size: 12px;
           `}
         />
       </div>
@@ -58,6 +60,7 @@ function BottomBar() {
               justify-content: space-between;
               align-items: center;
               align-content: center;
+              margin-right: 20px;
             `}
           >
             <button
@@ -66,11 +69,16 @@ function BottomBar() {
                 background-color: black;
                 margin: 0 2px;
                 border: 1px solid #888;
-                padding: 0 4px;
+                padding: 2px 4px 0;
               `}
               onClick={(e) => console.log(store)}
+              title="log local store"
             >
-              zstore
+              <DataObjectIcon
+                css={css`
+                  font-size: 12px;
+                `}
+              />
             </button>
             <button
               css={css`
@@ -78,13 +86,18 @@ function BottomBar() {
                 background-color: black;
                 margin: 0 2px;
                 border: 1px solid #888;
-                padding: 0 4px;
+                padding: 2px 4px 0;
               `}
               onClick={(e) => {
                 chrome.storage.local.get(null, (res) => console.log(res));
               }}
+              title="log cloud store"
             >
-              storage.local
+              <CloudQueueIcon
+                css={css`
+                  font-size: 12px;
+                `}
+              />
             </button>
           </div>
         )}
