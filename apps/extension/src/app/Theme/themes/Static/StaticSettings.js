@@ -57,13 +57,6 @@ export function StaticSettings() {
 
   return (
     <div>
-      <p
-        css={css`
-          margin: 5px 0 10px;
-        `}
-      >
-        Pick a color, any color. 🖍️
-      </p>
       <form
         name="appearance"
         css={css`

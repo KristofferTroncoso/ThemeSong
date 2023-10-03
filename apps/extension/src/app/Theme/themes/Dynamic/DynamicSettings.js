@@ -57,20 +57,6 @@ function DynamicSettings() {
 
   return (
     <div>
-      <p
-        css={css`
-          margin: 5px 0 0;
-        `}
-      >
-        Colors change dynamically based on album art.
-      </p>
-      <p
-        css={css`
-          margin-bottom: 10px;
-        `}
-      >
-        Adjust brightness and saturation below.
-      </p>
       <form
         name="appearance"
         css={css`
