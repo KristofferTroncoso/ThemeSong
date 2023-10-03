@@ -1,10 +1,8 @@
-import { useState } from "react";
 import { css } from "@emotion/react";
 import YtmIcon from "../../YtmLogo/YtmIcon";
+import ThemesongTextIcon from "./ThemesongTextIcon";
 
 function TopBar() {
-  const [extensionVersion] = useState(chrome.runtime.getManifest().version);
-
   function handleYTMclick() {
     chrome.tabs.query({}, (tabs) => {
       let ytmTabs = tabs.filter((tab) => "url" in tab);
@@ -40,12 +38,12 @@ function TopBar() {
       className="TopBar"
       css={{
         backgroundColor: "#2a2a2a",
-        width: "calc(100% - 20px)",
+        width: "calc(100% - 15px)",
         height: "26px",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "4px 10px 0",
+        padding: "4px 7px 0",
       }}
     >
       <h1 css={{ fontSize: "12px", fontWeight: "400" }}>
@@ -58,14 +56,7 @@ function TopBar() {
             textDecoration: "none",
           }}
         >
-          <span>ThemeSong - </span>
-          <span
-            css={css`
-              font-size: 11px;
-            `}
-          >
-            v{extensionVersion}
-          </span>
+          <ThemesongTextIcon />
         </a>
       </h1>
       <div
@@ -80,7 +71,6 @@ function TopBar() {
       >
         <button
           css={css`
-            /* height: 22px; */
             background-color: inherit;
             border: 0;
             padding: 0;
