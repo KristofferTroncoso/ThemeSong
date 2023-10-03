@@ -37,7 +37,7 @@ function TopBar() {
     <div
       className="TopBar"
       css={{
-        backgroundColor: "#2a2a2a",
+        backgroundColor: "#1f1f1f",
         width: "calc(100% - 15px)",
         height: "26px",
         display: "flex",
