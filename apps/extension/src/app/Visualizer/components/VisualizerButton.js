@@ -19,7 +19,7 @@ function VisualizerButton({ id, children, handleClick, isActive, name, ...props 
       disabled={isActive}
       {...props}
     >
-      <h4>{name}</h4>
+      {children}
     </button>
   );
 }

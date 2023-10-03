@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
 
-function ThemeButton({ theme }) {
+function ThemeButton({ theme, children, ...props }) {
   const [activeTheme, setActiveTheme] = useStore((state) => [
     state.theme.prefs.activeTheme,
     state.theme.setActiveTheme,
@@ -26,8 +26,9 @@ function ThemeButton({ theme }) {
       onClick={(e) => {
         setActiveTheme(theme.id);
       }}
+      {...props}
     >
-      <h4>{theme.name}</h4>
+      {children}
     </button>
   );
 }

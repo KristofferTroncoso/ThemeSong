@@ -6,6 +6,7 @@ import StaticSettings from "./themes/Static/StaticSettings";
 import AppleMusicSettings from "./themes/AppleMusic/AppleMusicSettings";
 
 import ThemeButton from "../Popup/components/ThemeButton";
+import ThemeIcons from "./components/ThemeIcons";
 
 function ThemesPage() {
   const themes = useStore((state) => state.theme.themes);
@@ -60,7 +61,14 @@ function ThemesPage() {
         }}
       >
         {themes.map((theme) => (
-          <ThemeButton key={theme.id} theme={theme} />
+          <ThemeButton
+            key={theme.id}
+            theme={theme}
+            style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}
+          >
+            <ThemeIcons themeId={theme.id} style={{ fontSize: 24 }} />
+            <span style={{ fontSize: 10 }}>{theme.name}</span>
+          </ThemeButton>
         ))}
       </div>
     </div>
