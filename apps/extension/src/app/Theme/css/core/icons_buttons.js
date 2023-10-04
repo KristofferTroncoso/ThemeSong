@@ -18,11 +18,6 @@ export const icons_buttons = /*css*/ `
     --yt-spec-mono-filled-hover: var(--ts-primary-icon-color) !important;
   }
 
-  /* icons on playerpage song image */
-  ytmusic-player {
-    color: var(--ts-primary-icon-color);
-  }
-
   /* sidebar icons; and when collapsed */
   #mini-guide yt-icon {
     fill: var(--ts-secondary-icon-color);

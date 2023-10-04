@@ -44,6 +44,7 @@ function StaticLight() {
         --ts-playerbar-color: hsl(${hue}, ${saturation}%, ${lightness[2]}%);
         --ts-body-color: hsl(${hue}, ${saturation}%, ${lightness[3]}%);
         --ts-body-alpha-gradient-color: hsl(${hue} ${saturation}% ${lightness[3]}% / 75%);
+        --ts-overlay-color: rgb(0 0 0 / 0.6);
       }`}
     </style>
   );
