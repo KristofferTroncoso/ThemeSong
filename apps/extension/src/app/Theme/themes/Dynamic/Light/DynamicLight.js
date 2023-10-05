@@ -101,6 +101,8 @@ function DynamicLight() {
 
             --ts-icon-accent-color: var(--ts-dynamiclight-accent-color);
             --ts-colored-button-color: var(--ts-dynamiclight-accent-color);
+
+            --ts-overlay-color: rgb(0 0 0 / 0.6);
         }
       `
       }

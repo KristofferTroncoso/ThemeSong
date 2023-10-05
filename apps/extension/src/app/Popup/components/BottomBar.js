@@ -13,7 +13,7 @@ function BottomBar() {
     <div
       className="BottomBar"
       css={css`
-        background-color: #2e2e2e;
+        background-color: #1f1f1f;
         height: 28px;
         display: flex;
         justify-content: space-between;

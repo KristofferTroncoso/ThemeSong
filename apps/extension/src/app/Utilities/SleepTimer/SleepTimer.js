@@ -47,7 +47,9 @@ function SleepTimer() {
   useEffect(() => {
     function lastSongDone() {
       if (document.getElementById("movie_player").classList.contains("playing-mode")) {
-        document.getElementById("play-pause-button").click();
+        setTimeout(() => {
+          document.getElementById("play-pause-button").click();
+        }, 500);
       }
       setIsLastSong(false);
       setTimerIsActive(false);

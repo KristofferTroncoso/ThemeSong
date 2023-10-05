@@ -200,4 +200,9 @@ tp-yt-paper-toast {
 .yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text {
   color: var(--ts-primary-text-color) !important;
 }
+
+/* song pills. selected. (All, Familiar, Discover, etc) */
+ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_PRIMARY] a.ytmusic-chip-cloud-chip-renderer, ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_SECONDARY] a.ytmusic-chip-cloud-chip-renderer, ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_UNKNOWN][is-selected] a.ytmusic-chip-cloud-chip-renderer .text {
+  color: var(--ts-inverse-text-color) !important;
+}
 `;

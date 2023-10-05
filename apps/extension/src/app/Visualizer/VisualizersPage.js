@@ -4,6 +4,7 @@ import WavySettings from "./visualizers/Wavy/WavySettings";
 import BarsSettings from "./visualizers/Bars/BarsSettings";
 import CirclesSettings from "./visualizers/Circles/CirclesSettings";
 import ExperimentalSettings from "./visualizers/Experimental/ExperimentalSettings";
+import VisualizerIcons from "./components/VisualizerIcons";
 
 import { useStore } from "/src/app/store";
 
@@ -95,7 +96,11 @@ function VisualizersPage() {
             onClick={(e) => handleVisualizerClick(e, visualizer.id)}
             isActive={visualizer.id === activeVisualizer}
             name={visualizer.name}
-          />
+            style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+          >
+            <VisualizerIcons visualizerId={visualizer.id} style={{ fontSize: 24 }} />
+            <span style={{ fontSize: 10 }}>{visualizer.name}</span>
+          </VisualizerButton>
         ))}
       </div>
     </div>
