@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "ThemeSong for YouTube Music™ (Enhancer)",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Enhancer for YouTube Music™. Dynamic Themes, Visualizers, Lyrics, Sleep Timer, and more!",
   "background": { "scripts": ["themesong-background.js"] },
   "permissions": [
