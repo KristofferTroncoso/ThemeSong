@@ -20,7 +20,7 @@ function AppleMusicLight() {
       document.querySelector("html").removeAttribute("dark");
       document.querySelector("html").setAttribute("light", "true");
     } else {
-      menubar.content = `oklch(45% ${lightVibrantOKLCH[1] * 0.4} ${lightVibrantOKLCH[2]})`;
+      menubar.content = `oklch(45% ${lightVibrantOKLCH[1] * 0.5} ${lightVibrantOKLCH[2]})`;
       document.querySelector("html").setAttribute("dark", "true");
       document.querySelector("html").removeAttribute("light");
     }

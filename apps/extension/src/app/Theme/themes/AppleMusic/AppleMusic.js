@@ -48,18 +48,20 @@ function AppleMusic() {
         {thumbnail_border}
         {
           /*css*/ `
-          :root {            
-            --ts-theme-apple-1-color: oklch(35% calc(var(--ts-palette-dominant-c) * 0.3) var(--ts-palette-dominant-h));
-            --ts-theme-apple-2-color: oklch(40% calc(var(--ts-palette-vibrant-c) * 0.3) var(--ts-palette-vibrant-h));
-            --ts-theme-apple-3-color: oklch(35% calc(var(--ts-palette-muted-c) * 0.3) var(--ts-palette-muted-h));
-            --ts-theme-apple-4-color: oklch(45% calc(var(--ts-palette-lightvibrant-c) * 0.4) var(--ts-palette-lightvibrant-h));
-            --ts-theme-apple-5-color: oklch(32% calc(var(--ts-palette-darkvibrant-c) * 0.3) var(--ts-palette-darkvibrant-h));
+          :root {
+            --ts-theme-apple-4-color: oklch(45% calc(var(--ts-palette-lightvibrant-c) * 0.5) var(--ts-palette-lightvibrant-h));
+            --ts-theme-apple-2-color: oklch(40% calc(var(--ts-palette-vibrant-c) * 0.4) var(--ts-palette-vibrant-h));
+            --ts-theme-apple-5-color: oklch(35% calc(var(--ts-palette-darkvibrant-c) * 0.35) var(--ts-palette-darkvibrant-h));
+            --ts-theme-apple-3-color: oklch(32% calc(var(--ts-palette-muted-c) * 0.3) var(--ts-palette-muted-h));
+
+            --ts-theme-apple-6-color: oklch(40% calc(var(--ts-palette-0-c) * 0.6) var(--ts-palette-0-h));
+            --ts-theme-apple-7-color: oklch(35% calc(var(--ts-palette-0-c) * 0.5) var(--ts-palette-0-h));
             
-            --ts-navbar-color: var(--ts-theme-apple-4-color);
-            --ts-sidebar-color: linear-gradient(180deg, var(--ts-theme-apple-4-color) 10%, var(--ts-theme-apple-2-color) 25%, var(--ts-theme-apple-5-color) 70%, var(--ts-theme-apple-3-color) 85%);
-            --ts-playerpage-color: linear-gradient(180deg, var(--ts-theme-apple-4-color) 0%, var(--ts-theme-apple-2-color) 20%, var(--ts-theme-apple-5-color) 80%, var(--ts-theme-apple-3-color) 100%);
-            --ts-playerbar-color: var(--ts-theme-apple-3-color);
-            --ts-playerpageavtoggle-color: oklch(35% calc(var(--ts-palette-vibrant-c) * 0.3) var(--ts-palette-lightvibrant-h));
+            --ts-navbar-color: linear-gradient(177deg, var(--ts-theme-apple-4-color) 60%, var(--ts-theme-apple-2-color) 140%);
+            --ts-sidebar-color: linear-gradient(160deg, var(--ts-theme-apple-4-color) 20%, var(--ts-theme-apple-2-color) 45%, var(--ts-theme-apple-5-color) 70%);
+            --ts-playerpage-color: radial-gradient(circle at 80% 600%, var(--ts-theme-apple-3-color) 80%, var(--ts-theme-apple-5-color) 86%, var(--ts-theme-apple-2-color) 94%, var(--ts-theme-apple-4-color) 98%);
+            --ts-playerbar-color: linear-gradient(170deg, var(--ts-theme-apple-5-color) 15%, var(--ts-theme-apple-3-color) 60%);
+            --ts-playerpageavtoggle-color: oklch(37% calc(var(--ts-palette-vibrant-c) * 0.25) var(--ts-palette-lightvibrant-h));
           }
 
           /* i think ytm is putting a 'padding-top: 100%' on this. i have to set it to 0 for my gradient to be good */
