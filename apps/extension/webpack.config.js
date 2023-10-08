@@ -12,10 +12,10 @@ const fileExtensions = ["jpg", "jpeg", "png", "gif", "eot", "otf", "svg", "ttf",
 const options = {
   mode: process.env.NODE_ENV || "development",
   entry: {
-    "themesong-options": path.join(__dirname, "src", "app", "Options", "index.js"),
-    "themesong-popup": path.join(__dirname, "src", "app", "Popup", "index.js"),
-    "themesong-background": path.join(__dirname, "src", "app", "Background", "index.js"),
-    "themesong-content": path.join(__dirname, "src", "app", "Content", "index.js"),
+    "themesong-options": path.join(__dirname, "src/app/Options/index.js"),
+    "themesong-popup": path.join(__dirname, "src/app/Popup/index.js"),
+    "themesong-background": path.join(__dirname, "src/app/Background/index.js"),
+    "themesong-content": path.join(__dirname, "src/app/Content/index.js"),
   },
   chromeExtensionBoilerplate: {
     notHotReload: ["themesong-background", "themesong-content"],
@@ -30,14 +30,7 @@ const options = {
     rules: [
       {
         test: /\.(css|scss)$/,
-        use: [
-          {
-            loader: "style-loader",
-          },
-          {
-            loader: "css-loader",
-          },
-        ],
+        use: ["style-loader", "css-loader"],
       },
       {
         test: new RegExp(".(" + fileExtensions.join("|") + ")$"),
@@ -52,14 +45,7 @@ const options = {
       { test: /\.(ts|tsx)$/, loader: "ts-loader", exclude: /node_modules/ },
       {
         test: /\.(js|jsx)$/,
-        use: [
-          {
-            loader: "source-map-loader",
-          },
-          {
-            loader: "babel-loader",
-          },
-        ],
+        use: ["source-map-loader", "babel-loader"],
         exclude: /node_modules/,
       },
     ],
@@ -95,16 +81,14 @@ const options = {
       ],
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "src", "app", "Options", "index.html"),
+      template: path.join(__dirname, "src/app/Options/index.html"),
       filename: "options.html",
       chunks: ["themesong-options"],
-      cache: false,
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "src", "app", "Popup", "index.html"),
+      template: path.join(__dirname, "src/app/Popup/index.html"),
       filename: "popup.html",
       chunks: ["themesong-popup"],
-      cache: false,
     }),
   ],
   infrastructureLogging: {
