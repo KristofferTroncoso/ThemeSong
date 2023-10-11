@@ -7,6 +7,8 @@ import AppleMusicSettings from "./themes/AppleMusic/AppleMusicSettings";
 
 import ThemeButton from "../Popup/components/ThemeButton";
 import ThemeIcons from "./components/ThemeIcons";
+import { IoColorPalette } from "react-icons/io5";
+import { LuSettings2 } from "react-icons/lu";
 
 function ThemesPage() {
   const themes = useStore((state) => state.theme.themes);
@@ -39,15 +41,33 @@ function ThemesPage() {
           padding: "5px 10px 10px",
         }}
       >
-        <h2
+        <div
           css={css`
-            color: #ff3232;
-            font-size: 16px;
-            margin-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
           `}
         >
-          Theme: {activeThemeDetails.name}
-        </h2>
+          <h2
+            css={css`
+              font-size: 16px;
+              margin-bottom: 4px;
+              display: flex;
+              align-content: center;
+              align-items: center;
+            `}
+          >
+            <IoColorPalette />{" "}
+            <span
+              css={css`
+                color: red;
+                margin-left: 8px;
+              `}
+            >
+              {activeThemeDetails.name}
+            </span>
+          </h2>
+          <LuSettings2 style={{ fontSize: 16 }} />
+        </div>
         {activeThemeSettings()}
       </div>
       <div

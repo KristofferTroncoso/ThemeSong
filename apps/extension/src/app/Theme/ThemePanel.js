@@ -9,11 +9,13 @@ import PaletteIcon from "@mui/icons-material/Palette";
 
 import PanelButton from "../QuickAccessPanel/components/PanelButton";
 import { useStore } from "/src/app/store";
+import useLocalization from "../Extension/Localization/useLocalization";
 
 function ThemePanel() {
   const themes = useStore((state) => state.theme.themes);
   const activeTheme = useStore((state) => state.theme.prefs.activeTheme);
   const setActiveTheme = useStore((state) => state.theme.setActiveTheme);
+  const getMessage = useLocalization();
 
   const handleClick = (value) => {
     if (activeTheme !== value) {
@@ -37,7 +39,7 @@ function ThemePanel() {
         `}
       >
         <IoColorPalette style={{ fontSize: "16px", marginRight: "5px" }} />
-        <span>Theme</span>
+        <span>{getMessage("themes")}</span>
       </h3>
       <div
         css={css`

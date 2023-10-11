@@ -5,6 +5,8 @@ import BarsSettings from "./visualizers/Bars/BarsSettings";
 import CirclesSettings from "./visualizers/Circles/CirclesSettings";
 import ExperimentalSettings from "./visualizers/Experimental/ExperimentalSettings";
 import VisualizerIcons from "./components/VisualizerIcons";
+import { GiProtectionGlasses } from "react-icons/gi";
+import { LuSettings2 } from "react-icons/lu";
 
 import { useStore } from "/src/app/store";
 
@@ -68,15 +70,34 @@ function VisualizersPage() {
           padding: "5px 10px 10px",
         }}
       >
-        <h2
+        <div
           css={css`
-            color: #ff3232;
-            font-size: 16px;
-            margin-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
           `}
         >
-          Visualizer: {activeVisualizerDetails.name}
-        </h2>
+          <h2
+            css={css`
+              font-size: 16px;
+              margin-bottom: 4px;
+              display: flex;
+              align-content: center;
+              align-items: center;
+            `}
+          >
+            <GiProtectionGlasses style={{ fontSize: 22 }} />{" "}
+            <span
+              css={css`
+                color: red;
+                margin-left: 8px;
+              `}
+            >
+              {activeVisualizerDetails.name}
+            </span>
+          </h2>
+          <LuSettings2 style={{ fontSize: 16 }} />
+        </div>
+
         {activeVisualizerSettings()}
       </div>
       <div

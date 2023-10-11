@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { css } from "@emotion/react";
 import Popover from "@mui/material/Popover";
-import Typography from "@mui/material/Typography";
 import Settings from "@mui/icons-material/Settings";
+import { BiReset } from "react-icons/bi";
+import LocaleSettings from "../../Extension/Localization/LocaleSettings";
 
 function SettingsPopover() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -64,28 +65,48 @@ function SettingsPopover() {
           horizontal: "right",
         }}
       >
-        <Typography sx={{ p: 1 }}>
+        <LocaleSettings />
+        <div
+          css={css`
+            padding: 10px;
+            width: 200px;
+            display: flex;
+            align-items: center;
+            align-content: center;
+          `}
+        >
           <span
             css={css`
               font-size: 15px;
             `}
           >
-            Repair/Reset to extension defaults:{" "}
+            Repair/Reset:{" "}
           </span>
           <button
             onClick={handleReset}
-            css={{
-              color: "white",
-              background: "red",
-              border: "1px solid black",
-              borderRadius: "2px",
-              marginLeft: "5px",
-              padding: "3px",
-            }}
+            css={css`
+              color: white;
+              background: red;
+              border: 1px solid black;
+              border-radius: 2px;
+              margin-left: 5px;
+              padding: 3px;
+              width: 100px;
+              display: flex;
+              justify-content: center;
+              align-content: center;
+              align-items: center;
+            `}
           >
-            RESET
+            <BiReset
+              css={css`
+                font-size: 16px;
+                margin-right: 5px;
+              `}
+            />{" "}
+            <span>RESET</span>
           </button>
-        </Typography>
+        </div>
       </Popover>
     </>
   );

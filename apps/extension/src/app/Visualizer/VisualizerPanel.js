@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
-
+import useLocalization from "../Extension/Localization/useLocalization";
 import StyledPanelDiv from "../QuickAccessPanel/components/StyledPanelDiv";
 import PanelButton from "../QuickAccessPanel/components/PanelButton";
 import { GiProtectionGlasses } from "react-icons/gi";
@@ -47,6 +47,8 @@ function VisualizerPanel() {
   const visualizerPrefs = useStore((state) => state.visualizer.prefs);
   const setSingleVisualizerPrefs = useStore((state) => state.visualizer.setSingleVisualizerPrefs);
 
+  const getMessage = useLocalization();
+
   const handleVisualizerButtonClick = (id) => {
     if (activeVisualizer === id) {
       toggleIsVisualizerOn();
@@ -73,7 +75,7 @@ function VisualizerPanel() {
           `}
         >
           <GiProtectionGlasses style={{ fontSize: "20px", marginRight: "5px", paddingBottom: "2px" }} />
-          <span>Visualizer</span>
+          <span>{getMessage("visualizers")}</span>
         </h3>
         <div
           css={css`
@@ -114,7 +116,7 @@ function VisualizerPanel() {
               padding: 2px 5px;
             `}
           >
-            Variants
+            {getMessage("variants")}
           </h3>
           {
             {
@@ -197,7 +199,7 @@ function VisualizerPanel() {
               color: var(--ts-base-40-color, rgb(255 255 255 / 0.2));
             `}
           >
-            Variants
+            {getMessage("variants")}
           </h3>
           <div
             css={css`

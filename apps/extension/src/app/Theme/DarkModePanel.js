@@ -6,11 +6,13 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import { CgDarkMode } from "react-icons/cg";
 
 import PanelButton from "../QuickAccessPanel/components/PanelButton";
+import useLocalization from "../Extension/Localization/useLocalization";
 
 function DarkModePanel() {
   const activeTheme = useStore((state) => state.theme.prefs.activeTheme);
   const activeThemeUserPrefs = useStore((state) => state.theme.prefs[activeTheme]);
   const setSingleThemePrefs = useStore((state) => state.theme.setSingleThemePrefs);
+  const getMessage = useLocalization();
 
   function handleDarkLightChange(value) {
     if (activeThemeUserPrefs.appearance !== value) {
@@ -41,7 +43,7 @@ function DarkModePanel() {
             color: var(--ts-base-40-color, rgb(255 255 255 / 0.2));
           `}
         >
-          Appearance
+          {getMessage("appearance")}
         </h3>
         <div
           css={css`
@@ -66,7 +68,7 @@ function DarkModePanel() {
             padding: 2px 5px;
           `}
         >
-          Appearance
+          {getMessage("appearance")}
         </h3>
         <div
           css={css`

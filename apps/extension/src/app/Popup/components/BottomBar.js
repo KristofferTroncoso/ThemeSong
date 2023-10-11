@@ -5,9 +5,11 @@ import SettingsPopover from "./SettingsPopover";
 import { useStore } from "/src/app/store";
 import DataObjectIcon from "@mui/icons-material/DataObject";
 import CloudQueueIcon from "@mui/icons-material/CloudQueue";
+import useLocalization from "../../Extension/Localization/useLocalization";
 
 function BottomBar() {
   const store = useStore();
+  const getMessage = useLocalization();
 
   return (
     <div
@@ -37,7 +39,7 @@ function BottomBar() {
             font-weight: 400;
           `}
         >
-          Have a nice day
+          {getMessage("greeting")}
         </h3>
         <HeadphonesIcon
           css={css`

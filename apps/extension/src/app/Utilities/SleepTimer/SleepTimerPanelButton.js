@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
 
 import PanelButton from "../../QuickAccessPanel/components/PanelButton";
-import SnoozeIcon from "@mui/icons-material/Snooze";
+import { MdAccessAlarm } from "react-icons/md";
 
 function SleepTimerPanelButton() {
   const isActive = useStore((state) => state.utilities.sleepTimer.isActive);
@@ -15,9 +15,9 @@ function SleepTimerPanelButton() {
       hoverColor="#ac13cf"
       bgColor={isActive && "#ac13cf"}
     >
-      <SnoozeIcon
+      <MdAccessAlarm
         css={css`
-          font-size: 28px;
+          font-size: 26px;
         `}
       />
     </PanelButton>

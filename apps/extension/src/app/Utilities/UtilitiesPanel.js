@@ -3,8 +3,11 @@ import { css } from "@emotion/react";
 import SleepTimerPanelButton from "./SleepTimer/SleepTimerPanelButton";
 import StyledPanelDiv from "../QuickAccessPanel/components/StyledPanelDiv";
 import NotificationPanelButton from "./Notification/NotificationPanelButton";
+import useLocalization from "../Extension/Localization/useLocalization";
 
 function UtilitiesPanel() {
+  const getMessage = useLocalization();
+
   return (
     <StyledPanelDiv>
       <h3
@@ -13,7 +16,7 @@ function UtilitiesPanel() {
           color: var(--ts-secondary-text-color);
         `}
       >
-        Utilities
+        {getMessage("utilities")}
       </h3>
       <div
         css={css`
