@@ -6,7 +6,6 @@ function TabButton({ isActive, children, ...props }) {
       css={css`
         border-radius: 5px;
         border: ${isActive ? "0; " : "2px solid #333;"};
-        width: 110px;
         height: 30px;
         background: ${isActive ? "#fff" : "rgb(40,40,40)"};
         color: ${isActive ? "#000" : "#ccc"};
@@ -16,9 +15,9 @@ function TabButton({ isActive, children, ...props }) {
         justify-content: center;
         align-items: center;
         :hover {
-          background: #fff;
+          background: #e0e0e0;
           color: #000;
-          border: #fff;
+          border: #e0e0e0;
         }
       `}
       disabled={isActive}
