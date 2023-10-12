@@ -60,6 +60,10 @@ export const icons_buttons = /*css*/ `
     --yt-compact-link-icon-color: var(--ts-secondary-icon-color, rgb(200, 100, 100));
   } 
 
+  ytmusic-player-bar:not([repeat-mode=NONE]) .repeat.ytmusic-player-bar {
+    color: var(--ts-base-100-color);
+  }
+
   /* volume slider */
   .volume-slider.ytmusic-player-bar, .expand-volume-slider.ytmusic-player-bar {
     width: 100px;
