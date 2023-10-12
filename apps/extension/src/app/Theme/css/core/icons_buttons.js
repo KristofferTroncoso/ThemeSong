@@ -59,10 +59,6 @@ export const icons_buttons = /*css*/ `
   ytd-multi-page-menu-renderer.ytmusic-popup-container {
     --yt-compact-link-icon-color: var(--ts-secondary-icon-color, rgb(200, 100, 100));
   } 
-  ytmusic-player-bar:not([repeat-mode_=NONE]) .repeat.ytmusic-player-bar {
-    color: var(--ts-base-100-color);
-  }
-
 
   /* volume slider */
   .volume-slider.ytmusic-player-bar, .expand-volume-slider.ytmusic-player-bar {
