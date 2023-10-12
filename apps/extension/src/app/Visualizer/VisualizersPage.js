@@ -7,7 +7,7 @@ import ExperimentalSettings from "./visualizers/Experimental/ExperimentalSetting
 import VisualizerIcons from "./components/VisualizerIcons";
 import { GiProtectionGlasses } from "react-icons/gi";
 import { LuSettings2 } from "react-icons/lu";
-
+import useLocalization from "../Extension/Localization/useLocalization";
 import { useStore } from "/src/app/store";
 
 function VisualizersPage() {
@@ -17,6 +17,7 @@ function VisualizersPage() {
   const activeVisualizerDetails = useStore((state) =>
     state.visualizer.visualizers.find((visualizer) => visualizer.id === activeVisualizer)
   );
+  const getMessage = useLocalization();
 
   const handleVisualizerClick = (e, id) => {
     setActiveVisualizer(id);
@@ -56,7 +57,7 @@ function VisualizersPage() {
             color: white;
           `}
         >
-          To turn on visualizer: Hover album art and click on visualizer button
+          {getMessage("turnOnVisualizer")}
         </span>
       </h2>
       <div
