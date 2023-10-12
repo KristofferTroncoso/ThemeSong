@@ -109,7 +109,7 @@ function VisualizerPanel() {
         </div>
       </div>
       {(isVisualizerOn && activeVisualizer === "51dc50c8-eb06-4086-ad9c-a89758f63db6") ||
-      activeVisualizer === "685d0ec7-5c52-4e48-a43d-11184a39f3da" ? (
+      (isVisualizerOn && activeVisualizer === "685d0ec7-5c52-4e48-a43d-11184a39f3da") ? (
         <div>
           <h3
             css={css`
