@@ -13,6 +13,7 @@ import { userSnippet } from "./messages/userSnippet";
 import { lyricsFontSize } from "./messages/lyricsFontSize";
 import { openSong } from "./messages/openSong";
 import { searchForLyrics } from "./messages/searchForLyrics";
+import { likeAndComment } from "./messages/likeAndComment";
 
 export const localizations = {
   themes,
@@ -30,4 +31,5 @@ export const localizations = {
   lyricsFontSize,
   openSong,
   searchForLyrics,
+  likeAndComment,
 };

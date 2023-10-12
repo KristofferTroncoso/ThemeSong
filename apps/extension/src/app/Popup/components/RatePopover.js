@@ -3,10 +3,13 @@ import { css } from "@emotion/react";
 import Popover from "@mui/material/Popover";
 import Star from "@mui/icons-material/Star";
 import LaunchIcon from "@mui/icons-material/Launch";
-// import Typography from '@mui/material/Typography';
+import useLocalization from "../../Extension/Localization/useLocalization";
+import { TbHandOff } from "react-icons/tb";
+import { AiFillLike } from "react-icons/ai";
 
 function RatePopover() {
   const [anchorEl, setAnchorEl] = useState(null);
+  const getMessage = useLocalization();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -56,7 +59,7 @@ function RatePopover() {
       >
         <div css={{ padding: "10px", fontSize: "14px", color: "black" }}>
           <div>
-            <p css={{ marginBottom: "5px" }}>Liking the extension? Please rate and comment!</p>
+            <p css={{ marginBottom: "5px", fontSize: "15px" }}>{getMessage("likeAndComment")}</p>
             <div
               css={css`
                 display: flex;
@@ -76,6 +79,7 @@ function RatePopover() {
                 <button
                   css={css`
                     display: flex;
+                    height: 30px;
                     align-items: center;
                     align-content: center;
                     justify-content: center;
@@ -92,7 +96,7 @@ function RatePopover() {
                       padding-right: 5px;
                     `}
                   >
-                    Okay!
+                    <AiFillLike style={{ fontSize: 22 }} />
                   </span>
                   <LaunchIcon
                     css={css`
@@ -107,13 +111,13 @@ function RatePopover() {
                 css={{
                   fontSize: "12px",
                   color: "white",
-                  backgroundColor: "#eb102d",
+                  backgroundColor: "#858585",
                   border: "1px solid #2e2e2e",
                   borderRadius: "4px",
                   padding: "0 10px",
                 }}
               >
-                Later
+                <TbHandOff style={{ fontSize: 20 }} />
               </button>
             </div>
           </div>
