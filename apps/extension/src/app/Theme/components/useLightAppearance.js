@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export default function useLightAppearance() {
+function useLightAppearance() {
   useEffect(() => {
     const htmlEl = document.querySelector("html");
     htmlEl.removeAttribute("dark");
@@ -12,3 +12,5 @@ export default function useLightAppearance() {
     };
   }, []);
 }
+
+export default useLightAppearance;

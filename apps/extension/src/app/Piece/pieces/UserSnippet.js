@@ -4,7 +4,7 @@ import { Modal } from "@mui/material";
 import { css } from "@emotion/react";
 import EditIcon from "@mui/icons-material/Edit";
 
-export default function UserSnippet() {
+function UserSnippet() {
   const userSnippetPrefs = useStore((state) => state.piece.prefs["2a606045-80f3-4aee-93de-cf3cd39d2920"]);
 
   return <style id="UserSnippet">{userSnippetPrefs.css}</style>;
@@ -138,3 +138,5 @@ body {
     </Modal>
   );
 }
+
+export default UserSnippet;

@@ -2,7 +2,7 @@ import { useStore } from "/src/app/store";
 import { css } from "@emotion/react";
 import StyledSlider from "../../Theme/components/StyledSlider";
 
-export default function LyricsSize() {
+function LyricsSize() {
   const lyricsFontSize = useStore((state) => state.piece.prefs["895e0c50-c0a0-4752-8014-bd4cb5029e9b"].size);
   return <style>{`.description.ytmusic-description-shelf-renderer {font-size: ${lyricsFontSize}px;}`}</style>;
 }
@@ -29,3 +29,5 @@ export function LyricsSizeSettings() {
     </div>
   );
 }
+
+export default LyricsSize;

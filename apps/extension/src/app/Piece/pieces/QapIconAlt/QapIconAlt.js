@@ -7,7 +7,7 @@ import { BiSolidCat } from "react-icons/bi";
 import { PiDog } from "react-icons/pi";
 import { FaIceCream } from "react-icons/fa";
 
-export default function QapIconAlt() {
+function QapIconAlt() {
   const quickAccessPanelIconPrefs = useStore((state) => state.piece.prefs["34637b81-0c1a-4982-b130-0ff9ac232e4d"]);
 
   return (
@@ -26,3 +26,5 @@ export default function QapIconAlt() {
     </>
   );
 }
+
+export default QapIconAlt;

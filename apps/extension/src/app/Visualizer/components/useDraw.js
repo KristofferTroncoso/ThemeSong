@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export default function useDraw(func) {
+function useDraw(func) {
   useEffect(() => {
     const canvasEl = document.getElementById("ThemeSong-Visualizer-Canvas");
 
@@ -17,3 +17,5 @@ export default function useDraw(func) {
     };
   }, [func]);
 }
+
+export default useDraw;

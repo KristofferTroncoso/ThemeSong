@@ -1,7 +1,7 @@
 import { localizations } from "./localization";
 import { useStore } from "/src/app/store";
 
-export default function useLocalization() {
+function useLocalization() {
   const locale = useStore((state) => state.extension.prefs.locale);
 
   return (message) => {
@@ -13,3 +13,5 @@ export default function useLocalization() {
     return translation;
   };
 }
+
+export default useLocalization;

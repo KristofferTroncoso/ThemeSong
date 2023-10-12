@@ -1,4 +1,4 @@
-export default function handleIconColor(value) {
+function handleIconColor(value) {
   const canvas = new OffscreenCanvas(128, 128);
   const ctx = canvas.getContext("2d");
 
@@ -44,3 +44,5 @@ export default function handleIconColor(value) {
   const imageData = ctx.getImageData(0, 0, 128, 128);
   chrome.action.setIcon({ imageData });
 }
+
+export default handleIconColor;

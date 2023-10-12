@@ -1,6 +1,6 @@
 import { useStore } from "/src/app/store";
 
-export default function QapIconAltSettings() {
+function QapIconAltSettings() {
   const icons = useStore(
     (state) => state.piece.pieces.find((piece) => piece.id === "34637b81-0c1a-4982-b130-0ff9ac232e4d").icons
   );
@@ -24,3 +24,5 @@ export default function QapIconAltSettings() {
     </div>
   );
 }
+
+export default QapIconAltSettings;

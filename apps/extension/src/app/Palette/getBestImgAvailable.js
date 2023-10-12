@@ -1,6 +1,6 @@
 import { songImg, playerBarSongImgNode } from "../Theme/selectors";
 
-export default function getBestImgAvailable() {
+function getBestImgAvailable() {
   let bestImgAvailable;
 
   // prioritizes large album artwork but if not available, (e.g. if it's a video) its best to go for playBar img.
@@ -16,3 +16,5 @@ export default function getBestImgAvailable() {
 
   return bestImgAvailable;
 }
+
+export default getBestImgAvailable;

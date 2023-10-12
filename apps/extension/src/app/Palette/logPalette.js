@@ -1,5 +1,5 @@
 // console.log() Vibrant-Colors palette
-export default function logPalette(palette) {
+function logPalette(palette) {
   let { LightVibrant, Vibrant, DarkVibrant, LightMuted, Muted, DarkMuted } = palette;
   console.log(
     `%c
@@ -29,3 +29,5 @@ export default function logPalette(palette) {
     `color: white; background: ${DarkMuted.hex};`
   );
 }
+
+export default logPalette;

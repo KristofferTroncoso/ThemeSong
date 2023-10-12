@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useStore } from "/src/app/store";
 
-export default function useAnimation(func, fps) {
+function useAnimation(func, fps) {
   const playerUiState = useStore((state) => state.player.playerUiState);
   const isSongPlaying = useStore((state) => state.player.isSongPlaying);
   const intervalId = useRef();
@@ -22,3 +22,5 @@ export default function useAnimation(func, fps) {
     };
   }, [func, fps, isSongPlaying, playerUiState]);
 }
+
+export default useAnimation;

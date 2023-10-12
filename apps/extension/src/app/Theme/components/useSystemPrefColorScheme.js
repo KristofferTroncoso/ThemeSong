@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function useSystemPrefColorScheme() {
+function useSystemPrefColorScheme() {
   const [isDark, setIsDark] = useState(window.matchMedia("(prefers-color-scheme: dark)").matches);
 
   useEffect(() => {
@@ -20,3 +20,5 @@ export default function useSystemPrefColorScheme() {
 
   return isDark ? "dark" : "light";
 }
+
+export default useSystemPrefColorScheme;
