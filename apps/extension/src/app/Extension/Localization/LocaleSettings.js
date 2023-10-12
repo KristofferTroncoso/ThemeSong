@@ -81,7 +81,13 @@ function LocaleSettings() {
       >
         Locale:
       </span>
-      <select name="locale" id="locale" value={selectedLocale} onChange={handleChange}>
+      <select
+        name="locale"
+        id="locale"
+        value={selectedLocale}
+        onChange={handleChange}
+        style={{ background: "#f1f1f1", color: "#000" }}
+      >
         {locales.map((locale) => (
           <option value={locale} key={locale}>
             {locale}
