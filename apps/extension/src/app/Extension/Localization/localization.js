@@ -11,6 +11,8 @@ import { hideVideoCaptions } from "./messages/hideVideoCaptions";
 import { panelAltIcon } from "./messages/panelAltIcon";
 import { userSnippet } from "./messages/userSnippet";
 import { lyricsFontSize } from "./messages/lyricsFontSize";
+import { openSong } from "./messages/openSong";
+import { searchForLyrics } from "./messages/searchForLyrics";
 
 export const localizations = {
   themes,
@@ -26,4 +28,6 @@ export const localizations = {
   panelAltIcon,
   userSnippet,
   lyricsFontSize,
+  openSong,
+  searchForLyrics,
 };

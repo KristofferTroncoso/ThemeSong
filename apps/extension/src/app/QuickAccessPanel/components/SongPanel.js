@@ -9,10 +9,12 @@ import GoogleIcon from "@mui/icons-material/Google";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { SiGenius } from "react-icons/si";
 import MusixmatchIcon from "../../Icon/MusixmatchIcon";
+import useLocalization from "../../Extension/Localization/useLocalization";
 
 function SongPanel() {
   const songName = useStore((state) => state.song.songName);
   const songArtist = useStore((state) => state.song.songArtist);
+  const getMessage = useLocalization();
 
   function sanitize(songTitle) {
     //remove parens
@@ -79,7 +81,7 @@ function SongPanel() {
             align-items: center;
           `}
         >
-          <span>Open song in </span>
+          <span>{getMessage("openSong")}</span>
           <OpenInNewIcon
             css={css`
               margin-left: 4px;
@@ -128,7 +130,7 @@ function SongPanel() {
             align-items: center;
           `}
         >
-          <span>Search for lyrics </span>
+          <span>{getMessage("searchForLyrics")}</span>
           <OpenInNewIcon
             css={css`
               margin-left: 4px;
