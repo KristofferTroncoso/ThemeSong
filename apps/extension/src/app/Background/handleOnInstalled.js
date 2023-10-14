@@ -17,8 +17,12 @@ export function handleOnInstalled(details) {
 
     // on update (extension update, chrome update, or extension refresh)
     case "update":
-      // whenever extension is updated, show update note
       chrome.storage.local.get("extensionPrefs", (res) => {
+        if (details.previousVersion >= "1.0.2") {
+          locale = res.extensionPrefs.locale;
+        }
+
+        // whenever extension is updated, show update note
         chrome.storage.local.set({
           extensionPrefs: { ...res.extensionPrefs, locale, showUpdateNote: true },
         });
