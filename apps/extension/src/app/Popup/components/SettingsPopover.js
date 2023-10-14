@@ -4,9 +4,11 @@ import Popover from "@mui/material/Popover";
 import Settings from "@mui/icons-material/Settings";
 import { BiReset } from "react-icons/bi";
 import LocaleSettings from "../../Extension/Localization/LocaleSettings";
+import useLocalization from "../../Extension/Localization/useLocalization";
 
 function SettingsPopover() {
   const [anchorEl, setAnchorEl] = useState(null);
+  const getMessage = useLocalization();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -69,7 +71,6 @@ function SettingsPopover() {
         <div
           css={css`
             padding: 10px;
-            width: 200px;
             display: flex;
             align-items: center;
             align-content: center;
@@ -80,7 +81,7 @@ function SettingsPopover() {
               font-size: 15px;
             `}
           >
-            Repair/Reset:{" "}
+            {getMessage("reset")}:{" "}
           </span>
           <button
             onClick={handleReset}

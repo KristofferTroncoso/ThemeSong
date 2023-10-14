@@ -15,6 +15,8 @@ import { openSong } from "./messages/openSong";
 import { searchForLyrics } from "./messages/searchForLyrics";
 import { likeAndComment } from "./messages/likeAndComment";
 import { turnOnVisualizer } from "./messages/turnOnVisualizer";
+import { reset } from "./messages/reset";
+import { additionalSettings } from "./messages/additionalSettings";
 
 export const localizations = {
   themes,
@@ -34,4 +36,6 @@ export const localizations = {
   searchForLyrics,
   likeAndComment,
   turnOnVisualizer,
+  reset,
+  additionalSettings,
 };

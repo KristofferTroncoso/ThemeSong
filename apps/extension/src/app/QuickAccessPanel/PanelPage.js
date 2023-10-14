@@ -6,7 +6,7 @@ import AppearancePanel from "../Theme/AppearancePanel";
 import UtilitiesPanel from "../Utilities/UtilitiesPanel";
 import UpdatePanel from "./components/UpdatePanel";
 import DevToolsPanel from "./components/DevToolsPanel";
-
+import useLocalization from "../Extension/Localization/useLocalization";
 import Tooltip from "@mui/material/Tooltip";
 import HelpIcon from "@mui/icons-material/Help";
 import TuneIcon from "@mui/icons-material/Tune";
@@ -15,6 +15,7 @@ import { useStore } from "/src/app/store";
 
 function PanelPage() {
   const showUpdateNote = useStore((state) => state.extension.prefs.showUpdateNote);
+  const getMessage = useLocalization();
 
   return (
     <div
@@ -68,7 +69,7 @@ function PanelPage() {
                 font-size: 12px;
               `}
             >
-              Additional settings and options available through the ThemeSong popup icon on your toolbar.
+              {getMessage("additionalSettings")}
             </p>
           }
         >
