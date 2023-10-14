@@ -6,6 +6,8 @@ import { GiSpiralLollipop } from "react-icons/gi";
 import { BiSolidCat } from "react-icons/bi";
 import { PiDog } from "react-icons/pi";
 import { FaIceCream } from "react-icons/fa";
+import { BiSolidGuitarAmp } from "react-icons/bi";
+import { LiaHeartbeatSolid } from "react-icons/lia";
 
 function QapIconAlt() {
   const quickAccessPanelIconPrefs = useStore((state) => state.piece.prefs["34637b81-0c1a-4982-b130-0ff9ac232e4d"]);
@@ -21,6 +23,8 @@ function QapIconAlt() {
           Burger: <LunchDiningIcon style={{ fontSize: "25px" }} />,
           Pokeball: <CatchingPokemonIcon style={{ fontSize: "26px" }} />,
           IceCream: <FaIceCream style={{ fontSize: "24px" }} />,
+          GuitarAmp: <BiSolidGuitarAmp style={{ fontSize: "23px" }} />,
+          Heartbeat: <LiaHeartbeatSolid style={{ fontSize: "30px" }} />,
         }[quickAccessPanelIconPrefs.icon]
       }
     </>

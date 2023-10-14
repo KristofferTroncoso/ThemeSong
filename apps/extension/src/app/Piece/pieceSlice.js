@@ -15,7 +15,7 @@ export const createPieceSlice = (set, get) => ({
     {
       id: "34637b81-0c1a-4982-b130-0ff9ac232e4d",
       name: "Quick Access Panel alt icon",
-      icons: ["Headphones", "Lollipop", "Dog", "Cat", "Burger", "Pokeball", "IceCream"],
+      icons: ["Headphones", "Lollipop", "Dog", "Cat", "Burger", "Pokeball", "IceCream", "GuitarAmp", "Heartbeat"],
     },
     {
       id: "2a606045-80f3-4aee-93de-cf3cd39d2920",

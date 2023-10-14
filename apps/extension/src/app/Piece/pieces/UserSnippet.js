@@ -16,28 +16,26 @@ export function UserSnippetSettings() {
 
   return (
     <div>
-      <div>
-        <button
-          onClick={handleOpen}
+      <button
+        onClick={handleOpen}
+        css={css`
+          background-color: #222;
+          color: #fff;
+          border: 1px solid #444;
+          border-radius: 5px;
+          padding: 6px 8px 3px;
+          :hover {
+            color: #000;
+            background-color: #fff;
+          }
+        `}
+      >
+        <EditIcon
           css={css`
-            background-color: #222;
-            color: #fff;
-            border: 1px solid #444;
-            border-radius: 5px;
-            padding: 6px 8px 3px;
-            :hover {
-              color: #000;
-              background-color: #fff;
-            }
+            font-size: 16px;
           `}
-        >
-          <EditIcon
-            css={css`
-              font-size: 16px;
-            `}
-          />
-        </button>
-      </div>
+        />
+      </button>
       <EditSnippetModal open={open} setOpen={setOpen} />
     </div>
   );
