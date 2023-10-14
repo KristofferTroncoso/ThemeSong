@@ -103,6 +103,8 @@ function DynamicLight() {
             --ts-colored-button-color: var(--ts-dynamiclight-accent-color);
 
             --ts-overlay-color: rgb(0 0 0 / 0.6);
+
+            --ts-secondary-text-color: var(--ts-base-80-color);
         }
       `
       }
