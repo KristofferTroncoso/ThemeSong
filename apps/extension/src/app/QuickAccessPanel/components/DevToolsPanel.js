@@ -12,14 +12,6 @@ function DevToolsPanel() {
 
   return (
     <StyledPanelDiv>
-      <h3
-        css={css`
-          padding: 2px 5px;
-          color: var(--ts-secondary-text-color);
-        `}
-      >
-        DevTools
-      </h3>
       <div
         css={css`
           display: flex;
