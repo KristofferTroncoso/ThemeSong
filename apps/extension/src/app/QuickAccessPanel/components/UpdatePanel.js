@@ -36,7 +36,6 @@ function UpdatePanel() {
         <h4>Changes:</h4>
         <p>- Language/Localization. Change through ThemeSong Popup - Settings</p>
         <p>- New Panel Alt Icons: Heartbeat and GuitarAmp.</p>
-        <p>- styling and perf improvements</p>
       </div>
       <button
         css={css`
