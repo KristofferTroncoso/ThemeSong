@@ -85,7 +85,8 @@ function Panel() {
           .MuiPaper-root {
             background-color: rgb(0 0 0 / 0) !important;
             min-height: 600px;
-            width: 280px;
+            min-width: 250px;
+            max-width: 280px;
             display: flex;
             justify-content: end;
             flex-direction: column;

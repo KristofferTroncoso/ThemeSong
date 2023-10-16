@@ -23,7 +23,6 @@ function PanelButton({ color, bgColor, hoverColor, hoverBgColor, children, title
       <button
         css={css`
           height: 45px;
-          min-width: 45px;
           width: 45px;
           margin: 5px;
           padding: 0;

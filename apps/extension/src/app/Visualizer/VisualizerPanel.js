@@ -13,7 +13,7 @@ function VisualizerVariantButton({ color, bgColor, hoverColor, hoverBgColor, chi
       css={css`
         height: 30px;
         min-width: 32px;
-        width: 32px;
+        width: 40px;
         margin: 2px;
         background: ${bgColor || "rgb(0 0 0 / 0.3)"};
         color: ${color || "#fff"};

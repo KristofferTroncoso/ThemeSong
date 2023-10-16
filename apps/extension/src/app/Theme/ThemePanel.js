@@ -6,6 +6,7 @@ import { GiAtom } from "react-icons/gi";
 import ColorizeIcon from "@mui/icons-material/Colorize";
 import AppleIcon from "@mui/icons-material/Apple";
 import PaletteIcon from "@mui/icons-material/Palette";
+import { SiYoutubemusic } from "react-icons/si";
 
 import PanelButton from "../QuickAccessPanel/components/PanelButton";
 import { useStore } from "/src/app/store";
@@ -115,8 +116,8 @@ function ThemePanel() {
         <PanelButton
           title="Apple Music"
           bgColor={activeTheme === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f" && "rgb(255 255 255 / 0.8)"}
-          color={activeTheme === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f" && "red"}
-          hoverColor="red"
+          color={activeTheme === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f" && "#ff0055"}
+          hoverColor="#ff0055"
           css={css`
             height: 42px;
             min-width: 45px;
@@ -143,8 +144,8 @@ function ThemePanel() {
           <PanelButton
             title={themes.find((theme) => theme.id === activeTheme).name}
             bgColor="rgb(255 255 255 / 0.8)"
-            color="#207f96"
-            hoverColor="#207f96"
+            color="red"
+            hoverColor="red"
             css={css`
               height: 42px;
               min-width: 45px;
@@ -155,9 +156,9 @@ function ThemePanel() {
               padding: 3px;
             `}
           >
-            <PaletteIcon
+            <SiYoutubemusic
               css={css`
-                font-size: 28px;
+                font-size: 26px;
               `}
             />
           </PanelButton>
