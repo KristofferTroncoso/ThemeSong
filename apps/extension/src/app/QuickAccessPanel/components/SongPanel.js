@@ -14,13 +14,20 @@ import useLocalization from "../../Extension/Localization/useLocalization";
 function SongPanel() {
   const songName = useStore((state) => state.song.songName);
   const songArtist = useStore((state) => state.song.songArtist);
+  const locale = useStore((state) => state.extension.prefs.locale);
+
   const getMessage = useLocalization();
 
   function sanitize(songTitle) {
     //remove parens
     let removedParens = songTitle.replace(/ *\([^)]*\) */g, "");
     //remove special characters
-    return removedParens.replace(/[^a-zA-Z0-9 ]/g, "");
+    let sanitized = removedParens.replace(/[^a-zA-Z0-9 ]/g, "");
+    if (["en", "en_AU", "en_GB", "en_US"].includes(locale)) {
+      return sanitized;
+    } else {
+      return songTitle;
+    }
   }
 
   function handleYtSearch(e) {
@@ -152,8 +159,13 @@ function SongPanel() {
             hoverColor="#000"
             hoverBgColor="#ffff64"
             onClick={handleGeniusLyricsSearch}
+            css={css`
+              height: 35px;
+              width: 35px;
+              border-radius: 6px;
+            `}
           >
-            <SiGenius style={{ fontSize: "22px" }} />
+            <SiGenius style={{ fontSize: "16px" }} />
           </PanelButton>
           <PanelButton
             title="Musixmatch"
@@ -162,8 +174,13 @@ function SongPanel() {
             hoverColor="#fff"
             hoverBgColor="linear-gradient(0deg, rgba(243,8,123,1) 0%, rgba(243,92,52,1) 100%)"
             onClick={handleMusixmatchSearch}
+            css={css`
+              height: 35px;
+              width: 35px;
+              border-radius: 6px;
+            `}
           >
-            <MusixmatchIcon width="22px" height="22px" />
+            <MusixmatchIcon width="20px" height="17px" />
           </PanelButton>
           <PanelButton
             title="Google Lyrics"
@@ -172,8 +189,13 @@ function SongPanel() {
             hoverColor="#fff"
             hoverBgColor="#4c8bf5"
             onClick={handleGoogleLyricsSearch}
+            css={css`
+              height: 35px;
+              width: 35px;
+              border-radius: 6px;
+            `}
           >
-            <GoogleIcon fontSize="large" />
+            <GoogleIcon style={{ fontSize: "18px" }} />
           </PanelButton>
           <PanelButton
             title="YouTube Lyrics"
@@ -182,8 +204,13 @@ function SongPanel() {
             hoverColor="#fff"
             hoverBgColor="#fd1600"
             onClick={handleYtLyricsSearch}
+            css={css`
+              height: 35px;
+              width: 35px;
+              border-radius: 6px;
+            `}
           >
-            <YouTubeIcon style={{ fontSize: "26px" }} />
+            <YouTubeIcon style={{ fontSize: "20px" }} />
           </PanelButton>
         </div>
       </div>
