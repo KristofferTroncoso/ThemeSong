@@ -1,65 +1,8 @@
 import { useStore } from "/src/app/store";
 import { css } from "@emotion/react";
+import { locales } from "./locales";
 
 function LocaleSettings() {
-  const locales = [
-    "ar",
-    "am",
-    "bg",
-    "bn",
-    "ca",
-    "cs",
-    "da",
-    "de",
-    "el",
-    "en",
-    "en_AU",
-    "en_GB",
-    "en_US",
-    "es",
-    "es_419",
-    "et",
-    "fa",
-    "fi",
-    "fil",
-    "fr",
-    "gu",
-    "he",
-    "hi",
-    "hr",
-    "hu",
-    "id",
-    "it",
-    "ja",
-    "kn",
-    "ko",
-    "lt",
-    "lv",
-    "ml",
-    "mr",
-    "ms",
-    "nl",
-    "no",
-    "pl",
-    "pt_BR",
-    "pt_PT",
-    "ro",
-    "ru",
-    "sk",
-    "sl",
-    "sr",
-    "sv",
-    "sw",
-    "ta",
-    "te",
-    "th",
-    "tr",
-    "uk",
-    "vi",
-    "zh_CN",
-    "zh_TW",
-  ];
-
   const setLocale = useStore((state) => state.extension.setLocale);
   const selectedLocale = useStore((state) => state.extension.prefs.locale);
 
@@ -76,7 +19,7 @@ function LocaleSettings() {
       <span
         css={css`
           font-size: 15px;
-          margin-right: 20px;
+          margin-right: 5px;
         `}
       >
         Locale:
@@ -86,11 +29,11 @@ function LocaleSettings() {
         id="locale"
         value={selectedLocale}
         onChange={handleChange}
-        style={{ background: "#f1f1f1", color: "#000" }}
+        style={{ background: "#f1f1f1", color: "#000", width: "160px" }}
       >
-        {locales.map((locale) => (
-          <option value={locale} key={locale}>
-            {locale}
+        {Object.entries(locales).map(([key, value]) => (
+          <option value={key} key={key}>
+            {value}
           </option>
         ))}
       </select>

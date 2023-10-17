@@ -1,4 +1,4 @@
-export let regions = {
+export let locales = {
   ar: "Arabic",
   am: "Amharic",
   bg: "Bulgarian",
