@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 
-import SongPanel from "./components/SongPanel";
+import SongPanel from "../Song/SongPanel/SongPanel";
 import VisualizerPanel from "../Visualizer/VisualizerPanel";
 import AppearancePanel from "../Theme/AppearancePanel";
 import UtilitiesPanel from "../Utilities/UtilitiesPanel";

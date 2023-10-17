@@ -1,13 +1,14 @@
 import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
 
-import StyledPanelDiv from "./StyledPanelDiv";
-import PanelButton from "./PanelButton";
+import StyledPanelDiv from "../../QuickAccessPanel/components/StyledPanelDiv";
+import PanelButton from "../../QuickAccessPanel/components/PanelButton";
 
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import GoogleIcon from "@mui/icons-material/Google";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import { SiGenius } from "react-icons/si";
+import { SiGenius, SiNaver } from "react-icons/si";
+import { LuClipboardCopy } from "react-icons/lu";
 import MusixmatchIcon from "../../Icon/MusixmatchIcon";
 import useLocalization from "../../Extension/Localization/useLocalization";
 
@@ -44,6 +45,14 @@ function SongPanel() {
     let modArtistName = artistName.replace(" ", "+");
     let googleUrlSearch = `https://google.com/search?q=${modSongName}+${modArtistName}`;
     window.open(googleUrlSearch, "_blank").focus();
+  }
+
+  function handleOpenInNaver(e) {
+    let modSongName = sanitize(songName).replace(" ", "+");
+    let artistName = sanitize(songArtist);
+    let modArtistName = artistName.replace(" ", "+");
+    let naverUrlSearch = `https://search.naver.com/search.naver?query=${modSongName}+${modArtistName}`;
+    window.open(naverUrlSearch, "_blank").focus();
   }
 
   function handleGeniusLyricsSearch(e) {
@@ -117,6 +126,18 @@ function SongPanel() {
               `}
             />
           </PanelButton>
+          {locale === "ko" && (
+            <PanelButton
+              title="Naver"
+              color="#fff"
+              bgColor="#03c75a"
+              hoverColor="#fff"
+              hoverBgColor="#03c75a"
+              onClick={handleOpenInNaver}
+            >
+              <SiNaver style={{ fontSize: "16px" }} />
+            </PanelButton>
+          )}
           <PanelButton
             title="Google"
             color="#fff"
@@ -126,6 +147,18 @@ function SongPanel() {
             onClick={handleOpenInGoogle}
           >
             <GoogleIcon fontSize="large" />
+          </PanelButton>
+          <PanelButton
+            title="Copy to clipboard"
+            color="#fff"
+            bgColor="#878787"
+            hoverColor="#fff"
+            hoverBgColor="#878787"
+            onClick={() => {
+              navigator.clipboard.writeText(`${songName} ${songArtist}`);
+            }}
+          >
+            <LuClipboardCopy style={{ fontSize: "24px" }} />
           </PanelButton>
         </div>
       </div>
