@@ -13,6 +13,10 @@ ytmusic-two-row-item-renderer[aspect-ratio=MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_R
 ytmusic-two-row-item-renderer[aspect-ratio=MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE] .image-wrapper.ytmusic-two-row-item-renderer {
   border-radius: var(--ts-songimg-thumbnail-border-radius);
 }
+
+.yt-simple-endpoint {
+  border-radius: var(--ts-songimg-thumbnail-border-radius);
+}
 /* end image thumbnails */
 
 /* start PlayPage song img styling */
