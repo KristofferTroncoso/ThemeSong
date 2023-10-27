@@ -12,7 +12,6 @@ const fileExtensions = ["jpg", "jpeg", "png", "gif", "eot", "otf", "svg", "ttf",
 const options = {
   mode: process.env.NODE_ENV || "development",
   entry: {
-    "themesong-options": path.join(__dirname, "src", "app", "Options", "index.js"),
     "themesong-popup": path.join(__dirname, "src", "app", "Popup", "index.js"),
     "themesong-background": path.join(__dirname, "src", "app", "Background", "index.js"),
     "themesong-content": path.join(__dirname, "src", "app", "Content", "index.js"),
@@ -93,12 +92,6 @@ const options = {
           force: true,
         },
       ],
-    }),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, "src", "app", "Options", "index.html"),
-      filename: "options.html",
-      chunks: ["themesong-options"],
-      cache: false,
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "app", "Popup", "index.html"),

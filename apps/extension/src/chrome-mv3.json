@@ -16,7 +16,6 @@
     "34": "assets/icon-34.png",
     "128": "assets/icon-128.png"
   },
-  "options_page": "options.html",
   "host_permissions": ["https://music.youtube.com/*"],
   "content_scripts": [
     {

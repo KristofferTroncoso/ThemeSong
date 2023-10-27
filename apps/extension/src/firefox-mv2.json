@@ -21,10 +21,6 @@
     "34": "assets/icon-34.png",
     "128": "assets/icon-128.png"
   },
-  "options_ui": {
-    "page": "options.html",
-    "open_in_tab": true
-  },
   "content_scripts": [
     {
       "matches": ["https://music.youtube.com/*"],
