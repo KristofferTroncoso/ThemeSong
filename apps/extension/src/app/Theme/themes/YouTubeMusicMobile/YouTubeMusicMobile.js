@@ -14,9 +14,9 @@ function YouTubeMusicMobile() {
 
   useEffect(() => {
     if (playerUiState === "PLAYER_PAGE_OPEN") {
-      menubar.content = `oklch(0.3 ${dominantColorLCH[1] / 2.5} ${dominantColorLCH[2]})`;
+      menubar.content = `oklch(0.3 ${dominantColorLCH[1] / 3} ${dominantColorLCH[2]})`;
     } else {
-      menubar.content = "#121212";
+      menubar.content = "#0d0d0d";
     }
   }, [playerUiState, dominantColorLCH]);
 
@@ -32,10 +32,10 @@ function YouTubeMusicMobile() {
         ${backgrounds}
 
         :root  {
-          --ts-navbar-color: #121212;
-          --ts-playerpage-color: oklch(0.28 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h));
+          --ts-navbar-color: #0d0d0d;
+          --ts-playerpage-color: linear-gradient(to bottom, oklch(0.3 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h)), oklch(0.25 calc(var(--ts-palette-dominant-c) / 5) var(--ts-palette-dominant-h)));
           --ts-playerpageavtoggle-color: oklch(0.35 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h));
-          --ts-playerbar-color: #212121;
+          --ts-playerbar-color: #1a1a1a;
           --ts-body-color: #000000;
           --ts-body-alpha-gradient-color: rgb(0 0 0 / 0.3);
           --ts-songimg-border-radius: 16px;
@@ -45,8 +45,9 @@ function YouTubeMusicMobile() {
       {(playerUiState === "PLAYER_PAGE_OPEN" || playerUiState === "FULLSCREEN") &&
         /* css */ ` 
         :root  {
-          --ts-navbar-color: oklch(0.3 calc(var(--ts-palette-dominant-c) / 2.5) var(--ts-palette-dominant-h));
-          --ts-playerbar-color: oklch(0.35 calc(var(--ts-palette-dominant-c) / 2) var(--ts-palette-dominant-h));
+          --ts-navbar-color: oklch(0.3 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h));
+          --ts-sidebar-color: linear-gradient(to bottom, oklch(0.3 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h)), oklch(0.25 calc(var(--ts-palette-dominant-c) / 5) var(--ts-palette-dominant-h)));
+          --ts-playerbar-color: oklch(0.25 calc(var(--ts-palette-dominant-c) / 5) var(--ts-palette-dominant-h));
         }
       `}
     </style>
