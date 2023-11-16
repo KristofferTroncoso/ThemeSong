@@ -8,7 +8,6 @@ import { backgrounds } from "../../../css/core/backgrounds";
 import { song_image } from "../../../css/extra/song_image";
 import { misc_style_improvements } from "../../../css/extra/misc_style_improvements";
 import { dark_base_colors } from "../../../css/colors/dark_base_colors";
-import { Global, css } from "@emotion/react";
 
 function DynamicDark() {
   const dominantColorHSL = useStore((state) => state.palette.dominant).hsl;
@@ -59,8 +58,6 @@ function DynamicDark() {
             var(--ts-palette-dominant-hue) ${saturation}% ${curveLight(lightness[3])}% / 60%
           );
           --ts-playprogress-color: hsl(var(--ts-palette-1-hue), 80%, 91%);
-          --ts-playprogress-secondary-color: hsla(var(--ts-palette-2-hue), var(--ts-palette-2-saturation), 35%, 0.7);
-          --ts-playprogress-container-color: hsla(var(--ts-palette-3-hue), var(--ts-palette-3-saturation), 50%, 0.3);
 
           --ts-playprogress-knob-color: var(--ts-playprogress-color);
         }
