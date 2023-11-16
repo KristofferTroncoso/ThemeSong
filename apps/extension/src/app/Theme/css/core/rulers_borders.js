@@ -95,11 +95,12 @@ export const rulers_borders = /*css*/ `
     border-top: 1px solid var(--ts-ruler-secondary-color);
   }
 
+  
   ytmusic-app-layout[is-bauhaus-sidenav-enabled] #mini-guide-background.ytmusic-app-layout {
     border-right: 1px solid var(--ts-ruler-secondary-color);
   }
 
-  #contentContainer.tp-yt-app-drawer[opened] {
+  ytmusic-app[is-bauhaus-sidenav-enabled] #guide-wrapper.ytmusic-app {
     border-right: 1px solid var(--ts-ruler-secondary-color);
   }
 
