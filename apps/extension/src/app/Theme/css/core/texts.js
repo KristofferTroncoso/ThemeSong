@@ -160,8 +160,8 @@ ytmusic-tabs.iron-selected .tab.ytmusic-tabs, .tab.selected.ytmusic-tabs {
 }
 
 /* sidebar */
-/* "sign in" */
-.action-text.ytmusic-guide-signin-promo-renderer {
+/* "sign in , new playlist button texts" */
+.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
   color: var(--ts-primary-text-color);
 }
 
