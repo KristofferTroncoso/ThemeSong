@@ -34,7 +34,7 @@ tp-yt-paper-dialog {
 }
 
 /* sidebar */
-#guide {
+#guide-wrapper {
   backdrop-filter: var(--ts-frosted-glass-blur);
 }
 `;
