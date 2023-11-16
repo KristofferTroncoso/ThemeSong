@@ -29,13 +29,10 @@ function UpdatePanel() {
         `}
       >
         <p>
-          <b>v1.0.2</b>
-          <span> (October 2023)</span>
+          <b>v1.0.3</b>
+          <span> (November 2023)</span>
         </p>
         <br></br>
-        <h4>Changes:</h4>
-        <p>- Language/Localization. Change through ThemeSong Popup - Settings</p>
-        <p>- New Panel Alt Icons: Heartbeat and GuitarAmp.</p>
       </div>
       <button
         css={css`
