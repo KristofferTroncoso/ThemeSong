@@ -82,7 +82,7 @@ export const icons_buttons = /*css*/ `
 
   /* buttons / like buttons with colored backgrounds and inverse text */
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled {
-    /* color: var(--yt-spec-text-primary-inverse); */
+    color: var(--yt-spec-text-primary-inverse);
     background-color: var(--ts-colored-button-color);
   }
 
