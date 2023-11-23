@@ -30,6 +30,7 @@ function handleOnMessage(message, sender, sendResponse) {
               // contextMessage: value.songArtist,
               message: value.songArtist,
               // buttons: [{ title: "Skip" }],
+              silent: true,
             },
             (notificationId) =>
               setTimeout(() => {
