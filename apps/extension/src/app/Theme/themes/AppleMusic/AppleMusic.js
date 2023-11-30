@@ -62,6 +62,8 @@ function AppleMusic() {
             --ts-playerpage-color: radial-gradient(circle at 80% 600%, var(--ts-theme-apple-3-color) 80%, var(--ts-theme-apple-5-color) 86%, var(--ts-theme-apple-2-color) 94%, var(--ts-theme-apple-4-color) 98%);
             --ts-playerbar-color: linear-gradient(170deg, var(--ts-theme-apple-5-color) 15%, var(--ts-theme-apple-3-color) 60%);
             --ts-playerpageavtoggle-color: oklch(37% calc(var(--ts-palette-vibrant-c) * 0.25) var(--ts-palette-lightvibrant-h));
+
+            --ts-bgcolor-transition: background 0.1s ease-in;
           }
 
           /* i think ytm is putting a 'padding-top: 100%' on this. i have to set it to 0 for my gradient to be good */
