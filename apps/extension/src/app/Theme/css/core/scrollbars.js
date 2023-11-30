@@ -8,13 +8,12 @@ export const scrollbars = /*css*/ `
 
 ::-webkit-scrollbar-track {
   background-color: inherit;
-
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--ts-base-100-alpha-02-color) !important;
   border: 1px solid var(--ts-base-00-alpha-03-color);
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -26,8 +25,8 @@ export const scrollbars = /*css*/ `
 }
 
 body::-webkit-scrollbar {
-  width: 16px;
-  height: 16px;
+  width: 17px;
+  height: 17px;
 }
 
 body::-webkit-scrollbar-track {
