@@ -98,7 +98,7 @@ function VisualizerPanel() {
                 border: 0;
                 border-radius: 6px;
                 font-size: 20px;
-                padding: 2px 6px;
+                padding: 6px 6px 0;
               `}
               onClick={(e) => handleVisualizerButtonClick(visualizer.id)}
               key={visualizer.id}
