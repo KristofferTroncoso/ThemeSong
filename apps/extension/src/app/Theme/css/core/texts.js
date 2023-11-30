@@ -1,8 +1,8 @@
 export const texts = /*css*/ `
 :root {
   --ts-primary-text-color: var(--ts-base-100-color);
-  --ts-secondary-text-color: var(--ts-base-70-color);
-  --ts-tertiary-text-color: var(--ts-base-60-color);
+  --ts-secondary-text-color: var(--ts-base-80-color);
+  --ts-tertiary-text-color: var(--ts-base-70-color);
   --ts-inverse-text-color: var(--ts-base-00-color);
   --ts-primary-text-alpha-color: var(--ts-base-100-alpha-07-color);
   --ts-secondary-text-alpha-color: var(--ts-base-100-alpha-03-color);
