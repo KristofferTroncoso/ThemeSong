@@ -37,7 +37,7 @@ function YouTubeMusicMobile() {
           --ts-playerpageavtoggle-color: oklch(0.35 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h));
           --ts-playerbar-color: #1a1a1a;
           --ts-body-color: #000000;
-          --ts-body-alpha-gradient-color: rgb(0 0 0 / 0.3);
+          --ts-body-alpha-gradient-color: rgb(0 0 0 / 0.7);
           --ts-songimg-border-radius: 16px;
         }
       `

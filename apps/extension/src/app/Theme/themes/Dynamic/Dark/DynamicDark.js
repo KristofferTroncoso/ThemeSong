@@ -55,7 +55,7 @@ function DynamicDark() {
           --ts-playerbar-color: hsl(var(--ts-palette-dominant-hue), ${saturation}%, ${curveLight(lightness[2])}%);
           --ts-body-color: hsl(var(--ts-palette-dominant-hue), ${saturation}%, ${curveLight(lightness[3])}%);
           --ts-body-alpha-gradient-color: hsl(
-            var(--ts-palette-dominant-hue) ${saturation}% ${curveLight(lightness[3])}% / 60%
+            var(--ts-palette-dominant-hue) ${saturation}% ${curveLight(lightness[3])}% / 70%
           );
           --ts-playprogress-color: hsl(var(--ts-palette-1-hue), 80%, 91%);
 

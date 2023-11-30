@@ -23,7 +23,7 @@ function AppleMusicDark() {
         /*css*/ `
         :root {
           --ts-body-color: hsl(0 0% 12%);
-          --ts-body-alpha-gradient-color: hsl(0 0% 12% / 0.6);
+          --ts-body-alpha-gradient-color: hsl(0 0% 12% / 0.7);
           --ts-overlay-color: rgb(0 0 0 / 0.6);
           --ts-nowplaying-background-color: #db2a47;
           --ts-texts-selection-color: #1665b5;
