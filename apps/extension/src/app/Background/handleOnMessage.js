@@ -35,7 +35,7 @@ function handleOnMessage(message, sender, sendResponse) {
             (notificationId) =>
               setTimeout(() => {
                 chrome.notifications.clear(notificationId);
-              }, 20000)
+              }, 15000)
           );
           break;
 
