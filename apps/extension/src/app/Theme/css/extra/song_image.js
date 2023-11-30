@@ -1,7 +1,7 @@
 export const song_image = /*css*/ `
 :root {
-  --ts-songimg-border-radius: 12px;
-  --ts-songimg-thumbnail-border-radius: 8px;
+  --ts-songimg-border-radius: 10px;
+  --ts-songimg-thumbnail-border-radius: 6px;
   --ts-songimg-box-shadow: 0 1px 4px rgb(0 0 0 / 0.6);
 }
 
