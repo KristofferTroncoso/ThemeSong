@@ -17,6 +17,7 @@ import { likeAndComment } from "./messages/likeAndComment";
 import { turnOnVisualizer } from "./messages/turnOnVisualizer";
 import { reset } from "./messages/reset";
 import { additionalSettings } from "./messages/additionalSettings";
+import { updateNotes104 } from "./messages/updateNotes104";
 
 export const localizations = {
   themes,
@@ -38,4 +39,5 @@ export const localizations = {
   turnOnVisualizer,
   reset,
   additionalSettings,
+  updateNotes104,
 };

@@ -1,9 +1,11 @@
 import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
 import StyledPanelDiv from "./StyledPanelDiv";
+import useLocalization from "../../Extension/Localization/useLocalization";
 
 function UpdatePanel() {
   const setShowUpdateNote = useStore((state) => state.extension.setShowUpdateNote);
+  const getMessage = useLocalization();
 
   return (
     <StyledPanelDiv
@@ -29,10 +31,20 @@ function UpdatePanel() {
         `}
       >
         <p>
-          <b>v1.0.3</b>
-          <span> (November 2023)</span>
+          <b>v1.0.4</b>
+          <span> (December 2023)</span>
         </p>
         <br></br>
+        <p>
+          <span>- minor style fixes and improvements</span>
+        </p>
+        <p>
+          <span>- more fun features coming soon</span>
+        </p>
+        <br></br>
+        <p>
+          <span>{getMessage("updateNotes104")}</span>
+        </p>
       </div>
       <button
         css={css`
