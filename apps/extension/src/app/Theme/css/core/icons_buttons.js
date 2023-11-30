@@ -251,4 +251,9 @@ export const icons_buttons = /*css*/ `
   ytmusic-chip-cloud-chip-renderer[chip-style=STYLE_TRANSPARENT] a.ytmusic-chip-cloud-chip-renderer .text {
     color: var(--ts-inverse-icon-color) !important;
   }
+
+  /* bottom right fullscreen button (when in fullscreen) */
+  ytmusic-player-bar[player-fullscreened] .exit-fullscreen-button.ytmusic-player-bar {
+    color: var(--ts-primary-icon-color);
+  }
 `;
