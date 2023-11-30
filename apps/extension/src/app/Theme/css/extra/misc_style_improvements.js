@@ -61,6 +61,14 @@ export const removeSearchBoxShadow = /*css*/ `
   }
 `;
 
+/* 11.30.2023 some weird stuff when focusing sidebar buttons. just pure white bg and no border-radius. gonna fix it*/
+export const sidebarFocus = /*css*/ `
+tp-yt-paper-item:focus:before, .tp-yt-paper-item.tp-yt-paper-item:focus:before {
+  background: none;
+  border-radius: inherit;
+}
+`;
+
 export const misc_style_improvements = /*css*/ `
   /* ThemeSong */
   /* universal styles */
@@ -71,4 +79,5 @@ export const misc_style_improvements = /*css*/ `
   ${playBarTextAndIconsColor}
   ${fixNoMarginBottomOnNowPlayingAlbumImage}
   ${removeSearchBoxShadow}
+  ${sidebarFocus}
 `;
