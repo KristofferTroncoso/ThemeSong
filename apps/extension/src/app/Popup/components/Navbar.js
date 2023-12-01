@@ -27,21 +27,41 @@ function Navbar() {
         padding: 2px;
       `}
     >
-      <TabButton key={1} id={1} isActive={activePopupTab === 1} onClick={(e) => handleClick(1)}>
+      <TabButton
+        key={1}
+        id={1}
+        title={getMessage("themes")}
+        isActive={activePopupTab === 1}
+        onClick={(e) => handleClick(1)}
+      >
         <IoColorPalette style={{ fontSize: 23 }} />
-        <span style={{ marginTop: 2, fontSize: 8 }}>{getMessage("themes")}</span>
       </TabButton>
-      <TabButton key={2} id={2} isActive={activePopupTab === 2} onClick={(e) => handleClick(2)}>
+      <TabButton
+        key={2}
+        id={2}
+        title={getMessage("visualizers")}
+        isActive={activePopupTab === 2}
+        onClick={(e) => handleClick(2)}
+      >
         <GiProtectionGlasses style={{ fontSize: 25 }} />
-        <span style={{ marginTop: 2, fontSize: 8 }}>{getMessage("visualizers")}</span>
       </TabButton>
-      <TabButton key={3} id={3} isActive={activePopupTab === 3} onClick={(e) => handleClick(3)}>
+      <TabButton
+        key={3}
+        id={3}
+        title={getMessage("pieces")}
+        isActive={activePopupTab === 3}
+        onClick={(e) => handleClick(3)}
+      >
         <GiMusicalNotes style={{ fontSize: 21 }} />
-        <span style={{ marginTop: 2, fontSize: 8 }}>{getMessage("pieces")}</span>
       </TabButton>
-      <TabButton key={4} id={4} isActive={activePopupTab === 4} onClick={(e) => handleClick(4)}>
+      <TabButton
+        key={4}
+        id={4}
+        title={getMessage("settings")}
+        isActive={activePopupTab === 4}
+        onClick={(e) => handleClick(4)}
+      >
         <Settings style={{ fontSize: 24 }} />
-        <span style={{ marginTop: 2, fontSize: 8 }}>{getMessage("settings")}</span>
       </TabButton>
     </div>
   );
