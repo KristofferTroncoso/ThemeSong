@@ -15,7 +15,12 @@ function PiecePage() {
   const getMessage = useLocalization();
 
   return (
-    <div id="Piece-Page">
+    <div
+      id="Piece-Page"
+      css={css`
+        width: 400px;
+      `}
+    >
       <div id="Piece-container">
         {pieces.map((piece) => (
           <div

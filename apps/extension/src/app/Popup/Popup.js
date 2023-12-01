@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 
 import TopBar from "./components/TopBar";
 import BottomBar from "./components/BottomBar";
-import TabBar from "./components/TabBar";
+import Navbar from "./components/Navbar";
 import ActivePage from "./components/ActivePage";
 import DataStoreSync from "../Extension/DataStoreSync";
 import ErrorBoundary from "../Extension/ErrorBoundary/ErrorBoundary";
@@ -25,6 +25,8 @@ function Popup() {
       <div
         css={css`
           height: 100%;
+          width: 100%;
+          display: flex;
         `}
       >
         <ErrorBoundary
@@ -61,7 +63,7 @@ function Popup() {
             </div>
           }
         >
-          <TabBar />
+          <Navbar />
           <ActivePage />
         </ErrorBoundary>
       </div>

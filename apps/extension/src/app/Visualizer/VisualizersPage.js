@@ -39,7 +39,11 @@ function VisualizersPage() {
   };
 
   return (
-    <div>
+    <div
+      css={css`
+        width: 400px;
+      `}
+    >
       <h2
         css={css`
           font-size: 12px;

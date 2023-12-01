@@ -5,19 +5,19 @@ function TabButton({ isActive, children, ...props }) {
     <button
       css={css`
         border-radius: 5px;
-        border: ${isActive ? "0; " : "2px solid #333;"};
-        height: 30px;
-        background: ${isActive ? "#fff" : "rgb(40,40,40)"};
-        color: ${isActive ? "#000" : "#ccc"};
-        padding: 2px;
-        margin: 5px 5px 2px;
+        border: 0;
+        width: 46px;
+        height: 54px;
+        background: ${isActive ? "#333" : "none"};
+        color: ${isActive ? "#fff" : "#ccc"};
+        padding: 8px 4px;
+        margin: 4px 2px 5px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         :hover {
-          background: #e0e0e0;
-          color: #000;
-          border: #e0e0e0;
+          background: #333;
         }
       `}
       disabled={isActive}
