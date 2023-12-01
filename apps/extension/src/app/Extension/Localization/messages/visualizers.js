@@ -17,7 +17,7 @@ export const visualizers = {
   et: "Visuaaliseerijad",
   fa: "ویژوالایزرها",
   fi: "Visualisaattorit",
-  fil: "Mga Visualizers",
+  fil: "Visualizers",
   fr: "Visualiseurs",
   gu: "વિઝ્યુવાલાઇઝર્સ",
   he: "ויזואליזטים",

@@ -17,7 +17,7 @@ export const utilities = {
   et: "Utiliidid",
   fa: "ابزارها",
   fi: "Työkalut",
-  fil: "Mga Utility",
+  fil: "Utilities",
   fr: "Utilitaires",
   gu: "ઉપકરણો",
   he: "שימושיות",

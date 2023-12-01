@@ -17,7 +17,7 @@ export const pieces = {
   et: "Tükid",
   fa: "قطعات",
   fi: "Palaset",
-  fil: "Mga Piraso",
+  fil: "Pieces",
   fr: "Pièces",
   gu: "ટુકડાઓ",
   he: "חתיכות",

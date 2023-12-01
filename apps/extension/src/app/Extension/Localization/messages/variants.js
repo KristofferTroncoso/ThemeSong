@@ -17,7 +17,7 @@ export const variants = {
   et: "Variandid",
   fa: "نسخه‌ها",
   fi: "Variantit",
-  fil: "Mga Variant",
+  fil: "Variants",
   fr: "Variantes",
   gu: "વેરિએન્ટ્સ",
   he: "גרסאות",

@@ -17,7 +17,7 @@ export const themes = {
   et: "Teemad",
   fa: "تم‌ها",
   fi: "Teemat",
-  fil: "Mga Tema",
+  fil: "Themes",
   fr: "Thèmes",
   gu: "થીમ્સ",
   he: "ערכות",
