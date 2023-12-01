@@ -4,6 +4,7 @@ import { useStore } from "/src/app/store";
 const VisualizersPage = lazy(() => import("../../Visualizer/VisualizersPage"));
 const ThemesPage = lazy(() => import("../../Theme/ThemesPage"));
 const PiecePage = lazy(() => import("../../Piece/PiecePage"));
+const SettingsPage = lazy(() => import("./SettingsPage"));
 
 function ActivePage() {
   const activePopupTab = useStore((state) => state.popup.prefs.activePopupTab);
@@ -16,6 +17,8 @@ function ActivePage() {
         return <VisualizersPage />;
       case 3:
         return <PiecePage />;
+      case 4:
+        return <SettingsPage />;
       default:
         return (
           <div>

@@ -1,7 +1,6 @@
 import { css } from "@emotion/react";
 import HeadphonesIcon from "@mui/icons-material/Headphones";
 import RatePopover from "./RatePopover";
-import SettingsPopover from "./SettingsPopover";
 import { useStore } from "/src/app/store";
 import DataObjectIcon from "@mui/icons-material/DataObject";
 import CloudQueueIcon from "@mui/icons-material/CloudQueue";
@@ -104,7 +103,6 @@ function BottomBar() {
           </div>
         )}
         <RatePopover />
-        <SettingsPopover />
       </div>
     </div>
   );

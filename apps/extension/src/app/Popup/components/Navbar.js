@@ -41,7 +41,7 @@ function Navbar() {
       </TabButton>
       <TabButton key={4} id={4} isActive={activePopupTab === 4} onClick={(e) => handleClick(4)}>
         <Settings style={{ fontSize: 24 }} />
-        <span style={{ marginTop: 2, fontSize: 8 }}>Settings</span>
+        <span style={{ marginTop: 2, fontSize: 8 }}>{getMessage("settings")}</span>
       </TabButton>
     </div>
   );
