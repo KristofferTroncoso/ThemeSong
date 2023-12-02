@@ -88,8 +88,8 @@ function AppleMusicLight() {
           ) !important;
           --ts-sidebar-color: linear-gradient(
             180deg,
-            rgb(235 235 235) 1%,
-            rgb(235 235 235 / 0.3) 5%,
+            rgb(255 255 255) 1%,
+            rgb(255 255 255 / 0.3) 5%,
             hsl(var(--ts-palette-dominant-hue) calc(var(--ts-palette-dominant-saturation) / 2) 90% / 0.3) 50%,
             hsl(var(--ts-palette-dominant-hue) calc(var(--ts-palette-dominant-saturation) / 2) 90% / 0.5) 70%,
             rgb(240 240 240 / 0.8) 80%
