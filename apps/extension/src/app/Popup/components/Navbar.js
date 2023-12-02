@@ -4,6 +4,7 @@ import { useStore } from "/src/app/store";
 import { IoColorPalette } from "react-icons/io5";
 import { GiProtectionGlasses } from "react-icons/gi";
 import { GiMusicalNotes } from "react-icons/gi";
+import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 import Settings from "@mui/icons-material/Settings";
 import useLocalization from "../../Extension/Localization/useLocalization";
 
@@ -27,6 +28,15 @@ function Navbar() {
         padding: 2px;
       `}
     >
+      <TabButton
+        key={0}
+        id={0}
+        title={getMessage("nowPlaying")}
+        isActive={activePopupTab === 0}
+        onClick={(e) => handleClick(0)}
+      >
+        <PlayCircleOutlineIcon style={{ fontSize: 23 }} />
+      </TabButton>
       <TabButton
         key={1}
         id={1}

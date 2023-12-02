@@ -24,10 +24,10 @@ function ContentScript({ root }) {
       <Palette />
       <Utilities />
       <Piece />
+      <SongObserver />
       <MountWhenPlayerActive>
         <SongInfoDisplayFeature />
         <VisualizerCS />
-        <SongObserver />
         <IconColor />
         <PanelContainer />
         <PlayerUiStateObserver />

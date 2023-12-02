@@ -146,7 +146,7 @@ function SongPanel() {
             hoverBgColor="#4c8bf5"
             onClick={handleOpenInGoogle}
           >
-            <GoogleIcon fontSize="large" />
+            <GoogleIcon style={{ fontSize: "24px" }} />
           </PanelButton>
           <PanelButton
             title="Copy to clipboard"

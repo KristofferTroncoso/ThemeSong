@@ -1,4 +1,4 @@
-export const createSongSlice = (set) => ({
+export const createSongSlice = (set, get) => ({
   songName: "",
   songSubtitle: "",
   songArtist: "",
@@ -46,6 +46,19 @@ export const createSongSlice = (set) => ({
       state.song.songArtist = songArtist;
       state.song.songSubtitle = songSubtitle;
       state.song.songImg = songImg;
+    });
+    chrome.storage.local.set({ song: get().song });
+  },
+  mergeSong: (payload) => {
+    console.log("songSlice: mergeSong");
+    console.log(payload);
+    set((state) => {
+      state.song = {
+        songName: payload.songName,
+        songArtist: payload.songArtist,
+        songSubtitle: payload.songSubtitle,
+        songImg: payload.songImg,
+      };
     });
   },
 });
