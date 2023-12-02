@@ -10,7 +10,7 @@ function AppleMusicDark() {
 
   useEffect(() => {
     if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
-      menubar.content = `#262626`;
+      menubar.content = `hsl(0 0% 12%)`;
     } else {
       menubar.content = menubar.content = `oklch(45% ${lightVibrantOKLCH[1] * 0.5} ${lightVibrantOKLCH[2]})`;
     }
@@ -39,7 +39,7 @@ function AppleMusicDark() {
         :root {
           --ts-navbar-color: linear-gradient(
             180deg,
-            hsl(0 0% 15%) 0%,
+            hsl(0 0% 12%) 0%,
             hsl(0 0% 15% / 0.8) 60%
           ) !important;
           --ts-playerbar-color: linear-gradient(

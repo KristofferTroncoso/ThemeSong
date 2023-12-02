@@ -32,7 +32,12 @@ body {
 }
 
 ytmusic-browse-response[has-background]:not([disable-gradient]) .background-gradient.ytmusic-browse-response {
-  background-image: linear-gradient(to bottom, var(--ts-body-alpha-gradient-color),var(--ts-body-color));
+  background-image: linear-gradient(
+    180deg,
+    var(--ts-body-color) 0%,
+    var(--ts-body-alpha-gradient-color) 30%,
+    var(--ts-body-color) 100%
+  );
   transition: var(--ts-bgcolor-transition) !important;
 }
 
