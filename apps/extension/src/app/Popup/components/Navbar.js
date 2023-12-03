@@ -3,7 +3,7 @@ import TabButton from "./TabButton";
 import { useStore } from "/src/app/store";
 import { IoColorPalette } from "react-icons/io5";
 import { GiProtectionGlasses } from "react-icons/gi";
-import { GiMusicalNotes } from "react-icons/gi";
+import { HiOutlineSquaresPlus } from "react-icons/hi2";
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 import Settings from "@mui/icons-material/Settings";
 import useLocalization from "../../Extension/Localization/useLocalization";
@@ -26,53 +26,60 @@ function Navbar() {
         width: 50px;
         max-width: 50px;
         padding: 2px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       `}
     >
-      <TabButton
-        key={0}
-        id={0}
-        title={getMessage("nowPlaying")}
-        isActive={activePopupTab === 0}
-        onClick={(e) => handleClick(0)}
-      >
-        <PlayCircleOutlineIcon style={{ fontSize: 23 }} />
-      </TabButton>
-      <TabButton
-        key={1}
-        id={1}
-        title={getMessage("themes")}
-        isActive={activePopupTab === 1}
-        onClick={(e) => handleClick(1)}
-      >
-        <IoColorPalette style={{ fontSize: 23 }} />
-      </TabButton>
-      <TabButton
-        key={2}
-        id={2}
-        title={getMessage("visualizers")}
-        isActive={activePopupTab === 2}
-        onClick={(e) => handleClick(2)}
-      >
-        <GiProtectionGlasses style={{ fontSize: 25 }} />
-      </TabButton>
-      <TabButton
-        key={3}
-        id={3}
-        title={getMessage("pieces")}
-        isActive={activePopupTab === 3}
-        onClick={(e) => handleClick(3)}
-      >
-        <GiMusicalNotes style={{ fontSize: 21 }} />
-      </TabButton>
-      <TabButton
-        key={4}
-        id={4}
-        title={getMessage("settings")}
-        isActive={activePopupTab === 4}
-        onClick={(e) => handleClick(4)}
-      >
-        <Settings style={{ fontSize: 24 }} />
-      </TabButton>
+      <div>
+        <TabButton
+          key={0}
+          id={0}
+          title={getMessage("nowPlaying")}
+          isActive={activePopupTab === 0}
+          onClick={(e) => handleClick(0)}
+        >
+          <PlayCircleOutlineIcon style={{ fontSize: 23 }} />
+        </TabButton>
+        <TabButton
+          key={1}
+          id={1}
+          title={getMessage("themes")}
+          isActive={activePopupTab === 1}
+          onClick={(e) => handleClick(1)}
+        >
+          <IoColorPalette style={{ fontSize: 23 }} />
+        </TabButton>
+        <TabButton
+          key={2}
+          id={2}
+          title={getMessage("visualizers")}
+          isActive={activePopupTab === 2}
+          onClick={(e) => handleClick(2)}
+        >
+          <GiProtectionGlasses style={{ fontSize: 25 }} />
+        </TabButton>
+        <TabButton
+          key={3}
+          id={3}
+          title={getMessage("pieces")}
+          isActive={activePopupTab === 3}
+          onClick={(e) => handleClick(3)}
+        >
+          <HiOutlineSquaresPlus style={{ fontSize: 24 }} />
+        </TabButton>
+      </div>
+      <div>
+        <TabButton
+          key={4}
+          id={4}
+          title={getMessage("settings")}
+          isActive={activePopupTab === 4}
+          onClick={(e) => handleClick(4)}
+        >
+          <Settings style={{ fontSize: 24 }} />
+        </TabButton>
+      </div>
     </div>
   );
 }
