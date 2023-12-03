@@ -1,16 +1,13 @@
 import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
-// import useLocalization from "../Extension/Localization/useLocalization";
 import SongPanel from "../../Song/SongPanel/SongPanel";
 
 function PlayerPage() {
-  const [songName, songSubtitle, songArtist, songImg] = useStore((state) => [
+  const [songName, songArtist, songImg] = useStore((state) => [
     state.song.songName,
-    state.song.songSubtitle,
     state.song.songArtist,
     state.song.songImg,
   ]);
-  // const getMessage = useLocalization();
 
   function handleYTMclick() {
     chrome.tabs.query({}, (tabs) => {
@@ -47,6 +44,7 @@ function PlayerPage() {
       id="Player-Page"
       css={css`
         width: 400px;
+        height: 540px;
       `}
     >
       <div
