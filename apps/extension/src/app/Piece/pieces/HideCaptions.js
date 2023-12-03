@@ -26,7 +26,7 @@ function HideCaptions() {
     >
       <Global
         styles={css`
-          #player-page[video-mode_] #ts-hidecaptions-button {
+          #player-page[video-mode] #ts-hidecaptions-button {
             display: block;
           }
         `}
