@@ -40,7 +40,7 @@ function AppleMusicDark() {
           --ts-navbar-color: linear-gradient(
             180deg,
             hsl(0 0% 12%) 0%,
-            hsl(0 0% 15% / 0.8) 60%
+            hsl(0 0% 14% / 0.6) 50%
           ) !important;
           --ts-playerbar-color: linear-gradient(
             90deg,
@@ -54,8 +54,8 @@ function AppleMusicDark() {
           --ts-colored-button-color: var(--applemusic-color);
           --ts-sidebar-color: linear-gradient(
             180deg,
-            hsl(0 0% 12%) 1%,
-            hsl(0 0% 12% / 0.3) 5%,
+            hsl(0 0% 12%) 0%,
+            hsl(0 0% 18% / 0.3) 5%,
             oklch(0.3 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h) / 0.3) 50%,
             oklch(0.3 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h) / 0.5) 70%,
             hsl(0 0% 15% / 0.8) 80%
