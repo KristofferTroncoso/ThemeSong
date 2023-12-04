@@ -31,7 +31,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-track {
   border-left: 1px solid var(--ts-base-100-alpha-005-color);
-  border-top: 1px solid var(--ts-base-100-alpha-01-color);
+  border-top: 0;
   background-color: var(--ts-base-100-alpha-005-color);
 }
 `;
