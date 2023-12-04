@@ -40,7 +40,7 @@ function AppleMusicDark() {
           --ts-navbar-color: linear-gradient(
             180deg,
             hsl(0 0% 12%) 0%,
-            hsl(0 0% 15% / 0.8) 60%
+            hsl(0 0% 13% / 0.8) 60%
           ) !important;
           --ts-playerbar-color: linear-gradient(
             90deg,
