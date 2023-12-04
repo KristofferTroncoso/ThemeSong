@@ -81,6 +81,8 @@ function PlayerPage() {
                 width: 170px;
                 height: 170px;
                 border-radius: 5px;
+                border: 1px solid #555;
+                background-color: #222;
               `}
             />
           </button>
