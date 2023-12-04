@@ -50,11 +50,6 @@ function AppleMusicLight() {
           fill: #fff;
         }
 
-        .thumbnail-overlay .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
-          color: #fff;
-        }
-
-
         ytmusic-play-button-renderer {
           --ytmusic-play-button-icon-color: #fff !important;
         }

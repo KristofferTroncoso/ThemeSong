@@ -256,4 +256,9 @@ export const icons_buttons = /*css*/ `
   ytmusic-player-bar[player-fullscreened] .exit-fullscreen-button.ytmusic-player-bar {
     color: var(--ts-primary-icon-color);
   }
+
+  /* 3 dot icon when hovering thumbnail album cover */
+  .thumbnail-overlay .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
+    color: #fff;
+  }
 `;
