@@ -37,7 +37,6 @@ function TabButton({ isActive, title, children, ...props }) {
             background: #333;
           }
         `}
-        disabled={isActive}
         {...props}
       >
         {children}
