@@ -31,19 +31,15 @@ function UpdatePanel() {
         `}
       >
         <p>
-          <b>v1.0.4</b>
+          <b>v1.0.5 (PATCH)</b>
           <span> (December 2023)</span>
         </p>
         <br></br>
         <p>
-          <span>- minor style fixes and improvements</span>
+          <span>- Quick Fix: Visualizer not playing</span>
         </p>
         <p>
-          <span>- more fun features coming soon</span>
-        </p>
-        <br></br>
-        <p>
-          <span>{getMessage("updateNotes104")}</span>
+          <span>- i have to adapt to ytm code changes. Should work now. TY!</span>
         </p>
       </div>
       <button
