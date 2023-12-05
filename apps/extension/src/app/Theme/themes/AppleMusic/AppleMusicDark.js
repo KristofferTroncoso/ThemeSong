@@ -25,11 +25,11 @@ function AppleMusicDark() {
           --ts-body-color: hsl(0 0% 12%);
           --ts-body-alpha-gradient-color: hsl(0 0% 12% / 0.7);
           --ts-overlay-color: rgb(0 0 0 / 0.6);
-          --ts-nowplaying-background-color: #db2a47;
+          --ts-nowplaying-background-color: #c91734;
           --ts-texts-selection-color: #1665b5;
           --ts-songimg-box-shadow: 0 10px 40px rgb(0 0 0 / 0.4);
           
-          --applemusic-color: #fa586a;
+          --applemusic-color: #ff3e53;
         }
      `
       }
