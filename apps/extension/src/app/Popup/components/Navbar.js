@@ -32,7 +32,7 @@ function Navbar() {
       `}
     >
       <div>
-        <TabButton
+        {/* <TabButton
           key={0}
           id={0}
           title={getMessage("nowPlaying")}
@@ -40,7 +40,7 @@ function Navbar() {
           onClick={(e) => handleClick(0)}
         >
           <PlayCircleOutlineIcon style={{ fontSize: 23 }} />
-        </TabButton>
+        </TabButton> */}
         <TabButton
           key={1}
           id={1}

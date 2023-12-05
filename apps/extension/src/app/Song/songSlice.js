@@ -49,16 +49,16 @@ export const createSongSlice = (set, get) => ({
     });
     chrome.storage.local.set({ song: get().song });
   },
-  mergeSong: (payload) => {
-    console.log("songSlice: mergeSong");
-    console.log(payload);
-    set((state) => {
-      state.song = {
-        songName: payload.songName,
-        songArtist: payload.songArtist,
-        songSubtitle: payload.songSubtitle,
-        songImg: payload.songImg,
-      };
-    });
-  },
+  // mergeSong: (payload) => {
+  //   console.log("songSlice: mergeSong");
+  //   console.log(payload);
+  //   set((state) => {
+  //     state.song = {
+  //       songName: payload.songName,
+  //       songArtist: payload.songArtist,
+  //       songSubtitle: payload.songSubtitle,
+  //       songImg: payload.songImg,
+  //     };
+  //   });
+  // },
 });

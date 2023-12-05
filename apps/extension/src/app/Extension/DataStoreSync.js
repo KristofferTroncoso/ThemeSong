@@ -9,7 +9,7 @@ function DataStoreSync() {
   const mergeExtensionPrefs = useStore((state) => state.extension.mergeExtensionPrefs);
   const mergePiecePrefs = useStore((state) => state.piece.mergePiecePrefs);
   const mergeUtilitiesPrefs = useStore((state) => state.utilities.mergeUtilitiesPrefs);
-  const mergeSong = useStore((state) => state.song.mergeSong);
+  // const mergeSong = useStore((state) => state.song.mergeSong);
 
   useEffect(() => {
     console.log("DataStoreSync");
@@ -35,11 +35,11 @@ function DataStoreSync() {
         case "piecePrefs":
           mergePiecePrefs(value);
           break;
-        case "song":
-          console.log("SOOOOOOOOOOOOOOOOOOOOOOOONG");
-          console.log(value);
-          mergeSong(value);
-          break;
+        // case "song":
+        //   console.log("SOOOOOOOOOOOOOOOOOOOOOOOONG");
+        //   console.log(value);
+        //   mergeSong(value);
+        //   break;
         default:
           console.log("DataStoreSync: default case");
       }
