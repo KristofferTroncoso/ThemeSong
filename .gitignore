@@ -6,6 +6,7 @@ coverage
 
 builds
 zip
+*.zip
 
 .DS_Store
 .env.local
