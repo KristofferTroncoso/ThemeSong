@@ -39,9 +39,9 @@ function Bars({ analyser }) {
         width: 100%;
         background: linear-gradient(
           180deg,
-          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0.2) 0%,
-          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0.8) 73%,
-          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0.85) 100%
+          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0) 60%,
+          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0.7) 80%,
+          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0.9) 100%
         );
       `}
     >

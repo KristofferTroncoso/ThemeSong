@@ -36,11 +36,10 @@ function Accent({ analyser, dataArray, bufferLength }) {
       for (let i = 0; i < bufferLength; i++) {
         barHeight = dataArray[i] * 2;
 
-        context.fillStyle = `hsla(
+        context.fillStyle = `hsl(
           ${(dominant.hsl[0] * 360).toFixed()}, 
           ${dominant.hsl[1] * 100}%, 
-          ${(barHeight / 1000) * 100 + 30}%, 
-          0.95
+          ${(barHeight / 1000) * 100 + 30}%
         )`; //dominant accented color: barheight correlates to brightness
 
         context.fillRect(x, canvas.height - barHeight + 6, barsPrefs.barWidth, barHeight);
@@ -67,7 +66,7 @@ function Accent({ analyser, dataArray, bufferLength }) {
         position: absolute;
         bottom: 0;
         left: 0;
-        height: 30%;
+        height: 40%;
         width: 100%;
         border-radius: inherit;
         z-index: 100;

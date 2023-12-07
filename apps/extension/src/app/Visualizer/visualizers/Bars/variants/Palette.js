@@ -37,17 +37,12 @@ function Palette({ analyser, dataArray, bufferLength }) {
       for (let i = 0; i < bufferLength; i++) {
         barHeight = dataArray[i] * 2;
 
-        // ctx.fillStyle = paletteArray[yoyo].hex;
-
-        context.fillStyle = `hsla(
+        context.fillStyle = `hsl(
           ${paletteArray[arrLoopNum].hsl[0] * 360}, 
           ${paletteArray[arrLoopNum].hsl[1] * 100}%, 
           ${
-            // pickedSwatch.hsl[2] * 100 + 10
-            // (paletteArray[arrLoopNum].hsl[2] - ((paletteArray[arrLoopNum].hsl[2] - 0.7)/2)) * 100 //kinda normalizes the light
             (barHeight / 1000) * 100 + 30 //basically has like a minimum brightness
-          }%, 
-          0.95
+          }%
         )`;
 
         arrLoopNum = (arrLoopNum + 1) % paletteArray.length;
@@ -76,7 +71,7 @@ function Palette({ analyser, dataArray, bufferLength }) {
         position: absolute;
         bottom: 0;
         left: 0;
-        height: 30%;
+        height: 40%;
         width: 100%;
         border-radius: inherit;
         z-index: 100;

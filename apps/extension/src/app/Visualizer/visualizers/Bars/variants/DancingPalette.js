@@ -32,8 +32,6 @@ function DancingPalette({ analyser, dataArray, bufferLength }) {
 
       let barHeight;
       let x = 0;
-      let paletteArray = Object.values(palette);
-      let arrLoopNum = 0;
 
       function yo(barHeight) {
         if (barHeight > 185) {
@@ -55,15 +53,12 @@ function DancingPalette({ analyser, dataArray, bufferLength }) {
         barHeight = dataArray[i] * 2;
 
         let pickedSwatch = yo(dataArray[i]);
-        context.fillStyle = `hsla(
+        context.fillStyle = `hsl(
           ${pickedSwatch.hsl[0] * 360}, 
           ${pickedSwatch.hsl[1] * 100}%, 
           ${
-            // pickedSwatch.hsl[2] * 100 + 10
             (pickedSwatch.hsl[2] - (pickedSwatch.hsl[2] - 0.7) / 2) * 100 //kinda normalizes the light
-            // barHeight/700 * 100 + 20 //barHeight correlates with brightness. has like a minimum brightness. problem is colors aren't 100% correct.
-          }%, 
-          0.95
+          }%
         )`;
 
         context.fillRect(x, canvas.height - barHeight + 6, barsPrefs.barWidth, barHeight);
@@ -90,7 +85,7 @@ function DancingPalette({ analyser, dataArray, bufferLength }) {
         position: absolute;
         bottom: 0;
         left: 0;
-        height: 30%;
+        height: 40%;
         width: 100%;
         border-radius: inherit;
         z-index: 100;

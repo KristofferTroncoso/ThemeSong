@@ -35,7 +35,7 @@ function RGB({ analyser, dataArray, bufferLength }) {
       for (let i = 0; i < bufferLength; i++) {
         barHeight = dataArray[i] * 2;
 
-        context.fillStyle = `hsla(${barHeight}, 100%, 70%, 0.95)`; //rgb: bar height is correlated to hue
+        context.fillStyle = `hsl(${barHeight}, 100%, 70%)`; //rgb: bar height is correlated to hue
 
         context.fillRect(x, canvas.height - barHeight + 6, barsPrefs.barWidth, barHeight);
 
@@ -61,7 +61,7 @@ function RGB({ analyser, dataArray, bufferLength }) {
         position: absolute;
         bottom: 0;
         left: 0;
-        height: 30%;
+        height: 40%;
         width: 100%;
         border-radius: inherit;
         z-index: 100;
