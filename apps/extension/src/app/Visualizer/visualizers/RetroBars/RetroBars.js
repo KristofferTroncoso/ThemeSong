@@ -77,13 +77,13 @@ function RetroBars({ analyser }) {
         left: 0;
         height: 100%;
         width: 100%;
-        background-color: rgb(0 0 0 / 0.4);
+        background-color: rgb(0 0 0 / 0.2);
       `}
     >
       <Canvas
         ref={canvasRef2}
         css={css`
-          background-color: rgb(0 0 0 / 0.6);
+          background-color: rgb(0 0 0 / 0.4);
         `}
       />
       <Canvas ref={canvasRef} />

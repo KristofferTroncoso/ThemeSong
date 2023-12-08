@@ -65,10 +65,10 @@ function Wavy({ analyser }) {
         width: 100%;
         background: linear-gradient(
           180deg,
-          rgb(0 0 0 / 0) 0%,
-          rgb(0 0 0 / 0.6) 55%,
-          rgb(0 0 0 / 0.8) 75%,
-          rgb(0 0 0 / 0.6) 100%
+          rgb(0 0 0 / 0) 35%,
+          rgb(0 0 0 / 0.5) 60%,
+          rgb(0 0 0 / 0.7) 73%,
+          rgb(0 0 0 / 0.5) 100%
         );
       `}
     >

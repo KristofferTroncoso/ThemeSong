@@ -38,7 +38,7 @@ export const DiscoBall = ({ analyser }) => {
         left: 0;
         height: 100%;
         width: 100%;
-        background-color: rgb(0 0 0 / 0.8);
+        background-color: rgb(0 0 0 / 0.4);
       `}
     >
       <Canvas>

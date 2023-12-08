@@ -57,7 +57,7 @@ function Snowfall() {
       height="1100"
       width="1400"
       css={css`
-        background-color: rgba(0, 0, 40, 0.7);
+        background-color: rgba(0, 0, 40, 0.4);
       `}
     />
   );
