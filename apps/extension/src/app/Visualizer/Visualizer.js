@@ -54,7 +54,7 @@ Page reload required to reconnect visualizer. Reload now?`
     }
     analyser.fftSize = 2048;
     analyser.maxDecibels = -18;
-    analyser.smoothingTimeConstant = 0.8;
+    analyser.smoothingTimeConstant = 0.9;
 
     connectSource();
 
