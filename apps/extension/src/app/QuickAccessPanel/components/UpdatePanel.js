@@ -31,15 +31,8 @@ function UpdatePanel() {
         `}
       >
         <p>
-          <b>v1.0.5 (PATCH)</b>
+          <b>v1.0.6</b>
           <span> (December 2023)</span>
-        </p>
-        <br></br>
-        <p>
-          <span>- Quick Fix: Visualizer not playing</span>
-        </p>
-        <p>
-          <span>- i have to adapt to ytm code changes. Should work now. TY!</span>
         </p>
       </div>
       <button
