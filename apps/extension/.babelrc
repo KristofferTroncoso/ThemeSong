@@ -1,25 +1,28 @@
 {
   "env": {
     "development": {
-       "presets": [
-          ["@babel/preset-react", {
+      "presets": [
+        [
+          "@babel/preset-react",
+          {
             "runtime": "automatic",
             "importSource": "@emotion/react"
-          }]
-        ],
-        "plugins": ["@emotion"]
-     },
+          }
+        ]
+      ],
+      "plugins": ["@emotion"]
+    },
     "production": {
       "presets": [
-        ["@babel/preset-react", {
-          "runtime": "automatic",
-          "importSource": "@emotion/react"
-        }]
+        [
+          "@babel/preset-react",
+          {
+            "runtime": "automatic",
+            "importSource": "@emotion/react"
+          }
+        ]
       ],
-      "plugins": [
-        "transform-remove-console",
-        "@emotion"
-      ],
+      "plugins": ["@emotion", "transform-remove-console"],
       "comments": false
     }
   }
