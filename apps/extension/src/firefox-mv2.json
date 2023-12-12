@@ -11,7 +11,8 @@
     "https://*.ytimg.com/*",
     "storage",
     "notifications",
-    "scripting"
+    "scripting",
+    "search"
   ],
   "browser_action": {
     "default_popup": "popup.html",

@@ -43,6 +43,10 @@ function handleOnMessage(message, sender, sendResponse) {
           handleIconColor(value);
           break;
 
+        case "search":
+          chrome.search.query({ disposition: "NEW_TAB", text: value });
+          break;
+
         default:
           console.log("default case");
           sendResponse("It's a me, the background script!");

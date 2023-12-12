@@ -8,7 +8,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import GoogleIcon from "@mui/icons-material/Google";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { SiGenius, SiNaver } from "react-icons/si";
-import { LuClipboardCopy } from "react-icons/lu";
+import { LuClipboardCopy, LuSearch } from "react-icons/lu";
 import MusixmatchIcon from "../../Icon/MusixmatchIcon";
 import useLocalization from "../../Extension/Localization/useLocalization";
 
@@ -45,6 +45,12 @@ function SongPanel() {
     let modArtistName = artistName.replace(" ", "+");
     let googleUrlSearch = `https://google.com/search?q=${modSongName}+${modArtistName}`;
     window.open(googleUrlSearch, "_blank").focus();
+  }
+
+  function handleDefaultSearch(e) {
+    chrome.runtime.sendMessage({
+      search: songName + " " + songArtist,
+    });
   }
 
   function handleOpenInNaver(e) {
@@ -126,7 +132,17 @@ function SongPanel() {
               `}
             />
           </PanelButton>
-          {locale === "ko" && (
+          <PanelButton
+            title="Default Search"
+            color="#fff"
+            bgColor="#309db7"
+            hoverColor="#fff"
+            hoverBgColor="#309db7"
+            onClick={handleDefaultSearch}
+          >
+            <LuSearch style={{ fontSize: "24px" }} />
+          </PanelButton>
+          {locale === "ko" ? (
             <PanelButton
               title="Naver"
               color="#fff"
@@ -137,17 +153,18 @@ function SongPanel() {
             >
               <SiNaver style={{ fontSize: "16px" }} />
             </PanelButton>
+          ) : (
+            <PanelButton
+              title="Google"
+              color="#fff"
+              bgColor="#4c8bf5"
+              hoverColor="#fff"
+              hoverBgColor="#4c8bf5"
+              onClick={handleOpenInGoogle}
+            >
+              <GoogleIcon style={{ fontSize: "24px" }} />
+            </PanelButton>
           )}
-          <PanelButton
-            title="Google"
-            color="#fff"
-            bgColor="#4c8bf5"
-            hoverColor="#fff"
-            hoverBgColor="#4c8bf5"
-            onClick={handleOpenInGoogle}
-          >
-            <GoogleIcon style={{ fontSize: "24px" }} />
-          </PanelButton>
           <PanelButton
             title="Copy to clipboard"
             color="#fff"
