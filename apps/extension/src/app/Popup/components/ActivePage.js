@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { useStore } from "/src/app/store";
 
-// const PlayerPage = lazy(() => import("./PlayerPage"));
+const PlayerPage = lazy(() => import("./PlayerPage"));
 const VisualizersPage = lazy(() => import("../../Visualizer/VisualizersPage"));
 const ThemesPage = lazy(() => import("../../Theme/ThemesPage"));
 const PiecePage = lazy(() => import("../../Piece/PiecePage"));
@@ -12,8 +12,8 @@ function ActivePage() {
 
   const activePageCalc = () => {
     switch (activePopupTab) {
-      // case 0:
-      //   return <PlayerPage />;
+      case 0:
+        return <PlayerPage />;
       case 1:
         return <ThemesPage />;
       case 2:
