@@ -18,8 +18,17 @@ function SettingsPage() {
       id="Settings-Page"
       css={css`
         width: 400px;
+        padding: 10px;
       `}
     >
+      <h1
+        css={css`
+          font-size: 24px;
+          margin-bottom: 30px;
+        `}
+      >
+        {getMessage("settings")}
+      </h1>
       <LocaleSettings />
       <div
         css={css`
@@ -27,6 +36,7 @@ function SettingsPage() {
           display: flex;
           align-items: center;
           align-content: center;
+          margin-top: 15px;
         `}
       >
         <span
