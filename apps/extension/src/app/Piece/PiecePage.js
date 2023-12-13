@@ -58,6 +58,7 @@ function PiecePage() {
                     "34637b81-0c1a-4982-b130-0ff9ac232e4d": getMessage("panelAltIcon"),
                     "2a606045-80f3-4aee-93de-cf3cd39d2920": getMessage("userSnippet"),
                     "895e0c50-c0a0-4752-8014-bd4cb5029e9b": getMessage("lyricsFontSize"),
+                    "f900c555-d735-439f-b926-d5e407ba25f8": getMessage("hiResSongImage"),
                   }[piece.id]
                 }
               </span>

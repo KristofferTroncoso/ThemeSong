@@ -19,6 +19,7 @@ import { reset } from "./messages/reset";
 import { additionalSettings } from "./messages/additionalSettings";
 import { settings } from "./messages/settings";
 import { nowPlaying } from "./messages/nowPlaying";
+import { hiResSongImage } from "./messages/hiResSongImage";
 import { updateNotes104 } from "./messages/updateNotes104";
 
 export const localizations = {
@@ -43,5 +44,6 @@ export const localizations = {
   additionalSettings,
   settings,
   nowPlaying,
+  hiResSongImage,
   updateNotes104,
 };

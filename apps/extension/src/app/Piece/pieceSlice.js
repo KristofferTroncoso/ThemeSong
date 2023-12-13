@@ -25,6 +25,10 @@ export const createPieceSlice = (set, get) => ({
       id: "895e0c50-c0a0-4752-8014-bd4cb5029e9b",
       name: "Lyrics font size",
     },
+    {
+      id: "f900c555-d735-439f-b926-d5e407ba25f8",
+      name: "High Res Song Image",
+    },
   ],
   prefs: {
     "bf472cf5-689f-4be0-9eef-67c5cc8715e9": { enabled: false },
@@ -36,6 +40,7 @@ export const createPieceSlice = (set, get) => ({
       css: "",
     },
     "895e0c50-c0a0-4752-8014-bd4cb5029e9b": { enabled: false, size: 18 },
+    "f900c555-d735-439f-b926-d5e407ba25f8": { enabled: false },
   },
   togglePiece: (payload) => {
     console.log("pieces: togglePiece");
