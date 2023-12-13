@@ -5,9 +5,8 @@ import StyledPanelDiv from "../../QuickAccessPanel/components/StyledPanelDiv";
 import PanelButton from "../../QuickAccessPanel/components/PanelButton";
 
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import GoogleIcon from "@mui/icons-material/Google";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import { SiGenius, SiNaver } from "react-icons/si";
+import { SiGenius } from "react-icons/si";
 import { LuClipboardCopy, LuSearch } from "react-icons/lu";
 import MusixmatchIcon from "../../Icon/MusixmatchIcon";
 import useLocalization from "../../Extension/Localization/useLocalization";
@@ -39,26 +38,10 @@ function SongPanel() {
     window.open(youtubeUrl, "_blank").focus();
   }
 
-  function handleOpenInGoogle(e) {
-    let modSongName = sanitize(songName).replace(" ", "+");
-    let artistName = sanitize(songArtist);
-    let modArtistName = artistName.replace(" ", "+");
-    let googleUrlSearch = `https://google.com/search?q=${modSongName}+${modArtistName}`;
-    window.open(googleUrlSearch, "_blank").focus();
-  }
-
   function handleDefaultSearch(e) {
     chrome.runtime.sendMessage({
       search: songName + " " + songArtist,
     });
-  }
-
-  function handleOpenInNaver(e) {
-    let modSongName = sanitize(songName).replace(" ", "+");
-    let artistName = sanitize(songArtist);
-    let modArtistName = artistName.replace(" ", "+");
-    let naverUrlSearch = `https://search.naver.com/search.naver?query=${modSongName}+${modArtistName}`;
-    window.open(naverUrlSearch, "_blank").focus();
   }
 
   function handleGeniusLyricsSearch(e) {
@@ -69,28 +52,12 @@ function SongPanel() {
     window.open(geniusUrlSearch, "_blank").focus();
   }
 
-  function handleGoogleLyricsSearch(e) {
-    let modSongName = sanitize(songName).replace(" ", "+");
-    let artistName = sanitize(songArtist);
-    let modArtistName = artistName.replace(" ", "+");
-    let googleUrlSearch = `https://google.com/search?q=${modSongName}+${modArtistName}+lyrics`;
-    window.open(googleUrlSearch, "_blank").focus();
-  }
-
   function handleMusixmatchSearch(e) {
     let modSongName = sanitize(songName).replace(" ", "%20");
     let artistName = sanitize(songArtist);
     let modArtistName = artistName.replace(" ", "%20");
     let musixmatchUrlSearch = `https://www.musixmatch.com/search/${modSongName}%20${modArtistName}`;
     window.open(musixmatchUrlSearch, "_blank").focus();
-  }
-
-  function handleYtLyricsSearch(e) {
-    let modSongName = sanitize(songName).replace(" ", "+");
-    let artistName = sanitize(songArtist);
-    let modArtistName = artistName.replace(" ", "+");
-    let ytUrlSearch = `https://www.youtube.com/results?search_query=${modSongName}+${modArtistName}+lyrics`;
-    window.open(ytUrlSearch, "_blank").focus();
   }
 
   return (
@@ -116,6 +83,7 @@ function SongPanel() {
             display: flex;
             justify-content: start;
             align-items: center;
+            max-width: 300px;
           `}
         >
           <PanelButton
@@ -133,38 +101,15 @@ function SongPanel() {
             />
           </PanelButton>
           <PanelButton
-            title="Default Search"
+            title="Search"
             color="#fff"
-            bgColor="#309db7"
+            bgColor="#29aecf"
             hoverColor="#fff"
-            hoverBgColor="#309db7"
+            hoverBgColor="#29aecf"
             onClick={handleDefaultSearch}
           >
             <LuSearch style={{ fontSize: "24px" }} />
           </PanelButton>
-          {locale === "ko" ? (
-            <PanelButton
-              title="Naver"
-              color="#fff"
-              bgColor="#03c75a"
-              hoverColor="#fff"
-              hoverBgColor="#03c75a"
-              onClick={handleOpenInNaver}
-            >
-              <SiNaver style={{ fontSize: "16px" }} />
-            </PanelButton>
-          ) : (
-            <PanelButton
-              title="Google"
-              color="#fff"
-              bgColor="#4c8bf5"
-              hoverColor="#fff"
-              hoverBgColor="#4c8bf5"
-              onClick={handleOpenInGoogle}
-            >
-              <GoogleIcon style={{ fontSize: "24px" }} />
-            </PanelButton>
-          )}
           <PanelButton
             title="Copy to clipboard"
             color="#fff"
@@ -177,31 +122,6 @@ function SongPanel() {
           >
             <LuClipboardCopy style={{ fontSize: "24px" }} />
           </PanelButton>
-        </div>
-      </div>
-      <div>
-        <h3
-          css={css`
-            padding: 2px 5px;
-            display: flex;
-            align-items: center;
-          `}
-        >
-          <span>{getMessage("searchForLyrics")}</span>
-          <OpenInNewIcon
-            css={css`
-              margin-left: 4px;
-              font-size: 12px;
-            `}
-          />
-        </h3>
-        <div
-          css={css`
-            display: flex;
-            justify-content: start;
-            align-items: center;
-          `}
-        >
           <PanelButton
             title="Genius"
             color="#000"
@@ -209,13 +129,8 @@ function SongPanel() {
             hoverColor="#000"
             hoverBgColor="#ffff64"
             onClick={handleGeniusLyricsSearch}
-            css={css`
-              height: 35px;
-              width: 35px;
-              border-radius: 6px;
-            `}
           >
-            <SiGenius style={{ fontSize: "16px" }} />
+            <SiGenius style={{ fontSize: "22px" }} />
           </PanelButton>
           <PanelButton
             title="Musixmatch"
@@ -224,43 +139,8 @@ function SongPanel() {
             hoverColor="#fff"
             hoverBgColor="linear-gradient(0deg, rgba(243,8,123,1) 0%, rgba(243,92,52,1) 100%)"
             onClick={handleMusixmatchSearch}
-            css={css`
-              height: 35px;
-              width: 35px;
-              border-radius: 6px;
-            `}
           >
-            <MusixmatchIcon width="20px" height="17px" />
-          </PanelButton>
-          <PanelButton
-            title="Google Lyrics"
-            color="#fff"
-            bgColor="#4c8bf5"
-            hoverColor="#fff"
-            hoverBgColor="#4c8bf5"
-            onClick={handleGoogleLyricsSearch}
-            css={css`
-              height: 35px;
-              width: 35px;
-              border-radius: 6px;
-            `}
-          >
-            <GoogleIcon style={{ fontSize: "18px" }} />
-          </PanelButton>
-          <PanelButton
-            title="YouTube Lyrics"
-            color="#fff"
-            bgColor="#fd1600"
-            hoverColor="#fff"
-            hoverBgColor="#fd1600"
-            onClick={handleYtLyricsSearch}
-            css={css`
-              height: 35px;
-              width: 35px;
-              border-radius: 6px;
-            `}
-          >
-            <YouTubeIcon style={{ fontSize: "20px" }} />
+            <MusixmatchIcon width="22px" height="19px" />
           </PanelButton>
         </div>
       </div>
