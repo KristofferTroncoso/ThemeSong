@@ -51,14 +51,11 @@ export const createSongSlice = (set, get) => ({
   },
   mergeSong: (payload) => {
     console.log("songSlice: mergeSong");
-    console.log(payload);
     set((state) => {
-      state.song = {
-        songName: payload.songName,
-        songArtist: payload.songArtist,
-        songSubtitle: payload.songSubtitle,
-        songImg: payload.songImg,
-      };
+      state.song.songName = payload.songName;
+      state.song.songArtist = payload.songArtist;
+      state.song.songSubtitle = payload.songSubtitle;
+      state.song.songImg = payload.songImg;
     });
   },
 });
