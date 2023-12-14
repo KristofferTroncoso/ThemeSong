@@ -21,7 +21,6 @@ import { settings } from "./messages/settings";
 import { nowPlaying } from "./messages/nowPlaying";
 import { hiResSongImage } from "./messages/hiResSongImage";
 import { reconnectReload } from "./messages/reconnectReload";
-import { updateNotes104 } from "./messages/updateNotes104";
 
 export const localizations = {
   themes,
@@ -47,5 +46,4 @@ export const localizations = {
   nowPlaying,
   hiResSongImage,
   reconnectReload,
-  updateNotes104,
 };
