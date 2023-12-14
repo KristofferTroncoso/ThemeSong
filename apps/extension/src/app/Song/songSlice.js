@@ -47,7 +47,14 @@ export const createSongSlice = (set, get) => ({
       state.song.songSubtitle = songSubtitle;
       state.song.songImg = songImg;
     });
-    chrome.storage.local.set({ song: get().song });
+    chrome.storage.local.set({
+      song: {
+        songName: get().song.songName,
+        songArtist: get().song.songArtist,
+        songSubtitle: get().song.songSubtitle,
+        songImg: get().song.songImg,
+      },
+    });
   },
   mergeSong: (payload) => {
     console.log("songSlice: mergeSong");
