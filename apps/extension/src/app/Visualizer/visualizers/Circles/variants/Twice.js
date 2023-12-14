@@ -139,7 +139,7 @@ let ctx;
 let tscirclescanvas;
 let borderWidth = 4;
 
-function OT9({ analyser, dataArray }) {
+function Twice({ analyser, dataArray }) {
   const isSongPlaying = useStore((state) => state.player.isSongPlaying);
   let ytmusicplayer = document.querySelector("ytmusic-player");
 
@@ -147,10 +147,10 @@ function OT9({ analyser, dataArray }) {
   const intervalId = useRef();
 
   useEffect(() => {
-    console.log("OT9 time");
+    console.log("Twice time");
     tscirclescanvas = canvasRef.current;
     setUpCircles();
-    ot9();
+    twice();
 
     return function cleanUp() {
       console.log("cleaning up");
@@ -163,7 +163,7 @@ function OT9({ analyser, dataArray }) {
       clearInterval(intervalId.current);
     } else {
       clearInterval(intervalId.current);
-      intervalId.current = setInterval(() => requestAnimationFrame(ot9), 17);
+      intervalId.current = setInterval(() => requestAnimationFrame(twice), 17);
     }
   }, [isSongPlaying]);
 
@@ -247,7 +247,7 @@ function OT9({ analyser, dataArray }) {
     }
   }
 
-  function ot9() {
+  function twice() {
     let ctx = tscirclescanvas.getContext("2d");
     let ytmusicplayer = document.querySelector("ytmusic-player");
     tscirclescanvas.height = ytmusicplayer.clientHeight;
@@ -265,7 +265,7 @@ function OT9({ analyser, dataArray }) {
 
   return (
     <canvas
-      id="ThemeSong-Visualizer-Circles-Variant-OT9"
+      id="ThemeSong-Visualizer-Circles-Variant-Twice"
       ref={canvasRef}
       height={ytmusicplayer.clientHeight}
       width={ytmusicplayer.clientWidth}
@@ -281,4 +281,4 @@ function OT9({ analyser, dataArray }) {
   );
 }
 
-export default OT9;
+export default Twice;

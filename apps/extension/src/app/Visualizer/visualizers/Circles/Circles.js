@@ -6,8 +6,8 @@ import Accent from "./variants/Accent";
 import Palette from "./variants/Palette";
 import Party from "./variants/Party";
 import Bubbles from "./variants/Bubbles";
-import OT9 from "./variants/OT9";
-import Swith from "./variants/Swith";
+import Twice from "./variants/Twice";
+import STAYC from "./variants/STAYC";
 
 function Circles({ analyser }) {
   const circlesActiveVariant = useStore(
@@ -29,9 +29,9 @@ function Circles({ analyser }) {
       case "7dbd8080-84cc-47a8-b199-cfe12c3d9e67":
         return <Bubbles analyser={analyser} dataArray={dataArray} />;
       case "aadb67e9-ee59-45f3-8335-d34a39223525":
-        return <OT9 analyser={analyser} dataArray={dataArray} />;
+        return <Twice analyser={analyser} dataArray={dataArray} />;
       case "3d0b31ae-008e-474a-a33e-71d19c3d335d":
-        return <Swith analyser={analyser} dataArray={dataArray} />;
+        return <STAYC analyser={analyser} dataArray={dataArray} />;
       default:
         return <RGB analyser={analyser} dataArray={dataArray} />;
     }

@@ -97,7 +97,7 @@ let ctx;
 let tscirclescanvas;
 let borderWidth = 4;
 
-function Swith({ analyser, dataArray }) {
+function STAYC({ analyser, dataArray }) {
   const isSongPlaying = useStore((state) => state.player.isSongPlaying);
   let ytmusicplayer = document.querySelector("ytmusic-player");
 
@@ -105,7 +105,7 @@ function Swith({ analyser, dataArray }) {
   const intervalId = useRef();
 
   useEffect(() => {
-    console.log("Swith time");
+    console.log("STAYC time");
     tscirclescanvas = canvasRef.current;
     setUpCircles();
     ot6();
@@ -223,7 +223,7 @@ function Swith({ analyser, dataArray }) {
 
   return (
     <canvas
-      id="ThemeSong-Visualizer-Circles-Variant-Swith"
+      id="ThemeSong-Visualizer-Circles-Variant-STAYC"
       ref={canvasRef}
       height={ytmusicplayer.clientHeight}
       width={ytmusicplayer.clientWidth}
@@ -239,4 +239,4 @@ function Swith({ analyser, dataArray }) {
   );
 }
 
-export default Swith;
+export default STAYC;
