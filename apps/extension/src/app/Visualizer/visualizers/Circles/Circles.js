@@ -46,7 +46,6 @@ function Circles({ analyser }) {
         left: 0;
         height: 100%;
         width: 100%;
-        background: rgb(0 0 0 / 0.2);
       `}
     >
       {returnActiveVariant()}
