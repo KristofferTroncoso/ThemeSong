@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
 import SongPanel from "../../Song/SongPanel/SongPanel";
+import tsicon from "../../../assets/icon-128.png";
 
 function PlayerPage() {
   const [songName, songArtist, songImg] = useStore((state) => [
@@ -75,7 +76,7 @@ function PlayerPage() {
             `}
           >
             <img
-              src={songImg}
+              src={songImg || tsicon}
               alt="album cover"
               css={css`
                 width: 170px;
