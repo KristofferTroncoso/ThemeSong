@@ -65,10 +65,10 @@ function Wavy({ analyser }) {
         width: 100%;
         background: linear-gradient(
           180deg,
-          rgb(0 0 0 / 0) 35%,
-          rgb(0 0 0 / 0.5) 60%,
-          rgb(0 0 0 / 0.7) 73%,
-          rgb(0 0 0 / 0.5) 100%
+          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0) 35%,
+          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0.5) 60%,
+          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0.7) 73%,
+          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0.5) 100%
         );
       `}
     >
