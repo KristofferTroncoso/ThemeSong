@@ -12,6 +12,8 @@ function RGB({ analyser, dataArray, bufferLength }) {
 
   useEffect(() => {
     ctx.current = canvasRef.current.getContext("2d");
+    ctx.current.strokeStyle = "#000000";
+    ctx.current.lineWidth = 2;
 
     return function cleanUp() {
       console.log("cleaning up");
@@ -38,6 +40,7 @@ function RGB({ analyser, dataArray, bufferLength }) {
         context.fillStyle = `hsl(${barHeight}, 100%, 70%)`; //rgb: bar height is correlated to hue
 
         context.fillRect(x, canvas.height - barHeight + 6, barsPrefs.barWidth, barHeight);
+        context.strokeRect(x, canvas.height - barHeight + 6, barsPrefs.barWidth, barHeight);
 
         x += barsPrefs.barWidth + barsPrefs.gap;
       }

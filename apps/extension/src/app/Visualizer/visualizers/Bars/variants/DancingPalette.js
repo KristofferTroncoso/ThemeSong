@@ -13,6 +13,8 @@ function DancingPalette({ analyser, dataArray, bufferLength }) {
 
   useEffect(() => {
     ctx.current = canvasRef.current.getContext("2d");
+    ctx.current.strokeStyle = "#000000";
+    ctx.current.lineWidth = 2;
 
     return function cleanUp() {
       console.log("cleaning up");
@@ -62,6 +64,7 @@ function DancingPalette({ analyser, dataArray, bufferLength }) {
         )`;
 
         context.fillRect(x, canvas.height - barHeight + 6, barsPrefs.barWidth, barHeight);
+        context.strokeRect(x, canvas.height - barHeight + 6, barsPrefs.barWidth, barHeight);
 
         x += barsPrefs.barWidth + barsPrefs.gap;
       }

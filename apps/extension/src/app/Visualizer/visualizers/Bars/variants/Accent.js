@@ -13,6 +13,8 @@ function Accent({ analyser, dataArray, bufferLength }) {
 
   useEffect(() => {
     ctx.current = canvasRef.current.getContext("2d");
+    ctx.current.strokeStyle = "#000000";
+    ctx.current.lineWidth = 2;
 
     return function cleanUp() {
       console.log("cleaning up");
@@ -43,6 +45,7 @@ function Accent({ analyser, dataArray, bufferLength }) {
         )`; //dominant accented color: barheight correlates to brightness
 
         context.fillRect(x, canvas.height - barHeight + 6, barsPrefs.barWidth, barHeight);
+        context.strokeRect(x, canvas.height - barHeight + 6, barsPrefs.barWidth, barHeight);
 
         x += barsPrefs.barWidth + barsPrefs.gap;
       }
