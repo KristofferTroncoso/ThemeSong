@@ -10,6 +10,7 @@ import SpiderVerse from "./visualizers/SpiderVerse/SpiderVerse";
 import DiscoBall from "./visualizers/DiscoBall/DiscoBall";
 import Snowfall from "./visualizers/Snowfall/Snowfall";
 import RetroBars from "./visualizers/RetroBars/RetroBars";
+import useLocalization from "../Extension/Localization/useLocalization";
 
 let source;
 let audioCtx;
@@ -20,6 +21,7 @@ function Visualizer() {
   const activeVisualizer = useStore((state) => state.visualizer.prefs.activeVisualizer);
   const toggleIsVisualizerOn = useStore((state) => state.visualizer.toggleIsVisualizerOn);
   const [isConnected, setIsConnected] = useState(false);
+  const getMessage = useLocalization();
 
   useEffect(() => {
     console.log("Visualizer: useEffect 2");
@@ -32,12 +34,7 @@ function Visualizer() {
           i can just prompt them to refresh and remove the visualizer button and container. 
         */
         console.log("audioCtx", audioCtx);
-        if (
-          window.confirm(
-            `ThemeSong extension was recently updated. 
-Page reload required to reconnect visualizer. Reload now?`
-          )
-        ) {
+        if (window.confirm(getMessage("reconnectReload"))) {
           window.location.reload();
         }
         toggleIsVisualizerOn();
