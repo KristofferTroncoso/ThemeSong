@@ -2,6 +2,7 @@ import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
 import SongPanel from "../../Song/SongPanel/SongPanel";
 import tsicon from "../../../assets/icon-128.png";
+import { PiSkipBackFill, PiPlayPauseFill, PiSkipForwardFill } from "react-icons/pi";
 
 function PlayerPage() {
   const [songName, songArtist, songImg] = useStore((state) => [
@@ -9,6 +10,32 @@ function PlayerPage() {
     state.song.songArtist,
     state.song.songImg,
   ]);
+
+  function handlePrevious() {
+    chrome.tabs.query({}, (tabs) => {
+      let ytmTabs = tabs.filter((tab) => "url" in tab);
+      console.log(ytmTabs);
+      chrome.tabs.sendMessage(ytmTabs[0].id, { message: "previous-button" });
+    });
+  }
+
+  function handlePlayPause(e) {
+    console.log(e);
+    chrome.tabs.query({}, (tabs) => {
+      let ytmTabs = tabs.filter((tab) => "url" in tab);
+      console.log(ytmTabs);
+
+      chrome.tabs.sendMessage(ytmTabs[0].id, { message: "playpause" });
+    });
+  }
+
+  function handleNext() {
+    chrome.tabs.query({}, (tabs) => {
+      let ytmTabs = tabs.filter((tab) => "url" in tab);
+      console.log(ytmTabs);
+      chrome.tabs.sendMessage(ytmTabs[0].id, { message: "next-button" });
+    });
+  }
 
   function handleYTMclick() {
     chrome.tabs.query({}, (tabs) => {
@@ -82,7 +109,7 @@ function PlayerPage() {
                 width: 170px;
                 height: 170px;
                 border-radius: 5px;
-                border: 1px solid #555;
+                border: 1px solid #333;
                 background-color: #222;
               `}
             />
@@ -97,13 +124,40 @@ function PlayerPage() {
           </h1>
           <h2
             css={css`
-              margin: 8px 0;
+              margin-top: "8px";
               font-size: 16px;
               color: #dddddd;
             `}
           >
             {songArtist}
           </h2>
+        </div>
+        <div
+          css={{
+            textAlign: "center",
+            display: "flex",
+            justifyContent: "space-around",
+            width: "100%",
+            button: {
+              border: 0,
+              padding: "10px 16px",
+              color: "#aaa",
+              background: 0,
+              ":hover": {
+                color: "#fff",
+              },
+            },
+          }}
+        >
+          <button onClick={handlePrevious}>
+            <PiSkipBackFill style={{ fontSize: "25px" }} />
+          </button>
+          <button onClick={handlePlayPause}>
+            <PiPlayPauseFill style={{ fontSize: "50px" }} />
+          </button>
+          <button onClick={handleNext}>
+            <PiSkipForwardFill style={{ fontSize: "25px" }} />
+          </button>
         </div>
         <div
           css={css`

@@ -6,6 +6,8 @@ import PanelContainer from "../QuickAccessPanel";
 import PlayerUiStateObserver from "../Player/PlayerUiStateObserver";
 import SongInfoDisplayFeature from "../Song/SongInfoDisplay/SongInfoDisplayFeature";
 import VisualizerCS from "../Visualizer/VisualizerCS";
+import { useEffect } from "react";
+
 import Palette from "../Palette/Palette";
 import Utilities from "../Utilities/Utilities";
 import LogoContainer from "../YtmLogo";
@@ -15,6 +17,20 @@ import IconColor from "../Extension/IconColor/IconColor";
 // import PlayPauseChangeObserver from "../Player/PlayPauseChangeObserver";
 
 function ContentScript({ root }) {
+  useEffect(() => {
+    chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+      if (message.message === "playpause") {
+        document.getElementById("play-pause-button").click();
+      } else if (message.message === "next-button") {
+        document.getElementsByClassName("next-button")[0].click();
+      } else if (message.message === "previous-button") {
+        document.getElementsByClassName("previous-button")[0].click();
+      } else {
+        document.getElementById("play-pause-button").click();
+      }
+    });
+  }, []);
+
   return (
     <div id="ThemeSong-ContentScript">
       <Unmounter root={root} />
@@ -24,13 +40,13 @@ function ContentScript({ root }) {
       <Palette />
       <Utilities />
       <Piece />
-      <SongObserver />
       <MountWhenPlayerActive>
         <SongInfoDisplayFeature />
         <VisualizerCS />
         <IconColor />
         <PanelContainer />
         <PlayerUiStateObserver />
+        <SongObserver />
         {/* <PlayPauseChangeObserver /> */}
       </MountWhenPlayerActive>
     </div>
