@@ -4,5 +4,6 @@
     "chrome": "readonly",
     "browser": "readonly",
     "STORE_URL": "readonly"
-  }
+  },
+  "plugins": ["@emotion"]
 }
