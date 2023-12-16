@@ -48,7 +48,6 @@ const options = {
         loader: "html-loader",
         exclude: /node_modules/,
       },
-      { test: /\.(ts|tsx)$/, loader: "ts-loader", exclude: /node_modules/ },
       {
         test: /\.(js|jsx)$/,
         use: [
@@ -64,7 +63,7 @@ const options = {
     ],
   },
   resolve: {
-    extensions: fileExtensions.map((extension) => "." + extension).concat([".js", ".jsx", ".ts", ".tsx", ".css"]),
+    extensions: fileExtensions.map((extension) => "." + extension).concat([".js", ".jsx", ".css"]),
   },
   plugins: [
     new webpack.DefinePlugin({
