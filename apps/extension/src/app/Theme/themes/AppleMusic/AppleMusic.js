@@ -13,7 +13,6 @@ import { zebra_stripes } from "../../css/extra/zebra_stripes";
 import { nowplaying_overlay } from "../../css/extra/nowplaying_overlay";
 import { frosted_glass } from "../../css/extra/frosted_glass";
 import { texts_selection } from "../../css/extra/texts_selection";
-// import { thumbnail_border } from "../../css/extra/thumbnail_border";
 
 function AppleMusic() {
   const appleMusicPrefs = useStore((state) => state.theme.prefs["76dd54c5-78a2-4ca3-9c16-3d0d1aab367f"]);
@@ -45,7 +44,6 @@ function AppleMusic() {
         {nowplaying_overlay}
         {frosted_glass}
         {texts_selection}
-        {/* {thumbnail_border} */}
         {
           /*css*/ `
           :root {
