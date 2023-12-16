@@ -136,7 +136,7 @@ function ThemePanel() {
           />
         </PanelButton>
         <PanelButton
-          title={themes.find((theme) => theme.id === activeTheme).name}
+          title="YouTube Music Mobile"
           hoverColor="red"
           bgColor={activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && "rgb(255 255 255 / 0.8)"}
           color={activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && "red"}
