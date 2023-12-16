@@ -32,7 +32,7 @@ function ExperimentalSettings() {
           onChange={handleVariantClick}
           value={experimentalPrefs.activeVariant}
           min={1}
-          max={11}
+          max={7}
           css={css`
             color: #000;
             font-size: 30px;
