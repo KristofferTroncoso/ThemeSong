@@ -11,10 +11,8 @@
     "start": "node tasks/webserver.js",
     "build": "node tasks/build.js",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
-    "zip": "pnpm run build && web-ext build --source-dir ./builds/chrome-build --artifacts-dir zip/chrome-zip --overwrite-dest",
     "start-firefox": "node tasks/webserver-firefox.js",
-    "build-firefox": "node tasks/build-firefox.js",
-    "zip-firefox": "pnpm run build-firefox && web-ext build --source-dir ./builds/firefox-build --artifacts-dir zip/firefox-zip --overwrite-dest"
+    "build-firefox": "node tasks/build-firefox.js"
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.23.3",
@@ -60,7 +58,6 @@
     "source-map-loader": "^4.0.1",
     "style-loader": "^3.3.3",
     "terser-webpack-plugin": "^5.3.9",
-    "web-ext": "^7.9.0",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
