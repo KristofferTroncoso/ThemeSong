@@ -261,4 +261,9 @@ export const icons_buttons = /*css*/ `
   .thumbnail-overlay .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
     color: #fff;
   }
+
+  /* icons on dialog popup when selecting checkbox from library */
+  #multiSelectMenu.ytmusic-multi-select-menu-bar {
+    --iron-icon-fill-color: var(--ts-primary-icon-color);
+  }
 `;

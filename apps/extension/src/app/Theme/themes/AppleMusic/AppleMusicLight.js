@@ -64,6 +64,10 @@ function AppleMusicLight() {
           filter: invert(1);
           border: 20px;
         }
+
+        ytmusic-dialog {
+          background-color: #fff;
+        }
      `
       }
 
