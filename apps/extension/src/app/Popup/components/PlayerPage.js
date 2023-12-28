@@ -5,11 +5,7 @@ import tsicon from "../../../assets/icon-128.png";
 import { PiSkipBackFill, PiPlayPauseFill, PiSkipForwardFill } from "react-icons/pi";
 
 function PlayerPage() {
-  const [songName, songArtist, songImg] = useStore((state) => [
-    state.song.songName,
-    state.song.songArtist,
-    state.song.songImg,
-  ]);
+  const metadata = useStore((state) => state.media.metadata);
 
   function handlePrevious() {
     chrome.tabs.query({}, (tabs) => {
@@ -103,7 +99,7 @@ function PlayerPage() {
             `}
           >
             <img
-              src={songImg || tsicon}
+              src={metadata.artwork[metadata.artwork.length - 1].src || tsicon}
               alt="album cover"
               css={css`
                 width: 170px;
@@ -120,7 +116,7 @@ function PlayerPage() {
               font-size: 20px;
             `}
           >
-            {songName}
+            {metadata.title}
           </h1>
           <h2
             css={css`
@@ -129,7 +125,7 @@ function PlayerPage() {
               color: #dddddd;
             `}
           >
-            {songArtist}
+            {metadata.artist}
           </h2>
         </div>
         <div

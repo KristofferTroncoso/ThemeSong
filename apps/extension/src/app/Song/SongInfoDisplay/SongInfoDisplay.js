@@ -3,8 +3,7 @@ import "./SongInfoDisplay.css";
 import { useStore } from "/src/app/store";
 
 function SongInfoDisplay() {
-  const songName = useStore((state) => state.song.songName);
-  const songSubtitle = useStore((state) => state.song.songSubtitle);
+  const metadata = useStore((state) => state.media.metadata);
 
   return (
     <div
@@ -19,37 +18,26 @@ function SongInfoDisplay() {
           color: var(--ts-secondary-text-color);
         `}
       >
-        {songName}
+        {metadata.title}
       </h1>
-      {songSubtitle.split(" • ").map((info, index) => {
-        if (index === 0) {
-          return (
-            <h2
-              key={index}
-              css={css`
-                margin: 14px 0;
-                font-size: 26px;
-                color: var(--ts-secondary-text-color);
-              `}
-            >
-              {info}
-            </h2>
-          );
-        } else {
-          return (
-            <h3
-              key={index}
-              css={css`
-                margin: 14px 0;
-                font-size: 20px;
-                color: var(--ts-secondary-text-color);
-              `}
-            >
-              {info}
-            </h3>
-          );
-        }
-      })}
+      <h2
+        css={css`
+          margin: 14px 0;
+          font-size: 26px;
+          color: var(--ts-secondary-text-color);
+        `}
+      >
+        {metadata.artist}
+      </h2>
+      <h3
+        css={css`
+          margin: 14px 0;
+          font-size: 20px;
+          color: var(--ts-secondary-text-color);
+        `}
+      >
+        {metadata.album}
+      </h3>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import MountWhenPlayerActive from "./MountWhenPlayerActive";
 import DataStoreSync from "../Extension/DataStoreSync";
 import Theme from "../Theme/Theme";
-import SongObserver from "../Song/SongObserver";
+import MediaObserver from "../Media/MediaObserver";
 import PanelContainer from "../QuickAccessPanel";
 import PlayerUiStateObserver from "../Player/PlayerUiStateObserver";
 import SongInfoDisplayFeature from "../Song/SongInfoDisplay/SongInfoDisplayFeature";
@@ -46,7 +46,7 @@ function ContentScript({ root }) {
         <IconColor />
         <PanelContainer />
         <PlayerUiStateObserver />
-        <SongObserver />
+        <MediaObserver />
         {/* <PlayPauseChangeObserver /> */}
       </MountWhenPlayerActive>
     </div>

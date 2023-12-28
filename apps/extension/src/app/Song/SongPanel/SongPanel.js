@@ -12,9 +12,8 @@ import MusixmatchIcon from "../../Icon/MusixmatchIcon";
 import useLocalization from "../../Extension/Localization/useLocalization";
 
 function SongPanel() {
-  const songName = useStore((state) => state.song.songName);
-  const songArtist = useStore((state) => state.song.songArtist);
   const locale = useStore((state) => state.extension.prefs.locale);
+  const metadata = useStore((state) => state.media.metadata);
 
   const getMessage = useLocalization();
 
@@ -40,21 +39,21 @@ function SongPanel() {
 
   function handleDefaultSearch(e) {
     chrome.runtime.sendMessage({
-      search: songName + " " + songArtist,
+      search: metadata.title + " " + metadata.artist,
     });
   }
 
   function handleGeniusLyricsSearch(e) {
-    let modSongName = sanitize(songName).replace(" ", "%20");
-    let artistName = sanitize(songArtist);
+    let modSongName = sanitize(metadata.title).replace(" ", "%20");
+    let artistName = sanitize(metadata.artist);
     let modArtistName = artistName.replace(" ", "%20");
     let geniusUrlSearch = `https://genius.com/search?q=${modSongName}%20${modArtistName}`;
     window.open(geniusUrlSearch, "_blank").focus();
   }
 
   function handleMusixmatchSearch(e) {
-    let modSongName = sanitize(songName).replace(" ", "%20");
-    let artistName = sanitize(songArtist);
+    let modSongName = sanitize(metadata.title).replace(" ", "%20");
+    let artistName = sanitize(metadata.artist);
     let modArtistName = artistName.replace(" ", "%20");
     let musixmatchUrlSearch = `https://www.musixmatch.com/search/${modSongName}%20${modArtistName}`;
     window.open(musixmatchUrlSearch, "_blank").focus();
@@ -117,7 +116,7 @@ function SongPanel() {
             hoverColor="#fff"
             hoverBgColor="#878787"
             onClick={() => {
-              navigator.clipboard.writeText(`${songName} ${songArtist}`);
+              navigator.clipboard.writeText(`${metadata.title} ${metadata.artist}`);
             }}
           >
             <LuClipboardCopy style={{ fontSize: "24px" }} />

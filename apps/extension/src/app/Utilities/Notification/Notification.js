@@ -2,24 +2,24 @@ import { useEffect } from "react";
 import { useStore } from "/src/app/store";
 
 function Notification() {
-  const song = useStore((state) => state.song);
+  const metadata = useStore((state) => state.media.metadata);
 
   useEffect(() => {
     try {
-      if (song.songName !== "") {
+      if (metadata) {
         chrome.runtime.sendMessage({
           notify: {
-            songName: song.songName,
-            songSubtitle: song.songSubtitle,
-            songArtist: song.songArtist,
-            songImg: song.songImg,
+            songName: metadata.title,
+            songSubtitle: metadata.artist,
+            songArtist: metadata.artist,
+            songImg: metadata.artwork[0].src,
           },
         });
       }
     } catch {
       console.log("Notification: context invalidated");
     }
-  }, [song]);
+  }, [metadata]);
 
   return null;
 }

@@ -38,7 +38,7 @@ function SleepTimer() {
   const setTimerIsActive = useStore((state) => state.utilities.setTimerIsActive);
   const setMinutesLeft = useStore((state) => state.utilities.setMinutesLeft);
   const decrementMinutesLeft = useStore((state) => state.utilities.decrementMinutesLeft);
-  const songName = useStore((state) => state.song.songName);
+  const metadata = useStore((state) => state.media.metadata);
   const isDialogOpen = useStore((state) => state.utilities.sleepTimer.isDialogOpen);
   const setTimerIsDialogOpen = useStore((state) => state.utilities.setTimerIsDialogOpen);
   const [isLastSong, setIsLastSong] = useState(false);
@@ -54,7 +54,7 @@ function SleepTimer() {
       setIsTimeOverDialogOpen(true);
     }
     isLastSong && lastSongDone();
-  }, [songName]); // Need to redo this whole feature. cant change the dependency array or it breaks "end of track" feature.
+  }, [metadata]); // Need to redo this whole feature. cant change the dependency array or it breaks "end of track" feature.
 
   function handleLastSongClick() {
     clearTimeout(timeoutId);
