@@ -46,7 +46,9 @@ function SleepTimer() {
 
   useEffect(() => {
     function lastSongDone() {
-      document.querySelector("video").pause();
+      setTimeout(() => {
+        document.querySelector("video").pause();
+      }, 500);
       setIsLastSong(false);
       setTimerIsActive(false);
       setIsTimeOverDialogOpen(true);
