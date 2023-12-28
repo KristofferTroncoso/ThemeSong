@@ -14,7 +14,7 @@ import LogoContainer from "../YtmLogo";
 import Unmounter from "../Extension/Unmounter";
 import Piece from "../Piece/Piece";
 import IconColor from "../Extension/IconColor/IconColor";
-// import PlayPauseChangeObserver from "../Player/PlayPauseChangeObserver";
+import PlayPauseEventListener from "../Player/PlayPauseEventListener";
 
 function ContentScript({ root }) {
   useEffect(() => {
@@ -47,7 +47,7 @@ function ContentScript({ root }) {
         <PanelContainer />
         <PlayerUiStateObserver />
         <MediaObserver />
-        {/* <PlayPauseChangeObserver /> */}
+        <PlayPauseEventListener />
       </MountWhenPlayerActive>
     </div>
   );
