@@ -46,9 +46,7 @@ function SleepTimer() {
 
   useEffect(() => {
     function lastSongDone() {
-      setTimeout(() => {
-        document.getElementById("play-pause-button").click();
-      }, 500);
+      document.querySelector("video").pause();
       setIsLastSong(false);
       setTimerIsActive(false);
       setIsTimeOverDialogOpen(true);
@@ -75,7 +73,7 @@ function SleepTimer() {
     }, 60000);
     timeoutId = setTimeout(() => {
       if (document.getElementById("movie_player").classList.contains("playing-mode")) {
-        document.getElementById("play-pause-button").click();
+        document.querySelector("video").pause();
       }
       clearInterval(intervalId);
       setTimerIsActive(false);
