@@ -31,25 +31,8 @@ function UpdatePanel() {
         `}
       >
         <p>
-          <b>v1.0.7</b>
+          <b>v1.0.8</b>
           <span> (December 2023)</span>
-        </p>
-        <br></br>
-        <h4>Changes:</h4>
-        <p>
-          - <b>(Popup) New Piece</b>: High res song image option
-        </p>
-        <p>
-          - <b>(Popup) Now Playing page</b>: Will add more functionality later
-        </p>
-        <p>
-          - <b>(Panel) Song search</b>: Now uses your default search engine
-        </p>
-        <p>- Styling improvements</p>
-        <br></br>
-        <p style={{ color: "#410645" }}>
-          I've read all your reviews on the store <span style={{ fontSize: "16px" }}>😂❤️</span> . Thanks!{" "}
-          <span style={{ fontSize: "16px" }}>🙏🎧</span> -- dev
         </p>
       </div>
       <button
