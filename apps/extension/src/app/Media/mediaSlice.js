@@ -4,6 +4,7 @@ export const createMediaSlice = (set, get) => ({
     artist: "",
     album: "",
     artwork: [{ src: "" }],
+    url: "",
   },
   changeMedia: () => {
     console.log("mediaSlice: changeMedia");
@@ -13,6 +14,7 @@ export const createMediaSlice = (set, get) => ({
         artist: navigator.mediaSession.metadata.artist,
         album: navigator.mediaSession.metadata.album,
         artwork: navigator.mediaSession.metadata.artwork,
+        url: document.querySelector(".ytp-title-link").href,
       };
     });
     chrome.storage.local.set({
@@ -22,6 +24,7 @@ export const createMediaSlice = (set, get) => ({
           artist: get().media.metadata.artist,
           album: get().media.metadata.album,
           artwork: get().media.metadata.artwork,
+          url: get().media.metadata.url,
         },
       },
     });

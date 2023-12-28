@@ -31,8 +31,8 @@ function SongPanel() {
 
   function handleYtSearch(e) {
     // let songUrl = document.querySelector(".meta-url").content; // this doesnt change on song change...
-    let songUrl = document.querySelector(".ytp-title-link").href;
-    let youtubeUrl = songUrl.replace("music", "www");
+    // let songUrl = document.querySelector(".ytp-title-link").href;
+    let youtubeUrl = metadata.url.replace("music", "www");
     // let noListUrl = youtubeUrl.substring(0, youtubeUrl.indexOf('&'))
     window.open(youtubeUrl, "_blank").focus();
   }
