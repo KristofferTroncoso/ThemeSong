@@ -3,6 +3,7 @@ import { useStore } from "/src/app/store";
 import SongPanel from "../../Song/SongPanel/SongPanel";
 import tsicon from "../../../assets/icon-128.png";
 import { PiSkipBackFill, PiPlayPauseFill, PiSkipForwardFill } from "react-icons/pi";
+import YtmIcon from "../../YtmLogo/YtmIcon";
 
 function PlayerPage() {
   const metadata = useStore((state) => state.media.metadata);
@@ -86,9 +87,20 @@ function PlayerPage() {
           justify-content: space-between;
         `}
       >
+        <button
+          onClick={handleYTMclick}
+          css={css`
+            border: 0;
+            background: 0;
+            margin-bottom: 10px;
+            text-align: left;
+          `}
+        >
+          <YtmIcon full />
+        </button>
         <div>
           <button
-            onClick={handleYTMclick}
+            onClick={handlePlayPause}
             css={css`
               width: 170px;
               height: 170px;
