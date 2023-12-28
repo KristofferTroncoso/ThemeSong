@@ -29,7 +29,6 @@ ytmusic-search-box {
 }
 
 tp-yt-paper-dialog {
-  background: transparent !important;
   backdrop-filter: var(--ts-frosted-glass-blur);
 }
 
