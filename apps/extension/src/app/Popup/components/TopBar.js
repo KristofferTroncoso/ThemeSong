@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import YtmIcon from "../../YtmLogo/YtmIcon";
 import ThemesongTextIcon from "./ThemesongTextIcon";
+import { BsReverseLayoutSidebarInsetReverse } from "react-icons/bs";
 
 function TopBar() {
   function handleYTMclick() {
@@ -30,6 +31,14 @@ function TopBar() {
           chrome.tabs.update(ytmTabs.at(-1).id, { active: true });
         }
       }
+    });
+  }
+
+  function handleSideplayerClick() {
+    chrome.tabs.query({}, (tabs) => {
+      console.log(tabs);
+      chrome.sidePanel.open({ windowId: tabs[0].windowId });
+      chrome.windows.update(tabs[0].windowId, { focused: true });
     });
   }
 
@@ -73,7 +82,8 @@ function TopBar() {
           css={css`
             background-color: inherit;
             border: 0;
-            padding: 0;
+            padding: 0 4px;
+            margin: 0 2px;
           `}
           onClick={handleYTMclick}
         >
@@ -83,6 +93,23 @@ function TopBar() {
             stroke="#000"
             css={css`
               height: 16px;
+            `}
+          />
+        </button>
+        <button
+          css={css`
+            background-color: inherit;
+            border: 0;
+            padding: 0 4px;
+            margin: 0 2px;
+          `}
+          title="sideplayer"
+          onClick={handleSideplayerClick}
+        >
+          <BsReverseLayoutSidebarInsetReverse
+            css={css`
+              color: #fff;
+              font-size: 18px;
             `}
           />
         </button>
