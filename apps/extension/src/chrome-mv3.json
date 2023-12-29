@@ -6,7 +6,7 @@
   "default_locale": "en",
   "minimum_chrome_version": "105",
   "background": { "service_worker": "themesong-background.js" },
-  "permissions": ["storage", "scripting", "notifications", "search"],
+  "permissions": ["storage", "scripting", "notifications", "search", "sidePanel"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": "assets/icon-34.png",
@@ -24,6 +24,9 @@
       "js": ["themesong-content.js"]
     }
   ],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
   "web_accessible_resources": [
     {
       "resources": ["/assets/*"],

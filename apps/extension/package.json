@@ -22,6 +22,7 @@
     "@mui/material": "^5.15.0",
     "@react-three/fiber": "^8.15.12",
     "colorjs.io": "^0.4.5",
+    "colorthief": "^2.4.0",
     "immer": "^9.0.21",
     "node-vibrant": "^3.1.6",
     "react": "^18.2.0",

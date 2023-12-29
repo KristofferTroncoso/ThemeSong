@@ -15,6 +15,7 @@ const options = {
     "themesong-popup": path.join(__dirname, "src/app/Popup/index.js"),
     "themesong-background": path.join(__dirname, "src/app/Background/index.js"),
     "themesong-content": path.join(__dirname, "src/app/Content/index.js"),
+    "themesong-sidepanel": path.join(__dirname, "src/app/SidePanel/index.js"),
   },
   chromeExtensionBoilerplate: {
     notHotReload: ["themesong-background", "themesong-content"],
@@ -82,6 +83,11 @@ const options = {
       template: path.join(__dirname, "src/app/Popup/index.html"),
       filename: "popup.html",
       chunks: ["themesong-popup"],
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "src/app/SidePanel/index.html"),
+      filename: "sidepanel.html",
+      chunks: ["themesong-sidepanel"],
     }),
   ],
   infrastructureLogging: {
