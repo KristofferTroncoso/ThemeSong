@@ -119,6 +119,7 @@ function PlayerPage() {
                 border-radius: 5px;
                 border: 1px solid #333;
                 background-color: #222;
+                object-fit: contain;
               `}
             />
           </button>

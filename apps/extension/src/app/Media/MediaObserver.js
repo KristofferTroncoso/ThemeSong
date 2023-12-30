@@ -21,7 +21,12 @@ function MediaObserver() {
 
     function handleSongChange() {
       if (navigator.mediaSession.metadata) {
-        changeMedia();
+        setTimeout(() => {
+          changeMedia();
+        }, 1);
+        setTimeout(() => {
+          changeMedia();
+        }, 1000);
       }
     }
 

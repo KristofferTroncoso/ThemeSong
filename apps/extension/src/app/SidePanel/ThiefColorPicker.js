@@ -3,7 +3,7 @@ import ColorThief from "colorthief/dist/color-thief.mjs";
 
 function ThiefColorPicker() {
   const imgChangeObserver = useRef();
-  const [color, setColor] = useState("#555");
+  const [color, setColor] = useState("#333");
   const [color2, setColor2] = useState("#111");
 
   let playerBarSongImgNode = document.getElementById("sideplayerimage");

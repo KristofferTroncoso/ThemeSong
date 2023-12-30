@@ -112,28 +112,31 @@ function SidePlayer() {
               <YtmIcon full />
             </button>
             <div></div>
-            {/* <ThemeSongFontIcon /> */}
           </div>
           <button
             onClick={handlePlayPause}
             css={css`
-              border-radius: 5px;
+              border-radius: 10px;
               margin-bottom: 20px;
+              width: 250px;
+              height: 250px;
               border: 0;
-              background: 0;
+              background: rgb(255 255 255 / 0.05);
             `}
           >
             <img
               id="sideplayerimage"
               src={metadata.artwork[metadata.artwork.length - 1].src || tsicon}
               alt="album cover"
-              // crossOrigin="anonymous"
               css={css`
                 width: 250px;
                 height: 250px;
                 border-radius: 10px;
-                background-color: #222;
+                object-fit: contain;
               `}
+              onError={() => {
+                document.getElementById("sideplayerimage").removeAttribute("crossorigin");
+              }}
             />
           </button>
           <h1
@@ -148,7 +151,7 @@ function SidePlayer() {
             css={css`
               margin-top: "8px";
               font-size: 16px;
-              color: #dddddd;
+              color: #eee;
             `}
           >
             {metadata.artist}
@@ -164,7 +167,7 @@ function SidePlayer() {
             button: {
               border: 0,
               padding: "10px 16px",
-              color: "#aaa",
+              color: "#ccc",
               background: 0,
               ":hover": {
                 color: "#fff",
