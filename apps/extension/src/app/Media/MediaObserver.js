@@ -27,6 +27,9 @@ function MediaObserver() {
         setTimeout(() => {
           changeMedia();
         }, 1000);
+        setTimeout(() => {
+          changeMedia();
+        }, 2000);
       }
     }
 

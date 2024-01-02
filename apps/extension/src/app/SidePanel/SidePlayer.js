@@ -82,8 +82,9 @@ function SidePlayer() {
           text-align: center;
           background: linear-gradient(
             to bottom,
-            oklch(from var(--ts-color) 30% 0.04 h) 40%,
-            oklch(from var(--ts-color2) 20% 0.03 h)
+            oklch(from var(--ts-color) 35% c h),
+            oklch(from var(--ts-color2) 30% calc(c / 2) h),
+            #111
           );
           display: flex;
           flex-direction: column;
@@ -92,10 +93,14 @@ function SidePlayer() {
           align-content: center;
         `}
       >
-        <div>
+        <div
+          css={css`
+            width: 250px;
+          `}
+        >
           <div
             css={css`
-              width: 100%;
+              width: 250px;
               display: flex;
               justify-content: space-between;
               margin-bottom: 20px;
@@ -117,7 +122,7 @@ function SidePlayer() {
             onClick={handlePlayPause}
             css={css`
               border-radius: 10px;
-              margin-bottom: 20px;
+              margin-bottom: 30px;
               width: 250px;
               height: 250px;
               border: 0;
@@ -133,6 +138,7 @@ function SidePlayer() {
                 height: 250px;
                 border-radius: 10px;
                 object-fit: contain;
+                box-shadow: 0 0 40px rgb(0 0 0 / 0.5);
               `}
               onError={() => {
                 document.getElementById("sideplayerimage").removeAttribute("crossorigin");

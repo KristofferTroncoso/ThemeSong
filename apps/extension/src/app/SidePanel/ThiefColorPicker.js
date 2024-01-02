@@ -6,13 +6,15 @@ function ThiefColorPicker() {
   const [color, setColor] = useState("#333");
   const [color2, setColor2] = useState("#111");
 
-  let playerBarSongImgNode = document.getElementById("sideplayerimage");
+  let sideplayerimage = document.getElementById("sideplayerimage");
   const colorThief = new ColorThief();
 
   useEffect(() => {
     getPalette();
 
     function getPalette() {
+      document.getElementById("sideplayerimage").crossOrigin = "anonymous";
+
       const rgbToHex = (r, g, b) =>
         "#" +
         [r, g, b]
@@ -23,19 +25,19 @@ function ThiefColorPicker() {
           .join("");
 
       setTimeout(() => {
-        let hi = colorThief.getPalette(document.getElementById("sideplayerimage"));
-        console.log(hi);
-        setColor(rgbToHex(hi[0][0], hi[0][1], hi[0][2]));
-        setColor2(rgbToHex(hi[1][0], hi[1][1], hi[1][2]));
+        let palette = colorThief.getPalette(document.getElementById("sideplayerimage"));
+        console.log(palette);
+        setColor(rgbToHex(palette[0][0], palette[0][1], palette[0][2]));
+        setColor2(rgbToHex(palette[1][0], palette[1][1], palette[1][2]));
       }, 500);
     }
 
     function handleSongChange(mutationList) {
       console.log("song changed");
-      playerBarSongImgNode.crossOrigin = "anonymous";
+      sideplayerimage.crossOrigin = "anonymous";
 
-      if (playerBarSongImgNode.src !== "https://music.youtube.com/") {
-        if (mutationList[0].oldValue === playerBarSongImgNode.src) {
+      if (sideplayerimage.src !== "https://music.youtube.com/") {
+        if (mutationList[0].oldValue === sideplayerimage.src) {
           console.log("same song image");
         } else {
           console.log("song image changed");
@@ -46,7 +48,7 @@ function ThiefColorPicker() {
 
     imgChangeObserver.current = new MutationObserver(handleSongChange);
 
-    imgChangeObserver.current.observe(playerBarSongImgNode, {
+    imgChangeObserver.current.observe(sideplayerimage, {
       attributeFilter: ["src"],
       attributeOldValue: true,
     });
