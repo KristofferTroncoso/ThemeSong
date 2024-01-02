@@ -57,7 +57,7 @@ function ThemePanel() {
           css={css`
             height: 42px;
             min-width: 45px;
-            width: 54px;
+            width: 70px;
             margin: 0 2px;
             border: 0;
             border-radius: 6px;
@@ -78,7 +78,7 @@ function ThemePanel() {
           css={css`
             height: 42px;
             min-width: 45px;
-            width: 54px;
+            width: 70px;
             margin: 0 2px;
             border: 0;
             border-radius: 6px;
@@ -100,7 +100,7 @@ function ThemePanel() {
           css={css`
             height: 42px;
             min-width: 45px;
-            width: 54px;
+            width: 70px;
             margin: 0 2px;
             border: 0;
             border-radius: 6px;
@@ -121,7 +121,7 @@ function ThemePanel() {
           css={css`
             height: 42px;
             min-width: 45px;
-            width: 54px;
+            width: 70px;
             margin: 0 2px;
             border: 0;
             border-radius: 6px;
@@ -135,28 +135,30 @@ function ThemePanel() {
             `}
           />
         </PanelButton>
-        <PanelButton
-          title="YouTube Music Mobile"
-          hoverColor="red"
-          bgColor={activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && "rgb(255 255 255 / 0.8)"}
-          color={activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && "red"}
-          css={css`
-            height: 42px;
-            min-width: 45px;
-            width: 54px;
-            margin: 0 2px;
-            border: 0;
-            border-radius: 6px;
-            padding: 3px;
-          `}
-          onClick={(e) => handleClick("55f83bbd-d794-49a8-8912-2b53af3f1d3f")}
-        >
-          <SiYoutubemusic
+        {activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && (
+          <PanelButton
+            title="YouTube Music Mobile"
+            hoverColor="red"
+            bgColor={activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && "rgb(255 255 255 / 0.8)"}
+            color={activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && "red"}
             css={css`
-              font-size: 26px;
+              height: 42px;
+              min-width: 45px;
+              width: 70px;
+              margin: 0 2px;
+              border: 0;
+              border-radius: 6px;
+              padding: 3px;
             `}
-          />
-        </PanelButton>
+            onClick={(e) => handleClick("55f83bbd-d794-49a8-8912-2b53af3f1d3f")}
+          >
+            <SiYoutubemusic
+              css={css`
+                font-size: 26px;
+              `}
+            />
+          </PanelButton>
+        )}
       </div>
     </div>
   );
