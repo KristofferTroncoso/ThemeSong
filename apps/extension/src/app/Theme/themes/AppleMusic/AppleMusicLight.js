@@ -68,6 +68,16 @@ function AppleMusicLight() {
         ytmusic-dialog {
           background-color: #fff;
         }
+
+
+        /* settings page override. color*/
+        .dialog-title.ytmusic-settings-page {
+          color: #000;
+        }
+
+        .close-icon.ytmusic-settings-page {
+          color: rgb(0 0 0 / 50%);
+        }
      `
       }
 

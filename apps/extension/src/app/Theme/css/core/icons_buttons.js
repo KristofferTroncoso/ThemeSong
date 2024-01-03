@@ -281,4 +281,9 @@ export const icons_buttons = /*css*/ `
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline:hover {
     background-color: var(--ts-pill-hover-color);
   }
+
+  /* playlist. shuffle button hover */
+  .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled:hover {
+    background-color: var(--ts-base-70-color);
+  }
 `;
