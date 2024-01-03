@@ -266,4 +266,19 @@ export const icons_buttons = /*css*/ `
   #multiSelectMenu.ytmusic-multi-select-menu-bar {
     --iron-icon-fill-color: var(--ts-primary-icon-color);
   }
+
+  /* player page: up next, lyrics, related. paper ripple focus */
+  tp-yt-paper-tab.ytmusic-player-page {
+    --paper-tab-ink: var(--ts-base-100-color);
+  }
+
+  /* playerbar icons hover. like button. 3 dots */
+  .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text:hover {
+    background-color: var(--ts-pill-hover-color);
+  }
+
+  /* home page. "more" button hover */
+  .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--outline:hover {
+    background-color: var(--ts-pill-hover-color);
+  }
 `;
