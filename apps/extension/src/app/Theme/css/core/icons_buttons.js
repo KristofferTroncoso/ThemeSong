@@ -291,4 +291,14 @@ export const icons_buttons = /*css*/ `
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal:hover {
     background-color: var(--ts-base-100-alpha-03-color);
   }
+
+  /* blue toggle buttons */
+  /* active */
+  html {
+    --paper-toggle-button-checked-bar-color: var(--ytmusic-setting-item-toggle-active) !important;
+  }
+  /* disabled */
+  html {
+    --yt-spec-icon-disabled: var(--ts-base-50-color) !important;
+  }
 `;
