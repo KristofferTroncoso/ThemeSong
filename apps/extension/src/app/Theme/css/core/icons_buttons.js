@@ -286,4 +286,9 @@ export const icons_buttons = /*css*/ `
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled:hover {
     background-color: var(--ts-base-70-color);
   }
+
+  /* sidebar New Playlist button hover color */
+  .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal:hover {
+    background-color: var(--ts-base-100-alpha-03-color);
+  }
 `;
