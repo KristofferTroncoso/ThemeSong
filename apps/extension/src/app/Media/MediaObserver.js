@@ -16,14 +16,10 @@ function MediaObserver() {
 
     mediaObserver.observe(songTitleNode, {
       attributeFilter: ["title"],
-      attributeOldValue: true,
     });
 
     function handleSongChange() {
       if (navigator.mediaSession.metadata) {
-        setTimeout(() => {
-          changeMedia();
-        }, 1);
         setTimeout(() => {
           changeMedia();
         }, 1000);
