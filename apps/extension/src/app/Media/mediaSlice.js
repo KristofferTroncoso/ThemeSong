@@ -8,8 +8,6 @@ export const createMediaSlice = (set, get) => ({
   },
   changeMedia: () => {
     console.log("mediaSlice: changeMedia");
-    console.log(navigator.mediaSession.metadata.title);
-    console.log(get().media.metadata.title);
     if (navigator.mediaSession.metadata.title !== get().media.metadata.title) {
       set((state) => {
         state.media.metadata = {
