@@ -46,7 +46,7 @@ function StaticLight() {
         --ts-body-alpha-gradient-color: hsl(${hue} ${saturation}% ${lightness[3]}% / 90%);
         --ts-overlay-color: rgb(0 0 0 / 0.6);
 
-        --ts-secondary-text-color: var(--ts-base-80-color);
+        --ts-secondary-text-color: var(--ts-base-100-alpha-08-color);
       }`}
     </style>
   );

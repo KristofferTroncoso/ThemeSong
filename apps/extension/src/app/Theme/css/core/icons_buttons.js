@@ -1,7 +1,7 @@
 export const icons_buttons = /*css*/ `
   :root {
     --ts-primary-icon-color: var(--ts-base-100-color);
-    --ts-secondary-icon-color: var(--ts-base-100-alpha-06-color);
+    --ts-secondary-icon-color: var(--ts-base-100-alpha-07-color);
     --ts-tertiary-icon-color: var(--ts-base-70-color);
     --ts-inverse-icon-color: var(--ts-base-00-color);
 
