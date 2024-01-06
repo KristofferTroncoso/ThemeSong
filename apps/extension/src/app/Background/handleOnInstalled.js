@@ -3,12 +3,18 @@ import { executeContentScriptOnYouTubeMusicTabs } from "./scripts";
 export function handleOnInstalled(details) {
   console.log(details);
   let locale = chrome.i18n.getMessage("@@ui_locale");
+  let browser = "chrome";
+  if (navigator.userAgent.toLowerCase().includes("firefox")) {
+    browser = "firefox";
+  } else {
+    browser = "chrome";
+  }
 
   switch (details.reason) {
     case "install":
       chrome.storage.local.get("extensionPrefs", (res) => {
         chrome.storage.local.set({
-          extensionPrefs: { ...res.extensionPrefs, locale },
+          extensionPrefs: { ...res.extensionPrefs, locale, browser },
         });
       });
 
@@ -20,7 +26,7 @@ export function handleOnInstalled(details) {
       chrome.storage.local.get("extensionPrefs", (res) => {
         // whenever extension is updated, show update note
         chrome.storage.local.set({
-          extensionPrefs: { ...res.extensionPrefs, showUpdateNote: false },
+          extensionPrefs: { ...res.extensionPrefs, browser, showUpdateNote: true },
         });
       });
 

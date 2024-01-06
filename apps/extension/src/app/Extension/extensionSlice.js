@@ -2,8 +2,8 @@ export const createExtensionSlice = (set, get) => ({
   prefs: {
     showUpdateNote: false,
     locale: "en",
+    browser: "chrome",
   },
-  // browser: "chrome",
   setShowUpdateNote: (payload) => {
     console.log("extensionSlice: setShowUpdateNote");
     set((state) => {

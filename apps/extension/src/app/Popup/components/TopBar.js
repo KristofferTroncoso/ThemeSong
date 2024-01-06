@@ -2,8 +2,11 @@ import { css } from "@emotion/react";
 import YtmIcon from "../../YtmLogo/YtmIcon";
 import ThemesongTextIcon from "./ThemesongTextIcon";
 import { BsReverseLayoutSidebarInsetReverse } from "react-icons/bs";
+import { useStore } from "/src/app/store";
 
 function TopBar() {
+  const browser = useStore((state) => state.extension.prefs.browser);
+
   function handleYTMclick() {
     chrome.tabs.query({}, (tabs) => {
       let ytmTabs = tabs.filter((tab) => "url" in tab);
@@ -96,23 +99,25 @@ function TopBar() {
             `}
           />
         </button>
-        <button
-          css={css`
-            background-color: inherit;
-            border: 0;
-            padding: 0 4px;
-            margin: 0 2px;
-          `}
-          title="sideplayer"
-          onClick={handleSideplayerClick}
-        >
-          <BsReverseLayoutSidebarInsetReverse
+        {browser === "chrome" && (
+          <button
             css={css`
-              color: #fff;
-              font-size: 18px;
+              background-color: inherit;
+              border: 0;
+              padding: 0 4px;
+              margin: 0 2px;
             `}
-          />
-        </button>
+            title="sideplayer"
+            onClick={handleSideplayerClick}
+          >
+            <BsReverseLayoutSidebarInsetReverse
+              css={css`
+                color: #fff;
+                font-size: 18px;
+              `}
+            />
+          </button>
+        )}
       </div>
     </div>
   );
