@@ -206,6 +206,10 @@ ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_PRIMARY]
   color: var(--ts-inverse-text-color) !important;
 }
 
+ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_PRIMARY] a.ytmusic-chip-cloud-chip-renderer, ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_SECONDARY] a.ytmusic-chip-cloud-chip-renderer, ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_UNKNOWN][is-selected] a.ytmusic-chip-cloud-chip-renderer {
+  color: var(--ts-inverse-text-color) !important;
+}
+
 /* links. blue links. "manage your account" */
 ytd-multi-page-menu-renderer.ytmusic-popup-container {
   --yt-spec-call-to-action: var(--ts-base-blue);

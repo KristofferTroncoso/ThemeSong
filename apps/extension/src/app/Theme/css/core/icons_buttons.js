@@ -1,7 +1,7 @@
 export const icons_buttons = /*css*/ `
   :root {
     --ts-primary-icon-color: var(--ts-base-100-color);
-    --ts-secondary-icon-color: var(--ts-base-100-alpha-07-color);
+    --ts-secondary-icon-color: var(--ts-base-100-alpha-08-color);
     --ts-tertiary-icon-color: var(--ts-base-70-color);
     --ts-inverse-icon-color: var(--ts-base-00-color);
 
@@ -224,7 +224,7 @@ export const icons_buttons = /*css*/ `
 
   /* sidebar menu items hover */
   tp-yt-paper-item.ytmusic-guide-entry-renderer:hover {
-    --ytmusic-guide-entry-background-color: var(--ts-pill-hover-color) !important;
+    --ytmusic-guide-entry-background-color: var(--ts-base-100-alpha-01-color) !important;
   }
 
   /* explicit icon on explore page */

@@ -111,7 +111,9 @@ function AppleMusicLight() {
             hsl(var(--ts-palette-dominant-hue) calc(var(--ts-palette-dominant-saturation) / 2) 90% / 0.7) 75%,
             rgb(240 240 240 / 0.8) 85%
           );
-          --ts-playprogress-color: #5e5e5e;
+          --ts-playprogress-color: #6b6b6b;
+          --ts-playprogress-secondary-color: rgb(0 0 0 / 0.1);
+          --ts-playprogress-container-color: rgb(0 0 0 / 0.05);
           --ts-primary-icon-color: var(--ts-base-70-color);
           --ts-secondary-icon-color: var(--applemusic-color);
           --ts-colored-button-color: var(--applemusic-color);
