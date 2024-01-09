@@ -92,6 +92,7 @@ ytmusic-item-section-renderer.stuck #header.ytmusic-item-section-renderer {
 
 ytmusic-tabs.stuck {
   background: var(--ts-navbar-color);
+  box-shadow: rgb(0 0 0 / 0.3) 0px 3px 6px -3px !important;
 }
 
 ytmusic-av-toggle[playback-mode=ATV_PREFERRED] .song-button.ytmusic-av-toggle {

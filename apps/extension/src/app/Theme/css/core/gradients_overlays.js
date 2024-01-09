@@ -26,13 +26,6 @@ export const gradients_overlays = /*css*/ `
   }
   /* end PlayPage song img styling */
 
-
-  /* semi-transparent overlay on top of album images (on home page) on-hover */
-  ytmusic-background-overlay-renderer {
-    --ytmusic-background-overlay-background: var(--ts-overlay-color) !important;
-    border-radius: 2px;
-  }
-
   /* miniplayer hover overlay */
   ytmusic-player[player-ui-state=MINIPLAYER] .song-media-controls.ytmusic-player {
     background: var(--ts-overlay-color);

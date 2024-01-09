@@ -174,7 +174,7 @@ export const icons_buttons = /*css*/ `
 
   /* sidebar buttons ("sign in", "New Playlist") */
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
-    background-color: var(--ts-base-100-alpha-02-color);
+    background-color: var(--ts-base-100-alpha-01-color);
   }
 
   .yt-spec-touch-feedback-shape--touch-response .yt-spec-touch-feedback-shape__fill {
@@ -183,7 +183,7 @@ export const icons_buttons = /*css*/ `
 
   /* filter pills */
   ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_PRIMARY] a.ytmusic-chip-cloud-chip-renderer, ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_SECONDARY] a.ytmusic-chip-cloud-chip-renderer, ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_UNKNOWN][is-selected] a.ytmusic-chip-cloud-chip-renderer {
-    background-color: var(--ts-secondary-icon-color) !important;
+    background-color: var(--ts-primary-icon-color) !important;
   }
 
   /* selected item */
