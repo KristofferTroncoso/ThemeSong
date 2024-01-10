@@ -66,6 +66,12 @@ export const sidebarFocus = /*css*/ `
 tp-yt-paper-item:focus:before, .tp-yt-paper-item.tp-yt-paper-item:focus:before {
   background: none;
   border-radius: inherit;
+}`;
+
+/* opinion. bold sidebar headers. it looks nice imo */
+export const boldSidebarHeaders = /*css*/ `
+.title.ytmusic-guide-entry-renderer {
+  font-weight: 500;
 }
 `;
 
@@ -80,4 +86,5 @@ export const misc_style_improvements = /*css*/ `
   ${fixNoMarginBottomOnNowPlayingAlbumImage}
   ${removeSearchBoxShadow}
   ${sidebarFocus}
+  ${boldSidebarHeaders}
 `;
