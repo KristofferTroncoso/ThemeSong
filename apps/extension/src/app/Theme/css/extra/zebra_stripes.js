@@ -17,10 +17,8 @@ export const zebra_stripes = /*css*/ `
   border-bottom: none !important;
 }
 
-/* to adjust height of list items */
-/*
-ytmusic-responsive-list-item-renderer {
-  height: 40px;
+/* need a bit of margin between last-child and "Show All" button */
+.ytmusic-section-list-renderer #contents ytmusic-responsive-list-item-renderer:last-child {
+  margin-bottom: 10px;
 }
-*/
 `;
