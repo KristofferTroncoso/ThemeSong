@@ -34,4 +34,9 @@ body::-webkit-scrollbar-track {
   border-top: 0;
   background-color: var(--ts-base-100-alpha-005-color);
 }
+
+/* new scrollbar properties? chrome version > 120 */
+html {
+  scrollbar-color: var(--ts-base-100-alpha-02-color) transparent;
+}
 `;
