@@ -5,7 +5,7 @@ import tsicon from "../../assets/icon-128.png";
 import { PiSkipBackFill, PiPlayPauseFill, PiSkipForwardFill } from "react-icons/pi";
 import YtmIcon from "../YtmLogo/YtmIcon";
 import { BiLike, BiSolidLike } from "react-icons/bi";
-import { IoRadioOutline } from "react-icons/io5";
+// import { IoRadioOutline } from "react-icons/io5";
 
 function SidePlayer() {
   const metadata = useStore((state) => state.media.metadata);
@@ -116,6 +116,10 @@ function SidePlayer() {
                 border-radius: 5px;
                 border: 0;
                 background: 0;
+
+                :hover {
+                  filter: drop-shadow(0px 0px 10px oklch(from var(--ts-color2) 85% 100% h));
+                }
               `}
             >
               <YtmIcon full />
@@ -131,6 +135,10 @@ function SidePlayer() {
               height: 280px;
               border: 0;
               background: rgb(255 255 255 / 0.05);
+
+              :hover {
+                filter: grayscale(100) brightness(0.7);
+              }
             `}
           >
             <img
@@ -153,6 +161,7 @@ function SidePlayer() {
             css={css`
               display: flex;
               justify-content: space-between;
+              align-items: center;
               padding: 0 5px;
             `}
           >
@@ -164,7 +173,7 @@ function SidePlayer() {
             >
               <h1
                 css={css`
-                  margin-bottom: 10px;
+                  margin-bottom: 6px;
                   font-size: 16px;
                   font-weight: 600;
                 `}
@@ -173,7 +182,6 @@ function SidePlayer() {
               </h1>
               <h2
                 css={css`
-                  margin-top: "8px";
                   font-size: 14px;
                   color: #eee;
                   font-weight: 400;
@@ -188,16 +196,15 @@ function SidePlayer() {
                 css={{
                   border: "0",
                   borderRadius: "50%",
-                  backgroundColor: "transparent",
-                  color: "#fff",
+                  backgroundColor: "rgb(0 0 0 / 22%)",
+                  height: "36px",
+                  width: "36px",
+                  cursor: "not-allowed !important",
                 }}
               >
                 <BiSolidLike
                   css={{
                     padding: "8px",
-                    border: "0",
-                    borderRadius: "50%",
-                    backgroundColor: "rgb(0 0 0 / 22%)",
                     color: "#ff0023",
                     fontSize: "20px",
                   }}
@@ -208,8 +215,13 @@ function SidePlayer() {
                 css={{
                   border: "0",
                   borderRadius: "50%",
-                  backgroundColor: "transparent",
-                  color: "#fff",
+                  backgroundColor: "rgb(255 255 255 / 7%)",
+                  height: "36px",
+                  width: "36px",
+
+                  ":hover": {
+                    backgroundColor: "rgb(255 255 255 / 0.2)",
+                  },
                 }}
                 onClick={(e) => {
                   chrome.tabs.query({}, (tabs) => {
@@ -226,11 +238,12 @@ function SidePlayer() {
                 <BiLike
                   css={{
                     padding: "8px",
-                    border: "0",
-                    borderRadius: "50%",
-                    backgroundColor: "rgb(255 255 255 / 0.1)",
-                    color: "#ffffffa1",
+                    color: "#ffffff69",
                     fontSize: "20px",
+
+                    ":hover": {
+                      color: "#fff",
+                    },
                   }}
                 />
               </button>

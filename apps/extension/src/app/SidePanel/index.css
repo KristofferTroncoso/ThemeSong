@@ -68,3 +68,7 @@ select {
 #sideplayer-bg {
   transition: background 2s linear;
 }
+
+::selection {
+  background: oklch(from var(--ts-color) 65% 100% h); /* WebKit/Blink Browsers */
+}

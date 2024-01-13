@@ -9,9 +9,23 @@ export const createMediaSlice = (set, get) => ({
   },
   changeMedia: () => {
     console.log("mediaSlice: changeMedia");
-    if (true) {
-      set((state) => {
-        state.media.metadata = {
+    set((state) => {
+      state.media.metadata = {
+        title: navigator.mediaSession.metadata.title,
+        artist: navigator.mediaSession.metadata.artist,
+        album: navigator.mediaSession.metadata.album,
+        artwork: navigator.mediaSession.metadata.artwork,
+        url: document.querySelector(".ytp-title-link").href,
+        liked:
+          document.querySelector(".middle-controls-buttons #like-button-renderer").getAttribute("like-status") ===
+          "LIKE"
+            ? true
+            : false,
+      };
+    });
+    chrome.storage.local.set({
+      media: {
+        metadata: {
           title: navigator.mediaSession.metadata.title,
           artist: navigator.mediaSession.metadata.artist,
           album: navigator.mediaSession.metadata.album,
@@ -22,25 +36,9 @@ export const createMediaSlice = (set, get) => ({
             "LIKE"
               ? true
               : false,
-        };
-      });
-      chrome.storage.local.set({
-        media: {
-          metadata: {
-            title: navigator.mediaSession.metadata.title,
-            artist: navigator.mediaSession.metadata.artist,
-            album: navigator.mediaSession.metadata.album,
-            artwork: navigator.mediaSession.metadata.artwork,
-            url: document.querySelector(".ytp-title-link").href,
-            liked:
-              document.querySelector(".middle-controls-buttons #like-button-renderer").getAttribute("like-status") ===
-              "LIKE"
-                ? true
-                : false,
-          },
         },
-      });
-    }
+      },
+    });
   },
   changeMetadataKey: (payload) => {
     console.log("mediaSlice: changeMetadataKey");
