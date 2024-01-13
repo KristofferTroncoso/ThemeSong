@@ -183,7 +183,7 @@ export const icons_buttons = /*css*/ `
 
   /* filter pills */
   ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_PRIMARY] a.ytmusic-chip-cloud-chip-renderer, ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_SECONDARY] a.ytmusic-chip-cloud-chip-renderer, ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_UNKNOWN][is-selected] a.ytmusic-chip-cloud-chip-renderer {
-    background-color: var(--ts-primary-icon-color) !important;
+    background-color: var(--ts-secondary-icon-color) !important;
   }
 
   /* selected item */
