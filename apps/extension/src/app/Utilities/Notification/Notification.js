@@ -3,13 +3,14 @@ import { useStore } from "/src/app/store";
 
 function Notification() {
   const metadata = useStore((state) => state.media.metadata);
+  const title = useStore((state) => state.media.metadata.title);
 
   useEffect(() => {
     try {
       if (metadata) {
         chrome.runtime.sendMessage({
           notify: {
-            songName: metadata.title,
+            songName: title,
             songSubtitle: metadata.artist,
             songArtist: metadata.artist,
             songImg: metadata.artwork[0].src,
@@ -19,7 +20,7 @@ function Notification() {
     } catch {
       console.log("Notification: context invalidated");
     }
-  }, [metadata]);
+  }, [title]);
 
   return null;
 }

@@ -4,9 +4,13 @@ import SongPanel from "../Song/SongPanel/SongPanel";
 import tsicon from "../../assets/icon-128.png";
 import { PiSkipBackFill, PiPlayPauseFill, PiSkipForwardFill } from "react-icons/pi";
 import YtmIcon from "../YtmLogo/YtmIcon";
+import { BiLike, BiSolidLike } from "react-icons/bi";
+import { IoRadioOutline } from "react-icons/io5";
 
 function SidePlayer() {
   const metadata = useStore((state) => state.media.metadata);
+  const changeMedia = useStore((state) => state.media.changeMedia);
+  const changeMetadataKey = useStore((state) => state.media.changeMetadataKey);
 
   function handlePrevious() {
     chrome.tabs.query({}, (tabs) => {
@@ -95,12 +99,12 @@ function SidePlayer() {
       >
         <div
           css={css`
-            width: 250px;
+            width: 280px;
           `}
         >
           <div
             css={css`
-              width: 250px;
+              width: 280px;
               display: flex;
               justify-content: space-between;
               margin-bottom: 20px;
@@ -123,8 +127,8 @@ function SidePlayer() {
             css={css`
               border-radius: 10px;
               margin-bottom: 30px;
-              width: 250px;
-              height: 250px;
+              width: 280px;
+              height: 280px;
               border: 0;
               background: rgb(255 255 255 / 0.05);
             `}
@@ -134,8 +138,8 @@ function SidePlayer() {
               src={metadata.artwork[metadata.artwork.length - 1].src || tsicon}
               alt="album cover"
               css={css`
-                width: 250px;
-                height: 250px;
+                width: 280px;
+                height: 280px;
                 border-radius: 10px;
                 object-fit: contain;
                 box-shadow: 0 0 40px rgb(0 0 0 / 0.5);
@@ -145,56 +149,154 @@ function SidePlayer() {
               }}
             />
           </button>
-          <h1
+          <div
             css={css`
-              margin-bottom: 10px;
-              font-size: 20px;
+              display: flex;
+              justify-content: space-between;
+              padding: 0 5px;
             `}
           >
-            {metadata.title}
-          </h1>
-          <h2
-            css={css`
-              margin-top: "8px";
-              font-size: 16px;
-              color: #eee;
-            `}
-          >
-            {metadata.artist}
-          </h2>
+            <div
+              css={css`
+                text-align: left;
+                margin-right: 4px;
+              `}
+            >
+              <h1
+                css={css`
+                  margin-bottom: 10px;
+                  font-size: 16px;
+                  font-weight: 600;
+                `}
+              >
+                {metadata.title}
+              </h1>
+              <h2
+                css={css`
+                  margin-top: "8px";
+                  font-size: 14px;
+                  color: #eee;
+                  font-weight: 400;
+                `}
+              >
+                {metadata.artist}
+              </h2>
+            </div>
+
+            {metadata.liked ? (
+              <button
+                css={{
+                  border: "0",
+                  borderRadius: "50%",
+                  backgroundColor: "transparent",
+                  color: "#fff",
+                }}
+              >
+                <BiSolidLike
+                  css={{
+                    padding: "8px",
+                    border: "0",
+                    borderRadius: "50%",
+                    backgroundColor: "rgb(0 0 0 / 22%)",
+                    color: "#ff0023",
+                    fontSize: "20px",
+                  }}
+                />
+              </button>
+            ) : (
+              <button
+                css={{
+                  border: "0",
+                  borderRadius: "50%",
+                  backgroundColor: "transparent",
+                  color: "#fff",
+                }}
+                onClick={(e) => {
+                  chrome.tabs.query({}, (tabs) => {
+                    let ytmTabs = tabs.filter((tab) => "url" in tab);
+                    console.log(ytmTabs);
+                    chrome.tabs.sendMessage(ytmTabs[0].id, { message: "like" });
+                  });
+                  setTimeout(() => {
+                    changeMetadataKey({ liked: true });
+                    changeMedia();
+                  }, 500);
+                }}
+              >
+                <BiLike
+                  css={{
+                    padding: "8px",
+                    border: "0",
+                    borderRadius: "50%",
+                    backgroundColor: "rgb(255 255 255 / 0.1)",
+                    color: "#ffffffa1",
+                    fontSize: "20px",
+                  }}
+                />
+              </button>
+            )}
+          </div>
         </div>
-        <div
-          css={{
-            textAlign: "center",
-            display: "flex",
-            justifyContent: "space-around",
-            minWidth: 300,
-            maxWidth: 500,
-            button: {
-              border: 0,
-              padding: "10px 16px",
-              color: "#ccc",
-              background: 0,
-              ":hover": {
+        <div>
+          {/* <div>
+            <button
+              css={{
+                padding: "5px 16px 3px",
+                border: 0,
+                borderRadius: "20px",
+                backgroundColor: "rgb(255 255 255 / 0.1)",
                 color: "#fff",
+              }}
+              onClick={() => {
+                chrome.tabs.query({}, (tabs) => {
+                  let ytmTabs = tabs.filter((tab) => "url" in tab);
+                  console.log(ytmTabs);
+                  chrome.tabs.sendMessage(ytmTabs[0].id, { message: "start-radio" });
+                });
+              }}
+            >
+              <IoRadioOutline style={{ fontSize: "25px", color: "#ccc" }} />
+            </button>
+          </div> */}
+
+          <div
+            css={{
+              marginTop: "20px",
+              textAlign: "center",
+              display: "flex",
+              justifyContent: "space-around",
+              minWidth: 300,
+              maxWidth: 500,
+              button: {
+                border: 0,
+                padding: "10px 16px",
+                color: "#ccc",
+                background: 0,
+                ":hover": {
+                  color: "#fff",
+                },
               },
-            },
-          }}
-        >
-          <button onClick={handlePrevious}>
-            <PiSkipBackFill style={{ fontSize: "25px" }} />
-          </button>
-          <button onClick={handlePlayPause}>
-            <PiPlayPauseFill style={{ fontSize: "50px" }} />
-          </button>
-          <button onClick={handleNext}>
-            <PiSkipForwardFill style={{ fontSize: "25px" }} />
-          </button>
+            }}
+          >
+            <button onClick={handlePrevious}>
+              <PiSkipBackFill style={{ fontSize: "25px" }} />
+            </button>
+            <button onClick={handlePlayPause}>
+              <PiPlayPauseFill style={{ fontSize: "45px" }} />
+            </button>
+            <button onClick={handleNext}>
+              <PiSkipForwardFill style={{ fontSize: "25px" }} />
+            </button>
+          </div>
         </div>
         <div
           css={css`
             margin-top: 20px;
             text-align: center;
+
+            h3 {
+              font-weight: 400 !important;
+            }
           `}
         >
           <SongPanel />

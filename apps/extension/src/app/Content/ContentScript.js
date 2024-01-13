@@ -19,7 +19,14 @@ import PlayPauseEventListener from "../Player/PlayPauseEventListener";
 function ContentScript({ root }) {
   useEffect(() => {
     chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-      if (message.message === "playpause") {
+      if (message.message === "like") {
+        document.querySelector(".middle-controls-buttons #button-shape-like button[aria-pressed='false']").click();
+        // } else if (message.message === "start-radio") {
+        //   document.querySelector(".middle-controls-buttons [aria-label='Action menu']").click();
+        //   setTimeout(() => {
+        //     document.querySelector("#navigation-endpoint").click();
+        //   }, 200);
+      } else if (message.message === "playpause") {
         document.getElementById("play-pause-button").click();
       } else if (message.message === "next-button") {
         document.getElementsByClassName("next-button")[0].click();
