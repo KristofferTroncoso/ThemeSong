@@ -6,7 +6,7 @@ import StyledPanelDiv from "./StyledPanelDiv";
 function UpdatePanel() {
   const setShowUpdateNote = useStore((state) => state.extension.setShowUpdateNote);
   // const getMessage = useLocalization();
-  const browser = useStore((state) => state.extension.prefs.browser);
+  // const browser = useStore((state) => state.extension.prefs.browser);
 
   return (
     <StyledPanelDiv
@@ -32,19 +32,10 @@ function UpdatePanel() {
         `}
       >
         <p>
-          <b>v1.0.9</b>
+          <b>v1.1.0</b>
           <span> (January 2024)</span>
         </p>
         <br></br>
-        {browser === "chrome" && (
-          <p>
-            - <b>NEW Side Panel Player</b>: A mini-player on your side panel. Try it out.
-          </p>
-        )}
-        <br></br>
-        <p>
-          - <b>Fix</b>: Notifications fixed
-        </p>
       </div>
       <button
         css={css`
