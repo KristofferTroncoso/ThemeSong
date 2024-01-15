@@ -99,6 +99,10 @@ export const rulers_borders = /*css*/ `
     border-right: 1px solid var(--ts-ruler-secondary-color);
   }
 
+  ytmusic-app[is-bauhaus-sidenav-enabled] #guide-wrapper.ytmusic-app {
+    border-right: none;
+}
+
   /* add to playlist menu */
   ytmusic-add-to-playlist-renderer {
     border: 1px solid var(--ts-ruler-secondary-color);
