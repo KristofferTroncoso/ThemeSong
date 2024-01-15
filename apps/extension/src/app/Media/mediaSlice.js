@@ -9,6 +9,7 @@ export const createMediaSlice = (set, get) => ({
   },
   changeMedia: () => {
     console.log("mediaSlice: changeMedia");
+    console.log(document.querySelector(".middle-controls-buttons #like-button-renderer").getAttribute("like-status"));
     set((state) => {
       state.media.metadata = {
         title: navigator.mediaSession.metadata.title,
@@ -49,9 +50,7 @@ export const createMediaSlice = (set, get) => ({
   mergeMedia: (payload) => {
     console.log("mediaSlice: mergeMedia");
     set((state) => {
-      if (state.media.metadata.title !== payload.metadata.title) {
-        state.media.metadata = { ...state.media.metadata, ...payload.metadata };
-      }
+      state.media.metadata = { ...state.media.metadata, ...payload.metadata };
     });
   },
 });

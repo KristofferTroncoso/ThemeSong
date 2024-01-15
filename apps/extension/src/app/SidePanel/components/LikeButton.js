@@ -3,8 +3,6 @@ import { BiLike, BiSolidLike } from "react-icons/bi";
 
 function LikeButton() {
   const metadata = useStore((state) => state.media.metadata);
-  const changeMedia = useStore((state) => state.media.changeMedia);
-  const changeMetadataKey = useStore((state) => state.media.changeMetadataKey);
 
   return (
     <>
@@ -46,10 +44,6 @@ function LikeButton() {
               console.log(ytmTabs);
               chrome.tabs.sendMessage(ytmTabs[0].id, { message: "like" });
             });
-            setTimeout(() => {
-              changeMetadataKey({ liked: true });
-              changeMedia();
-            }, 500);
           }}
         >
           <BiLike

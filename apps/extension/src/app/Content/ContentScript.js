@@ -7,6 +7,7 @@ import PlayerUiStateObserver from "../Player/PlayerUiStateObserver";
 import SongInfoDisplayFeature from "../Song/SongInfoDisplay/SongInfoDisplayFeature";
 import VisualizerCS from "../Visualizer/VisualizerCS";
 import { useEffect } from "react";
+import { useStore } from "/src/app/store";
 
 import Palette from "../Palette/Palette";
 import Utilities from "../Utilities/Utilities";
@@ -17,9 +18,14 @@ import IconColor from "../Extension/IconColor/IconColor";
 import PlayPauseEventListener from "../Player/PlayPauseEventListener";
 
 function ContentScript({ root }) {
+  const changeMedia = useStore((state) => state.media.changeMedia);
+
   useEffect(() => {
     chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       if (message.message === "like") {
+        setTimeout(() => {
+          changeMedia();
+        }, 200);
         document.querySelector(".middle-controls-buttons #button-shape-like button[aria-pressed='false']").click();
         // } else if (message.message === "start-radio") {
         //   document.querySelector(".middle-controls-buttons [aria-label='Action menu']").click();
