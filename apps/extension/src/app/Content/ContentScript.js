@@ -32,6 +32,10 @@ function ContentScript({ root }) {
         document.getElementsByClassName("next-button")[0].click();
       } else if (message.message === "previous-button") {
         document.getElementsByClassName("previous-button")[0].click();
+      } else if (message.message === "rewind") {
+        document.querySelector("video").currentTime -= 10;
+      } else if (message.message === "fast-forward") {
+        document.querySelector("video").currentTime += 10;
       } else {
         document.getElementById("play-pause-button").click();
       }

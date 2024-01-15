@@ -2,19 +2,12 @@ import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
 import SongPanel from "../../Song/SongPanel/SongPanel";
 import tsicon from "../../../assets/icon-128.png";
-import { PiSkipBackFill, PiPlayPauseFill, PiSkipForwardFill } from "react-icons/pi";
 import YtmIcon from "../../YtmLogo/YtmIcon";
+import LikeButton from "../../SidePanel/components/LikeButton";
+import SongControls from "../../SidePanel/components/SongControls";
 
 function PlayerPage() {
   const metadata = useStore((state) => state.media.metadata);
-
-  function handlePrevious() {
-    chrome.tabs.query({}, (tabs) => {
-      let ytmTabs = tabs.filter((tab) => "url" in tab);
-      console.log(ytmTabs);
-      chrome.tabs.sendMessage(ytmTabs[0].id, { message: "previous-button" });
-    });
-  }
 
   function handlePlayPause(e) {
     console.log(e);
@@ -23,14 +16,6 @@ function PlayerPage() {
       console.log(ytmTabs);
 
       chrome.tabs.sendMessage(ytmTabs[0].id, { message: "playpause" });
-    });
-  }
-
-  function handleNext() {
-    chrome.tabs.query({}, (tabs) => {
-      let ytmTabs = tabs.filter((tab) => "url" in tab);
-      console.log(ytmTabs);
-      chrome.tabs.sendMessage(ytmTabs[0].id, { message: "next-button" });
     });
   }
 
@@ -85,25 +70,37 @@ function PlayerPage() {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          align-items: center;
+          align-content: center;
         `}
       >
-        <button
-          onClick={handleYTMclick}
+        <div
           css={css`
-            border: 0;
-            background: 0;
-            margin-bottom: 10px;
-            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            width: 280px;
           `}
         >
-          <YtmIcon full />
-        </button>
+          <button
+            onClick={handleYTMclick}
+            css={css`
+              border: 0;
+              background: 0;
+              margin-bottom: 10px;
+              text-align: left;
+              width: 150px;
+            `}
+          >
+            <YtmIcon full />
+          </button>
+          <div></div>
+        </div>
         <div>
           <button
             onClick={handlePlayPause}
             css={css`
-              width: 170px;
-              height: 170px;
+              width: 220px;
+              height: 220px;
               border-radius: 5px;
               margin-bottom: 20px;
               border: 0;
@@ -114,8 +111,8 @@ function PlayerPage() {
               src={metadata.artwork[metadata.artwork.length - 1].src || tsicon}
               alt="album cover"
               css={css`
-                width: 170px;
-                height: 170px;
+                width: inherit;
+                height: inherit;
                 border-radius: 5px;
                 border: 1px solid #333;
                 background-color: #222;
@@ -123,54 +120,48 @@ function PlayerPage() {
               `}
             />
           </button>
-          <h1
+          <div
             css={css`
-              margin-bottom: 10px;
-              font-size: 20px;
+              display: flex;
+              justify-content: space-around;
             `}
           >
-            {metadata.title}
-          </h1>
-          <h2
-            css={css`
-              margin-top: "8px";
-              font-size: 16px;
-              color: #dddddd;
-            `}
-          >
-            {metadata.artist}
-          </h2>
+            <div
+              css={css`
+                margin-right: 5px;
+                text-align: left;
+                width: 250px;
+              `}
+            >
+              <h1
+                css={css`
+                  margin-bottom: 10px;
+                  font-size: 14px;
+                  text-wrap: nowrap;
+                  overflow: hidden;
+                `}
+              >
+                {metadata.title}
+              </h1>
+              <h2
+                css={css`
+                  margin-top: "8px";
+                  font-size: 12px;
+                  color: #dddddd;
+                  text-wrap: nowrap;
+                  overflow: hidden;
+                `}
+              >
+                {metadata.artist}
+              </h2>
+            </div>
+            <LikeButton />
+          </div>
         </div>
-        <div
-          css={{
-            textAlign: "center",
-            display: "flex",
-            justifyContent: "space-around",
-            width: "100%",
-            button: {
-              border: 0,
-              padding: "10px 16px",
-              color: "#aaa",
-              background: 0,
-              ":hover": {
-                color: "#fff",
-              },
-            },
-          }}
-        >
-          <button onClick={handlePrevious}>
-            <PiSkipBackFill style={{ fontSize: "25px" }} />
-          </button>
-          <button onClick={handlePlayPause}>
-            <PiPlayPauseFill style={{ fontSize: "50px" }} />
-          </button>
-          <button onClick={handleNext}>
-            <PiSkipForwardFill style={{ fontSize: "25px" }} />
-          </button>
-        </div>
+        <SongControls />
         <div
           css={css`
-            margin-top: 20px;
+            margin-top: 10px;
             text-align: center;
           `}
         >

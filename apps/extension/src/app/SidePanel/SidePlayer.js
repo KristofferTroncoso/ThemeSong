@@ -2,23 +2,13 @@ import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
 import SongPanel from "../Song/SongPanel/SongPanel";
 import tsicon from "../../assets/icon-128.png";
-import { PiSkipBackFill, PiPlayPauseFill, PiSkipForwardFill } from "react-icons/pi";
 import YtmIcon from "../YtmLogo/YtmIcon";
-import { BiLike, BiSolidLike } from "react-icons/bi";
 // import { IoRadioOutline } from "react-icons/io5";
+import LikeButton from "./components/LikeButton";
+import SongControls from "./components/SongControls";
 
 function SidePlayer() {
   const metadata = useStore((state) => state.media.metadata);
-  const changeMedia = useStore((state) => state.media.changeMedia);
-  const changeMetadataKey = useStore((state) => state.media.changeMetadataKey);
-
-  function handlePrevious() {
-    chrome.tabs.query({}, (tabs) => {
-      let ytmTabs = tabs.filter((tab) => "url" in tab);
-      console.log(ytmTabs);
-      chrome.tabs.sendMessage(ytmTabs[0].id, { message: "previous-button" });
-    });
-  }
 
   function handlePlayPause(e) {
     console.log(e);
@@ -27,14 +17,6 @@ function SidePlayer() {
       console.log(ytmTabs);
 
       chrome.tabs.sendMessage(ytmTabs[0].id, { message: "playpause" });
-    });
-  }
-
-  function handleNext() {
-    chrome.tabs.query({}, (tabs) => {
-      let ytmTabs = tabs.filter((tab) => "url" in tab);
-      console.log(ytmTabs);
-      chrome.tabs.sendMessage(ytmTabs[0].id, { message: "next-button" });
     });
   }
 
@@ -135,7 +117,7 @@ function SidePlayer() {
               height: 280px;
               border: 0;
               background: rgb(255 255 255 / 0.05);
-
+              transition: filter 0.2s ease-in-out;
               :hover {
                 filter: grayscale(100) brightness(0.7);
               }
@@ -146,8 +128,8 @@ function SidePlayer() {
               src={metadata.artwork[metadata.artwork.length - 1].src || tsicon}
               alt="album cover"
               css={css`
-                width: 280px;
-                height: 280px;
+                width: inherit;
+                height: inherit;
                 border-radius: 10px;
                 object-fit: contain;
                 box-shadow: 0 0 40px rgb(0 0 0 / 0.5);
@@ -176,6 +158,7 @@ function SidePlayer() {
                   margin-bottom: 6px;
                   font-size: 16px;
                   font-weight: 600;
+                  text-wrap: pretty;
                 `}
               >
                 {metadata.title}
@@ -190,118 +173,10 @@ function SidePlayer() {
                 {metadata.artist}
               </h2>
             </div>
-
-            {metadata.liked ? (
-              <button
-                css={{
-                  border: "0",
-                  borderRadius: "50%",
-                  backgroundColor: "rgb(0 0 0 / 22%)",
-                  height: "36px",
-                  width: "36px",
-                  cursor: "not-allowed !important",
-                }}
-              >
-                <BiSolidLike
-                  css={{
-                    padding: "8px",
-                    color: "#ff0023",
-                    fontSize: "20px",
-                  }}
-                />
-              </button>
-            ) : (
-              <button
-                css={{
-                  border: "0",
-                  borderRadius: "50%",
-                  backgroundColor: "rgb(255 255 255 / 7%)",
-                  height: "36px",
-                  width: "36px",
-
-                  ":hover": {
-                    backgroundColor: "rgb(255 255 255 / 0.2)",
-                  },
-                }}
-                onClick={(e) => {
-                  chrome.tabs.query({}, (tabs) => {
-                    let ytmTabs = tabs.filter((tab) => "url" in tab);
-                    console.log(ytmTabs);
-                    chrome.tabs.sendMessage(ytmTabs[0].id, { message: "like" });
-                  });
-                  setTimeout(() => {
-                    changeMetadataKey({ liked: true });
-                    changeMedia();
-                  }, 500);
-                }}
-              >
-                <BiLike
-                  css={{
-                    padding: "8px",
-                    color: "#ffffff69",
-                    fontSize: "20px",
-
-                    ":hover": {
-                      color: "#fff",
-                    },
-                  }}
-                />
-              </button>
-            )}
+            <LikeButton />
           </div>
         </div>
-        <div>
-          {/* <div>
-            <button
-              css={{
-                padding: "5px 16px 3px",
-                border: 0,
-                borderRadius: "20px",
-                backgroundColor: "rgb(255 255 255 / 0.1)",
-                color: "#fff",
-              }}
-              onClick={() => {
-                chrome.tabs.query({}, (tabs) => {
-                  let ytmTabs = tabs.filter((tab) => "url" in tab);
-                  console.log(ytmTabs);
-                  chrome.tabs.sendMessage(ytmTabs[0].id, { message: "start-radio" });
-                });
-              }}
-            >
-              <IoRadioOutline style={{ fontSize: "25px", color: "#ccc" }} />
-            </button>
-          </div> */}
-
-          <div
-            css={{
-              marginTop: "20px",
-              textAlign: "center",
-              display: "flex",
-              justifyContent: "space-around",
-              minWidth: 300,
-              maxWidth: 500,
-              button: {
-                border: 0,
-                padding: "10px 16px",
-                color: "#ccc",
-                background: 0,
-                ":hover": {
-                  color: "#fff",
-                },
-              },
-            }}
-          >
-            <button onClick={handlePrevious}>
-              <PiSkipBackFill style={{ fontSize: "25px" }} />
-            </button>
-            <button onClick={handlePlayPause}>
-              <PiPlayPauseFill style={{ fontSize: "45px" }} />
-            </button>
-            <button onClick={handleNext}>
-              <PiSkipForwardFill style={{ fontSize: "25px" }} />
-            </button>
-          </div>
-        </div>
+        <SongControls />
         <div
           css={css`
             margin-top: 20px;
