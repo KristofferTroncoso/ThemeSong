@@ -33,7 +33,7 @@ function Panel() {
           border: 0;
           padding: 8px;
           background-color: transparent;
-          color: var(--ts-tertiary-text-color);
+          color: var(--ts-secondary-icon-color);
           border-radius: 50%;
           :hover {
             color: var(--ts-primary-text-color);
