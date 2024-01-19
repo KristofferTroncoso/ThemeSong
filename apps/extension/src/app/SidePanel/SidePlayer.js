@@ -74,7 +74,7 @@ function SidePlayer() {
           );
           display: flex;
           flex-direction: column;
-          justify-content: space-around;
+          justify-content: space-evenly;
           align-items: center;
           align-content: center;
         `}

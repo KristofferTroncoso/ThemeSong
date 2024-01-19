@@ -54,11 +54,10 @@ function DynamicLight() {
         ${rulers_borders}
         ${misc_style_improvements}
         :root {
-            --ts-dynamiclight-accent-color: hsla(
-              var(--ts-palette-0-hue),
-              var(--ts-palette-0-saturation),
-              18%,
-              0.9
+            --ts-dynamiclight-accent-color: hsl(
+              var(--ts-palette-0-hue)
+              var(--ts-palette-0-saturation)
+              16%
             );
 
             --ts-navbar-color: hsl(
@@ -94,7 +93,7 @@ function DynamicLight() {
             --ts-playprogress-color: hsl(
               var(--ts-palette-0-hue),
               var(--ts-palette-0-saturation),
-              25%
+              18%
             );
 
             --ts-playprogress-knob-color: var(--ts-playprogress-color);
