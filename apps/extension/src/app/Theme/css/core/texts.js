@@ -215,4 +215,27 @@ ytd-multi-page-menu-renderer.ytmusic-popup-container {
   --yt-spec-call-to-action: var(--ts-base-blue);
   --yt-endpoint-hover-color: var(--ts-base-blue);
 }
+
+/* Libary - Artists - Sort */
+ytmusic-dropdown-renderer[dropdown-style=default] tp-yt-paper-dropdown-menu.ytmusic-dropdown-renderer .input-content.tp-yt-paper-input-container>input, ytmusic-dropdown-renderer[dropdown-style=default] tp-yt-paper-dropdown-menu.ytmusic-dropdown-renderer .input-content.tp-yt-paper-input-container>iron-input, ytmusic-dropdown-renderer[dropdown-style=default] tp-yt-paper-dropdown-menu.ytmusic-dropdown-renderer .input-content.tp-yt-paper-input-container>textarea, ytmusic-dropdown-renderer[dropdown-style=default] tp-yt-paper-dropdown-menu.ytmusic-dropdown-renderer .input-content.tp-yt-paper-input-container>iron-autogrow-textarea, ytmusic-dropdown-renderer[dropdown-style=default] tp-yt-paper-dropdown-menu.ytmusic-dropdown-renderer .input-content.tp-yt-paper-input-container>.paper-input-input {
+  color: var(--ts-primary-text-color);
+  --yt-endpoint-color: var(--ts-primary-text-color);
+  --yt-endpoint-hover-color: var(--ts-primary-text-color);
+  --yt-endpoint-visited-color: var(--ts-primary-text-color);
+}
+ytmusic-dropdown-renderer[dropdown-style=default] {
+  background-color: var(--ts-base-100-alpha-01-color);
+  border: 1px solid var(--ts-base-100-alpha-01-color);
+}
+
+/* form - like editing playlists */
+tp-yt-paper-tab.iron-selected.ytmusic-playlist-form {
+  color: var(--ts-primary-text-color);
+}
+tp-yt-paper-tab.ytmusic-playlist-form {
+  color: var(--ts-base-100-alpha-06-color);
+}
+tp-yt-paper-tabs.ytmusic-playlist-form {
+  --paper-tabs-selection-bar-color: var(--ts-primary-text-color);
+}
 `;
