@@ -30,6 +30,8 @@ function AppleMusicDark() {
           --ts-songimg-box-shadow: 0 10px 40px rgb(0 0 0 / 0.4);
           
           --applemusic-color: #ff3e53;
+
+          --ts-ruler-secondary-color: var(--ts-base-100-alpha-01-color);
         }
      `
       }
@@ -40,14 +42,14 @@ function AppleMusicDark() {
           --ts-navbar-color: linear-gradient(
             180deg,
             hsl(0 0% 12%) 0%,
-            hsl(0 0% 13% / 0.8) 60%
+            hsl(0 0% 14% / 0.8) 60%
           ) !important;
           --ts-playerbar-color: linear-gradient(
             90deg,
-            hsl(0 0% 15% / 0.8) 15%,
-            oklch(0.3 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h) / 0.7) 25%,
-            oklch(0.3 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h) / 0.7) 75%,
-            hsl(0 0% 15% / 0.8) 85%
+            hsl(0 0% 14% / 0.8) 15%,
+            oklch(0.3 calc(var(--ts-palette-dominant-c) / 5) var(--ts-palette-dominant-h) / 0.7) 25%,
+            oklch(0.3 calc(var(--ts-palette-dominant-c) / 5) var(--ts-palette-dominant-h) / 0.7) 75%,
+            hsl(0 0% 14% / 0.8) 85%
           );
           --ts-zebra-stripes-color: rgb(255 255 255 / 0.03);
           --ts-secondary-icon-color: var(--applemusic-color);
@@ -55,9 +57,7 @@ function AppleMusicDark() {
           --ts-sidebar-color: linear-gradient(
             180deg,
             hsl(0 0% 12%) 0%,
-            hsl(0 0% 18% / 0.3) 5%,
-            oklch(0.3 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h) / 0.3) 50%,
-            oklch(0.3 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h) / 0.5) 70%,
+            hsl(0 0% 15% / 0.8) 5%,
             hsl(0 0% 15% / 0.8) 80%
           );
         }

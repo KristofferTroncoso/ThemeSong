@@ -93,23 +93,21 @@ function AppleMusicLight() {
           --ts-navbar-color: linear-gradient(
             180deg,
             rgb(255 255 255) 0%,
-            rgb(245 245 245 / 0.6) 60%
+            rgb(247 247 247 / 0.8) 60%
           ) !important;
           --ts-sidebar-color: linear-gradient(
             180deg,
             rgb(255 255 255) 0%,
-            rgb(230 230 230 / 0.3) 5%,
-            hsl(var(--ts-palette-dominant-hue) calc(var(--ts-palette-dominant-saturation) / 2) 90% / 0.3) 50%,
-            hsl(var(--ts-palette-dominant-hue) calc(var(--ts-palette-dominant-saturation) / 2) 90% / 0.5) 70%,
-            rgb(240 240 240 / 0.8) 80%
+            rgb(245 245 245 / 0.8) 5%,
+            rgb(245 245 245 / 0.8) 80%
           );
           --ts-body-color: #fff;
           --ts-playerbar-color: linear-gradient(
             90deg,
-            rgb(240 240 240 / 0.8) 15%,
-            hsl(var(--ts-palette-dominant-hue) calc(var(--ts-palette-dominant-saturation) / 2) 90% / 0.7) 25%,
-            hsl(var(--ts-palette-dominant-hue) calc(var(--ts-palette-dominant-saturation) / 2) 90% / 0.7) 75%,
-            rgb(240 240 240 / 0.8) 85%
+            rgb(247 247 247 / 0.8) 15%,
+            hsl(var(--ts-palette-dominant-hue) calc(var(--ts-palette-dominant-saturation) / 2) 90% / 0.8) 25%,
+            hsl(var(--ts-palette-dominant-hue) calc(var(--ts-palette-dominant-saturation) / 2) 90% / 0.8) 75%,
+            rgb(247 247 247 / 0.8) 85%
           );
           --ts-playprogress-color: #6b6b6b;
           --ts-playprogress-secondary-color: rgb(0 0 0 / 0.1);
