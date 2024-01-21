@@ -98,17 +98,11 @@ function AppleMusicLight() {
           --ts-sidebar-color: linear-gradient(
             180deg,
             rgb(255 255 255) 0%,
-            rgb(245 245 245 / 0.8) 5%,
-            rgb(245 245 245 / 0.8) 80%
+            rgb(242 242 242 / 0.8) 5%,
+            rgb(242 242 242 / 0.8) 100%
           );
           --ts-body-color: #fff;
-          --ts-playerbar-color: linear-gradient(
-            90deg,
-            rgb(247 247 247 / 0.8) 15%,
-            hsl(var(--ts-palette-dominant-hue) calc(var(--ts-palette-dominant-saturation) / 2) 90% / 0.8) 25%,
-            hsl(var(--ts-palette-dominant-hue) calc(var(--ts-palette-dominant-saturation) / 2) 90% / 0.8) 75%,
-            rgb(247 247 247 / 0.8) 85%
-          );
+          --ts-playerbar-color: rgb(247 247 247 / 0.5);
           --ts-playprogress-color: #6b6b6b;
           --ts-playprogress-secondary-color: rgb(0 0 0 / 0.1);
           --ts-playprogress-container-color: rgb(0 0 0 / 0.05);

@@ -10,7 +10,7 @@ function AppleMusicDark() {
 
   useEffect(() => {
     if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
-      menubar.content = `hsl(0 0% 12%)`;
+      menubar.content = `hsl(0 0% 10%)`;
     } else {
       menubar.content = menubar.content = `oklch(45% ${lightVibrantOKLCH[1] * 0.5} ${lightVibrantOKLCH[2]})`;
     }
@@ -22,8 +22,8 @@ function AppleMusicDark() {
       {
         /*css*/ `
         :root {
-          --ts-body-color: hsl(0 0% 12%);
-          --ts-body-alpha-gradient-color: hsl(0 0% 12% / 0.7);
+          --ts-body-color: hsl(0 0% 10%);
+          --ts-body-alpha-gradient-color: hsl(0 0% 10% / 0.7);
           --ts-overlay-color: rgb(0 0 0 / 0.6);
           --ts-nowplaying-background-color: #c91734;
           --ts-texts-selection-color: #1665b5;
@@ -41,24 +41,18 @@ function AppleMusicDark() {
         :root {
           --ts-navbar-color: linear-gradient(
             180deg,
-            hsl(0 0% 12%) 0%,
-            hsl(0 0% 14% / 0.8) 60%
+            hsl(0 0% 10%) 0%,
+            hsl(0 0% 12% / 0.8) 60%
           ) !important;
-          --ts-playerbar-color: linear-gradient(
-            90deg,
-            hsl(0 0% 14% / 0.8) 15%,
-            oklch(0.3 calc(var(--ts-palette-dominant-c) / 5) var(--ts-palette-dominant-h) / 0.7) 25%,
-            oklch(0.3 calc(var(--ts-palette-dominant-c) / 5) var(--ts-palette-dominant-h) / 0.7) 75%,
-            hsl(0 0% 14% / 0.8) 85%
-          );
-          --ts-zebra-stripes-color: rgb(255 255 255 / 0.03);
+          --ts-playerbar-color: hsl(0 0% 14% / 0.6);
+          --ts-zebra-stripes-color: rgb(255 255 255 / 0.02);
           --ts-secondary-icon-color: var(--applemusic-color);
           --ts-colored-button-color: var(--applemusic-color);
           --ts-sidebar-color: linear-gradient(
             180deg,
-            hsl(0 0% 12%) 0%,
-            hsl(0 0% 15% / 0.8) 5%,
-            hsl(0 0% 15% / 0.8) 80%
+            hsl(0 0% 10%) 0%,
+            hsl(0 0% 13% / 0.8) 5%,
+            hsl(0 0% 13% / 0.8) 100%
           );
         }
 
