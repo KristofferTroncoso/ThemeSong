@@ -73,7 +73,7 @@ export function StaticSettings() {
             height: 25px;
             width: 35px;
             margin: 0 2px;
-            background: rgb(255 255 255 / 0.2);
+            background: rgb(255 255 255 / 0.1);
             background: ${staticUserPrefs.appearance === "dark" && "rgb(255 255 255 / 0.8)"};
             color: ${staticUserPrefs.appearance === "dark" && "#9d00ff"};
             border: 0;
@@ -94,7 +94,7 @@ export function StaticSettings() {
             height: 25px;
             width: 35px;
             margin: 0 2px;
-            background: rgb(255 255 255 / 0.2);
+            background: rgb(255 255 255 / 0.1);
             background: ${staticUserPrefs.appearance === "light" && "rgb(255 255 255 / 0.8)"};
             color: ${staticUserPrefs.appearance === "light" && "#de9800"};
             border: 0;
@@ -119,7 +119,7 @@ export function StaticSettings() {
             height: 25px;
             width: 35px;
             margin: 0 2px;
-            background: rgb(255 255 255 / 0.2);
+            background: rgb(255 255 255 / 0.1);
             background: ${staticUserPrefs.appearance === "system" && "rgb(255 255 255 / 0.8)"};
             color: ${staticUserPrefs.appearance === "system" && "#009961"};
             border: 0;

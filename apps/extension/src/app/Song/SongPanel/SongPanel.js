@@ -102,9 +102,9 @@ function SongPanel() {
           <PanelButton
             title="Search"
             color="#fff"
-            bgColor="#29aecf"
+            bgColor="#00a1ff"
             hoverColor="#fff"
-            hoverBgColor="#29aecf"
+            hoverBgColor="#00a1ff"
             onClick={handleDefaultSearch}
           >
             <LuSearch style={{ fontSize: "24px" }} />
@@ -112,9 +112,9 @@ function SongPanel() {
           <PanelButton
             title="Copy to clipboard"
             color="#fff"
-            bgColor="#878787"
+            bgColor="#31bf42"
             hoverColor="#fff"
-            hoverBgColor="#878787"
+            hoverBgColor="#31bf42"
             onClick={() => {
               navigator.clipboard.writeText(`${metadata.title} ${metadata.artist}`);
             }}

@@ -21,7 +21,7 @@ function Navbar() {
     <div
       id="Navbar"
       css={css`
-        background-color: #181818;
+        background-color: #141414;
         min-width: 50px;
         width: 50px;
         max-width: 50px;

@@ -49,7 +49,7 @@ function TopBar() {
     <div
       className="TopBar"
       css={{
-        backgroundColor: "#1f1f1f",
+        backgroundColor: "#1a1a1a",
         width: "calc(100% - 15px)",
         height: "26px",
         display: "flex",
@@ -107,7 +107,7 @@ function TopBar() {
               padding: 0 4px;
               margin: 0 2px;
             `}
-            title="sideplayer"
+            title="Open Side Player"
             onClick={handleSideplayerClick}
           >
             <BsReverseLayoutSidebarInsetReverse

@@ -29,9 +29,9 @@ function PiecePage() {
             css={css`
               margin: 5px;
               border: 0;
-              border-radius: 10px;
+              border-radius: 7px;
               padding: 8px;
-              background-color: #222;
+              background-color: #181818;
               display: flex;
               justify-content: space-between;
               align-items: center;

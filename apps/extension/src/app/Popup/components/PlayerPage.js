@@ -62,7 +62,7 @@ function PlayerPage() {
           margin: 10px;
           padding: 20px;
           width: 335px;
-          height: 490px;
+          height: 486px;
           color: white;
           border-radius: 10px;
           text-align: center;

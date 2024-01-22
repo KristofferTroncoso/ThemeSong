@@ -5,7 +5,7 @@ export const zebra_stripes = /*css*/ `
 
 .ytmusic-section-list-renderer #contents ytmusic-responsive-list-item-renderer:nth-of-type(odd) {
   background-color: var(--ts-zebra-stripes-color);
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 /* remove border-bottom / ruler from lists */

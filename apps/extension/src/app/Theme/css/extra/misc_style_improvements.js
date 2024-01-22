@@ -71,7 +71,22 @@ tp-yt-paper-item:focus:before, .tp-yt-paper-item.tp-yt-paper-item:focus:before {
 /* opinion. bold sidebar headers. it looks nice imo */
 export const boldSidebarHeaders = /*css*/ `
 .title.ytmusic-guide-entry-renderer {
-  font-weight: 500;
+  font-weight: 700;
+  font-family: 'YouTube Sans';
+  font-size: 17px;
+}
+
+ytmusic-guide-entry-renderer[active] .title.ytmusic-guide-entry-renderer {
+  font-weight: 700 !important;
+  color: var(--ts-primary-text-color) !important;
+}
+
+ytmusic-guide-entry-renderer:not([is-primary]) .title.ytmusic-guide-entry-renderer {
+  color: var(--ts-primary-text-color) !important;
+}
+
+.title.ytmusic-guide-entry-renderer {
+  color: var(--ts-base-100-alpha-08-color) !important;
 }
 `;
 

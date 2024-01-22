@@ -11,7 +11,7 @@ function ThemeButton({ theme, children, ...props }) {
     <button
       css={css`
         border-radius: 24px;
-        border: 4px solid ${activeTheme === theme.id ? "#135eeb" : "#454545"};
+        border: 4px solid ${activeTheme === theme.id ? "#135eeb" : "#2d2d2d"};
         width: 100%;
         min-height: 60px;
         height: 100%;

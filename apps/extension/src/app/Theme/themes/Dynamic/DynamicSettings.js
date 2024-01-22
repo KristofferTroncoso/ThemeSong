@@ -73,7 +73,7 @@ function DynamicSettings() {
             height: 25px;
             width: 35px;
             margin: 0 2px;
-            background: rgb(255 255 255 / 0.2);
+            background: rgb(255 255 255 / 0.1);
             background: ${dynamicUserPrefs.appearance === "dark" && "rgb(255 255 255 / 0.8)"};
             color: ${dynamicUserPrefs.appearance === "dark" && "#9d00ff"};
             border: 0;
@@ -94,7 +94,7 @@ function DynamicSettings() {
             height: 25px;
             width: 35px;
             margin: 0 2px;
-            background: rgb(255 255 255 / 0.2);
+            background: rgb(255 255 255 / 0.1);
             background: ${dynamicUserPrefs.appearance === "light" && "rgb(255 255 255 / 0.8)"};
             color: ${dynamicUserPrefs.appearance === "light" && "#de9800"};
             border: 0;
@@ -119,7 +119,7 @@ function DynamicSettings() {
             height: 25px;
             width: 35px;
             margin: 0 2px;
-            background: rgb(255 255 255 / 0.2);
+            background: rgb(255 255 255 / 0.1);
             background: ${dynamicUserPrefs.appearance === "system" && "rgb(255 255 255 / 0.8)"};
             color: ${dynamicUserPrefs.appearance === "system" && "#009961"};
             border: 0;

@@ -6,7 +6,7 @@ function VariantButton({ id, children, handleClick, isActive, name, ...props }) 
       css={css`
         font-size: 11px;
         border-radius: 18px;
-        border: 2px solid ${isActive ? "#fff" : "#454545"};
+        border: 2px solid ${isActive ? "#fff" : "#2d2d2d"};
         width: 100%;
         min-height: 28px;
         background: ${isActive ? "#fff" : "#202020"};
