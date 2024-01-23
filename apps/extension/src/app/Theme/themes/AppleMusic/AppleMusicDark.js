@@ -25,13 +25,22 @@ function AppleMusicDark() {
           --ts-body-color: hsl(0 0% 10%);
           --ts-body-alpha-gradient-color: hsl(0 0% 10% / 0.7);
           --ts-overlay-color: rgb(0 0 0 / 0.6);
-          --ts-nowplaying-background-color: #c91734;
+          --ts-nowplaying-background-color: #a60012;
           --ts-texts-selection-color: #1665b5;
           --ts-songimg-box-shadow: 0 10px 40px rgb(0 0 0 / 0.4);
           
           --applemusic-color: #ff3e53;
 
           --ts-ruler-secondary-color: var(--ts-base-100-alpha-01-color);
+        }
+
+        /* overwriting the icon color for the img hovers */
+        .thumbnail-overlay .icon {
+          fill: #0080ff;
+        }
+
+        .icon.ytmusic-play-button-renderer {
+          fill: #0080ff;
         }
      `
       }
@@ -42,10 +51,10 @@ function AppleMusicDark() {
           --ts-navbar-color: linear-gradient(
             180deg,
             hsl(0 0% 10%) 0%,
-            hsl(0 0% 12% / 0.8) 60%
+            hsl(0 0% 12% / 0.9) 60%
           ) !important;
-          --ts-playerbar-color: hsl(0 0% 14% / 0.6);
-          --ts-zebra-stripes-color: rgb(255 255 255 / 0.02);
+          --ts-playerbar-color: hsl(0 0% 14% / 0.7);
+          --ts-zebra-stripes-color: rgb(255 255 255 / 0.015);
           --ts-secondary-icon-color: var(--applemusic-color);
           --ts-colored-button-color: var(--applemusic-color);
           --ts-sidebar-color: linear-gradient(

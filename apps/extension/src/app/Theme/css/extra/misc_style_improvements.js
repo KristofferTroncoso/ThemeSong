@@ -101,5 +101,4 @@ export const misc_style_improvements = /*css*/ `
   ${fixNoMarginBottomOnNowPlayingAlbumImage}
   ${removeSearchBoxShadow}
   ${sidebarFocus}
-  ${boldSidebarHeaders}
 `;

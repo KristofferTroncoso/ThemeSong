@@ -38,6 +38,8 @@ function AppleMusicLight() {
           --ts-songimg-box-shadow: 0 10px 40px rgb(0 0 0 / 0.4);
 
           --applemusic-color: #d60017;
+
+          --ts-nowplaying-background-color: var(--applemusic-color);
         }
 
         /* white icon all the time for player song image */
@@ -47,7 +49,11 @@ function AppleMusicLight() {
 
         /* overwriting the icon color for the img hovers */
         .thumbnail-overlay .icon {
-          fill: #fff;
+          fill: #0080ff;
+        }
+
+        .icon.ytmusic-play-button-renderer {
+          fill: #0080ff;
         }
 
         ytmusic-play-button-renderer {
@@ -93,23 +99,36 @@ function AppleMusicLight() {
           --ts-navbar-color: linear-gradient(
             180deg,
             rgb(255 255 255) 0%,
-            rgb(247 247 247 / 0.8) 60%
+            rgb(248 248 248 / 0.9) 60%
           ) !important;
           --ts-sidebar-color: linear-gradient(
             180deg,
             rgb(255 255 255) 0%,
-            rgb(242 242 242 / 0.8) 5%,
-            rgb(242 242 242 / 0.8) 100%
+            rgb(247 247 247 / 0.8) 5%,
+            rgb(247 247 247 / 0.8) 100%
           );
           --ts-body-color: #fff;
-          --ts-playerbar-color: rgb(247 247 247 / 0.5);
+          --ts-playerbar-color: rgb(247 247 247 / 0.6);
           --ts-playprogress-color: #6b6b6b;
           --ts-playprogress-secondary-color: rgb(0 0 0 / 0.1);
           --ts-playprogress-container-color: rgb(0 0 0 / 0.05);
-          --ts-primary-icon-color: var(--ts-base-70-color);
+          --ts-primary-icon-color: var(--ts-base-60-color);
           --ts-secondary-icon-color: var(--applemusic-color);
           --ts-colored-button-color: var(--applemusic-color);
-          --ts-zebra-stripes-color: rgb(0 0 0 / 0.04);
+          --ts-zebra-stripes-color: rgb(0 0 0 / 0.027);
+
+          --ts-primary-text-color: var(--ts-base-100-alpha-09-color);
+          --ts-secondary-text-color: var(--ts-base-60-color);
+
+          --ts-overlay-highlighted-color: var(--ts-base-100-alpha-005-color);
+        }
+
+        ytmusic-search-box[is-bauhaus-sidenav-enabled]:not([opened]):not([has-query]) .search-box.ytmusic-search-box {
+          background: rgb(247 247 247 / 60%);
+        }
+
+        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
+          background-color: #e9e9e9;
         }
 
         ytmusic-tabs.stuck {

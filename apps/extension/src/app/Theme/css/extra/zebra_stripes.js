@@ -5,7 +5,7 @@ export const zebra_stripes = /*css*/ `
 
 .ytmusic-section-list-renderer #contents ytmusic-responsive-list-item-renderer:nth-of-type(odd) {
   background-color: var(--ts-zebra-stripes-color);
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 /* remove border-bottom / ruler from lists */
@@ -15,6 +15,7 @@ export const zebra_stripes = /*css*/ `
 
 #contents.ytmusic-playlist-shelf-renderer>*.ytmusic-playlist-shelf-renderer:not(:last-child) {
   border-bottom: none !important;
+  padding: 1px 10px;
 }
 
 /* need a bit of margin between last-child and "Show All" button */

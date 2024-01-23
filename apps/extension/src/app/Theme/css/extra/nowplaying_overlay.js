@@ -8,7 +8,7 @@ ytmusic-responsive-list-item-renderer[play-button-state=loading],
 ytmusic-responsive-list-item-renderer[play-button-state=playing], 
 ytmusic-responsive-list-item-renderer[play-button-state=paused] {
   background-color: var(--ts-nowplaying-background-color) !important;
-  border-radius: 3px !important;
+  border-radius: 5px !important;
 }
 
 ytmusic-responsive-list-item-renderer[play-button-state=loading] a, 
