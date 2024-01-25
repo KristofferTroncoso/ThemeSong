@@ -104,7 +104,7 @@ function SleepTimer() {
         onClose={handleDialogClose}
         css={css`
           .MuiDialog-paper {
-            border-radius: 5px;
+            border-radius: 8px;
             border: 1px solid #aaa;
           }
         `}

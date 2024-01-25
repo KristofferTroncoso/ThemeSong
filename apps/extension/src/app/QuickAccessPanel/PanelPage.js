@@ -21,13 +21,13 @@ function PanelPage() {
     <div
       css={css`
         padding: 6px;
-        margin: 2px;
         background: var(--ts-playerbar-color, #222);
         border: 1px solid var(--ts-base-100-alpha-02-color, rgb(255 255 255 / 0.2));
-        border-radius: 4px;
+        border-radius: 8px;
         backdrop-filter: blur(16px);
         transition: var(--ts-bgcolor-transition);
         color: var(--ts-secondary-text-color, #fff);
+        box-shadow: 0 0 20px rgb(0 0 0 / 15%);
       `}
     >
       <div

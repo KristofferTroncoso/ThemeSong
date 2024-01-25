@@ -90,6 +90,17 @@ ytmusic-guide-entry-renderer:not([is-primary]) .title.ytmusic-guide-entry-render
 }
 `;
 
+export const popupStyling = /*css*/ `
+  tp-yt-paper-listbox.ytmusic-menu-popup-renderer {
+    border-radius: 8px;
+  }
+
+  tp-yt-iron-dropdown {
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgb(0 0 0 / 15%);
+  }
+`;
+
 export const misc_style_improvements = /*css*/ `
   /* ThemeSong */
   /* universal styles */
@@ -101,4 +112,6 @@ export const misc_style_improvements = /*css*/ `
   ${fixNoMarginBottomOnNowPlayingAlbumImage}
   ${removeSearchBoxShadow}
   ${sidebarFocus}
+  ${boldSidebarHeaders}
+  ${popupStyling}
 `;

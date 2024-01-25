@@ -53,7 +53,7 @@ function AppleMusicDark() {
             hsl(0 0% 10%) 0%,
             hsl(0 0% 12% / 0.9) 60%
           ) !important;
-          --ts-playerbar-color: hsl(0 0% 14% / 0.7);
+          --ts-playerbar-color: hsl(0 0% 15% / 0.8);
           --ts-zebra-stripes-color: rgb(255 255 255 / 0.015);
           --ts-secondary-icon-color: var(--applemusic-color);
           --ts-colored-button-color: var(--applemusic-color);
@@ -63,6 +63,8 @@ function AppleMusicDark() {
             hsl(0 0% 13% / 0.8) 5%,
             hsl(0 0% 13% / 0.8) 100%
           );
+
+          --ts-primary-icon-color: rgb(220 220 220);
         }
 
         ytmusic-tabs.stuck {
@@ -76,6 +78,10 @@ function AppleMusicDark() {
 
         body::-webkit-scrollbar-track {
           background-color: rgb(255 255 255 / 0.03);
+        }
+
+        ytmusic-search-box[is-bauhaus-sidenav-enabled]:not([opened]):not([has-query]) .search-box.ytmusic-search-box {
+          background: rgb(20 20 20 / 60%);
         }
       `}
     </style>

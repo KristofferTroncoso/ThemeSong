@@ -90,8 +90,9 @@ function Panel() {
             display: flex;
             justify-content: end;
             flex-direction: column;
-            box-shadow: none !important;
             transition: none !important;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgb(0 0 0 / 15%);
           }
         `}
       >
