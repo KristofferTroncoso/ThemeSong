@@ -10,7 +10,7 @@ function AppleMusicDark() {
 
   useEffect(() => {
     if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
-      menubar.content = `hsl(0 0% 10%)`;
+      menubar.content = `hsl(0 0% 14%)`;
     } else {
       menubar.content = menubar.content = `oklch(45% ${lightVibrantOKLCH[1] * 0.5} ${lightVibrantOKLCH[2]})`;
     }
@@ -50,21 +50,17 @@ function AppleMusicDark() {
         :root {
           --ts-navbar-color: linear-gradient(
             180deg,
-            hsl(0 0% 10%) 0%,
-            hsl(0 0% 12% / 0.9) 60%
+            hsl(0 0% 14%) 0%,
+            hsl(0 0% 14% / 0.9) 60%
           ) !important;
           --ts-playerbar-color: hsl(0 0% 15% / 0.8);
           --ts-zebra-stripes-color: rgb(255 255 255 / 0.015);
           --ts-secondary-icon-color: var(--applemusic-color);
           --ts-colored-button-color: var(--applemusic-color);
-          --ts-sidebar-color: linear-gradient(
-            180deg,
-            hsl(0 0% 10%) 0%,
-            hsl(0 0% 13% / 0.8) 5%,
-            hsl(0 0% 13% / 0.8) 100%
-          );
+          --ts-sidebar-color: hsl(0 0% 13%);
 
           --ts-primary-icon-color: rgb(220 220 220);
+          --ts-pill-color: var(--ts-base-100-alpha-005-color);
         }
 
         ytmusic-tabs.stuck {
@@ -82,6 +78,27 @@ function AppleMusicDark() {
 
         ytmusic-search-box[is-bauhaus-sidenav-enabled]:not([opened]):not([has-query]) .search-box.ytmusic-search-box {
           background: rgb(20 20 20 / 60%);
+        }
+
+
+
+        #background.ytmusic-item-thumbnail-overlay-renderer, #content.ytmusic-item-thumbnail-overlay-renderer {
+          border: 1px solid rgb(255 255 255 / 0.1);
+          border-radius: 6px;
+        }
+
+        #thumbnail {
+          border: 1px solid rgb(255 255 255 / 0.1);
+          box-shadow: 0 10px 14px rgb(0 0 0 / 0.2);
+          margin-bottom: 25px;
+        }
+
+        ytmusic-item-thumbnail-overlay-renderer:not([play-button-has-background_]):not([play-button-state=default]) #background.ytmusic-item-thumbnail-overlay-renderer, ytmusic-item-thumbnail-overlay-renderer[indexed] #background.ytmusic-item-thumbnail-overlay-renderer {
+          border-radius: 0;
+        }
+
+        a:has(> ytmusic-thumbnail-renderer[thumbnail-crop="MUSIC_THUMBNAIL_CROP_UNSPECIFIED"]) {
+          box-shadow: 0 4px 8px rgb(0 0 0 / 0.2);
         }
       `}
     </style>

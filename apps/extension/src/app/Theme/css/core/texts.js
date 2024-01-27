@@ -28,7 +28,7 @@ button.ytmusic-sort-filter-button-renderer {
 
 /* getting the rest of texts */
 yt-formatted-string {
-  color: var(--ts-secondary-text-color) !important;
+  color: var(--ts-primary-text-color) !important;
 }
 
 /* random texts like on the right click menu and some pills and buttons */

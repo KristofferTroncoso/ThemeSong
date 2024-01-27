@@ -35,8 +35,7 @@ ytmusic-browse-response[has-background]:not([disable-gradient]) .background-grad
   background-size: 100vw 100vh;
   background-image: linear-gradient(
     180deg,
-    var(--ts-body-color) 0%,
-    var(--ts-body-alpha-gradient-color) 20%,
+    var(--ts-body-alpha-gradient-color) 0%,
     var(--ts-body-color) 45%
   );
   transition: var(--ts-bgcolor-transition) !important;
