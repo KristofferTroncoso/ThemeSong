@@ -146,7 +146,7 @@ function PlayerPage() {
           >
             <div
               css={css`
-                margin-right: 5px;
+                margin-right: 2px;
                 text-align: left;
                 width: 250px;
               `}
@@ -156,8 +156,10 @@ function PlayerPage() {
                   margin-bottom: 10px;
                   font-size: 14px;
                   text-wrap: nowrap;
+                  text-overflow: ellipsis;
                   overflow: hidden;
                 `}
+                title={metadata.title}
               >
                 {metadata.title}
               </h1>
@@ -167,8 +169,10 @@ function PlayerPage() {
                   font-size: 12px;
                   color: #dddddd;
                   text-wrap: nowrap;
+                  text-overflow: ellipsis;
                   overflow: hidden;
                 `}
+                title={metadata.artist}
               >
                 {metadata.artist}
               </h2>
