@@ -4,7 +4,7 @@
     "description": "name of the browser extension on the store. <= 45 characters"
   },
   "appDescription": {
-    "message": "Enhancer for YouTube Music™. Dynamic Themes, Visualizers, Lyrics, Sleep Timer, Notifications, and more!",
+    "message": "Enhancer for YouTube Music™. Dynamic Themes, Visualizers, Side Panel Mini Player, Lyrics, Sleep Timer, Notifications, and more!",
     "description": "description of the browser extension on the store. <= 132 characters"
   }
 }
