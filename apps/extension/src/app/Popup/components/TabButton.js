@@ -25,8 +25,8 @@ function TabButton({ isActive, title, children, ...props }) {
           border: 0;
           width: 44px;
           height: 44px;
-          background: ${isActive ? "#444" : "#222"};
-          color: ${isActive ? "#fff" : "#ccc"};
+          background: ${isActive ? "#fff" : "#222"};
+          color: ${isActive ? "#000" : "#ccc"};
           padding: 5px 4px;
           margin: 4px 4px 10px;
           display: flex;
@@ -34,7 +34,8 @@ function TabButton({ isActive, title, children, ...props }) {
           justify-content: center;
           align-items: center;
           :hover {
-            background: #333;
+            background: #ddd;
+            color: #000;
           }
         `}
         {...props}
