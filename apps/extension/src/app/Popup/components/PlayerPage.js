@@ -115,8 +115,8 @@ function PlayerPage() {
           <button
             onClick={handlePlayPause}
             css={css`
-              width: 220px;
-              height: 220px;
+              width: 200px;
+              height: 200px;
               border-radius: 5px;
               margin-bottom: 20px;
               border: 0;
