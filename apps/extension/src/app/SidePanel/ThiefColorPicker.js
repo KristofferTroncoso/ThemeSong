@@ -29,7 +29,7 @@ function ThiefColorPicker() {
         console.log(palette);
         setColor(rgbToHex(palette[0][0], palette[0][1], palette[0][2]));
         setColor2(rgbToHex(palette[1][0], palette[1][1], palette[1][2]));
-      }, 500);
+      }, 100);
     }
 
     function handleSongChange(mutationList) {

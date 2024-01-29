@@ -1,13 +1,23 @@
 import { css } from "@emotion/react";
+import { useEffect, useState } from "react";
+
 import { useStore } from "/src/app/store";
 import SongPanel from "../../Song/SongPanel/SongPanel";
 import tsicon from "../../../assets/icon-128.png";
 import YtmIcon from "../../YtmLogo/YtmIcon";
 import LikeButton from "../../SidePanel/components/LikeButton";
 import SongControls from "../../SidePanel/components/SongControls";
+import ThiefColorPicker from "../../SidePanel/ThiefColorPicker";
 
 function PlayerPage() {
   const metadata = useStore((state) => state.media.metadata);
+
+  const [load, setLoad] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoad(true);
+    }, 100);
+  }, []);
 
   function handlePlayPause(e) {
     console.log(e);
@@ -66,7 +76,12 @@ function PlayerPage() {
           color: white;
           border-radius: 10px;
           text-align: center;
-          background: linear-gradient(to bottom, #222, #111);
+          background: linear-gradient(
+            to bottom,
+            oklch(from var(--ts-color) 35% c h),
+            oklch(from var(--ts-color2) 30% calc(c / 2) h),
+            #111
+          );
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -89,6 +104,7 @@ function PlayerPage() {
               margin-bottom: 10px;
               text-align: left;
               width: 150px;
+              z-index: 1000;
             `}
           >
             <YtmIcon full />
@@ -109,14 +125,16 @@ function PlayerPage() {
           >
             <img
               src={metadata.artwork[metadata.artwork.length - 1].src || tsicon}
+              id="sideplayerimage"
               alt="album cover"
+              crossOrigin="anonymous"
               css={css`
                 width: inherit;
                 height: inherit;
                 border-radius: 5px;
-                border: 1px solid #333;
                 background-color: #222;
                 object-fit: contain;
+                box-shadow: 0 5px 80px black;
               `}
             />
           </button>
@@ -168,6 +186,7 @@ function PlayerPage() {
           <SongPanel />
         </div>
       </div>
+      {load && <ThiefColorPicker />}
     </div>
   );
 }
