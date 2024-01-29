@@ -8,4 +8,8 @@ export const scrollbars = /*css*/ `
 html {
   scrollbar-color: var(--ts-base-100-alpha-02-color) transparent;
 }
+
+#items.ytmusic-carousel {
+  scrollbar-width: none;
+}
 `;
