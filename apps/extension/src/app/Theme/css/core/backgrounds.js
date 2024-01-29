@@ -15,15 +15,15 @@ export const backgrounds = /*css*/ `
 }
 
 :root {
-  --ytmusic-brand-background-solid: var(--ts-playerbar-color) !important;
+  --ytmusic-brand-background-solid: var(--ts-body-color) !important;
   --ytmusic-general-background-a: var(--ts-body-color) !important;
   --ytmusic-general-background-c: var(--ts-body-color) !important;
   --ytmusic-search-background: var(--ts-body-color) !important;
-  --yt-spec-menu-background: var(--ts-playerbar-color) !important;
+  --yt-spec-menu-background: var(--ts-body-color) !important;
 
   /* share menu */
-  --yt-spec-brand-background-solid: var(--ts-playerbar-color) !important;
-  --yt-spec-general-background-a: var(--ts-playerbar-color) !important;
+  --yt-spec-brand-background-solid: var(--ts-body-color) !important;
+  --yt-spec-general-background-a: var(--ts-body-color) !important;
 }
 
 body {

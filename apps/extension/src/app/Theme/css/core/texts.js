@@ -28,7 +28,7 @@ button.ytmusic-sort-filter-button-renderer {
 
 /* getting the rest of texts */
 yt-formatted-string {
-  color: var(--ts-primary-text-color) !important;
+  color: var(--ts-primary-text-color);
 }
 
 /* random texts like on the right click menu and some pills and buttons */
@@ -237,5 +237,27 @@ tp-yt-paper-tab.ytmusic-playlist-form {
 }
 tp-yt-paper-tabs.ytmusic-playlist-form {
   --paper-tabs-selection-bar-color: var(--ts-primary-text-color);
+}
+
+/* add to playlist menu */
+.section-heading.ytmusic-add-to-playlist-renderer {
+  color: var(--ts-primary-text-color);;
+}
+
+#title.ytmusic-playlist-add-to-option-renderer {
+  color: var(--ts-primary-text-color);;
+}
+
+/* settings menu */
+.summary.ytmusic-setting-boolean-renderer {
+  color: var(--ts-primary-text-color);
+}
+
+.summary.ytmusic-setting-action-renderer {
+  color: var(--ts-primary-text-color);
+}
+
+.summary.ytmusic-setting-read-only-item-renderer {
+  color: var(--ts-primary-text-color);
 }
 `;
