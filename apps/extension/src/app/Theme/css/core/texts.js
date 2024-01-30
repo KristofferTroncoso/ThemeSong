@@ -14,6 +14,9 @@ export const texts = /*css*/ `
 
   /* some button texts such as "Shuffle" on a playlist. should generally be inverse */
   --yt-spec-text-primary-inverse: var(--ts-inverse-text-color, gold) !important;
+
+  /* saved to liked music */
+  --yt-spec-static-overlay-text-primary: var(--ts-primary-text-color);
 }
 
 /* 'recent activity' dropdown buttons */
