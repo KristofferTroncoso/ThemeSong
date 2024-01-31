@@ -40,6 +40,10 @@ function YouTubeMusicMobile() {
           --ts-body-alpha-gradient-color: rgb(0 0 0 / 0.7);
           --ts-songimg-box-shadow: none;
         }
+
+        ytmusic-player[player-ui-state=FULLSCREEN] #song-image.ytmusic-player {
+          padding-top: 0;
+        }
       `
       }
       {(playerUiState === "PLAYER_PAGE_OPEN" || playerUiState === "FULLSCREEN") &&
