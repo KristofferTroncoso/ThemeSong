@@ -80,17 +80,12 @@ function AppleMusicDark() {
           background: rgb(20 20 20 / 60%);
         }
 
-
-
         #background.ytmusic-item-thumbnail-overlay-renderer, #content.ytmusic-item-thumbnail-overlay-renderer {
-          border: 1px solid rgb(255 255 255 / 0.1);
           border-radius: 6px;
         }
 
         #thumbnail {
-          border: 1px solid rgb(255 255 255 / 0.1);
           box-shadow: 0 10px 14px rgb(0 0 0 / 0.2);
-          margin-bottom: 25px;
         }
 
         ytmusic-item-thumbnail-overlay-renderer:not([play-button-has-background_]):not([play-button-state=default]) #background.ytmusic-item-thumbnail-overlay-renderer, ytmusic-item-thumbnail-overlay-renderer[indexed] #background.ytmusic-item-thumbnail-overlay-renderer {

@@ -43,15 +43,17 @@ export const playBarTextAndIconsColor = /*css*/ `
 /* June 2023. Album image on player page is directly touching the player bar.
 Feedback sent to YTM but no fix. Other users confirmed issue. */
 export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
-  @media (max-height: 1100px) {
+
+  @media (max-height: 1100px) and (min-width: 1200px) {
     ytmusic-player[player-ui-state=PLAYER_PAGE_OPEN][playback-mode="ATV_PREFERRED"] {
-      margin: auto 35px !important;
+      margin: auto 55px !important;
+    }
+
+    .av.ytmusic-player-page {
+      padding-bottom: 5px !important;
     }
   }
 
-  .av.ytmusic-player-page {
-    padding-bottom: 10px !important;
-  }
 `;
 
 /* the box-shadow on the new sidebar-layout Search input doesn't look so good. it only looks good on dark or Off because you can't see it haha */

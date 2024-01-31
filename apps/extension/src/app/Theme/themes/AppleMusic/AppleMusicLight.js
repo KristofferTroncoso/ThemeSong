@@ -140,23 +140,13 @@ function AppleMusicLight() {
           fill: #890ad6;
         }
 
-        #background.ytmusic-item-thumbnail-overlay-renderer, #content.ytmusic-item-thumbnail-overlay-renderer {
-          border: 1px solid rgb(0 0 0 / 0.15);
-          border-radius: 6px;
-        }
-
         #thumbnail {
-          border: 1px solid rgb(0 0 0 / 0.15);
-          box-shadow: 0 10px 14px rgb(0 0 0 / 0.1);
-          margin-bottom: 25px;
-        }
-
-        ytmusic-item-thumbnail-overlay-renderer:not([play-button-has-background_]):not([play-button-state=default]) #background.ytmusic-item-thumbnail-overlay-renderer, ytmusic-item-thumbnail-overlay-renderer[indexed] #background.ytmusic-item-thumbnail-overlay-renderer {
-          border-radius: 0;
+          box-shadow: 0 2px 5px rgb(0 0 0 / 0.2);
+          margin-bottom: 10px;
         }
 
         a:has(> ytmusic-thumbnail-renderer[thumbnail-crop="MUSIC_THUMBNAIL_CROP_UNSPECIFIED"]) {
-          box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+          box-shadow: 0 2px 5px rgb(0 0 0 / 0.2);
         }
 
       `}

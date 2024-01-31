@@ -16,7 +16,7 @@ html {
 
 /* pills and chips */
 #chips.ytmusic-chip-cloud-renderer {
-  scrollbar-width: none;
+  scrollbar-width: thin;
 }
 
 /* sidebar playlist list */
