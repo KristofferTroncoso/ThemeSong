@@ -20,10 +20,15 @@ function StaticLight() {
   const { hue, saturation, lightness } = useStore(
     (state) => state.theme.prefs["b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"].light
   );
+  const playerUiState = useStore((state) => state.player.playerUiState);
 
   useEffect(() => {
-    menubar.content = `hsl(${hue}, ${saturation}%, ${lightness[0]}%)`;
-  }, [hue, saturation, lightness]);
+    if (playerUiState === "PLAYER_PAGE_OPEN") {
+      menubar.content = `hsl(${hue}, ${saturation}%, ${lightness[1]}%)`;
+    } else {
+      menubar.content = `hsl(${hue}, ${saturation}%, ${lightness[0]}%)`;
+    }
+  }, [hue, saturation, lightness, playerUiState]);
 
   return (
     <style id="StaticLight">
@@ -48,6 +53,15 @@ function StaticLight() {
 
         --ts-secondary-text-color: var(--ts-base-100-alpha-08-color);
       }`}
+
+      {(playerUiState === "PLAYER_PAGE_OPEN" || playerUiState === "FULLSCREEN") &&
+        /* css */ ` 
+        :root  {
+          --ts-navbar-color: var(--ts-playerpage-color);
+          --ts-sidebar-color: var(--ts-playerpage-color);
+          --ts-playerbar-color: var(--ts-playerpage-color);
+        }
+      `}
     </style>
   );
 }

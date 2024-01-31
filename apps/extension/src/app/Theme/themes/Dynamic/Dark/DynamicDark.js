@@ -13,6 +13,7 @@ function DynamicDark() {
   const dominantColorHSL = useStore((state) => state.palette.dominant).hsl;
   const dynamicDarkPrefs = useStore((state) => state.theme.prefs["db8854e3-6753-4639-b244-c8091f3b9fcb"].dark);
   const lightness = dynamicDarkPrefs.lightness;
+  const playerUiState = useStore((state) => state.player.playerUiState);
 
   let hue = (dominantColorHSL[0] * 360).toFixed();
   let saturation = (dominantColorHSL[1] * 100 * dynamicDarkPrefs.saturation).toFixed();
@@ -32,8 +33,12 @@ function DynamicDark() {
   );
 
   useEffect(() => {
-    menubar.content = `hsl(${hue}, ${saturation}%, ${curveLight(lightness[0])}%)`;
-  }, [hue, saturation, lightness, curveLight]);
+    if (playerUiState === "PLAYER_PAGE_OPEN") {
+      menubar.content = `hsl(${hue}, ${saturation}%, ${curveLight(lightness[1])}%)`;
+    } else {
+      menubar.content = `hsl(${hue}, ${saturation}%, ${curveLight(lightness[0])}%)`;
+    }
+  }, [hue, saturation, lightness, curveLight, playerUiState]);
 
   return (
     <style>
@@ -60,6 +65,15 @@ function DynamicDark() {
           --ts-playprogress-color: hsl(var(--ts-palette-1-hue), 80%, 91%);
 
           --ts-playprogress-knob-color: var(--ts-playprogress-color);
+        }
+      `}
+
+      {(playerUiState === "PLAYER_PAGE_OPEN" || playerUiState === "FULLSCREEN") &&
+        /* css */ ` 
+        :root  {
+          --ts-navbar-color: var(--ts-playerpage-color);
+          --ts-sidebar-color: var(--ts-playerpage-color);
+          --ts-playerbar-color: var(--ts-playerpage-color);
         }
       `}
     </style>

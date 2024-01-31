@@ -11,7 +11,7 @@ export const backgrounds = /*css*/ `
   /* if an alpha color is specified, this will let the "hue" lights on the homepage show through */
   --ts-body-alpha-gradient-color: var(--ts-body-color);
 
-  --ts-bgcolor-transition: background 0.5s ease-out;
+  --ts-bgcolor-transition: background 0.3s linear;
 }
 
 :root {
