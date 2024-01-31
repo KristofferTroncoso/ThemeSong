@@ -32,11 +32,11 @@ export const createThemeSlice = (set, get) => ({
       appearance: "dark",
       dark: {
         saturation: 0.7,
-        lightness: [15, 15, 20, 10],
+        lightness: [10, 20, 14, 8],
       },
       light: {
         saturation: 0.9,
-        lightness: [85, 85, 80, 90],
+        lightness: [92, 80, 90, 95],
       },
     },
     "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8": {
@@ -44,12 +44,12 @@ export const createThemeSlice = (set, get) => ({
       dark: {
         hue: 216,
         saturation: 70,
-        lightness: [16, 16, 24, 10],
+        lightness: [18, 24, 22, 14],
       },
       light: {
         hue: 340,
         saturation: 90,
-        lightness: [85, 80, 85, 95],
+        lightness: [85, 75, 80, 90],
       },
     },
     "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f": {
