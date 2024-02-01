@@ -5,7 +5,6 @@ import InvertColorsOffIcon from "@mui/icons-material/InvertColorsOff";
 import { GiAtom } from "react-icons/gi";
 import ColorizeIcon from "@mui/icons-material/Colorize";
 import AppleIcon from "@mui/icons-material/Apple";
-import PaletteIcon from "@mui/icons-material/Palette";
 import { SiYoutubemusic } from "react-icons/si";
 
 import PanelButton from "../QuickAccessPanel/components/PanelButton";
@@ -13,7 +12,6 @@ import { useStore } from "/src/app/store";
 import useLocalization from "../Extension/Localization/useLocalization";
 
 function ThemePanel() {
-  const themes = useStore((state) => state.theme.themes);
   const activeTheme = useStore((state) => state.theme.prefs.activeTheme);
   const setActiveTheme = useStore((state) => state.theme.setActiveTheme);
   const getMessage = useLocalization();
