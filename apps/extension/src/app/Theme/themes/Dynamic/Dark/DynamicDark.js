@@ -24,7 +24,7 @@ function DynamicDark() {
       let brightnessNum = parseInt(brightness, 10);
 
       if (hueNum > 35 && hueNum < 200) {
-        return brightnessNum * 0.7;
+        return brightnessNum * 0.6;
       } else {
         return brightnessNum;
       }

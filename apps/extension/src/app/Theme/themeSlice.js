@@ -32,7 +32,7 @@ export const createThemeSlice = (set, get) => ({
       appearance: "dark",
       dark: {
         saturation: 0.7,
-        lightness: [10, 20, 14, 8],
+        lightness: [12, 20, 16, 10],
       },
       light: {
         saturation: 0.9,
