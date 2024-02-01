@@ -51,14 +51,14 @@ function ThemePanel() {
       >
         <PanelButton
           title="Off / YTM Default"
-          bgColor={activeTheme === "416034f2-bfb8-46e8-9929-5805dd59a688" && "rgb(255 255 255 / 0.8)"}
-          color={activeTheme === "416034f2-bfb8-46e8-9929-5805dd59a688" && "#000"}
-          hoverColor="#000"
+          bgColor={activeTheme === "416034f2-bfb8-46e8-9929-5805dd59a688" && "var(--ts-base-100-color)"}
+          color={activeTheme === "416034f2-bfb8-46e8-9929-5805dd59a688" && "var(--ts-base-00-color)"}
+          hoverColor="var(--ts-base-00-color)"
           css={css`
             height: 42px;
             min-width: 45px;
             width: 70px;
-            margin: 0 2px;
+            margin: 0 3px;
             border: 0;
             border-radius: 6px;
           `}
@@ -72,14 +72,14 @@ function ThemePanel() {
         </PanelButton>
         <PanelButton
           title="Dynamic"
-          bgColor={activeTheme === "db8854e3-6753-4639-b244-c8091f3b9fcb" && "rgb(255 255 255 / 0.8)"}
+          bgColor={activeTheme === "db8854e3-6753-4639-b244-c8091f3b9fcb" && "var(--ts-base-100-color)"}
           color={activeTheme === "db8854e3-6753-4639-b244-c8091f3b9fcb" && "#1565e6"}
           hoverColor="#1565e6"
           css={css`
             height: 42px;
             min-width: 45px;
             width: 70px;
-            margin: 0 2px;
+            margin: 0 3px;
             border: 0;
             border-radius: 6px;
           `}
@@ -94,14 +94,14 @@ function ThemePanel() {
         </PanelButton>
         <PanelButton
           title="Static"
-          bgColor={activeTheme === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" && "rgb(255 255 255 / 0.8)"}
+          bgColor={activeTheme === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" && "var(--ts-base-100-color)"}
           color={activeTheme === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" && "#ff3700"}
           hoverColor="#ff3700"
           css={css`
             height: 42px;
             min-width: 45px;
             width: 70px;
-            margin: 0 2px;
+            margin: 0 3px;
             border: 0;
             border-radius: 6px;
           `}
@@ -115,14 +115,14 @@ function ThemePanel() {
         </PanelButton>
         <PanelButton
           title="Apple Music"
-          bgColor={activeTheme === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f" && "rgb(255 255 255 / 0.8)"}
+          bgColor={activeTheme === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f" && "var(--ts-base-100-color)"}
           color={activeTheme === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f" && "#ff0055"}
           hoverColor="#ff0055"
           css={css`
             height: 42px;
             min-width: 45px;
             width: 70px;
-            margin: 0 2px;
+            margin: 0 3px;
             border: 0;
             border-radius: 6px;
             padding: 0;
@@ -139,13 +139,13 @@ function ThemePanel() {
           <PanelButton
             title="YouTube Music Mobile"
             hoverColor="red"
-            bgColor={activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && "rgb(255 255 255 / 0.8)"}
+            bgColor={activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && "var(--ts-base-100-color)"}
             color={activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && "red"}
             css={css`
               height: 42px;
               min-width: 45px;
               width: 70px;
-              margin: 0 2px;
+              margin: 0 3px;
               border: 0;
               border-radius: 6px;
               padding: 3px;

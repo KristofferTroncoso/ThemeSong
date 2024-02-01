@@ -32,7 +32,7 @@ function AppleMusicSettings() {
             width: 60px;
             margin: 0 2px;
             background: rgb(255 255 255 / 0.1);
-            background: ${appleMusicPrefs.appearance === "dark" && "rgb(255 255 255 / 0.8)"};
+            background: ${appleMusicPrefs.appearance === "dark" && "#fff"};
             color: ${appleMusicPrefs.appearance === "dark" && "#9d00ff"};
             border: 0;
             border-radius: 6px;
@@ -53,8 +53,8 @@ function AppleMusicSettings() {
             width: 60px;
             margin: 0 2px;
             background: rgb(255 255 255 / 0.1);
-            background: ${appleMusicPrefs.appearance === "light" && "rgb(255 255 255 / 0.8)"};
-            color: ${appleMusicPrefs.appearance === "light" && "#de9800"};
+            background: ${appleMusicPrefs.appearance === "light" && "#fff"};
+            color: ${appleMusicPrefs.appearance === "light" && "#ff8400"};
             border: 0;
             border-radius: 6px;
             :hover {
@@ -78,7 +78,7 @@ function AppleMusicSettings() {
             width: 60px;
             margin: 0 2px;
             background: rgb(255 255 255 / 0.1);
-            background: ${appleMusicPrefs.appearance === "system" && "rgb(255 255 255 / 0.8)"};
+            background: ${appleMusicPrefs.appearance === "system" && "#fff"};
             color: ${appleMusicPrefs.appearance === "system" && "#009961"};
             border: 0;
             border-radius: 6px;

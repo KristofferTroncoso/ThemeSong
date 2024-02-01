@@ -83,8 +83,8 @@ function DarkModePanel() {
               height: 38px;
               min-width: 45px;
               width: 60px;
-              margin: 0 2px;
-              background: ${activeThemeUserPrefs.appearance === "dark" && "rgb(255 255 255 / 0.8)"};
+              margin: 0 3px;
+              background: ${activeThemeUserPrefs.appearance === "dark" && "var(--ts-base-100-color)"};
               color: ${activeThemeUserPrefs.appearance === "dark" && "#9d00ff"};
               border: 0;
               border-radius: 6px;
@@ -102,9 +102,9 @@ function DarkModePanel() {
               height: 38px;
               min-width: 45px;
               width: 60px;
-              margin: 0 2px;
-              background: ${activeThemeUserPrefs.appearance === "light" && "rgb(255 255 255 / 0.8)"};
-              color: ${activeThemeUserPrefs.appearance === "light" && "#de9800"};
+              margin: 0 3px;
+              background: ${activeThemeUserPrefs.appearance === "light" && "var(--ts-base-100-color)"};
+              color: ${activeThemeUserPrefs.appearance === "light" && "#ff8400"};
               border: 0;
               border-radius: 6px;
               :hover {
@@ -125,8 +125,8 @@ function DarkModePanel() {
               height: 38px;
               min-width: 45px;
               width: 60px;
-              margin: 0 2px;
-              background: ${activeThemeUserPrefs.appearance === "system" && "rgb(255 255 255 / 0.8)"};
+              margin: 0 3px;
+              background: ${activeThemeUserPrefs.appearance === "system" && "var(--ts-base-100-color)"};
               color: ${activeThemeUserPrefs.appearance === "system" && "#009961"};
               border: 0;
               border-radius: 6px;

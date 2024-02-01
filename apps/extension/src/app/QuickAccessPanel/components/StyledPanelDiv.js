@@ -4,9 +4,9 @@ function StyledPanelDiv({ children, ...props }) {
   return (
     <div
       css={css`
-        border: 1px solid rgb(255 255 255 / 0.1);
+        border: 1px solid var(--ts-base-100-alpha-01-color);
         border-radius: 8px;
-        background-color: rgb(0 0 0 / 0.1);
+        background-color: var(--ts-base-00-alpha-005-color);
         padding: 6px 5px;
         margin-bottom: 6px;
       `}

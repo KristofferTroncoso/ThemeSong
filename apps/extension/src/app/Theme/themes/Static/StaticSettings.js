@@ -61,8 +61,9 @@ export function StaticSettings() {
         name="appearance"
         css={css`
           display: flex;
-          justify-content: right;
+          justify-content: center;
           align-items: center;
+          margin-bottom: 5px;
         `}
         onSubmit={(e) => e.preventDefault()}
       >
@@ -74,7 +75,7 @@ export function StaticSettings() {
             width: 35px;
             margin: 0 2px;
             background: rgb(255 255 255 / 0.1);
-            background: ${staticUserPrefs.appearance === "dark" && "rgb(255 255 255 / 0.8)"};
+            background: ${staticUserPrefs.appearance === "dark" && "#fff"};
             color: ${staticUserPrefs.appearance === "dark" && "#9d00ff"};
             border: 0;
             border-radius: 3px;
@@ -95,8 +96,8 @@ export function StaticSettings() {
             width: 35px;
             margin: 0 2px;
             background: rgb(255 255 255 / 0.1);
-            background: ${staticUserPrefs.appearance === "light" && "rgb(255 255 255 / 0.8)"};
-            color: ${staticUserPrefs.appearance === "light" && "#de9800"};
+            background: ${staticUserPrefs.appearance === "light" && "#fff"};
+            color: ${staticUserPrefs.appearance === "light" && "#ff8400"};
             border: 0;
             border-radius: 3px;
             :hover {
@@ -120,7 +121,7 @@ export function StaticSettings() {
             width: 35px;
             margin: 0 2px;
             background: rgb(255 255 255 / 0.1);
-            background: ${staticUserPrefs.appearance === "system" && "rgb(255 255 255 / 0.8)"};
+            background: ${staticUserPrefs.appearance === "system" && "#fff"};
             color: ${staticUserPrefs.appearance === "system" && "#009961"};
             border: 0;
             border-radius: 3px;

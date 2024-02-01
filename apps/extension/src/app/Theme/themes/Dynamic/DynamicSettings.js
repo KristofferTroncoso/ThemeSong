@@ -61,8 +61,9 @@ function DynamicSettings() {
         name="appearance"
         css={css`
           display: flex;
-          justify-content: right;
+          justify-content: center;
           align-items: center;
+          margin-bottom: 5px;
         `}
         onSubmit={(e) => e.preventDefault()}
       >
@@ -73,8 +74,8 @@ function DynamicSettings() {
             height: 25px;
             width: 35px;
             margin: 0 2px;
-            background: rgb(255 255 255 / 0.1);
-            background: ${dynamicUserPrefs.appearance === "dark" && "rgb(255 255 255 / 0.8)"};
+            background: rgb(255 255 255 / 0.15);
+            background: ${dynamicUserPrefs.appearance === "dark" && "#fff"};
             color: ${dynamicUserPrefs.appearance === "dark" && "#9d00ff"};
             border: 0;
             border-radius: 3px;
@@ -94,9 +95,9 @@ function DynamicSettings() {
             height: 25px;
             width: 35px;
             margin: 0 2px;
-            background: rgb(255 255 255 / 0.1);
-            background: ${dynamicUserPrefs.appearance === "light" && "rgb(255 255 255 / 0.8)"};
-            color: ${dynamicUserPrefs.appearance === "light" && "#de9800"};
+            background: rgb(255 255 255 / 0.15);
+            background: ${dynamicUserPrefs.appearance === "light" && "#fff"};
+            color: ${dynamicUserPrefs.appearance === "light" && "#ff8400"};
             border: 0;
             border-radius: 3px;
             :hover {
@@ -119,8 +120,8 @@ function DynamicSettings() {
             height: 25px;
             width: 35px;
             margin: 0 2px;
-            background: rgb(255 255 255 / 0.1);
-            background: ${dynamicUserPrefs.appearance === "system" && "rgb(255 255 255 / 0.8)"};
+            background: rgb(255 255 255 / 0.15);
+            background: ${dynamicUserPrefs.appearance === "system" && "#fff"};
             color: ${dynamicUserPrefs.appearance === "system" && "#009961"};
             border: 0;
             border-radius: 3px;

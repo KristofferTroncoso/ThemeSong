@@ -15,8 +15,8 @@ function VisualizerVariantButton({ color, bgColor, hoverColor, hoverBgColor, chi
         min-width: 32px;
         width: 40px;
         margin: 2px;
-        background: ${bgColor || "rgb(0 0 0 / 0.3)"};
-        color: ${color || "#fff"};
+        background: ${bgColor || "var(--ts-base-100-alpha-01-color)"};
+        color: ${color || "var(--ts-base-100-color)"};
         border: 0;
         border-radius: 4px;
         transition: background-color 0.2s ease-in-out;
@@ -26,8 +26,8 @@ function VisualizerVariantButton({ color, bgColor, hoverColor, hoverBgColor, chi
         align-content: center;
         filter: brightness(0.9) saturate(0.9);
         :hover {
-          background: ${hoverBgColor || "#fff"};
-          color: ${hoverColor || "#000"};
+          background: ${hoverBgColor || "var(--ts-base-100-color)"};
+          color: ${hoverColor || "--ts-base-00-color"};
           filter: contrast(1) saturate(1) grayscale(0) brightness(1);
         }
       `}
@@ -81,14 +81,13 @@ function VisualizerPanel() {
           css={css`
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-row-gap: 4px;
-            grid-column-gap: 4px;
+            grid-gap: 6px;
           `}
         >
           {visualizers.map((visualizer) => (
             <PanelButton
               title={visualizer.name}
-              bgColor={isVisualizerOn && activeVisualizer === visualizer.id && "rgb(255 255 255 / 0.8)"}
+              bgColor={isVisualizerOn && activeVisualizer === visualizer.id && "var(--ts-base-100-color)"}
               color={isVisualizerOn && activeVisualizer === visualizer.id && "#008c7e"}
               hoverColor="#008c7e"
               css={css`
@@ -141,7 +140,7 @@ function VisualizerPanel() {
                         }}
                         bgColor={
                           visualizerPrefs["51dc50c8-eb06-4086-ad9c-a89758f63db6"].activeVariant === variant.id &&
-                          "rgb(255 255 255 / 0.8)"
+                          "var(--ts-base-100-color)"
                         }
                         color={
                           visualizerPrefs["51dc50c8-eb06-4086-ad9c-a89758f63db6"].activeVariant === variant.id &&
@@ -175,7 +174,7 @@ function VisualizerPanel() {
                         }}
                         bgColor={
                           visualizerPrefs["685d0ec7-5c52-4e48-a43d-11184a39f3da"].activeVariant === variant.id &&
-                          "rgb(255 255 255 / 0.8)"
+                          "var(--ts-base-100-color)"
                         }
                         color={
                           visualizerPrefs["685d0ec7-5c52-4e48-a43d-11184a39f3da"].activeVariant === variant.id &&
@@ -196,14 +195,14 @@ function VisualizerPanel() {
           <h3
             css={css`
               padding: 2px 5px;
-              color: var(--ts-base-40-color, rgb(255 255 255 / 0.2));
+              color: var(--ts-base-100-alpha-02-color);
             `}
           >
             {getMessage("variants")}
           </h3>
           <div
             css={css`
-              background-color: rgb(0 0 0 / 0.15);
+              background-color: var(--ts-base-100-alpha-005-color);
               width: 210px;
               height: 30px;
               margin: 1px 3px;

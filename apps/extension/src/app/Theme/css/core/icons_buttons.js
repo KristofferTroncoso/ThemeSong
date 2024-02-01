@@ -296,7 +296,9 @@ export const icons_buttons = /*css*/ `
   /* active */
   html {
     --paper-toggle-button-checked-bar-color: var(--ytmusic-setting-item-toggle-active) !important;
+    --ytmusic-setting-item-toggle-active: #1111dd;
   }
+  
   /* disabled */
   html {
     --yt-spec-icon-disabled: var(--ts-base-50-color) !important;

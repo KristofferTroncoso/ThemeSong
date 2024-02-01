@@ -27,4 +27,9 @@ html {
 #items.ytmusic-guide-section-renderer:hover {
   scrollbar-width: auto;
 }
+
+/* popup menu when right clicking a song */
+ytmusic-menu-popup-renderer {
+  scrollbar-width: thin;
+}
 `;
