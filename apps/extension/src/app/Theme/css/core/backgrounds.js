@@ -94,6 +94,7 @@ ytmusic-tabs.stuck {
   box-shadow: rgb(0 0 0 / 0.3) 0px 3px 6px -3px !important;
 }
 
+/* av toggle start */
 ytmusic-av-toggle[playback-mode=ATV_PREFERRED] .song-button.ytmusic-av-toggle {
   background: var(--ts-playerpageavtoggle-color);
 }
@@ -101,6 +102,30 @@ ytmusic-av-toggle[playback-mode=ATV_PREFERRED] .song-button.ytmusic-av-toggle {
 ytmusic-av-toggle[playback-mode=OMV_PREFERRED] .video-button.ytmusic-av-toggle {
   background: var(--ts-playerpageavtoggle-color);
 }
+
+.song-button.ytmusic-av-toggle, .video-button.ytmusic-av-toggle {
+  background-color: var(--ts-base-10-color);
+}
+
+.av-toggle.ytmusic-av-toggle {
+  background-color: var(--ts-base-10-color);
+}
+
+ytmusic-av-toggle[toggle-disabled] .video-button.ytmusic-av-toggle {
+  color: var(--ts-base-100-alpha-04-color);
+}
+
+ytmusic-av-toggle[toggle-disabled] .song-button.ytmusic-av-toggle {
+  color: var(--ts-base-100-alpha-04-color);
+}
+
+.song-button.ytmusic-av-toggle, .video-button.ytmusic-av-toggle {
+  color: var(--ts-base-100-color);
+  --yt-endpoint-color: var(--ts-base-100-color);
+  --yt-endpoint-hover-color: var(--ts-base-100-color);
+  --yt-endpoint-visited-color: var(--ts-base-100-color);
+}
+/* av toggle end */
 
 ytmusic-search-suggestions-section.ytmusic-search-box {
   border-top: 1px solid var(--ts-base-100-alpha-02-color);

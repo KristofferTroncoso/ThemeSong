@@ -45,7 +45,7 @@ function StaticLight() {
       {`:root {
         --ts-navbar-color: hsl(${hue}, ${saturation}%, ${lightness[0]}%);
         --ts-playerpage-color: hsl(${hue}, ${saturation}%, ${lightness[1]}%);
-        --ts-playerpageavtoggle-color: hsl(${hue}, ${saturation}%, ${21 + (lightness[1] / 25) * 14}%);
+        --ts-playerpageavtoggle-color: hsl(${hue}, ${saturation}%, 80%);
         --ts-playerbar-color: hsl(${hue}, ${saturation}%, ${lightness[2]}%);
         --ts-body-color: hsl(${hue}, ${saturation}%, ${lightness[3]}%);
         --ts-body-alpha-gradient-color: hsl(${hue} ${saturation}% ${lightness[3]}% / 90%);

@@ -78,7 +78,7 @@ function DynamicLight() {
             --ts-playerpageavtoggle-color: hsl(
               var(--ts-palette-dominant-hue), 
               ${saturation}%, 
-              ${21 + (lightness[1] / 25) * 14}%
+              80%
             );
             --ts-playerbar-color: hsl(
               var(--ts-palette-dominant-hue), 
