@@ -5,14 +5,15 @@ import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 const CustomTooltip = styled(({ className, ...props }) => <Tooltip {...props} arrow classes={{ popper: className }} />)(
   ({ theme }) => ({
     [`& .${tooltipClasses.arrow}`]: {
-      color: "#111",
+      color: "var(--ts-base-100-color, #000)",
       fontSize: "12px",
     },
     [`& .${tooltipClasses.tooltip}`]: {
-      backgroundColor: "#111",
+      backgroundColor: "var(--ts-base-100-color, #000)",
       top: "-7px !important",
       fontSize: "12px",
       padding: "4px 7px",
+      color: "var(--ts-base-00-color, #fff)",
     },
   })
 );
@@ -36,11 +37,11 @@ function PanelButton({ color, bgColor, hoverColor, hoverBgColor, children, title
           justify-content: center;
           align-items: center;
           align-content: center;
-          filter: brightness(0.9) saturate(0.9);
+          filter: brightness(1) saturate(1);
           :hover {
             background: ${hoverBgColor || "var(--ts-base-100-color)"};
             color: ${hoverColor || "var(--ts-base-100-color)"};
-            filter: contrast(1) saturate(1) grayscale(0) brightness(1);
+            filter: contrast(1.1) brightness(1.1);
           }
         `}
         {...props}

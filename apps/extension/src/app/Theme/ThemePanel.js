@@ -71,8 +71,8 @@ function ThemePanel() {
         <PanelButton
           title="Dynamic"
           bgColor={activeTheme === "db8854e3-6753-4639-b244-c8091f3b9fcb" && "var(--ts-base-100-color)"}
-          color={activeTheme === "db8854e3-6753-4639-b244-c8091f3b9fcb" && "#1565e6"}
-          hoverColor="#1565e6"
+          color={activeTheme === "db8854e3-6753-4639-b244-c8091f3b9fcb" && "#008DFF"}
+          hoverColor="#008DFF"
           css={css`
             height: 42px;
             min-width: 45px;

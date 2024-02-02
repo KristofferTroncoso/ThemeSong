@@ -263,4 +263,12 @@ tp-yt-paper-tabs.ytmusic-playlist-form {
 .summary.ytmusic-setting-read-only-item-renderer {
   color: var(--ts-primary-text-color);
 }
+
+/* pick artists you like */
+.primary-text.ytmusic-tastebuilder-renderer {
+  color: var(--ts-primary-text-color);
+  --yt-endpoint-color: var(--ts-primary-text-color);
+  --yt-endpoint-hover-color: var(--ts-primary-text-color);
+  --yt-endpoint-visited-color: var(--ts-primary-text-color);
+}
 `;

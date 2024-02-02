@@ -47,9 +47,9 @@ function DarkModePanel() {
         </h3>
         <div
           css={css`
-            background-color: rgb(0 0 0 / 0.15);
+            background-color: var(--ts-base-100-alpha-005-color);
             width: 190px;
-            height: 34px;
+            height: 32px;
             margin: 3px;
             border-radius: 7px;
           `}
@@ -104,11 +104,11 @@ function DarkModePanel() {
               width: 60px;
               margin: 0 3px;
               background: ${activeThemeUserPrefs.appearance === "light" && "var(--ts-base-100-color)"};
-              color: ${activeThemeUserPrefs.appearance === "light" && "#ff8400"};
+              color: ${activeThemeUserPrefs.appearance === "light" && "#fcad00"};
               border: 0;
               border-radius: 6px;
               :hover {
-                color: #fcad00;
+                color: #ff8400;
               }
             `}
             onClick={(e) => handleDarkLightChange("light")}

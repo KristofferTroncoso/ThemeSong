@@ -73,7 +73,7 @@ function PanelPage() {
             </p>
           }
         >
-          <TuneIcon style={{ fontSize: "16px" }} />
+          <TuneIcon style={{ fontSize: "14px" }} />
         </Tooltip>
       </div>
     </div>

@@ -44,7 +44,7 @@ export const playBarTextAndIconsColor = /*css*/ `
 Feedback sent to YTM but no fix. Other users confirmed issue. */
 export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
 
-  @media (max-height: 1100px) and (min-width: 1200px) {
+  @media (max-height: 1100px) and (min-width: 1300px) {
     ytmusic-player[player-ui-state=PLAYER_PAGE_OPEN][playback-mode="ATV_PREFERRED"] {
       margin: auto 55px !important;
     }

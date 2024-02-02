@@ -55,7 +55,7 @@ function DynamicDark() {
           --ts-playerpageavtoggle-color: hsl(
             var(--ts-palette-dominant-hue),
             ${saturation}%,
-            ${21 + (lightness[1] / 25) * 14}%
+            ${21 + lightness[1] / 25}%
           );
           --ts-playerbar-color: hsl(var(--ts-palette-dominant-hue), ${saturation}%, ${curveLight(lightness[2])}%);
           --ts-body-color: hsl(var(--ts-palette-dominant-hue), ${saturation}%, ${curveLight(lightness[3])}%);

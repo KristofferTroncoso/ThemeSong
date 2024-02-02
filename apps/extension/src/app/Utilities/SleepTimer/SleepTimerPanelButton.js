@@ -12,8 +12,8 @@ function SleepTimerPanelButton() {
     <PanelButton
       onClick={(e) => setTimerIsDialogOpen(true)}
       title="Sleep Timer"
-      hoverColor="#ac13cf"
-      bgColor={isActive && "#ac13cf"}
+      hoverColor="#BE15E4"
+      bgColor={isActive && "#BE15E4"}
     >
       <MdAccessAlarm
         css={css`

@@ -187,4 +187,9 @@ tp-yt-paper-toast {
 .immersive-background ytmusic-fullbleed-thumbnail-renderer {
   filter: var(--ts-image-filter-brightness, brightness(1));
 }
+
+/* pick artists you like footer */
+.buttons.ytmusic-tastebuilder-renderer {
+  background: var(--ts-base-10-color);
+}
 `;

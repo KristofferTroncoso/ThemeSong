@@ -81,7 +81,8 @@ function VisualizerPanel() {
           css={css`
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-gap: 6px;
+            grid-gap: 7px;
+            padding: 0px 4px 2px;
           `}
         >
           {visualizers.map((visualizer) => (
