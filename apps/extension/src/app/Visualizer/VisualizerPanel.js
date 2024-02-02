@@ -204,9 +204,9 @@ function VisualizerPanel() {
           <div
             css={css`
               background-color: var(--ts-base-100-alpha-005-color);
-              width: 210px;
+              width: 190px;
               height: 30px;
-              margin: 1px 3px;
+              margin: auto;
               border-radius: 5px;
             `}
           />

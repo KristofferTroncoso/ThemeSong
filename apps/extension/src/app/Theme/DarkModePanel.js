@@ -50,7 +50,7 @@ function DarkModePanel() {
             background-color: var(--ts-base-100-alpha-005-color);
             width: 190px;
             height: 32px;
-            margin: 3px;
+            margin: auto;
             border-radius: 7px;
           `}
         />
@@ -73,7 +73,7 @@ function DarkModePanel() {
         <div
           css={css`
             display: flex;
-            justify-content: start;
+            justify-content: center;
             align-items: center;
           `}
         >
