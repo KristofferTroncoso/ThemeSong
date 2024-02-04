@@ -16,7 +16,7 @@ function DynamicDark() {
   const playerUiState = useStore((state) => state.player.playerUiState);
 
   let hue = (dominantColorHSL[0] * 360).toFixed();
-  let saturation = (dominantColorHSL[1] * 100 * dynamicDarkPrefs.saturation).toFixed();
+  let saturation = dominantColorHSL[2] < 0.1 ? 0 : (dominantColorHSL[1] * 100 * dynamicDarkPrefs.saturation).toFixed();
 
   const curveLight = useCallback(
     (brightness) => {
