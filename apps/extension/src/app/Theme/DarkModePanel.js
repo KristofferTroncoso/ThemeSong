@@ -6,13 +6,11 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import { CgDarkMode } from "react-icons/cg";
 
 import PanelButton from "../QuickAccessPanel/components/PanelButton";
-import useLocalization from "../Extension/Localization/useLocalization";
 
 function DarkModePanel() {
   const activeTheme = useStore((state) => state.theme.prefs.activeTheme);
   const activeThemeUserPrefs = useStore((state) => state.theme.prefs[activeTheme]);
   const setSingleThemePrefs = useStore((state) => state.theme.setSingleThemePrefs);
-  const getMessage = useLocalization();
 
   function handleDarkLightChange(value) {
     if (activeThemeUserPrefs.appearance !== value) {
@@ -36,16 +34,11 @@ function DarkModePanel() {
     )
   ) {
     return (
-      <div>
-        <h3
-          css={css`
-            padding: 2px 5px;
-            color: var(--ts-base-40-color, rgb(255 255 255 / 0.2));
-            margin-bottom: 2px;
-          `}
-        >
-          {getMessage("appearance")}
-        </h3>
+      <div
+        css={css`
+          margin-top: 18px;
+        `}
+      >
         <div
           css={css`
             background-color: var(--ts-base-100-alpha-005-color);
@@ -61,17 +54,9 @@ function DarkModePanel() {
     return (
       <div
         css={css`
-          margin-bottom: 0;
+          margin-top: 18px;
         `}
       >
-        <h3
-          css={css`
-            padding: 2px 5px;
-            margin-bottom: 2px;
-          `}
-        >
-          {getMessage("appearance")}
-        </h3>
         <div
           css={css`
             display: flex;
@@ -89,7 +74,7 @@ function DarkModePanel() {
               background: ${activeThemeUserPrefs.appearance === "dark" && "var(--ts-base-100-color)"};
               color: ${activeThemeUserPrefs.appearance === "dark" && "#9d00ff"};
               border: 0;
-              border-radius: 6px;
+              border-radius: 40px;
               :hover {
                 color: #9d00ff;
               }
@@ -108,7 +93,7 @@ function DarkModePanel() {
               background: ${activeThemeUserPrefs.appearance === "light" && "var(--ts-base-100-color)"};
               color: ${activeThemeUserPrefs.appearance === "light" && "#fcad00"};
               border: 0;
-              border-radius: 6px;
+              border-radius: 40px;
               :hover {
                 color: #ff8400;
               }
@@ -131,7 +116,7 @@ function DarkModePanel() {
               background: ${activeThemeUserPrefs.appearance === "system" && "var(--ts-base-100-color)"};
               color: ${activeThemeUserPrefs.appearance === "system" && "#009961"};
               border: 0;
-              border-radius: 6px;
+              border-radius: 40px;
               :hover {
                 color: #009961;
               }
