@@ -1,7 +1,6 @@
 import { css } from "@emotion/react";
 
 import { IoColorPalette } from "react-icons/io5";
-import InvertColorsOffIcon from "@mui/icons-material/InvertColorsOff";
 import { GiAtom } from "react-icons/gi";
 import ColorizeIcon from "@mui/icons-material/Colorize";
 import AppleIcon from "@mui/icons-material/Apple";
@@ -57,7 +56,7 @@ function ThemePanel() {
             height: 42px;
             min-width: 45px;
             width: 70px;
-            margin: 0 3px;
+            margin: 0 4px;
             border: 0;
             border-radius: 6px;
           `}
@@ -79,7 +78,7 @@ function ThemePanel() {
             height: 42px;
             min-width: 45px;
             width: 70px;
-            margin: 0 3px;
+            margin: 0 4px;
             border: 0;
             border-radius: 6px;
           `}
@@ -100,7 +99,7 @@ function ThemePanel() {
             height: 42px;
             min-width: 45px;
             width: 70px;
-            margin: 0 3px;
+            margin: 0 4px;
             border: 0;
             border-radius: 6px;
             padding: 0;
@@ -122,7 +121,7 @@ function ThemePanel() {
             height: 42px;
             min-width: 45px;
             width: 70px;
-            margin: 0 3px;
+            margin: 0 4px;
             border: 0;
             border-radius: 6px;
             padding: 3px;
