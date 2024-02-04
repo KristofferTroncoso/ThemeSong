@@ -36,7 +36,7 @@ export const createThemeSlice = (set, get) => ({
       },
       light: {
         saturation: 0.9,
-        lightness: [92, 80, 90, 95],
+        lightness: [90, 75, 88, 94],
       },
     },
     "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8": {
