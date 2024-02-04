@@ -50,7 +50,7 @@ function YouTubeMusicMobile() {
         /* css */ ` 
         :root  {
           --ts-navbar-color: oklch(0.35 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h));
-          --ts-sidebar-color: linear-gradient(to bottom, oklch(0.35 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h)), oklch(0.25 calc(var(--ts-palette-dominant-c) / 5) var(--ts-palette-dominant-h)));
+          --ts-sidebar-color: linear-gradient(to bottom, oklch(0.35 calc(var(--ts-palette-dominant-c) / 3) var(--ts-palette-dominant-h)) 2%, oklch(0.25 calc(var(--ts-palette-dominant-c) / 5) var(--ts-palette-dominant-h)) 82%);
           --ts-playerbar-color: oklch(0.25 calc(var(--ts-palette-dominant-c) / 5) var(--ts-palette-dominant-h));
         }
       `}
