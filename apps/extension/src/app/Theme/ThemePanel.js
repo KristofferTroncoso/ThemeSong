@@ -20,7 +20,7 @@ function ThemePanel() {
     if (activeTheme !== value) {
       setActiveTheme(value);
     } else {
-      console.log("Already active");
+      setActiveTheme("416034f2-bfb8-46e8-9929-5805dd59a688");
     }
   };
 
@@ -35,9 +35,10 @@ function ThemePanel() {
           padding: 2px 5px;
           display: flex;
           align-items: center;
+          margin-bottom: 2px;
         `}
       >
-        <IoColorPalette style={{ fontSize: "16px", marginRight: "5px" }} />
+        <IoColorPalette style={{ fontSize: "15px", marginRight: "5px" }} />
         <span>{getMessage("themes")}</span>
       </h3>
       <div
@@ -47,27 +48,6 @@ function ThemePanel() {
           align-items: center;
         `}
       >
-        <PanelButton
-          title="Off / YTM Default"
-          bgColor={activeTheme === "416034f2-bfb8-46e8-9929-5805dd59a688" && "var(--ts-base-100-color)"}
-          color={activeTheme === "416034f2-bfb8-46e8-9929-5805dd59a688" && "var(--ts-base-00-color)"}
-          hoverColor="var(--ts-base-00-color)"
-          css={css`
-            height: 42px;
-            min-width: 45px;
-            width: 70px;
-            margin: 0 3px;
-            border: 0;
-            border-radius: 6px;
-          `}
-          onClick={(e) => handleClick("416034f2-bfb8-46e8-9929-5805dd59a688")}
-        >
-          <InvertColorsOffIcon
-            css={css`
-              font-size: 20px;
-            `}
-          />
-        </PanelButton>
         <PanelButton
           title="Dynamic"
           bgColor={activeTheme === "db8854e3-6753-4639-b244-c8091f3b9fcb" && "var(--ts-base-100-color)"}
@@ -133,30 +113,28 @@ function ThemePanel() {
             `}
           />
         </PanelButton>
-        {activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && (
-          <PanelButton
-            title="YouTube Music Mobile"
-            hoverColor="red"
-            bgColor={activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && "var(--ts-base-100-color)"}
-            color={activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && "red"}
+        <PanelButton
+          title="YouTube Music Mobile"
+          hoverColor="red"
+          bgColor={activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && "var(--ts-base-100-color)"}
+          color={activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && "red"}
+          css={css`
+            height: 42px;
+            min-width: 45px;
+            width: 70px;
+            margin: 0 3px;
+            border: 0;
+            border-radius: 6px;
+            padding: 3px;
+          `}
+          onClick={(e) => handleClick("55f83bbd-d794-49a8-8912-2b53af3f1d3f")}
+        >
+          <SiYoutubemusic
             css={css`
-              height: 42px;
-              min-width: 45px;
-              width: 70px;
-              margin: 0 3px;
-              border: 0;
-              border-radius: 6px;
-              padding: 3px;
+              font-size: 24px;
             `}
-            onClick={(e) => handleClick("55f83bbd-d794-49a8-8912-2b53af3f1d3f")}
-          >
-            <SiYoutubemusic
-              css={css`
-                font-size: 26px;
-              `}
-            />
-          </PanelButton>
-        )}
+          />
+        </PanelButton>
       </div>
     </div>
   );

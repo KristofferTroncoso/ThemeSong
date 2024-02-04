@@ -41,6 +41,7 @@ function DarkModePanel() {
           css={css`
             padding: 2px 5px;
             color: var(--ts-base-40-color, rgb(255 255 255 / 0.2));
+            margin-bottom: 2px;
           `}
         >
           {getMessage("appearance")}
@@ -66,6 +67,7 @@ function DarkModePanel() {
         <h3
           css={css`
             padding: 2px 5px;
+            margin-bottom: 2px;
           `}
         >
           {getMessage("appearance")}
@@ -80,7 +82,7 @@ function DarkModePanel() {
           <PanelButton
             title="Dark Mode"
             css={css`
-              height: 38px;
+              height: 34px;
               min-width: 45px;
               width: 60px;
               margin: 0 3px;
@@ -99,7 +101,7 @@ function DarkModePanel() {
           <PanelButton
             title="Light Mode"
             css={css`
-              height: 38px;
+              height: 34px;
               min-width: 45px;
               width: 60px;
               margin: 0 3px;
@@ -122,7 +124,7 @@ function DarkModePanel() {
           <PanelButton
             title="Use Device Setting"
             css={css`
-              height: 38px;
+              height: 34px;
               min-width: 45px;
               width: 60px;
               margin: 0 3px;
