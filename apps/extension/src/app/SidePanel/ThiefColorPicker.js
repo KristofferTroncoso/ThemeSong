@@ -13,23 +13,16 @@ function ThiefColorPicker() {
     getPalette();
 
     function getPalette() {
-      document.getElementById("sideplayerimage").crossOrigin = "anonymous";
-
-      const rgbToHex = (r, g, b) =>
-        "#" +
-        [r, g, b]
-          .map((x) => {
-            const hex = x.toString(16);
-            return hex.length === 1 ? "0" + hex : hex;
-          })
-          .join("");
-
-      setTimeout(() => {
+      if (sideplayerimage.complete && sideplayerimage.width > 0) {
+        console.log("THIEEEEEEEEEEEEEEEEEEEEEF");
         let palette = colorThief.getPalette(document.getElementById("sideplayerimage"));
         console.log(palette);
-        setColor(rgbToHex(palette[0][0], palette[0][1], palette[0][2]));
-        setColor2(rgbToHex(palette[1][0], palette[1][1], palette[1][2]));
-      }, 500);
+        setColor(`rgb(${palette[0][0]} ${palette[0][1]} ${palette[0][2]})`);
+        setColor2(`rgb(${palette[1][0]} ${palette[1][1]} ${palette[1][2]})`);
+      } else {
+        console.log("NOT THEF");
+        setTimeout(getPalette, 10);
+      }
     }
 
     function handleSongChange(mutationList) {
@@ -41,7 +34,7 @@ function ThiefColorPicker() {
           console.log("same song image");
         } else {
           console.log("song image changed");
-          setTimeout(getPalette, 1);
+          setTimeout(getPalette, 50);
         }
       }
     }

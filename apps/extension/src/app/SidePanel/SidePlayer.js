@@ -127,6 +127,7 @@ function SidePlayer() {
               id="sideplayerimage"
               src={metadata.artwork[metadata.artwork.length - 1].src || tsicon}
               alt="album cover"
+              crossOrigin="anonymous"
               css={css`
                 width: inherit;
                 height: inherit;
