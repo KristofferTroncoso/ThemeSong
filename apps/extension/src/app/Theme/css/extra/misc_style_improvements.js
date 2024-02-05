@@ -43,8 +43,32 @@ export const playBarTextAndIconsColor = /*css*/ `
 /* June 2023. Album image on player page is directly touching the player bar.
 Feedback sent to YTM but no fix. Other users confirmed issue. */
 export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
+  #player-page {
+    container-type: inline-size;
+    container-name: player-page;
+  }
 
-  @media (max-height: 1100px) and (min-width: 1300px) {
+  @container player-page (min-width: 840px) and (max-width: 999px) {
+    ytmusic-player[player-ui-state=PLAYER_PAGE_OPEN][playback-mode="ATV_PREFERRED"] {
+      margin: auto 20px !important;
+    }
+
+    .av.ytmusic-player-page {
+      padding-bottom: 5px !important;
+    }
+  }
+
+  @container player-page (min-width: 1000px) and (max-width: 1199px) {
+    ytmusic-player[player-ui-state=PLAYER_PAGE_OPEN][playback-mode="ATV_PREFERRED"] {
+      margin: auto 40px !important;
+    }
+
+    .av.ytmusic-player-page {
+      padding-bottom: 5px !important;
+    }
+  }
+
+  @container player-page (min-width: 1200px) and (max-width: 2199px) {
     ytmusic-player[player-ui-state=PLAYER_PAGE_OPEN][playback-mode="ATV_PREFERRED"] {
       margin: auto 55px !important;
     }
@@ -54,6 +78,11 @@ export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
     }
   }
 
+  @container player-page (min-width: 2200px) and (max-width: 2400px) {
+    ytmusic-player[player-ui-state=PLAYER_PAGE_OPEN][playback-mode="ATV_PREFERRED"] {
+      margin: auto 80px !important;
+    }
+  }
 `;
 
 /* the box-shadow on the new sidebar-layout Search input doesn't look so good. it only looks good on dark or Off because you can't see it haha */
