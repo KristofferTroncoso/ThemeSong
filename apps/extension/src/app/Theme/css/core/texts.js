@@ -276,4 +276,9 @@ tp-yt-paper-tabs.ytmusic-playlist-form {
 .index.ytmusic-responsive-list-item-renderer {
   color: var(--ts-secondary-text-color);
 }
+
+/* lyrics Source subtitle */
+.footer.ytmusic-description-shelf-renderer {
+  color: var(--ts-secondary-text-color);
+}
 `;
