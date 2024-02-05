@@ -83,6 +83,10 @@ export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
       margin: auto 80px !important;
     }
   }
+
+  ytmusic-player-page:not([video-mode]):not([player-fullscreened]) #player.ytmusic-player-page {
+    max-width: 900px;
+  }
 `;
 
 /* the box-shadow on the new sidebar-layout Search input doesn't look so good. it only looks good on dark or Off because you can't see it haha */
