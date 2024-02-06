@@ -55,5 +55,5 @@ select {
 }
 
 ::selection {
-  background: oklch(from var(--ts-color) 55% 90% h); /* WebKit/Blink Browsers */
+  background: oklch(from var(--ts-picked) 55% 90% h); /* WebKit/Blink Browsers */
 }

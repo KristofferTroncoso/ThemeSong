@@ -6,9 +6,11 @@ import YtmIcon from "../YtmLogo/YtmIcon";
 // import { IoRadioOutline } from "react-icons/io5";
 import LikeButton from "./components/LikeButton";
 import SongControls from "./components/SongControls";
+import { useState } from "react";
 
 function SidePlayer() {
   const metadata = useStore((state) => state.media.metadata);
+  const [showPalette, setShowPalette] = useState(false);
 
   function handlePlayPause(e) {
     console.log(e);
@@ -68,8 +70,8 @@ function SidePlayer() {
           text-align: center;
           background: linear-gradient(
             to bottom,
-            oklch(from var(--ts-color) 35% c h),
-            oklch(from var(--ts-color2) 30% calc(c / 2) h),
+            oklch(from var(--ts-color-0) 35% c h),
+            oklch(from var(--ts-color-1) 30% calc(c / 2) h),
             #111
           );
           display: flex;
@@ -100,13 +102,31 @@ function SidePlayer() {
                 background: 0;
 
                 :hover {
-                  filter: drop-shadow(0px 0px 10px oklch(from var(--ts-color2) 85% 100% h));
+                  filter: drop-shadow(0px 0px 10px oklch(from var(--ts-color-1) 85% 100% h));
                 }
               `}
             >
               <YtmIcon full />
             </button>
-            <div></div>
+            <div
+              css={css`
+                height: 15px;
+                width: 90px;
+                display: flex;
+                margin: 5px 5px 0;
+                box-shadow: 0 0 20px rgb(0 0 0 / 0.1);
+                filter: ${showPalette ? "opacity(1)" : "opacity(0)"};
+                cursor: pointer;
+              `}
+              onClick={(e) => (showPalette ? setShowPalette(false) : setShowPalette(true))}
+            >
+              <div style={{ background: "var(--ts-color-0)", width: "15px", height: "15px" }}></div>
+              <div style={{ background: "var(--ts-color-1)", width: "15px", height: "15px" }}></div>
+              <div style={{ background: "var(--ts-color-2)", width: "15px", height: "15px" }}></div>
+              <div style={{ background: "var(--ts-color-3)", width: "15px", height: "15px" }}></div>
+              <div style={{ background: "var(--ts-color-4)", width: "15px", height: "15px" }}></div>
+              <div style={{ background: "var(--ts-color-5)", width: "15px", height: "15px" }}></div>
+            </div>
           </div>
           <button
             onClick={handlePlayPause}

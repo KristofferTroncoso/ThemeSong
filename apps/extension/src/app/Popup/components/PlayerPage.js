@@ -78,8 +78,8 @@ function PlayerPage() {
           text-align: center;
           background: linear-gradient(
             to bottom,
-            oklch(from var(--ts-color) 35% c h),
-            oklch(from var(--ts-color2) 30% calc(c / 2) h),
+            oklch(from var(--ts-color-0) 35% c h),
+            oklch(from var(--ts-color-1) 30% calc(c / 2) h),
             #111
           );
           display: flex;
