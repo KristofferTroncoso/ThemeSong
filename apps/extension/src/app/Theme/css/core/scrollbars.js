@@ -6,6 +6,10 @@ export const scrollbars = /*css*/ `
 
 /* new scrollbar properties? chrome version > 120 */
 html {
+  scrollbar-color: var(--ts-base-100-alpha-02-color) var(--ts-base-100-alpha-005-color);
+}
+
+body {
   scrollbar-color: var(--ts-base-100-alpha-02-color) transparent;
 }
 
