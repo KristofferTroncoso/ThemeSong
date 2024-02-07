@@ -99,7 +99,7 @@ function Palette() {
           console.log("same song image");
         } else {
           console.log("song image changed");
-          setTimeout(getPalette, 1);
+          setTimeout(getPalette, 100);
         }
       }
     }
