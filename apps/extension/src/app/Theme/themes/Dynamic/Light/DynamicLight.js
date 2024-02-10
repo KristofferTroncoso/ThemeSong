@@ -36,6 +36,17 @@ function DynamicLight() {
     }
   }
 
+  function calDark(brightness) {
+    let hueNum = parseInt(hue, 10);
+    let brightnessNum = parseInt(brightness, 10);
+
+    if (hueNum > 35 && hueNum < 200) {
+      return brightnessNum * 0.6;
+    } else {
+      return brightnessNum;
+    }
+  }
+
   useEffect(() => {
     if (playerUiState === "PLAYER_PAGE_OPEN") {
       menubar.content = `hsl(${hue}, ${saturation}%, ${calcCurvedBrightness(lightness[1])}%)`;
@@ -62,7 +73,7 @@ function DynamicLight() {
             --ts-dynamiclight-accent-color: hsl(
               var(--ts-palette-0-hue)
               var(--ts-palette-0-saturation)
-              16%
+              ${calDark(20)}%
             );
 
             --ts-navbar-color: hsl(
@@ -98,7 +109,7 @@ function DynamicLight() {
             --ts-playprogress-color: hsl(
               var(--ts-palette-0-hue),
               var(--ts-palette-0-saturation),
-              18%
+              ${calDark(18)}%
             );
 
             --ts-playprogress-knob-color: var(--ts-playprogress-color);

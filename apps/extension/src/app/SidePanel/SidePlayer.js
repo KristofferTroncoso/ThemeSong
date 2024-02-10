@@ -200,13 +200,14 @@ function SidePlayer() {
         <SongControls />
         <div
           css={css`
-            margin-top: 20px;
+            margin-top: 5px;
             text-align: center;
 
             h3 {
               font-weight: 400 !important;
             }
           `}
+          id="songpanel"
         >
           <SongPanel />
         </div>

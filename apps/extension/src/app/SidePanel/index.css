@@ -28,6 +28,7 @@ input {
 
 html {
   scrollbar-color: var(--ts-base-100-alpha-02-color, rgb(255 255 255 / 0.2)) transparent;
+  scrollbar-width: thin;
 }
 
 button {
@@ -56,4 +57,10 @@ select {
 
 ::selection {
   background: oklch(from var(--ts-picked) 55% 90% h); /* WebKit/Blink Browsers */
+}
+
+@media (max-height: 650px) {
+  #songpanel {
+    display: none;
+  }
 }

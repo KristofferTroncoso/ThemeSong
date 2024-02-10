@@ -147,7 +147,7 @@ ytmusic-search-suggestions-section {
 /* aside from the gradient, there's also a default dark filter applied to the artist image header on the artist page */
 /* this needs to be set to a white/light filter on light themes or else it wont look right */
 .image.ytmusic-immersive-header-renderer~.content-container-wrapper.ytmusic-immersive-header-renderer {
-  background-color: var(--ts-base-00-alpha-03-color) !important;
+  background-color: var(--ts-base-00-alpha-04-color) !important;
 }
 
 /* when searching a song, the Top Result has a bg gradient applied */

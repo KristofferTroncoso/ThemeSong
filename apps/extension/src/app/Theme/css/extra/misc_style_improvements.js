@@ -48,19 +48,23 @@ export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
     container-name: player-page;
   }
 
+  ytmusic-player-page:not([video-mode]):not([player-fullscreened]) #player.ytmusic-player-page {
+    max-width: 900px;
+  }
+
   @container player-page (min-width: 840px) and (max-width: 999px) {
-    ytmusic-player[player-ui-state=PLAYER_PAGE_OPEN][playback-mode="ATV_PREFERRED"] {
-      margin: auto 20px !important;
+    #main-panel {
+      padding: 0 30px !important;
     }
 
-    .av.ytmusic-player-page {
-      padding-bottom: 5px !important;
+    ytmusic-player-page:not([video-mode]):not([player-fullscreened]) #player.ytmusic-player-page {
+      max-width: 500px;
     }
   }
 
   @container player-page (min-width: 1000px) and (max-width: 1199px) {
-    ytmusic-player[player-ui-state=PLAYER_PAGE_OPEN][playback-mode="ATV_PREFERRED"] {
-      margin: auto 40px !important;
+    #main-panel {
+      padding: 0 50px !important;
     }
 
     .av.ytmusic-player-page {
@@ -68,9 +72,49 @@ export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
     }
   }
 
-  @container player-page (min-width: 1200px) and (max-width: 2199px) {
-    ytmusic-player[player-ui-state=PLAYER_PAGE_OPEN][playback-mode="ATV_PREFERRED"] {
-      margin: auto 55px !important;
+  @container player-page (min-width: 1200px) and (max-width: 1399px) {
+    #main-panel {
+      padding: 0 80px !important;
+    }
+
+    .av.ytmusic-player-page {
+      padding-bottom: 5px !important;
+    }
+  }
+
+  @container player-page (min-width: 1400px) and (max-width: 1599px) {
+    #main-panel {
+      padding: 0 115px !important;
+    }
+
+    .av.ytmusic-player-page {
+      padding-bottom: 5px !important;
+    }
+  }
+
+  @container player-page (min-width: 1600px) and (max-width: 1799px) {
+    #main-panel {
+      padding: 0 130px !important;
+    }
+
+    .av.ytmusic-player-page {
+      padding-bottom: 5px !important;
+    }
+  }
+
+  @container player-page (min-width: 1800px) and (max-width: 1999px) {
+    #main-panel {
+      padding: 0 180px !important;
+    }
+
+    .av.ytmusic-player-page {
+      padding-bottom: 5px !important;
+    }
+  }
+
+  @container player-page (min-width: 2000px) and (max-width: 2199px) {
+    #main-panel {
+      padding: 0 220px !important;
     }
 
     .av.ytmusic-player-page {
@@ -79,14 +123,15 @@ export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
   }
 
   @container player-page (min-width: 2200px) and (max-width: 2400px) {
-    ytmusic-player[player-ui-state=PLAYER_PAGE_OPEN][playback-mode="ATV_PREFERRED"] {
-      margin: auto 80px !important;
+    #main-panel {
+      padding: 0 240px !important;
+    }
+
+    .av.ytmusic-player-page {
+      padding-bottom: 5px !important;
     }
   }
 
-  ytmusic-player-page:not([video-mode]):not([player-fullscreened]) #player.ytmusic-player-page {
-    max-width: 900px;
-  }
 `;
 
 /* the box-shadow on the new sidebar-layout Search input doesn't look so good. it only looks good on dark or Off because you can't see it haha */
@@ -136,6 +181,15 @@ export const popupStyling = /*css*/ `
   }
 `;
 
+/* on playerpage, when collapsing and un-collapsing sidebar, 
+a scrollbar track shows up on the right. */
+export const playerPageScrollbarShowsWhenSidebar = /*css*/ `
+  html:has(#layout[player-ui-state="PLAYER_PAGE_OPEN"]) {
+    scrollbar-width: none;
+    margin-right: 18px;
+  }
+`;
+
 export const misc_style_improvements = /*css*/ `
   /* ThemeSong */
   /* universal styles */
@@ -149,4 +203,5 @@ export const misc_style_improvements = /*css*/ `
   ${sidebarFocus}
   ${boldSidebarHeaders}
   ${popupStyling}
+  ${playerPageScrollbarShowsWhenSidebar}
 `;

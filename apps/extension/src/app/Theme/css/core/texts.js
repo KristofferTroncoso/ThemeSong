@@ -281,4 +281,12 @@ tp-yt-paper-tabs.ytmusic-playlist-form {
 .footer.ytmusic-description-shelf-renderer {
   color: var(--ts-secondary-text-color);
 }
+
+/* privacy dropdown when creating playlist */
+.label.ytmusic-dropdown-item-renderer {
+  color: var(--ts-primary-text-color);
+  --yt-endpoint-color: var(--ts-primary-text-color);
+  --yt-endpoint-hover-color: var(--ts-primary-text-color);
+  --yt-endpoint-visited-color: var(--ts-primary-text-color);
+}
 `;
