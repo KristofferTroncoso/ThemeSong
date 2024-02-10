@@ -43,7 +43,7 @@ export const playBarTextAndIconsColor = /*css*/ `
 /* June 2023. Album image on player page is directly touching the player bar.
 Feedback sent to YTM but no fix. Other users confirmed issue. */
 export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
-  #player-page {
+  #player-page:not([video-mode]) {
     container-type: inline-size;
     container-name: player-page;
   }
@@ -84,7 +84,7 @@ export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
 
   @container player-page (min-width: 1400px) and (max-width: 1599px) {
     #main-panel {
-      padding: 0 115px !important;
+      padding: 0 125px !important;
     }
 
     .av.ytmusic-player-page {
@@ -94,7 +94,7 @@ export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
 
   @container player-page (min-width: 1600px) and (max-width: 1799px) {
     #main-panel {
-      padding: 0 130px !important;
+      padding: 0 140px !important;
     }
 
     .av.ytmusic-player-page {
@@ -190,6 +190,96 @@ export const playerPageScrollbarShowsWhenSidebar = /*css*/ `
   }
 `;
 
+/* sidebar a little too narrow at 240px.
+  apple music web's sidebar is 260px. 
+  spotify's is adjustable but min at 280px.
+*/
+export const sidebarALittleTooNarrow = /*css*/ `
+  ytmusic-guide-renderer {
+    width: 260px;
+  }
+
+  ytmusic-app[is-bauhaus-sidenav-enabled]:not([guide-collapsed]) {
+    --ytmusic-guide-width: 260px;
+  }
+`;
+
+export const adjustPlayerPagePadding = /*css*/ `
+@media(max-width: 615px) {
+  ytmusic-player-page {
+      --ytmusic-player-page-vertical-padding:24px;
+      --ytmusic-player-page-horizontal-padding: 0px;
+      --ytmusic-player-page-content-gap: 32px;
+      --ytmusic-player-page-side-panel-width: 100%
+  }
+
+  ytmusic-player-page[has-info-panel] {
+      --ytmusic-player-page-vertical-padding: 24px;
+      --ytmusic-player-page-horizontal-padding: 0px;
+      --ytmusic-player-page-content-gap: 104px;
+      --ytmusic-player-page-side-panel-width: 100%
+  }
+
+  ytmusic-player-page[has-info-panel][video-mode] {
+      --ytmusic-player-page-vertical-padding: 16px
+  }
+}
+
+@media(min-width: 616px) and (max-width:935px) {
+  ytmusic-player-page {
+      --ytmusic-player-page-vertical-padding:16px;
+      --ytmusic-player-page-horizontal-padding: 32px;
+      --ytmusic-player-page-content-gap: 64px;
+      --ytmusic-player-page-side-panel-width: 100%
+  }
+}
+
+@media(min-width: 936px) and (max-width:1149px) {
+  ytmusic-player-page {
+      --ytmusic-player-page-vertical-padding:24px;
+      --ytmusic-player-page-horizontal-padding: 48px;
+      --ytmusic-player-page-content-gap: 48px;
+      --ytmusic-player-page-side-panel-width: 40%
+  }
+}
+
+@media(min-width: 1150px) and (max-width:1363px) {
+  ytmusic-player-page {
+      --ytmusic-player-page-vertical-padding:32px;
+      --ytmusic-player-page-horizontal-padding: 46px;
+      --ytmusic-player-page-content-gap: 46px;
+      --ytmusic-player-page-side-panel-width: 36%
+  }
+}
+
+@media(min-width: 1364px) and (max-width:1577px) {
+  ytmusic-player-page {
+      --ytmusic-player-page-vertical-padding:40px;
+      --ytmusic-player-page-horizontal-padding: 46px;
+      --ytmusic-player-page-content-gap: 46px;
+      --ytmusic-player-page-side-panel-width: 36%
+  }
+}
+
+@media(min-width: 1578px) {
+  ytmusic-player-page {
+      --ytmusic-player-page-vertical-padding:44px;
+      --ytmusic-player-page-horizontal-padding: 54px;
+      --ytmusic-player-page-content-gap: 54px;
+      --ytmusic-player-page-side-panel-width: 36%
+  }
+}
+
+@media(min-width: 1800px) {
+  ytmusic-player-page {
+      --ytmusic-player-page-vertical-padding: 44px;
+      --ytmusic-player-page-horizontal-padding: 76px;
+      --ytmusic-player-page-content-gap: 76px;
+      --ytmusic-player-page-side-panel-width: 36%
+  }
+}
+`;
+
 export const misc_style_improvements = /*css*/ `
   /* ThemeSong */
   /* universal styles */
@@ -204,4 +294,6 @@ export const misc_style_improvements = /*css*/ `
   ${boldSidebarHeaders}
   ${popupStyling}
   ${playerPageScrollbarShowsWhenSidebar}
+  ${sidebarALittleTooNarrow}
+  ${adjustPlayerPagePadding}
 `;
