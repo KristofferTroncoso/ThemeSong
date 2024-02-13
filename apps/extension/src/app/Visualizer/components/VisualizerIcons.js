@@ -18,7 +18,7 @@ function VisualizerIcons({ visualizerId, ...props }) {
           "57e7f170-a53d-4207-87f0-67633df37959": <GiSpiderMask />,
           "2f34a5b3-6d29-42c8-bac0-a7356ee88151": <RxGlobe />,
           "86a81510-3e5d-4d1e-9318-3ea0750393a3": <BsSnow2 />,
-          "f8cfcb9f-6639-4702-aa44-2261ba7a543b": <BsFillCassetteFill />,
+          "f8cfcb9f-6639-4702-aa44-2261ba7a543b": <BsFillCassetteFill size={18} />,
         }[visualizerId]
       }
     </span>

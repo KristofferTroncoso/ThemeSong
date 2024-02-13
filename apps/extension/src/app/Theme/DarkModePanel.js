@@ -123,7 +123,7 @@ function DarkModePanel() {
             `}
             onClick={(e) => handleDarkLightChange("system")}
           >
-            <CgDarkMode size={24} />
+            <CgDarkMode size={22} />
           </PanelButton>
         </div>
       </div>

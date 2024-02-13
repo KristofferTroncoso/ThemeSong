@@ -21,6 +21,11 @@ body {
 /* pills and chips */
 #chips.ytmusic-chip-cloud-renderer {
   scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+#chips.ytmusic-chip-cloud-renderer:hover {
+  scrollbar-color: var(--ts-base-100-alpha-02-color) transparent;
 }
 
 /* sidebar playlist list */
