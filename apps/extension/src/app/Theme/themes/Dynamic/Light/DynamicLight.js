@@ -125,12 +125,22 @@ function DynamicLight() {
       `
       }
 
-      {(playerUiState === "PLAYER_PAGE_OPEN" || playerUiState === "FULLSCREEN") &&
-        /* css */ ` 
+      {playerUiState === "PLAYER_PAGE_OPEN" || playerUiState === "FULLSCREEN"
+        ? /* css */ ` 
         :root  {
           --ts-navbar-color: var(--ts-playerpage-color);
           --ts-sidebar-color: var(--ts-playerpage-color);
           --ts-playerbar-color: var(--ts-playerpage-color);
+        }
+      `
+        : /* css */ `
+        #thumbnail {
+          box-shadow: 0 2px 5px rgb(0 0 0 / 0.2);
+          margin-bottom: 10px;
+        }
+
+        a:has(> ytmusic-thumbnail-renderer[thumbnail-crop="MUSIC_THUMBNAIL_CROP_UNSPECIFIED"]) {
+          box-shadow: 0 2px 5px rgb(0 0 0 / 0.2);
         }
       `}
     </style>

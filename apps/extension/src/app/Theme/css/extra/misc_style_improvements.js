@@ -40,8 +40,7 @@ export const playBarTextAndIconsColor = /*css*/ `
   }
 `;
 
-/* June 2023. Album image on player page is directly touching the player bar.
-Feedback sent to YTM but no fix. Other users confirmed issue. */
+/* June 2023. Album image on player page is directly touching the player bar. */
 export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
   #player-page:not([video-mode]) {
     container-type: inline-size;
@@ -52,9 +51,19 @@ export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
     max-width: 900px;
   }
 
+  .av.ytmusic-player-page {
+    padding-bottom: 5px !important;
+  }
+
+  @container player-page (max-width: 839px) {
+    .av.ytmusic-player-page {
+      padding-bottom: 15px !important;
+    }
+  }
+
   @container player-page (min-width: 840px) and (max-width: 999px) {
     #main-panel {
-      padding: 0 30px !important;
+      padding: 0 calc(37% - 45vh) !important;
     }
 
     ytmusic-player-page:not([video-mode]):not([player-fullscreened]) #player.ytmusic-player-page {
@@ -64,74 +73,45 @@ export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
 
   @container player-page (min-width: 1000px) and (max-width: 1199px) {
     #main-panel {
-      padding: 0 50px !important;
-    }
-
-    .av.ytmusic-player-page {
-      padding-bottom: 5px !important;
+      padding: 0 calc(36% - 35vh) !important;
     }
   }
 
   @container player-page (min-width: 1200px) and (max-width: 1399px) {
     #main-panel {
-      padding: 0 80px !important;
-    }
-
-    .av.ytmusic-player-page {
-      padding-bottom: 5px !important;
+      padding: 0 calc(35% - 35vh) !important;
     }
   }
 
   @container player-page (min-width: 1400px) and (max-width: 1599px) {
     #main-panel {
-      padding: 0 125px !important;
-    }
-
-    .av.ytmusic-player-page {
-      padding-bottom: 5px !important;
+      padding: 0 calc(34% - 35vh) !important;
     }
   }
 
   @container player-page (min-width: 1600px) and (max-width: 1799px) {
     #main-panel {
-      padding: 0 140px !important;
-    }
-
-    .av.ytmusic-player-page {
-      padding-bottom: 5px !important;
+      padding: 0 calc(33% - 35vh) !important;
     }
   }
 
   @container player-page (min-width: 1800px) and (max-width: 1999px) {
     #main-panel {
-      padding: 0 180px !important;
-    }
-
-    .av.ytmusic-player-page {
-      padding-bottom: 5px !important;
+      padding: 0 calc(32% - 35vh) !important;
     }
   }
 
   @container player-page (min-width: 2000px) and (max-width: 2199px) {
     #main-panel {
-      padding: 0 220px !important;
-    }
-
-    .av.ytmusic-player-page {
-      padding-bottom: 5px !important;
+      padding: 0 calc(31% - 35vh) !important;
     }
   }
 
   @container player-page (min-width: 2200px) and (max-width: 2400px) {
     #main-panel {
-      padding: 0 240px !important;
-    }
-
-    .av.ytmusic-player-page {
-      padding-bottom: 5px !important;
+      padding: 0 calc(30% - 35vh) !important;
     }
   }
-
 `;
 
 /* the box-shadow on the new sidebar-layout Search input doesn't look so good. it only looks good on dark or Off because you can't see it haha */
@@ -178,6 +158,11 @@ export const popupStyling = /*css*/ `
   tp-yt-iron-dropdown {
     border-radius: 8px;
     box-shadow: 0 0 20px rgb(0 0 0 / 15%);
+  }
+
+  /* popup dialog - Share and Save to Playlist */
+  tp-yt-paper-dialog {
+    border-radius: 8px;
   }
 `;
 

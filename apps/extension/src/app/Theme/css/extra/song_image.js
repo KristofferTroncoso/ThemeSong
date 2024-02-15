@@ -78,4 +78,9 @@ ytmusic-player[player-ui-state=FULLSCREEN] #song-image #img {
 #thumbnail {
   border-radius: var(--ts-songimg-thumbnail-border-radius) !important;
 }
+
+/* searching for a song */
+.thumbnail-container.ytmusic-card-shelf-renderer {
+  border-radius: var(--ts-songimg-thumbnail-border-radius);
+}
 `;
