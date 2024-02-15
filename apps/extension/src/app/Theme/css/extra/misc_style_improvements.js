@@ -63,7 +63,7 @@ export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
 
   @container player-page (min-width: 840px) and (max-width: 999px) {
     #main-panel {
-      padding: 0 calc(37% - 45vh) !important;
+      padding: 0 calc(39% - 45vh) !important;
     }
 
     ytmusic-player-page:not([video-mode]):not([player-fullscreened]) #player.ytmusic-player-page {
@@ -73,43 +73,43 @@ export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
 
   @container player-page (min-width: 1000px) and (max-width: 1199px) {
     #main-panel {
-      padding: 0 calc(36% - 35vh) !important;
+      padding: 0 calc(38% - 42vh) !important;
     }
   }
 
   @container player-page (min-width: 1200px) and (max-width: 1399px) {
     #main-panel {
-      padding: 0 calc(35% - 35vh) !important;
+      padding: 0 calc(37% - 42vh) !important;
     }
   }
 
   @container player-page (min-width: 1400px) and (max-width: 1599px) {
     #main-panel {
-      padding: 0 calc(34% - 35vh) !important;
+      padding: 0 calc(36% - 42vh) !important;
     }
   }
 
   @container player-page (min-width: 1600px) and (max-width: 1799px) {
     #main-panel {
-      padding: 0 calc(33% - 35vh) !important;
+      padding: 0 calc(35% - 42vh) !important;
     }
   }
 
   @container player-page (min-width: 1800px) and (max-width: 1999px) {
     #main-panel {
-      padding: 0 calc(32% - 35vh) !important;
+      padding: 0 calc(34% - 42vh) !important;
     }
   }
 
   @container player-page (min-width: 2000px) and (max-width: 2199px) {
     #main-panel {
-      padding: 0 calc(31% - 35vh) !important;
+      padding: 0 calc(33% - 42vh) !important;
     }
   }
 
   @container player-page (min-width: 2200px) and (max-width: 2400px) {
     #main-panel {
-      padding: 0 calc(30% - 35vh) !important;
+      padding: 0 calc(32% - 42vh) !important;
     }
   }
 `;
