@@ -136,9 +136,6 @@ function PlayerPage() {
                 object-fit: contain;
                 box-shadow: 0 5px 80px black;
               `}
-              onError={() => {
-                document.getElementById("sideplayerimage").removeAttribute("crossorigin");
-              }}
             />
           </button>
           <div
