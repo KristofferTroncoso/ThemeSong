@@ -137,7 +137,7 @@ function AppleMusicLight() {
         }
 
         yt-icon.ytmusic-inline-badge-renderer {
-          fill: #890ad6;
+          fill: #7e36aa;
         }
 
         #thumbnail {

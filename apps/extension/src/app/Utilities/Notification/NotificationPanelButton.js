@@ -17,7 +17,7 @@ function NotificationPanelButton() {
     >
       <NotificationsIcon
         css={css`
-          font-size: 26px;
+          font-size: 24px;
         `}
       />
     </PanelButton>
