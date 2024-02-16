@@ -16,6 +16,7 @@ import Unmounter from "../Extension/Unmounter";
 import Piece from "../Piece/Piece";
 import IconColor from "../Extension/IconColor/IconColor";
 import PlayPauseEventListener from "../Player/PlayPauseEventListener";
+import DisableContextMenu from "./DisableContextMenu";
 
 function ContentScript({ root }) {
   const changeMedia = useStore((state) => state.media.changeMedia);
@@ -57,6 +58,7 @@ function ContentScript({ root }) {
       <Palette />
       <Utilities />
       <Piece />
+      <DisableContextMenu />
       <MountWhenPlayerActive>
         <SongInfoDisplayFeature />
         <VisualizerCS />
