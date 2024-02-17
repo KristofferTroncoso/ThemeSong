@@ -19,7 +19,7 @@ export const backgrounds = /*css*/ `
   --ytmusic-general-background-a: var(--ts-body-color) !important;
   --ytmusic-general-background-c: var(--ts-body-color) !important;
   --ytmusic-search-background: var(--ts-body-color) !important;
-  --yt-spec-menu-background: var(--ts-body-color) !important;
+  --yt-spec-menu-background: var(--ts-playerbar-color) !important;
 
   /* share menu */
   --yt-spec-brand-background-solid: var(--ts-body-color) !important;
