@@ -23,15 +23,15 @@ function PanelButton({ color, bgColor, hoverColor, hoverBgColor, children, title
     <CustomTooltip placement="bottom" arrow title={title}>
       <button
         css={css`
-          height: 45px;
-          width: 45px;
-          min-width: 45px;
-          margin: 4px;
+          height: 42px;
+          width: 42px;
+          min-width: 42px;
+          margin: 3px;
           padding: 0;
           background: ${bgColor || "var(--ts-base-100-alpha-01-color)"};
           color: ${color || "var(--ts-base-100-color)"};
           border: 0;
-          border-radius: 8px;
+          border-radius: 7px;
           transition: background 0.2s ease-in-out;
           display: flex;
           justify-content: center;

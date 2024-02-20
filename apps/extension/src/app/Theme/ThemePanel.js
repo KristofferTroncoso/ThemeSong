@@ -53,7 +53,7 @@ function ThemePanel() {
           color={activeTheme === "db8854e3-6753-4639-b244-c8091f3b9fcb" && "#008DFF"}
           hoverColor="#008DFF"
           css={css`
-            height: 42px;
+            height: 38px;
             min-width: 45px;
             width: 70px;
             margin: 0 4px;
@@ -63,7 +63,7 @@ function ThemePanel() {
           onClick={(e) => handleClick("db8854e3-6753-4639-b244-c8091f3b9fcb")}
         >
           <GiAtom
-            size={28}
+            size={26}
             css={css`
               font-weight: 700;
             `}
@@ -75,7 +75,7 @@ function ThemePanel() {
           color={activeTheme === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" && "#ff3700"}
           hoverColor="#ff3700"
           css={css`
-            height: 42px;
+            height: 38px;
             min-width: 45px;
             width: 70px;
             margin: 0 4px;
@@ -86,7 +86,7 @@ function ThemePanel() {
         >
           <ColorizeIcon
             css={css`
-              font-size: 24px;
+              font-size: 23px;
             `}
           />
         </PanelButton>
@@ -96,7 +96,7 @@ function ThemePanel() {
           color={activeTheme === "76dd54c5-78a2-4ca3-9c16-3d0d1aab367f" && "#ff0055"}
           hoverColor="#ff0055"
           css={css`
-            height: 42px;
+            height: 38px;
             min-width: 45px;
             width: 70px;
             margin: 0 4px;
@@ -108,7 +108,7 @@ function ThemePanel() {
         >
           <AppleIcon
             css={css`
-              font-size: 27px;
+              font-size: 25px;
             `}
           />
         </PanelButton>
@@ -118,7 +118,7 @@ function ThemePanel() {
           bgColor={activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && "var(--ts-base-100-color)"}
           color={activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && "red"}
           css={css`
-            height: 42px;
+            height: 38px;
             min-width: 45px;
             width: 70px;
             margin: 0 4px;
@@ -130,7 +130,7 @@ function ThemePanel() {
         >
           <SiYoutubemusic
             css={css`
-              font-size: 21px;
+              font-size: 20px;
             `}
           />
         </PanelButton>

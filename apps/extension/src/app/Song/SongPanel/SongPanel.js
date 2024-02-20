@@ -61,7 +61,7 @@ function SongPanel() {
 
   return (
     <StyledPanelDiv>
-      <div css={{ marginBottom: "6px" }}>
+      <div>
         <h3
           css={css`
             padding: 0 5px 2px;
@@ -95,7 +95,7 @@ function SongPanel() {
           >
             <YouTubeIcon
               css={css`
-                font-size: 26px;
+                font-size: 24px;
               `}
             />
           </PanelButton>
@@ -107,7 +107,7 @@ function SongPanel() {
             hoverBgColor="#00a1ff"
             onClick={handleDefaultSearch}
           >
-            <LuSearch style={{ fontSize: "24px" }} />
+            <LuSearch style={{ fontSize: "22px" }} />
           </PanelButton>
           <PanelButton
             title="Copy to clipboard"
@@ -119,7 +119,7 @@ function SongPanel() {
               navigator.clipboard.writeText(`${metadata.title} ${metadata.artist}`);
             }}
           >
-            <LuClipboardCopy style={{ fontSize: "24px" }} />
+            <LuClipboardCopy style={{ fontSize: "22px" }} />
           </PanelButton>
           <PanelButton
             title="Genius"
@@ -129,7 +129,7 @@ function SongPanel() {
             hoverBgColor="#ffff64"
             onClick={handleGeniusLyricsSearch}
           >
-            <SiGenius style={{ fontSize: "22px" }} />
+            <SiGenius style={{ fontSize: "20px" }} />
           </PanelButton>
           <PanelButton
             title="Musixmatch"
@@ -139,7 +139,7 @@ function SongPanel() {
             hoverBgColor="linear-gradient(0deg, rgba(243,8,123,1) 0%, rgba(243,92,52,1) 100%)"
             onClick={handleMusixmatchSearch}
           >
-            <MusixmatchIcon width="22px" height="19px" />
+            <MusixmatchIcon width="20px" height="18px" />
           </PanelButton>
         </div>
       </div>

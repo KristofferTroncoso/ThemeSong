@@ -303,4 +303,10 @@ export const icons_buttons = /*css*/ `
   html {
     --yt-spec-icon-disabled: var(--ts-base-50-color) !important;
   }
+
+  /* volume bar container bg */
+  .volume-slider.ytmusic-player-bar, .expand-volume-slider.ytmusic-player-bar {
+    width: 100px;
+    --paper-slider-container-color: var(--ts-base-100-alpha-04-color);
+  }
 `;

@@ -36,14 +36,14 @@ function DarkModePanel() {
     return (
       <div
         css={css`
-          margin-top: 18px;
+          margin: 14px 0 2px;
         `}
       >
         <div
           css={css`
             background-color: var(--ts-base-100-alpha-005-color);
             width: 190px;
-            height: 32px;
+            height: 30px;
             margin: auto;
             border-radius: 7px;
           `}
@@ -54,7 +54,7 @@ function DarkModePanel() {
     return (
       <div
         css={css`
-          margin-top: 18px;
+          margin: 14px 0 2px;
         `}
       >
         <div
@@ -67,7 +67,7 @@ function DarkModePanel() {
           <PanelButton
             title="Dark Mode"
             css={css`
-              height: 34px;
+              height: 30px;
               min-width: 45px;
               width: 60px;
               margin: 0 3px;
@@ -81,12 +81,16 @@ function DarkModePanel() {
             `}
             onClick={(e) => handleDarkLightChange("dark")}
           >
-            <DarkModeIcon fontSize="large" />
+            <DarkModeIcon
+              css={css`
+                font-size: 22px;
+              `}
+            />
           </PanelButton>
           <PanelButton
             title="Light Mode"
             css={css`
-              height: 34px;
+              height: 30px;
               min-width: 45px;
               width: 60px;
               margin: 0 3px;
@@ -102,14 +106,14 @@ function DarkModePanel() {
           >
             <LightModeIcon
               css={css`
-                font-size: 26px;
+                font-size: 24px;
               `}
             />
           </PanelButton>
           <PanelButton
             title="Use Device Setting"
             css={css`
-              height: 34px;
+              height: 30px;
               min-width: 45px;
               width: 60px;
               margin: 0 3px;
@@ -123,7 +127,7 @@ function DarkModePanel() {
             `}
             onClick={(e) => handleDarkLightChange("system")}
           >
-            <CgDarkMode size={22} />
+            <CgDarkMode size={21} />
           </PanelButton>
         </div>
       </div>

@@ -85,19 +85,19 @@ ytmusic-search-box:not([opened]):hover {
 }
 
 ytmusic-search-box {
-  color: var(--ts-tertiary-text-color, purple);
+  color: var(--ts-secondary-text-color, purple);
 }
 
 ytmusic-search-box[opened] input.ytmusic-search-box::placeholder {
-  color: var(--ts-tertiary-text-color, peru) !important;
+  color: var(--ts-secondary-text-color, peru) !important;
 }
 
 ytmusic-search-box[has-query] input.ytmusic-search-box, ytmusic-search-box[opened] input.ytmusic-search-box {
-  color: var(--ts-tertiary-text-color, purple);
+  color: var(--ts-secondary-text-color, purple);
 }
 
 tp-yt-paper-icon-button.ytmusic-search-box, input.ytmusic-search-box, input.ytmusic-search-box::placeholder {
-  color: var(--ts-tertiary-text-color, purple);
+  color: var(--ts-secondary-text-color, purple);
 }
 
 /* playpage. up next subtitles like artists and time */

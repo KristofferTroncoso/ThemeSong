@@ -11,14 +11,14 @@ function VisualizerVariantButton({ color, bgColor, hoverColor, hoverBgColor, chi
   return (
     <button
       css={css`
-        height: 30px;
-        min-width: 32px;
-        width: 40px;
+        height: 26px;
+        min-width: 30px;
+        width: 36px;
         margin: 2px;
         background: ${bgColor || "var(--ts-base-100-alpha-01-color)"};
         color: ${color || "var(--ts-base-100-color)"};
         border: 0;
-        border-radius: 4px;
+        border-radius: 3px;
         transition: background-color 0.2s ease-in-out;
         display: flex;
         justify-content: center;
@@ -61,7 +61,7 @@ function VisualizerPanel() {
   };
 
   return (
-    <StyledPanelDiv style={{ minHeight: "120px" }}>
+    <StyledPanelDiv style={{ minHeight: "110px" }}>
       <div
         css={css`
           margin-bottom: 2px;
@@ -92,7 +92,7 @@ function VisualizerPanel() {
               color={isVisualizerOn && activeVisualizer === visualizer.id && "#008c7e"}
               hoverColor="#008c7e"
               css={css`
-                height: 38px;
+                height: 34px;
                 width: 100%;
                 margin: 0;
                 border: 0;
@@ -205,8 +205,8 @@ function VisualizerPanel() {
             css={css`
               background-color: var(--ts-base-100-alpha-005-color);
               width: 190px;
-              height: 30px;
-              margin: auto;
+              height: 26px;
+              margin: 2px auto;
               border-radius: 5px;
             `}
           />
