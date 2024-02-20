@@ -265,6 +265,31 @@ export const adjustPlayerPagePadding = /*css*/ `
 }
 `;
 
+/* the popup listbox when right-clicking a song (or 3 dots menu), is a little too loose and padding too big */
+export const compactListBox = /*css*/ `
+  tp-yt-paper-listbox.ytmusic-menu-popup-renderer {
+    padding: 10px 0;
+  }
+
+  .yt-simple-endpoint.ytmusic-menu-navigation-item-renderer {
+    height: 40px;
+  }
+
+  ytmusic-menu-service-item-renderer {
+    height: 40px;
+  }
+
+  ytmusic-toggle-menu-service-item-renderer {
+    height: 40px;
+  }
+
+  tp-yt-paper-listbox yt-icon, tp-yt-paper-listbox .yt-icon-container.yt-icon {
+    width: var(--iron-icon-width, 20px);
+    height: var(--iron-icon-height, 20px);
+    animation: var(--iron-icon-animation);
+  }
+`;
+
 export const misc_style_improvements = /*css*/ `
   /* ThemeSong */
   /* universal styles */
@@ -281,4 +306,5 @@ export const misc_style_improvements = /*css*/ `
   ${playerPageScrollbarShowsWhenSidebar}
   ${sidebarALittleTooNarrow}
   ${adjustPlayerPagePadding}
+  ${compactListBox}
 `;
