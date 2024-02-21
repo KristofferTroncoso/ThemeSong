@@ -3,8 +3,10 @@ import { useEffect } from "react";
 function DisableContextMenu() {
   useEffect(() => {
     if (document.getElementById("contents")) {
-      document.getElementById("contents").addEventListener("contextmenu", (event) => {
-        event.preventDefault();
+      document.querySelectorAll("#contents").forEach((node) => {
+        node.addEventListener("contextmenu", (event) => {
+          event.preventDefault();
+        });
       });
     }
     if (document.getElementById("queue")) {
