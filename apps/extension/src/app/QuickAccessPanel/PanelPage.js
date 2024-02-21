@@ -29,6 +29,7 @@ function PanelPage() {
         color: var(--ts-secondary-text-color, #fff);
         box-shadow: 0 0 20px rgb(0 0 0 / 15%);
       `}
+      id="PanelPage"
     >
       <div
         css={css`
@@ -73,7 +74,7 @@ function PanelPage() {
             </p>
           }
         >
-          <TuneIcon style={{ fontSize: "14px" }} />
+          <TuneIcon style={{ fontSize: "13px" }} />
         </Tooltip>
       </div>
     </div>

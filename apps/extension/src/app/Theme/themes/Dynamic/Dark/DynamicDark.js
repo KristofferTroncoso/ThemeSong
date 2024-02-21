@@ -74,6 +74,17 @@ function DynamicDark() {
           --ts-navbar-color: var(--ts-playerpage-color);
           --ts-sidebar-color: var(--ts-playerpage-color);
           --ts-playerbar-color: var(--ts-playerpage-color);
+          --ts-listbox-color: hsl(var(--ts-palette-dominant-hue), ${saturation}%, ${curveLight(lightness[1]) + 4}%);
+
+          --yt-spec-menu-background: var(--ts-listbox-color) !important;
+        }
+
+        #PanelPage {
+          background: var(--ts-listbox-color);
+        }
+        
+        tp-yt-paper-listbox {
+          background: var(--ts-listbox-color);
         }
       `}
     </style>

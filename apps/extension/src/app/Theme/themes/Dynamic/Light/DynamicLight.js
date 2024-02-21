@@ -131,6 +131,22 @@ function DynamicLight() {
           --ts-navbar-color: var(--ts-playerpage-color);
           --ts-sidebar-color: var(--ts-playerpage-color);
           --ts-playerbar-color: var(--ts-playerpage-color);
+
+          --ts-listbox-color: hsl(
+            var(--ts-palette-dominant-hue), 
+            ${saturation}%, 
+            ${calcCurvedBrightness(lightness[1]) - 6}%
+          ) !important;
+
+          --yt-spec-menu-background: var(--ts-listbox-color) !important;
+        }
+
+        #PanelPage {
+          background: var(--ts-listbox-color);
+        }
+
+        tp-yt-paper-listbox {
+          background: var(--ts-listbox-color);
         }
       `
         : /* css */ `
@@ -142,6 +158,7 @@ function DynamicLight() {
         a:has(> ytmusic-thumbnail-renderer[thumbnail-crop="MUSIC_THUMBNAIL_CROP_UNSPECIFIED"]) {
           box-shadow: 0 2px 5px rgb(0 0 0 / 0.2);
         }
+
       `}
     </style>
   );
