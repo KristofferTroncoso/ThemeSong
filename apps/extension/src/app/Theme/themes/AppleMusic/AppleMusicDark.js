@@ -29,7 +29,7 @@ function AppleMusicDark() {
           --ts-texts-selection-color: #1665b5;
           --ts-songimg-box-shadow: 0 10px 40px rgb(0 0 0 / 0.4);
           
-          --applemusic-color: #ff3e53;
+          --applemusic-color: #ff273f;
 
           --ts-ruler-secondary-color: var(--ts-base-100-alpha-01-color);
         }
