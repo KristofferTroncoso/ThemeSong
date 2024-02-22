@@ -171,7 +171,7 @@ a scrollbar track shows up on the right. */
 export const playerPageScrollbarShowsWhenSidebar = /*css*/ `
   html:has(#layout[player-ui-state="PLAYER_PAGE_OPEN"]) {
     scrollbar-width: none;
-    margin-right: 18px;
+    margin-right: 17px;
   }
 `;
 
