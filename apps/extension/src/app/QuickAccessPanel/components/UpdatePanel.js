@@ -1,11 +1,11 @@
 import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
 import StyledPanelDiv from "./StyledPanelDiv";
-// import useLocalization from "../../Extension/Localization/useLocalization";
+import useLocalization from "../../Extension/Localization/useLocalization";
 
 function UpdatePanel() {
   const setShowUpdateNote = useStore((state) => state.extension.setShowUpdateNote);
-  // const getMessage = useLocalization();
+  const getMessage = useLocalization();
   // const browser = useStore((state) => state.extension.prefs.browser);
 
   return (
@@ -36,6 +36,12 @@ function UpdatePanel() {
           <span> (February 2024)</span>
         </p>
         <br></br>
+        <p>- styling improvements</p>
+        <p>- added temp fix for YTM right-click context-menu bug</p>
+        <br></br>
+        <p>
+          <b>{getMessage("updateNotice")}</b>
+        </p>
       </div>
       <button
         css={css`

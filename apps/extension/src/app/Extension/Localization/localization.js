@@ -23,7 +23,7 @@ import { hiResSongImage } from "./messages/hiResSongImage";
 import { reconnectReload } from "./messages/reconnectReload";
 import { hello } from "./messages/hello";
 import { backUpSnippets } from "./messages/backUpSnippets";
-import { v112 } from "./messages/v112";
+import { updateNotice } from "./messages/updateNotice";
 
 export const localizations = {
   themes,
@@ -51,5 +51,5 @@ export const localizations = {
   reconnectReload,
   hello,
   backUpSnippets,
-  v112,
+  updateNotice,
 };
