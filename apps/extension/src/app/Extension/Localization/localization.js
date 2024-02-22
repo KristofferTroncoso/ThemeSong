@@ -22,6 +22,7 @@ import { nowPlaying } from "./messages/nowPlaying";
 import { hiResSongImage } from "./messages/hiResSongImage";
 import { reconnectReload } from "./messages/reconnectReload";
 import { hello } from "./messages/hello";
+import { backUpSnippets } from "./messages/backUpSnippets";
 import { v112 } from "./messages/v112";
 
 export const localizations = {
@@ -49,5 +50,6 @@ export const localizations = {
   hiResSongImage,
   reconnectReload,
   hello,
+  backUpSnippets,
   v112,
 };

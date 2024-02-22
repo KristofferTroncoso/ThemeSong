@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Modal } from "@mui/material";
 import { css } from "@emotion/react";
 import EditIcon from "@mui/icons-material/Edit";
+import { FaRegCheckCircle } from "react-icons/fa";
+import useLocalization from "../../Extension/Localization/useLocalization";
 
 function UserSnippet() {
   const userSnippetPrefs = useStore((state) => state.piece.prefs["2a606045-80f3-4aee-93de-cf3cd39d2920"]);
@@ -44,6 +46,7 @@ export function UserSnippetSettings() {
 export function EditSnippetModal({ open, setOpen }) {
   const userSnippetPrefs = useStore((state) => state.piece.prefs["2a606045-80f3-4aee-93de-cf3cd39d2920"]);
   const setPiecePrefs = useStore((state) => state.piece.setPiecePrefs);
+  const getMessage = useLocalization();
 
   const [snippetCSS, setSnippetCSS] = useState(userSnippetPrefs.css);
 
@@ -97,6 +100,7 @@ export function EditSnippetModal({ open, setOpen }) {
         <p
           css={css`
             color: #999;
+            margin-bottom: 5px;
           `}
         >
           Snippet CSS
@@ -125,13 +129,22 @@ body {
             background-color: dodgerblue;
             color: #fff;
             border: 0;
-            padding: 5px 10px;
+            padding: 6px 15px 2px;
             border-radius: 4px;
-            margin: 5px;
+            margin: 5px 0;
+            width: 120px;
           `}
         >
-          Save
+          <FaRegCheckCircle size={18} />
         </button>
+        <p
+          css={css`
+            color: #999;
+            margin-top: 10px;
+          `}
+        >
+          {getMessage("backUpSnippets")}
+        </p>
       </div>
     </Modal>
   );
