@@ -84,8 +84,9 @@ function AppleMusicDark() {
           border-radius: 6px;
         }
 
-        #thumbnail {
-          box-shadow: 0 10px 14px rgb(0 0 0 / 0.2);
+        div#thumbnail {
+          box-shadow: 0 2px 5px rgb(0 0 0 / 0.2);
+          margin-bottom: 10px;
         }
 
         ytmusic-item-thumbnail-overlay-renderer:not([play-button-has-background_]):not([play-button-state=default]) #background.ytmusic-item-thumbnail-overlay-renderer, ytmusic-item-thumbnail-overlay-renderer[indexed] #background.ytmusic-item-thumbnail-overlay-renderer {

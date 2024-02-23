@@ -150,7 +150,7 @@ function DynamicLight() {
         }
       `
         : /* css */ `
-        #thumbnail {
+        div#thumbnail {
           box-shadow: 0 2px 5px rgb(0 0 0 / 0.2);
           margin-bottom: 10px;
         }
