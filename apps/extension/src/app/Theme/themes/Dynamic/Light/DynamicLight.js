@@ -120,7 +120,17 @@ function DynamicLight() {
 
             --ts-overlay-color: rgb(0 0 0 / 0.6);
 
+            --ts-temp-color: hsl(var(--ts-palette-dominant-hue) ${saturation}% 40% / 15%);
+            --ts-overlay-nowplaying-color: var(--ts-temp-color);
+            --ts-overlay-highlighted-color: var(--ts-temp-color);
+            --ts-pill-color: var(--ts-temp-color);
+            --ts-scrollbar-color: var(--ts-temp-color);
+
             --ts-secondary-text-color: var(--ts-base-80-color);
+        }
+
+        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
+          background-color: var(--ts-temp-color);
         }
       `
       }

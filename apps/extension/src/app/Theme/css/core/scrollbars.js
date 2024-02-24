@@ -1,16 +1,19 @@
 export const scrollbars = /*css*/ `
+:root {
+  --ts-scrollbar-color: var(--ts-base-100-alpha-02-color);
+}
 /* scrollbars */
 ::-webkit-scrollbar-thumb {
-  background-color: var(--ts-base-100-alpha-02-color) !important;
+  background-color: var(--ts-scrollbar-color) !important;
 }
 
 /* new scrollbar properties? chrome version > 120 */
 html {
-  scrollbar-color: var(--ts-base-100-alpha-02-color) var(--ts-base-100-alpha-005-color);
+  scrollbar-color: var(--ts-scrollbar-color) var(--ts-base-100-alpha-005-color);
 }
 
 body {
-  scrollbar-color: var(--ts-base-100-alpha-02-color) transparent;
+  scrollbar-color: var(--ts-scrollbar-color) transparent;
 }
 
 /* carousel on homepage and stuff */
@@ -25,7 +28,7 @@ body {
 }
 
 #chips.ytmusic-chip-cloud-renderer:hover {
-  scrollbar-color: var(--ts-base-100-alpha-02-color) transparent;
+  scrollbar-color: var(--ts-scrollbar-color) transparent;
 }
 
 /* sidebar playlist list */

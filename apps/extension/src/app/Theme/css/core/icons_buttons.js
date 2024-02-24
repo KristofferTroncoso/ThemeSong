@@ -94,18 +94,21 @@ export const icons_buttons = /*css*/ `
   /* some pills on the home page */
   ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_LARGE_TRANSLUCENT_AND_SELECTED_WHITE] a.ytmusic-chip-cloud-chip-renderer {
     background: var(--ts-pill-color);
+    border: 1px solid var(--ts-base-100-alpha-005-color);
   }
 
   ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_LARGE_TRANSLUCENT_AND_SELECTED_WHITE] a.ytmusic-chip-cloud-chip-renderer:hover {
-    background-color: var(--ts-pill-color);
-  }
+    background-color: var(--ts-pill-hover-color);
+  } 
 
   ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_UNKNOWN] a.ytmusic-chip-cloud-chip-renderer, ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_DEFAULT] a.ytmusic-chip-cloud-chip-renderer {
     background-color: var(--ts-pill-color);
+    border: 1px solid var(--ts-base-100-alpha-005-color);
   }
 
   tp-yt-paper-icon-button.ytmusic-carousel-shelf-renderer {
     background-color: var(--ts-pill-color);
+    border: 1px solid var(--ts-base-100-alpha-005-color);
   }
 
   tp-yt-paper-icon-button.ytmusic-carousel-shelf-renderer:hover {
@@ -115,10 +118,6 @@ export const icons_buttons = /*css*/ `
   ytmusic-menu-renderer[show-hover] #button.ytmusic-menu-renderer:hover {
     background: var(--ts-pill-color);
   }
-
-  ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_LARGE_TRANSLUCENT_AND_SELECTED_WHITE] a.ytmusic-chip-cloud-chip-renderer:hover {
-    background-color: var(--ts-pill-hover-color) !important;
-  } 
 
   ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_UNKNOWN] a.ytmusic-chip-cloud-chip-renderer:hover, ytmusic-chip-cloud-chip-renderer[enable-bauhaus-style][chip-style=STYLE_DEFAULT] a.ytmusic-chip-cloud-chip-renderer:hover {
     background-color: var(--ts-pill-hover-color) !important;
@@ -245,7 +244,7 @@ export const icons_buttons = /*css*/ `
   /* Save button on up next player page */
   ytmusic-chip-cloud-chip-renderer[chip-style=STYLE_TRANSPARENT] a.ytmusic-chip-cloud-chip-renderer {
     color: var(--ts-inverse-icon-color);
-    background: var(--ts-primary-icon-color);
+    background: var(--ts-secondary-icon-color);
   }
 
   ytmusic-chip-cloud-chip-renderer[chip-style=STYLE_TRANSPARENT] a.ytmusic-chip-cloud-chip-renderer .text {

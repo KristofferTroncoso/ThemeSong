@@ -1,7 +1,6 @@
 import { useEffect, useCallback } from "react";
 import { useStore } from "/src/app/store";
 import { menubar } from "../../../selectors";
-
 import { scrollbars } from "../../../css/core/scrollbars";
 import { playerbar_progressbar } from "../../../css/core/playerbar_progressbar";
 import { backgrounds } from "../../../css/core/backgrounds";
@@ -12,11 +11,11 @@ import { dark_base_colors } from "../../../css/colors/dark_base_colors";
 function DynamicDark() {
   const dominantColorHSL = useStore((state) => state.palette.dominant).hsl;
   const dynamicDarkPrefs = useStore((state) => state.theme.prefs["db8854e3-6753-4639-b244-c8091f3b9fcb"].dark);
-  const lightness = dynamicDarkPrefs.lightness;
   const playerUiState = useStore((state) => state.player.playerUiState);
 
   let hue = (dominantColorHSL[0] * 360).toFixed();
   let saturation = dominantColorHSL[2] < 0.1 ? 0 : (dominantColorHSL[1] * 100 * dynamicDarkPrefs.saturation).toFixed();
+  const lightness = dynamicDarkPrefs.lightness;
 
   const curveLight = useCallback(
     (brightness) => {
