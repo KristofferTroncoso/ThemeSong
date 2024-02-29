@@ -80,7 +80,7 @@ function SongPanel() {
         <div
           css={css`
             display: flex;
-            justify-content: start;
+            justify-content: space-evenly;
             align-items: center;
             max-width: 300px;
           `}

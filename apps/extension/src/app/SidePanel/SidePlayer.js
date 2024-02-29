@@ -202,6 +202,7 @@ function SidePlayer() {
           css={css`
             margin-top: 5px;
             text-align: center;
+            width: 280px;
 
             h3 {
               font-weight: 400 !important;

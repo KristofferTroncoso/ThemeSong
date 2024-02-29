@@ -188,6 +188,7 @@ function PlayerPage() {
           css={css`
             margin-top: 10px;
             text-align: center;
+            width: 280px;
           `}
         >
           <SongPanel />

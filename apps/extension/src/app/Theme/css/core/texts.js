@@ -289,4 +289,9 @@ tp-yt-paper-tabs.ytmusic-playlist-form {
   --yt-endpoint-hover-color: var(--ts-primary-text-color);
   --yt-endpoint-visited-color: var(--ts-primary-text-color);
 }
+
+/* texts when there's no lyrics */
+.text.ytmusic-message-renderer, .subtext.ytmusic-message-renderer {
+  color: var(--ts-secondary-text-color);
+}
 `;
