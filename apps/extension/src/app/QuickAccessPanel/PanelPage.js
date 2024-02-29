@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 
+import WelcomePanel from "./components/WelcomePanel";
 import SongPanel from "../Song/SongPanel/SongPanel";
 import VisualizerPanel from "../Visualizer/VisualizerPanel";
 import AppearancePanel from "../Theme/AppearancePanel";
@@ -14,6 +15,7 @@ import TuneIcon from "@mui/icons-material/Tune";
 import { useStore } from "/src/app/store";
 
 function PanelPage() {
+  const showNewUserNote = useStore((state) => state.extension.prefs.showNewUserNote);
   const showUpdateNote = useStore((state) => state.extension.prefs.showUpdateNote);
   const getMessage = useLocalization();
 
@@ -51,6 +53,7 @@ function PanelPage() {
         </Tooltip>
       </div>
       <div>
+        {showNewUserNote && <WelcomePanel />}
         <SongPanel />
         <AppearancePanel />
         <VisualizerPanel />

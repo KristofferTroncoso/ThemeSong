@@ -1,8 +1,16 @@
 export const createExtensionSlice = (set, get) => ({
   prefs: {
+    showNewUserNote: true,
     showUpdateNote: false,
     locale: "en",
     browser: "chrome",
+  },
+  setShowNewUserNote: (payload) => {
+    console.log("extensionSlice: setShowNewUserNote");
+    set((state) => {
+      state.extension.prefs.showNewUserNote = payload;
+    });
+    chrome.storage.local.set({ extensionPrefs: get().extension.prefs });
   },
   setShowUpdateNote: (payload) => {
     console.log("extensionSlice: setShowUpdateNote");

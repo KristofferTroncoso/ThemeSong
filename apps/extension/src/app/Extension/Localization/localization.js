@@ -23,6 +23,7 @@ import { hiResSongImage } from "./messages/hiResSongImage";
 import { reconnectReload } from "./messages/reconnectReload";
 import { hello } from "./messages/hello";
 import { backUpSnippets } from "./messages/backUpSnippets";
+import { welcomeQap } from "./messages/welcomeQap";
 import { updateNotice } from "./messages/updateNotice";
 
 export const localizations = {
@@ -52,4 +53,5 @@ export const localizations = {
   hello,
   backUpSnippets,
   updateNotice,
+  welcomeQap,
 };
