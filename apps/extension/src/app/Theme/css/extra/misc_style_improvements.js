@@ -9,7 +9,7 @@ export const coloredPlayerBg = /*css*/ `
 /* on user icon on top right corner, the grey bg is causing a strange grey outline that looks bad */
 export const noGreyBgOnUserIcon = /*css*/ `
   tp-yt-paper-icon-button.ytmusic-settings-button {
-    background-color: transparent;
+    background-color: rgb(255 255 255 / 20%);
   }
 `;
 
