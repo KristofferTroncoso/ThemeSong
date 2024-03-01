@@ -100,7 +100,7 @@ function SongPanel() {
             />
           </PanelButton>
           <PanelButton
-            title="Search"
+            title={getMessage("search")}
             color="#fff"
             bgColor="#00a1ff"
             hoverColor="#fff"
@@ -110,7 +110,7 @@ function SongPanel() {
             <LuSearch style={{ fontSize: "22px" }} />
           </PanelButton>
           <PanelButton
-            title="Copy to clipboard"
+            title={getMessage("copyToClipboard")}
             color="#fff"
             bgColor="#31bf42"
             hoverColor="#fff"

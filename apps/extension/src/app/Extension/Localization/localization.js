@@ -24,6 +24,8 @@ import { reconnectReload } from "./messages/reconnectReload";
 import { hello } from "./messages/hello";
 import { backUpSnippets } from "./messages/backUpSnippets";
 import { welcomeQap } from "./messages/welcomeQap";
+import { search } from "./messages/search";
+import { copyToClipboard } from "./messages/copyToClipboard";
 import { updateNotice } from "./messages/updateNotice";
 
 export const localizations = {
@@ -52,6 +54,8 @@ export const localizations = {
   reconnectReload,
   hello,
   backUpSnippets,
+  search,
+  copyToClipboard,
   updateNotice,
   welcomeQap,
 };
