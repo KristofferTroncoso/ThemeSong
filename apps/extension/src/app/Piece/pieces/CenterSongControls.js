@@ -11,6 +11,7 @@ function CenterSongControls() {
     .left-controls {
       grid-area: middle !important;
       justify-content: center !important;
+      padding-left: 10px;
     }
 
     .middle-controls {
