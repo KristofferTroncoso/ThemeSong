@@ -10,7 +10,6 @@ import DevToolsPanel from "./components/DevToolsPanel";
 import useLocalization from "../Extension/Localization/useLocalization";
 import Tooltip from "@mui/material/Tooltip";
 import HelpIcon from "@mui/icons-material/Help";
-import TuneIcon from "@mui/icons-material/Tune";
 
 import { useStore } from "/src/app/store";
 
@@ -45,7 +44,7 @@ function PanelPage() {
                 font-size: 12px;
               `}
             >
-              ThemeSong Quick Access Panel
+              {getMessage("additionalSettings")}
             </p>
           }
         >
@@ -60,25 +59,6 @@ function PanelPage() {
         <UtilitiesPanel />
         {process.env.NODE_ENV === "development" && <DevToolsPanel />}
         {showUpdateNote && <UpdatePanel />}
-      </div>
-      <div
-        css={css`
-          text-align: right;
-        `}
-      >
-        <Tooltip
-          title={
-            <p
-              css={css`
-                font-size: 12px;
-              `}
-            >
-              {getMessage("additionalSettings")}
-            </p>
-          }
-        >
-          <TuneIcon style={{ fontSize: "13px" }} />
-        </Tooltip>
       </div>
     </div>
   );

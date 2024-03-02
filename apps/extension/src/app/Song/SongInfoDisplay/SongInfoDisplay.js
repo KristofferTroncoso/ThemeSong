@@ -14,7 +14,7 @@ function SongInfoDisplay() {
     >
       <h1
         css={css`
-          font-size: 36px;
+          font-size: 32px;
           color: var(--ts-secondary-text-color);
         `}
       >

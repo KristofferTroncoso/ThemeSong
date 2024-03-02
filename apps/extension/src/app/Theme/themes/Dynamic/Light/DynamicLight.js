@@ -161,12 +161,12 @@ function DynamicLight() {
       `
         : /* css */ `
         div#thumbnail {
-          box-shadow: 0 2px 5px rgb(0 0 0 / 0.2);
+          box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
           margin-bottom: 10px;
         }
 
         a:has(> ytmusic-thumbnail-renderer[thumbnail-crop="MUSIC_THUMBNAIL_CROP_UNSPECIFIED"]) {
-          box-shadow: 0 2px 5px rgb(0 0 0 / 0.2);
+          box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
         }
 
       `}

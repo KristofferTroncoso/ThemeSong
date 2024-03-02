@@ -38,6 +38,8 @@ function PanelButton({ color, bgColor, hoverColor, hoverBgColor, children, title
           align-items: center;
           align-content: center;
           filter: brightness(1) saturate(1);
+          box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+
           :hover {
             background: ${hoverBgColor || "var(--ts-base-100-color)"};
             color: ${hoverColor || "var(--ts-base-100-color)"};
