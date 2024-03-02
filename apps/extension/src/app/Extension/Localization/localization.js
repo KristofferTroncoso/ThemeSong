@@ -26,6 +26,7 @@ import { backUpSnippets } from "./messages/backUpSnippets";
 import { welcomeQap } from "./messages/welcomeQap";
 import { search } from "./messages/search";
 import { copyToClipboard } from "./messages/copyToClipboard";
+import { centerSongControls } from "./messages/centerSongControls";
 import { updateNotice } from "./messages/updateNotice";
 
 export const localizations = {
@@ -56,6 +57,7 @@ export const localizations = {
   backUpSnippets,
   search,
   copyToClipboard,
+  centerSongControls,
   updateNotice,
   welcomeQap,
 };
