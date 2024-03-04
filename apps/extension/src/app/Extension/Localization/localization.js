@@ -30,6 +30,7 @@ import { centerSongControls } from "./messages/centerSongControls";
 import { minutes } from "./messages/minutes";
 import { sleepTimer } from "./messages/sleepTimer";
 import { endOfTrack } from "./messages/endOfTrack";
+import { songDesktopNotifications } from "./messages/songDesktopNotifications";
 import { updateNotice } from "./messages/updateNotice";
 
 export const localizations = {
@@ -64,6 +65,7 @@ export const localizations = {
   minutes,
   sleepTimer,
   endOfTrack,
+  songDesktopNotifications,
   updateNotice,
   welcomeQap,
 };
