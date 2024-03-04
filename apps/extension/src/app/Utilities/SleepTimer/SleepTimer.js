@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
-
+import useLocalization from "../../Extension/Localization/useLocalization";
 import Dialog from "@mui/material/Dialog";
+import { MdCancelPresentation } from "react-icons/md";
 
 function StyledButton({ children, ...rest }) {
   return (
@@ -43,6 +44,7 @@ function SleepTimer() {
   const setTimerIsDialogOpen = useStore((state) => state.utilities.setTimerIsDialogOpen);
   const [isLastSong, setIsLastSong] = useState(false);
   const [isTimeOverDialogOpen, setIsTimeOverDialogOpen] = useState(false);
+  const getMessage = useLocalization();
 
   useEffect(() => {
     function lastSongDone() {
@@ -124,14 +126,14 @@ function SleepTimer() {
               justify-content: space-between;
             `}
           >
-            <h1>Sleep Timer</h1>
+            <h1>{getMessage("sleepTimer")}</h1>
             {isActive && (
               <h1
                 css={css`
                   color: #ac13cf;
                 `}
               >
-                {minutesLeft} minutes left
+                {minutesLeft} {getMessage("minutes")} left
               </h1>
             )}
           </div>
@@ -142,18 +144,18 @@ function SleepTimer() {
               padding: 10px 0;
             `}
           >
-            <StyledButton onClick={handleLastSongClick}>End of track</StyledButton>
-            <StyledButton onClick={(e) => handleTimerClick(5)}>5 minutes</StyledButton>
-            <StyledButton onClick={(e) => handleTimerClick(10)}>10 minutes</StyledButton>
-            <StyledButton onClick={(e) => handleTimerClick(20)}>20 minutes</StyledButton>
-            <StyledButton onClick={(e) => handleTimerClick(25)}>25 minutes</StyledButton>
-            <StyledButton onClick={(e) => handleTimerClick(30)}>30 minutes</StyledButton>
-            <StyledButton onClick={(e) => handleTimerClick(60)}>60 minutes</StyledButton>
+            <StyledButton onClick={handleLastSongClick}>{getMessage("endOfTrack")}</StyledButton>
+            <StyledButton onClick={(e) => handleTimerClick(5)}>5 {getMessage("minutes")}</StyledButton>
+            <StyledButton onClick={(e) => handleTimerClick(10)}>10 {getMessage("minutes")}</StyledButton>
+            <StyledButton onClick={(e) => handleTimerClick(20)}>20 {getMessage("minutes")}</StyledButton>
+            <StyledButton onClick={(e) => handleTimerClick(25)}>25 {getMessage("minutes")}</StyledButton>
+            <StyledButton onClick={(e) => handleTimerClick(30)}>30 {getMessage("minutes")}</StyledButton>
+            <StyledButton onClick={(e) => handleTimerClick(60)}>60 {getMessage("minutes")}</StyledButton>
           </div>
           <button
             css={css`
               margin: 8px 0;
-              padding: 8px;
+              padding: 4px 0 0;
               border-radius: 20px;
               border: 1px solid tomato;
               background-color: red;
@@ -169,7 +171,7 @@ function SleepTimer() {
             `}
             onClick={handleCancelTimer}
           >
-            Cancel Timer
+            <MdCancelPresentation size="26" />
           </button>
         </div>
       </Dialog>

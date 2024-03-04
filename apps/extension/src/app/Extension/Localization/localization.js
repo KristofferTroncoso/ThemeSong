@@ -27,6 +27,9 @@ import { welcomeQap } from "./messages/welcomeQap";
 import { search } from "./messages/search";
 import { copyToClipboard } from "./messages/copyToClipboard";
 import { centerSongControls } from "./messages/centerSongControls";
+import { minutes } from "./messages/minutes";
+import { sleepTimer } from "./messages/sleepTimer";
+import { endOfTrack } from "./messages/endOfTrack";
 import { updateNotice } from "./messages/updateNotice";
 
 export const localizations = {
@@ -58,6 +61,9 @@ export const localizations = {
   search,
   copyToClipboard,
   centerSongControls,
+  minutes,
+  sleepTimer,
+  endOfTrack,
   updateNotice,
   welcomeQap,
 };
