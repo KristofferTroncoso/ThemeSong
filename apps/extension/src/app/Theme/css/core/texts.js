@@ -294,4 +294,8 @@ tp-yt-paper-tabs.ytmusic-playlist-form {
 .text.ytmusic-message-renderer, .subtext.ytmusic-message-renderer {
   color: var(--ts-secondary-text-color);
 }
+
+yt-formatted-string.ytmusic-guide-signin-promo-renderer {
+  color: var(--ts-secondary-text-color);
+}
 `;

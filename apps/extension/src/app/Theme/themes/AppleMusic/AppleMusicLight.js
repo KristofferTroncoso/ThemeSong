@@ -103,10 +103,10 @@ function AppleMusicLight() {
           ) !important;
           --ts-sidebar-color: rgb(245 245 245);
           --ts-body-color: #fff;
-          --ts-playerbar-color: rgb(247 247 247 / 0.6);
+          --ts-playerbar-color: rgb(244 244 244 / 0.6);
           --ts-playprogress-color: #6b6b6b;
-          --ts-playprogress-secondary-color: rgb(0 0 0 / 0.1);
-          --ts-playprogress-container-color: rgb(0 0 0 / 0.07);
+          --ts-playprogress-secondary-color: rgb(0 0 0 / 0.15);
+          --ts-playprogress-container-color: rgb(0 0 0 / 0.1);
           --ts-primary-icon-color: var(--ts-base-60-color);
           --ts-secondary-icon-color: var(--applemusic-color);
           --ts-colored-button-color: var(--applemusic-color);

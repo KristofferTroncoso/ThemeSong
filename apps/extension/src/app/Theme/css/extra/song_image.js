@@ -21,7 +21,8 @@ ytmusic-two-row-item-renderer[aspect-ratio=MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_R
 
 /* start PlayPage song img styling */
 ytmusic-player {
-  border-radius: var(--ts-songimg-border-radius);
+  box-shadow: var(--ts-songimg-box-shadow);
+  border-radius: var(--ts-songimg-border-radius) !important;
 }
 #song-image {
   box-shadow: var(--ts-songimg-box-shadow);
