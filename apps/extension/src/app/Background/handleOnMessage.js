@@ -40,7 +40,11 @@ function handleOnMessage(message, sender, sendResponse) {
           break;
 
         case "iconColor":
-          handleIconColor(value);
+          try {
+            handleIconColor(value);
+          } catch {
+            console.log("cant handle iconColor");
+          }
           break;
 
         case "search":
