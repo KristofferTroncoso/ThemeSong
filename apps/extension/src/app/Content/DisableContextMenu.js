@@ -28,8 +28,6 @@ function DisableContextMenu() {
           event.preventDefault();
         });
       }
-      console.log("disconnecting disablecontextmenu-playeruistateobserver");
-      playerUiStateObserver.current.disconnect();
     } else {
       if (document.getElementById("queue")) {
         document.getElementById("queue").addEventListener("contextmenu", (event) => {
