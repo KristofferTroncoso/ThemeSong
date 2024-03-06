@@ -12,6 +12,8 @@ function CenterSongControls() {
       grid-area: middle !important;
       justify-content: center !important;
       padding-left: 10px;
+      align-content: center;
+      align-items: center;
     }
 
     .middle-controls {
