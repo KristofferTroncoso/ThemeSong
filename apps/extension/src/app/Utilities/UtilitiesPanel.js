@@ -3,11 +3,14 @@ import { css } from "@emotion/react";
 import SleepTimerPanelButton from "./SleepTimer/SleepTimerPanelButton";
 import StyledPanelDiv from "../QuickAccessPanel/components/StyledPanelDiv";
 import NotificationPanelButton from "./Notification/NotificationPanelButton";
+import SidePlayerButton from "./SidePlayerButton/SidePlayerButton";
 import useLocalization from "../Extension/Localization/useLocalization";
 import { TbTools } from "react-icons/tb";
+import { useStore } from "/src/app/store";
 
 function UtilitiesPanel() {
   const getMessage = useLocalization();
+  const browser = useStore((state) => state.extension.prefs.browser);
 
   return (
     <StyledPanelDiv>
@@ -31,6 +34,7 @@ function UtilitiesPanel() {
       >
         <SleepTimerPanelButton />
         <NotificationPanelButton />
+        {browser === "chrome" && <SidePlayerButton />}
       </div>
     </StyledPanelDiv>
   );

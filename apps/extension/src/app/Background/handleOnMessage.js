@@ -13,6 +13,14 @@ function handleOnMessage(message, sender, sendResponse) {
         window.location.reload();
         break;
 
+      case "openSidePlayer":
+        chrome.tabs.query({}, (tabs) => {
+          console.log(tabs);
+          chrome.sidePanel.open({ windowId: tabs[0].windowId });
+          chrome.windows.update(tabs[0].windowId, { focused: true });
+        });
+        break;
+
       default:
         console.log(`Sending response: "It's a me, the background script!"`);
         sendResponse("It's a me, the background script!");
