@@ -7,6 +7,7 @@ function UpdatePanel() {
   const setShowUpdateNote = useStore((state) => state.extension.setShowUpdateNote);
   const getMessage = useLocalization();
   // const browser = useStore((state) => state.extension.prefs.browser);
+  const metadata = useStore((state) => state.media.metadata);
 
   return (
     <StyledPanelDiv
@@ -21,7 +22,7 @@ function UpdatePanel() {
           color: #000000;
         `}
       >
-        <u>ThemeSong Update / Notes</u>
+        <u>{getMessage("themesongUpdateNotes")}</u>
       </h2>
       <div
         css={css`
@@ -32,15 +33,21 @@ function UpdatePanel() {
         `}
       >
         <p>
-          <b>v1.1.6</b>
-          <span> (February 2024)</span>
+          <b>v1.1.7</b>
+          <span> (March 2024)</span>
         </p>
         <br></br>
-        <p>- styling improvements</p>
-        <p>- added temp fix for YTM right-click context-menu bug</p>
+        <p>- New Piece: Center Song Controls.</p>
+        <p>- Add "next" button to notifications.</p>
+        <p>- Add Side Player button to Access Panel.</p>
+        <p>- Minor styling fixes.</p>
+        <p>- Tip: Check out the popup icon on browser toolbar for more UI customization options.</p>
         <br></br>
         <p>
-          <b>{getMessage("updateNotice")}</b>
+          <b>{getMessage("thanksForTheComments")}</b>
+        </p>
+        <p>
+          <span style={{ fontSize: 12 }}>🎶💿</span> {metadata.artist} !!<span style={{ fontSize: 12 }}>🤘😍</span>
         </p>
       </div>
       <button
