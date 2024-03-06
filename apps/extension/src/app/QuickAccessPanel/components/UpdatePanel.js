@@ -39,7 +39,6 @@ function UpdatePanel() {
         <br></br>
         <p>- New Piece: Center Song Controls.</p>
         <p>- Add "next" button to notifications.</p>
-        <p>- Add Side Player button to Access Panel.</p>
         <p>- Minor styling fixes.</p>
         <p>- Tip: Check out the popup icon on browser toolbar for more UI customization options.</p>
         <br></br>
