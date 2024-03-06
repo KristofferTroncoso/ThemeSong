@@ -3,9 +3,11 @@ import YtmIcon from "../../YtmLogo/YtmIcon";
 import ThemesongTextIcon from "./ThemesongTextIcon";
 import { BsReverseLayoutSidebarInsetReverse } from "react-icons/bs";
 import { useStore } from "/src/app/store";
+import useLocalization from "../../Extension/Localization/useLocalization";
 
 function TopBar() {
   const browser = useStore((state) => state.extension.prefs.browser);
+  const getMessage = useLocalization();
 
   function handleYTMclick() {
     chrome.tabs.query({}, (tabs) => {
@@ -38,10 +40,8 @@ function TopBar() {
   }
 
   function handleSideplayerClick() {
-    chrome.tabs.query({}, (tabs) => {
-      console.log(tabs);
-      chrome.sidePanel.open({ windowId: tabs[0].windowId });
-      chrome.windows.update(tabs[0].windowId, { focused: true });
+    chrome.runtime.sendMessage("openSidePlayer", (response) => {
+      console.log(`Received response ${response}`);
     });
   }
 
@@ -107,7 +107,7 @@ function TopBar() {
               padding: 0 4px;
               margin: 0 2px;
             `}
-            title="Open Side Player"
+            title={getMessage("openSidePlayer")}
             onClick={handleSideplayerClick}
           >
             <BsReverseLayoutSidebarInsetReverse
