@@ -120,7 +120,7 @@ function DynamicLight() {
 
             --ts-overlay-color: rgb(0 0 0 / 0.6);
 
-            --ts-temp-color: hsl(var(--ts-palette-dominant-hue) ${saturation}% 50% / 10%);
+            --ts-temp-color: hsl(var(--ts-palette-dominant-hue) ${saturation}% 40% / 10%);
             --ts-overlay-nowplaying-color: var(--ts-temp-color);
             --ts-overlay-highlighted-color: var(--ts-temp-color);
             --ts-pill-color: var(--ts-temp-color);
@@ -169,6 +169,13 @@ function DynamicLight() {
           box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
         }
 
+        #items.ytmusic-grid-renderer>*.ytmusic-grid-renderer {
+          padding: 3px;
+        }
+
+        #items.ytmusic-carousel {
+          padding: 3px 3px 0 3px;
+        }
       `}
     </style>
   );

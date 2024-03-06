@@ -149,6 +149,13 @@ function AppleMusicLight() {
           box-shadow: 0 2px 5px rgb(0 0 0 / 0.2);
         }
 
+        #items.ytmusic-grid-renderer>*.ytmusic-grid-renderer {
+          padding: 4px;
+        }
+
+        #items.ytmusic-carousel {
+          padding: 4px 4px 0 4px;
+        }
       `}
     </style>
   );
