@@ -108,7 +108,7 @@ function ThemePanel() {
         >
           <AppleIcon
             css={css`
-              font-size: 25px;
+              font-size: 23px;
             `}
           />
         </PanelButton>
@@ -130,7 +130,7 @@ function ThemePanel() {
         >
           <SiYoutubemusic
             css={css`
-              font-size: 20px;
+              font-size: 18px;
             `}
           />
         </PanelButton>

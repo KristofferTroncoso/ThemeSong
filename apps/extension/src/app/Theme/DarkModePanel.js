@@ -83,7 +83,7 @@ function DarkModePanel() {
           >
             <DarkModeIcon
               css={css`
-                font-size: 22px;
+                font-size: 20px;
               `}
             />
           </PanelButton>
@@ -106,7 +106,7 @@ function DarkModePanel() {
           >
             <LightModeIcon
               css={css`
-                font-size: 24px;
+                font-size: 20px;
               `}
             />
           </PanelButton>
@@ -127,7 +127,7 @@ function DarkModePanel() {
             `}
             onClick={(e) => handleDarkLightChange("system")}
           >
-            <CgDarkMode size={21} />
+            <CgDarkMode size={19} />
           </PanelButton>
         </div>
       </div>

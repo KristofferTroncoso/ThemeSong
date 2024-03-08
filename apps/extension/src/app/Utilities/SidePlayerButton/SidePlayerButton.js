@@ -16,7 +16,7 @@ function SidePlayerButton() {
     <PanelButton onClick={handleSideplayerClick} title={getMessage("openSidePlayer")} hoverColor="red">
       <BsReverseLayoutSidebarInsetReverse
         css={css`
-          font-size: 22px;
+          font-size: 20px;
         `}
       />
     </PanelButton>
