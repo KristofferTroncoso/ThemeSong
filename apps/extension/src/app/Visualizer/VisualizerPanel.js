@@ -15,7 +15,7 @@ function VisualizerVariantButton({ color, bgColor, hoverColor, hoverBgColor, chi
         min-width: 30px;
         width: 36px;
         margin: 2px;
-        background: ${bgColor || "var(--ts-base-100-alpha-01-color)"};
+        background: ${bgColor || "var(--ts-base-100-alpha-005-color)"};
         color: ${color || "var(--ts-base-100-color)"};
         border: 0;
         border-radius: 3px;
@@ -25,6 +25,8 @@ function VisualizerVariantButton({ color, bgColor, hoverColor, hoverBgColor, chi
         align-items: center;
         align-content: center;
         filter: brightness(0.9) saturate(0.9);
+        box-shadow: 0 1px 2px rgb(0 0 0 / 30%);
+
         :hover {
           background: ${hoverBgColor || "var(--ts-base-100-color)"};
           color: ${hoverColor || "--ts-base-00-color"};

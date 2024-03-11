@@ -28,7 +28,7 @@ function PanelButton({ color, bgColor, hoverColor, hoverBgColor, children, title
           min-width: 42px;
           margin: 3px;
           padding: 0;
-          background: ${bgColor || "var(--ts-base-100-alpha-01-color)"};
+          background: ${bgColor || "var(--ts-base-100-alpha-005-color)"};
           color: ${color || "var(--ts-base-100-color)"};
           border: 0;
           border-radius: 7px;
@@ -38,7 +38,7 @@ function PanelButton({ color, bgColor, hoverColor, hoverBgColor, children, title
           align-items: center;
           align-content: center;
           filter: brightness(1) saturate(1);
-          box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+          box-shadow: 0 1px 2px rgb(0 0 0 / 30%);
 
           :hover {
             background: ${hoverBgColor || "var(--ts-base-100-color)"};

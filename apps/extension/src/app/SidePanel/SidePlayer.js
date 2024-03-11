@@ -66,7 +66,6 @@ function SidePlayer() {
           padding: 20px;
           height: calc(100vh - 40px);
           color: white;
-          border-radius: 10px;
           text-align: center;
           background: linear-gradient(
             to bottom,
