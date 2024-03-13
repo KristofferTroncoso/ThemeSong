@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 
 function ThemeSongFontIcon() {
   return (
-    <div style={{ padding: "3px 3px 2px" }}>
+    <div style={{ padding: "3px 3px 0" }}>
       <svg
         width="20"
         height="18"

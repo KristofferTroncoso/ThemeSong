@@ -183,6 +183,10 @@ tp-yt-paper-toast {
   background-color: var(--ts-base-10-color);
 }
 
+ytmusic-notification-text-renderer[toast-style=TOAST_STYLE_GRADIENT] #toast.ytmusic-notification-text-renderer {
+  background-color: var(--ts-base-10-color);
+}
+
 /* image filters */
 .immersive-background ytmusic-fullbleed-thumbnail-renderer {
   filter: var(--ts-image-filter-brightness, brightness(1));

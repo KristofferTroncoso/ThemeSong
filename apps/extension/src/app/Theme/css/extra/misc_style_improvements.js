@@ -289,6 +289,17 @@ export const compactListBox = /*css*/ `
   }
 `;
 
+export const largerPlayerbarImg = /*css*/ `
+.thumbnail-image-wrapper.ytmusic-player-bar {
+  height: 46px;
+}
+
+.image.ytmusic-player-bar {
+  height: 46px;
+  border-radius: 3px;
+}
+`;
+
 export const misc_style_improvements = /*css*/ `
   /* ThemeSong */
   /* universal styles */
@@ -306,4 +317,5 @@ export const misc_style_improvements = /*css*/ `
   ${sidebarALittleTooNarrow}
   ${adjustPlayerPagePadding}
   ${compactListBox}
+  ${largerPlayerbarImg}
 `;

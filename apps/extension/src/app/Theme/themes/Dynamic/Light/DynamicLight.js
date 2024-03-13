@@ -132,11 +132,29 @@ function DynamicLight() {
         .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
           background-color: var(--ts-temp-color);
         }
+
+        /* img box-shadows */
+        div#thumbnail {
+          box-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
+          margin-bottom: 5px;
+        }
+
+        a:has(> ytmusic-thumbnail-renderer[thumbnail-crop="MUSIC_THUMBNAIL_CROP_UNSPECIFIED"]) {
+          box-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
+        }
+
+        #items.ytmusic-grid-renderer>*.ytmusic-grid-renderer {
+          padding: 2px;
+        }
+
+        #items.ytmusic-carousel {
+          padding: 2px 2px 0 2px;
+        }
       `
       }
 
-      {playerUiState === "PLAYER_PAGE_OPEN" || playerUiState === "FULLSCREEN"
-        ? /* css */ ` 
+      {(playerUiState === "PLAYER_PAGE_OPEN" || playerUiState === "FULLSCREEN") &&
+        /* css */ ` 
         :root  {
           --ts-navbar-color: var(--ts-playerpage-color);
           --ts-sidebar-color: var(--ts-playerpage-color);
@@ -157,24 +175,6 @@ function DynamicLight() {
 
         tp-yt-paper-listbox {
           background: var(--ts-listbox-color);
-        }
-      `
-        : /* css */ `
-        div#thumbnail {
-          box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
-          margin-bottom: 10px;
-        }
-
-        a:has(> ytmusic-thumbnail-renderer[thumbnail-crop="MUSIC_THUMBNAIL_CROP_UNSPECIFIED"]) {
-          box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
-        }
-
-        #items.ytmusic-grid-renderer>*.ytmusic-grid-renderer {
-          padding: 3px;
-        }
-
-        #items.ytmusic-carousel {
-          padding: 3px 3px 0 3px;
         }
       `}
     </style>

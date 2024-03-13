@@ -114,7 +114,7 @@ function SleepTimer() {
         <div
           css={css`
             width: 300px;
-            height: 510px;
+            height: 480px;
             background-color: #222;
             color: #fff;
             padding: 20px;
