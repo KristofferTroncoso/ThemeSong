@@ -24,6 +24,9 @@ ytmusic-player {
   box-shadow: var(--ts-songimg-box-shadow);
   border-radius: var(--ts-songimg-border-radius) !important;
 }
+ytmusic-player[player-ui-state="FULLSCREEN"] {
+  border-radius: 0px !important;
+}
 #song-image {
   box-shadow: var(--ts-songimg-box-shadow);
   border-radius: var(--ts-songimg-border-radius);
