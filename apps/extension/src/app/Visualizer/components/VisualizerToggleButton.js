@@ -1,10 +1,12 @@
 import { css } from "@emotion/react";
 import { useStore } from "/src/app/store";
 import { GiProtectionGlasses } from "react-icons/gi";
+import useLocalization from "../../Extension/Localization/useLocalization";
 
 function VisualizerToggleButton() {
   const isVisualizerOn = useStore((state) => state.visualizer.isVisualizerOn);
   const toggleIsVisualizerOn = useStore((state) => state.visualizer.toggleIsVisualizerOn);
+  const getMessage = useLocalization();
 
   const handleVisualizerButtonClick = (e) => {
     e.stopPropagation();
@@ -15,7 +17,7 @@ function VisualizerToggleButton() {
     <button
       id="ts-visualizer-toggle"
       onClick={handleVisualizerButtonClick}
-      title={isVisualizerOn ? "Turn OFF Visualizer" : "Turn ON Visualizer"}
+      title={getMessage("visualizers")}
       css={css`
         color: ${isVisualizerOn ? "#fff" : "inherit"};
         background-color: ${isVisualizerOn ? "#ee0606" : "inherit"};
