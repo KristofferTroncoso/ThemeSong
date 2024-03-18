@@ -35,6 +35,7 @@ import { themesongUpdateNotes } from "./messages/themesongUpdateNotes";
 import { songDesktopNotifications } from "./messages/songDesktopNotifications";
 import { thanksForTheComments } from "./messages/thanksForTheComments";
 import { updateNotice } from "./messages/updateNotice";
+import { remaining } from "./messages/remaining";
 
 export const localizations = {
   themes,
@@ -74,4 +75,5 @@ export const localizations = {
   thanksForTheComments,
   updateNotice,
   welcomeQap,
+  remaining,
 };

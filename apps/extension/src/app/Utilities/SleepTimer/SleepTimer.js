@@ -133,7 +133,7 @@ function SleepTimer() {
                   color: #ac13cf;
                 `}
               >
-                {minutesLeft} {getMessage("minutes")} left
+                {minutesLeft} {getMessage("minutes")} {getMessage("remaining")}
               </h1>
             )}
           </div>
