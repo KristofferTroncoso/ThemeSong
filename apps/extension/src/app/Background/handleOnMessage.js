@@ -37,7 +37,7 @@ function handleOnMessage(message, sender, sendResponse) {
               title: value.songName,
               // contextMessage: value.songArtist,
               message: value.songArtist,
-              buttons: [{ title: "Next" }],
+              buttons: [{ title: "⏭️" }],
               silent: true,
             },
             (notificationId) =>
