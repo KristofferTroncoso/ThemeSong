@@ -51,6 +51,13 @@ function addThemesongControlButtonsContainer() {
     >
       <HideCaptions />
       <VisualizerToggleButton />
+      <style>
+        {`
+        ytmusic-player[player-ui-state=FULLSCREEN] #themesongControlButtonsContainer {
+          display: none;
+        }
+        `}
+      </style>
     </div>
   );
 }

@@ -17,6 +17,11 @@ ytmusic-two-row-item-renderer[aspect-ratio=MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_R
 .image-wrapper.ytmusic-two-row-item-renderer {
   border-radius: var(--ts-songimg-thumbnail-border-radius);
 }
+
+/* album or playlist thumbnail */
+yt-img-shadow[object-fit=COVER] img.yt-img-shadow {
+  border-radius: var(--ts-songimg-thumbnail-border-radius);
+}
 /* end image thumbnails */
 
 /* start PlayPage song img styling */

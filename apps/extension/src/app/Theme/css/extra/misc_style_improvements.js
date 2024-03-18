@@ -300,6 +300,13 @@ export const largerPlayerbarImg = /*css*/ `
 }
 `;
 
+/* the dark gradient for the top song controls stays active on fullscreen. im just setting it to no background */
+export const noGradientOnFullScreen = /*css*/ `
+ytmusic-player[player-ui-state=FULLSCREEN] .song-media-controls.ytmusic-player {
+  background: 0;
+}
+`;
+
 export const misc_style_improvements = /*css*/ `
   /* ThemeSong */
   /* universal styles */
@@ -318,4 +325,5 @@ export const misc_style_improvements = /*css*/ `
   ${adjustPlayerPagePadding}
   ${compactListBox}
   ${largerPlayerbarImg}
+  ${noGradientOnFullScreen}
 `;

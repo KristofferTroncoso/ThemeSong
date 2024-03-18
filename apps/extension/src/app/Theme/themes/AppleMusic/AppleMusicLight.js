@@ -140,11 +140,6 @@ function AppleMusicLight() {
           fill: #7e36aa;
         }
 
-        div#thumbnail {
-          box-shadow: 0 2px 5px rgb(0 0 0 / 0.2);
-          margin-bottom: 10px;
-        }
-
         a:has(> ytmusic-thumbnail-renderer[thumbnail-crop="MUSIC_THUMBNAIL_CROP_UNSPECIFIED"]) {
           box-shadow: 0 2px 5px rgb(0 0 0 / 0.2);
         }
