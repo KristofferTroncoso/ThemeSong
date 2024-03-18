@@ -4,10 +4,12 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import { CgDarkMode } from "react-icons/cg";
 import PanelButton from "../../../QuickAccessPanel/components/PanelButton";
+import useLocalization from "../../../Extension/Localization/useLocalization";
 
 function AppleMusicSettings() {
   const appleMusicPrefs = useStore((state) => state.theme.prefs["76dd54c5-78a2-4ca3-9c16-3d0d1aab367f"]);
   const setSingleThemePrefs = useStore((state) => state.theme.setSingleThemePrefs);
+  const getMessage = useLocalization();
 
   function handleDarkLightChange(value) {
     if (appleMusicPrefs.appearance !== value) {
@@ -25,7 +27,7 @@ function AppleMusicSettings() {
         `}
       >
         <PanelButton
-          title="Dark Mode"
+          title={getMessage("darkMode")}
           css={css`
             height: 38px;
             min-width: 45px;
@@ -46,7 +48,7 @@ function AppleMusicSettings() {
           <DarkModeIcon fontSize="medium" />
         </PanelButton>
         <PanelButton
-          title="Light Mode"
+          title={getMessage("lightMode")}
           css={css`
             height: 38px;
             min-width: 45px;
@@ -71,7 +73,7 @@ function AppleMusicSettings() {
           />
         </PanelButton>
         <PanelButton
-          title="Use Device Setting"
+          title={getMessage("useDeviceSetting")}
           css={css`
             height: 38px;
             min-width: 45px;

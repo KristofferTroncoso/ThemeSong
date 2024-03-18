@@ -7,10 +7,12 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import { CgDarkMode } from "react-icons/cg";
 import PanelButton from "../../../QuickAccessPanel/components/PanelButton";
+import useLocalization from "../../../Extension/Localization/useLocalization";
 
 export function StaticSettings() {
   const staticUserPrefs = useStore((state) => state.theme.prefs["b458eaae-0cbd-4a44-8847-c7a6a6ea1be8"]);
   const setSingleThemePrefs = useStore((state) => state.theme.setSingleThemePrefs);
+  const getMessage = useLocalization();
 
   function handleDarkLightChange(value) {
     let newStaticUserPrefs = {
@@ -68,7 +70,7 @@ export function StaticSettings() {
         onSubmit={(e) => e.preventDefault()}
       >
         <PanelButton
-          title="Dark Mode"
+          title={getMessage("darkMode")}
           name="appearance"
           css={css`
             height: 25px;
@@ -89,7 +91,7 @@ export function StaticSettings() {
           <DarkModeIcon style={{ fontSize: 17 }} />
         </PanelButton>
         <PanelButton
-          title="Light Mode"
+          title={getMessage("lightMode")}
           name="appearance"
           css={css`
             height: 25px;
@@ -114,7 +116,7 @@ export function StaticSettings() {
           />
         </PanelButton>
         <PanelButton
-          title="Use Device Setting"
+          title={getMessage("useDeviceSetting")}
           name="appearance"
           css={css`
             height: 25px;

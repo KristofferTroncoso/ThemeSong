@@ -36,6 +36,9 @@ import { songDesktopNotifications } from "./messages/songDesktopNotifications";
 import { thanksForTheComments } from "./messages/thanksForTheComments";
 import { updateNotice } from "./messages/updateNotice";
 import { remaining } from "./messages/remaining";
+import { darkMode } from "./messages/darkMode";
+import { lightMode } from "./messages/lightMode";
+import { useDeviceSetting } from "./messages/useDeviceSetting";
 
 export const localizations = {
   themes,
@@ -76,4 +79,7 @@ export const localizations = {
   updateNotice,
   welcomeQap,
   remaining,
+  darkMode,
+  lightMode,
+  useDeviceSetting,
 };

@@ -7,10 +7,12 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import { CgDarkMode } from "react-icons/cg";
 import PanelButton from "../../../QuickAccessPanel/components/PanelButton";
+import useLocalization from "../../../Extension/Localization/useLocalization";
 
 function DynamicSettings() {
   const setSingleThemePrefs = useStore((state) => state.theme.setSingleThemePrefs);
   const dynamicUserPrefs = useStore((state) => state.theme.prefs["db8854e3-6753-4639-b244-c8091f3b9fcb"]);
+  const getMessage = useLocalization();
 
   function handleDarkLightChange(value) {
     let newDynamicUserPrefs = {
@@ -68,7 +70,7 @@ function DynamicSettings() {
         onSubmit={(e) => e.preventDefault()}
       >
         <PanelButton
-          title="Dark Mode"
+          title={getMessage("darkMode")}
           name="appearance"
           css={css`
             height: 25px;
@@ -89,7 +91,7 @@ function DynamicSettings() {
           <DarkModeIcon style={{ fontSize: 17 }} />
         </PanelButton>
         <PanelButton
-          title="Light Mode"
+          title={getMessage("lightMode")}
           name="appearance"
           css={css`
             height: 25px;
@@ -114,7 +116,7 @@ function DynamicSettings() {
           />
         </PanelButton>
         <PanelButton
-          title="Use Device Setting"
+          title={getMessage("useDeviceSetting")}
           name="appearance"
           css={css`
             height: 25px;
