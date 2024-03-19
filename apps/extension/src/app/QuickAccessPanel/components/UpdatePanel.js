@@ -33,17 +33,15 @@ function UpdatePanel() {
         `}
       >
         <p>
-          <b>v1.1.7</b>
+          <b>v1.1.8</b>
           <span> (March 2024)</span>
         </p>
         <br></br>
-        <p>- New Piece: Center Song Controls.</p>
-        <p>- Add "next" button to notifications.</p>
-        <p>- Minor styling fixes.</p>
-        <p>- Tip: Check out the popup icon on browser toolbar for more UI customization options.</p>
+        <p>- styling improvements</p>
+        <p>- more translations</p>
         <br></br>
         <p>
-          <b>{getMessage("thanksForTheComments")}</b>
+          <b>{getMessage("updateNotice")}</b>
         </p>
         <p>
           <span style={{ fontSize: 12 }}>🎶💿</span> {metadata.artist} !!<span style={{ fontSize: 12 }}>🤘😍</span>
