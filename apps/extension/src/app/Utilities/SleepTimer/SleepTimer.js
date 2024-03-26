@@ -201,7 +201,7 @@ function SleepTimer() {
               margin-bottom: 20px;
             `}
           >
-            Sleep Timer completed
+            {getMessage("sleepTimerCompleted")}
           </h1>
           <StyledButton
             css={css`
@@ -209,7 +209,7 @@ function SleepTimer() {
             `}
             onClick={(e) => setIsTimeOverDialogOpen(false)}
           >
-            OK
+            {getMessage("ok")}
           </StyledButton>
           <StyledButton
             css={css`
@@ -220,7 +220,7 @@ function SleepTimer() {
               setTimerIsDialogOpen(true);
             }}
           >
-            Set new Timer
+            {getMessage("setNewTimer")}
           </StyledButton>
         </div>
       </Dialog>

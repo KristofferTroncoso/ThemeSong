@@ -39,6 +39,9 @@ import { remaining } from "./messages/remaining";
 import { darkMode } from "./messages/darkMode";
 import { lightMode } from "./messages/lightMode";
 import { useDeviceSetting } from "./messages/useDeviceSetting";
+import { sleepTimerCompleted } from "./messages/sleepTimerCompleted";
+import { ok } from "./messages/ok";
+import { setNewTimer } from "./messages/setNewTimer";
 
 export const localizations = {
   themes,
@@ -82,4 +85,7 @@ export const localizations = {
   darkMode,
   lightMode,
   useDeviceSetting,
+  sleepTimerCompleted,
+  ok,
+  setNewTimer,
 };
