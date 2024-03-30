@@ -5,6 +5,7 @@ import useLocalization from "../../../Extension/Localization/useLocalization";
 
 import { styled } from "@mui/material/styles";
 import Slider from "@mui/material/Slider";
+import { RxBorderWidth, RxWidth } from "react-icons/rx";
 
 const StyledSlider = styled(Slider)`
   width: 180px;
@@ -64,18 +65,22 @@ function BarsSettings() {
             <div
               style={{
                 display: "flex",
-                justifyContent: "space-between",
+                justifyContent: "center",
                 height: "21px",
               }}
             >
-              <label htmlFor="barWidth">Bar Width:</label>
               <div
                 style={{
                   display: "flex",
+                  justifyContent: "space-around",
                   alignContent: "center",
                   alignItems: "center",
+                  width: 280,
                 }}
               >
+                <label htmlFor="barWidth">
+                  <RxBorderWidth size={15} />
+                </label>
                 <StyledSlider
                   name="barWidth"
                   value={barsPrefs.barWidth}
@@ -105,18 +110,22 @@ function BarsSettings() {
             <div
               style={{
                 display: "flex",
-                justifyContent: "space-between",
+                justifyContent: "center",
                 height: "21px",
               }}
             >
-              <label htmlFor="gap">Gap Width:</label>
               <div
                 style={{
                   display: "flex",
+                  justifyContent: "space-around",
                   alignContent: "center",
                   alignItems: "center",
+                  width: 280,
                 }}
               >
+                <label htmlFor="gap">
+                  <RxWidth size={20} />
+                </label>
                 <StyledSlider
                   name="gap"
                   value={barsPrefs.gap}

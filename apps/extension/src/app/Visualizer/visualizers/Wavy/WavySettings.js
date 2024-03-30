@@ -2,6 +2,7 @@ import { useStore } from "/src/app/store";
 
 import { styled } from "@mui/material/styles";
 import Slider from "@mui/material/Slider";
+import { RxBorderWidth } from "react-icons/rx";
 
 const StyledSlider = styled(Slider)`
   width: 180px;
@@ -38,18 +39,22 @@ function WavySettings() {
           <div
             style={{
               display: "flex",
-              justifyContent: "space-between",
+              justifyContent: "center",
               height: "21px",
             }}
           >
-            <label htmlFor="lineWidth">Line Width:</label>
             <div
               style={{
                 display: "flex",
+                justifyContent: "space-around",
                 alignContent: "center",
                 alignItems: "center",
+                width: 280,
               }}
             >
+              <label htmlFor="lineWidth">
+                <RxBorderWidth size={15} />
+              </label>
               <StyledSlider
                 name="lineWidth"
                 value={wavyStorageObject.lineWidth}
