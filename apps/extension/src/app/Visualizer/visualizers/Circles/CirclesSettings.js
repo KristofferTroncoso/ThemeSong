@@ -1,5 +1,6 @@
 import { useStore } from "/src/app/store";
 import VariantButton from "../../components/VariantButton";
+import useLocalization from "../../../Extension/Localization/useLocalization";
 
 function CirclesSettings() {
   const circlesVisualizer = useStore((state) =>
@@ -7,6 +8,7 @@ function CirclesSettings() {
   );
   const circlesPrefs = useStore((state) => state.visualizer.prefs["685d0ec7-5c52-4e48-a43d-11184a39f3da"]);
   const setSingleVisualizerPrefs = useStore((state) => state.visualizer.setSingleVisualizerPrefs);
+  const getMessage = useLocalization();
 
   const handleVisualizersChange = (visualizerObject) => {
     setSingleVisualizerPrefs("685d0ec7-5c52-4e48-a43d-11184a39f3da", visualizerObject);
@@ -24,7 +26,7 @@ function CirclesSettings() {
     return (
       <div>
         <div>
-          <p style={{ marginBottom: "6px" }}>Style Variant:</p>
+          <p style={{ marginBottom: "6px" }}>{getMessage("variants")}</p>
           <div
             className="VariantsContainer"
             css={{

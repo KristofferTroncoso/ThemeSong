@@ -1,6 +1,7 @@
 import { useStore } from "/src/app/store";
 import { css } from "@emotion/react";
 import VariantButton from "../../components/VariantButton";
+import useLocalization from "../../../Extension/Localization/useLocalization";
 
 import { styled } from "@mui/material/styles";
 import Slider from "@mui/material/Slider";
@@ -28,6 +29,7 @@ function BarsSettings() {
   );
   const barsPrefs = useStore((state) => state.visualizer.prefs["51dc50c8-eb06-4086-ad9c-a89758f63db6"]);
   const setSingleVisualizerPrefs = useStore((state) => state.visualizer.setSingleVisualizerPrefs);
+  const getMessage = useLocalization();
 
   const handleVisualizersChange = (visualizerObject) => {
     setSingleVisualizerPrefs("51dc50c8-eb06-4086-ad9c-a89758f63db6", visualizerObject);
@@ -142,7 +144,7 @@ function BarsSettings() {
               </div>
             </div>
           </form>
-          <p style={{ marginBottom: "6px" }}>Style Variant:</p>
+          <p style={{ marginBottom: "6px" }}>{getMessage("variants")}</p>
           <div
             className="VariantsContainer"
             css={{
