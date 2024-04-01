@@ -24,9 +24,6 @@ function ExperimentalSettings() {
   } else {
     return (
       <div>
-        <div>
-          <p style={{ marginBottom: "6px" }}>Experimental visualizers. Subject to change.</p>
-        </div>
         <input
           type="number"
           onChange={handleVariantClick}
