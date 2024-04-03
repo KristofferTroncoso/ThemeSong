@@ -298,4 +298,12 @@ tp-yt-paper-tabs.ytmusic-playlist-form {
 yt-formatted-string.ytmusic-guide-signin-promo-renderer {
   color: var(--ts-secondary-text-color);
 }
+
+/* */
+.strapline-text.ytmusic-responsive-header-renderer {
+  color: var(--ts-tertiary-text-color);
+  --yt-endpoint-color: var(--ts-tertiary-text-color);
+  --yt-endpoint-hover-color: var(--ts-tertiary-text-color);
+  --yt-endpoint-visited-color: var(--ts-tertiary-text-color);
+}
 `;
