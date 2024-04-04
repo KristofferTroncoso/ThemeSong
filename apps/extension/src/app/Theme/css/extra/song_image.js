@@ -1,6 +1,6 @@
 export const song_image = /*css*/ `
 :root {
-  --ts-songimg-border-radius: 10px;
+  --ts-songimg-border-radius: 9px;
   --ts-songimg-thumbnail-border-radius: 4px;
   --ts-songimg-box-shadow: 0 1px 3px rgb(0 0 0 / 0.3);
 }
@@ -15,11 +15,11 @@ ytmusic-two-row-item-renderer[aspect-ratio=MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_R
 }
 
 #ytmusic-carousel ytmusic-two-row-item-renderer[aspect-ratio=MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE] .image-wrapper.ytmusic-two-row-item-renderer {
-  border-radius: 6px;
+  border-radius: 5px;
 }
 
 #ytmusic-carousel ytmusic-two-row-item-renderer[aspect-ratio=MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE] .image.ytmusic-two-row-item-renderer {
-  border-radius: 6px;
+  border-radius: 5px;
 }
 
 .image-wrapper.ytmusic-two-row-item-renderer {
@@ -88,7 +88,7 @@ ytmusic-player[player-ui-state=FULLSCREEN] #song-image #img {
 
 /* Your likes and playlists and albums image */
 #thumbnail {
-  border-radius: 7px !important;
+  border-radius: 6px !important;
 }
 
 /* searching for a song */
