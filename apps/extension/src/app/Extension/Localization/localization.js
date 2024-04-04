@@ -42,6 +42,7 @@ import { useDeviceSetting } from "./messages/useDeviceSetting";
 import { sleepTimerCompleted } from "./messages/sleepTimerCompleted";
 import { ok } from "./messages/ok";
 import { setNewTimer } from "./messages/setNewTimer";
+import { language } from "./messages/language";
 
 export const localizations = {
   themes,
@@ -88,4 +89,5 @@ export const localizations = {
   sleepTimerCompleted,
   ok,
   setNewTimer,
+  language,
 };

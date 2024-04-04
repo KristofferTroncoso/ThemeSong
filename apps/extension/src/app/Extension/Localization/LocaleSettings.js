@@ -1,10 +1,12 @@
 import { useStore } from "/src/app/store";
 import { css } from "@emotion/react";
 import { locales } from "./locales";
+import useLocalization from "../Localization/useLocalization";
 
 function LocaleSettings() {
   const setLocale = useStore((state) => state.extension.setLocale);
   const selectedLocale = useStore((state) => state.extension.prefs.locale);
+  const getMessage = useLocalization();
 
   function handleChange(e) {
     setLocale(e.target.value);
@@ -22,7 +24,7 @@ function LocaleSettings() {
           margin-right: 5px;
         `}
       >
-        Locale:
+        {getMessage("language")}:
       </span>
       <select
         name="locale"
