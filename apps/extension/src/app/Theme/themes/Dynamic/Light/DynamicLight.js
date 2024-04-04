@@ -145,6 +145,22 @@ function DynamicLight() {
         #items.ytmusic-carousel {
           padding: 2px 2px 0 2px;
         }
+
+        /* album/playlist page box-shadow */
+        #thumbnail.ytmusic-detail-header-renderer, .thumbnail.ytmusic-detail-header-renderer {
+          box-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
+          margin-bottom: 4px;
+        }
+
+        /* mini-player box-shadow */
+        ytmusic-player[player-ui-state=MINIPLAYER] {
+          box-shadow: 0 2px 4px rgb(0 0 0 / 0.2);
+        }
+
+        /* player-bar img border */
+        .image.ytmusic-player-bar {
+          border: 1px solid rgb(0 0 0 / 0.1);
+        }
       `
       }
 

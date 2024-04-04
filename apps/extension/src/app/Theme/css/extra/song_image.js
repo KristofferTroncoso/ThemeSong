@@ -1,7 +1,7 @@
 export const song_image = /*css*/ `
 :root {
   --ts-songimg-border-radius: 10px;
-  --ts-songimg-thumbnail-border-radius: 5px;
+  --ts-songimg-thumbnail-border-radius: 4px;
   --ts-songimg-box-shadow: 0 1px 3px rgb(0 0 0 / 0.3);
 }
 
@@ -12,6 +12,14 @@ ytmusic-two-row-item-renderer[aspect-ratio=MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_R
 
 ytmusic-two-row-item-renderer[aspect-ratio=MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE] .image-wrapper.ytmusic-two-row-item-renderer {
   border-radius: var(--ts-songimg-thumbnail-border-radius);
+}
+
+#ytmusic-carousel ytmusic-two-row-item-renderer[aspect-ratio=MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE] .image-wrapper.ytmusic-two-row-item-renderer {
+  border-radius: 6px;
+}
+
+#ytmusic-carousel ytmusic-two-row-item-renderer[aspect-ratio=MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE] .image.ytmusic-two-row-item-renderer {
+  border-radius: 6px;
 }
 
 .image-wrapper.ytmusic-two-row-item-renderer {

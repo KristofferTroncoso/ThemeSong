@@ -140,6 +140,7 @@ function AppleMusicLight() {
           fill: #7e36aa;
         }
 
+        /* img box-shadows */
         a:has(> ytmusic-thumbnail-renderer[thumbnail-crop="MUSIC_THUMBNAIL_CROP_UNSPECIFIED"]) {
           box-shadow: 0 2px 5px rgb(0 0 0 / 0.2);
         }
@@ -150,6 +151,22 @@ function AppleMusicLight() {
 
         #items.ytmusic-carousel {
           padding: 4px 4px 0 4px;
+        }
+
+        /* album/playlist page box-shadow */
+        #thumbnail.ytmusic-detail-header-renderer, .thumbnail.ytmusic-detail-header-renderer {
+          box-shadow: 0 2px 6px rgb(0 0 0 / 0.2);
+          margin-bottom: 8px;
+        }
+
+        /* mini-player box-shadow */
+        ytmusic-player[player-ui-state=MINIPLAYER] {
+          box-shadow: 0 2px 6px rgb(0 0 0 / 0.4);
+        }
+
+        /* player-bar img border */
+        .image.ytmusic-player-bar {
+          border: 1px solid rgb(0 0 0 / 0.1);
         }
       `}
     </style>
