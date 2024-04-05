@@ -103,13 +103,13 @@ export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
 
   @container player-page (min-width: 2000px) and (max-width: 2199px) {
     #main-panel {
-      padding: 0 calc(33% - 42vh) !important;
+      padding: 0 calc(34% - 42vh) !important;
     }
   }
 
   @container player-page (min-width: 2200px) and (max-width: 2400px) {
     #main-panel {
-      padding: 0 calc(32% - 42vh) !important;
+      padding: 0 calc(34% - 42vh) !important;
     }
   }
 `;
@@ -131,7 +131,7 @@ tp-yt-paper-item:focus:before, .tp-yt-paper-item.tp-yt-paper-item:focus:before {
 /* opinion. bold sidebar headers. it looks nice imo */
 export const boldSidebarHeaders = /*css*/ `
 .title.ytmusic-guide-entry-renderer {
-  font-weight: 700;
+  font-weight: 500;
   font-family: 'YouTube Sans';
   font-size: 17px;
 }
@@ -143,10 +143,6 @@ ytmusic-guide-entry-renderer[active] .title.ytmusic-guide-entry-renderer {
 
 ytmusic-guide-entry-renderer:not([is-primary]) .title.ytmusic-guide-entry-renderer {
   color: var(--ts-primary-text-color) !important;
-}
-
-.title.ytmusic-guide-entry-renderer {
-  color: var(--ts-base-100-alpha-08-color) !important;
 }
 `;
 

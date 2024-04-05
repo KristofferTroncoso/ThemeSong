@@ -74,7 +74,7 @@ function PlayerPage() {
           width: 335px;
           height: 486px;
           color: white;
-          border-radius: 10px;
+          border-radius: 14px;
           text-align: center;
           background: linear-gradient(
             to bottom,
@@ -131,7 +131,7 @@ function PlayerPage() {
               css={css`
                 width: inherit;
                 height: inherit;
-                border-radius: 5px;
+                border-radius: 8px;
                 background-color: #222;
                 object-fit: contain;
                 box-shadow: 0 5px 80px black;
