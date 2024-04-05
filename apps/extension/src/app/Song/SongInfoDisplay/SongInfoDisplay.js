@@ -9,12 +9,12 @@ function SongInfoDisplay() {
     <div
       id="songDivNode"
       css={css`
-        padding: 80px 0 80px 80px;
+        padding: 80px 0 80px 50px;
       `}
     >
       <h1
         css={css`
-          font-size: 32px;
+          font-size: 30px;
           color: var(--ts-secondary-text-color);
         `}
       >

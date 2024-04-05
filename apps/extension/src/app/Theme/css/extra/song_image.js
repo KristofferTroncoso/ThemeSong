@@ -15,11 +15,11 @@ ytmusic-two-row-item-renderer[aspect-ratio=MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_R
 }
 
 #ytmusic-carousel ytmusic-two-row-item-renderer[aspect-ratio=MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE] .image-wrapper.ytmusic-two-row-item-renderer {
-  border-radius: 5px;
+  border-radius: 7px;
 }
 
 #ytmusic-carousel ytmusic-two-row-item-renderer[aspect-ratio=MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE] .image.ytmusic-two-row-item-renderer {
-  border-radius: 5px;
+  border-radius: 7px;
 }
 
 .image-wrapper.ytmusic-two-row-item-renderer {

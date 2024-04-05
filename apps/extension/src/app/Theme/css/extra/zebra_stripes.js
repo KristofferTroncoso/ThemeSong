@@ -20,6 +20,6 @@ export const zebra_stripes = /*css*/ `
 
 /* need a bit of margin between last-child and "Show All" button */
 .ytmusic-section-list-renderer #contents ytmusic-responsive-list-item-renderer:last-child {
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 `;
