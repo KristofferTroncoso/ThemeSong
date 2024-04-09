@@ -292,7 +292,7 @@ export const largerPlayerbarImg = /*css*/ `
 
 .image.ytmusic-player-bar {
   height: 46px;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 `;
 

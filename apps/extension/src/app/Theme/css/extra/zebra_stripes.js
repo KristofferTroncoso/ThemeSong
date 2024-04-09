@@ -22,4 +22,13 @@ export const zebra_stripes = /*css*/ `
 .ytmusic-section-list-renderer #contents ytmusic-responsive-list-item-renderer:last-child {
   margin-bottom: 6px;
 }
+
+/* remove lines from playerpage list */
+ytmusic-player-queue-item {
+  border-bottom: none;
+}
+
+ytmusic-player-queue-item[play-button-state=loading], ytmusic-player-queue-item[play-button-state=playing], ytmusic-player-queue-item[play-button-state=paused] {
+  border-radius: 6px;
+}
 `;

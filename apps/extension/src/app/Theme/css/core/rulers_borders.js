@@ -1,7 +1,7 @@
 export const rulers_borders = /*css*/ `
   :root {
     --ts-ruler-primary-color: var(--ts-base-100-color);
-    --ts-ruler-secondary-color: var(--ts-base-100-alpha-02-color);
+    --ts-ruler-secondary-color: var(--ts-base-100-alpha-01-color);
   }
 
 
