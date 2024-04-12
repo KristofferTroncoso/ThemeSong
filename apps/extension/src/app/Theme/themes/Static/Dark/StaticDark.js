@@ -41,7 +41,7 @@ function StaticDark() {
           --ts-playerpageavtoggle-color: hsl(${hue}, ${saturation}%, ${Math.max(25, lightness[1]) + 12}%);
           --ts-playerbar-color: hsl(${hue}, ${saturation}%, ${lightness[2]}%);
           --ts-body-color: hsl(${hue}, ${saturation}%, ${lightness[3]}%);
-          --ts-body-alpha-gradient-color: hsl(${hue} ${saturation}% ${lightness[3]}% / 70%);
+          --ts-body-alpha-gradient-color: hsl(${hue} ${saturation}% ${lightness[3]}% / 80%);
         }
       
       `

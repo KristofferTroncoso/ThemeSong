@@ -189,7 +189,7 @@ ytmusic-notification-text-renderer[toast-style=TOAST_STYLE_GRADIENT] #toast.ytmu
 
 /* image filters */
 .immersive-background ytmusic-fullbleed-thumbnail-renderer {
-  filter: var(--ts-image-filter-brightness, brightness(1));
+  filter: saturate(2) var(--ts-image-filter-brightness, brightness(1));
 }
 
 /* pick artists you like footer */

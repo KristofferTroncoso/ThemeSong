@@ -57,7 +57,7 @@ function AppleMusicDark() {
           --ts-zebra-stripes-color: rgb(255 255 255 / 0.015);
           --ts-secondary-icon-color: var(--applemusic-color);
           --ts-colored-button-color: var(--applemusic-color);
-          --ts-sidebar-color: hsl(0 0% 13%);
+          --ts-sidebar-color: hsl(0 0% 13% / 0.45);
 
           --ts-primary-icon-color: rgb(220 220 220);
           --ts-pill-color: var(--ts-base-100-alpha-005-color);

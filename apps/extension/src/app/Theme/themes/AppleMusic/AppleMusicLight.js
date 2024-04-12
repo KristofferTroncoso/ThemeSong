@@ -32,7 +32,7 @@ function AppleMusicLight() {
         /*css*/ `
         :root {
           --ts-body-color: #333333;
-          --ts-body-alpha-gradient-color: hsl(0 0% 100% / 0.9);
+          --ts-body-alpha-gradient-color: hsl(0 0% 100% / 0.75);
           --ts-overlay-color: rgb(0 0 0 / 0.6);
           --ts-texts-selection-color: dodgerblue;
           --ts-songimg-box-shadow: 0 5px 40px rgb(0 0 0 / 0.5);
@@ -101,7 +101,7 @@ function AppleMusicLight() {
             rgb(249 249 249) 0%,
             rgb(249 249 249 / 0.9) 60%
           ) !important;
-          --ts-sidebar-color: rgb(245 245 245);
+          --ts-sidebar-color: rgb(245 245 245 / 0.45);
           --ts-body-color: #fff;
           --ts-playerbar-color: rgb(244 244 244 / 0.6);
           --ts-playprogress-color: #6b6b6b;
