@@ -35,7 +35,7 @@ function AppleMusicLight() {
           --ts-body-alpha-gradient-color: hsl(0 0% 100% / 0.9);
           --ts-overlay-color: rgb(0 0 0 / 0.6);
           --ts-texts-selection-color: dodgerblue;
-          --ts-songimg-box-shadow: 0 10px 40px rgb(0 0 0 / 0.4);
+          --ts-songimg-box-shadow: 0 5px 40px rgb(0 0 0 / 0.5);
 
           --applemusic-color: #d60017;
 

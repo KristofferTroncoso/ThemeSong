@@ -196,4 +196,9 @@ ytmusic-notification-text-renderer[toast-style=TOAST_STYLE_GRADIENT] #toast.ytmu
 .buttons.ytmusic-tastebuilder-renderer {
   background: var(--ts-base-10-color);
 }
+
+/* Explore -> Big buttons hover */
+ytmusic-navigation-button-renderer:not([button-style=STYLE_OUTLINE_BORDER]):hover button.ytmusic-navigation-button-renderer, ytmusic-navigation-button-renderer:not([button-style=STYLE_OUTLINE_BORDER]) button.ytmusic-navigation-button-renderer:focus-within {
+  background: var(--ts-base-100-alpha-02-color);
+}
 `;

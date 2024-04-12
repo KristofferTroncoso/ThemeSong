@@ -27,7 +27,7 @@ function AppleMusicDark() {
           --ts-overlay-color: rgb(0 0 0 / 0.6);
           --ts-nowplaying-background-color: #a60012;
           --ts-texts-selection-color: #1665b5;
-          --ts-songimg-box-shadow: 0 10px 40px rgb(0 0 0 / 0.4);
+          --ts-songimg-box-shadow: 0 5px 40px rgb(0 0 0 / 0.5);
           
           --applemusic-color: #ff273f;
 
