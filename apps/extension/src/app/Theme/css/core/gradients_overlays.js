@@ -1,9 +1,9 @@
 export const gradients_overlays = /*css*/ `
   :root {
     --ts-overlay-color: var(--ts-base-00-alpha-05-color);
-    --ts-overlay-highlighted-color: var(--ts-base-100-alpha-01-color);
+    --ts-overlay-highlighted-color: var(--ts-base-100-alpha-005-color);
     --ts-overlay-highlighted2-color: var(--ts-base-100-alpha-01-color);
-    --ts-overlay-nowplaying-color: var(--ts-base-100-alpha-01-color);
+    --ts-overlay-nowplaying-color: var(--ts-base-100-alpha-005-color);
   }
 
   :root {

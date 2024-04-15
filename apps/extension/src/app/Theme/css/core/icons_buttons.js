@@ -9,7 +9,7 @@ export const icons_buttons = /*css*/ `
 
     --ts-icon-accent-color: var(--ts-base-100-color);
 
-    --ts-pill-color: var(--ts-base-100-alpha-01-color);
+    --ts-pill-color: var(--ts-base-100-alpha-005-color);
     --ts-pill-hover-color: var(--ts-base-100-alpha-02-color);
   }
 
@@ -173,7 +173,7 @@ export const icons_buttons = /*css*/ `
 
   /* sidebar buttons ("sign in", "New Playlist") */
   .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
-    background-color: var(--ts-base-100-alpha-01-color);
+    background-color: var(--ts-base-100-alpha-005-color);
   }
 
   .yt-spec-touch-feedback-shape--touch-response .yt-spec-touch-feedback-shape__fill {

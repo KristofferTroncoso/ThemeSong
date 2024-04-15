@@ -1,21 +1,24 @@
+#songDivNode {
+  max-width: 650px;
+}
+
 ytmusic-player:not([player-ui-state="FULLSCREEN"]) #songDivNode {
   display: none;
 }
 
-@media (max-width: 1500px) {
+@media (orientation: portrait) {
   ytmusic-player[player-ui-state="FULLSCREEN"] #thumbnail {
     flex-direction: column;
   }
 
   #songDivNode {
     text-align: center;
-    padding: 80px 0 80px;
-    max-width: 80vw !important;
+    padding: 40px 0 40px;
   }
 }
 
-@media (min-width: 1499px) {
-  #songDivNode {
-    max-width: 650px;
+@media (max-width: 1199px) {
+  #songDivContainer {
+    display: none;
   }
 }

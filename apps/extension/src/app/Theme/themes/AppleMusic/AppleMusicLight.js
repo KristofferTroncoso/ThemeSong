@@ -123,10 +123,6 @@ function AppleMusicLight() {
           background: rgb(247 247 247 / 60%);
         }
 
-        .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
-          background-color: #e9e9e9;
-        }
-
         ytmusic-tabs.stuck {
           border-top: 1px solid #d1d1d1;
           border-bottom: 1px solid #d1d1d1;
