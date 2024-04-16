@@ -8,7 +8,6 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { SiGenius } from "react-icons/si";
 import { LuClipboardCopy, LuSearch } from "react-icons/lu";
-import MusixmatchIcon from "../../Icon/MusixmatchIcon";
 import useLocalization from "../../Extension/Localization/useLocalization";
 
 function SongPanel() {
@@ -49,14 +48,6 @@ function SongPanel() {
     let modArtistName = artistName.replace(" ", "%20");
     let geniusUrlSearch = `https://genius.com/search?q=${modSongName}%20${modArtistName}`;
     window.open(geniusUrlSearch, "_blank").focus();
-  }
-
-  function handleMusixmatchSearch(e) {
-    let modSongName = sanitize(metadata.title).replace(" ", "%20");
-    let artistName = sanitize(metadata.artist);
-    let modArtistName = artistName.replace(" ", "%20");
-    let musixmatchUrlSearch = `https://www.musixmatch.com/search/${modSongName}%20${modArtistName}`;
-    window.open(musixmatchUrlSearch, "_blank").focus();
   }
 
   return (
@@ -130,16 +121,6 @@ function SongPanel() {
             onClick={handleGeniusLyricsSearch}
           >
             <SiGenius style={{ fontSize: "20px" }} />
-          </PanelButton>
-          <PanelButton
-            title="Musixmatch"
-            color="#fff"
-            bgColor="linear-gradient(0deg, rgba(243,8,123,1) 0%, rgba(243,92,52,1) 100%)"
-            hoverColor="#fff"
-            hoverBgColor="linear-gradient(0deg, rgba(243,8,123,1) 0%, rgba(243,92,52,1) 100%)"
-            onClick={handleMusixmatchSearch}
-          >
-            <MusixmatchIcon width="20px" height="18px" />
           </PanelButton>
         </div>
       </div>
