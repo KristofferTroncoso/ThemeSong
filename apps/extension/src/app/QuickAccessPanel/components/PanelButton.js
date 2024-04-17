@@ -24,8 +24,7 @@ function PanelButton({ color, bgColor, hoverColor, hoverBgColor, children, title
       <button
         css={css`
           height: 42px;
-          width: 42px;
-          min-width: 42px;
+          min-width: 48px;
           margin: 3px;
           padding: 0;
           background: ${bgColor || "var(--ts-base-100-alpha-005-color)"};

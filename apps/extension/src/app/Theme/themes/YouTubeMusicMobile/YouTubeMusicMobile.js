@@ -39,6 +39,7 @@ function YouTubeMusicMobile() {
           --ts-body-color: #000000;
           --ts-body-alpha-gradient-color: rgb(0 0 0 / 0.7);
           --ts-songimg-box-shadow: none;
+          --ts-bgcolor-transition: transform 300ms ease-in-out;
         }
 
         ytmusic-player[player-ui-state=FULLSCREEN] #song-image.ytmusic-player {
