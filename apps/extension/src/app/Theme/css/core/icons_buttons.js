@@ -308,4 +308,38 @@ export const icons_buttons = /*css*/ `
     width: 100px;
     --paper-slider-container-color: var(--ts-base-100-alpha-04-color);
   }
+
+  /* mobile layout */
+  ytmusic-player-page[is-mweb-modernization-enabled] .collapse-button.ytmusic-player-page {
+    color: var(--ts-primary-icon-color);
+  }
+
+  .controls.ytmusic-player-controls {
+    color: var(--ts-primary-icon-color);
+  }
+
+  .play-pause-button-wrapper.ytmusic-player-controls tp-yt-paper-icon-button.ytmusic-player-controls {
+    --iron-icon-fill-color: var(--ts-inverse-icon-color);
+  }
+
+  .play-pause-button-wrapper.ytmusic-player-controls {
+    background: var(--ts-primary-icon-color);
+  }
+
+  #progress-bar.ytmusic-player-controls {
+    --paper-slider-knob-color: var(--ts-primary-icon-color);
+    --paper-slider-knob-start-color: var(--ts-primary-icon-color);
+    --paper-slider-knob-start-border-color: var(--ts-primary-icon-color);
+    --paper-slider-active-color: var(--ts-primary-icon-color);
+    --paper-slider-secondary-color: var(--ts-base-100-alpha-05-color);
+    --paper-slider-container-color: var(--ts-base-100-alpha-02-color);
+  }
+
+  .current-time.ytmusic-player-controls, .total-time.ytmusic-player-controls {
+    color: var(--ts-base-100-alpha-07-color);
+  }
+
+  ytmusic-player-bar[is-mweb-player-bar-modernization-enabled] .right-controls.ytmusic-player-bar tp-yt-paper-icon-button.ytmusic-player-bar {
+    --iron-icon-fill-color: var(--ts-primary-icon-color);
+  }
 `;

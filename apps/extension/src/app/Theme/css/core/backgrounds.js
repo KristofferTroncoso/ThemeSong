@@ -201,4 +201,18 @@ ytmusic-notification-text-renderer[toast-style=TOAST_STYLE_GRADIENT] #toast.ytmu
 ytmusic-navigation-button-renderer:not([button-style=STYLE_OUTLINE_BORDER]):hover button.ytmusic-navigation-button-renderer, ytmusic-navigation-button-renderer:not([button-style=STYLE_OUTLINE_BORDER]) button.ytmusic-navigation-button-renderer:focus-within {
   background: var(--ts-base-100-alpha-02-color);
 }
+
+/* mobile layout */
+html {
+  --ytmusic-overlay-background-medium: var(--ts-base-00-alpha-05-color);
+}
+
+ytmusic-player-page[is-mweb-modernization-enabled][player-page-ui-state=TABS_VIEW] #side-panel.ytmusic-player-page {
+  background: var(--ts-body-color);
+}
+
+ytmusic-player-page[is-mweb-modernization-enabled] .background-thumbnail.ytmusic-player-page {
+  filter: blur(80px) brightness(2) saturate(2);
+}
+
 `;
