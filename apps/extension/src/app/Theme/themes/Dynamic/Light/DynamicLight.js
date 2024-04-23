@@ -178,6 +178,8 @@ function DynamicLight() {
           ) !important;
 
           --yt-spec-menu-background: var(--ts-listbox-color) !important;
+
+          --ytmusic-general-background-c: var(--ts-playerpage-color) !important;
         }
 
         #PanelPage {

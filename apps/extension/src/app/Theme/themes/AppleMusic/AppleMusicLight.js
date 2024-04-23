@@ -90,6 +90,9 @@ function AppleMusicLight() {
       {!(playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE")
         ? `
         ${dark_base_colors}
+        :root {
+          --ytmusic-general-background-c: var(--ts-theme-apple-5-color) !important;
+        }
         `
         : /*css*/ `
         ${texts}

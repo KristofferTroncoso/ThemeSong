@@ -76,6 +76,7 @@ function DynamicDark() {
           --ts-listbox-color: hsl(var(--ts-palette-dominant-hue), ${saturation}%, ${curveLight(lightness[1]) + 4}%);
 
           --yt-spec-menu-background: var(--ts-listbox-color) !important;
+          --ytmusic-general-background-c: var(--ts-playerpage-color) !important;
         }
 
         #PanelPage {

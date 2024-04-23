@@ -44,8 +44,8 @@ function AppleMusicDark() {
         }
      `
       }
-      {(playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") &&
-        /*css*/ `
+      {playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE"
+        ? /*css*/ `
         ${icons_buttons}
         :root {
           --ts-navbar-color: linear-gradient(
@@ -90,6 +90,11 @@ function AppleMusicDark() {
 
         a:has(> ytmusic-thumbnail-renderer[thumbnail-crop="MUSIC_THUMBNAIL_CROP_UNSPECIFIED"]) {
           box-shadow: 0 4px 8px rgb(0 0 0 / 0.2);
+        }
+      `
+        : `
+        :root {
+          --ytmusic-general-background-c: var(--ts-theme-apple-5-color) !important;
         }
       `}
     </style>

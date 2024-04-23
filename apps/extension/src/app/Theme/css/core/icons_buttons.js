@@ -326,15 +326,6 @@ export const icons_buttons = /*css*/ `
     background: var(--ts-primary-icon-color);
   }
 
-  #progress-bar.ytmusic-player-controls {
-    --paper-slider-knob-color: var(--ts-primary-icon-color);
-    --paper-slider-knob-start-color: var(--ts-primary-icon-color);
-    --paper-slider-knob-start-border-color: var(--ts-primary-icon-color);
-    --paper-slider-active-color: var(--ts-primary-icon-color);
-    --paper-slider-secondary-color: var(--ts-base-100-alpha-05-color);
-    --paper-slider-container-color: var(--ts-base-100-alpha-02-color);
-  }
-
   .current-time.ytmusic-player-controls, .total-time.ytmusic-player-controls {
     color: var(--ts-base-100-alpha-07-color);
   }
