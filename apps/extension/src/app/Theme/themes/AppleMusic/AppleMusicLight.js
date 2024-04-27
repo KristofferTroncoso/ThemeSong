@@ -110,7 +110,7 @@ function AppleMusicLight() {
           --ts-playprogress-color: #6b6b6b;
           --ts-playprogress-secondary-color: rgb(0 0 0 / 0.15);
           --ts-playprogress-container-color: rgb(0 0 0 / 0.1);
-          --ts-primary-icon-color: var(--ts-base-60-color);
+          --ts-primary-icon-color: var(--ts-base-80-color);
           --ts-secondary-icon-color: var(--applemusic-color);
           --ts-colored-button-color: var(--applemusic-color);
           --ts-zebra-stripes-color: rgb(0 0 0 / 0.027);
@@ -156,6 +156,10 @@ function AppleMusicLight() {
         #thumbnail.ytmusic-detail-header-renderer, .thumbnail.ytmusic-detail-header-renderer {
           box-shadow: 0 2px 6px rgb(0 0 0 / 0.2);
           margin-bottom: 8px;
+        }
+
+        img.yt-img-shadow {
+          box-shadow: 0 2px 6px rgb(0 0 0 / 0.2);
         }
 
         /* mini-player box-shadow */

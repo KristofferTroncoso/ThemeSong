@@ -15,7 +15,6 @@ export const zebra_stripes = /*css*/ `
 
 #contents.ytmusic-playlist-shelf-renderer>*.ytmusic-playlist-shelf-renderer:not(:last-child) {
   border-bottom: none !important;
-  padding: 1px 10px;
 }
 
 /* need a bit of margin between last-child and "Show All" button */

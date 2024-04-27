@@ -306,4 +306,19 @@ yt-formatted-string.ytmusic-guide-signin-promo-renderer {
   --yt-endpoint-hover-color: var(--ts-tertiary-text-color);
   --yt-endpoint-visited-color: var(--ts-tertiary-text-color);
 }
+
+
+ytmusic-responsive-header-renderer[is-bauhaus-web-playlist-detail-page-redesign-enabled] .strapline-text.ytmusic-responsive-header-renderer, ytmusic-responsive-header-renderer[is-bauhaus-web-album-detail-page-redesign-enabled] .strapline-text.ytmusic-responsive-header-renderer {
+  color: var(--ts-primary-text-color);
+  --yt-endpoint-color: var(--ts-primary-text-color);
+  --yt-endpoint-hover-color: var(--ts-primary-text-color);
+  --yt-endpoint-visited-color: var(--ts-primary-text-color);
+}
+
+ytmusic-shelf-renderer[is-bauhaus-web-detail-page-redesign-enabled] .title.ytmusic-shelf-renderer>yt-formatted-string.ytmusic-shelf-renderer {
+  color: var(--ts-primary-text-color);
+  --yt-endpoint-color: var(--ts-primary-text-color);
+  --yt-endpoint-hover-color: var(--ts-primary-text-color);
+  --yt-endpoint-visited-color: var(--ts-primary-text-color);
+}
 `;

@@ -215,4 +215,9 @@ ytmusic-player-page[is-mweb-modernization-enabled] .background-thumbnail.ytmusic
   filter: blur(80px) brightness(2) saturate(2);
 }
 
+/* playlist layout */
+ytmusic-browse-response[has-background][page-type=MUSIC_PAGE_TYPE_NON_MUSIC_AUDIO_TRACK_PAGE] .immersive-background.ytmusic-browse-response ytmusic-fullbleed-thumbnail-renderer.ytmusic-browse-response, ytmusic-browse-response[has-background][page-type=MUSIC_PAGE_TYPE_PODCAST_SHOW_DETAIL_PAGE] .immersive-background.ytmusic-browse-response ytmusic-fullbleed-thumbnail-renderer.ytmusic-browse-response, ytmusic-browse-response[has-background][is-bauhaus-web-playlist-detail-page-redesign-enabled] .immersive-background.ytmusic-browse-response ytmusic-fullbleed-thumbnail-renderer.ytmusic-browse-response, ytmusic-browse-response[has-background][is-bauhaus-web-album-detail-page-redesign-enabled] .immersive-background.ytmusic-browse-response ytmusic-fullbleed-thumbnail-renderer.ytmusic-browse-response {
+  filter: blur(80px) saturate(2) brightness(2);
+}
+
 `;

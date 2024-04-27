@@ -333,4 +333,13 @@ export const icons_buttons = /*css*/ `
   ytmusic-player-bar[is-mweb-player-bar-modernization-enabled] .right-controls.ytmusic-player-bar tp-yt-paper-icon-button.ytmusic-player-bar {
     --iron-icon-fill-color: var(--ts-primary-icon-color);
   }
+
+  ytmusic-responsive-header-renderer[num-header-buttons="3"] .action-buttons.ytmusic-responsive-header-renderer .ytmusic-responsive-header-renderer:nth-child(2), ytmusic-responsive-header-renderer[num-header-buttons="5"][is-bauhaus-detail-pages-redesign-download-buttons-enabled] .action-buttons.ytmusic-responsive-header-renderer .ytmusic-responsive-header-renderer:nth-child(3) {
+    --yt-button-color: var(--ts-inverse-icon-color);
+    background-color: var(--ts-base-100-color);
+  }
+
+  ytmusic-responsive-header-renderer[is-bauhaus-web-playlist-detail-page-redesign-enabled][num-header-buttons="3"] .action-buttons.ytmusic-responsive-header-renderer *.ytmusic-responsive-header-renderer:not(:nth-child(2)), ytmusic-responsive-header-renderer[is-bauhaus-web-playlist-detail-page-redesign-enabled][num-header-buttons="3"] .action-buttons.ytmusic-responsive-header-renderer yt-button-renderer.ytmusic-responsive-header-renderer:nth-child(2), ytmusic-responsive-header-renderer[is-bauhaus-web-playlist-detail-page-redesign-enabled][num-header-buttons="4"] .action-buttons.ytmusic-responsive-header-renderer>*.ytmusic-responsive-header-renderer, ytmusic-responsive-header-renderer[is-bauhaus-web-playlist-detail-page-redesign-enabled][num-header-buttons="5"] .action-buttons.ytmusic-responsive-header-renderer *.ytmusic-responsive-header-renderer:not(:nth-child(3)), ytmusic-responsive-header-renderer[is-bauhaus-web-album-detail-page-redesign-enabled][num-header-buttons="3"] .action-buttons.ytmusic-responsive-header-renderer *.ytmusic-responsive-header-renderer:not(:nth-child(2)), ytmusic-responsive-header-renderer[is-bauhaus-web-album-detail-page-redesign-enabled][num-header-buttons="3"] .action-buttons.ytmusic-responsive-header-renderer yt-button-renderer.ytmusic-responsive-header-renderer:nth-child(2), ytmusic-responsive-header-renderer[is-bauhaus-web-album-detail-page-redesign-enabled][num-header-buttons="4"] .action-buttons.ytmusic-responsive-header-renderer>*.ytmusic-responsive-header-renderer, ytmusic-responsive-header-renderer[is-bauhaus-web-album-detail-page-redesign-enabled][num-header-buttons="5"] .action-buttons.ytmusic-responsive-header-renderer *.ytmusic-responsive-header-renderer:not(:nth-child(3)) {
+    background-color: var(--ts-base-100-alpha-01-color);
+  }
 `;

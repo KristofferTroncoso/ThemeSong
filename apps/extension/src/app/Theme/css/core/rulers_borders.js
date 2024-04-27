@@ -76,16 +76,6 @@ export const rulers_borders = /*css*/ `
     border-bottom: 1px solid var(--ts-ruler-secondary-color);
   }
 
-  /* list item border bottom / playlists */
-  #contents.ytmusic-playlist-shelf-renderer>*.ytmusic-playlist-shelf-renderer:not(:last-child) {
-    border-bottom: 1px solid var(--ts-ruler-secondary-color) !important;
-  }
-
-  /* list. album page */
-  #contents.ytmusic-shelf-renderer>*.ytmusic-shelf-renderer:not(:last-child) {
-    border-bottom: 1px solid var(--ts-ruler-secondary-color) !important;
-  }
-
   /* sidebar */
   #divider.ytmusic-guide-section-renderer {
     border-top: 1px solid var(--ts-ruler-secondary-color);
@@ -113,6 +103,11 @@ export const rulers_borders = /*css*/ `
   }
 
   ytmusic-carousel-shelf-renderer.ytmusic-add-to-playlist-renderer:not(:empty) {
+    border-bottom: 1px solid var(--ts-ruler-secondary-color);
+  }
+
+  ytmusic-playlist-form[tabbed-ui-enabled] iron-pages.ytmusic-playlist-form .content.ytmusic-playlist-form {
+    border-top: 1px solid var(--ts-base-40-color);
     border-bottom: 1px solid var(--ts-ruler-secondary-color);
   }
 `;
