@@ -114,4 +114,12 @@ export const rulers_borders = /*css*/ `
   .top-bar.ytmusic-dismissable-dialog-renderer {
     border-bottom: 1px solid var(--ts-ruler-secondary-color);
   }
+
+  ytmusic-playlist-shelf-renderer:not([is-bauhaus-web-playlist-detail-page-redesign-enabled]) #contents.ytmusic-playlist-shelf-renderer>*.ytmusic-playlist-shelf-renderer:not(:last-child) {
+    border-bottom: 1px solid var(--ts-ruler-secondary-color);
+  }
+
+  ytmusic-shelf-renderer:not([is-bauhaus-web-detail-page-redesign-enabled]) #contents.ytmusic-shelf-renderer>*.ytmusic-shelf-renderer:not(:last-child) {
+    border-bottom: 1px solid var(--ts-ruler-secondary-color);
+  }
 `;
