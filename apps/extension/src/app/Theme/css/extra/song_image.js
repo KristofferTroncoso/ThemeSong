@@ -96,6 +96,10 @@ ytmusic-player[player-ui-state=FULLSCREEN] #song-image #img {
   border-radius: 6px !important;
 }
 
+ytmusic-responsive-header-renderer {
+  --yt-img-border-radius: 7px;
+}
+
 /* searching for a song */
 .thumbnail-container.ytmusic-card-shelf-renderer {
   border-radius: var(--ts-songimg-thumbnail-border-radius);

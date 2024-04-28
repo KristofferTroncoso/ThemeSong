@@ -32,11 +32,10 @@ body {
 }
 
 ytmusic-browse-response[has-background]:not([disable-gradient]) .background-gradient.ytmusic-browse-response {
-  background-size: 100vw 100vh;
   background-image: linear-gradient(
-    180deg,
-    var(--ts-body-alpha-gradient-color) 0%,
-    var(--ts-body-color) 45%
+    to bottom,
+    var(--ts-body-alpha-gradient-color),
+    var(--ts-body-color)
   );
   transition: var(--ts-bgcolor-transition) !important;
 }
@@ -217,7 +216,7 @@ ytmusic-player-page[is-mweb-modernization-enabled] .background-thumbnail.ytmusic
 
 /* playlist layout */
 ytmusic-browse-response[has-background][page-type=MUSIC_PAGE_TYPE_NON_MUSIC_AUDIO_TRACK_PAGE] .immersive-background.ytmusic-browse-response ytmusic-fullbleed-thumbnail-renderer.ytmusic-browse-response, ytmusic-browse-response[has-background][page-type=MUSIC_PAGE_TYPE_PODCAST_SHOW_DETAIL_PAGE] .immersive-background.ytmusic-browse-response ytmusic-fullbleed-thumbnail-renderer.ytmusic-browse-response, ytmusic-browse-response[has-background][is-bauhaus-web-playlist-detail-page-redesign-enabled] .immersive-background.ytmusic-browse-response ytmusic-fullbleed-thumbnail-renderer.ytmusic-browse-response, ytmusic-browse-response[has-background][is-bauhaus-web-album-detail-page-redesign-enabled] .immersive-background.ytmusic-browse-response ytmusic-fullbleed-thumbnail-renderer.ytmusic-browse-response {
-  filter: blur(80px) saturate(2) brightness(2);
+  filter: blur(80px) saturate(3);
 }
 
 `;

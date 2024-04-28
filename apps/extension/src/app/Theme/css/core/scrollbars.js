@@ -1,6 +1,6 @@
 export const scrollbars = /*css*/ `
 :root {
-  --ts-scrollbar-color: var(--ts-base-100-alpha-02-color);
+  --ts-scrollbar-color: var(--ts-base-100-alpha-01-color);
 }
 /* scrollbars */
 ::-webkit-scrollbar-thumb {

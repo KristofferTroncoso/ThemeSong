@@ -152,6 +152,10 @@ function DynamicLight() {
           margin-bottom: 4px;
         }
 
+        img.yt-img-shadow {
+          box-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
+        }
+
         /* mini-player box-shadow */
         ytmusic-player[player-ui-state=MINIPLAYER] {
           box-shadow: 0 2px 4px rgb(0 0 0 / 0.2);

@@ -110,4 +110,8 @@ export const rulers_borders = /*css*/ `
     border-top: 1px solid var(--ts-base-40-color);
     border-bottom: 1px solid var(--ts-ruler-secondary-color);
   }
+
+  .top-bar.ytmusic-dismissable-dialog-renderer {
+    border-bottom: 1px solid var(--ts-ruler-secondary-color);
+  }
 `;

@@ -342,4 +342,15 @@ export const icons_buttons = /*css*/ `
   ytmusic-responsive-header-renderer[is-bauhaus-web-playlist-detail-page-redesign-enabled][num-header-buttons="3"] .action-buttons.ytmusic-responsive-header-renderer *.ytmusic-responsive-header-renderer:not(:nth-child(2)), ytmusic-responsive-header-renderer[is-bauhaus-web-playlist-detail-page-redesign-enabled][num-header-buttons="3"] .action-buttons.ytmusic-responsive-header-renderer yt-button-renderer.ytmusic-responsive-header-renderer:nth-child(2), ytmusic-responsive-header-renderer[is-bauhaus-web-playlist-detail-page-redesign-enabled][num-header-buttons="4"] .action-buttons.ytmusic-responsive-header-renderer>*.ytmusic-responsive-header-renderer, ytmusic-responsive-header-renderer[is-bauhaus-web-playlist-detail-page-redesign-enabled][num-header-buttons="5"] .action-buttons.ytmusic-responsive-header-renderer *.ytmusic-responsive-header-renderer:not(:nth-child(3)), ytmusic-responsive-header-renderer[is-bauhaus-web-album-detail-page-redesign-enabled][num-header-buttons="3"] .action-buttons.ytmusic-responsive-header-renderer *.ytmusic-responsive-header-renderer:not(:nth-child(2)), ytmusic-responsive-header-renderer[is-bauhaus-web-album-detail-page-redesign-enabled][num-header-buttons="3"] .action-buttons.ytmusic-responsive-header-renderer yt-button-renderer.ytmusic-responsive-header-renderer:nth-child(2), ytmusic-responsive-header-renderer[is-bauhaus-web-album-detail-page-redesign-enabled][num-header-buttons="4"] .action-buttons.ytmusic-responsive-header-renderer>*.ytmusic-responsive-header-renderer, ytmusic-responsive-header-renderer[is-bauhaus-web-album-detail-page-redesign-enabled][num-header-buttons="5"] .action-buttons.ytmusic-responsive-header-renderer *.ytmusic-responsive-header-renderer:not(:nth-child(3)) {
     background-color: var(--ts-base-100-alpha-01-color);
   }
+  
+  ytmusic-play-button-renderer {
+    --ytmusic-play-button-icon-color: #777 !important;
+  }
+
+  .top-bar.ytmusic-dismissable-dialog-renderer {
+    color: #000;
+    --yt-endpoint-color: var(--ts-primary-icon-color)
+    --yt-endpoint-hover-color: var(--ts-primary-icon-color)
+    --yt-endpoint-visited-color: var(--ts-primary-icon-color)
+  }
 `;
