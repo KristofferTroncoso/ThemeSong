@@ -343,14 +343,18 @@ export const icons_buttons = /*css*/ `
     background-color: var(--ts-base-100-alpha-01-color);
   }
   
-  ytmusic-play-button-renderer {
-    --ytmusic-play-button-icon-color: #777 !important;
+  .left-items ytmusic-play-button-renderer {
+    --ytmusic-play-button-icon-color: var(--ts-primary-icon-color) !important;
+  }
+
+  .left-items #background {
+    --ytmusic-background-overlay-background: var(--ts-base-00-alpha-04-color) !important;
   }
 
   .top-bar.ytmusic-dismissable-dialog-renderer {
     color: #000;
-    --yt-endpoint-color: var(--ts-primary-icon-color)
-    --yt-endpoint-hover-color: var(--ts-primary-icon-color)
-    --yt-endpoint-visited-color: var(--ts-primary-icon-color)
+    --yt-endpoint-color: var(--ts-primary-icon-color);
+    --yt-endpoint-hover-color: var(--ts-primary-icon-color);
+    --yt-endpoint-visited-color: var(--ts-primary-icon-color);
   }
 `;

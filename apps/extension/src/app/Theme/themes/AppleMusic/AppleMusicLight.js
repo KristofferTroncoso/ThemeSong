@@ -16,7 +16,7 @@ function AppleMusicLight() {
 
   useEffect(() => {
     if (playerUiState === "PLAYER_BAR_ONLY" || playerUiState === "MINIPLAYER" || playerUiState === "INACTIVE") {
-      menubar.content = `rgb(249 249 249)`;
+      menubar.content = `rgb(245 245 245)`;
       document.querySelector("html").removeAttribute("dark");
       document.querySelector("html").setAttribute("light", "true");
     } else {
@@ -101,8 +101,8 @@ function AppleMusicLight() {
         :root {
           --ts-navbar-color: linear-gradient(
             180deg,
-            rgb(249 249 249) 0%,
-            rgb(249 249 249 / 0.9) 60%
+            rgb(245 245 245) 0%,
+            rgb(245 245 245 / 0.9) 60%
           ) !important;
           --ts-sidebar-color: rgb(245 245 245 / 0.45);
           --ts-body-color: #fff;
