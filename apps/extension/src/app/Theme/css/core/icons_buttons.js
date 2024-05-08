@@ -344,11 +344,7 @@ export const icons_buttons = /*css*/ `
   }
   
   .left-items ytmusic-play-button-renderer {
-    --ytmusic-play-button-icon-color: var(--ts-primary-icon-color) !important;
-  }
-
-  .left-items #background {
-    --ytmusic-background-overlay-background: var(--ts-base-00-alpha-04-color) !important;
+    --ytmusic-play-button-icon-color: oklch(0.6 var(--ts-palette-0-c) var(--ts-palette-0-h)) !important;
   }
 
   .top-bar.ytmusic-dismissable-dialog-renderer {
