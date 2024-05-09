@@ -35,9 +35,18 @@ ytmusic-browse-response[has-background]:not([disable-gradient]) .background-grad
   background-image: linear-gradient(
     to bottom,
     var(--ts-body-alpha-gradient-color),
-    var(--ts-body-color)
+    var(--ts-body-color) 40%
   );
   transition: var(--ts-bgcolor-transition) !important;
+  background-size: 100vw 100vh;
+}
+
+ytmusic-browse-response[has-background]:not([disable-gradient])[page-type=MUSIC_PAGE_TYPE_PODCAST_SHOW_DETAIL_PAGE] .background-gradient.ytmusic-browse-response, ytmusic-browse-response[has-background]:not([disable-gradient])[page-type=MUSIC_PAGE_TYPE_NON_MUSIC_AUDIO_TRACK_PAGE] .background-gradient.ytmusic-browse-response, ytmusic-browse-response[has-background]:not([disable-gradient])[is-bauhaus-web-playlist-detail-page-redesign-enabled] .background-gradient.ytmusic-browse-response, ytmusic-browse-response[has-background]:not([disable-gradient])[is-bauhaus-web-album-detail-page-redesign-enabled] .background-gradient.ytmusic-browse-response {
+  background-image: linear-gradient(
+    to bottom,
+    var(--ts-body-alpha-gradient-color),
+    var(--ts-body-color)
+  );
 }
 
 #player-page {
