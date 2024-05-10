@@ -30,4 +30,9 @@ ytmusic-player-queue-item {
 ytmusic-player-queue-item[play-button-state=loading], ytmusic-player-queue-item[play-button-state=playing], ytmusic-player-queue-item[play-button-state=paused] {
   border-radius: 6px;
 }
+
+ytmusic-playlist-shelf-renderer[is-bauhaus-web-playlist-detail-page-redesign-enabled] #contents.ytmusic-playlist-shelf-renderer>*.ytmusic-playlist-shelf-renderer:not(:last-child) {
+  margin-bottom: 0px;
+  padding: 4px 16px;
+}
 `;
