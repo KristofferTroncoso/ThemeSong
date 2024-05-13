@@ -344,7 +344,7 @@ export const icons_buttons = /*css*/ `
   }
   
   .left-items ytmusic-play-button-renderer {
-    --ytmusic-play-button-icon-color: oklch(0.6 var(--ts-palette-0-c) var(--ts-palette-0-h)) !important;
+    --ytmusic-play-button-icon-color: oklch(0.75 var(--ts-palette-0-c) var(--ts-palette-0-h)) !important;
   }
 
   .top-bar.ytmusic-dismissable-dialog-renderer {
