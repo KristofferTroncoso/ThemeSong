@@ -48,7 +48,7 @@ function ThemePanel() {
         `}
       >
         <PanelButton
-          title="Dynamic"
+          title={getMessage("Dynamic")}
           bgColor={activeTheme === "db8854e3-6753-4639-b244-c8091f3b9fcb" && "var(--ts-base-100-color)"}
           color={activeTheme === "db8854e3-6753-4639-b244-c8091f3b9fcb" && "#008DFF"}
           hoverColor="#008DFF"
@@ -70,7 +70,7 @@ function ThemePanel() {
           />
         </PanelButton>
         <PanelButton
-          title="Static"
+          title={getMessage("Static")}
           bgColor={activeTheme === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" && "var(--ts-base-100-color)"}
           color={activeTheme === "b458eaae-0cbd-4a44-8847-c7a6a6ea1be8" && "#ff3700"}
           hoverColor="#ff3700"

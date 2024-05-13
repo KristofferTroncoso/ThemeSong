@@ -9,11 +9,13 @@ import ThemeButton from "../Popup/components/ThemeButton";
 import ThemeIcons from "./components/ThemeIcons";
 import { IoColorPalette } from "react-icons/io5";
 import { LuSettings2 } from "react-icons/lu";
+import useLocalization from "../Extension/Localization/useLocalization";
 
 function ThemesPage() {
   const themes = useStore((state) => state.theme.themes);
   const activeTheme = useStore((state) => state.theme.prefs.activeTheme);
   const activeThemeDetails = useStore((state) => state.theme.themes.find((theme) => theme.id === activeTheme));
+  const getMessage = useLocalization();
 
   let activeThemeSettings = () => {
     switch (activeTheme) {
@@ -63,7 +65,9 @@ function ThemesPage() {
                 margin-left: 8px;
               `}
             >
-              {activeThemeDetails.name}
+              {activeThemeDetails.name === "Dynamic" || activeThemeDetails.name === "Static"
+                ? getMessage(activeThemeDetails.name)
+                : activeThemeDetails.name}
             </span>
           </h2>
           <LuSettings2 style={{ fontSize: 16 }} />
@@ -87,7 +91,9 @@ function ThemesPage() {
             style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}
           >
             <ThemeIcons themeId={theme.id} style={{ fontSize: 24 }} />
-            <span style={{ fontSize: 10 }}>{theme.name}</span>
+            <span style={{ fontSize: 10 }}>
+              {theme.name === "Dynamic" || theme.name === "Static" ? getMessage(theme.name) : theme.name}
+            </span>
           </ThemeButton>
         ))}
       </div>

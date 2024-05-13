@@ -43,6 +43,8 @@ import { sleepTimerCompleted } from "./messages/sleepTimerCompleted";
 import { ok } from "./messages/ok";
 import { setNewTimer } from "./messages/setNewTimer";
 import { language } from "./messages/language";
+import { Dynamic } from "./messages/dynamic";
+import { Static } from "./messages/static";
 
 export const localizations = {
   themes,
@@ -90,4 +92,6 @@ export const localizations = {
   ok,
   setNewTimer,
   language,
+  Dynamic,
+  Static,
 };
