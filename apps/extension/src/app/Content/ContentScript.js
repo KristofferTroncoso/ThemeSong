@@ -34,7 +34,7 @@ function ContentScript({ root }) {
       }
     }
     const os = detectOS();
-    document.documentElement.classList.add(os);
+    document.documentElement.setAttribute("os", os);
 
     chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       if (message.message === "like") {

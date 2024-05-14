@@ -165,7 +165,7 @@ export const popupStyling = /*css*/ `
 /* on playerpage, when collapsing and un-collapsing sidebar, 
 a scrollbar track shows up on the right. */
 export const playerPageScrollbarShowsWhenSidebar = /*css*/ `
-  .windows.html:has(#layout[player-ui-state="PLAYER_PAGE_OPEN"]) {
+  html[os="windows"]:has(#layout[player-ui-state="PLAYER_PAGE_OPEN"]) {
     scrollbar-width: none;
     margin-right: 17px;
   }
