@@ -23,6 +23,19 @@ function ContentScript({ root }) {
   const changeMedia = useStore((state) => state.media.changeMedia);
 
   useEffect(() => {
+    function detectOS() {
+      const userAgent = window.navigator.userAgent;
+      if (userAgent.indexOf("Windows") !== -1) {
+        return "windows";
+      } else if (userAgent.indexOf("Mac") !== -1) {
+        return "mac";
+      } else {
+        return "unknown";
+      }
+    }
+    const os = detectOS();
+    document.documentElement.classList.add(os);
+
     chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       if (message.message === "like") {
         setTimeout(() => {
