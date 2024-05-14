@@ -22,7 +22,7 @@ function Sphere({ analyser, dataArray, ...props }) {
   return (
     <mesh {...props} ref={mesh} scale={0.4}>
       <sphereGeometry args={[1, 24, 24]} />
-      <meshStandardMaterial roughness={0.3} metalness={1} flatShading={true} />
+      <meshStandardMaterial roughness={0.4} metalness={1} flatShading={true} />
     </mesh>
   );
 }
@@ -42,14 +42,13 @@ export const DiscoBall = ({ analyser }) => {
       `}
     >
       <Canvas>
-        <ambientLight />
-        <pointLight position={[10, 10, 10]} color="orange" />
-        <pointLight position={[-10, 10, -10]} color="green" />
-        <pointLight position={[10, -50, 10]} color="blue" />
-        <pointLight position={[10, 10, -10]} color="red" />
-        <pointLight position={[10, -10, -10]} color="yellow" />
-        <pointLight position={[-10, 5, 8]} color="rebeccapurple" />
-        <pointLight position={[-20, 0, 8]} color="dodgerblue" />
+        <pointLight position={[10, 10, 10]} color="orange" decay={0} intensity={1} />
+        <pointLight position={[-10, 10, -10]} color="green" decay={0} intensity={1} />
+        <pointLight position={[10, -50, 10]} color="blue" decay={0} intensity={1} />
+        <pointLight position={[10, 10, -10]} color="red" decay={0} intensity={1} />
+        <pointLight position={[10, -10, -10]} color="yellow" decay={0} intensity={1} />
+        <pointLight position={[-10, 5, 8]} color="rebeccapurple" decay={0} intensity={1} />
+        <pointLight position={[-20, 0, 8]} color="dodgerblue" decay={0} intensity={1} />
         <Sphere position={[0, 0, 0]} analyser={analyser} dataArray={dataArray} />
       </Canvas>
     </div>
