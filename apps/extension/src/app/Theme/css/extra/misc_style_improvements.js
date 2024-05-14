@@ -169,6 +169,13 @@ export const playerPageScrollbarShowsWhenSidebar = /*css*/ `
     scrollbar-width: none;
     margin-right: 17px;
   }
+
+  @supports (-webkit-appearance: none) {
+    /* Apply styles specific to Mac */
+    html:has(#layout[player-ui-state="PLAYER_PAGE_OPEN"]) {
+      margin-right: 0px;
+    }
+  }
 `;
 
 /* sidebar a little too narrow at 240px.
