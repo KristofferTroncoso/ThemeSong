@@ -124,7 +124,7 @@ function DynamicLight() {
             --ts-overlay-nowplaying-color: var(--ts-temp-color);
             --ts-overlay-highlighted-color: var(--ts-temp-color);
             --ts-pill-color: var(--ts-temp-color);
-            --ts-scrollbar-color: hsl(var(--ts-palette-dominant-hue) ${saturation}% 30% / 25%);
+            --ts-scrollbar-color: hsl(var(--ts-palette-dominant-hue) ${saturation}% 40% / 18%);
 
             --ts-secondary-text-color: var(--ts-base-80-color);
         }
