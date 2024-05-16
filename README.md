@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://themesong.app" target="_blank" rel="noopener noreferrer">
-    <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/24760124/265588049-46819e0b-a6a2-4a62-8dcd-d6dfdd55e770.png" alt="ThemeSong">
+    <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/24760124/265588049-46819e0b-a6a2-4a62-8dcd-d6dfdd55e770.png" alt="ThemeSong" style="width: 540px">
   </a>
 </p>
 
@@ -20,7 +20,6 @@
 ## Demo
 
 https://github.com/KristofferTroncoso/ThemeSong/assets/95312141/3f0b04d6-e08d-49af-8823-54bb96c4f067
-
 
 ## Features
 
