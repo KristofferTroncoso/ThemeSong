@@ -321,4 +321,16 @@ ytmusic-shelf-renderer[is-bauhaus-web-detail-page-redesign-enabled] .title.ytmus
   --yt-endpoint-hover-color: var(--ts-primary-text-color);
   --yt-endpoint-visited-color: var(--ts-primary-text-color);
 }
+
+.yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text {
+  color: var(--ts-base-blue);
+}
+
+yt-formatted-string.ytmusic-menu-service-item-download-renderer {
+  color: var(--ts-primary-text-color);
+}
+
+yt-formatted-string.ytmusic-menu-service-item-download-renderer {
+  color: var(--ts-primary-text-color);
+}
 `;

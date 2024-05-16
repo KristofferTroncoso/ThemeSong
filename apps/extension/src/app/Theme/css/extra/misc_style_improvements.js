@@ -283,6 +283,15 @@ export const compactListBox = /*css*/ `
     width: var(--iron-icon-width, 19px);
     height: var(--iron-icon-height, 19px);
   }
+
+  tp-yt-paper-item.ytmusic-menu-service-item-download-renderer {
+    --paper-item-min-height: 38px;
+    padding: 0 14px;
+  }
+
+  yt-icon.ytmusic-menu-service-item-download-renderer {
+    margin-right: 13px;
+  }
 `;
 
 export const largerPlayerbarImg = /*css*/ `

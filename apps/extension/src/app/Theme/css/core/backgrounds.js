@@ -12,6 +12,7 @@ export const backgrounds = /*css*/ `
   --ts-body-alpha-gradient-color: var(--ts-body-color);
 
   --ts-bgcolor-transition: background 0.3s linear;
+  --yt-spec-inverted-background: var(--ts-body-color);
 }
 
 :root {

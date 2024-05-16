@@ -353,4 +353,8 @@ export const icons_buttons = /*css*/ `
     --yt-endpoint-hover-color: var(--ts-primary-icon-color);
     --yt-endpoint-visited-color: var(--ts-primary-icon-color);
   }
+
+  yt-icon.ytmusic-menu-service-item-download-renderer {
+    fill: var(--ts-secondary-icon-color);
+  }
 `;
