@@ -41,5 +41,6 @@ export const light_base_colors = `
     --ts-image-filter-brightness: brightness(2.5);
 
     --ts-base-blue: #003bad;
+    --ts-base-strong-blue: #a7cdff;
   }
 `;

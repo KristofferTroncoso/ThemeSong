@@ -357,4 +357,8 @@ export const icons_buttons = /*css*/ `
   yt-icon.ytmusic-menu-service-item-download-renderer {
     fill: var(--ts-secondary-icon-color);
   }
+
+  .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text:hover {
+    background-color: var(--ts-base-strong-blue);
+  }
 `;
