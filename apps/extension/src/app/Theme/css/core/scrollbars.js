@@ -17,8 +17,8 @@ body {
 }
 
 /* carousel on homepage and stuff */
-#items.ytmusic-carousel {
-  scrollbar-width: none;
+#items.ytmusic-carousel:hover {
+  scrollbar-color: var(--ts-scrollbar-color) transparent;
 }
 
 /* pills and chips */
