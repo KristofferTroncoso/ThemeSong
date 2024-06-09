@@ -17,7 +17,7 @@ body {
 }
 
 /* carousel on homepage and stuff */
-#items.ytmusic-carousel:hover {
+ytmusic-carousel:hover, ytmusic-carousel:active, ytmusic-carousel:focus {
   scrollbar-color: var(--ts-scrollbar-color) transparent;
 }
 
