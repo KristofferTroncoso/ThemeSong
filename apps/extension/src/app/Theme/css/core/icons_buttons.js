@@ -361,4 +361,8 @@ export const icons_buttons = /*css*/ `
   .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--text:hover {
     background-color: var(--ts-base-strong-blue);
   }
+
+  button.yt-icon-button {
+    color: var(--ts-inverse-icon-color);
+  }
 `;
