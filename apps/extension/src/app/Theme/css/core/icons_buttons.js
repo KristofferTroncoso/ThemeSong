@@ -362,10 +362,6 @@ export const icons_buttons = /*css*/ `
     background-color: var(--ts-base-strong-blue);
   }
 
-  button.yt-icon-button {
-    color: var(--ts-inverse-icon-color);
-  }
-
   yt-icon[icon="yt-icons:close"] {
     color: var(--ts-primary-icon-color);
   }
