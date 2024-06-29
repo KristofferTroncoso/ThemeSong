@@ -6,6 +6,7 @@ export const texts = /*css*/ `
   --ts-inverse-text-color: var(--ts-base-00-color);
   --ts-primary-text-alpha-color: var(--ts-base-100-alpha-07-color);
   --ts-secondary-text-alpha-color: var(--ts-base-100-alpha-03-color);
+  --yt-spec-static-overlay-text-secondary: var(--ts-base-100-alpha-07-color);
 }
 
 :root {
