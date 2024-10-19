@@ -114,9 +114,9 @@ function ThemePanel() {
         </PanelButton>
         <PanelButton
           title="YouTube Music Mobile"
-          hoverColor="red"
+          hoverColor="#f03"
           bgColor={activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && "var(--ts-base-100-color)"}
-          color={activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && "red"}
+          color={activeTheme === "55f83bbd-d794-49a8-8912-2b53af3f1d3f" && "#f03"}
           css={css`
             height: 38px;
             min-width: 45px;
