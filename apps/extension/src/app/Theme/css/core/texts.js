@@ -334,4 +334,8 @@ yt-formatted-string.ytmusic-menu-service-item-download-renderer {
 yt-formatted-string.ytmusic-menu-service-item-download-renderer {
   color: var(--ts-primary-text-color);
 }
+
+#text.yt-notification-action-renderer, #sub-text.yt-notification-action-renderer {
+  color: var(--ts-primary-text-color);
+}
 `;
