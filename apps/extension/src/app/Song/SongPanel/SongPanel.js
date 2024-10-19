@@ -79,9 +79,9 @@ function SongPanel() {
           <PanelButton
             title="YouTube"
             color="#fff"
-            bgColor="#fd1600"
+            bgColor="#f03"
             hoverColor="#fff"
-            hoverBgColor="#fd1600"
+            hoverBgColor="#f03"
             onClick={handleYtSearch}
           >
             <YouTubeIcon

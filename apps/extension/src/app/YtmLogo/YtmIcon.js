@@ -4,7 +4,7 @@ function YtmIcon({ circleColor, textColor, stroke, partial, full, ...props }) {
       <style>
         {`
           :root {
-            --ts-ytmlogo-circle-color: #ff0000;
+            --ts-ytmlogo-circle-color: #f03;
             --ts-ytmlogo-text-color: var(--ts-primary-text-color, #fff);
           }
         `}
