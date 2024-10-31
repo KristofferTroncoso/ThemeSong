@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useStore } from "/src/app/store";
 import * as Vibrant from "node-vibrant";
-import { playerBarSongImgNode } from "../Theme/selectors";
+// import { playerBarSongImgNode } from "../Theme/selectors";
 import Color from "colorjs.io";
 // import getBestImgAvailable from "./getBestImgAvailable";
 
@@ -92,10 +92,12 @@ function Palette() {
 
     function handleSongChange(mutationList) {
       console.log("song changed");
-      playerBarSongImgNode.crossOrigin = "anonymous";
+      document.querySelector(".middle-controls .thumbnail-image-wrapper img").crossOrigin = "anonymous";
 
-      if (playerBarSongImgNode.src !== "https://music.youtube.com/") {
-        if (mutationList[0].oldValue === playerBarSongImgNode.src) {
+      if (
+        document.querySelector(".middle-controls .thumbnail-image-wrapper img").src !== "https://music.youtube.com/"
+      ) {
+        if (mutationList[0].oldValue === document.querySelector(".middle-controls .thumbnail-image-wrapper img").src) {
           console.log("same song image");
         } else {
           console.log("song image changed");
@@ -106,7 +108,7 @@ function Palette() {
 
     imgChangeObserver.current = new MutationObserver(handleSongChange);
 
-    imgChangeObserver.current.observe(playerBarSongImgNode, {
+    imgChangeObserver.current.observe(document.querySelector(".middle-controls .thumbnail-image-wrapper img"), {
       attributeFilter: ["src"],
       attributeOldValue: true,
     });
@@ -233,10 +235,12 @@ function Palette() {
 
 function getVibrantPalette() {
   console.log("getting palette hsl");
-  console.log(playerBarSongImgNode.src);
+  console.log(document.querySelector(".middle-controls .thumbnail-image-wrapper img").src);
   // const bestImg = getBestImgAvailable();
   // console.log(bestImg);
-  return Vibrant.from(playerBarSongImgNode.src).quality(1).getPalette();
+  return Vibrant.from(document.querySelector(".middle-controls .thumbnail-image-wrapper img").src)
+    .quality(1)
+    .getPalette();
 }
 
 function getDominantColor(palette) {

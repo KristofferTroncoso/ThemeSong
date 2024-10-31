@@ -1,27 +1,27 @@
 import { useEffect } from "react";
-import { songImg } from "../../Theme/selectors";
+// import { songImg } from "../../Theme/selectors";
 
 function HighResSongImage() {
   useEffect(() => {
-    let originalImgString = songImg.src;
+    let originalImgString = document.querySelector("#song-image img#img").src;
     let enhancedImg = originalImgString.replace("w544-h544", "w800-h800");
     if (originalImgString !== enhancedImg) {
-      songImg.setAttribute("src", enhancedImg);
+      document.querySelector("#song-image img#img").setAttribute("src", enhancedImg);
     }
 
     let albumImageObserver = new MutationObserver(handleAlbumImageChange);
 
-    albumImageObserver.observe(songImg, {
+    albumImageObserver.observe(document.querySelector("#song-image img#img"), {
       attributeFilter: ["src"],
     });
 
     function handleAlbumImageChange() {
-      console.log(songImg.src);
+      console.log(document.querySelector("#song-image img#img").src);
 
-      let enhancedImg = songImg.src.replace("w544-h544", "w800-h800");
-      if (songImg.src !== enhancedImg) {
+      let enhancedImg = document.querySelector("#song-image img#img").src.replace("w544-h544", "w800-h800");
+      if (document.querySelector("#song-image img#img").src !== enhancedImg) {
         setTimeout(() => {
-          songImg.setAttribute("src", enhancedImg);
+          document.querySelector("#song-image img#img").setAttribute("src", enhancedImg);
         }, 100);
       }
     }
