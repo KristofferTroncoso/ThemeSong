@@ -4,24 +4,36 @@ import YtmLogo from "./YtmLogo";
 
 function LogoContainer() {
   useEffect(() => {
-    const ytLogoDiv = document.querySelector("ytmusic-nav-bar .left-content a");
-    let testNode = document.querySelector("ytmusic-nav-bar .left-content a picture");
+    const observer = new MutationObserver(() => {
+      let targetNode = document.querySelector("ytmusic-nav-bar .left-content a");
 
-    if (testNode) {
-      ytLogoDiv.removeChild(testNode);
-    }
+      if (targetNode) {
+        observer.disconnect(); // Stop observing once the element is found
 
-    let logoContainer = document.createElement("div");
-    logoContainer.id = "ts-logo-container";
+        let testNode = targetNode.querySelector("picture");
 
-    if (document.getElementById("ts-logo-container") === null) {
-      ytLogoDiv.append(logoContainer);
-    } else {
-      document.getElementById("ts-logo-container").remove();
-      ytLogoDiv.append(logoContainer);
-    }
+        if (testNode) {
+          targetNode.removeChild(testNode);
+        }
 
-    createRoot(logoContainer).render(<YtmLogo />);
+        let logoContainer = document.createElement("div");
+        logoContainer.id = "ts-logo-container";
+
+        if (!document.getElementById("ts-logo-container")) {
+          targetNode.append(logoContainer);
+        } else {
+          document.getElementById("ts-logo-container").remove();
+          targetNode.append(logoContainer);
+        }
+
+        createRoot(logoContainer).render(<YtmLogo />);
+      }
+    });
+
+    // Observe changes to the entire document
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => observer.disconnect();
   }, []);
 
   return null;
