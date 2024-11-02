@@ -4,7 +4,13 @@ import ContentScript from "./ContentScript";
 
 console.log("Content Script loaded");
 
-insertContentScriptContainer();
+setTimeout(() => {
+  insertContentScriptContainer();
+}, 2000);
+
+setTimeout(() => {
+  insertContentScriptContainer();
+}, 6000);
 
 function insertContentScriptContainer() {
   const body = document.querySelector("body");
