@@ -52,7 +52,8 @@ function SongPanel() {
       if (res.success && typeof res.data.url === "string" && res.data.url.startsWith("http")) url = res.data.url;
       else url = `https://genius.com/search?q=${query}`;
 
-      window.open(url, "_blank", "noopener noreferrer").focus();
+      const win = window.open(url, "_blank", "noopener noreferrer");
+      win && win.focus();
     });
   }
 
