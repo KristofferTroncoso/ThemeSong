@@ -43,9 +43,9 @@ function SongPanel() {
   }
 
   async function handleGeniusLyricsSearch(e) {
-    let modSongName = sanitize(metadata.title);
+    let songName = sanitize(metadata.title);
     let artistName = sanitize(metadata.artist);
-    let query = `${encodeURIComponent(artistName)}%20${encodeURIComponent(modSongName)}`;
+    let query = `${encodeURIComponent(songName)}%20${encodeURIComponent(artistName)}`;
     let url;
 
     chrome.runtime.sendMessage({ fetchLyricsMetadata: { query } }, (res) => {
