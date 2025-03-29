@@ -33,13 +33,11 @@ function UpdatePanel() {
         `}
       >
         <p>
-          <b>v1.2.5</b>
-          <span> (October 2024)</span>
+          <b>v1.2.6</b>
+          <span> (October 2025)</span>
         </p>
         <br></br>
-        <p>- styling fixes</p>
-        <p>- shoutout Billy B first sponsor 🙏</p>
-        <p>- shoutout Better Lyrics extension</p>
+        <p>- fix double skipping</p>
         <br></br>
         <p>
           <b>{getMessage("updateNotice")}</b>

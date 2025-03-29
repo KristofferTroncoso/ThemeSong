@@ -26,7 +26,7 @@ export function handleOnInstalled(details) {
       chrome.storage.local.get("extensionPrefs", (res) => {
         // whenever extension is updated, show update note
         chrome.storage.local.set({
-          extensionPrefs: { ...res.extensionPrefs, showUpdateNote: false },
+          extensionPrefs: { ...res.extensionPrefs, showUpdateNote: true },
         });
       });
 
