@@ -338,4 +338,12 @@ yt-formatted-string.ytmusic-menu-service-item-download-renderer {
 #text.yt-notification-action-renderer, #sub-text.yt-notification-action-renderer {
   color: var(--ts-primary-text-color);
 }
+
+yt-formatted-string[has-link-only_]:not([force-default-style]) a.yt-simple-endpoint.yt-formatted-string {
+  color: var(--ts-primary-text-color);
+}
+
+tp-yt-iron-input.tp-yt-paper-input>input.tp-yt-paper-input {
+  color: var(--ts-primary-text-color);
+}
 `;
