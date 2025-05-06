@@ -377,4 +377,12 @@ export const icons_buttons = /*css*/ `
   ytmusic-play-button-renderer[icon="yt-sys-icons:play_arrow"] .icon.ytmusic-play-button-renderer {
     fill: var(--ts-inverse-icon-color);
   }
+
+  ytmusic-responsive-list-item-renderer .icon , ytmusic-responsive-list-item-renderer ytmusic-play-button-renderer[icon="yt-sys-icons:play_arrow"] .icon.ytmusic-play-button-renderer {
+    fill: var(--ts-primary-icon-color);
+  }
+
+  ytmusic-play-button-renderer yt-icon, .yt-icon-container.yt-icon {
+    fill: var(--ts-inverse-icon-color);
+  }
 `;
