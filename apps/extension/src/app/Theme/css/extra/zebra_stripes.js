@@ -35,4 +35,10 @@ ytmusic-playlist-shelf-renderer[is-bauhaus-web-playlist-detail-page-redesign-ena
   margin-bottom: 0px;
   padding: 4px 16px;
 }
+
+ytmusic-responsive-list-item-renderer[is-album-detail-page], ytmusic-playlist-shelf-renderer[is-playlist-detail-page] #contents.ytmusic-playlist-shelf-renderer>*.ytmusic-playlist-shelf-renderer:not(:last-child) {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-bottom: 0;
+}
 `;

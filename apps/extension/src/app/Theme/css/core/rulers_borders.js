@@ -122,4 +122,8 @@ export const rulers_borders = /*css*/ `
   ytmusic-shelf-renderer:not([is-bauhaus-web-detail-page-redesign-enabled]) #contents.ytmusic-shelf-renderer>*.ytmusic-shelf-renderer:not(:last-child) {
     border-bottom: 1px solid var(--ts-ruler-secondary-color);
   }
+
+  ytmusic-responsive-list-item-renderer[is-playlist-detail-page], ytmusic-responsive-list-item-renderer[is-album-detail-page] {
+    border-radius: 0px;
+  }
 `;
