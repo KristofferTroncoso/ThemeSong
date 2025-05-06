@@ -126,4 +126,10 @@ export const rulers_borders = /*css*/ `
   ytmusic-responsive-list-item-renderer[is-playlist-detail-page], ytmusic-responsive-list-item-renderer[is-album-detail-page] {
     border-radius: 0px;
   }
+
+  ytmusic-responsive-list-item-renderer[is-album-detail-page], ytmusic-playlist-shelf-renderer[is-playlist-detail-page] #contents.ytmusic-playlist-shelf-renderer>*.ytmusic-playlist-shelf-renderer:not(:last-child) {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-bottom: 0;
+  }
 `;
