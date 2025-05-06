@@ -385,4 +385,16 @@ export const icons_buttons = /*css*/ `
   ytmusic-play-button-renderer yt-icon, .yt-icon-container.yt-icon {
     fill: var(--ts-inverse-icon-color);
   }
+
+  yt-icon.ytmusic-inline-badge-renderer {
+    fill: var(--ts-primary-icon-color);
+  }
+
+  yt-icon-button.ytmusic-carousel-shelf-renderer {
+    border: 1px solid var(--ts-base-100-alpha-03-color);
+  }
+
+  yt-icon-button.ytmusic-carousel-shelf-renderer:hover {
+    background-color: var(--ts-base-100-alpha-01-color);
+  }
 `;
