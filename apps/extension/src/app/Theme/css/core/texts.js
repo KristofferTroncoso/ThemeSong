@@ -346,4 +346,11 @@ yt-formatted-string[has-link-only_]:not([force-default-style]) a.yt-simple-endpo
 tp-yt-iron-input.tp-yt-paper-input>input.tp-yt-paper-input {
   color: var(--ts-primary-text-color);
 }
+
+ytmusic-responsive-header-renderer[is-playlist-detail-page] .strapline-text.ytmusic-responsive-header-renderer, ytmusic-responsive-header-renderer[is-album-detail-page] .strapline-text.ytmusic-responsive-header-renderer {
+    color: #fff;
+    --yt-endpoint-color: var(--ts-primary-text-color);
+    --yt-endpoint-hover-color: var(--ts-primary-text-color);
+    --yt-endpoint-visited-color: var(--ts-primary-text-color);
+}
 `;

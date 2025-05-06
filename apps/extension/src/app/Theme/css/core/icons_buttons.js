@@ -365,4 +365,16 @@ export const icons_buttons = /*css*/ `
   yt-icon[icon="yt-icons:close"] {
     color: var(--ts-primary-icon-color);
   }
+
+  ytmusic-responsive-header-renderer[is-playlist-detail-page][num-header-buttons="3"] .action-buttons.ytmusic-responsive-header-renderer *.ytmusic-responsive-header-renderer:not(:nth-child(2)), ytmusic-responsive-header-renderer[is-playlist-detail-page][num-header-buttons="3"] .action-buttons.ytmusic-responsive-header-renderer yt-button-renderer.ytmusic-responsive-header-renderer:nth-child(2), ytmusic-responsive-header-renderer[is-playlist-detail-page][num-header-buttons="4"] .action-buttons.ytmusic-responsive-header-renderer>*.ytmusic-responsive-header-renderer, ytmusic-responsive-header-renderer[is-playlist-detail-page][num-header-buttons="5"] .action-buttons.ytmusic-responsive-header-renderer *.ytmusic-responsive-header-renderer:not(:nth-child(3)), ytmusic-responsive-header-renderer[is-album-detail-page][num-header-buttons="3"] .action-buttons.ytmusic-responsive-header-renderer *.ytmusic-responsive-header-renderer:not(:nth-child(2)), ytmusic-responsive-header-renderer[is-album-detail-page][num-header-buttons="3"] .action-buttons.ytmusic-responsive-header-renderer yt-button-renderer.ytmusic-responsive-header-renderer:nth-child(2), ytmusic-responsive-header-renderer[is-album-detail-page][num-header-buttons="4"] .action-buttons.ytmusic-responsive-header-renderer>*.ytmusic-responsive-header-renderer, ytmusic-responsive-header-renderer[is-album-detail-page][num-header-buttons="5"] .action-buttons.ytmusic-responsive-header-renderer *.ytmusic-responsive-header-renderer:not(:nth-child(3)) {
+    background-color: var(--ts-pill-color);
+  }
+
+  ytmusic-responsive-header-renderer[num-header-buttons="3"] .action-buttons.ytmusic-responsive-header-renderer .ytmusic-responsive-header-renderer:nth-child(2), ytmusic-responsive-header-renderer[num-header-buttons="5"] .action-buttons.ytmusic-responsive-header-renderer .ytmusic-responsive-header-renderer:nth-child(3) {
+    background-color: var(--ts-primary-icon-color);
+  }
+
+  ytmusic-play-button-renderer[icon="yt-sys-icons:play_arrow"] .icon.ytmusic-play-button-renderer {
+    fill: var(--ts-inverse-icon-color);
+  }
 `;
