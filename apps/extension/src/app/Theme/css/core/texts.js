@@ -339,16 +339,8 @@ yt-formatted-string.ytmusic-menu-service-item-download-renderer {
   color: var(--ts-primary-text-color);
 }
 
-yt-formatted-string[has-link-only_]:not([force-default-style]) a.yt-simple-endpoint.yt-formatted-string {
-  color: var(--ts-primary-text-color);
-}
-
-tp-yt-iron-input.tp-yt-paper-input>input.tp-yt-paper-input {
-  color: var(--ts-primary-text-color);
-}
-
 ytmusic-responsive-header-renderer[is-playlist-detail-page] .strapline-text.ytmusic-responsive-header-renderer, ytmusic-responsive-header-renderer[is-album-detail-page] .strapline-text.ytmusic-responsive-header-renderer {
-    color: #fff;
+    color: var(--ts-primary-text-color);
     --yt-endpoint-color: var(--ts-primary-text-color);
     --yt-endpoint-hover-color: var(--ts-primary-text-color);
     --yt-endpoint-visited-color: var(--ts-primary-text-color);
