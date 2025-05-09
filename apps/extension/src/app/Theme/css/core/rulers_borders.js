@@ -97,7 +97,7 @@ export const rulers_borders = /*css*/ `
   ytmusic-add-to-playlist-renderer {
     border: 1px solid var(--ts-ruler-secondary-color);
   }
-
+  
   .top-bar.ytmusic-add-to-playlist-renderer {
     border-bottom: 1px solid var(--ts-ruler-secondary-color);
   }
@@ -115,21 +115,13 @@ export const rulers_borders = /*css*/ `
     border-bottom: 1px solid var(--ts-ruler-secondary-color);
   }
 
-  ytmusic-playlist-shelf-renderer:not([is-bauhaus-web-playlist-detail-page-redesign-enabled]) #contents.ytmusic-playlist-shelf-renderer>*.ytmusic-playlist-shelf-renderer:not(:last-child) {
-    border-bottom: 1px solid var(--ts-ruler-secondary-color);
-  }
-
-  ytmusic-shelf-renderer:not([is-bauhaus-web-detail-page-redesign-enabled]) #contents.ytmusic-shelf-renderer>*.ytmusic-shelf-renderer:not(:last-child) {
-    border-bottom: 1px solid var(--ts-ruler-secondary-color);
-  }
-
-  ytmusic-responsive-list-item-renderer[is-playlist-detail-page], ytmusic-responsive-list-item-renderer[is-album-detail-page] {
-    border-radius: 0px;
-  }
-
   ytmusic-responsive-list-item-renderer[is-album-detail-page], ytmusic-playlist-shelf-renderer[is-playlist-detail-page] #contents.ytmusic-playlist-shelf-renderer>*.ytmusic-playlist-shelf-renderer:not(:last-child) {
     padding-top: 4px;
     padding-bottom: 4px;
     margin-bottom: 0;
+  }
+
+  ytmusic-shelf-renderer:not([is-playlist-detail-page]):not([is-album-detail-page]) #contents.ytmusic-shelf-renderer>*.ytmusic-shelf-renderer:not(:last-child) {
+    border-bottom: 1px solid var(--ts-ruler-secondary-color);
   }
 `;

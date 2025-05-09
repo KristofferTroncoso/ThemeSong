@@ -345,4 +345,24 @@ ytmusic-responsive-header-renderer[is-playlist-detail-page] .strapline-text.ytmu
     --yt-endpoint-hover-color: var(--ts-primary-text-color);
     --yt-endpoint-visited-color: var(--ts-primary-text-color);
 }
+
+ytmusic-shelf-renderer[is-playlist-detail-page] .title.ytmusic-shelf-renderer>yt-formatted-string.ytmusic-shelf-renderer, ytmusic-shelf-renderer[is-album-detail-page] .title.ytmusic-shelf-renderer>yt-formatted-string.ytmusic-shelf-renderer {
+    color: var(--ts-primary-text-color);
+    --yt-endpoint-color: var(--ts-primary-text-color);
+    --yt-endpoint-hover-color: var(--ts-primary-text-color);
+    --yt-endpoint-visited-color: var(--ts-primary-text-color);
+}
+
+tp-yt-iron-input.tp-yt-paper-input>input.tp-yt-paper-input {
+  color: var(--ts-primary-text-color);
+}
+
+.ytmusicMultiPageMenuRendererHost {
+    --yt-spec-call-to-action: var(--ts-base-blue);
+    --yt-endpoint-hover-color: var(--ts-base-blue);
+}
+
+.section-title.ytmusic-dismissable-dialog-renderer {
+    color: var(--ts-primary-text-color);
+}
 `;

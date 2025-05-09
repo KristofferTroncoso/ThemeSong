@@ -382,10 +382,6 @@ export const icons_buttons = /*css*/ `
     fill: #b3b3b3;
   }
 
-  ytmusic-play-button-renderer yt-icon, .yt-icon-container.yt-icon {
-    fill: var(--ts-inverse-icon-color);
-  }
-
   yt-icon.ytmusic-inline-badge-renderer {
     fill: var(--ts-primary-icon-color);
   }
@@ -396,5 +392,13 @@ export const icons_buttons = /*css*/ `
 
   yt-icon-button.ytmusic-carousel-shelf-renderer:hover {
     background-color: var(--ts-base-100-alpha-01-color);
+  }
+
+  ytmusic-play-button-renderer:not([icon=PLAY_ARROW]) .icon.ytmusic-play-button-renderer {
+    color: #b3b3b3;
+  }
+
+  #song-media-window yt-icon {
+    fill: #fff;
   }
 `;
