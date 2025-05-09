@@ -54,4 +54,12 @@ export const gradients_overlays = /*css*/ `
   .category-menu-item.iron-selected.ytmusic-settings-page {
     background: var(--ts-overlay-highlighted-color);
   }
+
+  ytmusic-responsive-list-item-renderer[is-playlist-detail-page][is-checked], ytmusic-responsive-list-item-renderer[is-album-detail-page][is-checked] {
+    background-color: var(--ts-overlay-highlighted-color);
+  }
+
+  ytmusic-responsive-list-item-renderer[is-checked] {
+    background-color: var(--ts-overlay-highlighted-color);
+  }
 `;
