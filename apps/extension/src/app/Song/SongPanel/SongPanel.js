@@ -42,12 +42,19 @@ function SongPanel() {
     });
   }
 
-  function handleGeniusLyricsSearch(e) {
-    let modSongName = sanitize(metadata.title).replace(" ", "%20");
+  async function handleGeniusLyricsSearch(e) {
+    let songName = sanitize(metadata.title);
     let artistName = sanitize(metadata.artist);
-    let modArtistName = artistName.replace(" ", "%20");
-    let geniusUrlSearch = `https://genius.com/search?q=${modSongName}%20${modArtistName}`;
-    window.open(geniusUrlSearch, "_blank").focus();
+    let query = `${encodeURIComponent(songName)}%20${encodeURIComponent(artistName)}`;
+    let url;
+
+    chrome.runtime.sendMessage({ fetchLyricsMetadata: { query } }, (res) => {
+      if (res.success && typeof res.data.url === "string" && res.data.url.startsWith("http")) url = res.data.url;
+      else url = `https://genius.com/search?q=${query}`;
+
+      const win = window.open(url, "_blank", "noopener noreferrer");
+      win && win.focus();
+    });
   }
 
   return (
