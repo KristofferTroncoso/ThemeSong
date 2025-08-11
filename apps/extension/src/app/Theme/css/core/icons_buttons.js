@@ -401,4 +401,16 @@ export const icons_buttons = /*css*/ `
   #song-media-window yt-icon {
     fill: #fff;
   }
+
+  ytmusic-menu-service-item-download-renderer {
+    --iron-icon-fill-color: var(--ts-secondary-icon-color);
+    --icon-color: var(--ts-primary-icon-color);
+  }
+
+  ytmusic-guide-entry-renderer {
+      color: var(--ts-secondary-icon-color);
+      --yt-endpoint-color: var(--ts-secondary-icon-color);
+      --yt-endpoint-hover-color: var(--ts-secondary-icon-color);
+      --yt-endpoint-visited-color: var(--ts-secondary-icon-color);
+  }
 `;
