@@ -1,9 +1,0 @@
-{
-  "extends": "react-app",
-  "globals": {
-    "chrome": "readonly",
-    "browser": "readonly",
-    "STORE_URL": "readonly"
-  },
-  "plugins": ["@emotion"]
-}
