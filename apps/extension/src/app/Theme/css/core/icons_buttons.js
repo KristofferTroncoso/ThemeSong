@@ -413,4 +413,13 @@ export const icons_buttons = /*css*/ `
       --yt-endpoint-hover-color: var(--ts-secondary-icon-color);
       --yt-endpoint-visited-color: var(--ts-secondary-icon-color);
   }
+
+  .icon.ytmusic-menu-service-item-renderer {
+    --icon-color: var(--ts-primary-icon-color);
+  }
+
+  ytmusic-toggle-menu-service-item-renderer {
+    --iron-icon-fill-color: var(--ts-primary-icon-color);
+    --icon-color: var(--ts-primary-icon-color);
+  }
 `;
