@@ -33,11 +33,12 @@ function UpdatePanel() {
         `}
       >
         <p>
-          <b>v1.2.9</b>
-          <span> (Aug 2025)</span>
+          <b>v1.3.0</b>
+          <span> (October 2025)</span>
         </p>
         <br></br>
         <p>- fix colors</p>
+        <p>- add new boba alt icon</p>
         <br></br>
         <p>
           <b>{getMessage("updateNotice")}</b>
