@@ -26,6 +26,7 @@ export const createPieceSlice = (set, get) => ({
         "GuitarAmp",
         "Heartbeat",
         "Joystick",
+        "Boba"
       ],
     },
     {

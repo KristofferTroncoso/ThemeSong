@@ -14,6 +14,7 @@ import { FaIceCream } from "react-icons/fa";
 import { BiSolidGuitarAmp } from "react-icons/bi";
 import { LiaHeartbeatSolid } from "react-icons/lia";
 import { BsJoystick } from "react-icons/bs";
+import { GiBoba } from "react-icons/gi";
 
 function QapIconAltSettings() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -104,6 +105,7 @@ function QapIconAltSettingsSelection() {
               GuitarAmp: <BiSolidGuitarAmp style={{ fontSize: "23px" }} />,
               Heartbeat: <LiaHeartbeatSolid style={{ fontSize: "28px" }} />,
               Joystick: <BsJoystick style={{ fontSize: "24px" }} />,
+              Boba: <GiBoba style={{ fontSize: "28px" }} />,
             }[icon]
           }
         </button>

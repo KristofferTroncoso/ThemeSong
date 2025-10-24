@@ -9,6 +9,7 @@ import { FaIceCream } from "react-icons/fa";
 import { BiSolidGuitarAmp } from "react-icons/bi";
 import { LiaHeartbeatSolid } from "react-icons/lia";
 import { BsJoystick } from "react-icons/bs";
+import { GiBoba } from "react-icons/gi";
 
 function QapIconAlt() {
   const quickAccessPanelIconPrefs = useStore((state) => state.piece.prefs["34637b81-0c1a-4982-b130-0ff9ac232e4d"]);
@@ -27,6 +28,7 @@ function QapIconAlt() {
           GuitarAmp: <BiSolidGuitarAmp style={{ fontSize: "23px" }} />,
           Heartbeat: <LiaHeartbeatSolid style={{ fontSize: "30px" }} />,
           Joystick: <BsJoystick style={{ fontSize: "24px" }} />,
+          Boba: <GiBoba style={{ fontSize: "34px" }} />,
         }[quickAccessPanelIconPrefs.icon]
       }
     </>
