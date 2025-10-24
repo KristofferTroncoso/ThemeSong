@@ -432,4 +432,8 @@ export const icons_buttons = /*css*/ `
   .ytmusicMultiPageMenuRendererDelhiIconsEnabled {
     --yt-compact-link-icon-color: var(--ts-primary-icon-color);
   }
+
+  #song-media-window button.yt-icon-button {
+    color: #fff;
+  }
 `;
