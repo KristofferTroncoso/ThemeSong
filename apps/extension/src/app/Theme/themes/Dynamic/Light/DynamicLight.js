@@ -165,6 +165,11 @@ function DynamicLight() {
         .image.ytmusic-player-bar {
           border: 1px solid rgb(0 0 0 / 0.1);
         }
+
+        /* temp fix just for dynamic light. its the play button on playlist view */
+        .icon.ytmusic-play-button-renderer {
+          color: white !important;
+        }
       `
       }
 

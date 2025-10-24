@@ -54,12 +54,18 @@ function StaticLight() {
         --ts-secondary-text-color: var(--ts-base-100-alpha-08-color);
       }`}
 
-      {(playerUiState === "PLAYER_PAGE_OPEN" || playerUiState === "FULLSCREEN") &&
-        /* css */ ` 
+      {playerUiState === "PLAYER_PAGE_OPEN" || playerUiState === "FULLSCREEN"
+        ? /* css */ ` 
         :root  {
           --ts-navbar-color: var(--ts-playerpage-color);
           --ts-sidebar-color: var(--ts-playerpage-color);
           --ts-playerbar-color: var(--ts-playerpage-color);
+        }
+      `
+        : /* css */ `
+        /* temp fix just for dynamic light. its the play button on playlist view */
+        .icon.ytmusic-play-button-renderer {
+          color: white !important;
         }
       `}
     </style>
