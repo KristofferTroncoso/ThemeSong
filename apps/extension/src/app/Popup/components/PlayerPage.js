@@ -131,7 +131,7 @@ function PlayerPage() {
               css={css`
                 width: inherit;
                 height: inherit;
-                border-radius: 8px;
+                border-radius: 9px;
                 background-color: #222;
                 object-fit: contain;
                 box-shadow: 0 5px 80px black;

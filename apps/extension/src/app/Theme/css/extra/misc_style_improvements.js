@@ -148,17 +148,17 @@ ytmusic-guide-entry-renderer:not([is-primary]) .title.ytmusic-guide-entry-render
 
 export const popupStyling = /*css*/ `
   tp-yt-paper-listbox.ytmusic-menu-popup-renderer {
-    border-radius: 8px;
+    border-radius: 10px;
   }
 
   tp-yt-iron-dropdown {
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 0 20px rgb(0 0 0 / 15%);
   }
 
   /* popup dialog - Share and Save to Playlist */
   tp-yt-paper-dialog {
-    border-radius: 8px;
+    border-radius: 10px;
   }
 `;
 
