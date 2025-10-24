@@ -62,4 +62,12 @@ export const gradients_overlays = /*css*/ `
   ytmusic-responsive-list-item-renderer[is-checked] {
     background-color: var(--ts-overlay-highlighted-color);
   }
+
+  .yt-list-item-view-model__container--tappable:hover {
+    background-color: var(--ts-overlay-highlighted-color);
+  }
+
+  ytmusic-player-bar[is-web-delhi-icons-enabled] yt-icon-button.ytmusic-player-bar:hover {
+      background-color: var(--ts-overlay-highlighted2-color);
+  }
 `;
