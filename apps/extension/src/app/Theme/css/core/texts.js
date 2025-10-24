@@ -365,4 +365,8 @@ tp-yt-iron-input.tp-yt-paper-input>input.tp-yt-paper-input {
 .section-title.ytmusic-dismissable-dialog-renderer {
     color: var(--ts-primary-text-color);
 }
+
+.yt-list-item-view-model__title {
+    color: var(--ts-primary-text-color);
+}
 `;

@@ -422,4 +422,14 @@ export const icons_buttons = /*css*/ `
     --iron-icon-fill-color: var(--ts-primary-icon-color);
     --icon-color: var(--ts-primary-icon-color);
   }
+
+  .cast-button.ytmusic-cast-button {
+    height: 32px;
+    --iron-icon-fill-color: var(--ts-primary-icon-color);
+    --icon-color: var(--ts-primary-icon-color);
+  }
+
+  .ytmusicMultiPageMenuRendererDelhiIconsEnabled {
+    --yt-compact-link-icon-color: var(--ts-primary-icon-color);
+  }
 `;
