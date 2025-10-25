@@ -59,6 +59,26 @@ function handleOnMessage(message, sender, sendResponse) {
           chrome.search.query({ disposition: "NEW_TAB", text: value });
           break;
 
+        case "fetchLyricsMetadata": {
+          const abortController = new AbortController();
+          const timeout = setTimeout(() => abortController.abort(), 6000);
+
+          fetch(`https://api.sv443.net/geniurl/search/top?disableFuzzy&q=${value.query}`, {
+            method: "GET",
+            signal: abortController.signal,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              clearTimeout(timeout);
+              sendResponse({ success: true, data });
+            })
+            .catch(() => {
+              clearTimeout(timeout);
+              sendResponse({ success: false });
+            });
+          return true; // Keep the message channel open for async response
+        }
+
         default:
           console.log("default case");
           sendResponse("It's a me, the background script!");
