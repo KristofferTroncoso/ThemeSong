@@ -11,21 +11,13 @@ import { LuClipboardCopy, LuSearch } from "react-icons/lu";
 import useLocalization from "../../Extension/Localization/useLocalization";
 
 function SongPanel() {
-  const locale = useStore((state) => state.extension.prefs.locale);
   const metadata = useStore((state) => state.media.metadata);
 
   const getMessage = useLocalization();
 
-  function sanitize(songTitle) {
-    //remove parens
-    let removedParens = songTitle.replace(/ *\([^)]*\) */g, "");
-    //remove special characters
-    let sanitized = removedParens.replace(/[^a-zA-Z0-9 ]/g, "");
-    if (["en", "en_AU", "en_GB", "en_US"].includes(locale)) {
-      return sanitized;
-    } else {
-      return songTitle;
-    }
+  function encode(text) {
+    if (!text) return "";
+    return encodeURIComponent(text.trim());
   }
 
   function handleYtSearch(e) {
@@ -43,10 +35,9 @@ function SongPanel() {
   }
 
   function handleGeniusLyricsSearch(e) {
-    let modSongName = sanitize(metadata.title).replace(" ", "%20");
-    let artistName = sanitize(metadata.artist);
-    let modArtistName = artistName.replace(" ", "%20");
-    let geniusUrlSearch = `https://genius.com/search?q=${modSongName}%20${modArtistName}`;
+    const modSongName = encode(metadata.title);
+    const modArtistName = encode(metadata.artist);
+    const geniusUrlSearch = `https://genius.com/search?q=${modSongName}%20${modArtistName}`;
     window.open(geniusUrlSearch, "_blank").focus();
   }
 
