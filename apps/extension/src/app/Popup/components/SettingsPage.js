@@ -2,6 +2,7 @@ import { css } from "@emotion/react";
 import { BiReset } from "react-icons/bi";
 import LocaleSettings from "../../Extension/Localization/LocaleSettings";
 import useLocalization from "../../Extension/Localization/useLocalization";
+import LastfmSettings from "../../Lastfm/LastfmSettings";
 
 function SettingsPage() {
   const getMessage = useLocalization();
@@ -30,6 +31,7 @@ function SettingsPage() {
         {getMessage("settings")}
       </h1>
       <LocaleSettings />
+      <LastfmSettings />
       <div
         css={css`
           padding: 10px;

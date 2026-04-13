@@ -16,7 +16,7 @@
     "34": "assets/icon-34.png",
     "128": "assets/icon-128.png"
   },
-  "host_permissions": ["https://music.youtube.com/*"],
+  "host_permissions": ["https://music.youtube.com/*", "https://ws.audioscrobbler.com/*"],
   "content_scripts": [
     {
       "matches": ["https://music.youtube.com/*"],
