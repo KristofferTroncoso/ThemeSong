@@ -466,4 +466,12 @@ export const icons_buttons = /*css*/ `
   .ytSpecButtonShapeNextMono.ytSpecButtonShapeNextText:hover {
     background: var(--ts-pill-hover-color);
   }
+
+  ytmusic-search-suggestion {
+    color: var(--ts-primary-icon-color);
+  }
+
+  ytmusic-chip-cloud-chip-renderer[chip-style=STYLE_DEFAULT] a.ytmusic-chip-cloud-chip-renderer, ytmusic-chip-cloud-chip-renderer[chip-style=STYLE_ICON_SECOND] a.ytmusic-chip-cloud-chip-renderer, ytmusic-chip-cloud-chip-renderer[chip-style=STYLE_UNKNOWN] a.ytmusic-chip-cloud-chip-renderer {
+    background: var(--ts-pill-color);
+  }
 `;
