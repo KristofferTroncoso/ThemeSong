@@ -436,4 +436,34 @@ export const icons_buttons = /*css*/ `
   #song-media-window button.yt-icon-button {
     color: #fff;
   }
+
+  .ytSpecButtonShapeNextMono.ytSpecButtonShapeNextTonal {
+    background: var(--ts-pill-hover-color);
+    color: var(--ts-primary-icon-color);
+  } 
+
+  .ytSpecButtonShapeNextMono.ytSpecButtonShapeNextOutline {
+    color: var(--ts-primary-icon-color);
+    border-color: var(--ts-pill-hover-color);
+  }
+
+  .ytSpecButtonShapeNextMono.ytSpecButtonShapeNextText{
+    color: var(--ts-primary-icon-color);
+  }
+
+  ytmusic-chip-cloud-chip-renderer[chip-style=STYLE_LARGE_TRANSLUCENT_AND_SELECTED_WHITE] a.ytmusic-chip-cloud-chip-renderer {
+    background: var(--ts-pill-color);
+  }
+
+  ytmusic-chip-cloud-chip-renderer[chip-style=STYLE_LARGE_TRANSLUCENT_AND_SELECTED_WHITE] a.ytmusic-chip-cloud-chip-renderer:hover {
+    background-color: var(--ts-pill-hover-color);
+  }
+
+  .ytIconWrapperHost.ytd-compact-link-renderer, yt-icon.ytd-compact-link-renderer {
+    color: var(--ts-primary-icon-color);
+  }
+
+  .ytSpecButtonShapeNextMono.ytSpecButtonShapeNextText:hover {
+    background: var(--ts-pill-hover-color);
+  }
 `;
