@@ -474,4 +474,8 @@ export const icons_buttons = /*css*/ `
   ytmusic-chip-cloud-chip-renderer[chip-style=STYLE_DEFAULT] a.ytmusic-chip-cloud-chip-renderer, ytmusic-chip-cloud-chip-renderer[chip-style=STYLE_ICON_SECOND] a.ytmusic-chip-cloud-chip-renderer, ytmusic-chip-cloud-chip-renderer[chip-style=STYLE_UNKNOWN] a.ytmusic-chip-cloud-chip-renderer {
     background: var(--ts-pill-color);
   }
+
+  yt-icon[icon="yt-icons:close"] {
+    color: var(--ts-tertiary-icon-color);
+  }
 `;
