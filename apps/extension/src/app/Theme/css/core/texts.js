@@ -373,4 +373,8 @@ tp-yt-iron-input.tp-yt-paper-input>input.tp-yt-paper-input {
 #text.yt-notification-action-renderer {
     color: var(--ts-inverse-text-color);
 }
+
+.ytListItemViewModelTitle {
+  color: var(--ts-primary-text-color);
+}
 `;
