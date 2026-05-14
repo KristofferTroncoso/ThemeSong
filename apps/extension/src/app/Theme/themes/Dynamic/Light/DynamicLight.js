@@ -168,7 +168,7 @@ function DynamicLight() {
 
         /* temp fix just for dynamic light. its the play button on playlist view */
         .icon.ytmusic-play-button-renderer {
-          color: white !important;
+          color: #878787 !important;
         }
       `
       }
