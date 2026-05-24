@@ -86,10 +86,6 @@ ytmusic-player-bar {
   transition: var(--ts-bgcolor-transition) !important;
 }
 
-ytmusic-app-layout[player-fullscreened] > [slot=player-bar] {
-  background: var(--ts-playerbar-color) !important;
-}
-
 tp-yt-paper-listbox {
   background: var(--ts-playerbar-color);
 }
