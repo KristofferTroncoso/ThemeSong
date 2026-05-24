@@ -1,5 +1,6 @@
 #songDivNode {
   max-width: 650px;
+  display: none;
 }
 
 ytmusic-player:not([player-ui-state="FULLSCREEN"]) #songDivNode {
