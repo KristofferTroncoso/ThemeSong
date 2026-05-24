@@ -54,7 +54,6 @@ function PiecePage() {
                   {
                     "bf472cf5-689f-4be0-9eef-67c5cc8715e9": getMessage("hideCast"),
                     "a2c1185b-1d9b-4c0f-aef3-8c7887374cc5": getMessage("hideDislike"),
-                    "fe8f93d0-45a3-4214-afa5-3e3db4274e1b": getMessage("hideVideoCaptions"),
                     "34637b81-0c1a-4982-b130-0ff9ac232e4d": getMessage("panelAltIcon"),
                     "2a606045-80f3-4aee-93de-cf3cd39d2920": getMessage("userSnippet"),
                     "895e0c50-c0a0-4752-8014-bd4cb5029e9b": getMessage("lyricsFontSize"),

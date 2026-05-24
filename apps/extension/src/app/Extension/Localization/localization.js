@@ -7,7 +7,6 @@ import { appearance } from "./messages/appearance";
 import { utilities } from "./messages/utilities";
 import { hideCast } from "./messages/hideCast";
 import { hideDislike } from "./messages/hideDislike";
-import { hideVideoCaptions } from "./messages/hideVideoCaptions";
 import { panelAltIcon } from "./messages/panelAltIcon";
 import { userSnippet } from "./messages/userSnippet";
 import { lyricsFontSize } from "./messages/lyricsFontSize";
@@ -56,7 +55,6 @@ export const localizations = {
   utilities,
   hideCast,
   hideDislike,
-  hideVideoCaptions,
   panelAltIcon,
   userSnippet,
   lyricsFontSize,

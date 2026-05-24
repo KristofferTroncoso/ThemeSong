@@ -9,10 +9,6 @@ export const createPieceSlice = (set, get) => ({
       name: "Hide Dislike Button",
     },
     {
-      id: "fe8f93d0-45a3-4214-afa5-3e3db4274e1b",
-      name: "Hide Video Captions",
-    },
-    {
       id: "34637b81-0c1a-4982-b130-0ff9ac232e4d",
       name: "Quick Access Panel alt icon",
       icons: [
@@ -26,7 +22,7 @@ export const createPieceSlice = (set, get) => ({
         "GuitarAmp",
         "Heartbeat",
         "Joystick",
-        "Boba"
+        "Boba",
       ],
     },
     {
@@ -49,7 +45,6 @@ export const createPieceSlice = (set, get) => ({
   prefs: {
     "bf472cf5-689f-4be0-9eef-67c5cc8715e9": { enabled: false },
     "a2c1185b-1d9b-4c0f-aef3-8c7887374cc5": { enabled: false },
-    "fe8f93d0-45a3-4214-afa5-3e3db4274e1b": { enabled: false },
     "34637b81-0c1a-4982-b130-0ff9ac232e4d": { enabled: false, icon: "Headphones" },
     "2a606045-80f3-4aee-93de-cf3cd39d2920": {
       enabled: false,
