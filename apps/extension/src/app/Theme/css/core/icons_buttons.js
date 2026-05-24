@@ -478,4 +478,8 @@ export const icons_buttons = /*css*/ `
   yt-icon[icon="yt-icons:close"] {
     color: var(--ts-tertiary-icon-color);
   }
+
+  .ytSpecButtonShapeNextOverlay.ytSpecButtonShapeNextText:hover {
+      background: var(--ts-base-100-alpha-02-color);
+  }
 `;

@@ -30,11 +30,6 @@ button.ytmusic-sort-filter-button-renderer {
   --ytmusic-text-primary: var(--ts-primary-text-color, tomato) !important;
 }
 
-/* getting the rest of texts */
-yt-formatted-string {
-  color: var(--ts-primary-text-color);
-}
-
 /* random texts like on the right click menu and some pills and buttons */
 .text {
   color: var(--ts-primary-text-color, #947a41)!important;
@@ -375,6 +370,29 @@ tp-yt-iron-input.tp-yt-paper-input>input.tp-yt-paper-input {
 }
 
 .ytListItemViewModelTitle {
+  color: var(--ts-primary-text-color);
+}
+
+.ytSpecButtonShapeNextOverlay.ytSpecButtonShapeNextText {
+    color: var(--ts-primary-text-color);
+}
+
+.subscriber-count-text.ytmusic-subscribe-button-renderer {
+  color: var(--ts-primary-text-color);
+}
+
+.ytmusicCardShelfHeaderBasicRendererTitle {
+  color: var(--ts-primary-text-color);
+}
+
+.dialog-title.ytmusic-playback-rate-popup-renderer {
+    color: var(--ts-primary-text-color);
+    --yt-endpoint-color: var(--ts-primary-text-color);
+    --yt-endpoint-hover-color: var(--ts-primary-text-color);
+    --yt-endpoint-visited-color: var(--ts-primary-text-color);
+}
+
+tp-yt-paper-item.ytmusic-playback-rate-popup-renderer {
   color: var(--ts-primary-text-color);
 }
 `;
