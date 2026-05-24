@@ -18,7 +18,7 @@ function HighResSongImage() {
     function handleAlbumImageChange() {
       console.log(document.querySelector("#song-image img#img").src);
 
-      let enhancedImg = document.querySelector("#song-image img#img").src.replace("w544-h544", "w800-h800");
+      let enhancedImg = document.querySelector("#song-image img#img").src.replace("w544-h544", "w1000-h1000");
       if (document.querySelector("#song-image img#img").src !== enhancedImg) {
         setTimeout(() => {
           document.querySelector("#song-image img#img").setAttribute("src", enhancedImg);
