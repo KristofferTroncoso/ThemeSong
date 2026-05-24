@@ -65,10 +65,11 @@ function Wavy({ analyser }) {
         width: 100%;
         background: linear-gradient(
           180deg,
-          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0) 35%,
-          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0.5) 60%,
-          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0.7) 73%,
-          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0.5) 100%
+          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0) 0%,
+          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0.5) 35%,
+          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0.7) 50%,
+          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0.5) 65%,
+          oklch(15% var(--ts-palette-dominant-c) var(--ts-palette-dominant-h) / 0) 100%
         );
       `}
     >
@@ -78,8 +79,9 @@ function Wavy({ analyser }) {
         width="1920"
         css={css`
           position: absolute;
-          bottom: 10%;
+          top: 50%;
           left: 0;
+          transform: translateY(-50%);
           height: 35%;
           width: 100%;
           border-radius: inherit;
