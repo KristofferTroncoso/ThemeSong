@@ -85,8 +85,8 @@ ytmusic-player[player-ui-state=FULLSCREEN] #song-image #img {
   border-radius: var(--ts-songimg-border-radius);
   box-shadow: var(--ts-songimg-box-shadow);
   /* filter: drop-shadow(0px 0px 200px hsl(var(--ts-palette-dominant-hue), var(--ts-palette-dominant-saturation), 50%)); */
-  width: 700px;
-  height: 700px;
+  width: 900px;
+  height: 900px;
   margin: 0;
 }
 /* end PlayPage song img styling */
