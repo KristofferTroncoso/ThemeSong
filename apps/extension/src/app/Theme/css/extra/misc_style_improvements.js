@@ -171,20 +171,6 @@ export const playerPageScrollbarShowsWhenSidebar = /*css*/ `
   }
 `;
 
-/* sidebar a little too narrow at 240px.
-  apple music web's sidebar is 260px. 
-  spotify's is adjustable but min at 280px.
-*/
-export const sidebarALittleTooNarrow = /*css*/ `
-  ytmusic-guide-renderer {
-    width: 260px;
-  }
-
-  ytmusic-app[is-bauhaus-sidenav-enabled]:not([guide-collapsed]) {
-    --ytmusic-guide-width: 260px;
-  }
-`;
-
 export const adjustPlayerPagePadding = /*css*/ `
 @media(max-width: 615px) {
   ytmusic-player-page {
@@ -326,7 +312,6 @@ export const misc_style_improvements = /*css*/ `
   ${boldSidebarHeaders}
   ${popupStyling}
   ${playerPageScrollbarShowsWhenSidebar}
-  ${sidebarALittleTooNarrow}
   ${adjustPlayerPagePadding}
   ${compactListBox}
   ${largerPlayerbarImg}
