@@ -234,4 +234,12 @@ ytmusic-network-status-banner[current-state=OFFLINE] {
   background-color: var(--ts-playerbar-color);
   border-top: 1px solid #00000033;
 }
+
+ytmusic-search-suggestion {
+  background: var(--ts-body-color);
+}
+
+ytmusic-search-box[opened] .search-box.ytmusic-search-box {
+  background: var(--ts-body-color);
+}
 `;

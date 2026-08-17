@@ -128,4 +128,8 @@ export const rulers_borders = /*css*/ `
   ytmusic-shelf-renderer:not([is-playlist-detail-page]):not([is-album-detail-page]) #contents.ytmusic-shelf-renderer>*.ytmusic-shelf-renderer:not(:last-child) {
     border-bottom: 1px solid var(--ts-ruler-secondary-color);
   }
+
+  ytmusic-search-box:not([opened]):not([has-query]) .search-box.ytmusic-search-box {
+    border: 1px solid var(--ts-ruler-secondary-color);
+  }
 `;
