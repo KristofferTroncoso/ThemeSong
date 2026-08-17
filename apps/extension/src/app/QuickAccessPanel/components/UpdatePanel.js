@@ -33,8 +33,8 @@ function UpdatePanel() {
         `}
       >
         <p>
-          <b>v1.3.3</b>
-          <span> (May 2026)</span>
+          <b>v1.3.4</b>
+          <span> (August 2026)</span>
         </p>
         <br></br>
         <p>- fix styling</p>
