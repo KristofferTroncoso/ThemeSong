@@ -35,6 +35,10 @@ export const rulers_borders = /*css*/ `
     border-bottom: 1px solid var(--ts-ruler-secondary-color, rgb(0 0 0 / 0.2));
   }
 
+  #nav-bar-background.ytmusic-app-layout {
+    border-bottom: 1px solid var(--ts-ruler-secondary-color, rgb(0 0 0 / 0.2));
+  }
+
   tp-yt-paper-listbox.ytmusic-menu-popup-renderer {
     border: 1px solid var(--ts-ruler-secondary-color, rgb(0 0 0 / 0.2));
   }
