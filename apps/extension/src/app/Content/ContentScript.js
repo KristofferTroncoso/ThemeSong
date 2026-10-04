@@ -2,11 +2,11 @@ import MountWhenPlayerActive from "./MountWhenPlayerActive";
 import DataStoreSync from "../Extension/DataStoreSync";
 import Theme from "../Theme/Theme";
 import MediaObserver from "../Media/MediaObserver";
-import PanelContainer from "../QuickAccessPanel";
+// import PanelContainer from "../QuickAccessPanel";
 import PlayerUiStateObserver from "../Player/PlayerUiStateObserver";
 import SongInfoDisplayFeature from "../Song/SongInfoDisplay/SongInfoDisplayFeature";
 import VisualizerCS from "../Visualizer/VisualizerCS";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useStore } from "/src/app/store";
 
 import Palette from "../Palette/Palette";
@@ -21,6 +21,31 @@ import PlayPauseEventListener from "../Player/PlayPauseEventListener";
 
 function ContentScript({ root }) {
   const changeMedia = useStore((state) => state.media.changeMedia);
+  const [isLegacy, setIsLegacy] = useState(() => Boolean(document.querySelector(".middle-controls-buttons")));
+
+  useEffect(() => {
+    const updateLayoutState = () => {
+      // Check if legacy elements exist when player bar is rendered
+      const hasLegacyControls = Boolean(document.querySelector(".middle-controls-buttons"));
+      const playerBarExists = Boolean(document.querySelector("ytmusic-player-bar"));
+
+      if (playerBarExists) {
+        setIsLegacy(hasLegacyControls);
+      }
+    };
+
+    updateLayoutState();
+
+    // Observe YTM app for dynamic layout swaps during SPA navigation
+    const observer = new MutationObserver(updateLayoutState);
+    const targetNode = document.querySelector("ytmusic-app") || document.body;
+
+    if (targetNode) {
+      observer.observe(targetNode, { childList: true, subtree: true });
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     function detectOS() {
@@ -63,7 +88,7 @@ function ContentScript({ root }) {
     });
   }, []);
 
-  return (
+  return isLegacy ? (
     <div id="ThemeSong-ContentScript">
       <Unmounter root={root} />
       <DataStoreSync />
@@ -78,10 +103,23 @@ function ContentScript({ root }) {
         <SongInfoDisplayFeature />
         <VisualizerCS />
         <IconColor />
-        <PanelContainer />
+        {/* <PanelContainer /> */}
         <PlayerUiStateObserver />
         <MediaObserver />
         <PlayPauseEventListener />
+      </MountWhenPlayerActive>
+    </div>
+  ) : (
+    <div id="ThemeSong-ContentScript">
+      <Unmounter root={root} />
+      <DataStoreSync />
+      <Theme />
+      <LogoContainer />
+      <Palette />
+      <Utilities />
+      <Piece />
+      <MountWhenPlayerActive>
+        <SongInfoDisplayFeature />
       </MountWhenPlayerActive>
     </div>
   );
