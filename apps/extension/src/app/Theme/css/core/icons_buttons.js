@@ -482,4 +482,12 @@ export const icons_buttons = /*css*/ `
   .ytSpecButtonShapeNextOverlay.ytSpecButtonShapeNextText:hover {
       background: var(--ts-base-100-alpha-02-color);
   }
+
+  .ytSpecButtonShapeNextOverlay.ytSpecButtonShapeNextTonal {
+    color: var(--ts-primary-icon-color);
+  }
+
+  .ytSpecButtonShapeNextOverlay.ytSpecButtonShapeNextTonal {
+    background: var(--ts-pill-color);
+  }
 `;

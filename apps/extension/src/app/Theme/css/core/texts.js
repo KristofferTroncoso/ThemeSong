@@ -395,4 +395,16 @@ tp-yt-iron-input.tp-yt-paper-input>input.tp-yt-paper-input {
 tp-yt-paper-item.ytmusic-playback-rate-popup-renderer {
   color: var(--ts-primary-text-color);
 }
+
+.ytmusicTrackInfoTitle {
+   color: var(--ts-primary-text-color);
+}
+
+.ytmusicTrackInfoByline {
+  color: var(--ts-tertiary-text-color);
+}
+
+.ytMusicMiniPlayerTimeInfo {
+  color: var(--ts-tertiary-text-color);
+}
 `;
