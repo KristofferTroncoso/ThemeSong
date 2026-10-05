@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useStore } from "/src/app/store";
-import { playerBarSongImgNode } from "../Theme/selectors";
+import { getPlayerBarSongImgNode } from "../Theme/selectors";
 import Color from "colorjs.io";
 // import getBestImgAvailable from "./getBestImgAvailable";
 import ColorThief from "colorthief/dist/color-thief.mjs";
@@ -22,13 +22,13 @@ function Palette() {
   const colorThief = new ColorThief();
 
   useEffect(() => {
-    playerBarSongImgNode.crossOrigin = "anonymous";
+    getPlayerBarSongImgNode().crossOrigin = "anonymous";
 
     getPalette();
 
     function getPalette() {
-      if (playerBarSongImgNode.complete && playerBarSongImgNode.width > 0) {
-        let palette = colorThief.getPalette(playerBarSongImgNode, 6);
+      if (getPlayerBarSongImgNode().complete && getPlayerBarSongImgNode().width > 0) {
+        let palette = colorThief.getPalette(getPlayerBarSongImgNode(), 6);
         console.log(palette);
 
         let a = new Color(`rgb(${palette[0][0]} ${palette[0][1]} ${palette[0][2]})`).to("oklch");
@@ -79,10 +79,10 @@ function Palette() {
 
     function handleSongChange(mutationList) {
       console.log("song changed");
-      playerBarSongImgNode.crossOrigin = "anonymous";
+      getPlayerBarSongImgNode().crossOrigin = "anonymous";
 
-      if (playerBarSongImgNode.src !== "https://music.youtube.com/") {
-        if (mutationList[0].oldValue === playerBarSongImgNode.src) {
+      if (getPlayerBarSongImgNode().src !== "https://music.youtube.com/") {
+        if (mutationList[0].oldValue === getPlayerBarSongImgNode().src) {
           console.log("same song image");
         } else {
           console.log("song image changed");
@@ -93,7 +93,7 @@ function Palette() {
 
     imgChangeObserver.current = new MutationObserver(handleSongChange);
 
-    imgChangeObserver.current.observe(playerBarSongImgNode, {
+    imgChangeObserver.current.observe(getPlayerBarSongImgNode(), {
       attributeFilter: ["src"],
       attributeOldValue: true,
     });

@@ -92,12 +92,10 @@ function Palette() {
 
     function handleSongChange(mutationList) {
       console.log("song changed");
-      document.querySelector(".middle-controls .thumbnail-image-wrapper img").crossOrigin = "anonymous";
+      document.querySelector(".ytmusicTrackInfoThumbnail").crossOrigin = "anonymous";
 
-      if (
-        document.querySelector(".middle-controls .thumbnail-image-wrapper img").src !== "https://music.youtube.com/"
-      ) {
-        if (mutationList[0].oldValue === document.querySelector(".middle-controls .thumbnail-image-wrapper img").src) {
+      if (document.querySelector(".ytmusicTrackInfoThumbnail").src !== "https://music.youtube.com/") {
+        if (mutationList[0].oldValue === document.querySelector(".ytmusicTrackInfoThumbnail").src) {
           console.log("same song image");
         } else {
           console.log("song image changed");
@@ -108,7 +106,7 @@ function Palette() {
 
     imgChangeObserver.current = new MutationObserver(handleSongChange);
 
-    imgChangeObserver.current.observe(document.querySelector(".middle-controls .thumbnail-image-wrapper img"), {
+    imgChangeObserver.current.observe(document.querySelector(".ytmusicTrackInfoThumbnail"), {
       attributeFilter: ["src"],
       attributeOldValue: true,
     });
@@ -235,12 +233,10 @@ function Palette() {
 
 function getVibrantPalette() {
   console.log("getting palette hsl");
-  console.log(document.querySelector(".middle-controls .thumbnail-image-wrapper img").src);
+  console.log(document.querySelector(".ytmusicTrackInfoThumbnail").src);
   // const bestImg = getBestImgAvailable();
   // console.log(bestImg);
-  return Vibrant.from(document.querySelector(".middle-controls .thumbnail-image-wrapper img").src)
-    .quality(1)
-    .getPalette();
+  return Vibrant.from(document.querySelector(".ytmusicTrackInfoThumbnail").src).quality(1).getPalette();
 }
 
 function getDominantColor(palette) {

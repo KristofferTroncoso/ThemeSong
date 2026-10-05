@@ -2,7 +2,7 @@ import MountWhenPlayerActive from "./MountWhenPlayerActive";
 import DataStoreSync from "../Extension/DataStoreSync";
 import Theme from "../Theme/Theme";
 import MediaObserver from "../Media/MediaObserver";
-// import PanelContainer from "../QuickAccessPanel";
+import PanelContainer from "../QuickAccessPanel";
 import PlayerUiStateObserver from "../Player/PlayerUiStateObserver";
 import SongInfoDisplayFeature from "../Song/SongInfoDisplay/SongInfoDisplayFeature";
 import VisualizerCS from "../Visualizer/VisualizerCS";
@@ -103,7 +103,7 @@ function ContentScript({ root }) {
         <SongInfoDisplayFeature />
         <VisualizerCS />
         <IconColor />
-        {/* <PanelContainer /> */}
+        <PanelContainer />
         <PlayerUiStateObserver />
         <MediaObserver />
         <PlayPauseEventListener />
@@ -118,9 +118,6 @@ function ContentScript({ root }) {
       <Palette />
       <Utilities />
       <Piece />
-      <MountWhenPlayerActive>
-        <SongInfoDisplayFeature />
-      </MountWhenPlayerActive>
     </div>
   );
 }

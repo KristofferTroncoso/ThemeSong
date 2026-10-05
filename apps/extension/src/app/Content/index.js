@@ -4,7 +4,10 @@ import ContentScript from "./ContentScript";
 
 console.log("Content Script loaded");
 
-insertContentScriptContainer();
+// this setTimeout is a hack.
+setTimeout(() => {
+  insertContentScriptContainer();
+}, 2000);
 
 function insertContentScriptContainer() {
   const body = document.querySelector("body");
