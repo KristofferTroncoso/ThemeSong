@@ -33,11 +33,11 @@ function UpdatePanel() {
         `}
       >
         <p>
-          <b>v1.3.4</b>
-          <span> (August 2026)</span>
+          <b>v1.3.5</b>
+          <span> (October 2026)</span>
         </p>
         <br></br>
-        <p>- fix styling</p>
+        <p>- temp fix for new ui</p>
         <br></br>
         <p>
           <b>{getMessage("updateNotice")}</b>
