@@ -9,6 +9,10 @@ setTimeout(() => {
   insertContentScriptContainer();
 }, 2000);
 
+setTimeout(() => {
+  insertContentScriptContainer();
+}, 20000);
+
 function insertContentScriptContainer() {
   const body = document.querySelector("body");
 
