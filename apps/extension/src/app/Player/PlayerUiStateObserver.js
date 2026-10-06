@@ -31,6 +31,7 @@ function PlayerUiStateObserver() {
       // MINIPLAYER
       // FULLSCREEN
       // PLAYER_BAR_ONLY
+      console.log(playerUiState);
       changePlayerUiState(playerUiState);
     }
 

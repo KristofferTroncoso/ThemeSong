@@ -438,7 +438,7 @@ export const icons_buttons = /*css*/ `
   }
 
   .ytSpecButtonShapeNextMono.ytSpecButtonShapeNextTonal {
-    background: var(--ts-pill-hover-color);
+    background: var(--ts-pill-color);
     color: var(--ts-primary-icon-color);
   } 
 
@@ -489,5 +489,9 @@ export const icons_buttons = /*css*/ `
 
   .ytSpecButtonShapeNextOverlay.ytSpecButtonShapeNextTonal {
     background: var(--ts-pill-color);
+  }
+
+  .ytSpecButtonShapeNextSizeS.ytSpecButtonShapeNextSegmentedStart:after {
+    background: var(--ts-pill-hover-color);
   }
 `;

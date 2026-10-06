@@ -1,4 +1,4 @@
-import { songImg, playerBarSongImgNode } from "../Theme/selectors";
+import { songImg, getPlayerBarSongImgNode } from "../Theme/selectors";
 
 function getBestImgAvailable() {
   let bestImgAvailable;
@@ -7,7 +7,7 @@ function getBestImgAvailable() {
   // i disabled it since the smaller playerBarSongImg works just fine with my themes.
 
   if (songImg.src.charAt(0) === "d") {
-    bestImgAvailable = playerBarSongImgNode.src;
+    bestImgAvailable = getPlayerBarSongImgNode().src;
   } else {
     bestImgAvailable = songImg.src;
   }

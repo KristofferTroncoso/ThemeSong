@@ -242,4 +242,8 @@ ytmusic-search-suggestion {
 ytmusic-search-box[opened] .search-box.ytmusic-search-box {
   background: var(--ts-body-color);
 }
+
+ytmusic-app[is-miniplayer-enabled] ytmusic-miniplayer.ytmusic-app {
+  background: none;
+}
 `;
