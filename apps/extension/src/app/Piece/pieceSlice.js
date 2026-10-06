@@ -1,14 +1,6 @@
 export const createPieceSlice = (set, get) => ({
   pieces: [
     {
-      id: "bf472cf5-689f-4be0-9eef-67c5cc8715e9",
-      name: "Hide Cast Button",
-    },
-    {
-      id: "a2c1185b-1d9b-4c0f-aef3-8c7887374cc5",
-      name: "Hide Dislike Button",
-    },
-    {
       id: "34637b81-0c1a-4982-b130-0ff9ac232e4d",
       name: "Quick Access Panel alt icon",
       icons: [
@@ -37,14 +29,8 @@ export const createPieceSlice = (set, get) => ({
       id: "f900c555-d735-439f-b926-d5e407ba25f8",
       name: "High Res Song Image",
     },
-    {
-      id: "084b2bee-0686-4cc1-be6f-a9a6f87b8ee8",
-      name: "Center Song Controls",
-    },
   ],
   prefs: {
-    "bf472cf5-689f-4be0-9eef-67c5cc8715e9": { enabled: false },
-    "a2c1185b-1d9b-4c0f-aef3-8c7887374cc5": { enabled: false },
     "34637b81-0c1a-4982-b130-0ff9ac232e4d": { enabled: false, icon: "Headphones" },
     "2a606045-80f3-4aee-93de-cf3cd39d2920": {
       enabled: false,
@@ -52,7 +38,6 @@ export const createPieceSlice = (set, get) => ({
     },
     "895e0c50-c0a0-4752-8014-bd4cb5029e9b": { enabled: false, size: 18 },
     "f900c555-d735-439f-b926-d5e407ba25f8": { enabled: false },
-    "084b2bee-0686-4cc1-be6f-a9a6f87b8ee8": { enabled: false },
   },
   togglePiece: (payload) => {
     console.log("pieces: togglePiece");
