@@ -116,8 +116,11 @@ function ContentScript({ root }) {
       <Theme />
       <LogoContainer />
       <Palette />
-      <Utilities />
-      <Piece />
+      <MountWhenPlayerActive>
+        <IconColor />
+        <PlayerUiStateObserver />
+        <PlayPauseEventListener />
+      </MountWhenPlayerActive>
     </div>
   );
 }

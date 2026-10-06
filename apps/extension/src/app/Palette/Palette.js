@@ -4,6 +4,7 @@ import * as Vibrant from "node-vibrant";
 // import { playerBarSongImgNode } from "../Theme/selectors";
 import Color from "colorjs.io";
 // import getBestImgAvailable from "./getBestImgAvailable";
+import { getPlayerBarSongImgNode } from "../Theme/selectors";
 
 function Palette() {
   const palette = useStore((state) => state.palette.palette);
@@ -92,10 +93,10 @@ function Palette() {
 
     function handleSongChange(mutationList) {
       console.log("song changed");
-      document.querySelector(".ytmusicTrackInfoThumbnail").crossOrigin = "anonymous";
+      getPlayerBarSongImgNode().crossOrigin = "anonymous";
 
-      if (document.querySelector(".ytmusicTrackInfoThumbnail").src !== "https://music.youtube.com/") {
-        if (mutationList[0].oldValue === document.querySelector(".ytmusicTrackInfoThumbnail").src) {
+      if (getPlayerBarSongImgNode().src !== "https://music.youtube.com/") {
+        if (mutationList[0].oldValue === getPlayerBarSongImgNode().src) {
           console.log("same song image");
         } else {
           console.log("song image changed");
@@ -106,7 +107,7 @@ function Palette() {
 
     imgChangeObserver.current = new MutationObserver(handleSongChange);
 
-    imgChangeObserver.current.observe(document.querySelector(".ytmusicTrackInfoThumbnail"), {
+    imgChangeObserver.current.observe(getPlayerBarSongImgNode(), {
       attributeFilter: ["src"],
       attributeOldValue: true,
     });
@@ -233,10 +234,10 @@ function Palette() {
 
 function getVibrantPalette() {
   console.log("getting palette hsl");
-  console.log(document.querySelector(".ytmusicTrackInfoThumbnail").src);
+  console.log(getPlayerBarSongImgNode().src);
   // const bestImg = getBestImgAvailable();
   // console.log(bestImg);
-  return Vibrant.from(document.querySelector(".ytmusicTrackInfoThumbnail").src).quality(1).getPalette();
+  return Vibrant.from(getPlayerBarSongImgNode().src).quality(1).getPalette();
 }
 
 function getDominantColor(palette) {
