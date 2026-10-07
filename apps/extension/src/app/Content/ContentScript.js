@@ -115,6 +115,7 @@ function ContentScript({ root }) {
       <LogoContainer />
       <Palette />
       <MountWhenPlayerActive>
+        <VisualizerCS />
         <IconColor />
         <PanelContainer />
         <PlayerUiStateObserver />

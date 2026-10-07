@@ -6,7 +6,8 @@ function VolumeChangeObserver() {
   const [currentVolume, changeCurrentVolume] = useState();
 
   useEffect(() => {
-    let volumeSliderNode = document.getElementById("volume-slider");
+    let volumeSliderNode =
+      document.getElementById("volume-slider") || document.querySelector(".ytSliderShapeVerticalSlider");
 
     changeCurrentVolume(volumeSliderNode.getAttribute("value"));
 
