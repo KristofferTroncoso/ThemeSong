@@ -10,7 +10,8 @@ function MediaObserver() {
       changeMedia();
     }
 
-    let songTitleNode = document.querySelector("ytmusic-player-bar .title");
+    let songTitleNode =
+      document.querySelector("ytmusic-player-bar .title") || document.querySelector(".ytmusicTrackInfoTitle");
 
     mediaObserver = new MutationObserver(handleSongChange);
 

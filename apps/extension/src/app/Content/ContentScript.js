@@ -118,6 +118,7 @@ function ContentScript({ root }) {
         <IconColor />
         <PanelContainer />
         <PlayerUiStateObserver />
+        <MediaObserver />
         <PlayPauseEventListener />
       </MountWhenPlayerActive>
     </div>
