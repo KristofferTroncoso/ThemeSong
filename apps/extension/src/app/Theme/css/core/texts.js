@@ -407,4 +407,8 @@ tp-yt-paper-item.ytmusic-playback-rate-popup-renderer {
 .ytMusicMiniPlayerTimeInfo {
   color: var(--ts-tertiary-text-color);
 }
+
+.messages.ytmusic-mealbar-promo-renderer {
+    color: var(--ts-primary-text-color);
+}
 `;

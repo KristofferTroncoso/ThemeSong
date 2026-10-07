@@ -494,4 +494,8 @@ export const icons_buttons = /*css*/ `
   .ytSpecButtonShapeNextSizeS.ytSpecButtonShapeNextSegmentedStart:after {
     background: var(--ts-pill-hover-color);
   }
+
+  .ytSpecButtonShapeNextMono.ytSpecButtonShapeNextFilled {
+    background: var(--ts-pill-color);
+  }
 `;
