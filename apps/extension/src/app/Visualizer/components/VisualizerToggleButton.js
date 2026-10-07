@@ -19,7 +19,7 @@ function VisualizerToggleButton() {
       onClick={handleVisualizerButtonClick}
       title={getMessage("visualizers")}
       css={css`
-        color: ${isVisualizerOn ? "#fff" : "inherit"};
+        color: white;
         background-color: ${isVisualizerOn ? "#ee0606" : "inherit"};
         border-radius: 6px;
         border: 0;
