@@ -4,7 +4,6 @@ import Theme from "../Theme/Theme";
 import MediaObserver from "../Media/MediaObserver";
 import PanelContainer from "../QuickAccessPanel";
 import PlayerUiStateObserver from "../Player/PlayerUiStateObserver";
-import SongInfoDisplayFeature from "../Song/SongInfoDisplay/SongInfoDisplayFeature";
 import VisualizerCS from "../Visualizer/VisualizerCS";
 import { useEffect, useState } from "react";
 import { useStore } from "/src/app/store";
@@ -100,7 +99,6 @@ function ContentScript({ root }) {
       {/* <DisableContextMenu /> */}
       {/* <WelcomeMessage /> */}
       <MountWhenPlayerActive>
-        <SongInfoDisplayFeature />
         <VisualizerCS />
         <IconColor />
         <PanelContainer />
