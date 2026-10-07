@@ -193,7 +193,7 @@ function SidePlayer() {
                 {metadata.artist}
               </h2>
             </div>
-            <LikeButton />
+            {/* <LikeButton /> */}
           </div>
         </div>
         <SongControls />
