@@ -40,80 +40,6 @@ export const playBarTextAndIconsColor = /*css*/ `
   }
 `;
 
-/* June 2023. Album image on player page is directly touching the player bar. */
-export const fixNoMarginBottomOnNowPlayingAlbumImage = /*css*/ `
-  #player-page:not([video-mode]) {
-    container-type: inline-size;
-    container-name: player-page;
-  }
-
-  ytmusic-player-page:not([video-mode]):not([player-fullscreened]) #player.ytmusic-player-page {
-    max-width: 900px;
-  }
-
-  .av.ytmusic-player-page {
-    padding-bottom: 5px !important;
-  }
-
-  @container player-page (max-width: 839px) {
-    .av.ytmusic-player-page {
-      padding-bottom: 15px !important;
-    }
-  }
-
-  @container player-page (min-width: 840px) and (max-width: 999px) {
-    #main-panel {
-      padding: 0 calc(39% - 45vh) !important;
-    }
-
-    ytmusic-player-page:not([video-mode]):not([player-fullscreened]) #player.ytmusic-player-page {
-      max-width: 500px;
-    }
-  }
-
-  @container player-page (min-width: 1000px) and (max-width: 1199px) {
-    #main-panel {
-      padding: 0 calc(38% - 42vh) !important;
-    }
-  }
-
-  @container player-page (min-width: 1200px) and (max-width: 1399px) {
-    #main-panel {
-      padding: 0 calc(37% - 42vh) !important;
-    }
-  }
-
-  @container player-page (min-width: 1400px) and (max-width: 1599px) {
-    #main-panel {
-      padding: 0 calc(36% - 42vh) !important;
-    }
-  }
-
-  @container player-page (min-width: 1600px) and (max-width: 1799px) {
-    #main-panel {
-      padding: 0 calc(35% - 42vh) !important;
-    }
-  }
-
-  @container player-page (min-width: 1800px) and (max-width: 1999px) {
-    #main-panel {
-      padding: 0 calc(34% - 42vh) !important;
-    }
-  }
-
-  @container player-page (min-width: 2000px) and (max-width: 2199px) {
-    #main-panel {
-      padding: 0 calc(34% - 42vh) !important;
-    }
-  }
-
-  @container player-page (min-width: 2200px) and (max-width: 2400px) {
-    #main-panel {
-      padding: 0 calc(34% - 42vh) !important;
-    }
-  }
-`;
-
 /* the box-shadow on the new sidebar-layout Search input doesn't look so good. it only looks good on dark or Off because you can't see it haha */
 export const removeSearchBoxShadow = /*css*/ `
   ytmusic-search-box[has-query] .search-container.ytmusic-search-box, ytmusic-search-box[opened] .search-container.ytmusic-search-box {
@@ -306,7 +232,6 @@ export const misc_style_improvements = /*css*/ `
   ${noGreyBgOnUserIcon}
   ${fixWeirdMarginWhenFullScreenPlayer}
   ${playBarTextAndIconsColor}
-  ${fixNoMarginBottomOnNowPlayingAlbumImage}
   ${removeSearchBoxShadow}
   ${sidebarFocus}
   ${boldSidebarHeaders}
