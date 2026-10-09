@@ -11,6 +11,7 @@ function MountWhenPlayerActive({ children }) {
   const changePlayerUiState = useStore((state) => state.player.changePlayerUiState);
 
   useEffect(() => {
+    console.log("MountWhenPlayerActive");
     const ytmusicplayernode = document.querySelector("ytmusic-player");
 
     playerUiStateObserver.current = new MutationObserver(handlePlayerUiStateChange);
@@ -23,7 +24,9 @@ function MountWhenPlayerActive({ children }) {
     //initial get
     let ui = ytmusicplayernode.getAttribute("player-ui-state");
     if (ui !== "INACTIVE") {
-      setPlayerActive(true);
+      setTimeout(() => {
+        setPlayerActive(true);
+      }, 1000);
       playerUiStateObserver.current.disconnect();
     }
 
@@ -32,7 +35,9 @@ function MountWhenPlayerActive({ children }) {
       let playerUiState = attributesNamedNodeMap.getNamedItem("player-ui-state").value;
 
       if (playerUiState !== "INACTIVE") {
-        setPlayerActive(true);
+        setTimeout(() => {
+          setPlayerActive(true);
+        }, 2000);
         playerUiStateObserver.current.disconnect();
       }
     }

@@ -111,16 +111,16 @@ function ContentScript({ root }) {
     <div id="ThemeSong-ContentScript">
       <Unmounter root={root} />
       <DataStoreSync />
-      <Theme />
       <LogoContainer />
-      <Palette />
       <MountWhenPlayerActive>
+        <Theme />
         <VisualizerCS />
         <IconColor />
         <PanelContainer />
         <PlayerUiStateObserver />
         <MediaObserver />
         <PlayPauseEventListener />
+        <Palette />
       </MountWhenPlayerActive>
     </div>
   );
