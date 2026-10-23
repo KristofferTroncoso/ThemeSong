@@ -498,4 +498,9 @@ export const icons_buttons = /*css*/ `
   .ytSpecButtonShapeNextMono.ytSpecButtonShapeNextFilled {
     background: var(--ts-pill-color);
   }
+
+  .yt-icon:where(.yt-icon-container), .yt-icon:where(.ytIconWrapperHost), yt-icon {
+    color: var(--ts-primary-icon-color);
+    fill: var(--ts-primary-icon-color);
+  }
 `;

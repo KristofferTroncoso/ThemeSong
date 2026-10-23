@@ -365,10 +365,6 @@ tp-yt-iron-input.tp-yt-paper-input>input.tp-yt-paper-input {
     color: var(--ts-primary-text-color);
 }
 
-#text.yt-notification-action-renderer {
-    color: var(--ts-inverse-text-color);
-}
-
 .ytListItemViewModelTitle {
   color: var(--ts-primary-text-color);
 }
@@ -410,5 +406,17 @@ tp-yt-paper-item.ytmusic-playback-rate-popup-renderer {
 
 .messages.ytmusic-mealbar-promo-renderer {
     color: var(--ts-primary-text-color);
+}
+
+#account-name.ytd-active-account-header-renderer {
+    color: var(--ts-primary-text-color);
+}
+
+tp-yt-paper-item.ytd-compact-link-renderer {
+  color: var(--ts-primary-text-color);
+}
+
+#email.ytd-active-account-header-renderer {
+  color: var(--ts-primary-text-color);
 }
 `;
