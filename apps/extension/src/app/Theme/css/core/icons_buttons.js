@@ -503,4 +503,16 @@ export const icons_buttons = /*css*/ `
     color: var(--ts-primary-icon-color);
     fill: var(--ts-primary-icon-color);
   }
+
+  #button.ytd-menu-renderer .ytIconWrapperHost.ytd-menu-renderer, #button.ytd-menu-renderer yt-icon.ytd-menu-renderer {
+    color: var(--ts-primary-icon-color);
+  }
+
+  #label-icon.yt-dropdown-menu {
+    color: var(--ts-primary-icon-color);
+  }
+
+  ytmusic-queue-header-renderer yt-icon {
+    color: var(--ts-inverse-icon-color);
+  }
 `;

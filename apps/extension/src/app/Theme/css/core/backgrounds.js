@@ -250,4 +250,8 @@ ytmusic-app[is-miniplayer-enabled] ytmusic-miniplayer.ytmusic-app {
 #hover-time-info.ytmusic-player-bar {
   background-color: var(--ts-base-00-color);
 }
+
+ytmusic-dialog {
+  background-color: var(--ts-body-color);
+}
 `;

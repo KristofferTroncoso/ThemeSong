@@ -132,4 +132,8 @@ export const rulers_borders = /*css*/ `
   ytmusic-search-box:not([opened]):not([has-query]) .search-box.ytmusic-search-box {
     border: 1px solid var(--ts-ruler-secondary-color);
   }
+
+  #placeholder-area.ytd-comment-simplebox-renderer {
+    border-bottom: 1px solid var(--ts-ruler-primary-color);
+  }
 `;

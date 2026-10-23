@@ -419,4 +419,34 @@ tp-yt-paper-item.ytd-compact-link-renderer {
 #email.ytd-active-account-header-renderer {
   color: var(--ts-primary-text-color);
 }
+
+yt-formatted-string.ytd-comments-header-renderer {
+  color: var(--ts-primary-text-color);
+}
+
+#content-text.ytd-comment-view-model {
+  color: var(--ts-primary-text-color);
+}
+
+#author-text.yt-simple-endpoint.ytd-comment-view-model {
+  color: var(--ts-primary-text-color);
+}
+
+#published-time-text.ytd-comment-view-model {
+    --yt-endpoint-color: var(--ts-secondary-text-color);
+    --yt-endpoint-visited-color: var(--ts-secondary-text-color);
+    color: var(--ts-secondary-text-color);
+}
+
+ytd-comment-engagement-bar {
+    color: var(--ts-secondary-text-color);
+}
+
+#simplebox-placeholder.ytd-comment-simplebox-renderer {
+  color: var(--ts-secondary-text-color);
+}
+
+.confirm-button.ytmusic-channel-creation-form-renderer {
+  color: var(--ts-primary-text-color);
+}
 `;
