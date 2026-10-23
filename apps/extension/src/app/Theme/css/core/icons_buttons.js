@@ -515,4 +515,13 @@ export const icons_buttons = /*css*/ `
   ytmusic-queue-header-renderer yt-icon {
     color: var(--ts-inverse-icon-color);
   }
+
+  .ytSpecButtonShapeNextMono.ytSpecButtonShapeNextText:hover:not(.ytSpecButtonShapeNextEnableLightTouchResponse) {
+    background: var(--ts-pill-hover-color);
+  }
+
+  ytmusic-player yt-icon {
+    color: white;
+    fill: white;
+  }
 `;

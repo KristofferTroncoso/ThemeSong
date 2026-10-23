@@ -70,4 +70,8 @@ export const gradients_overlays = /*css*/ `
   ytmusic-player-bar[is-web-delhi-icons-enabled] yt-icon-button.ytmusic-player-bar:hover {
       background-color: var(--ts-overlay-highlighted2-color);
   }
+
+  tp-yt-paper-item.ytmusic-guide-entry-renderer:hover {
+      background-color: var(--ts-overlay-highlighted-color);
+  }
 `;
