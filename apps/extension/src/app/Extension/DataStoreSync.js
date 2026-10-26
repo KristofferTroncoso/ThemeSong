@@ -10,6 +10,7 @@ function DataStoreSync() {
   const mergePiecePrefs = useStore((state) => state.piece.mergePiecePrefs);
   const mergeUtilitiesPrefs = useStore((state) => state.utilities.mergeUtilitiesPrefs);
   const mergeMedia = useStore((state) => state.media.mergeMedia);
+  const mergeLastfmPrefs = useStore((state) => state.lastfm.mergeLastfmPrefs);
 
   useEffect(() => {
     console.log("DataStoreSync");
@@ -37,6 +38,9 @@ function DataStoreSync() {
           break;
         case "media":
           mergeMedia(value);
+          break;
+        case "lastfmPrefs":
+          mergeLastfmPrefs(value);
           break;
         default:
           console.log("DataStoreSync: default case");

@@ -10,6 +10,7 @@ import { createExtensionSlice } from "./Extension/extensionSlice";
 import { createUtilitiesSlice } from "./Utilities/utilitiesSlice";
 import { createPieceSlice } from "./Piece/pieceSlice";
 import { createMediaSlice } from "./Media/mediaSlice";
+import { createLastfmSlice } from "./Lastfm/lastfmSlice";
 
 export const useStore = create(
   immer((...a) => ({
@@ -22,5 +23,6 @@ export const useStore = create(
     utilities: { ...createUtilitiesSlice(...a) },
     piece: { ...createPieceSlice(...a) },
     media: { ...createMediaSlice(...a) },
+    lastfm: { ...createLastfmSlice(...a) },
   }))
 );

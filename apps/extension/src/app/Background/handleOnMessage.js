@@ -1,8 +1,12 @@
 import { executeContentScriptOnYouTubeMusicTabs } from "./scripts";
 import handleIconColor from "../Extension/IconColor/handleIconColor";
+import { handleLastfmMessage } from "../Lastfm/lastfmBackground";
 
 function handleOnMessage(message, sender, sendResponse) {
   console.log("Received message:", message, "from", sender);
+  if (message && typeof message === "object" && typeof message.type === "string" && message.type.startsWith("lastfm:")) {
+    return handleLastfmMessage(message, sender, sendResponse);
+  }
   if (typeof message === "string") {
     switch (message) {
       case "reset":

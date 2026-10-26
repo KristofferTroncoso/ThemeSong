@@ -9,6 +9,7 @@
     "https://music.youtube.com/*",
     "https://*.googleusercontent.com/*",
     "https://*.ytimg.com/*",
+    "https://ws.audioscrobbler.com/*",
     "storage",
     "notifications",
     "scripting",

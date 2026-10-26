@@ -15,6 +15,7 @@ import Unmounter from "../Extension/Unmounter";
 import Piece from "../Piece/Piece";
 import IconColor from "../Extension/IconColor/IconColor";
 import PlayPauseEventListener from "../Player/PlayPauseEventListener";
+import ScrobbleDetector from "../Lastfm/ScrobbleDetector";
 // import DisableContextMenu from "./DisableContextMenu";
 // import WelcomeMessage from "../Extension/WelcomeMessage";
 
@@ -105,6 +106,7 @@ function ContentScript({ root }) {
         <PlayerUiStateObserver />
         <MediaObserver />
         <PlayPauseEventListener />
+        <ScrobbleDetector />
       </MountWhenPlayerActive>
     </div>
   ) : (

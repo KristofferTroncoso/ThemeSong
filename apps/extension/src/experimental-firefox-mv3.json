@@ -5,7 +5,7 @@
   "description": "Dynamic themes and visualizers for YouTube Music™.",
   "background": { "scripts": ["themesong-background.js"] },
   "permissions": ["storage", "notifications", "scripting"],
-  "host_permissions": ["https://music.youtube.com/*", "https://*.googleusercontent.com/*", "https://*.ytimg.com/*"],
+  "host_permissions": ["https://music.youtube.com/*", "https://*.googleusercontent.com/*", "https://*.ytimg.com/*", "https://ws.audioscrobbler.com/*"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": "assets/icon-34.png"
